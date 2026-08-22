@@ -1,0 +1,373 @@
+{
+  "database": "../quant_market_bot/data/market_data.db",
+  "tables": {
+    "universo_tickers": {
+      "exists": true,
+      "rows": 503,
+      "columns": [
+        "ticker",
+        "empresa",
+        "sector",
+        "activo"
+      ]
+    },
+    "precios": {
+      "exists": true,
+      "rows": 1111944,
+      "columns": [
+        "ticker",
+        "timestamp",
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume"
+      ]
+    },
+    "noticias": {
+      "exists": true,
+      "rows": 62671,
+      "columns": [
+        "id",
+        "ticker",
+        "timestamp",
+        "titulo",
+        "fuente",
+        "resumen",
+        "sentimiento",
+        "grado",
+        "importancia",
+        "id_evento",
+        "desfase_minutos"
+      ]
+    },
+    "relaciones_organicas": {
+      "exists": true,
+      "rows": 33837,
+      "columns": [
+        "origen",
+        "destino",
+        "peso",
+        "ultima_actualizacion"
+      ]
+    },
+    "macro_diario": {
+      "exists": true,
+      "rows": 1,
+      "columns": [
+        "fecha",
+        "vix",
+        "tnx",
+        "petroleo",
+        "dolar"
+      ]
+    },
+    "correlaciones": {
+      "exists": true,
+      "rows": 672,
+      "columns": [
+        "id_noticia",
+        "ticker",
+        "es_contagio",
+        "sentimiento",
+        "fiabilidad_fuente",
+        "divergencia_previa_pct",
+        "precio_instante",
+        "precio_mfe_60m",
+        "impacto_mfe_60m_pct"
+      ]
+    },
+    "vectores_estado": {
+      "exists": true,
+      "rows": 379,
+      "columns": [
+        "id_noticia",
+        "ticker",
+        "rsi",
+        "momentum_pct",
+        "atr",
+        "vix",
+        "tnx",
+        "petroleo",
+        "dolar"
+      ]
+    },
+    "paper_trading": {
+      "exists": true,
+      "rows": 1,
+      "columns": [
+        "id_operacion",
+        "id_noticia",
+        "ticker",
+        "fecha_senal",
+        "horizonte_horas",
+        "rendimiento_esperado_pct",
+        "certeza_pct",
+        "precio_entrada",
+        "precio_salida_real",
+        "rendimiento_real_pct"
+      ]
+    }
+  },
+  "checks": {
+    "price_timestamps": [
+      [
+        "CMCSA",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "COHR",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "COIN",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "CPRT",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "CRWD",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "CSCO",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "CVNA",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "CVX",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "DOW",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "EQT",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "GLW",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "SCHW",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "XOM",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2388
+      ],
+      [
+        "CMG",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2387
+      ],
+      [
+        "COP",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2387
+      ],
+      [
+        "DVN",
+        "2026-08-13T13:48:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2387
+      ],
+      [
+        "F",
+        "2026-08-13T13:49:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2387
+      ],
+      [
+        "FCX",
+        "2026-08-13T13:49:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2387
+      ],
+      [
+        "FISV",
+        "2026-08-13T13:49:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2387
+      ],
+      [
+        "GE",
+        "2026-08-13T13:49:00+00:00",
+        "2026-08-21T14:35:00+00:00",
+        2387
+      ]
+    ],
+    "price_duplicate_keys": 0,
+    "news_sources": [
+      [
+        "SEC EDGAR",
+        57627
+      ],
+      [
+        "Zacks",
+        1189
+      ],
+      [
+        "Simply Wall St.",
+        737
+      ],
+      [
+        "StockStory",
+        455
+      ],
+      [
+        "Motley Fool",
+        360
+      ],
+      [
+        "24/7 Wall St.",
+        245
+      ],
+      [
+        "Barchart",
+        217
+      ],
+      [
+        "Insider Monkey",
+        211
+      ],
+      [
+        "GuruFocus.com",
+        155
+      ],
+      [
+        "MT Newswires",
+        148
+      ],
+      [
+        "Trefis",
+        136
+      ],
+      [
+        "MarketBeat",
+        130
+      ],
+      [
+        "Barrons.com",
+        99
+      ],
+      [
+        "The Wall Street Journal",
+        84
+      ],
+      [
+        "Stocktwits",
+        63
+      ],
+      [
+        "Bloomberg",
+        61
+      ],
+      [
+        "Investor's Business Daily",
+        59
+      ],
+      [
+        "TheStreet",
+        53
+      ],
+      [
+        "Moby",
+        53
+      ],
+      [
+        "Investing.com",
+        48
+      ],
+      [
+        "Benzinga",
+        39
+      ],
+      [
+        "Yahoo Finance",
+        31
+      ],
+      [
+        "InvestorsHub",
+        30
+      ],
+      [
+        "Yahoo Finance Video",
+        28
+      ],
+      [
+        "Quartz",
+        25
+      ],
+      [
+        "Reuters",
+        22
+      ],
+      [
+        "FreightWaves",
+        20
+      ],
+      [
+        "BeInCrypto",
+        18
+      ],
+      [
+        "Proactive",
+        17
+      ],
+      [
+        "CRE Daily",
+        15
+      ]
+    ],
+    "news_missing_sentiment": 19,
+    "news_missing_importance": 19,
+    "legacy_targets": [
+      672,
+      672,
+      -4.1667,
+      4.0799,
+      0.03290833333333333
+    ],
+    "macro_range": [
+      "2026-08-20",
+      "2026-08-20",
+      1
+    ]
+  }
+}

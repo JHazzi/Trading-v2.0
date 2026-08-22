@@ -1,0 +1,43 @@
+{
+  "source": "/home/trabajo/quant_market_bot/data/market_data.db",
+  "destination": "/home/trabajo/quant_market_ai/data/database/market_data_v2.db",
+  "counts": {
+    "assets": {
+      "legacy": 503,
+      "v2": 503
+    },
+    "price_bars": {
+      "legacy": 1111944,
+      "v2": 1111944
+    },
+    "news_documents": {
+      "legacy": 62671,
+      "v2": 62671
+    },
+    "events": {
+      "legacy_with_id": 5025,
+      "v2": 4885
+    },
+    "relations": {
+      "legacy": 33837,
+      "v2": 33837
+    },
+    "macro_rows": {
+      "legacy": 1,
+      "v2": 4
+    },
+    "legacy_correlations": {
+      "legacy": 672,
+      "v2": 672
+    },
+    "legacy_state_vectors": {
+      "legacy": 379,
+      "v2": 379
+    },
+    "legacy_paper_trading": {
+      "legacy": 1,
+      "v2": 1
+    }
+  },
+  "sample_price_mismatches": []
+}

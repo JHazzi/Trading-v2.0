@@ -1,0 +1,95 @@
+{
+  "model_version": "market_baseline_v001",
+  "horizon_seconds": 300,
+  "feature_version": "market_state_v0.1.0",
+  "target": "return_pct",
+  "artifact_rows_total": 802876,
+  "artifact_rows_train": 642301,
+  "artifact_rows_test": 160575,
+  "evaluation_rows_total": 802876,
+  "evaluation_train_rows": 645061,
+  "evaluation_test_rows": 157815,
+  "cutoff": "2026-08-20T14:22:00+00:00",
+  "top_features": [
+    {
+      "feature": "atr_14_pct",
+      "importance": 0.06428530713010126
+    },
+    {
+      "feature": "realized_vol_390m_pct",
+      "importance": 0.058632658963871334
+    },
+    {
+      "feature": "realized_vol_30m_pct",
+      "importance": 0.055407813782068716
+    },
+    {
+      "feature": "realized_vol_60m_pct",
+      "importance": 0.0526268812141469
+    },
+    {
+      "feature": "trend_slope_390m_pct",
+      "importance": 0.049369899985294334
+    },
+    {
+      "feature": "trend_slope_60m_pct",
+      "importance": 0.048977384387471436
+    },
+    {
+      "feature": "trend_slope_30m_pct",
+      "importance": 0.048507369662742154
+    },
+    {
+      "feature": "intrabar_range_pct",
+      "importance": 0.047624473529007665
+    },
+    {
+      "feature": "return_5m_pct",
+      "importance": 0.047575834857015935
+    },
+    {
+      "feature": "ma_390m_distance_pct",
+      "importance": 0.04665199493253095
+    },
+    {
+      "feature": "ma_15m_distance_pct",
+      "importance": 0.04506897259812611
+    },
+    {
+      "feature": "ma_60m_distance_pct",
+      "importance": 0.044993306317946014
+    },
+    {
+      "feature": "return_390m_pct",
+      "importance": 0.04495120335673392
+    },
+    {
+      "feature": "return_1m_pct",
+      "importance": 0.044310975782458135
+    },
+    {
+      "feature": "relative_volume_60m",
+      "importance": 0.042231940614511965
+    },
+    {
+      "feature": "distance_low_390m_pct",
+      "importance": 0.040277452697353375
+    },
+    {
+      "feature": "return_60m_pct",
+      "importance": 0.03905844188352646
+    },
+    {
+      "feature": "return_15m_pct",
+      "importance": 0.03878298939353255
+    },
+    {
+      "feature": "return_30m_pct",
+      "importance": 0.037275684391753536
+    },
+    {
+      "feature": "rsi_14",
+      "importance": 0.0357418229633293
+    }
+  ]
+}

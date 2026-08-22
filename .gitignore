@@ -1,0 +1,19 @@
+# Entornos virtuales
+venv/
+env/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Modelos y archivos gigantes (¡Muy importante!)
+models/market/artifacts/*.pkl
+*.pkl
+
+# Bases de datos SQLite
+*.db
+data/database/*.db
+*.sql
+# Archivos de entorno
+.env

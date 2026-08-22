@@ -1,0 +1,4 @@
+Patch note:
+- target_generator is now idempotent via unique(asset_id, origin_time, horizon_seconds)
+- train.py and walk_forward share the exact same dataset loader
+- walk-forward no longer imports a non-existent load_supervised_dataset from train.py

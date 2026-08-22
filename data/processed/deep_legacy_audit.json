@@ -1,0 +1,1159 @@
+{
+  "database": "../quant_market_bot/data/market_data.db",
+  "prices": {
+    "assets_with_price_data": 503,
+    "total_gaps_gt_5m": 4106,
+    "top_assets_by_gap_count": [
+      {
+        "ticker": "ERIE",
+        "rows": 750,
+        "first": "2026-08-13T13:52:00+00:00",
+        "last": "2026-08-21T14:32:00+00:00",
+        "gaps_gt_1_5m": 448,
+        "gaps_gt_5m": 125,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "AIZ",
+        "rows": 1089,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:30:00+00:00",
+        "gaps_gt_1_5m": 511,
+        "gaps_gt_5m": 76,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "ESS",
+        "rows": 1070,
+        "first": "2026-08-13T13:52:00+00:00",
+        "last": "2026-08-21T14:34:00+00:00",
+        "gaps_gt_1_5m": 521,
+        "gaps_gt_5m": 76,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "WST",
+        "rows": 1210,
+        "first": "2026-08-13T13:50:00+00:00",
+        "last": "2026-08-21T14:26:00+00:00",
+        "gaps_gt_1_5m": 521,
+        "gaps_gt_5m": 62,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "CINF",
+        "rows": 1149,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 537,
+        "gaps_gt_5m": 61,
+        "largest_gap_minutes": 3932.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "GL",
+        "rows": 1365,
+        "first": "2026-08-13T13:50:00+00:00",
+        "last": "2026-08-21T14:30:00+00:00",
+        "gaps_gt_1_5m": 527,
+        "gaps_gt_5m": 49,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "SBAC",
+        "rows": 1383,
+        "first": "2026-08-13T13:50:00+00:00",
+        "last": "2026-08-21T14:27:00+00:00",
+        "gaps_gt_1_5m": 505,
+        "gaps_gt_5m": 41,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "IEX",
+        "rows": 1495,
+        "first": "2026-08-13T13:49:00+00:00",
+        "last": "2026-08-21T14:27:00+00:00",
+        "gaps_gt_1_5m": 480,
+        "gaps_gt_5m": 40,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "NVR",
+        "rows": 1282,
+        "first": "2026-08-13T13:49:00+00:00",
+        "last": "2026-08-21T14:27:00+00:00",
+        "gaps_gt_1_5m": 497,
+        "gaps_gt_5m": 38,
+        "largest_gap_minutes": 3933.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "ZBRA",
+        "rows": 1444,
+        "first": "2026-08-13T13:51:00+00:00",
+        "last": "2026-08-21T14:27:00+00:00",
+        "gaps_gt_1_5m": 503,
+        "gaps_gt_5m": 37,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "JBHT",
+        "rows": 1478,
+        "first": "2026-08-13T13:49:00+00:00",
+        "last": "2026-08-21T14:24:00+00:00",
+        "gaps_gt_1_5m": 474,
+        "gaps_gt_5m": 36,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "PKG",
+        "rows": 1459,
+        "first": "2026-08-13T13:53:00+00:00",
+        "last": "2026-08-21T14:27:00+00:00",
+        "gaps_gt_1_5m": 501,
+        "gaps_gt_5m": 35,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "TDY",
+        "rows": 1484,
+        "first": "2026-08-13T13:50:00+00:00",
+        "last": "2026-08-21T14:27:00+00:00",
+        "gaps_gt_1_5m": 513,
+        "gaps_gt_5m": 29,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "L",
+        "rows": 1500,
+        "first": "2026-08-13T13:53:00+00:00",
+        "last": "2026-08-21T14:26:00+00:00",
+        "gaps_gt_1_5m": 506,
+        "gaps_gt_5m": 27,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "CASY",
+        "rows": 1501,
+        "first": "2026-08-13T13:50:00+00:00",
+        "last": "2026-08-21T14:34:00+00:00",
+        "gaps_gt_1_5m": 490,
+        "gaps_gt_5m": 26,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "VRSN",
+        "rows": 1524,
+        "first": "2026-08-13T13:50:00+00:00",
+        "last": "2026-08-21T14:27:00+00:00",
+        "gaps_gt_1_5m": 518,
+        "gaps_gt_5m": 26,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "BIIB",
+        "rows": 1528,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T13:54:00+00:00",
+        "gaps_gt_1_5m": 467,
+        "gaps_gt_5m": 24,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "DVA",
+        "rows": 1558,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:34:00+00:00",
+        "gaps_gt_1_5m": 482,
+        "gaps_gt_5m": 24,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "FRT",
+        "rows": 1611,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 449,
+        "gaps_gt_5m": 24,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "FDS",
+        "rows": 1657,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 456,
+        "gaps_gt_5m": 22,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "AVY",
+        "rows": 1583,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-20T19:59:00+00:00",
+        "gaps_gt_1_5m": 440,
+        "gaps_gt_5m": 20,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "EXR",
+        "rows": 1650,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 455,
+        "gaps_gt_5m": 20,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "DGX",
+        "rows": 1748,
+        "first": "2026-08-13T13:50:00+00:00",
+        "last": "2026-08-21T14:28:00+00:00",
+        "gaps_gt_1_5m": 394,
+        "gaps_gt_5m": 19,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "MAA",
+        "rows": 1753,
+        "first": "2026-08-13T13:49:00+00:00",
+        "last": "2026-08-21T14:27:00+00:00",
+        "gaps_gt_1_5m": 411,
+        "gaps_gt_5m": 19,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "AMP",
+        "rows": 1828,
+        "first": "2026-08-13T13:47:00+00:00",
+        "last": "2026-08-21T14:30:00+00:00",
+        "gaps_gt_1_5m": 379,
+        "gaps_gt_5m": 18,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      }
+    ],
+    "top_assets_by_rows": [
+      {
+        "ticker": "CMCSA",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "COHR",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "COIN",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "CPRT",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "CRWD",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "CSCO",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "CVNA",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "CVX",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "DOW",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "EQT",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "GLW",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "SCHW",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "XOM",
+        "rows": 2388,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "CMG",
+        "rows": 2387,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "COP",
+        "rows": 2387,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 7,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "DVN",
+        "rows": 2387,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 7,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "F",
+        "rows": 2387,
+        "first": "2026-08-13T13:49:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "FCX",
+        "rows": 2387,
+        "first": "2026-08-13T13:49:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "FISV",
+        "rows": 2387,
+        "first": "2026-08-13T13:49:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "GE",
+        "rows": 2387,
+        "first": "2026-08-13T13:49:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "GIS",
+        "rows": 2387,
+        "first": "2026-08-13T13:49:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "GS",
+        "rows": 2387,
+        "first": "2026-08-13T13:49:00+00:00",
+        "last": "2026-08-21T14:35:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "KO",
+        "rows": 2387,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:34:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "C",
+        "rows": 2386,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:34:00+00:00",
+        "gaps_gt_1_5m": 6,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      },
+      {
+        "ticker": "CAT",
+        "rows": 2386,
+        "first": "2026-08-13T13:48:00+00:00",
+        "last": "2026-08-21T14:34:00+00:00",
+        "gaps_gt_1_5m": 7,
+        "gaps_gt_5m": 6,
+        "largest_gap_minutes": 3931.0,
+        "off_regular_session_rows_approx": 0
+      }
+    ]
+  },
+  "news": {
+    "date_range": [
+      "2006-09-27T20:26:19+00:00",
+      "2026-08-21T14:28:46+00:00"
+    ],
+    "rows_with_event_id": 5025,
+    "rows_without_event_id": 57646,
+    "sources": [
+      [
+        "SEC EDGAR",
+        57627
+      ],
+      [
+        "Zacks",
+        1189
+      ],
+      [
+        "Simply Wall St.",
+        737
+      ],
+      [
+        "StockStory",
+        455
+      ],
+      [
+        "Motley Fool",
+        360
+      ],
+      [
+        "24/7 Wall St.",
+        245
+      ],
+      [
+        "Barchart",
+        217
+      ],
+      [
+        "Insider Monkey",
+        211
+      ],
+      [
+        "GuruFocus.com",
+        155
+      ],
+      [
+        "MT Newswires",
+        148
+      ],
+      [
+        "Trefis",
+        136
+      ],
+      [
+        "MarketBeat",
+        130
+      ],
+      [
+        "Barrons.com",
+        99
+      ],
+      [
+        "The Wall Street Journal",
+        84
+      ],
+      [
+        "Stocktwits",
+        63
+      ],
+      [
+        "Bloomberg",
+        61
+      ],
+      [
+        "Investor's Business Daily",
+        59
+      ],
+      [
+        "TheStreet",
+        53
+      ],
+      [
+        "Moby",
+        53
+      ],
+      [
+        "Investing.com",
+        48
+      ],
+      [
+        "Benzinga",
+        39
+      ],
+      [
+        "Yahoo Finance",
+        31
+      ],
+      [
+        "InvestorsHub",
+        30
+      ],
+      [
+        "Yahoo Finance Video",
+        28
+      ],
+      [
+        "Quartz",
+        25
+      ],
+      [
+        "Reuters",
+        22
+      ],
+      [
+        "FreightWaves",
+        20
+      ],
+      [
+        "BeInCrypto",
+        18
+      ],
+      [
+        "Proactive",
+        17
+      ],
+      [
+        "CRE Daily",
+        15
+      ],
+      [
+        "The Fly",
+        12
+      ],
+      [
+        "Oilprice.com",
+        12
+      ],
+      [
+        "Fortune",
+        12
+      ],
+      [
+        "Exec Edge",
+        12
+      ],
+      [
+        "Utility Dive",
+        11
+      ],
+      [
+        "Moneywise",
+        11
+      ],
+      [
+        "Kiplinger",
+        10
+      ],
+      [
+        "The Daily Upside",
+        7
+      ],
+      [
+        "Supply Chain Dive",
+        7
+      ],
+      [
+        "MedTech Dive",
+        7
+      ],
+      [
+        "Investopedia",
+        7
+      ],
+      [
+        "Benzinga Prediction Markets",
+        7
+      ],
+      [
+        "TechCrunch",
+        6
+      ],
+      [
+        "USA TODAY",
+        5
+      ],
+      [
+        "Retail Insight Network",
+        5
+      ],
+      [
+        "FX Empire",
+        5
+      ],
+      [
+        "Wealth Management",
+        4
+      ],
+      [
+        "Packaging Gateway",
+        4
+      ],
+      [
+        "Multifamily Dive",
+        4
+      ],
+      [
+        "LA Times",
+        4
+      ],
+      [
+        "Healthcare Dive",
+        4
+      ],
+      [
+        "Forkast News",
+        4
+      ],
+      [
+        "CryptoProwl",
+        4
+      ],
+      [
+        "American Banker",
+        4
+      ],
+      [
+        "TipRanks",
+        3
+      ],
+      [
+        "Sourcing Journal",
+        3
+      ],
+      [
+        "Reuters Videos",
+        3
+      ],
+      [
+        "Retail Dive",
+        3
+      ],
+      [
+        "Private Banker International",
+        3
+      ],
+      [
+        "Pitchbook",
+        3
+      ],
+      [
+        "Offshore Technology",
+        3
+      ],
+      [
+        "Money Digest",
+        3
+      ],
+      [
+        "Manufacturing Dive",
+        3
+      ],
+      [
+        "Fox Business",
+        3
+      ],
+      [
+        "Electronic Payments",
+        3
+      ],
+      [
+        "CorpGov.com",
+        3
+      ],
+      [
+        "CFO.com",
+        3
+      ],
+      [
+        "Yahoo Personal Finance",
+        2
+      ],
+      [
+        "WWD",
+        2
+      ],
+      [
+        "Verdict",
+        2
+      ],
+      [
+        "Trucking Dive",
+        2
+      ],
+      [
+        "Restaurant Dive",
+        2
+      ],
+      [
+        "Payments Dive",
+        2
+      ],
+      [
+        "Packaging Dive",
+        2
+      ],
+      [
+        "NYSE",
+        2
+      ],
+      [
+        "MoneyShow",
+        2
+      ],
+      [
+        "Medical Device Network",
+        2
+      ],
+      [
+        "Marketing Dive",
+        2
+      ],
+      [
+        "MarketWatch",
+        2
+      ],
+      [
+        "Just Drinks",
+        2
+      ],
+      [
+        "Just Auto",
+        2
+      ],
+      [
+        "Hotel Dive",
+        2
+      ],
+      [
+        "Footwear News",
+        2
+      ],
+      [
+        "Financial Times",
+        2
+      ],
+      [
+        "Clinical Trials Arena",
+        2
+      ],
+      [
+        "CFO Dive",
+        2
+      ],
+      [
+        "CCN",
+        2
+      ],
+      [
+        "C-Store Dive",
+        2
+      ],
+      [
+        "BioPharma Dive",
+        2
+      ],
+      [
+        "Benzinga Private Markets",
+        2
+      ],
+      [
+        "Axios",
+        2
+      ],
+      [
+        "etf.com",
+        1
+      ],
+      [
+        "decrypt",
+        1
+      ],
+      [
+        "Waste Dive",
+        1
+      ],
+      [
+        "WSJ",
+        1
+      ],
+      [
+        "The Virginian-Pilot",
+        1
+      ],
+      [
+        "The Telegraph",
+        1
+      ],
+      [
+        "The Sanford Herald, N.C.",
+        1
+      ],
+      [
+        "The Guardian",
+        1
+      ],
+      [
+        "The Accountant",
+        1
+      ],
+      [
+        "Sky News",
+        1
+      ],
+      [
+        "Schaeffer's Investment Research",
+        1
+      ],
+      [
+        "QSR",
+        1
+      ],
+      [
+        "Pharma Voice",
+        1
+      ],
+      [
+        "Odessa American, Texas",
+        1
+      ],
+      [
+        "Mining Technology",
+        1
+      ],
+      [
+        "MediaPost",
+        1
+      ],
+      [
+        "Just Style",
+        1
+      ],
+      [
+        "Just Food",
+        1
+      ],
+      [
+        "Journal-News, Hamilton, Ohio",
+        1
+      ],
+      [
+        "Investment Monitor",
+        1
+      ],
+      [
+        "HR Dive",
+        1
+      ],
+      [
+        "Food Dive",
+        1
+      ],
+      [
+        "Financial Planning",
+        1
+      ],
+      [
+        "Facilities Dive",
+        1
+      ],
+      [
+        "FSR",
+        1
+      ],
+      [
+        "Euronews",
+        1
+      ],
+      [
+        "Energy Global",
+        1
+      ],
+      [
+        "Dayton Daily News, Ohio",
+        1
+      ],
+      [
+        "Cryptonews",
+        1
+      ],
+      [
+        "Construction Dive",
+        1
+      ],
+      [
+        "Chicago Tribune",
+        1
+      ],
+      [
+        "CX Dive",
+        1
+      ],
+      [
+        "CNN Business",
+        1
+      ],
+      [
+        "CIO Dive",
+        1
+      ],
+      [
+        "CBS News",
+        1
+      ],
+      [
+        "Black Enterprise",
+        1
+      ],
+      [
+        "Bankless",
+        1
+      ],
+      [
+        "Banking Dive",
+        1
+      ],
+      [
+        "AfroTech",
+        1
+      ],
+      [
+        "AFP",
+        1
+      ],
+      [
+        " TheStreet",
+        1
+      ]
+    ],
+    "top_tickers": [
+      [
+        "NWSA",
+        740
+      ],
+      [
+        "NWS",
+        734
+      ],
+      [
+        "LVS",
+        298
+      ],
+      [
+        "PCG",
+        295
+      ],
+      [
+        "WYNN",
+        283
+      ],
+      [
+        "OKE",
+        267
+      ],
+      [
+        "ROL",
+        263
+      ],
+      [
+        "NCLH",
+        254
+      ],
+      [
+        "PNW",
+        249
+      ],
+      [
+        "DTE",
+        244
+      ],
+      [
+        "AMT",
+        244
+      ],
+      [
+        "KMI",
+        242
+      ],
+      [
+        "CNP",
+        240
+      ],
+      [
+        "CASY",
+        239
+      ],
+      [
+        "O",
+        229
+      ],
+      [
+        "AWK",
+        229
+      ],
+      [
+        "CCI",
+        228
+      ],
+      [
+        "LUV",
+        226
+      ],
+      [
+        "PM",
+        223
+      ],
+      [
+        "MDLZ",
+        216
+      ],
+      [
+        "FCX",
+        215
+      ],
+      [
+        "WEC",
+        213
+      ],
+      [
+        "UDR",
+        211
+      ],
+      [
+        "FRT",
+        211
+      ],
+      [
+        "EMR",
+        211
+      ]
+    ]
+  },
+  "news_price_alignment_sample": {
+    "sample_size": 5000,
+    "no_future_price_after_news": 43,
+    "median_seconds_to_next_price": 27000.0,
+    "min_seconds_to_next_price": 0.0,
+    "max_seconds_to_next_price": 1079830.0,
+    "negative_alignment_count": 0
+  }
+}

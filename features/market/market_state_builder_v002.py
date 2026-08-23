@@ -8,12 +8,41 @@ FEATURE_VERSION='market_state_v0.2.0'
 def build(max_assets=None):
     db=Path('data/database/market_data_v2.db')
     with sqlite3.connect(db) as conn:
-        q='''SELECT p.asset_id,p.timestamp,p.close,p.volume,a.sector
-             FROM price_bars p JOIN assets a ON a.asset_id=p.asset_id
-             WHERE p.interval='1m' AND a.active=1'''
+        q = '''
+        SELECT
+            p.asset_id,
+            p.timestamp,
+            p.close,
+            p.volume,
+            a.sector
+        FROM price_bars p
+        JOIN assets a
+            ON a.asset_id = p.asset_id
+        JOIN asset_universe_membership um
+            ON um.asset_id = p.asset_id
+        AND um.universe = 'price_observed'
+        AND p.timestamp >= um.valid_from
+        AND (
+            um.valid_to IS NULL
+            OR p.timestamp <= um.valid_to
+        )
+        WHERE p.interval = '1m'
+        '''
         params=()
         if max_assets is not None:
-            ids=[r[0] for r in conn.execute('SELECT asset_id FROM assets WHERE active=1 ORDER BY asset_id LIMIT ?', (max_assets,))]
+            ids = [
+                r[0]
+                for r in conn.execute(
+                    '''
+                    SELECT DISTINCT asset_id
+                    FROM asset_universe_membership
+                    WHERE universe = 'price_observed'
+                    ORDER BY asset_id
+                    LIMIT ?
+                    ''',
+                    (max_assets,)
+                )
+            ]
             if not ids: return {'rows':0}
             ph=','.join('?'*len(ids)); q+=f' AND p.asset_id IN ({ph})'; params=tuple(ids)
         df=pd.read_sql_query(q,conn,params=params)

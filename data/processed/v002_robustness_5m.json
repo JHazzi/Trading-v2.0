@@ -1,0 +1,77 @@
+{
+  "horizon_seconds": 300,
+  "cutoff": "2026-08-20 14:15:00+00:00",
+  "paired_rows": 160954,
+  "overall": {
+    "v001_mae_pct": 0.1318033612765167,
+    "v002_mae_pct": 0.13070593878617748,
+    "mae_improvement_pct": 0.8326210194570774,
+    "v001_rmse_pct": 0.20288916776501237,
+    "v002_rmse_pct": 0.20108042477539934,
+    "rmse_improvement_pct": 0.8914931287548732,
+    "v001_directional_accuracy": 0.5057221317892069,
+    "v002_directional_accuracy": 0.5098723858990768
+  },
+  "bootstrap": {
+    "mean_error_delta_v001_minus_v002_pct": {
+      "estimate": 0.0011105136248979759,
+      "ci95_low": 0.0006037925459992415,
+      "ci95_high": 0.0017179136557746698
+    },
+    "v002_win_rate": {
+      "estimate": 0.5167280945387825,
+      "ci95_low": 0.5101276520768875,
+      "ci95_high": 0.5221980830670927
+    },
+    "directional_accuracy_delta": {
+      "estimate": 0.003806169659060201,
+      "ci95_low": -0.019081767363700815,
+      "ci95_high": 0.018389759441419396
+    },
+    "block_minutes": 60,
+    "blocks": 8,
+    "iterations": 2000
+  },
+  "volatility_regimes": [
+    {
+      "regime": "low",
+      "n": 40239,
+      "mean_volatility": 0.29983435809946896,
+      "v001_mae": 0.0723409707693312,
+      "v002_mae": 0.07153545413063012,
+      "improvement_pct": 1.1134999021088356,
+      "v001_directional_accuracy": 0.5019508437088397,
+      "v002_directional_accuracy": 0.5283928527050871
+    },
+    {
+      "regime": "mid_low",
+      "n": 40238,
+      "mean_volatility": 0.4493369780177249,
+      "v001_mae": 0.0987617307080143,
+      "v002_mae": 0.09790062483870367,
+      "improvement_pct": 0.8719023685970717,
+      "v001_directional_accuracy": 0.5063124409761917,
+      "v002_directional_accuracy": 0.5260450320592475
+    },
+    {
+      "regime": "mid_high",
+      "n": 40238,
+      "mean_volatility": 0.660632035139003,
+      "v001_mae": 0.1335269909887848,
+      "v002_mae": 0.1327502692260835,
+      "improvement_pct": 0.581696447249783,
+      "v001_directional_accuracy": 0.5052686515234356,
+      "v002_directional_accuracy": 0.49977633083155226
+    },
+    {
+      "regime": "high",
+      "n": 40239,
+      "mean_volatility": 1.424920953577079,
+      "v001_mae": 0.2225829743402557,
+      "v002_mae": 0.22063664249233536,
+      "improvement_pct": 0.874429795760139,
+      "v001_directional_accuracy": 0.5093565943487661,
+      "v002_directional_accuracy": 0.4852754790128979
+    }
+  ]
+}

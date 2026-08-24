@@ -1,19 +1,30 @@
 # Entornos virtuales
 venv/
 env/
+.venv/
 
 # Archivos de Python
 __pycache__/
 *.py[cod]
 *$py.class
 
-# Modelos y archivos gigantes (¡Muy importante!)
+# Modelos y archivos gigantes
 models/market/artifacts/*.pkl
 *.pkl
 
 # Bases de datos SQLite
 *.db
 data/database/*.db
+
+# SQL fuera del esquema/migraciones versionadas
 *.sql
-# Archivos de entorno
+!database/schema.sql
+!database/migrations/
+!database/migrations/*.sql
+
+# Datos RAW descargados. Sólo se versiona el contrato/código.
+data/raw/
+
+# Archivos de entorno y configuración local
 .env
+*.local.json

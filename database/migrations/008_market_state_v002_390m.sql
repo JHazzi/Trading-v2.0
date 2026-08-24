@@ -1,0 +1,2 @@
+ALTER TABLE market_state_v002_snapshots
+ADD COLUMN return_percentile_390m REAL;

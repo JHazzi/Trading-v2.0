@@ -1,5 +1,5 @@
 {
-  "version": "market_brain_daily_v003_benchmark_v001",
+  "version": "market_brain_daily_v003_benchmark_v0011",
   "core_feature_version": "market_daily_state_v003_core",
   "core_label_version": "market_daily_reaction_v003_core",
   "horizons_sessions": [
@@ -35,7 +35,8 @@
       "max_iter": 180,
       "max_leaf_nodes": 31,
       "min_samples_leaf": 200,
-      "l2_regularization": 1.0
+      "l2_regularization": 1.0,
+      "early_stopping": false
     },
     "hgb_own_cross": {
       "loss": "absolute_error",
@@ -43,7 +44,8 @@
       "max_iter": 180,
       "max_leaf_nodes": 31,
       "min_samples_leaf": 200,
-      "l2_regularization": 1.0
+      "l2_regularization": 1.0,
+      "early_stopping": false
     },
     "hgb_full": {
       "loss": "absolute_error",
@@ -51,10 +53,28 @@
       "max_iter": 180,
       "max_leaf_nodes": 31,
       "min_samples_leaf": 200,
-      "l2_regularization": 1.0
+      "l2_regularization": 1.0,
+      "early_stopping": false
     }
   },
   "no_hyperparameter_tuning": true,
   "no_best_model_selection_for_primary_claim": true,
-  "rf_deferred_to_robustness": true
+  "rf_deferred_to_robustness": true,
+  "baselines": [
+    "zero",
+    "train_mean",
+    "train_median",
+    "asset_train_mean",
+    "asset_train_median",
+    "same_horizon_momentum",
+    "always_up_direction",
+    "always_down_direction",
+    "train_majority_direction"
+  ],
+  "implementation_contract": {
+    "hgb_early_stopping_explicit": true,
+    "hgb_fixed_max_iter": true,
+    "primary_metric": "mae_pct",
+    "primary_inference_unit": "origin_trading_day"
+  }
 }

@@ -361,3 +361,14 @@ it is interpreted as a no-corporate-action-overlap research target, not a
 production total-return target.
 
 Next: frozen Market Daily V003 Benchmark V001.
+<!-- MARKET_V003_BENCHMARK_V0011 -->
+## Active Market Daily V003 benchmark
+
+Active preregistration: `market_brain_daily_v003_benchmark_v0011`.
+
+V001 was superseded before any model performance was observed. The Core
+dataset, horizons, 30% initial training fraction, five-fold purged
+walk-forward, primary model and primary MAE comparison are unchanged.
+
+The change only strengthens baselines, makes HGB stopping behavior explicit,
+exposes purge boundaries, and freezes code/data/environment hashes.

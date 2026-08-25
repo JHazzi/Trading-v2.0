@@ -50,6 +50,15 @@ def load_config(path: Path = DEFAULT_CONFIG) -> dict[str, Any]:
         raise ValueError("primary model changed")
     if cfg.get("primary_baseline") != "train_median":
         raise ValueError("primary baseline changed")
+    required_baselines = {
+        "asset_train_median",
+        "train_majority_direction",
+    }
+    if not required_baselines.issubset(set(cfg.get("baselines", []))):
+        raise ValueError("required robustness baselines missing")
+    for name in ("hgb_own", "hgb_own_cross", "hgb_full"):
+        if cfg["models"][name].get("early_stopping") is not False:
+            raise ValueError("HGB early_stopping must be explicitly false")
     return cfg
 
 
@@ -108,6 +117,13 @@ def train_baselines(train: pd.DataFrame, test: pd.DataFrame, horizon: int) -> di
     global_mean = float(np.mean(y))
     global_median = float(np.median(y))
     asset_means = train.groupby("asset_id")[TARGET].mean()
+    asset_medians = train.groupby("asset_id")[TARGET].median()
+
+    train_nonzero = train.loc[train[TARGET] != 0, TARGET]
+    if len(train_nonzero):
+        majority_sign = 1.0 if float((train_nonzero > 0).mean()) >= 0.5 else -1.0
+    else:
+        majority_sign = 1.0
 
     momentum_col = f"asset_return_{horizon}d_pct"
     if momentum_col not in test.columns:
@@ -120,7 +136,20 @@ def train_baselines(train: pd.DataFrame, test: pd.DataFrame, horizon: int) -> di
         "pred_asset_train_mean": (
             test["asset_id"].map(asset_means).fillna(global_mean).to_numpy(float)
         ),
+        "pred_asset_train_median": (
+            test["asset_id"].map(asset_medians)
+            .fillna(global_median)
+            .to_numpy(float)
+        ),
         "pred_momentum_same_h": test[momentum_col].to_numpy(float),
+        # Direction-only baselines. Magnitude=1 pp is arbitrary and these
+        # are never used for MAE primary claims; they exist solely so
+        # directional accuracy has honest constant-class references.
+        "pred_always_up_direction": np.ones(len(test), dtype=float),
+        "pred_always_down_direction": -np.ones(len(test), dtype=float),
+        "pred_train_majority_direction": np.full(
+            len(test), majority_sign, dtype=float
+        ),
     }
 
 
@@ -156,6 +185,7 @@ def _hgb(kind: str, cfg: dict[str, Any]) -> HistGradientBoostingRegressor:
         max_leaf_nodes=int(m["max_leaf_nodes"]),
         min_samples_leaf=int(m["min_samples_leaf"]),
         l2_regularization=float(m["l2_regularization"]),
+        early_stopping=bool(m["early_stopping"]),
         random_state=int(cfg["random_seed"]),
     )
 
@@ -273,6 +303,12 @@ def run_horizon(
         "asset_mean_vs_hgb_full": paired_point(
             oos,
             baseline_col="pred_asset_train_mean",
+            candidate_col="pred_hgb_full",
+            target_col=TARGET,
+        ),
+        "asset_median_vs_hgb_full": paired_point(
+            oos,
+            baseline_col="pred_asset_train_median",
             candidate_col="pred_hgb_full",
             target_col=TARGET,
         ),

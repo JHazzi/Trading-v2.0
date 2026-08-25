@@ -176,3 +176,30 @@ Inference uses paired daily losses and moving-block bootstrap on origin days
 Random Forest is intentionally deferred to robustness because the broad panel
 contains roughly one million rows per horizon; it is not needed to establish
 the first nonlinear benchmark.
+<!-- MARKET_V003_BENCHMARK_V0011 -->
+## Market Brain Daily V003 Benchmark V001.1 — supersedes V001 before results
+
+No V001 model performance was observed before this hardening.
+
+Primary scientific design is unchanged:
+
+```text
+all eligible asset-days
+H1 / H3 / H5 / H10
+5 purged expanding temporal folds
+initial_fraction = 0.30
+primary = train median vs HGB full
+moving-block bootstrap by origin day
+```
+
+Pre-result hardening:
+
+```text
++ asset train median baseline
++ always-up/down/train-majority direction baselines
++ HGB early_stopping=False explicitly
++ visible latest train target / purge row counts per fold
++ git/environment/code/Core-DB SHA256 preregistration
+```
+
+V001 reports remain historical and V001.1 writes to `benchmark_v0011/`.

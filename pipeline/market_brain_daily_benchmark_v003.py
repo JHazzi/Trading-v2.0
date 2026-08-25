@@ -19,7 +19,7 @@ from evaluation.market.daily_v003_benchmark import (
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPORT_DIR = (
-    ROOT / "reports" / "market_brain_daily_v003" / "benchmark_v001"
+    ROOT / "reports" / "market_brain_daily_v003" / "benchmark_v0011"
 )
 
 

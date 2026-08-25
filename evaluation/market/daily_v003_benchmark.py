@@ -12,6 +12,9 @@ class PurgedMarketFold:
     fold_id: int
     first_test_day: str
     last_test_day: str
+    latest_train_origin_day: str
+    latest_train_target_day: str
+    purged_pretest_rows: int
     train_index: tuple[int, ...]
     test_index: tuple[int, ...]
 
@@ -92,11 +95,20 @@ def build_purged_day_folds(
         if train_origins & test_origins:
             raise AssertionError("origin-day overlap")
 
+        pretest_mask = work["origin_trading_day"].astype(str) < first_day
+        purged_pretest_rows = int((pretest_mask & ~train_mask).sum())
+
         folds.append(
             PurgedMarketFold(
                 fold_id=fold_id,
                 first_test_day=first_day,
                 last_test_day=last_day,
+                latest_train_origin_day=str(
+                    work.loc[list(train_idx), "origin_trading_day"]
+                    .astype(str).max()
+                ),
+                latest_train_target_day=str(latest_train_target),
+                purged_pretest_rows=purged_pretest_rows,
                 train_index=train_idx,
                 test_index=test_idx,
             )
@@ -110,6 +122,9 @@ def fold_summary(folds: list[PurgedMarketFold]) -> list[dict[str, object]]:
             "fold_id": f.fold_id,
             "first_test_day": f.first_test_day,
             "last_test_day": f.last_test_day,
+            "latest_train_origin_day": f.latest_train_origin_day,
+            "latest_train_target_day": f.latest_train_target_day,
+            "purged_pretest_rows": f.purged_pretest_rows,
             "train_rows": len(f.train_index),
             "test_rows": len(f.test_index),
         }

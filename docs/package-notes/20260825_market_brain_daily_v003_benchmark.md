@@ -200,3 +200,6 @@ python -m pipeline.market_brain_daily_benchmark_v003 --stage summary
 ```
 
 Do not add proxies or tune models between horizons.
+
+
+> Superseded before results by Benchmark V001.1 hardening. See `20260825_market_brain_daily_v003_benchmark_v0011.md`.

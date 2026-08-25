@@ -1,5 +1,5 @@
 {
-  "version": "deep_event_corpus_v003",
+  "version": "deep_event_corpus_v0031_lineage_fix",
   "source": "sec",
   "tickers": [
     "AAPL",
@@ -34,19 +34,22 @@
     "expected_temporal_contract": "sec_per_evidence_pit_flag"
   },
   "normalization": {
-    "version": "sec_event_normalizer_v003_deep_rebuild",
+    "version": "sec_event_normalizer_v0031_deep_raw_lineage",
     "stable_identity": "sec_accession_item_v001",
     "existing_identity_policy": "reuse",
     "new_observation_lineage": true,
     "hardcoded_direction": false,
-    "hardcoded_reliability": false
+    "hardcoded_reliability": false,
+    "sec_evidence_lineage": "cluster_membership -> raw_membership_ref -> sec_filing_file_version -> sec_filing",
+    "strict_pit_observation_rule": "event_cluster_sec_observation_ref required only when membership PIT=1",
+    "historical_backfill_rule": "historical acceptance/evidence availability proxy may be used only with PIT=0; actual retrieval timestamp remains provenance"
   },
   "state": {
-    "feature_version": "event_state_v003_deep",
+    "feature_version": "event_state_v0031_deep",
     "rebuild_entire_deep_corpus": true
   },
   "labels": {
-    "label_version": "event_reaction_daily_v003_deep",
+    "label_version": "event_reaction_daily_v0031_deep",
     "horizons": [
       1,
       3,

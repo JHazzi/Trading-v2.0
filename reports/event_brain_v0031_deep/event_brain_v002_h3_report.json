@@ -1,0 +1,634 @@
+{
+  "training_run_id": "b7d5ada4a011416d95db0365d46cf2e7",
+  "model_version": "event_brain_v002_architecture_on_deep_v0031",
+  "horizon_sessions": 3,
+  "dataset_audit": {
+    "status": "PASS",
+    "failures": [],
+    "rows": 1667,
+    "assets": 10,
+    "event_types": 21,
+    "unique_events": 1620,
+    "repeated_events": 40,
+    "unique_origin_days": 957,
+    "first_origin_day": "2016-09-29",
+    "last_origin_day": "2026-08-06",
+    "span_days": 3598,
+    "max_asset_share": 0.14577084583083383,
+    "max_event_type_share": 0.2453509298140372,
+    "sector_fallback_rows": 0,
+    "asset_counts": {
+      "58": 243,
+      "268": 238,
+      "186": 193,
+      "482": 182,
+      "266": 178,
+      "131": 145,
+      "100": 139,
+      "315": 134,
+      "39": 130,
+      "287": 85
+    },
+    "event_type_counts": {
+      "financial_results_disclosure": 409,
+      "other_material_disclosure": 364,
+      "quarterly_report_disclosure": 204,
+      "regulation_fd_disclosure": 204,
+      "management_or_board_change": 199,
+      "shareholder_vote_result": 80,
+      "annual_report_disclosure": 72,
+      "charter_or_bylaw_change": 70,
+      "security_holder_rights_change": 28,
+      "material_definitive_agreement": 9,
+      "asset_acquisition_or_disposition": 7,
+      "current_report_disclosure": 5,
+      "termination_material_agreement": 4,
+      "material_impairment": 3,
+      "current_report_item_disclosure": 3,
+      "annual_report_amendment": 1,
+      "exit_or_disposal_costs": 1,
+      "obligation_acceleration_trigger": 1,
+      "listing_or_compliance_notice": 1,
+      "quarterly_report_amendment": 1,
+      "unregistered_equity_sale": 1
+    },
+    "event_feature_version": "event_state_v0031_deep",
+    "label_version": "event_reaction_daily_v0031_deep",
+    "market_feature_version": "daily_asset_cross_section_sector_v002_leave_one_out",
+    "dataset_contract": "deep_sec_2016_2026_research_reconstruction_v0031"
+  },
+  "folds": [
+    {
+      "fold_id": 0,
+      "first_test_anchor_day": "2021-04-27",
+      "last_test_anchor_day": "2022-09-09",
+      "train_rows": 700,
+      "test_rows": 259,
+      "market": {
+        "mae_pct": 2.339153000437715,
+        "rmse_pct": 3.3307750660140396,
+        "directional_accuracy": 0.5521235521235521,
+        "median_abs_error_pct": 1.696203717081253
+      },
+      "capacity_control": {
+        "mae_pct": 2.3791557154578897,
+        "rmse_pct": 3.336465682739832,
+        "directional_accuracy": 0.637065637065637,
+        "median_abs_error_pct": 1.5860512028592524
+      },
+      "contextual_event": {
+        "mae_pct": 2.3905732408108826,
+        "rmse_pct": 3.358097143633817,
+        "directional_accuracy": 0.6177606177606177,
+        "median_abs_error_pct": 1.5819439813547151
+      }
+    },
+    {
+      "fold_id": 1,
+      "first_test_anchor_day": "2022-09-13",
+      "last_test_anchor_day": "2024-01-19",
+      "train_rows": 961,
+      "test_rows": 243,
+      "market": {
+        "mae_pct": 2.6626166588458076,
+        "rmse_pct": 3.6074664968359498,
+        "directional_accuracy": 0.5267489711934157,
+        "median_abs_error_pct": 1.8539555396854623
+      },
+      "capacity_control": {
+        "mae_pct": 2.6791760748330224,
+        "rmse_pct": 3.6224955321193844,
+        "directional_accuracy": 0.5390946502057613,
+        "median_abs_error_pct": 1.977639018145271
+      },
+      "contextual_event": {
+        "mae_pct": 2.668148661857537,
+        "rmse_pct": 3.622804461313979,
+        "directional_accuracy": 0.5555555555555556,
+        "median_abs_error_pct": 1.8778901682693245
+      }
+    },
+    {
+      "fold_id": 2,
+      "first_test_anchor_day": "2024-01-22",
+      "last_test_anchor_day": "2025-04-25",
+      "train_rows": 1199,
+      "test_rows": 224,
+      "market": {
+        "mae_pct": 2.402944091615263,
+        "rmse_pct": 3.4151370104007923,
+        "directional_accuracy": 0.5401785714285714,
+        "median_abs_error_pct": 1.6422869675083855
+      },
+      "capacity_control": {
+        "mae_pct": 2.4435342558375104,
+        "rmse_pct": 3.54506039340433,
+        "directional_accuracy": 0.5178571428571429,
+        "median_abs_error_pct": 1.5593705339382757
+      },
+      "contextual_event": {
+        "mae_pct": 2.451185985699812,
+        "rmse_pct": 3.5557538419898513,
+        "directional_accuracy": 0.5580357142857143,
+        "median_abs_error_pct": 1.5340397619579162
+      }
+    },
+    {
+      "fold_id": 3,
+      "first_test_anchor_day": "2025-04-29",
+      "last_test_anchor_day": "2026-08-06",
+      "train_rows": 1426,
+      "test_rows": 238,
+      "market": {
+        "mae_pct": 2.7540325758258457,
+        "rmse_pct": 4.199085519484827,
+        "directional_accuracy": 0.47478991596638653,
+        "median_abs_error_pct": 1.9317412974551007
+      },
+      "capacity_control": {
+        "mae_pct": 2.8252949645549705,
+        "rmse_pct": 4.253864085709941,
+        "directional_accuracy": 0.5,
+        "median_abs_error_pct": 1.9484587028266631
+      },
+      "contextual_event": {
+        "mae_pct": 2.83218507101164,
+        "rmse_pct": 4.2640426819078465,
+        "directional_accuracy": 0.5042016806722689,
+        "median_abs_error_pct": 1.9504565348507121
+      }
+    }
+  ],
+  "pooled_oos_rows": 964,
+  "metrics": {
+    "zero": {
+      "mae_pct": 2.530842651731732,
+      "rmse_pct": 3.645907939612092,
+      "directional_accuracy": 0.001037344398340249,
+      "median_abs_error_pct": 1.819395803861923
+    },
+    "market": {
+      "mae_pct": 2.5379416024701964,
+      "rmse_pct": 3.6502655954740173,
+      "directional_accuracy": 0.5238589211618258,
+      "median_abs_error_pct": 1.7599752797644168
+    },
+    "event_only": {
+      "mae_pct": 2.6126708571968185,
+      "rmse_pct": 3.7238097019690803,
+      "directional_accuracy": 0.520746887966805,
+      "median_abs_error_pct": 1.8610848527152304
+    },
+    "market_plus_event": {
+      "mae_pct": 2.628290255630856,
+      "rmse_pct": 3.746868380040853,
+      "directional_accuracy": 0.5186721991701245,
+      "median_abs_error_pct": 1.7915267576749812
+    },
+    "capacity_control": {
+      "mae_pct": 2.5798889951864137,
+      "rmse_pct": 3.6995226659409486,
+      "directional_accuracy": 0.5508298755186722,
+      "median_abs_error_pct": 1.7624975962103309
+    },
+    "contextual_event": {
+      "mae_pct": 2.583655914832913,
+      "rmse_pct": 3.7101197701020694,
+      "directional_accuracy": 0.5601659751037344,
+      "median_abs_error_pct": 1.7625278564984006
+    }
+  },
+  "comparisons": {
+    "simple_event_vs_market": {
+      "baseline": "pred_market",
+      "candidate": "pred_market_plus_event",
+      "mae_delta_baseline_minus_candidate_pct": -0.09034865316065933,
+      "mae_delta_ci95": [
+        -0.15202517444290126,
+        -0.030052968452637403
+      ],
+      "directional_accuracy_delta": -0.005186721991701226,
+      "directional_accuracy_delta_ci95": [
+        -0.03789901451158755,
+        0.02804138313992337
+      ],
+      "candidate_abs_error_win_rate": 0.44813278008298757,
+      "candidate_abs_error_win_rate_ci95": [
+        0.4129531557108539,
+        0.4844082931479197
+      ],
+      "bootstrap_unit": "origin_trading_day",
+      "bootstrap_reps": 2000
+    },
+    "capacity_control_vs_contextual_event": {
+      "baseline": "pred_capacity_control",
+      "candidate": "pred_contextual_event",
+      "mae_delta_baseline_minus_candidate_pct": -0.003766919646499165,
+      "mae_delta_ci95": [
+        -0.020770324840389355,
+        0.014430535288035005
+      ],
+      "directional_accuracy_delta": 0.009336099585062207,
+      "directional_accuracy_delta_ci95": [
+        -0.01029892660345913,
+        0.029421944496648342
+      ],
+      "candidate_abs_error_win_rate": 0.48443983402489627,
+      "candidate_abs_error_win_rate_ci95": [
+        0.44509094840863617,
+        0.5251386861313868
+      ],
+      "bootstrap_unit": "origin_trading_day",
+      "bootstrap_reps": 2000
+    }
+  },
+  "per_asset": {
+    "39": {
+      "rows": 67,
+      "market": {
+        "mae_pct": 2.9172715413466577,
+        "rmse_pct": 3.9109044459613447,
+        "directional_accuracy": 0.5522388059701493,
+        "median_abs_error_pct": 1.9208864474481169
+      },
+      "capacity_control": {
+        "mae_pct": 3.236179767764148,
+        "rmse_pct": 4.212359164631414,
+        "directional_accuracy": 0.4626865671641791,
+        "median_abs_error_pct": 2.765759941388576
+      },
+      "contextual_event": {
+        "mae_pct": 3.244884122499828,
+        "rmse_pct": 4.252397274257248,
+        "directional_accuracy": 0.5223880597014925,
+        "median_abs_error_pct": 2.6921246702935324
+      }
+    },
+    "58": {
+      "rows": 130,
+      "market": {
+        "mae_pct": 2.5775209414191442,
+        "rmse_pct": 3.376043125096433,
+        "directional_accuracy": 0.45384615384615384,
+        "median_abs_error_pct": 2.0389120628489366
+      },
+      "capacity_control": {
+        "mae_pct": 2.486926071421538,
+        "rmse_pct": 3.334119375744408,
+        "directional_accuracy": 0.5153846153846153,
+        "median_abs_error_pct": 1.943586903936729
+      },
+      "contextual_event": {
+        "mae_pct": 2.492639909423835,
+        "rmse_pct": 3.3421056426483253,
+        "directional_accuracy": 0.5461538461538461,
+        "median_abs_error_pct": 1.9333967411303807
+      }
+    },
+    "100": {
+      "rows": 87,
+      "market": {
+        "mae_pct": 2.4710007100026656,
+        "rmse_pct": 3.3348163468079273,
+        "directional_accuracy": 0.5287356321839081,
+        "median_abs_error_pct": 1.8180005509815342
+      },
+      "capacity_control": {
+        "mae_pct": 2.7074884062763247,
+        "rmse_pct": 3.620767118825576,
+        "directional_accuracy": 0.5057471264367817,
+        "median_abs_error_pct": 1.979972845915119
+      },
+      "contextual_event": {
+        "mae_pct": 2.6994010963496935,
+        "rmse_pct": 3.6148604157559423,
+        "directional_accuracy": 0.5172413793103449,
+        "median_abs_error_pct": 1.8686432325660902
+      }
+    },
+    "131": {
+      "rows": 84,
+      "market": {
+        "mae_pct": 2.0485578069708064,
+        "rmse_pct": 2.818964805232198,
+        "directional_accuracy": 0.5,
+        "median_abs_error_pct": 1.4203335911991946
+      },
+      "capacity_control": {
+        "mae_pct": 2.0887619100846133,
+        "rmse_pct": 2.9355098482173076,
+        "directional_accuracy": 0.5595238095238095,
+        "median_abs_error_pct": 1.5275045222420363
+      },
+      "contextual_event": {
+        "mae_pct": 2.117627302645375,
+        "rmse_pct": 2.9484305905775225,
+        "directional_accuracy": 0.5238095238095238,
+        "median_abs_error_pct": 1.4861370055508223
+      }
+    },
+    "186": {
+      "rows": 113,
+      "market": {
+        "mae_pct": 2.1821401337276214,
+        "rmse_pct": 3.1101621731154063,
+        "directional_accuracy": 0.5575221238938053,
+        "median_abs_error_pct": 1.4162562275467823
+      },
+      "capacity_control": {
+        "mae_pct": 2.276397311303703,
+        "rmse_pct": 3.128608598300287,
+        "directional_accuracy": 0.6106194690265486,
+        "median_abs_error_pct": 1.4360363258587214
+      },
+      "contextual_event": {
+        "mae_pct": 2.2654539512116934,
+        "rmse_pct": 3.1147558307184555,
+        "directional_accuracy": 0.6548672566371682,
+        "median_abs_error_pct": 1.4294779537079634
+      }
+    },
+    "266": {
+      "rows": 100,
+      "market": {
+        "mae_pct": 1.8879967390602659,
+        "rmse_pct": 2.4083972673188487,
+        "directional_accuracy": 0.52,
+        "median_abs_error_pct": 1.4576247855408355
+      },
+      "capacity_control": {
+        "mae_pct": 1.9545330104376057,
+        "rmse_pct": 2.54819343899285,
+        "directional_accuracy": 0.57,
+        "median_abs_error_pct": 1.5479844750189877
+      },
+      "contextual_event": {
+        "mae_pct": 1.9734444143963443,
+        "rmse_pct": 2.5737780778276282,
+        "directional_accuracy": 0.58,
+        "median_abs_error_pct": 1.30583953747414
+      }
+    },
+    "268": {
+      "rows": 162,
+      "market": {
+        "mae_pct": 2.0834073291471116,
+        "rmse_pct": 2.8529474636948677,
+        "directional_accuracy": 0.5493827160493827,
+        "median_abs_error_pct": 1.583588146100915
+      },
+      "capacity_control": {
+        "mae_pct": 2.103271834762604,
+        "rmse_pct": 2.919637044905968,
+        "directional_accuracy": 0.5740740740740741,
+        "median_abs_error_pct": 1.395095887027316
+      },
+      "contextual_event": {
+        "mae_pct": 2.119787055489462,
+        "rmse_pct": 2.949278475655044,
+        "directional_accuracy": 0.5308641975308642,
+        "median_abs_error_pct": 1.3442901563409322
+      }
+    },
+    "287": {
+      "rows": 50,
+      "market": {
+        "mae_pct": 4.165609290170841,
+        "rmse_pct": 5.619229785950508,
+        "directional_accuracy": 0.6,
+        "median_abs_error_pct": 2.9299871367016683
+      },
+      "capacity_control": {
+        "mae_pct": 4.037839488266687,
+        "rmse_pct": 5.516534533812541,
+        "directional_accuracy": 0.58,
+        "median_abs_error_pct": 2.695090314059843
+      },
+      "contextual_event": {
+        "mae_pct": 4.01191469777537,
+        "rmse_pct": 5.468298899358137,
+        "directional_accuracy": 0.6,
+        "median_abs_error_pct": 2.551792057739986
+      }
+    },
+    "315": {
+      "rows": 75,
+      "market": {
+        "mae_pct": 3.879650695475869,
+        "rmse_pct": 5.959469795167212,
+        "directional_accuracy": 0.6,
+        "median_abs_error_pct": 2.724232951402008
+      },
+      "capacity_control": {
+        "mae_pct": 3.7871768566679362,
+        "rmse_pct": 5.908856544394412,
+        "directional_accuracy": 0.64,
+        "median_abs_error_pct": 2.878973706563876
+      },
+      "contextual_event": {
+        "mae_pct": 3.807927481396151,
+        "rmse_pct": 5.942499860132891,
+        "directional_accuracy": 0.6666666666666666,
+        "median_abs_error_pct": 2.862998475524797
+      }
+    },
+    "482": {
+      "rows": 96,
+      "market": {
+        "mae_pct": 2.6753865475256524,
+        "rmse_pct": 3.91198369886243,
+        "directional_accuracy": 0.4375,
+        "median_abs_error_pct": 1.7931785253358672
+      },
+      "capacity_control": {
+        "mae_pct": 2.6722353408907,
+        "rmse_pct": 3.8444241822986096,
+        "directional_accuracy": 0.4791666666666667,
+        "median_abs_error_pct": 1.9728301528199943
+      },
+      "contextual_event": {
+        "mae_pct": 2.640924497420604,
+        "rmse_pct": 3.855873286476984,
+        "directional_accuracy": 0.4895833333333333,
+        "median_abs_error_pct": 1.9788968021651723
+      }
+    }
+  },
+  "per_event_type": {
+    "annual_report_disclosure": {
+      "rows": 39,
+      "market": {
+        "mae_pct": 2.345054208357067,
+        "rmse_pct": 4.402908347711016,
+        "directional_accuracy": 0.46153846153846156,
+        "median_abs_error_pct": 1.6728241189966466
+      },
+      "capacity_control": {
+        "mae_pct": 2.5158926450364274,
+        "rmse_pct": 4.541552161721872,
+        "directional_accuracy": 0.5384615384615384,
+        "median_abs_error_pct": 1.5193010018033293
+      },
+      "contextual_event": {
+        "mae_pct": 2.4612859716851077,
+        "rmse_pct": 4.514872707190538,
+        "directional_accuracy": 0.5897435897435898,
+        "median_abs_error_pct": 1.3647250221503922
+      }
+    },
+    "charter_or_bylaw_change": {
+      "rows": 37,
+      "market": {
+        "mae_pct": 1.4793045999764942,
+        "rmse_pct": 1.9946330970950283,
+        "directional_accuracy": 0.5405405405405406,
+        "median_abs_error_pct": 0.9544637833425638
+      },
+      "capacity_control": {
+        "mae_pct": 1.6503386654770673,
+        "rmse_pct": 2.058764265674665,
+        "directional_accuracy": 0.4594594594594595,
+        "median_abs_error_pct": 1.2661629790109958
+      },
+      "contextual_event": {
+        "mae_pct": 1.6182761038517448,
+        "rmse_pct": 2.0171820888645438,
+        "directional_accuracy": 0.4594594594594595,
+        "median_abs_error_pct": 1.113775092794428
+      }
+    },
+    "financial_results_disclosure": {
+      "rows": 229,
+      "market": {
+        "mae_pct": 3.630096086325453,
+        "rmse_pct": 5.052120975328601,
+        "directional_accuracy": 0.537117903930131,
+        "median_abs_error_pct": 2.50577315468277
+      },
+      "capacity_control": {
+        "mae_pct": 3.625684905270595,
+        "rmse_pct": 5.0162883042386,
+        "directional_accuracy": 0.5938864628820961,
+        "median_abs_error_pct": 2.675118267396607
+      },
+      "contextual_event": {
+        "mae_pct": 3.638447385367643,
+        "rmse_pct": 5.040994370403011,
+        "directional_accuracy": 0.611353711790393,
+        "median_abs_error_pct": 2.4537065172263013
+      }
+    },
+    "management_or_board_change": {
+      "rows": 131,
+      "market": {
+        "mae_pct": 1.9905783012423708,
+        "rmse_pct": 2.6578440555368954,
+        "directional_accuracy": 0.5801526717557252,
+        "median_abs_error_pct": 1.4076008691763968
+      },
+      "capacity_control": {
+        "mae_pct": 2.0042673384360286,
+        "rmse_pct": 2.799515849161069,
+        "directional_accuracy": 0.5419847328244275,
+        "median_abs_error_pct": 1.3143691373712763
+      },
+      "contextual_event": {
+        "mae_pct": 2.01202181363483,
+        "rmse_pct": 2.7934979509117284,
+        "directional_accuracy": 0.5877862595419847,
+        "median_abs_error_pct": 1.31091674048291
+      }
+    },
+    "other_material_disclosure": {
+      "rows": 202,
+      "market": {
+        "mae_pct": 1.9841511876373932,
+        "rmse_pct": 2.6336408987213087,
+        "directional_accuracy": 0.5148514851485149,
+        "median_abs_error_pct": 1.6260088914216275
+      },
+      "capacity_control": {
+        "mae_pct": 1.966364305809753,
+        "rmse_pct": 2.6599483477875814,
+        "directional_accuracy": 0.5445544554455446,
+        "median_abs_error_pct": 1.4293870191399554
+      },
+      "contextual_event": {
+        "mae_pct": 1.9654240369623917,
+        "rmse_pct": 2.668721612598343,
+        "directional_accuracy": 0.5396039603960396,
+        "median_abs_error_pct": 1.4275244693653768
+      }
+    },
+    "quarterly_report_disclosure": {
+      "rows": 119,
+      "market": {
+        "mae_pct": 2.6782315966919503,
+        "rmse_pct": 3.7822161588183283,
+        "directional_accuracy": 0.4789915966386555,
+        "median_abs_error_pct": 1.6053638407364117
+      },
+      "capacity_control": {
+        "mae_pct": 2.819227386325012,
+        "rmse_pct": 3.9349332750148847,
+        "directional_accuracy": 0.5042016806722689,
+        "median_abs_error_pct": 1.7028561326054579
+      },
+      "contextual_event": {
+        "mae_pct": 2.8520432573119074,
+        "rmse_pct": 3.9620811099693616,
+        "directional_accuracy": 0.47058823529411764,
+        "median_abs_error_pct": 1.8030192214416456
+      }
+    },
+    "regulation_fd_disclosure": {
+      "rows": 123,
+      "market": {
+        "mae_pct": 2.6653123235290503,
+        "rmse_pct": 3.4808899812775893,
+        "directional_accuracy": 0.5284552845528455,
+        "median_abs_error_pct": 2.0381623370657858
+      },
+      "capacity_control": {
+        "mae_pct": 2.6490949052762356,
+        "rmse_pct": 3.4426999645212315,
+        "directional_accuracy": 0.5934959349593496,
+        "median_abs_error_pct": 1.9936293090105535
+      },
+      "contextual_event": {
+        "mae_pct": 2.6668470631469763,
+        "rmse_pct": 3.4768185088077077,
+        "directional_accuracy": 0.6016260162601627,
+        "median_abs_error_pct": 2.0461092722241196
+      }
+    },
+    "shareholder_vote_result": {
+      "rows": 52,
+      "market": {
+        "mae_pct": 1.9916468035577033,
+        "rmse_pct": 2.746114070774121,
+        "directional_accuracy": 0.4807692307692308,
+        "median_abs_error_pct": 1.4601999579812905
+      },
+      "capacity_control": {
+        "mae_pct": 2.2285507632762362,
+        "rmse_pct": 3.087119838279496,
+        "directional_accuracy": 0.46153846153846156,
+        "median_abs_error_pct": 1.7270326188481393
+      },
+      "contextual_event": {
+        "mae_pct": 2.184983398897857,
+        "rmse_pct": 3.0325288798652394,
+        "directional_accuracy": 0.4807692307692308,
+        "median_abs_error_pct": 1.7850220272097248
+      }
+    }
+  },
+  "interpretation_contract": {
+    "primary_incremental_test": "capacity_control_vs_contextual_event",
+    "positive_mae_delta_means_event_features_help": true,
+    "production_ready": false,
+    "distributional_output_implemented": false,
+    "strict_pit_event_evidence": false
+  }
+}

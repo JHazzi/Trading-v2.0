@@ -14,7 +14,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DB = ROOT / "data" / "database" / "market_data_v2.db"
 
-LABEL_VERSION = "event_reaction_daily_v003_deep"
+LABEL_VERSION = "event_reaction_daily_v0031_deep"
 PRICE_ASOF_CONTRACT_VERSION = "daily_price_asof_v1"
 PRICE_TRUTH_POLICY = "quality_gated_latest_observation"
 
@@ -211,7 +211,7 @@ def _label_one(
 def build(
     db: Path,
     *,
-    feature_version: str = "event_state_v003_deep",
+    feature_version: str = "event_state_v0031_deep",
     horizons: tuple[int, ...] = (1, 3, 5, 10),
     include_intraday_coarse: bool = False,
 ) -> dict[str, object]:
@@ -351,7 +351,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--db", type=Path, default=DEFAULT_DB)
     ap.add_argument(
-        "--feature-version", default="event_state_v003_deep"
+        "--feature-version", default="event_state_v0031_deep"
     )
     ap.add_argument(
         "--horizons",

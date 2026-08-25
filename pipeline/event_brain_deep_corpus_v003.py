@@ -11,6 +11,7 @@ from pathlib import Path
 from ingestion.events.sec_event_normalizer_v003_deep import (
     NORMALIZATION_VERSION,
     normalize,
+    sec_lineage_audit,
 )
 from features.events.event_state_v003_deep import (
     FEATURE_VERSION,
@@ -370,7 +371,91 @@ def cluster(
     return results
 
 
+
+def lineage_audit_all(db: Path) -> dict[str, object]:
+    cfg = config()
+    expected = [run_id_for(str(x).upper()) for x in cfg["tickers"]]
+
+    with sqlite3.connect(db) as conn:
+        conn.row_factory = sqlite3.Row
+        run_rows = {
+            str(row["clustering_run_id"]): row
+            for row in conn.execute(
+                """
+                SELECT clustering_run_id,status,as_of,finished_at
+                FROM event_clustering_runs
+                WHERE clustering_run_id LIKE 'eventbrain_deep_v003_%'
+                """
+            )
+        }
+
+        missing = [
+            run_id for run_id in expected
+            if run_id not in run_rows
+            or str(run_rows[run_id]["status"]) != "completed"
+        ]
+        if missing:
+            raise RuntimeError(
+                f"Faltan clustering runs completed: {missing}"
+            )
+
+        results = []
+        for run_id in expected:
+            row = run_rows[run_id]
+            cutoff = row["as_of"] or row["finished_at"]
+            result = sec_lineage_audit(
+                conn,
+                run_id,
+                str(cutoff),
+            )
+            results.append(result)
+
+    failures = [
+        str(item["clustering_run_id"])
+        for item in results
+        if item["status"] != "PASS"
+    ]
+    return {
+        "status": "PASS" if not failures else "REVIEW",
+        "failures": failures,
+        "runs": results,
+        "totals": {
+            "raw_memberships": sum(
+                int(x["raw_memberships"]) for x in results
+            ),
+            "raw_membership_refs": sum(
+                int(x["raw_membership_refs"]) for x in results
+            ),
+            "mapped_memberships": sum(
+                int(x["mapped_memberships"]) for x in results
+            ),
+            "cutoff_sec_observation_refs": sum(
+                int(x["cutoff_sec_observation_refs"]) for x in results
+            ),
+            "historical_retrieval_after_cutoff": sum(
+                int(x.get("stats", {}).get(
+                    "historical_retrieval_after_cutoff", 0
+                ))
+                for x in results
+            ),
+        },
+        "interpretation": (
+            "A low cutoff_sec_observation_refs count is expected for 2026 "
+            "historical backfill when memberships are PIT=0. The critical "
+            "requirements are 1:1 raw membership refs, unambiguous filing "
+            "mapping, and zero strict-PIT memberships lacking temporal refs."
+        ),
+    }
+
+
 def normalize_all(db: Path) -> list[dict[str, object]]:
+    lineage = lineage_audit_all(db)
+    if lineage["status"] != "PASS":
+        raise RuntimeError(
+            "SEC lineage audit no pasó: "
+            + json.dumps(lineage, ensure_ascii=False)
+        )
+
     cfg = config()
     tickers = [str(x).upper() for x in cfg["tickers"]]
 
@@ -448,6 +533,7 @@ def audit(db: Path) -> dict[str, object]:
         db,
         common_start=str(pf["common_start"]),
         common_end_inclusive=str(pf["common_end_inclusive"]),
+        expected_filings=int(pf["total_filings_in_common_window"]),
     )
 
     cohort_deltas: dict[str, dict[str, int]] = {}
@@ -491,6 +577,7 @@ def main() -> None:
             "preflight",
             "cluster",
             "cluster-audit",
+            "lineage-audit",
             "normalize",
             "states",
             "labels",
@@ -514,6 +601,11 @@ def main() -> None:
         }
     elif args.stage == "cluster-audit":
         result = audit(args.db)
+    elif args.stage == "lineage-audit":
+        result = {
+            "preflight": preflight(args.db),
+            "lineage": lineage_audit_all(args.db),
+        }
     elif args.stage == "normalize":
         result = {
             "normalization":normalize_all(args.db),

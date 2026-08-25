@@ -15,9 +15,9 @@ from evaluation.targets.event_reaction_targets_v003_deep import LABEL_VERSION
 
 
 def test_version_contract():
-    assert NORMALIZATION_VERSION == "sec_event_normalizer_v003_deep_rebuild"
-    assert FEATURE_VERSION == "event_state_v003_deep"
-    assert LABEL_VERSION == "event_reaction_daily_v003_deep"
+    assert NORMALIZATION_VERSION == "sec_event_normalizer_v0031_deep_raw_lineage"
+    assert FEATURE_VERSION == "event_state_v0031_deep"
+    assert LABEL_VERSION == "event_reaction_daily_v0031_deep"
 
 
 def test_common_window_uses_latest_ready_and_earliest_last_day():

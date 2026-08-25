@@ -12,10 +12,10 @@ from typing import Iterable
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DB = ROOT / "data" / "database" / "market_data_v2.db"
 
-NORMALIZATION_VERSION = "sec_event_normalizer_v003_deep_rebuild"
+NORMALIZATION_VERSION = "sec_event_normalizer_v0031_deep_raw_lineage"
 TAXONOMY_VERSION = "sec_factual_taxonomy_v001"
 SEMANTIC_SCHEMA_VERSION = "event_evidence_semantics_v001"
-PARSER_VERSION = "sec_event_normalizer_v0.3.0_deep"
+PARSER_VERSION = "sec_event_normalizer_v0.3.1_deep_raw_lineage"
 
 # Factual taxonomy only. No market direction or importance is encoded.
 ITEM_TAXONOMY = {
@@ -60,7 +60,10 @@ REQUIRED_TABLES = {
     "event_clustering_runs",
     "event_cluster_memberships",
     "event_cluster_sec_observation_refs",
+    "event_cluster_raw_membership_refs",
     "sec_filing_file_observations",
+    "sec_filing_file_versions",
+    "sec_filings",
     "sec_filing_metadata_observations",
     "sec_filing_metadata_versions",
     "raw_document_assets",
@@ -175,6 +178,10 @@ class FilingEvidence:
     evidence_available_at: str
     evidence_pit: int
     filing_raw_document_id: str
+    raw_document_id: str
+    sec_accession_number: str
+    has_cutoff_observation_ref: int
+    first_actual_retrieval_observed_at: str | None
 
 
 def _run_info(conn: sqlite3.Connection, clustering_run_id: str) -> sqlite3.Row:
@@ -196,40 +203,276 @@ def _run_info(conn: sqlite3.Connection, clustering_run_id: str) -> sqlite3.Row:
     return row
 
 
-def _sec_evidence(
+
+def _membership_lineage_rows(
     conn: sqlite3.Connection,
     clustering_run_id: str,
     as_of: str,
-) -> list[FilingEvidence]:
-    rows = conn.execute(
+) -> list[sqlite3.Row]:
+    """
+    Resolve a clustering membership to its SEC filing through immutable raw
+    document lineage.
+
+    IMPORTANT:
+    `sec_filing_file_observations.observed_at` is the retrieval observation
+    time. For a historical research backfill performed in 2026 it can be much
+    later than the historical filing acceptance/evidence availability proxy.
+
+    Therefore an observation ref is evidence for STRICT PIT capture, but it is
+    not a prerequisite for non-PIT historical reconstruction.
+    """
+    conn.row_factory = sqlite3.Row
+    return conn.execute(
         """
         SELECT DISTINCT
             m.cluster_id,
             m.membership_id,
             m.evidence_available_at,
             m.availability_is_point_in_time,
-            fo.filing_raw_document_id
-        FROM event_cluster_memberships AS m
-        JOIN event_cluster_sec_observation_refs AS sor
-          ON sor.membership_id = m.membership_id
-        JOIN sec_filing_file_observations AS fo
-          ON fo.observation_id = sor.observation_id
-        WHERE m.clustering_run_id = ?
+            m.metadata_json AS membership_metadata_json,
+            rr.raw_document_id,
+            fv.filing_raw_document_id,
+            sf.accession_number,
+            CASE WHEN EXISTS (
+                SELECT 1
+                FROM event_cluster_sec_observation_refs sor
+                WHERE sor.membership_id=m.membership_id
+                  AND julianday(sor.observed_at) <= julianday(?)
+            ) THEN 1 ELSE 0 END AS has_cutoff_observation_ref,
+            (
+                SELECT MIN(fo.observed_at)
+                FROM sec_filing_file_observations fo
+                WHERE fo.raw_document_id=rr.raw_document_id
+            ) AS first_actual_retrieval_observed_at
+        FROM event_cluster_memberships m
+        JOIN event_cluster_raw_membership_refs rr
+          ON rr.membership_id=m.membership_id
+        JOIN sec_filing_file_versions fv
+          ON fv.raw_document_id=rr.raw_document_id
+        JOIN sec_filings sf
+          ON sf.raw_document_id=fv.filing_raw_document_id
+        WHERE m.clustering_run_id=?
+          AND m.evidence_type='raw_source_document'
           AND julianday(m.evidence_available_at) <= julianday(?)
-        ORDER BY julianday(m.evidence_available_at), m.decision_order
+        ORDER BY julianday(m.evidence_available_at), m.decision_order,
+                 m.membership_id, fv.filing_raw_document_id
         """,
-        (clustering_run_id, as_of),
+        (as_of, clustering_run_id, as_of),
     ).fetchall()
-    return [
-        FilingEvidence(
-            cluster_id=str(r[0]),
-            membership_id=str(r[1]),
-            evidence_available_at=str(r[2]),
-            evidence_pit=int(r[3]),
-            filing_raw_document_id=str(r[4]),
+
+
+def _membership_expected_accession(metadata_json: str | None) -> str | None:
+    if not metadata_json:
+        return None
+    try:
+        payload = json.loads(metadata_json)
+    except json.JSONDecodeError:
+        return None
+    value = payload.get("sec_accession_number") if isinstance(payload, dict) else None
+    candidate = str(value).strip() if value is not None else ""
+    return candidate or None
+
+
+def _sec_evidence(
+    conn: sqlite3.Connection,
+    clustering_run_id: str,
+    as_of: str,
+) -> tuple[list[FilingEvidence], dict[str, int]]:
+    rows = _membership_lineage_rows(conn, clustering_run_id, as_of)
+
+    # A raw byte object can theoretically be reused. The membership metadata
+    # contains the SEC accession selected by deterministic clustering, so use
+    # it to disambiguate filing lineage rather than guessing from content hash.
+    candidates: dict[str, list[sqlite3.Row]] = {}
+    for row in rows:
+        candidates.setdefault(str(row["membership_id"]), []).append(row)
+
+    evidence: list[FilingEvidence] = []
+    ambiguous = 0
+    missing_accession = 0
+    pit_without_temporal_ref = 0
+    retrieval_after_cutoff = 0
+
+    for membership_id, membership_rows in sorted(candidates.items()):
+        expected_accession = _membership_expected_accession(
+            membership_rows[0]["membership_metadata_json"]
         )
-        for r in rows
-    ]
+        if expected_accession is None:
+            missing_accession += 1
+            continue
+
+        matched = [
+            row for row in membership_rows
+            if str(row["accession_number"]) == expected_accession
+        ]
+
+        # Collapse duplicate file-version joins for the same filing.
+        unique_by_filing: dict[str, sqlite3.Row] = {}
+        for row in matched:
+            unique_by_filing.setdefault(
+                str(row["filing_raw_document_id"]),
+                row,
+            )
+
+        if len(unique_by_filing) != 1:
+            ambiguous += 1
+            continue
+
+        row = next(iter(unique_by_filing.values()))
+        membership_pit = int(row["availability_is_point_in_time"])
+        has_cutoff_ref = int(row["has_cutoff_observation_ref"])
+
+        # Strict-PIT evidence must have an actual temporal observation ref.
+        # Never silently upgrade reconstructed history to PIT.
+        if membership_pit and not has_cutoff_ref:
+            pit_without_temporal_ref += 1
+            continue
+
+        actual_retrieval = row["first_actual_retrieval_observed_at"]
+        if (
+            actual_retrieval is not None
+            and _parse_utc(str(actual_retrieval)) > _parse_utc(as_of)
+        ):
+            retrieval_after_cutoff += 1
+
+        evidence.append(
+            FilingEvidence(
+                cluster_id=str(row["cluster_id"]),
+                membership_id=membership_id,
+                evidence_available_at=str(row["evidence_available_at"]),
+                evidence_pit=membership_pit,
+                filing_raw_document_id=str(row["filing_raw_document_id"]),
+                raw_document_id=str(row["raw_document_id"]),
+                sec_accession_number=str(row["accession_number"]),
+                has_cutoff_observation_ref=has_cutoff_ref,
+                first_actual_retrieval_observed_at=(
+                    None if actual_retrieval is None else str(actual_retrieval)
+                ),
+            )
+        )
+
+    stats = {
+        "candidate_memberships": len(candidates),
+        "mapped_memberships": len(evidence),
+        "missing_accession_memberships": missing_accession,
+        "ambiguous_memberships": ambiguous,
+        "strict_pit_without_temporal_ref": pit_without_temporal_ref,
+        "historical_retrieval_after_cutoff": retrieval_after_cutoff,
+    }
+
+    if (
+        missing_accession
+        or ambiguous
+        or pit_without_temporal_ref
+    ):
+        raise RuntimeError(
+            "SEC raw lineage no es inequívoco/causal: "
+            + canonical_json(stats)
+        )
+
+    return evidence, stats
+
+
+def sec_lineage_audit(
+    conn: sqlite3.Connection,
+    clustering_run_id: str,
+    as_of: str,
+) -> dict[str, object]:
+    """
+    Read-only audit used before normalization.
+
+    Historical research memberships are allowed to have retrieval observations
+    after `as_of` ONLY when availability_is_point_in_time=0.
+    """
+    try:
+        evidence, stats = _sec_evidence(
+            conn,
+            clustering_run_id,
+            as_of,
+        )
+        status = "PASS"
+        error = None
+    except RuntimeError as exc:
+        # Recompute enough counts for an actionable diagnostic without
+        # pretending the lineage is usable.
+        rows = _membership_lineage_rows(conn, clustering_run_id, as_of)
+        stats = {
+            "candidate_join_rows": len(rows),
+        }
+        evidence = []
+        status = "REVIEW"
+        error = str(exc)
+
+    membership_count = int(
+        conn.execute(
+            """
+            SELECT COUNT(*)
+            FROM event_cluster_memberships
+            WHERE clustering_run_id=?
+              AND evidence_type='raw_source_document'
+              AND julianday(evidence_available_at) <= julianday(?)
+            """,
+            (clustering_run_id, as_of),
+        ).fetchone()[0]
+    )
+    raw_ref_count = int(
+        conn.execute(
+            """
+            SELECT COUNT(*)
+            FROM event_cluster_memberships m
+            JOIN event_cluster_raw_membership_refs rr
+              ON rr.membership_id=m.membership_id
+            WHERE m.clustering_run_id=?
+              AND m.evidence_type='raw_source_document'
+              AND julianday(m.evidence_available_at) <= julianday(?)
+            """,
+            (clustering_run_id, as_of),
+        ).fetchone()[0]
+    )
+    cutoff_observation_ref_count = int(
+        conn.execute(
+            """
+            SELECT COUNT(DISTINCT m.membership_id)
+            FROM event_cluster_memberships m
+            JOIN event_cluster_sec_observation_refs sor
+              ON sor.membership_id=m.membership_id
+            WHERE m.clustering_run_id=?
+              AND julianday(m.evidence_available_at) <= julianday(?)
+              AND julianday(sor.observed_at) <= julianday(?)
+            """,
+            (clustering_run_id, as_of, as_of),
+        ).fetchone()[0]
+    )
+
+    if membership_count != raw_ref_count:
+        status = "REVIEW"
+        error = (
+            error
+            or f"raw_ref_coverage={raw_ref_count}/{membership_count}"
+        )
+    if evidence and len(evidence) != membership_count:
+        status = "REVIEW"
+        error = (
+            error
+            or f"mapped_lineage_coverage={len(evidence)}/{membership_count}"
+        )
+
+    return {
+        "status": status,
+        "clustering_run_id": clustering_run_id,
+        "as_of": as_of,
+        "raw_memberships": membership_count,
+        "raw_membership_refs": raw_ref_count,
+        "mapped_memberships": len(evidence),
+        "cutoff_sec_observation_refs": cutoff_observation_ref_count,
+        "stats": stats,
+        "error": error,
+        "contract": (
+            "raw_membership_lineage_is_required; temporal observation ref is "
+            "required only for strict-PIT evidence"
+        ),
+    }
+
 
 
 def _metadata_asof(
@@ -415,6 +658,14 @@ def normalize(
                 "max(metadata_available_at,first_evidence_available_at)",
             "corpus_mode": "deep_rebuild_v003",
             "existing_event_identity_policy": "reuse_stable_sec_accession_item_identity",
+            "sec_evidence_lineage_contract": (
+                "cluster_membership->raw_membership_ref->file_version->filing; "
+                "observation_ref_required_only_for_strict_pit"
+            ),
+            "historical_backfill_contract": (
+                "acceptance/evidence availability proxy allowed only with PIT=0; "
+                "actual retrieval timestamp retained as provenance"
+            ),
             "allowed_forms": (
                 None
                 if allowed_form_set is None
@@ -454,7 +705,11 @@ def normalize(
                 f"status={existing['status']}"
             )
 
-        evidence = _sec_evidence(conn, clustering_run_id, str(cutoff))
+        evidence, lineage_stats = _sec_evidence(
+            conn,
+            clustering_run_id,
+            str(cutoff),
+        )
         clusters = sorted({e.cluster_id for e in evidence})
         by_filing: dict[str, list[FilingEvidence]] = {}
         for row in evidence:
@@ -498,6 +753,8 @@ def normalize(
                         "source": "sec",
                         "clustering_run_id": clustering_run_id,
                         "as_of": str(cutoff),
+                        "sec_evidence_lineage": "raw_membership_lineage_v0031",
+                        "lineage_stats": lineage_stats,
                     }),
                 ),
             )
@@ -679,6 +936,10 @@ def normalize(
                                 "event_available_at": event_available_at,
                                 "temporal_contract":
                                     "max(metadata_available,evidence_available)",
+                                "research_backfill": (
+                                    not bool(event_observation_pit)
+                                ),
+                                "strict_pit_claim": bool(event_observation_pit),
                             }),
                         ),
                     )
@@ -900,6 +1161,7 @@ def normalize(
         "skipped_non_cohort_filings": skipped_non_cohort_filings,
         "events_observed": event_observation_count,
         "evidence_semantics_written": semantics_count,
+        "sec_lineage_stats": lineage_stats,
     }
 
 

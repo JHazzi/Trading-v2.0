@@ -11,8 +11,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DB = ROOT / "data" / "database" / "market_data_v2.db"
 
-FEATURE_VERSION = "event_state_v003_deep"
-STATE_ALGORITHM = "evidence_arrival_snapshots_v003_deep_rebuild"
+FEATURE_VERSION = "event_state_v0031_deep"
+STATE_ALGORITHM = "evidence_arrival_snapshots_v0031_deep_raw_lineage"
 
 SEMANTIC_COLUMNS = {
     "observed_fact": "semantic_observed_fact_count",

@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "reviews": [],
+  "counts": {
+    "market_states": 2260,
+    "sector_states": 24860,
+    "asset_states": 1092555,
+    "assets": 497,
+    "sectors": 11,
+    "first_day": "2017-08-25",
+    "last_day": "2026-08-24"
+  },
+  "identities": {
+    "additive_max_abs_error": 2.842170943040401e-14,
+    "dynamic_beta_max_abs_error_ready_rows": 0.0
+  },
+  "dynamic_factor_coverage": {
+    "1": {
+      "rows": 1078329,
+      "dynamic_factorization_ready_rows": 924836,
+      "dynamic_factorization_ready_fraction": 0.8576566150033987
+    },
+    "3": {
+      "rows": 1049926,
+      "dynamic_factorization_ready_rows": 900199,
+      "dynamic_factorization_ready_fraction": 0.857392806731141
+    },
+    "5": {
+      "rows": 1021619,
+      "dynamic_factorization_ready_rows": 875620,
+      "dynamic_factorization_ready_fraction": 0.8570905592006414
+    },
+    "10": {
+      "rows": 951231,
+      "dynamic_factorization_ready_rows": 814640,
+      "dynamic_factorization_ready_fraction": 0.8564060675062104
+    }
+  },
+  "dynamic_factor_state": {
+    "beta_market_63": {
+      "finite_rows": 1061741,
+      "finite_fraction": 0.9717963855366549,
+      "median": 0.9727643295073783,
+      "p01": -0.11298978905147962,
+      "p99": 2.5317823987148294
+    },
+    "beta_market_252": {
+      "finite_rows": 967928,
+      "finite_fraction": 0.8859306854117184,
+      "median": 0.9825995395606968,
+      "p01": 0.12888999820667774,
+      "p99": 2.201987469252379
+    },
+    "gamma_sector_63": {
+      "finite_rows": 1030927,
+      "finite_fraction": 0.9435927710733099,
+      "median": 0.8474760486925227,
+      "p01": -0.6033352546556313,
+      "p99": 2.8746474371465225
+    },
+    "gamma_sector_252": {
+      "finite_rows": 937176,
+      "finite_fraction": 0.8577838186635913,
+      "median": 0.8463907487233611,
+      "p01": -0.29385190673307265,
+      "p99": 2.4985120021627947
+    },
+    "idio_vol_63d_pct": {
+      "finite_rows": 1000168,
+      "finite_fraction": 0.9154394973250775,
+      "median": 1.272589596608816,
+      "p01": 0.5596147005678257,
+      "p99": 4.146650624228241
+    }
+  },
+  "target_decomposition": {
+    "1": {
+      "rows": 1078329,
+      "zero_mae_pct": 1.4452672193749956,
+      "oracle_market_removed_mae_pct": 1.1923555344253147,
+      "oracle_market_and_sector_removed_mae_pct": 1.0664573447436028,
+      "future_market_factor_std_pct": 1.2220840866569394
+    },
+    "3": {
+      "rows": 1049926,
+      "zero_mae_pct": 2.5623526656186666,
+      "oracle_market_removed_mae_pct": 2.133042049590641,
+      "oracle_market_and_sector_removed_mae_pct": 1.9120806320159869,
+      "future_market_factor_std_pct": 2.0506937496951285
+    },
+    "5": {
+      "rows": 1021619,
+      "zero_mae_pct": 3.3446064005360387,
+      "oracle_market_removed_mae_pct": 2.7938088824649614,
+      "oracle_market_and_sector_removed_mae_pct": 2.506309315076537,
+      "future_market_factor_std_pct": 2.616429775906028
+    },
+    "10": {
+      "rows": 951231,
+      "zero_mae_pct": 4.803664028933388,
+      "oracle_market_removed_mae_pct": 4.0403287885025305,
+      "oracle_market_and_sector_removed_mae_pct": 3.63796054966667,
+      "future_market_factor_std_pct": 3.599711551366664
+    }
+  },
+  "next_gate": "If identities and coverage are healthy, preregister three separate walk-forward benchmarks: market factor, sector residual, and asset residual, plus reconstructed absolute return.",
+  "claim_boundary": "This audit proves dataset/math consistency only. It does not demonstrate predictability or trading alpha."
+}

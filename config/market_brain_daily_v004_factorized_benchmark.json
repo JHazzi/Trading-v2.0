@@ -1,0 +1,66 @@
+{
+  "version": "market_brain_daily_v004_factorized_benchmark_v001",
+  "math_db": "data/processed/market_daily_v004_math.db",
+  "v003_report_dir": "reports/market_brain_daily_v003/benchmark_v0011",
+  "report_dir": "reports/market_brain_daily_v004/factorized_benchmark_v001",
+  "horizons_sessions": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "primary_candidate": "hgb_additive_reconstruction",
+  "primary_baseline": "v003_fold_train_median",
+  "secondary_reference": "v003_hgb_full",
+  "dynamic_beta_candidate": "hgb_dynamic_beta_reconstruction",
+  "same_outer_fold_boundaries_as_v003": true,
+  "models": {
+    "market_hgb": {
+      "loss": "absolute_error",
+      "learning_rate": 0.03,
+      "max_iter": 120,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 40,
+      "l2_regularization": 2.0,
+      "early_stopping": false
+    },
+    "sector_hgb": {
+      "loss": "absolute_error",
+      "learning_rate": 0.04,
+      "max_iter": 150,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 100,
+      "l2_regularization": 2.0,
+      "early_stopping": false
+    },
+    "asset_hgb": {
+      "loss": "absolute_error",
+      "learning_rate": 0.05,
+      "max_iter": 180,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 200,
+      "l2_regularization": 1.0,
+      "early_stopping": false
+    },
+    "ridge": {
+      "alpha": 1.0,
+      "solver": "lsqr"
+    }
+  },
+  "bootstrap": {
+    "reps": 3000,
+    "moving_block_lengths_origin_days": [
+      5,
+      10,
+      20
+    ],
+    "seed": 42
+  },
+  "decision_rules": {
+    "primary_skill_requires_positive_block_ci_lower_all_lengths": true,
+    "component_skill_is_diagnostic_not_sufficient_for_absolute_claim": true,
+    "dynamic_beta_is_secondary_not_replacement_if_primary_fails": true,
+    "do_not_select_best_horizon_as_global_claim": true,
+    "do_not_tune_after_results": true
+  }
+}

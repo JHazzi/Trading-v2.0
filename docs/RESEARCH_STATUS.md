@@ -443,3 +443,38 @@ After the mathematical factorization gate, external Market State information
 will be added incrementally: market ETFs, sector ETFs, volatility,
 rates/credit, then vintage-causal macro. Events remain deferred until the base
 Market Brain shows skill.
+<!-- MARKET_V004_FACTORIZED_BENCHMARK_V001 -->
+## Market Brain Daily V004 factorized benchmark — preregistration
+
+The V004 mathematical dataset passed its identity/coverage audit. No
+predictability claim follows from that audit.
+
+Primary experiment:
+
+```text
+predict market factor once/day
++ predict sector residual once/sector-day
++ predict asset residual once/asset-day
+= reconstructed absolute asset return
+```
+
+Primary candidate: fixed HGB additive reconstruction.
+Primary baseline: the exact V003 fold-specific train median prediction on the
+same OOS state rows.
+
+Secondary references:
+
+```text
+V003 HGB full
+Ridge factorized reconstruction
+dynamic beta/gamma reconstruction
+```
+
+Dynamic beta is secondary because its ~85.7% coverage creates a restricted
+comparison subset.
+
+The outer test boundaries are inherited exactly from Benchmark V001.1.
+Every component training row must have `target_end_day < first_test_day`.
+
+No proxy data, macro, events, distributional heads or post-result tuning enter
+this benchmark.

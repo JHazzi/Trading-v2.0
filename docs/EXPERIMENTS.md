@@ -135,3 +135,44 @@ Predeclare before execution:
 **Objective:** falsify H10, not optimize it.
 
 No changes to event corpus during this experiment.
+<!-- MARKET_V003_BENCHMARK_V001 -->
+## Market Brain Daily V003 Benchmark V001 — preregistration
+
+Primary comparison:
+
+```text
+train median vs HGB full market state
+```
+
+Five purged expanding temporal folds, initial 30% training history. Training
+rows satisfy:
+
+```text
+target_trading_day < first_test_origin_day
+```
+
+Models are fixed before results:
+
+```text
+zero
+train mean
+train median
+asset train mean
+same-horizon momentum
+
+Ridge full
+SGD Huber full
+
+HistGradientBoosting own-only
+HistGradientBoosting own + cross-section
+HistGradientBoosting full (+ sector)
+```
+
+No hyperparameter tuning and no best-model selection for the primary claim.
+
+Inference uses paired daily losses and moving-block bootstrap on origin days
+(5/10/20). Row-level iid confidence intervals are not used.
+
+Random Forest is intentionally deferred to robustness because the broad panel
+contains roughly one million rows per horizon; it is not needed to establish
+the first nonlinear benchmark.

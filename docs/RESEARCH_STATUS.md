@@ -292,3 +292,72 @@ deferred until after the core broad-equity panel is audited.
 
 Legacy macro observations remain excluded because no causal
 release/vintage/availability contract exists.
+<!-- MARKET_V003_CORE_DATASET_V001 -->
+## Market Daily V003 broad backfill closed
+
+Broad current-cohort backfill result:
+
+```text
+493 planned backfills
+490 completed
+3 quality-quarantined: FISV, HUBB, MNST
+500 assets with quality-gated daily data
+497 assets ready for >=253-session state
+489 assets with >=1260 daily sessions
+```
+
+The three failures each downloaded the requested history but failed a strict
+single-row quality condition. They remain quarantined rather than weakening
+the gate. The >=300 / >=300 broad-panel readiness gate is passed.
+
+Next scientific stage is the deterministic Market Daily V003 Core Dataset:
+all eligible asset-days + own state + leave-one-out market/sector context +
+separate 1/3/5/10-session labels. External proxies, macro and event features
+remain deferred.
+<!-- MARKET_V003_CORE_H1_FIX_V001 -->
+## Market Daily V003 Core H1 label correction
+
+The first Core audit was superseded because it allowed all H1 labels to be
+`insufficient_future`.
+
+Cause: H1 path volatility used sample std (`ddof=1`) on a one-return path.
+
+Decision:
+
+```text
+path volatility := population std (ddof=0)
+H1 path volatility := 0
+```
+
+The audit now treats missing/substantially unusable horizons as hard failures.
+The processed Core DB is rebuilt from source observations rather than patched
+in place.
+<!-- MARKET_V003_BENCHMARK_V001 -->
+## Market Daily V003 Core gate passed
+
+Corrected Core audit:
+
+```text
+status PASS
+1,092,555 states
+497 assets
+1,078,329 usable H1 labels
+1,049,926 usable H3 labels
+1,021,619 usable H5 labels
+951,231 usable H10 labels
+```
+
+Corporate-action overlap fraction:
+
+```text
+H1   1.26%
+H3   3.77%
+H5   6.27%
+H10 12.48%
+```
+
+The raw-close label contract is retained for the preregistered V003 benchmark;
+it is interpreted as a no-corporate-action-overlap research target, not a
+production total-return target.
+
+Next: frozen Market Daily V003 Benchmark V001.

@@ -234,3 +234,21 @@ Package/fix READMEs are allowed but live under `docs/package-notes/` and are eve
 No future ZIP should pollute repository root with competing `README_*` status documents.
 
 **Status:** introduced by documentation restructure V001.
+<!-- MARKET_V003_CORE_H1_FIX_V001 -->
+## Market Daily V003 Core H1 label correction
+
+The first Core audit was superseded because it allowed all H1 labels to be
+`insufficient_future`.
+
+Cause: H1 path volatility used sample std (`ddof=1`) on a one-return path.
+
+Decision:
+
+```text
+path volatility := population std (ddof=0)
+H1 path volatility := 0
+```
+
+The audit now treats missing/substantially unusable horizons as hard failures.
+The processed Core DB is rebuilt from source observations rather than patched
+in place.

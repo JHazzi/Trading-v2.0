@@ -306,3 +306,34 @@ Execution order:
    context, not as prerequisites.
 
 Macro remains out until causal vintages exist.
+<!-- MARKET_V003_CORE_DATASET_V001 -->
+### Broad panel gate passed
+
+Do not backfill more equities merely to obtain 503/503. Three assets remain
+quality-quarantined while 500 clean assets provide a panel well above the
+predeclared readiness gate.
+
+Before model training:
+1. materialize deterministic Market V003 core states;
+2. materialize future labels separately from features;
+3. audit leakage/coverage/sector missingness;
+4. quantify corporate-action exclusion by horizon;
+5. only then freeze the benchmark battery.
+
+If H10 corporate-action exclusion is large, do not silently accept the
+selection bias; evaluate a causally-defined total-return label version later.
+<!-- MARKET_V003_BENCHMARK_V001 -->
+### Market Daily V003 Benchmark
+
+Run H1/H3/H5/H10 independently under the frozen benchmark plan.
+
+Decision after results:
+
+- if full Market V003 cannot consistently beat train-median / asset-mean
+  baselines, improve market representation before Event Brain integration;
+- if own-only works but cross-section/sector do not add value, do not keep
+  context merely because it is architecturally appealing;
+- if cross-section or sector adds paired OOS value, retain only the supported
+  layers;
+- only after this benchmark consider SPY/QQQ/IWM, volatility/rates, RF
+  robustness, or distributional outputs.

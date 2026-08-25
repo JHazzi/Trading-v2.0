@@ -1,0 +1,60 @@
+{
+  "version": "market_brain_daily_v003_benchmark_v001",
+  "core_feature_version": "market_daily_state_v003_core",
+  "core_label_version": "market_daily_reaction_v003_core",
+  "horizons_sessions": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "outer_folds": 5,
+  "initial_fraction": 0.3,
+  "bootstrap_reps": 3000,
+  "moving_block_lengths_origin_days": [
+    5,
+    10,
+    20
+  ],
+  "primary_model": "hgb_full",
+  "primary_baseline": "train_median",
+  "random_seed": 42,
+  "models": {
+    "ridge_full": {
+      "alpha": 1.0
+    },
+    "sgd_huber_full": {
+      "alpha": 0.0001,
+      "epsilon": 0.1,
+      "max_iter": 2000,
+      "tol": 0.0001
+    },
+    "hgb_own": {
+      "loss": "absolute_error",
+      "learning_rate": 0.05,
+      "max_iter": 180,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 200,
+      "l2_regularization": 1.0
+    },
+    "hgb_own_cross": {
+      "loss": "absolute_error",
+      "learning_rate": 0.05,
+      "max_iter": 180,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 200,
+      "l2_regularization": 1.0
+    },
+    "hgb_full": {
+      "loss": "absolute_error",
+      "learning_rate": 0.05,
+      "max_iter": 180,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 200,
+      "l2_regularization": 1.0
+    }
+  },
+  "no_hyperparameter_tuning": true,
+  "no_best_model_selection_for_primary_claim": true,
+  "rf_deferred_to_robustness": true
+}

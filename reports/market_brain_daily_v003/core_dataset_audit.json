@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "reviews": [],
+  "contract": {
+    "version": "market_daily_v003_core_dataset_v001",
+    "feature_version": "market_daily_state_v003_core",
+    "label_version": "market_daily_reaction_v003_core",
+    "source_asof_contract": "daily_price_asof_v1",
+    "source_asof_mode": "historical_session_close_assumption",
+    "state_clock": "exchange_session_close",
+    "minimum_own_history_days": 253,
+    "minimum_cross_section_peers_ex_target": 50,
+    "minimum_sector_peers_ex_target": 3,
+    "horizons_sessions": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "target": "raw_close_t_to_raw_close_t_plus_h",
+    "corporate_action_primary_policy": "exclude_any_present_action_in_open_closed_horizon",
+    "current_cohort_not_survivorship_free": true,
+    "strict_historical_pit": false,
+    "external_proxies": false,
+    "macro": false,
+    "event_features": false
+  },
+  "source_active_equities": 503,
+  "source_assets_without_quality_gated_daily_data": [
+    {
+      "asset_id": 199,
+      "ticker": "FISV",
+      "sector": "Financials"
+    },
+    {
+      "asset_id": 240,
+      "ticker": "HUBB",
+      "sector": "Industrials"
+    },
+    {
+      "asset_id": 321,
+      "ticker": "MNST",
+      "sector": "Consumer Staples"
+    }
+  ],
+  "states": {
+    "rows": 1092555,
+    "assets": 497,
+    "first_day": "2017-08-25",
+    "last_day": "2026-08-24",
+    "min_cross_section_peers": 462.0,
+    "median_cross_section_peers": 485.0,
+    "sector_context_missing_rows": 0,
+    "sector_context_missing_fraction": 0.0,
+    "non_sector_feature_nonfinite": {},
+    "point_in_time_verified_rows": 0,
+    "by_year": {
+      "2017": 40996,
+      "2018": 117777,
+      "2019": 118811,
+      "2020": 120813,
+      "2021": 121456,
+      "2022": 122431,
+      "2023": 122497,
+      "2024": 123959,
+      "2025": 123828,
+      "2026": 79987
+    },
+    "by_sector": {
+      "Industrials": 173919,
+      "Financials": 167096,
+      "Information Technology": 158087,
+      "Health Care": 129270,
+      "Consumer Discretionary": 103890,
+      "Consumer Staples": 72897,
+      "Utilities": 68673,
+      "Real Estate": 67351,
+      "Materials": 55159,
+      "Communication Services": 49875,
+      "Energy": 46338
+    }
+  },
+  "labels": {
+    "rows": 4370220,
+    "usable_rows": 4101105,
+    "usable_assets": 497,
+    "by_horizon": {
+      "1": {
+        "rows": 1092555,
+        "usable": 1078329,
+        "corporate_action_overlap": 13729,
+        "corporate_action_overlap_fraction": 0.012565957777869306,
+        "insufficient_future": 497
+      },
+      "3": {
+        "rows": 1092555,
+        "usable": 1049926,
+        "corporate_action_overlap": 41138,
+        "corporate_action_overlap_fraction": 0.03765302433287111,
+        "insufficient_future": 1491
+      },
+      "5": {
+        "rows": 1092555,
+        "usable": 1021619,
+        "corporate_action_overlap": 68451,
+        "corporate_action_overlap_fraction": 0.06265222345785795,
+        "insufficient_future": 2485
+      },
+      "10": {
+        "rows": 1092555,
+        "usable": 951231,
+        "corporate_action_overlap": 136354,
+        "corporate_action_overlap_fraction": 0.12480287033604716,
+        "insufficient_future": 4970
+      }
+    }
+  },
+  "interpretation": "PASS/REVIEW validates the all-asset-day core dataset; Yahoo history remains PIT=0 and current-cohort selection remains survivorship-biased."
+}

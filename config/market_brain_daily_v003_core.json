@@ -1,0 +1,19 @@
+{
+  "version": "market_daily_v003_core_dataset_v001",
+  "feature_version": "market_daily_state_v003_core",
+  "label_version": "market_daily_reaction_v003_core",
+  "source_asof_contract": "daily_price_asof_v1",
+  "source_asof_mode": "historical_session_close_assumption",
+  "state_clock": "exchange_session_close",
+  "minimum_own_history_days": 253,
+  "minimum_cross_section_peers_ex_target": 50,
+  "minimum_sector_peers_ex_target": 3,
+  "horizons_sessions": [1, 3, 5, 10],
+  "target": "raw_close_t_to_raw_close_t_plus_h",
+  "corporate_action_primary_policy": "exclude_any_present_action_in_open_closed_horizon",
+  "current_cohort_not_survivorship_free": true,
+  "strict_historical_pit": false,
+  "external_proxies": false,
+  "macro": false,
+  "event_features": false
+}

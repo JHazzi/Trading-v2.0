@@ -24,7 +24,7 @@ data/database/*.db
 
 # Datos RAW descargados. Sólo se versiona el contrato/código.
 data/raw/
-
+*.gz
 # Archivos de entorno y configuración local
 .env
 *.local.json

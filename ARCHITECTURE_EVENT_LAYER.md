@@ -1,114 +1,225 @@
-# Event / News Layer — Quant Market AI
+# Event / News Layer — Canonical Architecture v0.2
 
-This package implements the next architectural layer after Market Brain V002.
-It follows the repository architecture: raw news -> event cluster -> event -> event features -> event adjustment.
+**Status:** canonical event-layer contract  
+**Last major review:** 2026-08-25
 
-## Core principle
+## 1. Core principle
 
-A news document is evidence, not a market shock by itself.
-
-100 articles repeating the same announcement should become:
+A source document is **evidence**, not a market shock.
 
 ```text
-100 news_documents
-        |
-        v
-   1 event_cluster
-        |
-        v
-      1 event
-        |
-        +---- many evidence records
+many source documents
+        ↓
+deterministic/causal evidence clustering
+        ↓
+normalized economic event identities
+        ↓
+event observations over time
+        ↓
+causal Event State E(t)
+        ↓
+incremental information test vs Market Brain
 ```
 
-The event layer must be causal: a prediction at time `t` can only use information whose `available_at <= t`.
+`100 articles` repeating an announcement are not `100 independent events`.
 
-## Source-document foundation
+Conversely, one SEC filing can encode several distinct economic events.
 
-The implemented source boundary is:
+## 2. Implemented SEC research pipeline
+
+The current deep research path is:
 
 ```text
-official response bytes
-        -> raw_source_documents (hash, path, availability, retrieval)
-        -> normalized source record (for example sec_filings)
-        -> asset link
-        -> later clustering and event state
+SEC metadata/version observations
+        ↓
+immutable raw filing documents/exhibits
+        ↓
+deterministic clustering
+        ↓
+stable normalized event identity
+        ↓
+event observations / evidence semantics
+        ↓
+Event State snapshots
+        ↓
+1/3/5/10-session reaction labels
+        ↓
+walk-forward Event Brain benchmark
 ```
 
-The original payload is immutable and compressed outside SQLite. A normalized
-filing record is marked `parsed` and points to the exact official response
-through `parent_raw_document_id`.
+Current research versions:
 
-Ingestion records source facts and timing only. It does not assign importance,
-sentiment, direction, reliability or decay. Those quantities belong to later,
-versioned learning and evaluation stages.
+- normalization: `sec_event_normalizer_v0031_deep_raw_lineage`;
+- event state: `event_state_v0031_deep`;
+- labels: `event_reaction_daily_v0031_deep`.
 
-## Event representation
+These versions represent a historical research reconstruction, not strict live PIT capture.
 
-An event contains:
+## 3. Temporal lifecycle
 
-- semantic identity/type;
-- temporal lifecycle;
-- involved entities/assets;
-- scope: company / industry / market / macro / cross-asset;
-- expected-vs-realized context;
-- evidence from multiple sources;
-- learned reliability and novelty;
-- later observed market reaction.
+Keep distinct:
 
-No economic impact is hardcoded.
+- `event_time`: when the underlying economic event occurred;
+- `scheduled_at`: known future event time, if applicable;
+- `published_at` / acceptance time: source publication;
+- `first_seen_at`: first observed by our ingestion system;
+- `retrieved_at` / observation time: when bytes/metadata were actually retrieved;
+- `available_at`: earliest legitimate model-availability boundary under the stated data contract;
+- `effective_until`: optional learned validity boundary;
+- `resolved_at`: when uncertainty is resolved.
 
-## Event effect
+`available_at` is the feature gate.
 
-The Event Brain should eventually estimate a change to the *distribution*, not a single return:
+Historical backfill rule:
+
+> A historical public-availability proxy may be used only when the row remains explicitly non-strict-PIT and the actual later retrieval timestamp is retained separately.
+
+Never rewrite a 2026 retrieval as a 2018 observation to improve backtest coverage.
+
+## 4. Identity and lineage
+
+Stable economic identity must not depend on rerun timestamp.
+
+For current SEC normalized events the stable identity is based on SEC accession/item semantics.
+
+Reruns may add new observations/versioned lineage, but must not silently create duplicate economic identities.
+
+State/label feature versions must prevent mixing partially reconstructed pilot evidence with a later complete deep corpus.
+
+## 5. Evidence semantics
+
+Normalization may represent factual/taxonomic semantics such as filing form, SEC item, epistemic type, scope and direct entity/asset mapping.
+
+Normalization must **not** hardcode:
+
+- bullish/bearish direction;
+- economic importance;
+- source predictive reliability;
+- expected persistence/decay;
+- relation propagation strength.
+
+## 6. Current Event State
+
+The current research features are intentionally simple and mostly structural/factual:
+
+- event type/scope;
+- evidence counts;
+- cluster/source counts;
+- event age;
+- temporal/scheduled flags;
+- evidence/source signatures.
+
+This representation is enough for a minimal incremental-information experiment, but it is not a semantic understanding of earnings, guidance or expectations.
+
+## 7. Event Brain target architecture
+
+Current scalar benchmark:
 
 ```text
-Delta event = {
-    delta_expected_return,
-    delta_uncertainty,
-    delta_tail_risk,
-    delta_regime_probability
-}
+return_pct
 ```
 
-Conceptually:
+is a bounded research test, not the end-state.
+
+Target comparison:
+
+\[
+F_0(Y\mid X_t,T)
+\quad \text{vs} \quad
+F_1(Y\mid X_t,E_t,G_t,T)
+\]
+
+An event can improve prediction of:
+
+- median/expected return;
+- quantile width;
+- downside/upside tails;
+- realized path volatility;
+- MFE;
+- MAE;
+- regime transition probability;
+- persistence/decay.
+
+An event that does not move median return can still be highly informative about uncertainty or tails.
+
+## 8. Expectations and surprise
+
+For many events the economically meaningful variable is not the raw fact but the difference between reality and what the market expected.
+
+Future representation should support:
 
 ```text
-P(R[t:t+T] | X_t, E_t, G_t, T)
+actual
+expectation
+prior guidance
+revised guidance
+consensus
+novelty
+surprise = actual - expectation
 ```
 
-where `E_t` contains only events available at `t`.
+Do not hardcode the sign of surprise into price direction.
 
-## Temporal lifecycle
+## 9. Reliability is multidimensional
 
-An event can have:
+Do not collapse these into one manual score:
 
-- scheduled_at: known future time, when applicable;
-- first_seen_at: first observed in the ingestion system;
-- available_at: first time the information could legitimately be used by the model;
-- event_time: time the underlying event happened;
-- effective_until: optional learned validity boundary;
-- resolved_at: when uncertainty was resolved.
+- factual reliability;
+- information novelty;
+- predictive usefulness;
+- economic materiality;
+- market impact;
+- persistence;
+- corroboration.
 
-`available_at` is the anti-leakage timestamp. It is the one that must gate features.
+These should become learned/contextual quantities when data supports them.
 
-## Future behavior
+## 10. Graph separation
 
-The event effect must not use a universal exponential decay. Persistence, amplification, sign changes and uncertainty effects are learned from observed outcomes.
+Direct event→asset links are different from graph propagation.
 
-## Learning loop
+First establish local event information value. Only then model:
 
 ```text
-news -> cluster -> event -> features -> prediction
-                                  |
-                                  v
-                              real outcome
-                                  |
-                                  v
-                         event reaction dataset
-                                  |
-                                  v
-                         event model candidate
+event on entity A
+     ↓
+structural/statistical/learned relations
+     ↓
+possible effect on B/C/sector/market
 ```
 
-The first event model should not replace Market Brain V002. It should be evaluated as an incremental information source.
+No co-occurrence-as-causality shortcut.
+
+## 11. Current scientific interpretation
+
+The current deep SEC corpus is large enough for serious research compared with the pilot, but:
+
+- it is a 10-current-company cohort and therefore not survivorship-free;
+- historical SEC evidence is reconstructed with PIT=0;
+- multiple events from one accession can be dependent;
+- multi-session labels overlap in calendar time;
+- the daily Market Brain remains weak;
+- event features do not yet include full text/numeric surprise/expectations.
+
+Therefore current Event Brain results measure a narrow question:
+
+> Does factual SEC event-state metadata add incremental predictive information to the current market-state representation?
+
+They do not establish trading profitability.
+
+## 12. Next event-layer work
+
+Do **not** add more SEC documents immediately.
+
+Ordered next work:
+
+1. robustness/falsification of the H10 candidate;
+2. stronger Market Brain;
+3. distributional Market Brain;
+4. distributional Event Brain using the existing event corpus;
+5. richer event semantics/expectations;
+6. additional sources;
+7. learned reliability/novelty;
+8. graph propagation.
+
+See `docs/ROADMAP.md`.

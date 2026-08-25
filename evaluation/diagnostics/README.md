@@ -1,16 +1,24 @@
-# Diagnostics — Market Foundation v0.1
+# Evaluation Diagnostics
 
-The first evaluation layer validates the target engine before any model is trusted.
+Diagnostics exist to detect data/causality/reproducibility failures before model interpretation.
 
-Minimum invariants:
+Current responsibilities include:
 
-- `MAE_T <= R_T <= MFE_T`
-- `0 <= coverage_pct <= 100`
-- `observed_bars <= expected_bars`
-- positive start/end prices
+- legacy/data audits;
+- event lineage audits;
+- causality validation;
+- outcome validation;
+- feature importance;
+- robustness diagnostics.
 
-Run:
+A successful process exit is not sufficient.
 
-```bash
-python evaluation/diagnostics/validate_outcomes.py
-```
+Diagnostics should distinguish referential integrity, temporal causality, training readiness, coverage, statistical dependence and predictive performance.
+
+Primary time-series claims require walk-forward evaluation and appropriate purging/grouping.
+
+Canonical references:
+
+- `../../docs/DATA_CONTRACTS.md`
+- `../../docs/RESEARCH_STATUS.md`
+- `../../AGENTS.md`

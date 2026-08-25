@@ -1,0 +1,167 @@
+{
+  "version": "market_brain_daily_v004_math_foundation_v001",
+  "source_core_db": "data/processed/market_daily_v003_core.db",
+  "output_db": "data/processed/market_daily_v004_math.db",
+  "horizons_sessions": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "factorizations": {
+    "additive_equal_weight": {
+      "market_factor": "equal_weight_future_return_by_origin_day",
+      "sector_factor": "equal_weight_future_sector_return_minus_market_factor",
+      "asset_residual": "asset_future_return_minus_sector_future_return",
+      "identity": "R_i = M + S_sector + E_i"
+    },
+    "dynamic_beta": {
+      "market_beta_windows": [
+        63,
+        252
+      ],
+      "sector_gamma_windows": [
+        63,
+        252
+      ],
+      "primary_beta_window": 252,
+      "primary_gamma_window": 252,
+      "definition": "R_i = beta_i,t*M + gamma_i,t*S_sector + alpha_i",
+      "betas_use_only_information_through_origin_day": true
+    }
+  },
+  "state_levels": {
+    "market": {
+      "unit": "origin_trading_day",
+      "features": [
+        "market_return_1d_pct",
+        "market_return_5d_pct",
+        "market_return_20d_pct",
+        "market_breadth_positive_1d",
+        "market_breadth_positive_5d",
+        "market_dispersion_1d_pct",
+        "market_mean_vol_20d_pct",
+        "market_realized_vol_20d_pct",
+        "market_realized_vol_63d_pct",
+        "market_trend_20d_pct",
+        "market_trend_63d_pct",
+        "market_drawdown_63d_pct",
+        "market_drawdown_252d_pct"
+      ]
+    },
+    "sector": {
+      "unit": "origin_trading_day_x_sector",
+      "features": [
+        "sector_return_1d_pct",
+        "sector_return_5d_pct",
+        "sector_return_20d_pct",
+        "sector_breadth_positive_1d",
+        "sector_mean_vol_20d_pct",
+        "sector_minus_market_1d_pct",
+        "sector_minus_market_5d_pct",
+        "sector_minus_market_20d_pct"
+      ]
+    },
+    "asset": {
+      "unit": "origin_trading_day_x_asset",
+      "features": [
+        "existing_own_features",
+        "asset_minus_market_1d_pct",
+        "asset_minus_market_5d_pct",
+        "asset_minus_market_20d_pct",
+        "asset_minus_sector_1d_pct",
+        "asset_minus_sector_5d_pct",
+        "asset_minus_sector_20d_pct",
+        "beta_market_63",
+        "beta_market_252",
+        "gamma_sector_63",
+        "gamma_sector_252",
+        "idio_vol_63d_pct"
+      ]
+    }
+  },
+  "external_state_ladder_after_math_gate": {
+    "stage_1_market_tradables": {
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM"
+      ],
+      "purpose": "observable market/index state"
+    },
+    "stage_2_sector_etfs": {
+      "symbols": [
+        "XLK",
+        "XLF",
+        "XLE",
+        "XLV",
+        "XLY",
+        "XLP",
+        "XLI",
+        "XLB",
+        "XLU",
+        "XLRE",
+        "XLC"
+      ],
+      "purpose": "observable sector state"
+    },
+    "stage_3_volatility_rates_credit": {
+      "symbols_or_series": [
+        "^VIX",
+        "SHY",
+        "IEF",
+        "TLT",
+        "HYG",
+        "LQD"
+      ],
+      "purpose": "risk appetite, rates duration and credit state",
+      "note": "market-price proxies first; macro releases/vintages are a separate causal contract"
+    },
+    "stage_4_macro_vintage": {
+      "enabled_now": false,
+      "requirement": "release/vintage/available_at contract before training"
+    }
+  },
+  "deferred_until_point_baseline_has_skill": [
+    "distributional_quantiles",
+    "event_brain_integration",
+    "knowledge_graph_features",
+    "decision_engine",
+    "hyperparameter_search"
+  ],
+  "research_limitations": {
+    "historical_price_strict_pit": false,
+    "survivorship_free_universe": false,
+    "v003_results_are_retained": true
+  },
+  "post_factorization_math_ladder": {
+    "primary_now": [
+      "equal_weight_additive_factorization",
+      "dynamic_beta_factorization"
+    ],
+    "robustness_after_dataset_gate": [
+      {
+        "method": "rolling_statistical_factors_pca",
+        "rule": "fit/loadings must be estimated on train/past only; no full-sample PCA",
+        "purpose": "test whether equal-weight market factor is too crude"
+      },
+      {
+        "method": "shrinkage_dynamic_exposures",
+        "rule": "compare rolling OLS beta/gamma against shrinkage/state-space candidates only in a preregistered benchmark",
+        "purpose": "reduce noisy time-varying exposure estimates"
+      }
+    ],
+    "target_views_to_compare": [
+      "absolute_return",
+      "market_relative_return",
+      "sector_relative_return",
+      "cross_sectional_rank"
+    ],
+    "regime_candidates_after_factor_gate": [
+      "observable volatility/trend regimes",
+      "change_point_detection",
+      "hidden_state_regime_model"
+    ],
+    "principle": "each candidate is incremental and walk-forward; no method is promoted because it sounds sophisticated"
+  }
+}

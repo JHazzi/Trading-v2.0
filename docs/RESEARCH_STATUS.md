@@ -408,3 +408,38 @@ does not rescue the full model.
 
 Therefore Market V003 is not promoted to distributional modeling and is not
 used as the base for Event Brain integration.
+<!-- MARKET_V004_MATH_FOUNDATION_V001 -->
+## Market Brain Daily V004 mathematical foundation
+
+V003 remains a canonical negative benchmark. It is not deleted or rewritten.
+
+The next Market Brain candidate remains inside Architecture Phase C. V004 tests
+whether a hierarchical/factorized target representation improves temporal
+generalization before adding external information or distributional outputs.
+
+V004 separates statistical units:
+
+```text
+market: one row per origin day
+sector: one row per sector-day
+asset:  one row per asset-day
+```
+
+It materializes two target decompositions:
+
+```text
+additive:
+R_i = M + S + E_i
+
+dynamic factor:
+R_i = beta_i,t * M + gamma_i,t * S + alpha_i
+```
+
+`beta` and `gamma` are estimated only from observations available through the
+origin close. Neither factorization is assumed correct until walk-forward
+evaluation supports it.
+
+After the mathematical factorization gate, external Market State information
+will be added incrementally: market ETFs, sector ETFs, volatility,
+rates/credit, then vintage-causal macro. Events remain deferred until the base
+Market Brain shows skill.

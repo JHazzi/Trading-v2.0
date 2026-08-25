@@ -355,3 +355,22 @@ external proxies                               later incremental test
 distributional Market Brain                    after stable point baseline
 Event Brain integration                        after stable Market Brain
 ```
+<!-- MARKET_V004_MATH_FOUNDATION_V001 -->
+### Phase C refinement — Market Brain
+
+```text
+C1 V003 endogenous pooled baseline           REJECTED, retained
+C2 V004 mathematical factorization           ACTIVE
+C3 external market-state increments          NEXT if C2 is healthy
+   - SPY / QQQ / IWM
+   - sector ETFs
+   - volatility
+   - rates / credit
+   - causal macro / regime
+C4 distributional Market Brain               DEFERRED
+D  Event Brain integration                    DEFERRED
+```
+
+C2 must separately evaluate market-factor, sector-residual, asset-residual
+and reconstructed absolute-return performance. A component is kept only if it
+adds paired out-of-sample value.

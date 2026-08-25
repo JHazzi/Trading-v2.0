@@ -293,3 +293,23 @@ Before training V004:
 
 Do not yet add external market proxies, macro, Event Brain, distributional
 outputs, or tune V003 after observing its benchmark.
+<!-- MARKET_V004_MATH_FOUNDATION_V001 -->
+## Decision — preserve V003 and expand Market Brain information carefully
+
+V003 answered a deliberately narrow question: price/volume/relative state
+alone, pooled at asset-day level, did not beat the preregistered absolute
+return baseline.
+
+This does not reject the project objective
+`P(R[t:t+T] | X_t, E_t, G_t, T)`.
+
+Decision:
+
+1. retain all V003 artifacts/results as negative evidence;
+2. test factorized mathematical targets without new external data;
+3. if factorized components generalize, add external market-wide state
+   incrementally to the statistically appropriate level;
+4. require causal `available_at <= t` contracts for every enrichment;
+5. do not tune V003 after observing its failure;
+6. do not integrate Event Brain or distributional heads before a credible
+   point-estimate Market Brain baseline exists.

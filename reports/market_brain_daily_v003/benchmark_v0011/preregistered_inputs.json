@@ -1,0 +1,33 @@
+{
+  "benchmark_version": "market_brain_daily_v003_benchmark_v0011",
+  "git": {
+    "head": "6d7bd86b55490dd6342761bbaf3c22bc86651b1c",
+    "branch": "main",
+    "working_tree_clean": false,
+    "status_porcelain": [
+      "?? reports/market_brain_daily_v003/benchmark_v0011/h1_benchmark.json",
+      "?? reports/market_brain_daily_v003/benchmark_v0011/h1_oos.csv.gz",
+      "?? reports/market_brain_daily_v003/benchmark_v0011/preregistered_inputs.json"
+    ]
+  },
+  "environment": {
+    "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "numpy": "2.2.6",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0"
+  },
+  "sha256": {
+    "config/market_brain_daily_v003_benchmark.json": "b8d2a10f85951d3a68bba6e5116e275ba34f48fbaf64952948d69f11dff3d2e2",
+    "evaluation/market/daily_v003_benchmark.py": "99fc03f7c4cf53d05eb0f39e98e760eece8e23187b6ce1c12778a76b92a72292",
+    "models/market/daily_v003_benchmark.py": "7a40b441bcb21aaa00f70e80cb0ec3f439083c1e1cf448fb0d7f3967e273c10a",
+    "pipeline/market_brain_daily_benchmark_v003.py": "aaa19c2d496e5d7e732b9b14e1d0e25d504bedb33137466cfbbe84aaf62cb7be",
+    "features/market/daily_v003_core.py": "ef031e602f8a1990ecc6e23bd162d860f860e68ed2abbb0f9ba6f1b4e18d85b5",
+    "evaluation/market/daily_v003_core_audit.py": "8546a8adcd0ae791ca59b40beee8a98010e4d587f2f34eb5bcd61ca77d00b48b"
+  },
+  "core_db": {
+    "path": "data/processed/market_daily_v003_core.db",
+    "size_bytes": 3116351488,
+    "sha256": "2eccfe061b33bcd3fff6c244be972b379d9c4c3f1230532b5a66c72aaaf3be19"
+  }
+}

@@ -1,0 +1,437 @@
+{
+  "status": "PASS",
+  "source_benchmark": "market_brain_daily_v003_benchmark_v0011",
+  "v003_primary_claim": "REJECTED",
+  "benchmark": {
+    "all_horizons_primary_negative": true,
+    "all_primary_block_ci_upper_below_zero": true,
+    "all_horizons_own_to_cross_negative": true,
+    "horizons": {
+      "1": {
+        "oos_rows": 763935,
+        "train_median_mae_pct": 1.4665309537819515,
+        "hgb_own_mae_pct": 1.471391996232928,
+        "hgb_own_cross_mae_pct": 1.5116627220853902,
+        "hgb_full_mae_pct": 1.5149370956955974,
+        "primary_delta_pct": -0.048406141913644916,
+        "primary_candidate_win_rate": 0.46456570257940794,
+        "own_to_cross_delta_pct": -0.04027072585246188,
+        "cross_to_sector_delta_pct": -0.003274373610206524,
+        "hgb_own_spearman_ic": 0.007696761043247065,
+        "hgb_full_spearman_ic": 0.008957185033668434,
+        "sgd_huber_spearman_ic": 0.013897666933377465,
+        "primary_block_bootstrap": {
+          "5": {
+            "point_delta_pct": -0.048573891381605144,
+            "ci95": [
+              -0.062205631844088664,
+              -0.03636264267387967
+            ]
+          },
+          "10": {
+            "point_delta_pct": -0.048573891381605144,
+            "ci95": [
+              -0.06340757057972678,
+              -0.036576874889562835
+            ]
+          },
+          "20": {
+            "point_delta_pct": -0.048573891381605144,
+            "ci95": [
+              -0.06493998841842732,
+              -0.03515944571908202
+            ]
+          }
+        },
+        "fold_primary_deltas_pct": [
+          -0.05782214191322622,
+          -0.06862739415383744,
+          -0.06428176105818077,
+          -0.029752431327835928,
+          -0.022220233328242557
+        ]
+      },
+      "3": {
+        "oos_rows": 743503,
+        "train_median_mae_pct": 2.6017651994528976,
+        "hgb_own_mae_pct": 2.6135584777260643,
+        "hgb_own_cross_mae_pct": 2.8758168103291726,
+        "hgb_full_mae_pct": 2.896270477967598,
+        "primary_delta_pct": -0.2945052785147012,
+        "primary_candidate_win_rate": 0.4230137605362722,
+        "own_to_cross_delta_pct": -0.26225833260310805,
+        "cross_to_sector_delta_pct": -0.020453667638426282,
+        "hgb_own_spearman_ic": 0.0075706487134511655,
+        "hgb_full_spearman_ic": 0.0053228378953476,
+        "sgd_huber_spearman_ic": 0.020686496164369,
+        "primary_block_bootstrap": {
+          "5": {
+            "point_delta_pct": -0.2927502387011246,
+            "ci95": [
+              -0.3557218849205807,
+              -0.23164988648931917
+            ]
+          },
+          "10": {
+            "point_delta_pct": -0.2927502387011246,
+            "ci95": [
+              -0.3771584989883379,
+              -0.2195414696097085
+            ]
+          },
+          "20": {
+            "point_delta_pct": -0.2927502387011246,
+            "ci95": [
+              -0.3953825308496808,
+              -0.2013163806864202
+            ]
+          }
+        },
+        "fold_primary_deltas_pct": [
+          -0.17981585335975636,
+          -0.12639572696798373,
+          -0.30925569731031344,
+          -0.023370846253155088,
+          -0.8251212701054154
+        ]
+      },
+      "5": {
+        "oos_rows": 723573,
+        "train_median_mae_pct": 3.3831402558558223,
+        "hgb_own_mae_pct": 3.400841799100636,
+        "hgb_own_cross_mae_pct": 4.159379751579234,
+        "hgb_full_mae_pct": 4.139234301615234,
+        "primary_delta_pct": -0.7560940457594119,
+        "primary_candidate_win_rate": 0.41145261086303664,
+        "own_to_cross_delta_pct": -0.7585379524785953,
+        "cross_to_sector_delta_pct": 0.020145449963997315,
+        "hgb_own_spearman_ic": 0.009322805255127442,
+        "hgb_full_spearman_ic": -4.084932919487975e-05,
+        "sgd_huber_spearman_ic": 0.02338996845113327,
+        "primary_block_bootstrap": {
+          "5": {
+            "point_delta_pct": -0.747964133187025,
+            "ci95": [
+              -0.9285490054024224,
+              -0.5826857635618796
+            ]
+          },
+          "10": {
+            "point_delta_pct": -0.747964133187025,
+            "ci95": [
+              -0.985683635254103,
+              -0.5365299544846949
+            ]
+          },
+          "20": {
+            "point_delta_pct": -0.747964133187025,
+            "ci95": [
+              -1.0584597030829523,
+              -0.46539418467179994
+            ]
+          }
+        },
+        "fold_primary_deltas_pct": [
+          -0.13745399454102147,
+          -0.14278456218257746,
+          -0.7431364896059834,
+          -0.013605100430616171,
+          -2.7159149288139983
+        ]
+      },
+      "10": {
+        "oos_rows": 673391,
+        "train_median_mae_pct": 4.851869892327159,
+        "hgb_own_mae_pct": 4.876427008100997,
+        "hgb_own_cross_mae_pct": 5.735620274660067,
+        "hgb_full_mae_pct": 5.854327810818943,
+        "primary_delta_pct": -1.0024579184917837,
+        "primary_candidate_win_rate": 0.3801149703515491,
+        "own_to_cross_delta_pct": -0.8591932665590698,
+        "cross_to_sector_delta_pct": -0.11870753615887528,
+        "hgb_own_spearman_ic": 0.009710518356312243,
+        "hgb_full_spearman_ic": -0.01054141071186897,
+        "sgd_huber_spearman_ic": 0.029795925833986804,
+        "primary_block_bootstrap": {
+          "5": {
+            "point_delta_pct": -1.002871706851699,
+            "ci95": [
+              -1.160502848692584,
+              -0.849383411957023
+            ]
+          },
+          "10": {
+            "point_delta_pct": -1.002871706851699,
+            "ci95": [
+              -1.2051128827131035,
+              -0.8063843403539623
+            ]
+          },
+          "20": {
+            "point_delta_pct": -1.002871706851699,
+            "ci95": [
+              -1.2422551711795846,
+              -0.7519792652396662
+            ]
+          }
+        },
+        "fold_primary_deltas_pct": [
+          -1.2473938978228638,
+          -0.5927470981339962,
+          -1.6484497675476428,
+          -0.026745988212325048,
+          -1.494708412365226
+        ]
+      }
+    }
+  },
+  "target_decomposition": {
+    "1": {
+      "rows": 1078329,
+      "origin_days": 2259,
+      "sectors": 11,
+      "total_return_variance": 5.001122104162923,
+      "between_day_market_mean_variance": 1.4853339615747208,
+      "within_day_residual_variance": 3.5157881425882014,
+      "market_factor_variance_fraction": 0.2970001392964055,
+      "zero_mae_pct": 1.4452672193749956,
+      "oracle_daily_mean_residual_mae_pct": 1.1923555344253147,
+      "oracle_daily_median_residual_mae_pct": 1.1857057266498137,
+      "oracle_sector_mean_residual_mae_pct": 1.0664573447436028,
+      "oracle_sector_median_residual_mae_pct": 1.048279669005673,
+      "oracle_market_median_mae_reduction_fraction": 0.1795941188214516,
+      "oracle_sector_median_mae_reduction_fraction": 0.2746810728475523
+    },
+    "3": {
+      "rows": 1049926,
+      "origin_days": 2257,
+      "sectors": 11,
+      "total_return_variance": 14.72725537527048,
+      "between_day_market_mean_variance": 4.186587967680054,
+      "within_day_residual_variance": 10.540667407590426,
+      "market_factor_variance_fraction": 0.2842748265715575,
+      "zero_mae_pct": 2.5623526656186666,
+      "oracle_daily_mean_residual_mae_pct": 2.133042049590641,
+      "oracle_daily_median_residual_mae_pct": 2.121876604897674,
+      "oracle_sector_mean_residual_mae_pct": 1.9120806320159869,
+      "oracle_sector_median_residual_mae_pct": 1.8815599442937094,
+      "oracle_market_median_mae_reduction_fraction": 0.17190298065962828,
+      "oracle_sector_median_mae_reduction_fraction": 0.2656904845534146
+    },
+    "5": {
+      "rows": 1021619,
+      "origin_days": 2255,
+      "sectors": 11,
+      "total_return_variance": 24.183526123408164,
+      "between_day_market_mean_variance": 6.7900523659254155,
+      "within_day_residual_variance": 17.393473757482752,
+      "market_factor_variance_fraction": 0.2807718085144359,
+      "zero_mae_pct": 3.3446064005360387,
+      "oracle_daily_mean_residual_mae_pct": 2.7938088824649614,
+      "oracle_daily_median_residual_mae_pct": 2.778870095132742,
+      "oracle_sector_mean_residual_mae_pct": 2.506309315076537,
+      "oracle_sector_median_residual_mae_pct": 2.4677834270561565,
+      "oracle_market_median_mae_reduction_fraction": 0.16914884373617967,
+      "oracle_sector_median_mae_reduction_fraction": 0.2621602868843862
+    },
+    "10": {
+      "rows": 951231,
+      "origin_days": 2250,
+      "sectors": 11,
+      "total_return_variance": 47.00421971104444,
+      "between_day_market_mean_variance": 12.713077894234571,
+      "within_day_residual_variance": 34.29114181680986,
+      "market_factor_variance_fraction": 0.2704667362289479,
+      "zero_mae_pct": 4.803664028933388,
+      "oracle_daily_mean_residual_mae_pct": 4.0403287885025305,
+      "oracle_daily_median_residual_mae_pct": 4.017677235768298,
+      "oracle_sector_mean_residual_mae_pct": 3.63796054966667,
+      "oracle_sector_median_residual_mae_pct": 3.5813871619740882,
+      "oracle_market_median_mae_reduction_fraction": 0.16362234919655927,
+      "oracle_sector_median_mae_reduction_fraction": 0.2544467847037786
+    }
+  },
+  "feature_topology": {
+    "sample_days": 180,
+    "sample_rows": 87016,
+    "market_context_features": {
+      "cross_section_peer_count": {
+        "total_std": 9.975533128180846,
+        "median_within_day_std": 0.0,
+        "within_to_total_std_ratio": 0.0
+      },
+      "cross_section_mean_return_1d_pct": {
+        "total_std": 1.3378065108117716,
+        "median_within_day_std": 0.0033461406993639947,
+        "within_to_total_std_ratio": 0.002501214243107234
+      },
+      "cross_section_mean_return_5d_pct": {
+        "total_std": 2.5146276042164835,
+        "median_within_day_std": 0.007468161882810422,
+        "within_to_total_std_ratio": 0.002969887815709944
+      },
+      "cross_section_mean_return_20d_pct": {
+        "total_std": 5.025937269088829,
+        "median_within_day_std": 0.015648751693215276,
+        "within_to_total_std_ratio": 0.003113598689235589
+      },
+      "cross_section_breadth_positive_1d": {
+        "total_std": 0.22553940487134483,
+        "median_within_day_std": 0.0009637301468944394,
+        "within_to_total_std_ratio": 0.004273001196594374
+      },
+      "cross_section_breadth_positive_5d": {
+        "total_std": 0.21317095578985873,
+        "median_within_day_std": 0.0009729531108694956,
+        "within_to_total_std_ratio": 0.004564191717696385
+      },
+      "cross_section_dispersion_1d_pct": {
+        "total_std": 0.8063097478049082,
+        "median_within_day_std": 0.005093639799766354,
+        "within_to_total_std_ratio": 0.006317224631890217
+      },
+      "cross_section_mean_vol_20d_pct": {
+        "total_std": 0.7267986366593009,
+        "median_within_day_std": 0.0016801675612396131,
+        "within_to_total_std_ratio": 0.002311737359555918
+      }
+    },
+    "asset_market_relative_features": {
+      "asset_minus_cross_section_1d_pct": {
+        "total_std": 1.9369715721211136,
+        "median_within_day_std": 1.606521115070163,
+        "within_to_total_std_ratio": 0.8293983960285565
+      },
+      "asset_minus_cross_section_5d_pct": {
+        "total_std": 4.1391670251928945,
+        "median_within_day_std": 3.665914548851512,
+        "within_to_total_std_ratio": 0.8856648032174232
+      },
+      "asset_minus_cross_section_20d_pct": {
+        "total_std": 8.207605551649863,
+        "median_within_day_std": 7.561070315723189,
+        "within_to_total_std_ratio": 0.9212273016949859
+      }
+    },
+    "sector_context_features": {
+      "sector_peer_count": {
+        "total_std": 20.77755137171923,
+        "median_within_sector_day_std": 0.0,
+        "within_to_total_std_ratio": 0.0
+      },
+      "sector_context_missing": {
+        "total_std": 0.0,
+        "median_within_sector_day_std": 0.0,
+        "within_to_total_std_ratio": null
+      },
+      "sector_mean_return_1d_pct": {
+        "total_std": 1.563993911628894,
+        "median_within_sector_day_std": 0.03263673345298204,
+        "within_to_total_std_ratio": 0.020867557865996426
+      },
+      "sector_mean_return_5d_pct": {
+        "total_std": 3.038043932222096,
+        "median_within_sector_day_std": 0.07809706143719064,
+        "within_to_total_std_ratio": 0.02570636342973113
+      },
+      "sector_mean_return_20d_pct": {
+        "total_std": 6.006391379159814,
+        "median_within_sector_day_std": 0.15867226786868538,
+        "within_to_total_std_ratio": 0.026417237547860357
+      },
+      "sector_breadth_positive_1d": {
+        "total_std": 0.2834062732750118,
+        "median_within_sector_day_std": 0.009855001494528687,
+        "within_to_total_std_ratio": 0.03477340632105765
+      },
+      "sector_mean_vol_20d_pct": {
+        "total_std": 0.8188012903144913,
+        "median_within_sector_day_std": 0.01583900232344072,
+        "within_to_total_std_ratio": 0.01934413454253004
+      }
+    },
+    "asset_sector_relative_features": {
+      "asset_minus_sector_1d_pct": {
+        "total_std": 1.7964045843128522,
+        "median_within_sector_day_std": 1.3236875030003743,
+        "within_to_total_std_ratio": 0.7368537770163294
+      },
+      "asset_minus_sector_5d_pct": {
+        "total_std": 3.8498346295428583,
+        "median_within_sector_day_std": 3.1053217046635178,
+        "within_to_total_std_ratio": 0.8066117128340792
+      },
+      "asset_minus_sector_20d_pct": {
+        "total_std": 7.677066640377474,
+        "median_within_sector_day_std": 6.358504112314673,
+        "within_to_total_std_ratio": 0.8282465699688171
+      }
+    },
+    "summary": {
+      "median_market_context_within_day_ratio": 0.0030417432524727666,
+      "median_asset_market_relative_within_day_ratio": 0.8856648032174232,
+      "median_sector_context_within_sector_day_ratio": 0.02328696064786378,
+      "median_asset_sector_relative_within_sector_day_ratio": 0.8066117128340792,
+      "interpretation": "Context features should have low within-unit ratios if they are effectively day/sector-day variables. Asset-relative features should retain substantial within-unit variation and belong in the asset-level model rather than the market/sector factor model."
+    }
+  },
+  "decision": {
+    "next_stage": "MARKET_DAILY_V004_FACTORIZATION",
+    "reasons": [
+      "primary_hgb_full_loses_all_horizons",
+      "primary_loss_survives_temporal_block_bootstrap",
+      "cross_context_harms_hgb_all_horizons"
+    ],
+    "do_not_do_yet": [
+      "distributional_market_brain",
+      "event_brain_integration",
+      "external_proxy_expansion",
+      "hyperparameter_search_on_v003"
+    ],
+    "hypothesis_to_test_not_fact": "Repeated day-level and sector-day context in pooled asset-day nonlinear training contributes to unstable absolute-return mappings. Factorization separates effective statistical units and target components."
+  },
+  "v004_contract": {
+    "version": "market_brain_daily_v004_factorization_foundation_v001",
+    "motivation": "V003 pooled absolute-return benchmark failed at H1/H3/H5/H10, with the dominant degradation appearing when day-level cross-sectional context was repeated on asset-day rows.",
+    "levels": {
+      "market": {
+        "unit": "origin_trading_day",
+        "target": "equal-weight mean future return across usable assets",
+        "purpose": "learn common market component once per day"
+      },
+      "sector": {
+        "unit": "origin_trading_day_x_sector",
+        "target": "equal-weight sector future return minus market factor",
+        "purpose": "learn sector residual once per sector-day"
+      },
+      "asset": {
+        "unit": "origin_trading_day_x_asset",
+        "target": "asset future return minus equal-weight sector future return",
+        "purpose": "learn idiosyncratic / relative asset residual"
+      }
+    },
+    "identity": "asset_return = market_factor + sector_factor + asset_residual",
+    "feature_routing": {
+      "market_context": "cross_section aggregate features excluding asset-minus-market",
+      "sector_context": "sector aggregate features excluding asset-minus-sector",
+      "asset_relative": "own features plus asset-minus-market and asset-minus-sector"
+    },
+    "scientific_guards": {
+      "same_horizons": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "future_information_in_features": false,
+      "corporate_action_label_policy": "inherit_v003_usable_labels",
+      "current_cohort_survivorship_free": false,
+      "historical_price_pit_verified": false,
+      "external_proxies": false,
+      "macro": false,
+      "events": false,
+      "distributional_training": false
+    },
+    "next_gate": "Quantify target factorization and feature topology before materializing or training V004."
+  }
+}

@@ -372,3 +372,39 @@ walk-forward, primary model and primary MAE comparison are unchanged.
 
 The change only strengthens baselines, makes HGB stopping behavior explicit,
 exposes purge boundaries, and freezes code/data/environment hashes.
+<!-- MARKET_V003_RESULTS_V004_FACTORIZATION_V001 -->
+## Market Daily V003 Benchmark V001.1 — closed
+
+The preregistered primary claim was rejected at every horizon.
+
+Primary metric is:
+
+```text
+train_median MAE - HGB_full MAE
+```
+
+so positive is better for HGB.
+
+Observed pooled deltas:
+
+```text
+H1   -0.0484 pp
+H3   -0.2945 pp
+H5   -0.7561 pp
+H10  -1.0025 pp
+```
+
+All 5/10/20-origin-day moving-block bootstrap confidence intervals remain
+strictly below zero at every horizon.
+
+The dominant nonlinear degradation is the transition:
+
+```text
+HGB own -> HGB own + cross-section
+```
+
+which is negative at H1/H3/H5/H10. Sector context is smaller and mixed but
+does not rescue the full model.
+
+Therefore Market V003 is not promoted to distributional modeling and is not
+used as the base for Event Brain integration.

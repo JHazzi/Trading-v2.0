@@ -1,0 +1,24 @@
+{
+  "version": "market_brain_daily_v004_factorization_foundation_v001",
+  "source_benchmark_version": "market_brain_daily_v003_benchmark_v0011",
+  "source_core_feature_version": "market_daily_state_v003_core",
+  "source_core_label_version": "market_daily_reaction_v003_core",
+  "horizons_sessions": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "feature_topology_sample_days": 180,
+  "market_level_unit": "origin_trading_day",
+  "sector_level_unit": "origin_trading_day_x_sector",
+  "asset_level_unit": "origin_trading_day_x_asset",
+  "market_target": "cross_section_equal_weight_mean_future_return_pct",
+  "sector_target": "sector_equal_weight_mean_future_return_minus_market_factor_pct",
+  "asset_target": "asset_future_return_minus_sector_equal_weight_mean_future_return_pct",
+  "decomposition_identity": "asset_return = market_factor + sector_factor + asset_residual",
+  "external_proxies": false,
+  "macro": false,
+  "events": false,
+  "distributional_training": false
+}

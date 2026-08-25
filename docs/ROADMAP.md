@@ -337,3 +337,21 @@ Decision after results:
   layers;
 - only after this benchmark consider SPY/QQQ/IWM, volatility/rates, RF
   robustness, or distributional outputs.
+<!-- MARKET_V003_RESULTS_V004_FACTORIZATION_V001 -->
+### Phase 2 next step — Market Daily V004 factorization
+
+V003 absolute-return benchmark is scientifically closed as a negative result.
+
+Current sequence:
+
+```text
+V003 Core / Broad Panel                         DONE
+V003 preregistered benchmark                    DONE
+V003 primary absolute-return hypothesis        REJECTED
+V004 factorization postmortem                  NEXT
+V004 market/sector/asset component datasets    after postmortem
+V004 component benchmarks                      after dataset audit
+external proxies                               later incremental test
+distributional Market Brain                    after stable point baseline
+Event Brain integration                        after stable Market Brain
+```

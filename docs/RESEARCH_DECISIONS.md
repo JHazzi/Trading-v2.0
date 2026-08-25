@@ -252,3 +252,44 @@ H1 path volatility := 0
 The audit now treats missing/substantially unusable horizons as hard failures.
 The processed Core DB is rebuilt from source observations rather than patched
 in place.
+<!-- MARKET_V003_RESULTS_V004_FACTORIZATION_V001 -->
+## D022 — Factorize Market Brain before adding more context
+
+Market V003 demonstrated that pooling own-asset, market-day and sector-day
+signals into one asset-day nonlinear model is not currently robust.
+
+Next architecture hypothesis:
+
+```text
+Market factor model
+    unit = day
+        +
+Sector residual model
+    unit = sector-day
+        +
+Asset residual model
+    unit = asset-day
+```
+
+with exact target identity:
+
+```text
+asset return
+= market factor
++ sector factor
++ asset residual
+```
+
+This is a hypothesis to test, not an established explanation of the V003
+failure.
+
+Before training V004:
+
+1. quantify common-market and sector target variance;
+2. quantify feature replication/topology by statistical unit;
+3. freeze the factorized target contract;
+4. materialize each level separately;
+5. benchmark each component before recombination.
+
+Do not yet add external market proxies, macro, Event Brain, distributional
+outputs, or tune V003 after observing its benchmark.

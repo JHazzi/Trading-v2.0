@@ -4,8 +4,9 @@ import argparse,json
 from pathlib import Path
 
 from models.market.daily_v004_factorized_benchmark import (
-    ROOT,DEFAULT_CONFIG,load_config,load_frames,run_horizon
+    ROOT,DEFAULT_CONFIG,load_config,load_frames,run_horizon,v003_oos
 )
+import sqlite3
 
 def write(path,value):
     path.parent.mkdir(parents=True,exist_ok=True)
@@ -21,15 +22,83 @@ def main():
     db=ROOT/cfg["math_db"]; old=ROOT/cfg["v003_report_dir"]; out=ROOT/cfg["report_dir"]
 
     if a.stage=="plan":
-        result={"status":"PASS","benchmark_version":cfg["version"],"horizons":{}}
+        result={
+            "status":"PASS",
+            "failures":[],
+            "benchmark_version":cfg["version"],
+            "horizons":{}
+        }
         for h in cfg["horizons_sessions"]:
-            m,s,x,sf,af=load_frames(db,h)
-            result["horizons"][str(h)]={
-                "market_rows":len(m),"sector_rows":len(s),"asset_rows":len(x),
-                "dynamic_ready_rows":int(x.dynamic_factorization_ready.sum()),
-                "market_features":len([c for c in m.columns if c.startswith("market_")]),
-                "sector_features":len(sf),"asset_features":len(af),
+            m,s,x,sf,aaf,daf=load_frames(db,h)
+
+            with sqlite3.connect(db) as conn:
+                raw_usable_rows=int(conn.execute(
+                    "SELECT COUNT(*) FROM v004_factor_targets "
+                    "WHERE horizon_sessions=?",
+                    (int(h),)
+                ).fetchone()[0])
+
+            old_oos=v003_oos(old/f"h{h}_oos.csv.gz")
+            additive_state_ids=set(x["state_id"].astype(str))
+            old_state_ids=set(old_oos["state_id"].astype(str))
+            missing_v003_oos=old_state_ids-additive_state_ids
+
+            dynamic_ready=int((
+                (x["dynamic_factorization_ready"]==1)
+                & x[daf].notna().all(axis=1)
+            ).sum())
+
+            horizon_result={
+                "market_rows":len(m),
+                "sector_rows":len(s),
+                "raw_usable_asset_rows":raw_usable_rows,
+                "additive_asset_rows":len(x),
+                "dynamic_ready_rows":dynamic_ready,
+                "additive_coverage_fraction":(
+                    float(len(x)/raw_usable_rows) if raw_usable_rows else 0.0
+                ),
+                "v003_oos_rows":len(old_oos),
+                "v003_oos_rows_missing_from_additive":len(missing_v003_oos),
+                "market_features":len([
+                    c for c in m.columns if c.startswith("market_")
+                ]),
+                "sector_features":len(sf),
+                "additive_asset_features":len(aaf),
+                "dynamic_asset_features":len(daf),
             }
+
+            if len(missing_v003_oos):
+                result["failures"].append(
+                    f"h{h}_additive_missing_v003_oos_rows"
+                )
+            if len(x) < 0.98*raw_usable_rows:
+                result["failures"].append(
+                    f"h{h}_additive_coverage_below_98pct"
+                )
+            # With the current Core contract, every usable label has a
+            # complete additive state. Treat any loss as a schema regression,
+            # not as an acceptable modeling choice.
+            if len(x) != raw_usable_rows:
+                result["failures"].append(
+                    f"h{h}_additive_not_equal_raw_usable_rows"
+                )
+            if len(aaf) != 20:
+                result["failures"].append(
+                    f"h{h}_unexpected_additive_feature_count_{len(aaf)}"
+                )
+            if len(daf) != 25:
+                result["failures"].append(
+                    f"h{h}_unexpected_dynamic_feature_count_{len(daf)}"
+                )
+            if dynamic_ready >= len(x):
+                result["failures"].append(
+                    f"h{h}_dynamic_subset_not_strictly_smaller"
+                )
+
+            result["horizons"][str(h)]=horizon_result
+
+        if result["failures"]:
+            result["status"]="FAIL"
         write(out/"benchmark_plan.json",result)
     elif a.stage=="run":
         if a.horizon is None: raise SystemExit("--horizon required")

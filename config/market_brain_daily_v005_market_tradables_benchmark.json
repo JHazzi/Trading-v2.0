@@ -1,0 +1,127 @@
+{
+  "version": "market_brain_daily_v005_market_tradables_benchmark_v001",
+  "research_question": "Does SPY/QQQ/IWM state available at the origin close add predictive information to the V004 factorized Market Brain?",
+  "math_db": "data/processed/market_daily_v004_math.db",
+  "external_state_db": "data/processed/market_daily_v005_external_state.db",
+  "v003_report_dir": "reports/market_brain_daily_v003/benchmark_v0011",
+  "v004_report_dir": "reports/market_brain_daily_v004/factorized_benchmark_v0012",
+  "report_dir": "reports/market_brain_daily_v005/market_tradables_benchmark_v001",
+  "horizons_sessions": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "base_market_features": [
+    "market_return_1d_pct",
+    "market_return_5d_pct",
+    "market_return_20d_pct",
+    "market_breadth_positive_1d",
+    "market_breadth_positive_5d",
+    "market_dispersion_1d_pct",
+    "market_mean_vol_20d_pct",
+    "market_realized_vol_20d_pct",
+    "market_realized_vol_63d_pct",
+    "market_trend_20d_pct",
+    "market_trend_63d_pct",
+    "market_drawdown_63d_pct",
+    "market_drawdown_252d_pct"
+  ],
+  "external_market_features": [
+    "spy_return_1d_pct",
+    "spy_return_5d_pct",
+    "spy_return_20d_pct",
+    "spy_return_63d_pct",
+    "spy_vol_20d_pct",
+    "spy_vol_63d_pct",
+    "spy_drawdown_63d_pct",
+    "spy_drawdown_252d_pct",
+    "spy_range_1d_pct",
+    "spy_volume_ratio_20d",
+    "qqq_return_1d_pct",
+    "qqq_return_5d_pct",
+    "qqq_return_20d_pct",
+    "iwm_return_1d_pct",
+    "iwm_return_5d_pct",
+    "iwm_return_20d_pct",
+    "qqq_minus_spy_1d_pct",
+    "qqq_minus_spy_5d_pct",
+    "qqq_minus_spy_20d_pct",
+    "iwm_minus_spy_1d_pct",
+    "iwm_minus_spy_5d_pct",
+    "iwm_minus_spy_20d_pct"
+  ],
+  "models": {
+    "market_hgb": {
+      "loss": "absolute_error",
+      "learning_rate": 0.03,
+      "max_iter": 120,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 40,
+      "l2_regularization": 2.0,
+      "early_stopping": false,
+      "random_state": 42
+    },
+    "sector_hgb": {
+      "loss": "absolute_error",
+      "learning_rate": 0.04,
+      "max_iter": 150,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 100,
+      "l2_regularization": 2.0,
+      "early_stopping": false,
+      "random_state": 42
+    },
+    "asset_hgb": {
+      "loss": "absolute_error",
+      "learning_rate": 0.05,
+      "max_iter": 180,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 200,
+      "l2_regularization": 1.0,
+      "early_stopping": false,
+      "random_state": 42
+    }
+  },
+  "bootstrap": {
+    "reps": 3000,
+    "moving_block_lengths_origin_days": [
+      5,
+      10,
+      20
+    ],
+    "seed": 42
+  },
+  "primary_contract": {
+    "baseline": "v004_additive_hgb_reconstruction",
+    "candidate": "v005_market_tradables_additive_hgb_reconstruction",
+    "only_market_model_changes": true,
+    "sector_model_unchanged": true,
+    "asset_model_unchanged": true,
+    "same_v004_oos_rows": true,
+    "same_outer_fold_boundaries": true,
+    "no_hyperparameter_tuning": true,
+    "positive_delta_means_v005_better": true
+  },
+  "decision_contract": {
+    "external_block_is_incrementally_supported_if": "all moving-block bootstrap CI95 lower bounds for V004 minus V005 absolute error are > 0",
+    "absolute_skill_checkpoint": "V005 reconstruction vs fold train median is reported separately; incremental support does not by itself imply absolute skill",
+    "if_incremental_supported_but_absolute_not_yet": "retain SPY/QQQ/IWM and test the next preregistered information block",
+    "if_incremental_not_supported": "do not tune this block; reject or quarantine it and move to a different information hypothesis",
+    "do_not_choose_best_horizon_as_global_claim": true
+  },
+  "causal_limitations": {
+    "historical_reference_strict_pit": false,
+    "availability_basis": "historical_session_close_assumption_not_strict_pit",
+    "events": false,
+    "macro": false,
+    "rates_credit": false,
+    "sector_etfs": false
+  },
+  "implementation_guards": {
+    "single_frozen_oos_reference": "V004 factorized OOS",
+    "v004_oos_carries_train_median_and_v003_hgb_full": true,
+    "do_not_merge_v003_oos_separately": true,
+    "v004_replay_prediction_tolerance": 1e-09
+  }
+}

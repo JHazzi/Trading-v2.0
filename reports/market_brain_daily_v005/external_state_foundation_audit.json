@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "reviews": [],
+  "reference_coverage": [
+    {
+      "symbol": "IWM",
+      "rows": 2675,
+      "first_day": "2016-01-04",
+      "last_day": "2026-08-24"
+    },
+    {
+      "symbol": "QQQ",
+      "rows": 2675,
+      "first_day": "2016-01-04",
+      "last_day": "2026-08-24"
+    },
+    {
+      "symbol": "SPY",
+      "rows": 2675,
+      "first_day": "2016-01-04",
+      "last_day": "2026-08-24"
+    }
+  ],
+  "state_rows": 2675,
+  "complete_feature_rows": 2424,
+  "v004_relevant_market_days": 2260,
+  "complete_overlap_days": 2260,
+  "overlap_fraction": 1.0,
+  "strict_historical_pit": false,
+  "next_gate": "Preregister V005 market-factor enrichment benchmark on V004 folds; do not activate sector/rates/macro yet."
+}

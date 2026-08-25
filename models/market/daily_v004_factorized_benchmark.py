@@ -100,10 +100,33 @@ def load_frames(db: Path, horizon: int):
     sector=sector[_finite(sector,sec_features)].copy()
 
     asset=asset.rename(columns={"trading_day":"origin_trading_day"})
-    asset=target.merge(
+
+    # The target table contains beta/gamma copies because those exposures were
+    # used when materializing the dynamic decomposition targets. They are NOT
+    # target information and must not be duplicated into the modeling frame.
+    # Features come canonically from v004_asset_states only.
+    exposure_cols = [
+        "beta_market_63", "beta_market_252",
+        "gamma_sector_63", "gamma_sector_252",
+    ]
+    target_for_merge = target.drop(
+        columns=[c for c in exposure_cols if c in target.columns]
+    )
+    asset=target_for_merge.merge(
         asset,on=["state_id","asset_id","sector","origin_trading_day"],
         how="inner",validate="many_to_one",suffixes=("","_state")
     )
+
+    duplicate_exposure_cols = [
+        c for c in asset.columns
+        if c.endswith("_state")
+        and c.removesuffix("_state") in set(exposure_cols)
+    ]
+    if duplicate_exposure_cols:
+        raise RuntimeError(
+            "duplicate exposure columns survived canonical merge: "
+            f"{duplicate_exposure_cols}"
+        )
     numeric=[
         c for c in asset.columns
         if c not in ASSET_EXCLUDE
@@ -121,11 +144,42 @@ def load_frames(db: Path, horizon: int):
         "target_asset_beta_residual_pct","additive_identity_error",
         "beta_identity_error","dynamic_factorization_ready"
     }
-    asset_features=[c for c in numeric if c not in prohibited]
-    asset=asset[_finite(asset,asset_features)].copy()
+
+    dynamic_only={
+        "beta_market_63","beta_market_252",
+        "gamma_sector_63","gamma_sector_252",
+        "idio_vol_63d_pct",
+    }
+
+    leaked_dynamic_aliases = [
+        c for c in numeric
+        if (
+            c.endswith("_state")
+            and c.removesuffix("_state") in dynamic_only
+        )
+    ]
+    if leaked_dynamic_aliases:
+        raise RuntimeError(
+            "dynamic exposure aliases leaked into numeric feature discovery: "
+            f"{leaked_dynamic_aliases}"
+        )
+    additive_asset_features=[
+        c for c in numeric
+        if c not in prohibited and c not in dynamic_only
+    ]
+    dynamic_asset_features=[
+        *additive_asset_features,
+        *sorted(dynamic_only),
+    ]
+
+    # Primary additive coverage must NOT depend on dynamic beta/gamma history.
+    asset=asset[_finite(asset,additive_asset_features)].copy()
     asset["target_end_day"]=asset["target_trading_day"].astype(str)
 
-    return market,sector,asset,sec_features,asset_features
+    return (
+        market,sector,asset,sec_features,
+        additive_asset_features,dynamic_asset_features
+    )
 
 
 def hgb(params,seed):
@@ -161,7 +215,10 @@ def v003_oos(path: Path):
 
 
 def run_horizon(db:Path,v003_dir:Path,horizon:int,cfg):
-    market,sector,asset,sec_features,asset_features=load_frames(db,horizon)
+    (
+        market,sector,asset,sec_features,
+        additive_asset_features,dynamic_asset_features
+    )=load_frames(db,horizon)
     boundaries=load_v003_boundaries(v003_dir/f"h{horizon}_benchmark.json")
     old=v003_oos(v003_dir/f"h{horizon}_oos.csv.gz")
 
@@ -181,15 +238,22 @@ def run_horizon(db:Path,v003_dir:Path,horizon:int,cfg):
                 st,sv,sec_features,"target_sector",cfg,"sector_hgb",fam
             )
             av[f"pred_asset_add_{fam}"]=fit_level(
-                at,av,asset_features,"target_asset_additive_residual_pct",
+                at,av,additive_asset_features,
+                "target_asset_additive_residual_pct",
                 cfg,"asset_hgb",fam
             )
 
-            dyn_train=at[at["dynamic_factorization_ready"]==1]
-            dyn_test=av[av["dynamic_factorization_ready"]==1].copy()
+            dyn_train=at[
+                (at["dynamic_factorization_ready"]==1)
+                & _finite(at,dynamic_asset_features)
+            ].copy()
+            dyn_test=av[
+                (av["dynamic_factorization_ready"]==1)
+                & _finite(av,dynamic_asset_features)
+            ].copy()
             if len(dyn_train) and len(dyn_test):
                 dyn_test[f"pred_asset_dyn_{fam}"]=fit_level(
-                    dyn_train,dyn_test,asset_features,
+                    dyn_train,dyn_test,dynamic_asset_features,
                     "target_asset_beta_residual_pct",cfg,"asset_hgb",fam
                 )
                 av=av.merge(

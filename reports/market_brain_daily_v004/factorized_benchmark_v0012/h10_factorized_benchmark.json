@@ -1,0 +1,325 @@
+{
+  "benchmark_version": "market_brain_daily_v004_factorized_benchmark_v0012",
+  "horizon_sessions": 10,
+  "oos_rows": 673391,
+  "oos_assets": 497,
+  "oos_origin_days": 1575,
+  "component_fold_metrics": [
+    {
+      "fold_id": 0,
+      "first_test_day": "2020-05-04",
+      "last_test_day": "2021-08-02",
+      "market_hgb": {
+        "rows": 315,
+        "mae_pct": 2.5993098663377268,
+        "median_ae_pct": 1.9377806104535138,
+        "rmse_pct": 3.5495931651443757,
+        "bias_pct": -0.31709501983418054,
+        "directional_accuracy": 0.6507936507936508
+      },
+      "sector_hgb": {
+        "rows": 3465,
+        "mae_pct": 2.0788359349658294,
+        "median_ae_pct": 1.4836592236770911,
+        "rmse_pct": 2.963692392422895,
+        "bias_pct": -0.12331180495131208,
+        "directional_accuracy": 0.5024531024531025
+      },
+      "asset_add_hgb": {
+        "rows": 133204,
+        "mae_pct": 3.7554121129943447,
+        "median_ae_pct": 2.724614816779663,
+        "rmse_pct": 5.337266211855427,
+        "bias_pct": 0.045865915122056844,
+        "directional_accuracy": 0.5127548722260593
+      }
+    },
+    {
+      "fold_id": 1,
+      "first_test_day": "2021-08-03",
+      "last_test_day": "2022-10-31",
+      "market_hgb": {
+        "rows": 315,
+        "mae_pct": 3.5315323467351347,
+        "median_ae_pct": 2.577854032912945,
+        "rmse_pct": 4.718403767633608,
+        "bias_pct": 2.092518404438493,
+        "directional_accuracy": 0.546031746031746
+      },
+      "sector_hgb": {
+        "rows": 3465,
+        "mae_pct": 2.1064367544803453,
+        "median_ae_pct": 1.5054892979660837,
+        "rmse_pct": 3.0175422419340974,
+        "bias_pct": -0.24218472228698174,
+        "directional_accuracy": 0.4738816738816739
+      },
+      "asset_add_hgb": {
+        "rows": 134135,
+        "mae_pct": 3.7031144344391596,
+        "median_ae_pct": 2.664782683307666,
+        "rmse_pct": 5.280183026687375,
+        "bias_pct": -0.007160572326553651,
+        "directional_accuracy": 0.49929548589107986
+      }
+    },
+    {
+      "fold_id": 2,
+      "first_test_day": "2022-11-01",
+      "last_test_day": "2024-02-02",
+      "market_hgb": {
+        "rows": 315,
+        "mae_pct": 2.4396933360341926,
+        "median_ae_pct": 2.2425812011796658,
+        "rmse_pct": 2.8984691741968835,
+        "bias_pct": -0.17338355691714616,
+        "directional_accuracy": 0.5873015873015873
+      },
+      "sector_hgb": {
+        "rows": 3465,
+        "mae_pct": 1.8024227042179508,
+        "median_ae_pct": 1.367339363431249,
+        "rmse_pct": 2.4039363588046547,
+        "bias_pct": 0.11877664663912108,
+        "directional_accuracy": 0.5093795093795094
+      },
+      "asset_add_hgb": {
+        "rows": 134913,
+        "mae_pct": 3.452656586905996,
+        "median_ae_pct": 2.4442138076055535,
+        "rmse_pct": 5.13084858319626,
+        "bias_pct": -0.07699004581774296,
+        "directional_accuracy": 0.5095728358275333
+      }
+    },
+    {
+      "fold_id": 3,
+      "first_test_day": "2024-02-05",
+      "last_test_day": "2025-05-07",
+      "market_hgb": {
+        "rows": 315,
+        "mae_pct": 2.279921928998784,
+        "median_ae_pct": 1.9328598309278329,
+        "rmse_pct": 2.987043766717867,
+        "bias_pct": -0.06903852539038711,
+        "directional_accuracy": 0.6285714285714286
+      },
+      "sector_hgb": {
+        "rows": 3465,
+        "mae_pct": 1.7836595892173737,
+        "median_ae_pct": 1.3640752076108316,
+        "rmse_pct": 2.3871767502978667,
+        "bias_pct": -0.016933607427670236,
+        "directional_accuracy": 0.511976911976912
+      },
+      "asset_add_hgb": {
+        "rows": 135079,
+        "mae_pct": 3.7167864577378755,
+        "median_ae_pct": 2.6184148607031665,
+        "rmse_pct": 5.463807707471296,
+        "bias_pct": -0.06366376816410352,
+        "directional_accuracy": 0.5153354703543852
+      }
+    },
+    {
+      "fold_id": 4,
+      "first_test_day": "2025-05-08",
+      "last_test_day": "2026-08-10",
+      "market_hgb": {
+        "rows": 315,
+        "mae_pct": 1.5523342376663392,
+        "median_ae_pct": 1.1808748877541624,
+        "rmse_pct": 2.0708449925240573,
+        "bias_pct": -0.4168831589289622,
+        "directional_accuracy": 0.6476190476190476
+      },
+      "sector_hgb": {
+        "rows": 3465,
+        "mae_pct": 2.080644161695498,
+        "median_ae_pct": 1.534754670826478,
+        "rmse_pct": 2.857258865924676,
+        "bias_pct": 0.01223479871983713,
+        "directional_accuracy": 0.513997113997114
+      },
+      "asset_add_hgb": {
+        "rows": 136060,
+        "mae_pct": 4.366208046939285,
+        "median_ae_pct": 2.9972371964485953,
+        "rmse_pct": 6.518299633385091,
+        "bias_pct": -0.08205155006938833,
+        "directional_accuracy": 0.5120608555049243
+      }
+    }
+  ],
+  "candidates": {
+    "pred_additive_hgb": {
+      "metrics": {
+        "rows": 673391,
+        "mae_pct": 4.93128809475059,
+        "median_ae_pct": 3.6319033717541522,
+        "rmse_pct": 6.9415015435054475,
+        "bias_pct": 0.11166645086077154,
+        "directional_accuracy": 0.5343284956288397
+      },
+      "vs_train_median": {
+        "mae_delta_baseline_minus_candidate_pct": -0.07941820265260494,
+        "candidate_abs_error_win_rate": 0.480307874622619,
+        "directional_accuracy_delta": -0.01985028014927437
+      },
+      "vs_v003_hgb_full": {
+        "mae_delta_baseline_minus_candidate_pct": 0.9230397159665098,
+        "candidate_abs_error_win_rate": 0.6157403351099139,
+        "directional_accuracy_delta": 0.05804799885950357
+      },
+      "cross_section": {
+        "daily_pearson_ic": {
+          "days": 1575,
+          "mean": -0.003077425952318839,
+          "median": -0.006848865880719848
+        },
+        "daily_spearman_ic": {
+          "days": 1575,
+          "mean": 0.0049188958452911595,
+          "median": -0.003580795320853081
+        }
+      }
+    },
+    "pred_additive_ridge": {
+      "metrics": {
+        "rows": 673391,
+        "mae_pct": 5.131827576786875,
+        "median_ae_pct": 3.7569638840743043,
+        "rmse_pct": 7.203859092578295,
+        "bias_pct": 0.18297875527727428,
+        "directional_accuracy": 0.5151776605270935
+      },
+      "vs_train_median": {
+        "mae_delta_baseline_minus_candidate_pct": -0.2799576846888915,
+        "candidate_abs_error_win_rate": 0.465114621371536,
+        "directional_accuracy_delta": -0.03900111525102057
+      },
+      "vs_v003_hgb_full": {
+        "mae_delta_baseline_minus_candidate_pct": 0.7225002339302231,
+        "candidate_abs_error_win_rate": 0.6030582529318034,
+        "directional_accuracy_delta": 0.03889716375775737
+      },
+      "cross_section": {
+        "daily_pearson_ic": {
+          "days": 1575,
+          "mean": 0.04078283365362681,
+          "median": 0.04199011797612575
+        },
+        "daily_spearman_ic": {
+          "days": 1575,
+          "mean": 0.02784236919231083,
+          "median": 0.022039352799535887
+        }
+      }
+    },
+    "pred_dynamic_hgb": {
+      "rows": 666394,
+      "metrics": {
+        "rows": 666394,
+        "mae_pct": 4.90366038413871,
+        "median_ae_pct": 3.6122325868280925,
+        "rmse_pct": 6.898474592663007,
+        "bias_pct": 0.1354004236384539,
+        "directional_accuracy": 0.5372257253216566
+      },
+      "vs_train_median": {
+        "mae_delta_baseline_minus_candidate_pct": -0.0828927395278341,
+        "candidate_abs_error_win_rate": 0.4828764964870632,
+        "directional_accuracy_delta": -0.017249555068022837
+      },
+      "vs_v003_hgb_full": {
+        "mae_delta_baseline_minus_candidate_pct": 0.9176202813704327,
+        "candidate_abs_error_win_rate": 0.612379463200449,
+        "directional_accuracy_delta": 0.06067431579516025
+      },
+      "cross_section": {
+        "daily_pearson_ic": {
+          "days": 1575,
+          "mean": 0.006310214682421699,
+          "median": -0.005329097453200501
+        },
+        "daily_spearman_ic": {
+          "days": 1575,
+          "mean": 0.011807316972452714,
+          "median": -0.004451203385347792
+        }
+      }
+    },
+    "pred_dynamic_ridge": {
+      "rows": 666394,
+      "metrics": {
+        "rows": 666394,
+        "mae_pct": 5.067691942564952,
+        "median_ae_pct": 3.7151604931233484,
+        "rmse_pct": 7.123087056762106,
+        "bias_pct": 0.15452891096721255,
+        "directional_accuracy": 0.5159920407446645
+      },
+      "vs_train_median": {
+        "mae_delta_baseline_minus_candidate_pct": -0.24692429795407647,
+        "candidate_abs_error_win_rate": 0.4690438389301224,
+        "directional_accuracy_delta": -0.03848323964501488
+      },
+      "vs_v003_hgb_full": {
+        "mae_delta_baseline_minus_candidate_pct": 0.7535887229441901,
+        "candidate_abs_error_win_rate": 0.6042911550824287,
+        "directional_accuracy_delta": 0.03944063121816821
+      },
+      "cross_section": {
+        "daily_pearson_ic": {
+          "days": 1575,
+          "mean": 0.02283241070417897,
+          "median": 0.017573963907521976
+        },
+        "daily_spearman_ic": {
+          "days": 1575,
+          "mean": 0.00841528130882865,
+          "median": -0.005044225047878683
+        }
+      }
+    }
+  },
+  "primary_block_bootstrap": {
+    "5": {
+      "point_delta_pct": -0.08026121419139232,
+      "ci95": [
+        -0.13570308163320552,
+        -0.0281417289971356
+      ],
+      "unique_origin_days": 1575,
+      "block_length_origin_days": 5,
+      "bootstrap_reps": 3000
+    },
+    "10": {
+      "point_delta_pct": -0.08026121419139232,
+      "ci95": [
+        -0.15117994765607162,
+        -0.016684039149078414
+      ],
+      "unique_origin_days": 1575,
+      "block_length_origin_days": 10,
+      "bootstrap_reps": 3000
+    },
+    "20": {
+      "point_delta_pct": -0.08026121419139232,
+      "ci95": [
+        -0.15608371074964933,
+        -0.01777792509666559
+      ],
+      "unique_origin_days": 1575,
+      "block_length_origin_days": 20,
+      "bootstrap_reps": 3000
+    }
+  },
+  "primary_contract": {
+    "candidate": "pred_additive_hgb",
+    "baseline": "pred_train_median",
+    "same_v003_test_rows_required": true,
+    "dynamic_beta_secondary": true,
+    "no_post_result_tuning": true
+  }
+}

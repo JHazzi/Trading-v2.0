@@ -1,0 +1,76 @@
+{
+  "status": "FAIL",
+  "failures": [
+    "h1_additive_missing_v003_oos_rows",
+    "h1_additive_coverage_below_98pct",
+    "h1_dynamic_subset_not_strictly_smaller",
+    "h3_additive_missing_v003_oos_rows",
+    "h3_additive_coverage_below_98pct",
+    "h3_dynamic_subset_not_strictly_smaller",
+    "h5_additive_missing_v003_oos_rows",
+    "h5_additive_coverage_below_98pct",
+    "h5_dynamic_subset_not_strictly_smaller",
+    "h10_additive_missing_v003_oos_rows",
+    "h10_additive_coverage_below_98pct",
+    "h10_dynamic_subset_not_strictly_smaller"
+  ],
+  "benchmark_version": "market_brain_daily_v004_factorized_benchmark_v0011",
+  "horizons": {
+    "1": {
+      "market_rows": 2008,
+      "sector_rows": 22088,
+      "raw_usable_asset_rows": 1078329,
+      "additive_asset_rows": 924836,
+      "dynamic_ready_rows": 924836,
+      "additive_coverage_fraction": 0.8576566150033987,
+      "v003_oos_rows": 763935,
+      "v003_oos_rows_missing_from_additive": 7498,
+      "market_features": 14,
+      "sector_features": 24,
+      "additive_asset_features": 24,
+      "dynamic_asset_features": 29
+    },
+    "3": {
+      "market_rows": 2006,
+      "sector_rows": 22066,
+      "raw_usable_asset_rows": 1049926,
+      "additive_asset_rows": 900199,
+      "dynamic_ready_rows": 900199,
+      "additive_coverage_fraction": 0.857392806731141,
+      "v003_oos_rows": 743503,
+      "v003_oos_rows_missing_from_additive": 7388,
+      "market_features": 14,
+      "sector_features": 24,
+      "additive_asset_features": 24,
+      "dynamic_asset_features": 29
+    },
+    "5": {
+      "market_rows": 2004,
+      "sector_rows": 22044,
+      "raw_usable_asset_rows": 1021619,
+      "additive_asset_rows": 875620,
+      "dynamic_ready_rows": 875620,
+      "additive_coverage_fraction": 0.8570905592006414,
+      "v003_oos_rows": 723573,
+      "v003_oos_rows_missing_from_additive": 7282,
+      "market_features": 14,
+      "sector_features": 24,
+      "additive_asset_features": 24,
+      "dynamic_asset_features": 29
+    },
+    "10": {
+      "market_rows": 1999,
+      "sector_rows": 21989,
+      "raw_usable_asset_rows": 951231,
+      "additive_asset_rows": 814640,
+      "dynamic_ready_rows": 814640,
+      "additive_coverage_fraction": 0.8564060675062104,
+      "v003_oos_rows": 673391,
+      "v003_oos_rows_missing_from_additive": 6997,
+      "market_features": 14,
+      "sector_features": 24,
+      "additive_asset_features": 24,
+      "dynamic_asset_features": 29
+    }
+  }
+}

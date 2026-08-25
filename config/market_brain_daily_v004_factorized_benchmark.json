@@ -1,8 +1,8 @@
 {
-  "version": "market_brain_daily_v004_factorized_benchmark_v001",
+  "version": "market_brain_daily_v004_factorized_benchmark_v0012",
   "math_db": "data/processed/market_daily_v004_math.db",
   "v003_report_dir": "reports/market_brain_daily_v003/benchmark_v0011",
-  "report_dir": "reports/market_brain_daily_v004/factorized_benchmark_v001",
+  "report_dir": "reports/market_brain_daily_v004/factorized_benchmark_v0012",
   "horizons_sessions": [
     1,
     3,
@@ -62,5 +62,14 @@
     "dynamic_beta_is_secondary_not_replacement_if_primary_fails": true,
     "do_not_select_best_horizon_as_global_claim": true,
     "do_not_tune_after_results": true
+  },
+  "implementation_fix": {
+    "reason": "V001.1 still filtered additive coverage because beta/gamma existed in both factor_targets and asset_states; merge suffixes created beta/gamma *_state aliases that leaked into additive features.",
+    "canonical_exposure_feature_source": "v004_asset_states",
+    "drop_exposure_copies_from_target_before_merge": true,
+    "forbid_suffixed_exposure_aliases": true,
+    "primary_additive_uses_dynamic_features": false,
+    "dynamic_beta_remains_secondary_subset": true,
+    "plan_requires_exact_v003_oos_additive_coverage": true
   }
 }

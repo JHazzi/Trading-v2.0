@@ -478,3 +478,95 @@ Every component training row must have `target_end_day < first_test_day`.
 
 No proxy data, macro, events, distributional heads or post-result tuning enter
 this benchmark.
+<!-- MARKET_V004_FACTORIZED_V0011_COVERAGE_FIX -->
+## Market V004 factorized benchmark V001.1 coverage correction
+
+V001 was stopped at the plan gate before model results.
+
+The plan revealed that the additive primary was accidentally restricted to
+rows with finite dynamic beta/gamma features (~85.7% coverage). That violated
+the preregistered contract: additive is the broad-coverage primary, dynamic
+beta/gamma is secondary.
+
+V001.1 separates additive and dynamic feature availability and hard-fails its
+plan unless additive coverage includes all V003 OOS state rows and at least
+98% of usable V004 target rows.
+
+No V001 factorized model performance was observed before this correction.
+<!-- MARKET_V004_FACTORIZED_V0012_DUPLICATE_EXPOSURE_FIX -->
+## Market V004 factorized benchmark V001.2 duplicate-exposure correction
+
+V001.1 also stopped at the plan gate before model results.
+
+Root cause of persistent ~85.7% additive coverage: beta/gamma exposures existed
+both in `v004_factor_targets` and `v004_asset_states`. The modeling merge kept
+the state copies with `_state` suffixes. Those aliases were not excluded by
+the V001.1 dynamic-feature filter, so they still gated the additive primary.
+
+V001.2 makes `v004_asset_states` the canonical source of exposure features,
+drops exposure copies from the target table before the merge, and hard-fails
+if suffixed exposure aliases survive.
+
+The plan additionally requires:
+
+```text
+additive_asset_rows == raw_usable_asset_rows
+all V003 OOS states included
+20 additive asset features
+25 dynamic asset features
+dynamic subset strictly smaller than additive
+```
+
+No V004 factorized model performance was observed before this correction.
+<!-- MARKET_V004_RESULTS_V005_EXTERNAL_STATE -->
+## Market V004 factorized result and V005 external-state decision
+
+V004 factorization materially improves V003 but does not pass the preregistered
+absolute-return primary against fold train median at H1/H3/H5/H10. The loss
+survives moving-block bootstrap.
+
+Decision:
+
+- retain V003 and V004 as canonical evidence;
+- stop additional endogenous-price factorization as the primary research path;
+- begin V005 incremental Market State enrichment;
+- first increment is SPY/QQQ/IWM only;
+- sector ETFs, volatility/rates/credit, macro, events and distributional heads
+  remain separate later increments;
+- no post-result tuning of V004.
+
+This remains Architecture Phase C: improve the base Market Brain without news
+before Event Brain integration.
+<!-- MARKET_V005_MARKET_TRADABLES_BENCHMARK_V001 -->
+## Market Brain Daily V005 market-tradables benchmark — preregistration
+
+V004 factorization remains the frozen control. V005 tests one information
+increment only: SPY/QQQ/IWM market state available at the origin-session close.
+
+Primary comparison:
+
+```text
+V004 additive HGB reconstruction
+vs
+V005 additive HGB reconstruction
+```
+
+Only the market-level model receives new features. Sector and asset models,
+targets, folds, hyperparameters and OOS state rows are unchanged.
+
+The new market block contains 22 features derived from SPY/QQQ/IWM.
+Historical Yahoo reference data uses the documented historical-session-close
+assumption and is not strict provider point-in-time replay.
+
+Two conclusions are kept separate:
+
+1. incremental information value: V005 vs V004;
+2. absolute skill checkpoint: V005 vs fold train median.
+
+An external block can be retained for the next information stage if its paired
+moving-block bootstrap improvement over V004 is positive across the
+preregistered 5/10/20 origin-day blocks. This does not by itself imply absolute
+market-prediction skill.
+
+No sector ETFs, VIX, rates/credit, macro, events, distributional heads or
+hyperparameter search enter this benchmark.

@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "benchmark_version": "market_brain_daily_v004_factorized_benchmark_v001",
+  "horizons": {
+    "1": {
+      "market_rows": 2008,
+      "sector_rows": 22088,
+      "asset_rows": 924836,
+      "dynamic_ready_rows": 924836,
+      "market_features": 14,
+      "sector_features": 24,
+      "asset_features": 29
+    },
+    "3": {
+      "market_rows": 2006,
+      "sector_rows": 22066,
+      "asset_rows": 900199,
+      "dynamic_ready_rows": 900199,
+      "market_features": 14,
+      "sector_features": 24,
+      "asset_features": 29
+    },
+    "5": {
+      "market_rows": 2004,
+      "sector_rows": 22044,
+      "asset_rows": 875620,
+      "dynamic_ready_rows": 875620,
+      "market_features": 14,
+      "sector_features": 24,
+      "asset_features": 29
+    },
+    "10": {
+      "market_rows": 1999,
+      "sector_rows": 21989,
+      "asset_rows": 814640,
+      "dynamic_ready_rows": 814640,
+      "market_features": 14,
+      "sector_features": 24,
+      "asset_features": 29
+    }
+  }
+}

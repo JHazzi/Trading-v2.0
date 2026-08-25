@@ -1,0 +1,112 @@
+{
+  "version": "market_brain_daily_v005_external_state_foundation_v001",
+  "research_question": "Does contemporaneously available broad-market tradable state add walk-forward predictive information beyond the factorized V004 state?",
+  "active_stage": "market_tradables",
+  "state_clock": "after_us_regular_session_close",
+  "strict_historical_pit": false,
+  "historical_availability_basis": "historical_session_close_assumption_not_strict_pit",
+  "stages": {
+    "market_tradables": {
+      "enabled": true,
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "IWM"
+      ],
+      "role": {
+        "SPY": "large_cap_market_proxy",
+        "QQQ": "growth_technology_tilt_proxy",
+        "IWM": "small_cap_risk_tilt_proxy"
+      }
+    },
+    "sector_etfs": {
+      "enabled": false,
+      "symbols": [
+        "XLK",
+        "XLF",
+        "XLE",
+        "XLV",
+        "XLY",
+        "XLP",
+        "XLI",
+        "XLB",
+        "XLU",
+        "XLRE",
+        "XLC"
+      ]
+    },
+    "risk_rates_credit": {
+      "enabled": false,
+      "symbols": [
+        "SHY",
+        "IEF",
+        "TLT",
+        "HYG",
+        "LQD"
+      ],
+      "deferred_index_symbols": [
+        "^VIX"
+      ]
+    },
+    "macro_vintages": {
+      "enabled": false,
+      "requirement": "release/vintage/available_at contract required before training"
+    }
+  },
+  "date_window": {
+    "start": "2016-01-01",
+    "end_exclusive": "2026-08-25"
+  },
+  "source": {
+    "provider": "yfinance",
+    "interval": "1d",
+    "auto_adjust": false,
+    "actions": true,
+    "repair": false,
+    "keepna": true
+  },
+  "feature_version": "market_external_state_v005_market_tradables_v001",
+  "features": [
+    "spy_return_1d_pct",
+    "spy_return_5d_pct",
+    "spy_return_20d_pct",
+    "spy_return_63d_pct",
+    "spy_vol_20d_pct",
+    "spy_vol_63d_pct",
+    "spy_drawdown_63d_pct",
+    "spy_drawdown_252d_pct",
+    "spy_range_1d_pct",
+    "spy_volume_ratio_20d",
+    "qqq_return_1d_pct",
+    "qqq_return_5d_pct",
+    "qqq_return_20d_pct",
+    "iwm_return_1d_pct",
+    "iwm_return_5d_pct",
+    "iwm_return_20d_pct",
+    "qqq_minus_spy_1d_pct",
+    "qqq_minus_spy_5d_pct",
+    "qqq_minus_spy_20d_pct",
+    "iwm_minus_spy_1d_pct",
+    "iwm_minus_spy_5d_pct",
+    "iwm_minus_spy_20d_pct"
+  ],
+  "next_benchmark_contract": {
+    "base": "V004 factorized additive reconstruction",
+    "primary_increment": "market model receives V005 market-tradable state",
+    "sector_model_unchanged": true,
+    "asset_model_unchanged": true,
+    "same_outer_folds_as_v004": true,
+    "paired_same_oos_rows": true,
+    "no_hyperparameter_tuning": true,
+    "bootstrap_origin_day_blocks": [
+      5,
+      10,
+      20
+    ],
+    "gate": "new market-state block must improve reconstructed absolute return OOS"
+  },
+  "preserve": {
+    "v003_negative_benchmark": true,
+    "v004_factorized_benchmark": true
+  }
+}

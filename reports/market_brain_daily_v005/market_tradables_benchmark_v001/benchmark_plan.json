@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "benchmark_version": "market_brain_daily_v005_market_tradables_benchmark_v001",
+  "horizons": {
+    "1": {
+      "market_rows": 2008,
+      "market_rows_external_complete": 2008,
+      "market_external_coverage_fraction": 1.0,
+      "sector_rows": 22088,
+      "asset_rows": 1078329,
+      "stored_v004_oos_rows": 763935,
+      "v004_oos_states_missing_from_asset_frame": 0,
+      "base_market_features": 13,
+      "external_market_features": 22,
+      "enriched_market_features": 35,
+      "sector_features": 24,
+      "asset_features": 20
+    },
+    "3": {
+      "market_rows": 2006,
+      "market_rows_external_complete": 2006,
+      "market_external_coverage_fraction": 1.0,
+      "sector_rows": 22066,
+      "asset_rows": 1049926,
+      "stored_v004_oos_rows": 743503,
+      "v004_oos_states_missing_from_asset_frame": 0,
+      "base_market_features": 13,
+      "external_market_features": 22,
+      "enriched_market_features": 35,
+      "sector_features": 24,
+      "asset_features": 20
+    },
+    "5": {
+      "market_rows": 2004,
+      "market_rows_external_complete": 2004,
+      "market_external_coverage_fraction": 1.0,
+      "sector_rows": 22044,
+      "asset_rows": 1021619,
+      "stored_v004_oos_rows": 723573,
+      "v004_oos_states_missing_from_asset_frame": 0,
+      "base_market_features": 13,
+      "external_market_features": 22,
+      "enriched_market_features": 35,
+      "sector_features": 24,
+      "asset_features": 20
+    },
+    "10": {
+      "market_rows": 1999,
+      "market_rows_external_complete": 1999,
+      "market_external_coverage_fraction": 1.0,
+      "sector_rows": 21989,
+      "asset_rows": 951231,
+      "stored_v004_oos_rows": 673391,
+      "v004_oos_states_missing_from_asset_frame": 0,
+      "base_market_features": 13,
+      "external_market_features": 22,
+      "enriched_market_features": 35,
+      "sector_features": 24,
+      "asset_features": 20
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "manifest_version": "market_daily_v003_yahoo_discovery_v001",
+  "manifest_rows": 493,
+  "status_counts": {
+    "READY": 493
+  },
+  "exchange_counts": {
+    "XNYS": 336,
+    "XNAS": 156,
+    "BATS": 1
+  },
+  "review_tickers": [],
+  "error_tickers": [],
+  "expected_discovery_assets": 493,
+  "already_ready_assets": 10,
+  "discovery_complete": true,
+  "malformed_ready_tickers": [],
+  "requested_start": "2016-08-25",
+  "requested_end_exclusive": "2026-08-25",
+  "scientific_note": "Per-asset effective start is the first Yahoo daily row observed during discovery, preventing expected pre-listing sessions from being incorrectly treated as missing quality data."
+}

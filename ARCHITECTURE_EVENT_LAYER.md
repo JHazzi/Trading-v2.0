@@ -55,6 +55,39 @@ Current research versions:
 
 These versions represent a historical research reconstruction, not strict live PIT capture.
 
+
+<!-- EVENT_T0_V001_START -->
+### Source authority is not first disclosure
+
+For an economic event, the authoritative source and the first public source
+may be different.
+
+Define conceptually:
+
+```text
+first_public_at(event)
+    = earliest legitimate public availability among evidence items
+      that existed at that moment
+```
+
+Do **not** assume:
+
+```text
+SEC accepted_at == first_public_at == event_time
+```
+
+Examples include earnings releases published through Investor Relations or
+a press-release wire before the corresponding 8-K, or a reported/rumored
+transaction that precedes official confirmation.
+
+The Event State must evolve through time. Later SEC evidence can improve
+confirmation, detail and provenance without retroactively moving information
+into an earlier state.
+
+For intraday research, a model may react only to the evidence that was
+actually/publicly available by the prediction timestamp.
+<!-- EVENT_T0_V001_END -->
+
 ## 3. Temporal lifecycle
 
 Keep distinct:

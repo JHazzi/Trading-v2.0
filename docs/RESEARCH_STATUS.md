@@ -258,3 +258,37 @@ Next:
 3. Distributional modeling.
 
 See `ROADMAP.md`.
+<!-- MARKET_V003_BROAD_BACKFILL_V001 -->
+## Market Daily V003 foundation audit — 2026-08-25
+
+Foundation audit result:
+
+```text
+active equities                       503
+assets with quality-gated daily data   10
+assets >= 1,260 daily sessions         10
+assets >= 2,000 daily sessions         10
+latest assets ready for 253-day state  10
+strict historical PIT rows              0
+```
+
+No day currently reaches the minimum 50-asset cross-section gate.
+
+Decision:
+
+```text
+BROAD_PANEL_BACKFILL_REQUIRED
+```
+
+The next data step is a listing-aware daily Yahoo backfill for the existing
+503-equity current research cohort. Assets enter the model dynamically after
+sufficient own history; they are not forced into a common historical start.
+
+This cohort is explicitly **not survivorship-free historical index
+membership**. It is a current-asset historical research cohort.
+
+SPY/QQQ/IWM, sector ETFs, volatility/rate/credit proxies are absent and are
+deferred until after the core broad-equity panel is audited.
+
+Legacy macro observations remain excluded because no causal
+release/vintage/availability contract exists.

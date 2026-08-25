@@ -1,0 +1,113 @@
+{
+  "status": "REVIEW",
+  "failures": [],
+  "reviews": [
+    "fewer_than_300_assets_ready_for_253_day_state",
+    "fewer_than_300_assets_with_5y_history"
+  ],
+  "targets": {
+    "minimum_assets_ready_for_253_day_state": 300,
+    "minimum_assets_with_1260_days": 300
+  },
+  "plan": {
+    "status": "PASS",
+    "failures": [],
+    "manifest_version": "market_daily_v003_yahoo_discovery_v001",
+    "manifest_rows": 493,
+    "status_counts": {
+      "READY": 493
+    },
+    "exchange_counts": {
+      "XNYS": 336,
+      "XNAS": 156,
+      "BATS": 1
+    },
+    "review_tickers": [],
+    "error_tickers": [],
+    "expected_discovery_assets": 489,
+    "already_ready_assets": 14,
+    "discovery_complete": true,
+    "malformed_ready_tickers": [],
+    "requested_start": "2016-08-25",
+    "requested_end_exclusive": "2026-08-25",
+    "scientific_note": "Per-asset effective start is the first Yahoo daily row observed during discovery, preventing expected pre-listing sessions from being incorrectly treated as missing quality data."
+  },
+  "checkpoint": {
+    "checkpoint_version": "market_daily_v003_yahoo_backfill_v001",
+    "processed_assets": 5,
+    "status_counts": {
+      "COMPLETED": 5
+    },
+    "completed_tickers": [
+      "A",
+      "ABBV",
+      "ABNB",
+      "ABT",
+      "ACGL"
+    ],
+    "failed_tickers": []
+  },
+  "panel": {
+    "assets_with_daily_data": 15,
+    "assets_by_minimum_history_days": {
+      "21": 15,
+      "63": 15,
+      "126": 15,
+      "252": 15,
+      "504": 15,
+      "1260": 15,
+      "2000": 14,
+      "2500": 14
+    },
+    "dynamic_panel_readiness": {
+      "days": 11516,
+      "first_day_with_50_assets_253": null,
+      "first_day_with_100_assets_253": null,
+      "first_day_with_300_assets_253": null,
+      "first_day_with_min_cross_section_assets_253": null,
+      "latest": {
+        "trading_day": "2026-08-24",
+        "eligible_63": 15,
+        "eligible_253": 15
+      }
+    },
+    "sector_readiness_latest": {
+      "latest_day": "2026-08-24",
+      "sectors": {
+        "Health Care": 5,
+        "Financials": 3,
+        "Consumer Staples": 2,
+        "Energy": 2,
+        "Information Technology": 2,
+        "Consumer Discretionary": 1
+      }
+    },
+    "corporate_actions": {
+      "present": true,
+      "rows": 631,
+      "by_type": [
+        {
+          "action_type": "dividend",
+          "rows": 623,
+          "assets": 14
+        },
+        {
+          "action_type": "stock_split",
+          "rows": 8,
+          "assets": 3
+        }
+      ]
+    },
+    "strict_pit_observation_rows": 0
+  },
+  "deferred": {
+    "market_proxies": [
+      "SPY",
+      "QQQ",
+      "IWM"
+    ],
+    "macro_usable_now": false,
+    "historical_membership_survivorship_free": false
+  },
+  "interpretation": "PASS means the current-cohort daily panel is broad enough to build the first Market Daily V003 all-asset-day dataset. It does not mean strict historical PIT or survivorship-free membership has been achieved."
+}

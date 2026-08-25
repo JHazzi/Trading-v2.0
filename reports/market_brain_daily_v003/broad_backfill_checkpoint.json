@@ -1,0 +1,412 @@
+{
+  "checkpoint_version": "market_daily_v003_yahoo_backfill_v001",
+  "config_sha256": "5a843a99281b19e0d791da050157278b5490150dd3801215968b3886945074b4",
+  "manifest_sha256": "225b33573335e893e2eea49d238bb1b5b1f1bbd0777492ea86b31461e48dc9cf",
+  "rows": {
+    "A": {
+      "status": "COMPLETED",
+      "ticker": "A",
+      "provider_symbol": "A",
+      "effective_start": "2016-08-25",
+      "requested_end_exclusive": "2026-08-25",
+      "exchange": "XNYS",
+      "run_id": "4bd4a9a9-0893-4036-a6cc-edef3f7ed3ef",
+      "quality_run_id": "pqr_84005f7d16d6712e16f19c99fa56c98f5bd65a75da5baa9d516a55ee93000bdd",
+      "bars_discovered": 2512,
+      "bars_inserted": 2512,
+      "bar_observations_inserted": 2512,
+      "actions_discovered": 40,
+      "quality": {
+        "status": "PASS",
+        "failed_checks": [],
+        "warning_checks": [],
+        "checks": [
+          {
+            "check_name": "availability_before_close_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "duplicate_trading_days",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "incomplete_session_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "invalid_ohlc_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_adjusted_close_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_expected_sessions",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_ohlc_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "negative_volume_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "non_empty_batch",
+            "check_status": "pass",
+            "observed_value": 2512.0,
+            "expected_value": 1.0
+          },
+          {
+            "check_name": "non_session_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          }
+        ]
+      }
+    },
+    "ABBV": {
+      "status": "COMPLETED",
+      "ticker": "ABBV",
+      "provider_symbol": "ABBV",
+      "effective_start": "2016-08-25",
+      "requested_end_exclusive": "2026-08-25",
+      "exchange": "XNYS",
+      "run_id": "3df726ad-e4e0-44db-adeb-b07c7c3a77c9",
+      "quality_run_id": "pqr_1ea591b14928a745d8416f3e663fab7fd0fc8647d69f4dbc8ae998a15a202005",
+      "bars_discovered": 2512,
+      "bars_inserted": 2512,
+      "bar_observations_inserted": 2512,
+      "actions_discovered": 40,
+      "quality": {
+        "status": "PASS",
+        "failed_checks": [],
+        "warning_checks": [],
+        "checks": [
+          {
+            "check_name": "availability_before_close_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "duplicate_trading_days",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "incomplete_session_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "invalid_ohlc_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_adjusted_close_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_expected_sessions",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_ohlc_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "negative_volume_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "non_empty_batch",
+            "check_status": "pass",
+            "observed_value": 2512.0,
+            "expected_value": 1.0
+          },
+          {
+            "check_name": "non_session_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          }
+        ]
+      }
+    },
+    "ABNB": {
+      "status": "COMPLETED",
+      "ticker": "ABNB",
+      "provider_symbol": "ABNB",
+      "effective_start": "2020-12-10",
+      "requested_end_exclusive": "2026-08-25",
+      "exchange": "XNAS",
+      "run_id": "52d4af26-733b-42de-8a06-786cc39fc544",
+      "quality_run_id": "pqr_a238bbfb9db0b670ffc145f133418dc44d221660e54b88d0d54b979e3665fc38",
+      "bars_discovered": 1431,
+      "bars_inserted": 1431,
+      "bar_observations_inserted": 1431,
+      "actions_discovered": 0,
+      "quality": {
+        "status": "PASS",
+        "failed_checks": [],
+        "warning_checks": [],
+        "checks": [
+          {
+            "check_name": "availability_before_close_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "duplicate_trading_days",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "incomplete_session_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "invalid_ohlc_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_adjusted_close_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_expected_sessions",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_ohlc_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "negative_volume_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "non_empty_batch",
+            "check_status": "pass",
+            "observed_value": 1431.0,
+            "expected_value": 1.0
+          },
+          {
+            "check_name": "non_session_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          }
+        ]
+      }
+    },
+    "ABT": {
+      "status": "COMPLETED",
+      "ticker": "ABT",
+      "provider_symbol": "ABT",
+      "effective_start": "2016-08-25",
+      "requested_end_exclusive": "2026-08-25",
+      "exchange": "XNYS",
+      "run_id": "8690acc6-ba3e-4486-af17-fb25054d9636",
+      "quality_run_id": "pqr_9e6df794230dab9400b38fe784670767d9d803b4ef533574532987522581d5ba",
+      "bars_discovered": 2512,
+      "bars_inserted": 2512,
+      "bar_observations_inserted": 2512,
+      "actions_discovered": 40,
+      "quality": {
+        "status": "PASS",
+        "failed_checks": [],
+        "warning_checks": [],
+        "checks": [
+          {
+            "check_name": "availability_before_close_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "duplicate_trading_days",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "incomplete_session_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "invalid_ohlc_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_adjusted_close_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_expected_sessions",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_ohlc_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "negative_volume_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "non_empty_batch",
+            "check_status": "pass",
+            "observed_value": 2512.0,
+            "expected_value": 1.0
+          },
+          {
+            "check_name": "non_session_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          }
+        ]
+      }
+    },
+    "ACGL": {
+      "status": "COMPLETED",
+      "ticker": "ACGL",
+      "provider_symbol": "ACGL",
+      "effective_start": "2016-08-25",
+      "requested_end_exclusive": "2026-08-25",
+      "exchange": "XNAS",
+      "run_id": "465c6475-a1a8-47c1-8add-f9cfe0dd01ed",
+      "quality_run_id": "pqr_060a6df925ceeff8619588e92af9a4b6d65ca097566e0b3bc48f9c64bbda8ac4",
+      "bars_discovered": 2512,
+      "bars_inserted": 2512,
+      "bar_observations_inserted": 2512,
+      "actions_discovered": 2,
+      "quality": {
+        "status": "PASS",
+        "failed_checks": [],
+        "warning_checks": [],
+        "checks": [
+          {
+            "check_name": "availability_before_close_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "duplicate_trading_days",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "incomplete_session_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "invalid_ohlc_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_adjusted_close_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_expected_sessions",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "missing_ohlc_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "negative_volume_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          },
+          {
+            "check_name": "non_empty_batch",
+            "check_status": "pass",
+            "observed_value": 2512.0,
+            "expected_value": 1.0
+          },
+          {
+            "check_name": "non_session_rows",
+            "check_status": "pass",
+            "observed_value": 0.0,
+            "expected_value": 0.0
+          }
+        ]
+      }
+    }
+  }
+}

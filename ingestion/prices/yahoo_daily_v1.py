@@ -47,10 +47,16 @@ EXCHANGE_CANONICAL_MAP = {
     "NMS": "XNAS",
     "NGM": "XNAS",
     "NCM": "XNAS",
+    "BATS": "BATS",
+    "BZX": "BATS",
+    "BTS": "BATS",
+    "CBOE BZX": "BATS",
+    "BZX EQUITIES": "BATS",
 }
 EXCHANGE_CALENDAR_MAP = {
     "XNYS": "XNYS",
     "XNAS": "XNAS",
+    "BATS": "BATS",
 }
 
 REQUIRED_TABLES = {

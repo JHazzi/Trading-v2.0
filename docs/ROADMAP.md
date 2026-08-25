@@ -77,6 +77,25 @@ Current primary folds begin around 2021. Add a secondary design that tests earli
 
 No additional SEC scale is needed for either outcome.
 
+
+<!-- EVENT_T0_V001_START -->
+### Temporal integration with future Event Brain
+
+Market V003 states are defined at exchange session close for all eligible
+asset-days.
+
+When Event Brain is reintroduced, an event at time `t` may only use the latest
+Market Brain state/prediction with:
+
+```text
+market_state_time <= event_state_time
+```
+
+The event timestamp used for information availability is not automatically
+the SEC acceptance time. Future multi-source event work will use the earliest
+valid public evidence while preserving later confirmations as later evidence.
+<!-- EVENT_T0_V001_END -->
+
 ## Phase 2 — Market Brain Daily V003
 
 **Goal:** build a stronger base market state before richer event conditioning.
@@ -262,3 +281,28 @@ Do not prioritize yet:
 - live auto-trading;
 - “confidence” derived from RF tree dispersion;
 - arbitrary Gaussian future-path simulation.
+<!-- MARKET_V003_BROAD_BACKFILL_V001 -->
+## Market Daily V003 broad panel gate — 2026-08-25
+
+Current gate:
+
+```text
+503 active equities known
+10 quality-gated daily histories
+BROAD_PANEL_BACKFILL_REQUIRED
+```
+
+Execution order:
+
+1. discover per-asset first available Yahoo daily session and exchange;
+2. audit the discovery manifest;
+3. ingest a five-asset smoke batch through the existing append-only daily
+   causal ingestion;
+4. audit the smoke;
+5. resume the full current-cohort backfill;
+6. require a broad-panel audit before feature construction/training;
+7. build Market V003 core all-asset-day features without external proxies;
+8. test broad-market/sector/rate/volatility proxies later as incremental
+   context, not as prerequisites.
+
+Macro remains out until causal vintages exist.

@@ -180,6 +180,51 @@ Do not delete old model/report/database experiment history simply because a newe
 
 Documentation may be archived away from the root, but scientific lineage remains reproducible.
 
+
+<!-- EVENT_T0_V001_START -->
+## D020 — First public evidence, not SEC acceptance, defines event information t0
+
+**Decision:** do not equate SEC filing acceptance with the first time the
+market could have known an event.
+
+Future multi-source normalization will distinguish:
+
+```text
+event_time
+first_public_at
+source published/accepted time
+system observed/retrieved time
+feature available_at
+```
+
+SEC remains the first authoritative event corpus and a high-quality anchor
+source. Investor Relations, press-release wires, official channels, media,
+calls/webcasts and macro authorities may reveal information earlier depending
+on the event.
+
+A later authoritative confirmation enriches the Event State from that point
+forward; it does not retroactively rewrite the earlier information set.
+
+**Reason:** event-return research is invalid if `t0` is placed after the
+market had already received the information.
+
+**Status:** active architecture contract.
+
+## D021 — Market Brain Daily V003 is independent of event occurrence
+
+**Decision:** train the daily Market Brain on all eligible asset-days at
+session close, not only event-origin rows.
+
+Event Brain integration will later use only the latest Market Brain
+prediction/state whose market timestamp is no later than the event-state
+timestamp.
+
+**Reason:** the base model must estimate `P(Y|X,T)` independently before
+testing the incremental information in `E`.
+
+**Status:** Market Daily V003 foundation.
+<!-- EVENT_T0_V001_END -->
+
 ## D019 — Documentation has canonical vs historical layers
 
 Canonical docs describe current truth.

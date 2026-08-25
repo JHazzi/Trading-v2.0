@@ -1,0 +1,14 @@
+{
+  "version": "market_daily_v003_broad_backfill_v001",
+  "requested_start": "2016-08-25",
+  "requested_end_exclusive": "2026-08-25",
+  "minimum_existing_days_to_skip": 2500,
+  "minimum_ready_history_days": 253,
+  "target_active_equities": 503,
+  "sleep_seconds_between_provider_calls": 0.25,
+  "provider_symbol_overrides": {},
+  "exchange_overrides": {},
+  "research_universe_contract": "current_asset_cohort_not_survivorship_free",
+  "include_proxies": false,
+  "include_macro": false
+}

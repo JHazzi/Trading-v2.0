@@ -28,6 +28,29 @@ The earliest timestamp under the stated data contract at which the feature may l
 
 This is the primary prediction-time gate.
 
+
+<!-- EVENT_T0_V001_START -->
+## First-public disclosure contract
+
+`event_time`, `first_public_at`, `published_at`, `accepted_at`,
+`observed_at` and `available_at` are different concepts.
+
+For a normalized event:
+
+- `first_public_at` is the earliest legitimate public evidence time known
+  under the evidence history;
+- SEC `accepted_at` is the SEC filing acceptance timestamp and may be equal
+  to, earlier than, or later than another public disclosure channel;
+- `available_at` is the feature gate for a specific evidence/state row;
+- later confirmation must not be back-propagated into an earlier model state.
+
+The future multi-source Event Layer should reconstruct the evidence sequence,
+not choose one source globally as the universal `t0`.
+
+SEC is an authoritative anchor source; it is not assumed to be the fastest
+source for every event.
+<!-- EVENT_T0_V001_END -->
+
 ## 2. Strict PIT vs historical research reconstruction
 
 Strict PIT requires evidence that our data representation genuinely existed by the historical cutoff.

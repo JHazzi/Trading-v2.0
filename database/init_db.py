@@ -26,6 +26,10 @@ CANONICAL_MIGRATIONS = (
     ("013", "013_daily_price_observation_foundation.sql"),
     ("014", "014_sec_filing_observations.sql"),
     ("015", "015_deterministic_event_clustering.sql"),
+    ("016", "016_sec_filing_metadata_versioning.sql"),
+    ("017", "017_event_normalization.sql"),
+    ("018", "018_daily_price_asof.sql"),
+    ("019", "019_event_brain_v001.sql"),
 )
 
 REQUIRED_CURRENT_TABLES = {
@@ -59,6 +63,24 @@ REQUIRED_CURRENT_TABLES = {
     "event_cluster_news_membership_refs",
     "event_cluster_raw_membership_refs",
     "event_cluster_sec_observation_refs",
+    "sec_submission_retrievals",
+    "sec_filing_metadata_versions",
+    "sec_filing_metadata_observations",
+    "sec_filing_document_metadata_selections",
+    "event_normalization_configs",
+    "event_normalization_runs",
+    "normalized_event_identities",
+    "normalized_event_versions",
+    "normalized_event_observations",
+    "event_cluster_event_links",
+    "event_evidence_semantics",
+    "normalized_event_entity_links",
+    "normalized_event_asset_links",
+    "daily_price_asof_configs",
+    "event_state_feature_configs",
+    "normalized_event_state_snapshots",
+    "normalized_event_reaction_labels",
+    "event_brain_training_runs",
 }
 
 

@@ -1,0 +1,45 @@
+{
+  "version": "event_brain_v002",
+  "dataset": {
+    "event_feature_version": "event_state_v002",
+    "label_version": "event_reaction_daily_v002",
+    "market_feature_version": "daily_asset_cross_section_sector_v002_leave_one_out",
+    "horizons_sessions": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "context_universe": "assets_present_in_event_state_v002",
+    "cross_section": "leave_one_out_target_asset",
+    "sector": "same_sector_peers_excluding_target",
+    "sector_fallback": "cross_section_with_explicit_fallback_flag"
+  },
+  "evaluation": {
+    "outer_walk_forward_folds": 4,
+    "initial_fraction": 0.45,
+    "purge_rule": "training target_trading_day < first test event_anchor_day",
+    "event_group_rule": "event_id never appears in both train and test within a fold",
+    "bootstrap_unit": "origin_trading_day",
+    "bootstrap_reps": 2000,
+    "primary_comparison": "capacity_control_vs_contextual_event"
+  },
+  "gates": {
+    "min_rows": 200,
+    "min_assets": 8,
+    "min_event_types": 5,
+    "min_unique_events": 180,
+    "min_span_days": 365,
+    "max_asset_share": 0.3,
+    "max_event_type_share": 0.45
+  },
+  "deliberately_not_implemented": [
+    "source reliability score",
+    "sensationalism score",
+    "analyst consensus surprise",
+    "macro context",
+    "graph propagation",
+    "distributional quantiles",
+    "production promotion"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "event_brain_deep_documents_v001",
+  "warmup_sessions": 21,
+  "batch_size": 10,
+  "max_files_per_filing": 10,
+  "max_file_bytes": 15728640,
+  "max_index_bytes": 3145728,
+  "max_total_bytes_per_batch": 209715200,
+  "rate_limit_per_second": 2.0,
+  "skip_filings_with_existing_downloaded_content": true,
+  "selection_contract": "latest_metadata_per_filing AND configured_form AND acceptance_day>=asset_21st_quality_price_day AND acceptance_day<=asset_last_quality_price_day",
+  "download_order": "oldest_acceptance_globally_first",
+  "reasoning": {
+    "warmup": "20-session market features require 21 closes",
+    "old_metadata": "kept in DB but not downloaded if no compatible market/label window",
+    "existing_content": "pilot documents are reused instead of requested again",
+    "pit": "historical initial document availability remains research proxy, not strict PIT"
+  }
+}

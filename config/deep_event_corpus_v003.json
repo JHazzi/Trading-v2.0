@@ -1,0 +1,69 @@
+{
+  "version": "deep_event_corpus_v003",
+  "source": "sec",
+  "tickers": [
+    "AAPL",
+    "MSFT",
+    "JPM",
+    "BAC",
+    "CVX",
+    "LLY",
+    "JNJ",
+    "WMT",
+    "COST",
+    "XOM"
+  ],
+  "forms": [
+    "8-K",
+    "8-K/A",
+    "10-Q",
+    "10-Q/A",
+    "10-K",
+    "10-K/A"
+  ],
+  "common_window": {
+    "rule": "max(asset_21st_quality_price_day) through min(asset_last_quality_price_day)",
+    "warmup_sessions": 21,
+    "end_is_exclusive_for_clustering": true
+  },
+  "clustering": {
+    "run_prefix": "eventbrain_deep_v003_",
+    "max_documents_per_ticker": 5000,
+    "source": "sec",
+    "existing_completed_run_policy": "reuse",
+    "expected_temporal_contract": "sec_per_evidence_pit_flag"
+  },
+  "normalization": {
+    "version": "sec_event_normalizer_v003_deep_rebuild",
+    "stable_identity": "sec_accession_item_v001",
+    "existing_identity_policy": "reuse",
+    "new_observation_lineage": true,
+    "hardcoded_direction": false,
+    "hardcoded_reliability": false
+  },
+  "state": {
+    "feature_version": "event_state_v003_deep",
+    "rebuild_entire_deep_corpus": true
+  },
+  "labels": {
+    "label_version": "event_reaction_daily_v003_deep",
+    "horizons": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "include_intraday_coarse": false
+  },
+  "science": {
+    "target_unique_events": 1000,
+    "do_not_change_event_brain_model_yet": true,
+    "primary_hypothesis_horizon_sessions": 10,
+    "negative_control_horizons_sessions": [
+      1,
+      3,
+      5
+    ],
+    "strict_pit_claim": false
+  }
+}

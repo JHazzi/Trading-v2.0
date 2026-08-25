@@ -539,6 +539,20 @@ def _news_descriptors(
     return descriptors
 
 
+def _table_exists(
+    conn: sqlite3.Connection,
+    table_name: str,
+) -> bool:
+    return conn.execute(
+        """
+        SELECT 1
+        FROM sqlite_master
+        WHERE type = 'table'
+          AND name = ?
+        """,
+        (table_name,),
+    ).fetchone() is not None
+
 def _sec_descriptors(
     conn: sqlite3.Connection,
     *,
@@ -561,6 +575,26 @@ def _sec_descriptors(
             """
         )
         parameters.append(asset_id)
+
+    has_metadata_observations = _table_exists(
+        conn,
+        "sec_filing_metadata_observations",
+    )	
+
+    if has_metadata_observations:
+        acceptance_pit_expression = """
+            COALESCE((
+                SELECT mo.availability_is_point_in_time
+                FROM sec_filing_metadata_observations AS mo
+                WHERE mo.filing_raw_document_id = v.filing_raw_document_id
+                    AND julianday(mo.available_at) =
+                    julianday(sf.acceptance_datetime)
+                ORDER BY mo.observation_sequence
+                LIMIT 1
+            ), 0)
+        """
+    else:
+        acceptance_pit_expression = "1"
     rows = conn.execute(
         f"""
         SELECT
@@ -576,7 +610,9 @@ def _sec_descriptors(
             sf.accession_number,
             sf.acceptance_datetime,
             ff.document_name,
-            ff.description
+            ff.description,
+            {acceptance_pit_expression}
+    		AS acceptance_availability_is_point_in_time
         FROM sec_filing_file_versions AS v
         JOIN raw_source_documents AS r
           ON r.raw_document_id = v.raw_document_id
@@ -615,7 +651,11 @@ def _sec_descriptors(
                 if available_at == acceptance_at
                 else "sec_revision_retrieval_available_at"
             ),
-            availability_is_point_in_time=True,
+            availability_is_point_in_time=(
+                bool(row[13])
+                if available_at == acceptance_at
+                else True
+            ),
             asset_ids=_asset_ids_for_raw(
                 conn,
                 raw_document_id,
@@ -756,7 +796,7 @@ def _hydrate_sec_descriptor(
         evidence_id=descriptor.evidence_id,
         available_at=descriptor.available_at,
         availability_basis=descriptor.availability_basis,
-        availability_is_point_in_time=True,
+        availability_is_point_in_time=descriptor.availability_is_point_in_time,
         title=descriptor.title,
         text=text,
         content_sha256=str(descriptor.raw_sha256),
@@ -1419,7 +1459,6 @@ def _validate_runtime_schema(conn: sqlite3.Connection) -> None:
         "sec_filings",
         "sec_filing_files",
         "sec_filing_file_versions",
-        "sec_filing_file_observations",
         "event_clustering_configs",
         "event_clustering_runs",
         "event_document_fingerprints",
@@ -1543,7 +1582,7 @@ def run_clustering(
         "max_content_bytes": selected_config.max_content_bytes,
         "reconstruction_non_pit": source in {"news", "all"},
         "temporal_contract": (
-            "point_in_time_sec"
+            "sec_per_evidence_pit_flag"
             if source == "sec"
             else "legacy_news_reconstruction_not_pit_verified"
         ),

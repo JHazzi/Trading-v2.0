@@ -1,0 +1,51 @@
+{
+  "scale_version": "event_brain_deep_history_metadata_v001",
+  "research_goal": "Increase independent historical event experiences before increasing model complexity.",
+  "price_history_start": "2016-08-25",
+  "price_history_end_exclusive": "2026-08-25",
+  "sec_forms": [
+    "8-K",
+    "8-K/A",
+    "10-Q",
+    "10-Q/A",
+    "10-K",
+    "10-K/A"
+  ],
+  "sec_max_filings_per_target": 250,
+  "automatic_tickers": [
+    "AAPL",
+    "MSFT",
+    "JPM",
+    "BAC",
+    "CVX",
+    "LLY",
+    "JNJ",
+    "WMT",
+    "COST"
+  ],
+  "explicit_issuer_targets": [
+    {
+      "ticker": "XOM",
+      "cik": "2115436",
+      "relationship": "current_successor_registrant",
+      "effective_from": "2026-07-01"
+    },
+    {
+      "ticker": "XOM",
+      "cik": "34088",
+      "relationship": "historical_predecessor_registrant",
+      "effective_until": "2026-07-01"
+    }
+  ],
+  "scientific_targets": {
+    "desired_event_order_of_magnitude": "1000+ normalized events before next model complexity increase",
+    "desired_history_span_years": 8,
+    "keep_current_10_assets_first": true,
+    "do_not_change_model_during_data_scale": true
+  },
+  "notes": {
+    "metadata_only_first": true,
+    "documents_clustering_normalization_follow_after_coverage_audit": true,
+    "historical_initial_availability_is_research_proxy_not_strict_pit": true
+  }
+}

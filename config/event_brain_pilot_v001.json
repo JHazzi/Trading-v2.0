@@ -1,0 +1,70 @@
+{
+  "pilot_version": "event_brain_scale_v001",
+  "price_start": "2016-08-25",
+  "price_end_exclusive": "2026-08-25",
+  "sec_max_filings_per_ticker": 30,
+  "sec_forms": [
+    "8-K",
+    "8-K/A",
+    "10-Q",
+    "10-Q/A",
+    "10-K",
+    "10-K/A"
+  ],
+  "assets": [
+    {
+      "ticker": "AAPL",
+      "exchange": "XNAS",
+      "cohort": "technology"
+    },
+    {
+      "ticker": "MSFT",
+      "exchange": "XNAS",
+      "cohort": "technology"
+    },
+    {
+      "ticker": "JPM",
+      "exchange": "XNYS",
+      "cohort": "financials"
+    },
+    {
+      "ticker": "BAC",
+      "exchange": "XNYS",
+      "cohort": "financials"
+    },
+    {
+      "ticker": "XOM",
+      "exchange": "XNYS",
+      "cohort": "energy"
+    },
+    {
+      "ticker": "CVX",
+      "exchange": "XNYS",
+      "cohort": "energy"
+    },
+    {
+      "ticker": "LLY",
+      "exchange": "XNYS",
+      "cohort": "healthcare"
+    },
+    {
+      "ticker": "JNJ",
+      "exchange": "XNYS",
+      "cohort": "healthcare"
+    },
+    {
+      "ticker": "WMT",
+      "exchange": "XNYS",
+      "cohort": "consumer_staples"
+    },
+    {
+      "ticker": "COST",
+      "exchange": "XNAS",
+      "cohort": "consumer_staples"
+    }
+  ],
+  "notes": {
+    "research_cohort_not_model_prior": true,
+    "future_assets_outside_sp500_supported_by_manifest": true
+  }
+}

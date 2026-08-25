@@ -7,6 +7,7 @@ from database.apply_migration_012 import apply as apply_migration_012
 from database.apply_migration_013 import apply as apply_migration_013
 from database.apply_migration_014 import apply as apply_migration_014
 from database.apply_migration_015 import apply as apply_migration_015
+from database.apply_migration_016 import apply as apply_migration_016
 from database.init_db import (
     CANONICAL_MIGRATIONS,
     REQUIRED_CURRENT_TABLES,
@@ -83,6 +84,7 @@ def test_fresh_bootstrap_applies_only_canonical_migrations(tmp_path):
         assert migration_names["013"] == "daily_price_observation_foundation"
         assert migration_names["014"] == "sec_filing_observations"
         assert migration_names["015"] == "deterministic_event_clustering"
+        assert migration_names["016"] == "sec_filing_metadata_versioning"
         assert "session_id" in table_columns(conn, "price_bars")
         assert "trading_day" in table_columns(conn, "price_bars")
         assert "observed_bars" in table_columns(
@@ -150,6 +152,7 @@ def test_current_migration_appliers_are_idempotent_after_bootstrap(tmp_path):
         apply_migration_013,
         apply_migration_014,
         apply_migration_015,
+        apply_migration_016,
     )
     for _ in range(2):
         for apply_migration in appliers:
@@ -162,7 +165,7 @@ def test_current_migration_appliers_are_idempotent_after_bootstrap(tmp_path):
                 """
                 SELECT version, name
                 FROM schema_migrations
-                WHERE version BETWEEN '012' AND '015'
+                WHERE version BETWEEN '012' AND '016'
                 """
             )
         )
@@ -171,4 +174,5 @@ def test_current_migration_appliers_are_idempotent_after_bootstrap(tmp_path):
         "013": "daily_price_observation_foundation",
         "014": "sec_filing_observations",
         "015": "deterministic_event_clustering",
+        "016": "sec_filing_metadata_versioning",
     }

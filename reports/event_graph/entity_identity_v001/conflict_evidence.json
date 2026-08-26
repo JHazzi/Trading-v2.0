@@ -1,0 +1,345 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "conflict_pairs": 2,
+  "count_mismatch_candidate_ids": [],
+  "pairs": [
+    {
+      "identity_candidate_id": "idcand_79b9b4acfe42e4f39ddf4e354e45c4e8e92ac5df5047c6a6ba73363e79760970",
+      "left_display_name": "Costco Wholesale Canada Ltd",
+      "right_display_name": "Costco Wholesale Canada, Ltd",
+      "candidate_kind": "punctuation_spacing_variant",
+      "canonical_identity_key": "LTD::costco wholesale canada",
+      "shared_registrant_ids": [
+        634
+      ],
+      "shared_accession_count_reported": 6,
+      "shared_accession_count_reconstructed": 6,
+      "temporal_relation": "evidence_ranges_overlap",
+      "shared_accession_evidence": [
+        {
+          "accession_number": "0000909832-20-000017",
+          "left": [
+            {
+              "evidence_claim_id": "relev_148b40ae9707bb71a2980c49d363d997d3dd90c3c403a0c037691297eca13016",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada Ltd",
+              "evidence_available_at": "2020-10-06T23:07:39+00:00",
+              "evidence_text": "ry Does Business\n\nCostco Wholesale Membership, Inc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Ltd.\n\nArizona\n\nNW Re Ltd.\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, Inc.\n\nP",
+              "raw_sha256": "dfd356761dcff338d38e3707e0f10ba584521a59d5abbf1ffd3d69fd85b1c320",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983220000017/costex21110k08302020.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_d03950276b9106a6851a38a4165d1102b497a8af036a48fefb25b79b91cf4014",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada, Ltd",
+              "evidence_available_at": "2020-10-06T23:07:39+00:00",
+              "evidence_text": "nc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Ltd.\n\nArizona\n\nNW Re Ltd.\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, Inc.\n\nPriceCostco International, Inc.\n\nNevada\n\nPriceCost",
+              "raw_sha256": "dfd356761dcff338d38e3707e0f10ba584521a59d5abbf1ffd3d69fd85b1c320",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983220000017/costex21110k08302020.htm"
+            }
+          ]
+        },
+        {
+          "accession_number": "0000909832-21-000014",
+          "left": [
+            {
+              "evidence_claim_id": "relev_14bf7caf4b2699b449f698b5688b361b5c616b88c1a91545e5ba56a5e6af07dc",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada Ltd",
+              "evidence_available_at": "2021-10-06T00:49:17+00:00",
+              "evidence_text": "ry Does Business\n\nCostco Wholesale Membership, Inc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Ltd.\n\nArizona\n\nNW Re Ltd.\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, Inc.\n\nP",
+              "raw_sha256": "74f0d151c36764e027307beff92f76cc9714f6b09c90529be8b5140414ce3f0a",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983221000014/costex21110k082921.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_365aad38fdcfabc5f409910219c8f735240c3fc97cd172c0ef0c2bdb9ecc983e",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada, Ltd",
+              "evidence_available_at": "2021-10-06T00:49:17+00:00",
+              "evidence_text": "nc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Ltd.\n\nArizona\n\nNW Re Ltd.\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, Inc.\n\nPriceCostco International, Inc.\n\nNevada\n\nPriceCost",
+              "raw_sha256": "74f0d151c36764e027307beff92f76cc9714f6b09c90529be8b5140414ce3f0a",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983221000014/costex21110k082921.htm"
+            }
+          ]
+        },
+        {
+          "accession_number": "0000909832-22-000021",
+          "left": [
+            {
+              "evidence_claim_id": "relev_47f0d45671f4217e27e7f1a006860c7e3510ff0a42f32546e92911d773eb473c",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada Ltd",
+              "evidence_available_at": "2022-10-05T01:59:05+00:00",
+              "evidence_text": "ry Does Business\n\nCostco Wholesale Membership, Inc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Ltd.\n\nArizona\n\nNW Re Ltd.\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, Inc.\n\nP",
+              "raw_sha256": "5da6558cb5230d97ef1ecf2efe082deafeb2d3eebcd99ae609e319cdb1d616d7",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983222000021/costex21110k082822.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_991593df4c75b988fefe1e539d707e753750646055108e6c11f3857bf0600c92",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada, Ltd",
+              "evidence_available_at": "2022-10-05T01:59:05+00:00",
+              "evidence_text": "nc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Ltd.\n\nArizona\n\nNW Re Ltd.\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, Inc.\n\nPriceCostco International, Inc.\n\nNevada\n\nPriceCost",
+              "raw_sha256": "5da6558cb5230d97ef1ecf2efe082deafeb2d3eebcd99ae609e319cdb1d616d7",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983222000021/costex21110k082822.htm"
+            }
+          ]
+        },
+        {
+          "accession_number": "0000909832-23-000042",
+          "left": [
+            {
+              "evidence_claim_id": "relev_75d76e1308f5c3a9271f77381f9f21ee620d42cc59aeed8f4117f3f38232dfe8",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada Ltd",
+              "evidence_available_at": "2023-10-10T23:13:15+00:00",
+              "evidence_text": "ry Does Business\n\nCostco Wholesale Membership, Inc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Limited\n\nArizona\n\nNW Re Limited\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, I",
+              "raw_sha256": "52789bd483fd2f1dc930c8e6855c9c2a0eaf120feb122b4ba467cb1019ade075",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983223000042/costex21110k9323.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_cda6bd8522f286d79f7a02550fca8698e063dcec60925c90c7b29a85093a49fe",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada, Ltd",
+              "evidence_available_at": "2023-10-10T23:13:15+00:00",
+              "evidence_text": "nc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Limited\n\nArizona\n\nNW Re Limited\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, Inc.\n\nPrice Costco International, Inc.\n\nNevada\n\nPr",
+              "raw_sha256": "52789bd483fd2f1dc930c8e6855c9c2a0eaf120feb122b4ba467cb1019ade075",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983223000042/costex21110k9323.htm"
+            }
+          ]
+        },
+        {
+          "accession_number": "0000909832-24-000049",
+          "left": [
+            {
+              "evidence_claim_id": "relev_3c0bce43ff7921dcecd4c2e5c35a2b6901e5b443bbefe0a7658291973bb35f25",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada Ltd",
+              "evidence_available_at": "2024-10-08T22:40:07+00:00",
+              "evidence_text": "ry Does Business\n\nCostco Wholesale Membership, Inc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Limited\n\nArizona\n\nNW Re Limited\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, I",
+              "raw_sha256": "4c0f7d54a3400386e440ad924131f9baab8242020dec646df7212480beab3d7c",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000049/costex21110k9124.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_8dc0808289de5c4e744a130c3edea1cb00e361021f782f69bb7734e39c151eb1",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada, Ltd",
+              "evidence_available_at": "2024-10-08T22:40:07+00:00",
+              "evidence_text": "nc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Limited\n\nArizona\n\nNW Re Limited\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, Inc.\n\nPrice Costco International, Inc.\n\nNevada\n\nPr",
+              "raw_sha256": "4c0f7d54a3400386e440ad924131f9baab8242020dec646df7212480beab3d7c",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983224000049/costex21110k9124.htm"
+            }
+          ]
+        },
+        {
+          "accession_number": "0000909832-25-000101",
+          "left": [
+            {
+              "evidence_claim_id": "relev_9ad97684600fb8fdd51ac4b16cf60615f9efac7699cbd13678ac5646674e2145",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada Ltd",
+              "evidence_available_at": "2025-10-08T01:16:06+00:00",
+              "evidence_text": "ry Does Business\n\nCostco Wholesale Membership, Inc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Limited\n\nArizona\n\nNW Re Limited\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, I",
+              "raw_sha256": "5d34c70c8f0faba81da86fe3d854242877e3cd3055e27b5ec9e7147f6217b8f4",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/costex21110k83125.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_8e8265a48c01c1c88bb73cf260a96bd1c3e2c1eadc24d06a724ac33203e09482",
+              "registrant_ticker": "COST",
+              "raw_name": "Costco Wholesale Canada, Ltd",
+              "evidence_available_at": "2025-10-08T01:16:06+00:00",
+              "evidence_text": "nc.\n\nCalifornia\n\nCostco Wholesale Membership, Inc.\n\nCostco Wholesale Canada Ltd.\n\nCanadian Federal\n\nCostco Wholesale Canada, Ltd.\n\nNW Re Limited\n\nArizona\n\nNW Re Limited\n\nCostco Insurance Agency, Inc.\n\nWashington\n\nCostco Insurance Agency, Inc.\n\nPrice Costco International, Inc.\n\nNevada\n\nPr",
+              "raw_sha256": "5d34c70c8f0faba81da86fe3d854242877e3cd3055e27b5ec9e7147f6217b8f4",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/costex21110k83125.htm"
+            }
+          ]
+        }
+      ],
+      "automatic_merge_allowed": false
+    },
+    {
+      "identity_candidate_id": "idcand_bd0761c6ccb9744bbbb7126025d36d42ef8f4905966bac62375ad5d00db457a3",
+      "left_display_name": "Johnson & Johnson (Private) Limited",
+      "right_display_name": "Johnson & Johnson Private Limited",
+      "candidate_kind": "punctuation_spacing_variant",
+      "canonical_identity_key": "LTD::johnson & johnson private",
+      "shared_registrant_ids": [
+        769
+      ],
+      "shared_accession_count_reported": 6,
+      "shared_accession_count_reconstructed": 6,
+      "temporal_relation": "evidence_ranges_overlap",
+      "shared_accession_evidence": [
+        {
+          "accession_number": "0000200406-20-000010",
+          "left": [
+            {
+              "evidence_claim_id": "relev_b1d60235000f1b150df76c88e3c86a29248eb1ec7808089a3ffc1b7a49c7a181",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson (Private) Limited",
+              "evidence_available_at": "2020-02-18T21:34:21+00:00",
+              "evidence_text": "ohnson & Johnson (New Zealand) Limited\n\nNew Zealand\n\nJohnson & Johnson (Phils.), Inc.\n\nPhilippines\n\nJohnson & Johnson (Private) Limited\n\nZimbabwe\n\nJohnson & Johnson (Proprietary) Limited\n\nSouth Africa\n\nJohnson & Johnson (Thailand) Ltd.\n\nThailand\n\nJohnson & Johnson (Trinidad) Limited\n\nTrinidad a",
+              "raw_sha256": "005eae768d00f7c0cf7b81baf29482fdb349bfc2ea67c4609727be7dc3af9f43",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040620000010/ex21-subsidiariesxform.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_89b99122bd66ad15943a759540ef17c7e70159dba158d2eedfc3eaf4567626ec",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson Private Limited",
+              "evidence_available_at": "2020-02-18T21:34:21+00:00",
+              "evidence_text": "Johnson & Johnson Personal Care (Chile) S.A.\n\nChile\n\nJohnson & Johnson Poland Sp. z o.o.\n\nPoland\n\nJohnson & Johnson Private Limited\n\nIndia\n\nJohnson & Johnson Pte. Ltd.\n\nSingapore\n\nJohnson & Johnson Pty. Limited\n\nAustralia\n\nJohnson & Johnson Research Pty Ltd\n\nAustralia\n\nJohnson & Johnson Rom",
+              "raw_sha256": "005eae768d00f7c0cf7b81baf29482fdb349bfc2ea67c4609727be7dc3af9f43",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040620000010/ex21-subsidiariesxform.htm"
+            }
+          ]
+        },
+        {
+          "accession_number": "0000200406-21-000008",
+          "left": [
+            {
+              "evidence_claim_id": "relev_7a1116e7df6796ec873b0cb60d2a554e533271db24695560046bc07b218744f1",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson (Private) Limited",
+              "evidence_available_at": "2021-02-22T21:36:14+00:00",
+              "evidence_text": "son & Johnson (New Zealand) Limited\nNew Zealand\n\nJohnson & Johnson (Philippines), Inc.\nPhilippines\n\nJohnson & Johnson (Private) Limited\nZimbabwe\n\nJohnson & Johnson (Thailand) Ltd.\nThailand\n\nJohnson & Johnson (Trinidad) Limited\nTrinidad and Tobago\n\nJohnson & Johnson (Vietnam) Co., Ltd\nVietnam\n\nJ",
+              "raw_sha256": "db0379f8767f9910fffb161212c2ab4fd64b0c48bd89e978cb134c13db943d8d",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040621000008/ex21-subsidiariesxform10xk.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_5c8da457d91a8893c8248ea7bca51f51997d22e08c1806860e11b25a9ce5467a",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson Private Limited",
+              "evidence_available_at": "2021-02-22T21:36:14+00:00",
+              "evidence_text": "ma\n\nJohnson & Johnson Personal Care (Chile) S.A.\nChile\n\nJohnson & Johnson Poland Sp. z o.o.\nPoland\n\nJohnson & Johnson Private Limited\nIndia\n\nJohnson & Johnson Pte. Ltd.\nSingapore\n\nJohnson & Johnson Pty. Limited\nAustralia\n\nJohnson & Johnson Research Pty Ltd\nAustralia\n\nJohnson & Johnson Romania",
+              "raw_sha256": "db0379f8767f9910fffb161212c2ab4fd64b0c48bd89e978cb134c13db943d8d",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040621000008/ex21-subsidiariesxform10xk.htm"
+            }
+          ]
+        },
+        {
+          "accession_number": "0000200406-22-000022",
+          "left": [
+            {
+              "evidence_claim_id": "relev_0e8eb689b6187c14964a8e80f28143cb6768887287c776093b8331cfbe7e9444",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson (Private) Limited",
+              "evidence_available_at": "2022-02-17T21:06:50+00:00",
+              "evidence_text": "son & Johnson (New Zealand) Limited\nNew Zealand\n\nJohnson & Johnson (Philippines), Inc.\nPhilippines\n\nJohnson & Johnson (Private) Limited\nZimbabwe\n\nJohnson & Johnson (Thailand) Ltd.\nThailand\n\nJohnson & Johnson (Trinidad) Limited\nTrinidad and Tobago\n\nJohnson & Johnson (Vietnam) Co., Ltd\nVietnam\n\nJ",
+              "raw_sha256": "a39725dff68b006c94335dbe88fc8a26ee4a155f2d9d0131521b29410dd719b6",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040622000022/ex21-subsidiariesxform10xk.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_e6dd2bbe638c4d93b60299a65c96697e0c00c2eb3b862253b5b35e376642bea8",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson Private Limited",
+              "evidence_available_at": "2022-02-17T21:06:50+00:00",
+              "evidence_text": "oland Sp. z o.o.\nPoland\n\nJohnson & Johnson Poland sp. z o.o. oddzial w Warszawie \"Consumer\"\nPoland\n\nJohnson & Johnson Private Limited\nIndia\n\nJohnson & Johnson Pte. Ltd.\nSingapore\n\nJohnson & Johnson Pte. Ltd. Korea Branch\nKorea, Republic of\n\nJohnson & Johnson Pty. Limited\nAustralia\n\nJohnson &",
+              "raw_sha256": "a39725dff68b006c94335dbe88fc8a26ee4a155f2d9d0131521b29410dd719b6",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040622000022/ex21-subsidiariesxform10xk.htm"
+            }
+          ]
+        },
+        {
+          "accession_number": "0000200406-23-000016",
+          "left": [
+            {
+              "evidence_claim_id": "relev_eab0d0853597ad5c0d570f49971767dfd4460909327855557dee89a27d4067c4",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson (Private) Limited",
+              "evidence_available_at": "2023-02-16T21:01:53+00:00",
+              "evidence_text": "son & Johnson (New Zealand) Limited\nNew Zealand\n\nJohnson & Johnson (Philippines), Inc.\nPhilippines\n\nJohnson & Johnson (Private) Limited\nZimbabwe\n\nJohnson & Johnson (Thailand) Ltd.\nThailand\n\nJohnson & Johnson (Trinidad) Limited\nTrinidad and Tobago\n\nJohnson & Johnson (Vietnam) Co., Ltd\nVietnam\n\nJ",
+              "raw_sha256": "df95bdbeea80ecfb306c3fa03760145530362bfe270caa699f43975fb34b6248",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040623000016/ex21-subsidiariesxform10xk.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_980ec48d5a04968f5d0c1207149e725521cae0bb6fc39251941568aa1ba7064c",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson Private Limited",
+              "evidence_available_at": "2023-02-16T21:01:53+00:00",
+              "evidence_text": ".A.\nChile\n\nJohnson & Johnson Pharmaceutical Ltd.\nChina\n\nJohnson & Johnson Poland Sp. z o.o.\nPoland\n\nJohnson & Johnson Private Limited\nIndia\n\nJohnson & Johnson Pte. Ltd.\nSingapore\n\nJohnson & Johnson Pty. Limited\nAustralia\n\nJohnson & Johnson Romania S.R.L.\nRomania\n\nJohnson & Johnson S.E. d.o.o.",
+              "raw_sha256": "df95bdbeea80ecfb306c3fa03760145530362bfe270caa699f43975fb34b6248",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040623000016/ex21-subsidiariesxform10xk.htm"
+            }
+          ]
+        },
+        {
+          "accession_number": "0000200406-24-000013",
+          "left": [
+            {
+              "evidence_claim_id": "relev_1026444ab1e1801cb7afaab09be0d4c69a9176ac7263f9018140b918a7ff8709",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson (Private) Limited",
+              "evidence_available_at": "2024-02-16T21:12:22+00:00",
+              "evidence_text": "son & Johnson (New Zealand) Limited\nNew Zealand\n\nJohnson & Johnson (Philippines), Inc.\nPhilippines\n\nJohnson & Johnson (Private) Limited\nZimbabwe\n\nJohnson & Johnson (Trinidad) Limited\nTrinidad and Tobago\n\nJohnson & Johnson (Vietnam) Co., Ltd\nVietnam\n\nJohnson & Johnson AB\nSweden\n\nJohnson & Johnso",
+              "raw_sha256": "16d1c3e6bddc90cb11da16ecb61d028fb1f5eb846e5ab439099977249dbc2ad6",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040624000013/ex21-subsidiariesxform10xk.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_03168b5e7dda61134c3e3fb2ed7c7f8ce28a12809877803460535fda6f241f3e",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson Private Limited",
+              "evidence_available_at": "2024-02-16T21:12:22+00:00",
+              "evidence_text": "Pakistan\n\nJohnson & Johnson Pharmaceutical Ltd.\nChina\n\nJohnson & Johnson Poland Sp. z o.o.\nPoland\n\nJohnson & Johnson Private Limited\nIndia\n\nJohnson & Johnson Romania S.R.L.\nRomania\n\nJohnson & Johnson S.E. d.o.o.\nCroatia\n\nName of Subsidiary\nJurisdiction\n\nJohnson & Johnson SDN. BHD.\nMalaysia",
+              "raw_sha256": "16d1c3e6bddc90cb11da16ecb61d028fb1f5eb846e5ab439099977249dbc2ad6",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040624000013/ex21-subsidiariesxform10xk.htm"
+            }
+          ]
+        },
+        {
+          "accession_number": "0000200406-26-000016",
+          "left": [
+            {
+              "evidence_claim_id": "relev_2e0e10e37e395a86c4c64e7372761a40d0416d2a38696ca63ea9029fd9e60c94",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson (Private) Limited",
+              "evidence_available_at": "2026-02-11T21:06:11+00:00",
+              "evidence_text": "n & Johnson (New Zealand) Limited\n\nNew Zealand\n\nJohnson & Johnson (Philippines), Inc.\n\nPhilippines\n\nJohnson & Johnson (Private) Limited\n\nZimbabwe\n\nJohnson & Johnson (Vietnam) Co., Ltd\n\nVietnam\n\nJohnson & Johnson AB\n\nSweden\n\nJohnson & Johnson AG\n\nSwitzerland\n\nJohnson & Johnson Bulgaria EOOD\n\nBul",
+              "raw_sha256": "b5723d6bc0e3576e22efc76c3522c32967c974484225ac051dfa1b9d0801847e",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000016/ex21-subsidiariesxform10xk.htm"
+            }
+          ],
+          "right": [
+            {
+              "evidence_claim_id": "relev_662f5051f8a64bc8fa6244a1f199c8f0ebcaf51c3360cbce38f0a83191e961b6",
+              "registrant_ticker": "JNJ",
+              "raw_name": "Johnson & Johnson Private Limited",
+              "evidence_available_at": "2026-02-11T21:06:11+00:00",
+              "evidence_text": "akistan\n\nJohnson & Johnson Pharmaceutical Ltd.\n\nChina\n\nJohnson & Johnson Poland Sp. z o.o.\n\nPoland\n\nJohnson & Johnson Private Limited\n\nIndia\n\nJohnson & Johnson Romania S.R.L.\n\nRomania\n\nJohnson & Johnson S.E. d.o.o.\n\nCroatia\n\nJohnson & Johnson SDN. BHD.\n\nMalaysia\n\nJohnson & Johnson Surgical Vi",
+              "raw_sha256": "b5723d6bc0e3576e22efc76c3522c32967c974484225ac051dfa1b9d0801847e",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000016/ex21-subsidiariesxform10xk.htm"
+            }
+          ]
+        }
+      ],
+      "automatic_merge_allowed": false
+    }
+  ],
+  "main_db_mutated": false,
+  "canonical_entities_created": false,
+  "automatic_merge_allowed": false,
+  "graph_edges_written": false,
+  "next_gate": "Manually classify these conflict pairs using exact evidence. All other V001 candidate pairs remain identity hypotheses, not merges."
+}

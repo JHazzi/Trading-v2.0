@@ -1,0 +1,68 @@
+{
+  "version": "event_graph_relation_evidence_v002",
+  "corpus_db": "data/processed/event_graph_sec_relation_corpus_v001.db",
+  "main_db": "data/database/market_data_v2.db",
+  "output_db": "data/processed/event_graph_relation_evidence_v002.db",
+  "report_dir": "reports/event_graph/relation_evidence_v002",
+  "supersedes_for_promotion": "event_graph_relation_candidates_v001",
+  "mutates_main_database": false,
+  "writes_graph_edges": false,
+  "strict_historical_pit": false,
+  "semantic_corrections": {
+    "ex21": "EX-21 rows are stored as reported subsidiary claims about the registrant, not as direct parent_of graph edges. Directness is unknown.",
+    "contracts": "Contract exhibits produce document-level party mention sets. The filing registrant is evidence provenance, not automatically a party."
+  },
+  "extractors": {
+    "ex21_reported_subsidiary_v002": {
+      "document_classes": [
+        "subsidiary_exhibit"
+      ],
+      "claim_kind": "reported_subsidiary_of_registrant",
+      "edge_ready": false
+    },
+    "agreement_party_set_v002": {
+      "document_classes": [
+        "material_contract_exhibit",
+        "transaction_exhibit"
+      ],
+      "claim_kind": "contract_party_mention",
+      "max_marker_offset": 16000,
+      "max_party_block_chars": 2600,
+      "edge_ready": false
+    }
+  },
+  "entity_resolution": {
+    "automatic": "exact_unique_alias_only",
+    "create_entities": false,
+    "fuzzy_auto_resolution": false,
+    "legal_suffix_stripping": false,
+    "unresolved_is_expected": true
+  },
+  "qa": {
+    "sample_per_claim_kind": 80,
+    "sample_per_quality_flag": 20,
+    "manual_review_required": true
+  },
+  "hard_guards": {
+    "no_relation_assertions": true,
+    "no_graph_edges": true,
+    "no_pairwise_contract_edges": true,
+    "no_direct_parent_claim_from_ex21": true,
+    "no_market_direction": true,
+    "no_market_weight": true
+  },
+  "deferred": [
+    "supplier_of",
+    "customer_of",
+    "depends_on",
+    "partner_of",
+    "competitor_of",
+    "regulated_by",
+    "exposed_to",
+    "operates_in",
+    "produces",
+    "uses",
+    "financed_by",
+    "graph_promotion"
+  ]
+}

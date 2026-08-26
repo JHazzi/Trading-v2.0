@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "run_id": "relevrun_838514a066af3505a6bcafef9d26c4b7fdcf26e5f35e8351affb4e8ad14c3517",
+  "documents_scanned": 5928,
+  "documents_with_claims": 146,
+  "claims_written": 5929,
+  "by_claim_kind": {
+    "contract_party_mention": 101,
+    "reported_subsidiary_of_registrant": 5828
+  },
+  "by_resolution_status": {
+    "resolved_exact": 5,
+    "unresolved": 5924
+  },
+  "contract_party_sets": 47,
+  "self_name_claims": 5,
+  "strict_historical_pit": false,
+  "main_db_mutated": false,
+  "graph_edges_written": false
+}

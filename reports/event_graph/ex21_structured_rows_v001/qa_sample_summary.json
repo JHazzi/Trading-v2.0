@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "sample_rows": 180,
+  "sample_file": "/home/trabajo/quant_market_ai/reports/event_graph/ex21_structured_rows_v001/qa_sample.json",
+  "manual_review_required": true,
+  "canonical_entity_creation_allowed": false
+}

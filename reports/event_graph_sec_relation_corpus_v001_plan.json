@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "reviews": [],
+  "selected_documents": 7736,
+  "selected_filings": 1824,
+  "selected_assets": 10,
+  "selected_subject_entities": 10,
+  "selected_bytes": 2506393594,
+  "document_class_counts": {
+    "material_contract_exhibit": 5663,
+    "primary_narrative": 1808,
+    "subsidiary_exhibit": 99,
+    "transaction_exhibit": 166
+  },
+  "form_counts": {
+    "10-K": 652,
+    "10-K/A": 8,
+    "10-Q": 1772,
+    "10-Q/A": 7,
+    "8-K": 5205,
+    "8-K/A": 92
+  },
+  "missing_storage_count": 0,
+  "missing_storage_examples": [],
+  "missing_asset_link_rows": 0,
+  "missing_subject_entity_rows": 0,
+  "strict_historical_pit": false,
+  "main_db_mutated": false,
+  "next_gate": "If PASS/expected REVIEW with no missing storage, build the separate SEC relation corpus. No relation extraction occurs in this package."
+}

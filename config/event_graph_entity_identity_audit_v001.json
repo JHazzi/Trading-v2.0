@@ -1,0 +1,116 @@
+{
+  "version": "event_graph_entity_identity_audit_v001",
+  "registry_db": "data/processed/event_graph_entity_registry_v001.db",
+  "output_db": "data/processed/event_graph_entity_identity_candidates_v001.db",
+  "report_dir": "reports/event_graph/entity_identity_v001",
+  "mutates_main_database": false,
+  "creates_canonical_entities": false,
+  "writes_graph_edges": false,
+  "strict_historical_pit": false,
+  "identity_hypothesis": "Repeated EX-21 legal-name evidence can support conservative alias/rename candidates when names differ only by punctuation or equivalent legal-form rendering and share historical registrant context.",
+  "candidate_rules": {
+    "require_shared_registrant": true,
+    "legal_form_is_preserved_not_stripped": true,
+    "punctuation_is_not_identity_by_itself": true,
+    "fuzzy_similarity": false,
+    "semantic_embedding_similarity": false,
+    "llm_identity_decision": false,
+    "same_accession_cooccurrence_is_conflict_flag": true,
+    "automatic_merge_allowed": false
+  },
+  "legal_form_families": {
+    "INC": [
+      "inc",
+      "incorporated"
+    ],
+    "CORP": [
+      "corp",
+      "corporation"
+    ],
+    "CO": [
+      "co",
+      "company"
+    ],
+    "LLC": [
+      "llc",
+      "l l c",
+      "limited liability company"
+    ],
+    "LP": [
+      "lp",
+      "l p",
+      "limited partnership"
+    ],
+    "LLP": [
+      "llp",
+      "l l p",
+      "limited liability partnership"
+    ],
+    "LTD": [
+      "ltd",
+      "limited"
+    ],
+    "PLC": [
+      "plc",
+      "public limited company"
+    ],
+    "GMBH": [
+      "gmbh"
+    ],
+    "AG": [
+      "ag"
+    ],
+    "SE": [
+      "se"
+    ],
+    "BV": [
+      "bv",
+      "b v"
+    ],
+    "NV": [
+      "nv",
+      "n v"
+    ],
+    "SA": [
+      "sa",
+      "s a"
+    ],
+    "SAS": [
+      "sas",
+      "s a s"
+    ],
+    "SPA": [
+      "spa",
+      "s p a"
+    ],
+    "SA_DE_CV": [
+      "sa de cv",
+      "s a de c v"
+    ],
+    "S_DE_RL_DE_CV": [
+      "s de rl de cv",
+      "s de r l de c v"
+    ],
+    "PTY_LTD": [
+      "pty ltd",
+      "pty limited"
+    ],
+    "PTE_LTD": [
+      "pte ltd",
+      "pte limited"
+    ],
+    "UNLIMITED_CO": [
+      "unlimited company"
+    ]
+  },
+  "qa": {
+    "sample_pairs_per_candidate_kind": 60,
+    "deterministic_hash_sampling": true
+  },
+  "promotion_gate": {
+    "no_merge_in_this_package": true,
+    "no_main_db_entity_write": true,
+    "no_graph_promotion": true,
+    "next_after_audit": "Review candidate-pair precision and conflict flags. Only then design canonical entity creation and alias evidence."
+  }
+}

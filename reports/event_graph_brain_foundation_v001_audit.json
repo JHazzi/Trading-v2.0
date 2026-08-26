@@ -1,0 +1,40 @@
+{
+  "status": "REVIEW",
+  "failures": [],
+  "reviews": [
+    "structural_graph_empty_expected_before_relation_ingestion"
+  ],
+  "asset_entity_coverage": {
+    "eligible_active_equities": 503,
+    "mapped_active_equities": 503,
+    "coverage_fraction": 1.0,
+    "listed_asset_proxy_entities": 503
+  },
+  "existing_event_bridge": {
+    "normalized_event_source_present": true,
+    "normalized_events_v002": 308,
+    "normalized_event_assets_v002": 10,
+    "direct_entity_links": 308,
+    "direct_link_events": 308,
+    "direct_link_assets": 10
+  },
+  "temporal_structural_graph": {
+    "validated_relation_assertions": 0,
+    "relation_observations": 0,
+    "pending_relation_candidates": 0,
+    "assertions_without_observation": 0
+  },
+  "hard_contracts": {
+    "event_evidence_separate_from_semantic_inference": true,
+    "relation_candidates_not_model_visible": true,
+    "relation_availability_is_causal_gate": true,
+    "graph_primary_layer": "structural",
+    "foundation_max_hops": 1,
+    "hardcoded_market_direction": false,
+    "hardcoded_relation_weight": false,
+    "hardcoded_event_decay": false,
+    "cooccurrence_is_not_relation": true,
+    "gnn_enabled": false
+  },
+  "next_gate": "After PASS/expected REVIEW: populate and audit historical structural relation evidence. Do not train graph propagation models yet."
+}

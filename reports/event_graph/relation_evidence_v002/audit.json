@@ -1,0 +1,35 @@
+{
+  "status": "REVIEW",
+  "failures": [],
+  "reviews": [
+    "unresolved_named_entities_expected",
+    "registrant_name_appears_as_contract_party_or_ex21_name_not_edge"
+  ],
+  "claims": 5929,
+  "by_claim_kind": {
+    "contract_party_mention": 101,
+    "reported_subsidiary_of_registrant": 5828
+  },
+  "by_resolution_status": {
+    "resolved_exact": 5,
+    "unresolved": 5924
+  },
+  "contract_party_sets": 47,
+  "self_named_entity_claims": 5,
+  "semantic_contract": {
+    "ex21_direct_parent_edge": false,
+    "ex21_claim_is_reported_subsidiary": true,
+    "registrant_assumed_contract_party": false,
+    "contract_pairwise_edges_created": false
+  },
+  "causal_contract": {
+    "strict_historical_pit": false,
+    "all_claims_pit_zero": true
+  },
+  "graph_contract": {
+    "edge_ready_claims": 0,
+    "graph_tables_present": [],
+    "promotion_allowed": false
+  },
+  "next_gate": "Review V002 QA. Only after evidence precision is acceptable should entity-registry creation/resolution be designed. Do not start supplier/customer semantic extraction yet."
+}

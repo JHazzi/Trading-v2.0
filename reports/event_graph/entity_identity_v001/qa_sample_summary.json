@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "sample_rows": 41,
+  "sample_file": "/home/trabajo/quant_market_ai/reports/event_graph/entity_identity_v001/qa_sample.json",
+  "automatic_merge_allowed": false,
+  "manual_review_required": true
+}

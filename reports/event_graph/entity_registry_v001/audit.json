@@ -1,0 +1,31 @@
+{
+  "status": "REVIEW",
+  "failures": [],
+  "reviews": [
+    "unresolved_registry_names_expected"
+  ],
+  "name_records": 1201,
+  "evidence_rows": 5820,
+  "rejected_claims": 8,
+  "identity_status_counts": {
+    "existing_exact_entity_observed": 0,
+    "unresolved_name_registry_record": 1201,
+    "conflicting_existing_exact_entities": 0
+  },
+  "causal_contract": {
+    "strict_historical_pit": false,
+    "all_evidence_pit_zero": true
+  },
+  "scope_contract": {
+    "ex21_only": true,
+    "contract_party_claims_ingested": false,
+    "canonical_entities_created": false,
+    "cross_name_alias_merge_performed": false
+  },
+  "graph_contract": {
+    "graph_tables_present": [],
+    "graph_edges_written": false,
+    "relation_promotion": false
+  },
+  "next_gate": "Inspect registry size, repeated-name evidence and any existing exact entity conflicts. Then design identity resolution/alias evidence. Do not promote graph edges yet."
+}

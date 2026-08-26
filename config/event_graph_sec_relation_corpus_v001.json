@@ -1,0 +1,112 @@
+{
+  "version": "event_graph_sec_relation_corpus_v001",
+  "main_db": "data/database/market_data_v2.db",
+  "output_db": "data/processed/event_graph_sec_relation_corpus_v001.db",
+  "report_dir": "reports/event_graph/sec_relation_corpus_v001",
+  "source": "existing_local_sec_corpus",
+  "mutates_main_database": false,
+  "strict_historical_pit": false,
+  "clock_contract": {
+    "filing_clock": "SEC acceptance_datetime",
+    "document_clock": "raw_source_documents.available_at",
+    "metadata_clock": "first sec_filing_metadata_observation.available_at",
+    "effective_available_at": "max(document_available_at, metadata_available_at_or_acceptance_datetime)",
+    "point_in_time_policy": "historical reconstruction; availability_is_point_in_time=0 in corpus",
+    "reason": "SEC acceptance is an EDGAR timestamp, but SEC states there is no timestamp for when filing content first became available on sec.gov."
+  },
+  "document_selection": {
+    "primary_forms": [
+      "10-K",
+      "10-K/A",
+      "10-Q",
+      "10-Q/A",
+      "8-K",
+      "8-K/A",
+      "20-F",
+      "20-F/A",
+      "6-K"
+    ],
+    "include_primary": true,
+    "include_exhibit_prefixes": {
+      "EX-21": "subsidiary_exhibit",
+      "EX-10": "material_contract_exhibit",
+      "EX-2": "transaction_exhibit"
+    },
+    "exclude_if_raw_document_missing": true,
+    "exclude_reference_assets": true
+  },
+  "text_contract": {
+    "max_document_bytes": 30000000,
+    "min_normalized_chars": 40,
+    "chunk_max_chars": 6000,
+    "chunk_overlap_chars": 500,
+    "html_parser": "stdlib_htmlparser_v001",
+    "normalizer": "relation_text_normalizer_v001"
+  },
+  "cue_scan": {
+    "enabled": true,
+    "purpose": "yield diagnostic only; not relation extraction",
+    "families": {
+      "supplier_customer": [
+        "supplier",
+        "suppliers",
+        "vendor",
+        "vendors",
+        "customer",
+        "customers",
+        "major customer",
+        "significant customer",
+        "source of supply"
+      ],
+      "subsidiary": [
+        "subsidiary",
+        "subsidiaries",
+        "wholly owned",
+        "wholly-owned"
+      ],
+      "contract_party": [
+        "material definitive agreement",
+        "party to",
+        "parties to",
+        "entered into an agreement",
+        "supply agreement",
+        "services agreement"
+      ],
+      "dependency": [
+        "depend on",
+        "dependent on",
+        "rely on",
+        "reliance on",
+        "single source",
+        "sole source"
+      ],
+      "partnership": [
+        "strategic partnership",
+        "collaboration agreement",
+        "joint venture",
+        "partner with"
+      ],
+      "geography": [
+        "operations in",
+        "operate in",
+        "revenue from",
+        "sales in"
+      ],
+      "financing": [
+        "credit agreement",
+        "lender",
+        "borrower",
+        "financing agreement",
+        "revolving credit"
+      ]
+    }
+  },
+  "hard_guards": {
+    "no_relation_candidates_written": true,
+    "no_graph_edges_written": true,
+    "no_market_direction": true,
+    "no_market_weight": true,
+    "no_llm_calls": true,
+    "raw_hash_must_match_before_text_use": true
+  }
+}

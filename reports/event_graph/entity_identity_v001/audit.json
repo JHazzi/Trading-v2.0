@@ -1,0 +1,25 @@
+{
+  "status": "REVIEW",
+  "failures": [],
+  "reviews": [
+    "same_accession_candidate_conflicts_require_review"
+  ],
+  "profiles": 1201,
+  "candidate_pairs": 41,
+  "same_accession_conflict_pairs": 2,
+  "by_candidate_kind": {
+    "equivalent_legal_form_rendering": 7,
+    "punctuation_spacing_variant": 34
+  },
+  "identity_contract": {
+    "automatic_merge_allowed": true,
+    "canonical_entities_created": false,
+    "fuzzy_matching_used": false
+  },
+  "graph_contract": {
+    "graph_tables_present": [],
+    "graph_edges_written": false,
+    "relation_promotion": false
+  },
+  "next_gate": "Review deterministic QA sample of identity candidates. If precise, design canonical entity/alias evidence creation. No graph promotion yet."
+}

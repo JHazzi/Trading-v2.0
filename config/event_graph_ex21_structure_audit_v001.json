@@ -1,0 +1,56 @@
+{
+  "version": "event_graph_ex21_structure_audit_v001",
+  "corpus_db": "data/processed/event_graph_sec_relation_corpus_v001.db",
+  "report_dir": "reports/event_graph/ex21_structure_v001",
+  "document_class": "subsidiary_exhibit",
+  "mutates_main_database": false,
+  "creates_entities": false,
+  "writes_graph_edges": false,
+  "strict_historical_pit": false,
+  "purpose": "Audit raw EX-21 HTML/table structure before canonical entity creation, so legal name, jurisdiction, DBA/additional names and ownership fields can be separated rather than inferred from flattened text.",
+  "column_roles": {
+    "legal_name": [
+      "name",
+      "subsidiary",
+      "name of subsidiary",
+      "subsidiaries"
+    ],
+    "jurisdiction": [
+      "jurisdiction",
+      "place of incorporation",
+      "place of formation",
+      "where incorporated",
+      "state or jurisdiction",
+      "state or other jurisdiction of incorporation",
+      "jurisdiction of incorporation or organization",
+      "state or jurisdiction of organization",
+      "location jurisdiction"
+    ],
+    "dba_alias": [
+      "doing business",
+      "does business",
+      "additional names",
+      "name under which",
+      "other than subsidiary"
+    ],
+    "ownership": [
+      "percent",
+      "equity securities owned",
+      "ownership",
+      "percentage owned"
+    ]
+  },
+  "header_detection": {
+    "max_header_rows": 6,
+    "minimum_recognized_roles": 2,
+    "require_legal_name_role": true
+  },
+  "hard_guards": {
+    "raw_sha256_must_match": true,
+    "no_identity_merge": true,
+    "no_canonical_entity_creation": true,
+    "no_relation_promotion": true,
+    "no_contract_documents": true
+  },
+  "next_gate": "If raw table structure is sufficiently recoverable, build a structured EX-21 row extractor with legal_name + jurisdiction + DBA + ownership and use that evidence for identity resolution."
+}

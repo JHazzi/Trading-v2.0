@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "eligible_documents": 5928,
+  "by_document_class": {
+    "material_contract_exhibit": 5663,
+    "subsidiary_exhibit": 99,
+    "transaction_exhibit": 166
+  },
+  "registrant_entities": 10,
+  "assets": 10,
+  "resolver_aliases": 1506,
+  "ambiguous_aliases": 503,
+  "semantic_contract": {
+    "ex21_direct_parent_edge": false,
+    "ex21_claim": "reported_subsidiary_of_registrant",
+    "registrant_assumed_contract_party": false,
+    "contract_output": "document_party_set"
+  },
+  "strict_historical_pit": false,
+  "main_db_mutated": false,
+  "graph_edges_written": false
+}

@@ -1,5 +1,5 @@
 {
-  "version": "event_graph_brain_foundation_v001",
+  "version": "event_graph_brain_foundation_v002",
   "architecture_authority": "ARCHITECTURE.md",
   "event_layer_authority": "ARCHITECTURE_EVENT_LAYER.md",
   "architecture_phases": [
@@ -12,7 +12,7 @@
     "do_not_tune_in_this_stage": true
   },
   "database": "data/database/market_data_v2.db",
-  "migration_version": "019",
+  "migration_version": "020",
   "migration_name": "event_graph_brain_foundation",
   "existing_event_contract": {
     "event_feature_version": "event_state_v002",
@@ -146,5 +146,6 @@
     "statistical_graph",
     "learned_graph",
     "production_trading"
-  ]
+  ],
+  "migration_numbering_note": "V001 attempted 019, but local repository already had 019=event_brain_v001 before foundation migration execution. V002 moves only this foundation to 020; existing 019 is preserved."
 }

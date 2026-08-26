@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "input_claims": 5828,
+  "accepted_claims": 5820,
+  "rejected_claims": 8,
+  "rejection_reasons": {
+    "known_header": 8
+  },
+  "unique_exact_normalized_names": 1201,
+  "registrant_entities": 10,
+  "contract_claims_in_scope": false,
+  "strict_historical_pit": false,
+  "main_db_mutated": false,
+  "graph_edges_written": false,
+  "identity_contract": {
+    "registry_record_is_not_canonical_entity": true,
+    "exact_normalized_name_grouping_only": true,
+    "fuzzy_merge": false,
+    "legal_suffix_stripping_for_identity": false,
+    "cross_name_alias_merge": false,
+    "main_entities_created": false,
+    "main_entities_updated": false
+  },
+  "next_gate": "If PASS, build a separate evidence-backed name registry. No canonical entity creation or alias merging occurs."
+}

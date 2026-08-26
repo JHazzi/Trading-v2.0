@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "identity_run_id": "identityrun_9f91275eaee651bce1c3be9f69c1ee837c8efaf63daa664cc6b37aad0a41778e",
+  "profiles_written": 1201,
+  "candidate_pairs_written": 41,
+  "same_accession_conflict_pairs": 2,
+  "by_candidate_kind": {
+    "equivalent_legal_form_rendering": 7,
+    "punctuation_spacing_variant": 34
+  },
+  "automatic_merge_allowed": false,
+  "canonical_entities_created": false,
+  "main_db_mutated": false,
+  "graph_edges_written": false
+}

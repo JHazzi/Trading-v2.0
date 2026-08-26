@@ -1,0 +1,51 @@
+{
+  "version": "event_graph_entity_registry_foundation_v001",
+  "relation_evidence_db": "data/processed/event_graph_relation_evidence_v002.db",
+  "main_db": "data/database/market_data_v2.db",
+  "output_db": "data/processed/event_graph_entity_registry_v001.db",
+  "report_dir": "reports/event_graph/entity_registry_v001",
+  "input_claim_kind": "reported_subsidiary_of_registrant",
+  "contract_claims_in_scope": false,
+  "strict_historical_pit": false,
+  "identity_contract": {
+    "registry_record_is_not_canonical_entity": true,
+    "exact_normalized_name_grouping_only": true,
+    "fuzzy_merge": false,
+    "legal_suffix_stripping_for_identity": false,
+    "cross_name_alias_merge": false,
+    "main_entities_created": false,
+    "main_entities_updated": false
+  },
+  "quality_contract": {
+    "reject_known_headers": [
+      "organized or incorporated",
+      "where incorporated",
+      "place of incorporation",
+      "state or jurisdiction",
+      "state or country of organization",
+      "name of subsidiary",
+      "subsidiary",
+      "jurisdiction"
+    ],
+    "reject_generic_column_phrases": true,
+    "keep_source_claim_provenance": true
+  },
+  "registry_contract": {
+    "one_name_record_per_exact_normalized_name": true,
+    "all_occurrences_preserved": true,
+    "first_and_last_evidence_times_recorded": true,
+    "source_registrant_ids_preserved": true,
+    "source_accessions_preserved": true,
+    "resolution_status_from_v002_is_observational_only": true
+  },
+  "promotion_gate": {
+    "no_main_db_writes": true,
+    "no_graph_edges": true,
+    "no_relation_promotion": true,
+    "next_after_audit": "Design entity identity/resolution using registry evidence; do not auto-merge aliases or start supplier/customer extraction."
+  },
+  "contract_branch_status": {
+    "event_graph_relation_evidence_v002_contract_party_mention": "qa_failed_not_registry_input",
+    "reason": "Deterministic QA contains many prose/role/table fragments despite some valid legal-party mentions. Contract evidence must be re-extracted with a different structural/semantic parser."
+  }
+}

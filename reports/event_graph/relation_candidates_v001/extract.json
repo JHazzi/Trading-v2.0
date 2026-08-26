@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "extraction_run_id": "relcandrun_226ff95158ff48673811c7872c109ad70f739aac81b66465639fdb0c9977f423",
+  "documents_scanned": 5928,
+  "documents_with_candidates": 134,
+  "candidates_written": 5995,
+  "by_relation_type": {
+    "contract_party_of": 70,
+    "parent_of": 5925
+  },
+  "by_extraction_method": {
+    "agreement_counterparty_v001": 70,
+    "exhibit21_parent_of_v001": 5925
+  },
+  "by_resolution_status": {
+    "unresolved": 5995
+  },
+  "self_relation_candidates_rejected": 5,
+  "duplicate_mentions_collapsed": 0,
+  "strict_historical_pit": false,
+  "main_db_mutated": false,
+  "graph_edges_written": false,
+  "relations_promoted": false
+}

@@ -1,0 +1,39 @@
+{
+  "version": "event_graph_relation_source_audit_v001",
+  "database": "data/database/market_data_v2.db",
+  "read_only": true,
+  "purpose": "Inventory the actual local repository/database for historical evidence that can support temporal structural relationships before implementing a relation extractor or adding new data sources.",
+  "preferred_source_order": [
+    "existing SEC/source documents with explicit availability",
+    "existing versioned event evidence",
+    "existing raw news with published/available timestamps",
+    "new official sources only after local evidence is exhausted"
+  ],
+  "required_relation_evidence_properties": [
+    "source reference",
+    "event/document availability time",
+    "entity/asset resolvability",
+    "historical window",
+    "raw or sufficiently faithful source text/payload",
+    "revision/provenance information when available"
+  ],
+  "target_relation_families": [
+    "supplier_of",
+    "customer_of",
+    "competitor_of",
+    "parent_of",
+    "subsidiary_of",
+    "partner_of",
+    "contract_party_of",
+    "regulated_by",
+    "exposed_to",
+    "operates_in",
+    "produces",
+    "uses",
+    "depends_on",
+    "financed_by"
+  ],
+  "do_not_mutate_database": true,
+  "do_not_extract_relations_yet": true,
+  "do_not_train_models_yet": true
+}

@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "reviews": [],
+  "documents": 7736,
+  "chunks": 176091,
+  "filings": 1824,
+  "assets": 10,
+  "subject_entities": 10,
+  "document_class_counts": {
+    "material_contract_exhibit": 5663,
+    "primary_narrative": 1808,
+    "subsidiary_exhibit": 99,
+    "transaction_exhibit": 166
+  },
+  "form_counts": {
+    "10-K": 652,
+    "10-K/A": 8,
+    "10-Q": 1772,
+    "10-Q/A": 7,
+    "8-K": 5205,
+    "8-K/A": 92
+  },
+  "cue_totals": {
+    "contract_party": 2049,
+    "dependency": 2315,
+    "financing": 5909,
+    "geography": 9269,
+    "partnership": 1312,
+    "subsidiary": 26442,
+    "supplier_customer": 93457
+  },
+  "causal_contract": {
+    "strict_historical_pit": false,
+    "all_corpus_rows_pit_zero": true,
+    "effective_availability_uses_document_and_metadata_clocks": true,
+    "future_relation_evidence_not_created": true
+  },
+  "graph_contract": {
+    "relation_candidates_written": false,
+    "graph_edges_written": false,
+    "market_direction_assigned": false,
+    "market_weight_assigned": false
+  },
+  "next_gate": "Review corpus coverage and cue yield. If healthy, implement high-precision structural relation candidate extraction with entity resolution; candidates remain non-model-visible."
+}

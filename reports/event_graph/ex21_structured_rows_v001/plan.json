@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "selected_documents": 99,
+  "missing_storage_count": 0,
+  "nonzero_pit_documents": 0,
+  "strict_historical_pit": false,
+  "main_db_mutated": false,
+  "canonical_entities_created": false,
+  "graph_edges_written": false,
+  "next_gate": "If PASS, build structured EX-21 evidence rows in a separate DB."
+}

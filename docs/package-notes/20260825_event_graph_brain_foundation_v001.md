@@ -14,7 +14,7 @@ All foundation bridge/promotion paths are designed to be idempotent: rerunning t
 
 ## What it adds
 
-- migration 019 for causal event/entity/graph contracts;
+- migration 020 for causal event/entity/graph contracts;
 - asset-specific proxy entities for unmapped active equities;
 - bridge from existing normalized direct events to entity links;
 - relation candidate vs validated assertion separation;

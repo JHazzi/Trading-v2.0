@@ -1,0 +1,53 @@
+{
+  "version": "event_graph_entity_registry_v002",
+  "structured_rows_db": "data/processed/event_graph_ex21_structured_rows_v001.db",
+  "output_db": "data/processed/event_graph_entity_registry_v002.db",
+  "report_dir": "reports/event_graph/entity_registry_v002",
+  "strict_historical_pit": false,
+  "mutates_main_database": false,
+  "creates_canonical_entities": false,
+  "writes_graph_edges": false,
+  "registry_semantics": {
+    "record_meaning": "Evidence-backed identity bucket for one registrant-scoped legal-name and jurisdiction combination. It is not yet a canonical entity.",
+    "grouping_key": [
+      "registrant_entity_id",
+      "normalized_legal_name",
+      "normalized_jurisdiction_or_missing"
+    ],
+    "jurisdiction_is_identity_evidence_not_global_truth": true,
+    "same_name_different_jurisdiction_must_not_group": true,
+    "same_name_same_jurisdiction_different_registrant_must_not_group": true,
+    "missing_jurisdiction_never_cross_registrant_merge": true,
+    "dba_is_alias_evidence_not_identity_key": true,
+    "ownership_is_relation_evidence_not_identity_key": true,
+    "footnote_refs_preserved": true
+  },
+  "normalization": {
+    "unicode_nfkc": true,
+    "casefold": true,
+    "collapse_whitespace": true,
+    "trim_outer_punctuation": true,
+    "strip_legal_suffix": false,
+    "fuzzy_matching": false,
+    "jurisdiction_mapping": false,
+    "country_geocoding": false,
+    "dba_fuzzy_matching": false
+  },
+  "diagnostics": {
+    "count_same_name_multiple_jurisdictions": true,
+    "count_same_name_multiple_registrants": true,
+    "count_dba_collisions_with_legal_names": true,
+    "count_missing_jurisdiction_buckets": true,
+    "count_ownership_variation_within_bucket": true
+  },
+  "hard_guards": {
+    "no_canonical_entity_creation": true,
+    "no_cross_registrant_merge": true,
+    "no_cross_jurisdiction_merge": true,
+    "no_fuzzy_alias_merge": true,
+    "no_relation_promotion": true,
+    "no_graph_edges": true,
+    "no_main_db_write": true
+  },
+  "next_gate": "Inspect plan diagnostics. If healthy, build the registrant-scoped evidence registry, audit it, and QA identity-conflict buckets before designing cross-bucket canonical entity resolution."
+}

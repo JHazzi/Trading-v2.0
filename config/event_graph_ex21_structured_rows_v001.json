@@ -1,0 +1,95 @@
+{
+  "version": "event_graph_ex21_structured_rows_v001",
+  "corpus_db": "data/processed/event_graph_sec_relation_corpus_v001.db",
+  "output_db": "data/processed/event_graph_ex21_structured_rows_v001.db",
+  "report_dir": "reports/event_graph/ex21_structured_rows_v001",
+  "document_class": "subsidiary_exhibit",
+  "strict_historical_pit": false,
+  "mutates_main_database": false,
+  "creates_canonical_entities": false,
+  "writes_graph_edges": false,
+  "schema_contract": {
+    "physical_cells_are_primary": true,
+    "uniform_colspan_is_formatting_not_logical_columns": true,
+    "rowspan_colspan_expansion_by_default": false,
+    "explicit_header_preferred": true,
+    "implicit_left_legal_name_allowed": true,
+    "implicit_name_requires_other_explicit_role": true,
+    "schema_inheritance_within_document": true,
+    "schema_inheritance_requires_same_physical_arity": true,
+    "footnote_tables_are_not_data_tables": true
+  },
+  "roles": [
+    "legal_name",
+    "jurisdiction",
+    "location",
+    "dba_alias",
+    "ownership"
+  ],
+  "header_rules": {
+    "max_header_cell_chars": 140,
+    "max_header_rows_to_scan": 6,
+    "minimum_data_rows_for_inference": 2,
+    "legal_name_patterns": [
+      "^name$",
+      "^name of subsidiary$",
+      "^subsidiary$",
+      "^subsidiaries$",
+      "^.*\\bname$"
+    ],
+    "jurisdiction_patterns": [
+      "^jurisdiction$",
+      "^jurisdiction of organization$",
+      "^jurisdiction of incorporation$",
+      "^jurisdiction of incorporation or organization$",
+      "^where incorporated$",
+      "^place of incorporation$",
+      "^place of formation$",
+      "^state or jurisdiction$",
+      "^state or country of organization$",
+      "^state or jurisdiction of incorporation or organization$",
+      "^state or other jurisdiction of incorporation or organization$",
+      "^state, province or country in which organized$",
+      "^organized under the laws of$",
+      "^organized or incorporated$"
+    ],
+    "location_patterns": [
+      "^location$"
+    ],
+    "dba_alias_patterns": [
+      "^name under which subsidiary does business$",
+      "^name under which doing business other than subsidiary'?s$",
+      "^additional names? under which .* does business$",
+      "^.*doing business.*$"
+    ],
+    "ownership_patterns": [
+      "^percent of equity securities owned$",
+      "^percentage owned$",
+      "^ownership$",
+      "^percentage of voting securities owned directly or indirectly by registrant$"
+    ]
+  },
+  "row_contract": {
+    "legal_name_required": true,
+    "raw_cells_preserved": true,
+    "source_coordinates_preserved": true,
+    "trailing_numeric_footnotes_separated": true,
+    "jurisdiction_raw_preserved": true,
+    "dba_raw_preserved": true,
+    "ownership_raw_preserved": true,
+    "no_identity_decision": true
+  },
+  "qa": {
+    "sample_rows_per_ticker": 12,
+    "sample_rows_per_schema_family": 20,
+    "deterministic_hash_sampling": true
+  },
+  "hard_guards": {
+    "raw_sha256_must_match": true,
+    "no_contract_documents": true,
+    "no_entity_merge": true,
+    "no_canonical_entity_creation": true,
+    "no_relation_promotion": true,
+    "no_graph_edges": true
+  }
+}

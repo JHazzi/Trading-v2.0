@@ -1,4 +1,4 @@
--- 019_event_graph_brain_foundation.sql
+-- 020_event_graph_brain_foundation.sql
 -- Causal event/entity/temporal-graph foundation.
 --
 -- Key separation:
@@ -330,4 +330,4 @@ ON graph_propagation_candidates_v001(
 );
 
 INSERT OR IGNORE INTO schema_migrations(version, name)
-VALUES ('019', 'event_graph_brain_foundation');
+VALUES ('020', 'event_graph_brain_foundation');

@@ -1,0 +1,70 @@
+{
+  "status": "REVIEW",
+  "failures": [],
+  "reviews": [
+    "structured_table_coverage_below_80_percent",
+    "rowspan_colspan_present_requires_expansion_logic"
+  ],
+  "documents": 99,
+  "html_documents": 99,
+  "text_documents": 0,
+  "documents_with_tables": 99,
+  "documents_with_structured_candidate_table": 54,
+  "structured_candidate_document_fraction": 0.5454545454545454,
+  "documents_with_rowspan_or_colspan": 52,
+  "top_header_patterns": [
+    {
+      "pattern": "Name of Subsidiary | Jurisdiction",
+      "documents": 66
+    },
+    {
+      "pattern": "Name of Subsidiary | Jurisdiction of Organization",
+      "documents": 18
+    },
+    {
+      "pattern": "Name | Location | Jurisdiction",
+      "documents": 12
+    },
+    {
+      "pattern": "Subsidiaries | State or Other Jurisdiction of Incorporation or Organization | Name under Which Subsidiary Does Business",
+      "documents": 10
+    },
+    {
+      "pattern": "Name | Where Incorporated",
+      "documents": 10
+    },
+    {
+      "pattern": "Subsidiary | Organized or Incorporated | Percent of Equity Securities Owned | Name Under Which Doing Business Other Than Subsidiary's",
+      "documents": 8
+    },
+    {
+      "pattern": "(1) | For the purposes of this list, if the registrant owns directly or indirectly approximately 50 percent of the voting securities of any person and approximately 50 percent of the voting securities of such person is owned directly or indirectly by another interest, or if the registrant includes its share of net income of any other unconsolidated person in consolidated net income, such person is deemed to be a subsidiary.",
+      "documents": 4
+    },
+    {
+      "pattern": "Name | Jurisdiction of Incorporation",
+      "documents": 2
+    }
+  ],
+  "recognized_role_sets": {
+    "jurisdiction,legal_name": 108,
+    "dba_alias,jurisdiction,legal_name": 10,
+    "dba_alias,legal_name,ownership": 8,
+    "legal_name,ownership": 4
+  },
+  "source_integrity": {
+    "all_raw_sha256_verified": true,
+    "main_db_mutated": false
+  },
+  "identity_contract": {
+    "canonical_entities_created": false,
+    "identity_merges_performed": false,
+    "jurisdiction_used_for_identity_yet": false
+  },
+  "graph_contract": {
+    "graph_edges_written": false,
+    "relation_promotion": false
+  },
+  "detail_report": "/home/trabajo/quant_market_ai/reports/event_graph/ex21_structure_v001/document_details.json",
+  "next_gate": "If raw table structure is sufficiently recoverable, build a structured EX-21 row extractor with legal_name + jurisdiction + DBA + ownership and use that evidence for identity resolution."
+}

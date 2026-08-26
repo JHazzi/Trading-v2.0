@@ -1,0 +1,321 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "input_structured_rows": 8111,
+  "registrants": 10,
+  "tickers": [
+    "AAPL",
+    "BAC",
+    "COST",
+    "CVX",
+    "JNJ",
+    "JPM",
+    "LLY",
+    "MSFT",
+    "WMT",
+    "XOM"
+  ],
+  "evidence_buckets": 1650,
+  "unique_normalized_legal_names_global": 1621,
+  "bucket_size_distribution": {
+    "1": 331,
+    "2": 169,
+    "3-5": 445,
+    "6-10": 695,
+    ">10": 10
+  },
+  "jurisdiction": {
+    "rows_with_missing_jurisdiction": 30,
+    "buckets_with_missing_jurisdiction": 3,
+    "same_name_multiple_jurisdictions": 28,
+    "same_name_multiple_jurisdictions_examples": [
+      {
+        "normalized_name": "akouos securities corporation",
+        "jurisdictions": [
+          "delaware",
+          "massachusetts"
+        ]
+      },
+      {
+        "normalized_name": "alnara pharmaceuticals, inc",
+        "jurisdictions": [
+          "delaware",
+          "massachusetts"
+        ]
+      },
+      {
+        "normalized_name": "avid radiopharmaceuticals, inc",
+        "jurisdictions": [
+          "delaware",
+          "pennsylvania"
+        ]
+      },
+      {
+        "normalized_name": "costco insurance agency, inc",
+        "jurisdictions": [
+          "united states",
+          "washington"
+        ]
+      },
+      {
+        "normalized_name": "eli lilly b-h d.o.o",
+        "jurisdictions": [
+          "bosnia",
+          "bosnia and herzegovina"
+        ]
+      },
+      {
+        "normalized_name": "eli lilly saudi arabia limited",
+        "jurisdictions": [
+          "india",
+          "saudi arabia"
+        ]
+      },
+      {
+        "normalized_name": "ethicon us, llc",
+        "jurisdictions": [
+          "delaware",
+          "texas"
+        ]
+      },
+      {
+        "normalized_name": "ethnor farmaceutica, s.a",
+        "jurisdictions": [
+          "venezuela",
+          "venezuela, bolivarian republic of"
+        ]
+      },
+      {
+        "normalized_name": "glycostasis, inc",
+        "jurisdictions": [
+          "delaware",
+          "washington"
+        ]
+      },
+      {
+        "normalized_name": "j-c health care ltd",
+        "jurisdictions": [
+          "israel",
+          "isreal"
+        ]
+      },
+      {
+        "normalized_name": "janssen cilag, c.a",
+        "jurisdictions": [
+          "venezuela",
+          "venezuela, bolivarian republic of"
+        ]
+      },
+      {
+        "normalized_name": "janssen france treasury unlimited company",
+        "jurisdictions": [
+          "france",
+          "ireland"
+        ]
+      },
+      {
+        "normalized_name": "janssen japan treasury unlimited company",
+        "jurisdictions": [
+          "ireland",
+          "japan"
+        ]
+      },
+      {
+        "normalized_name": "janssen vaccines corp",
+        "jurisdictions": [
+          "korea",
+          "korea, republic of"
+        ]
+      },
+      {
+        "normalized_name": "janssen-cilag limited",
+        "jurisdictions": [
+          "thailand",
+          "united kingdom"
+        ]
+      },
+      {
+        "normalized_name": "johnson & johnson consumer inc",
+        "jurisdictions": [
+          "nevada",
+          "new jersey"
+        ]
+      },
+      {
+        "normalized_name": "johnson & johnson de venezuela, s.a",
+        "jurisdictions": [
+          "venezuela",
+          "venezuela, bolivarian republic of"
+        ]
+      },
+      {
+        "normalized_name": "johnson & johnson innovation - jjdc, inc",
+        "jurisdictions": [
+          "delaware",
+          "new jersey"
+        ]
+      },
+      {
+        "normalized_name": "johnson & johnson korea, ltd",
+        "jurisdictions": [
+          "korea",
+          "korea, republic of"
+        ]
+      },
+      {
+        "normalized_name": "johnson & johnson medical taiwan ltd",
+        "jurisdictions": [
+          "taiwan",
+          "taiwan (province of china)"
+        ]
+      }
+    ]
+  },
+  "registrant_scope": {
+    "same_name_multiple_registrants": 0,
+    "same_name_multiple_registrants_examples": []
+  },
+  "alias_evidence": {
+    "rows_with_dba": 217,
+    "dba_rows_matching_a_legal_name_within_same_registrant": 93,
+    "examples": [
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Wholesale Membership, Inc.",
+        "jurisdiction": "California",
+        "dba_alias": "Costco Wholesale Membership, Inc."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Western Holdings, Ltd.",
+        "jurisdiction": "Canadian Federal",
+        "dba_alias": "Costco Western Holdings, Ltd."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Wholesale United Kingdom Ltd.",
+        "jurisdiction": "United Kingdom",
+        "dba_alias": "Costco Wholesale United Kingdom Ltd."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "NW Re Ltd.",
+        "jurisdiction": "Arizona",
+        "dba_alias": "NW Re Ltd."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "PriceCostco International, Inc.",
+        "jurisdiction": "Nevada",
+        "dba_alias": "PriceCostco International, Inc."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Wholesale Korea, Ltd.",
+        "jurisdiction": "Korea",
+        "dba_alias": "Costco Wholesale Korea, Ltd."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco de Mexico, S.A. de C.V.",
+        "jurisdiction": "Mexico",
+        "dba_alias": "Costco de Mexico, S.A. de C.V."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Wholesale Japan, Ltd.",
+        "jurisdiction": "Japan",
+        "dba_alias": "Costco Wholesale Japan, Ltd."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Insurance Agency, Inc.",
+        "jurisdiction": "United States",
+        "dba_alias": "Costco Insurance Agency, Inc."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Canada Holdings Inc.",
+        "jurisdiction": "Canadian Federal",
+        "dba_alias": "Costco Canada Holdings Inc."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Wholesale Membership, Inc.",
+        "jurisdiction": "California",
+        "dba_alias": "Costco Wholesale Membership, Inc."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Western Holdings, Ltd.",
+        "jurisdiction": "Canadian Federal",
+        "dba_alias": "Costco Western Holdings, Ltd."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Wholesale United Kingdom Ltd.",
+        "jurisdiction": "United Kingdom",
+        "dba_alias": "Costco Wholesale United Kingdom Ltd."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "NW Re Ltd.",
+        "jurisdiction": "Arizona",
+        "dba_alias": "NW Re Ltd."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "PriceCostco International, Inc.",
+        "jurisdiction": "Nevada",
+        "dba_alias": "PriceCostco International, Inc."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Wholesale Korea, Ltd.",
+        "jurisdiction": "Korea",
+        "dba_alias": "Costco Wholesale Korea, Ltd."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco de Mexico, S.A. de C.V.",
+        "jurisdiction": "Mexico",
+        "dba_alias": "Costco de Mexico, S.A. de C.V."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Wholesale Japan, Ltd.",
+        "jurisdiction": "Japan",
+        "dba_alias": "Costco Wholesale Japan, Ltd."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Insurance Agency, Inc.",
+        "jurisdiction": "Washington",
+        "dba_alias": "Costco Insurance Agency, Inc."
+      },
+      {
+        "registrant_ticker": "COST",
+        "legal_name": "Costco Canada Holdings Inc.",
+        "jurisdiction": "Canadian Federal",
+        "dba_alias": "Costco Canada Holdings Inc."
+      }
+    ]
+  },
+  "ownership_evidence": {
+    "rows_with_ownership": 1517,
+    "buckets_with_multiple_numeric_ownership_values": 10
+  },
+  "footnote_evidence": {
+    "rows_with_footnote_refs": 297
+  },
+  "identity_contract": {
+    "canonical_entities_created": false,
+    "cross_registrant_merge": false,
+    "cross_jurisdiction_merge": false,
+    "fuzzy_matching": false,
+    "dba_used_as_identity_key": false
+  },
+  "main_db_mutated": false,
+  "graph_edges_written": false,
+  "next_gate": "Inspect plan diagnostics. If healthy, build the registrant-scoped evidence registry, audit it, and QA identity-conflict buckets before designing cross-bucket canonical entity resolution."
+}

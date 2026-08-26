@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "sample_rows": 160,
+  "sample_file": "/home/trabajo/quant_market_ai/reports/event_graph/relation_evidence_v002/qa_sample.json",
+  "manual_review_required": true,
+  "promotion_allowed": false
+}

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "registry_name_records": 1201,
+  "registry_evidence_rows": 5820,
+  "registry_rejections": 8,
+  "occurrence_distribution": {
+    "1": 224,
+    "2": 129,
+    "3-5": 320,
+    "6-10": 527,
+    ">10": 1
+  },
+  "names_with_single_registrant": 1201,
+  "names_with_multiple_registrants": 0,
+  "identity_key_collision_groups": 39,
+  "shared_registrant_candidate_pairs": 41,
+  "same_accession_conflict_pairs": 2,
+  "candidate_rules": {
+    "require_shared_registrant": true,
+    "legal_form_is_preserved_not_stripped": true,
+    "punctuation_is_not_identity_by_itself": true,
+    "fuzzy_similarity": false,
+    "semantic_embedding_similarity": false,
+    "llm_identity_decision": false,
+    "same_accession_cooccurrence_is_conflict_flag": true,
+    "automatic_merge_allowed": false
+  },
+  "main_db_mutated": false,
+  "canonical_entities_created": false,
+  "graph_edges_written": false,
+  "next_gate": "If PASS, build a separate candidate-pair DB. Candidate pairs are identity hypotheses only; auto-merge remains forbidden."
+}

@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "extraction_run_id": "ex21structrun_25a7b6c858772f7c2b439116636b9d56430208f41ced3a209f81f5bfbd209efa",
+  "documents_scanned": 99,
+  "documents_with_rows": 99,
+  "rows_written": 8111,
+  "by_schema_family": {
+    "explicit_header": 5254,
+    "implicit_legal_name": 2627,
+    "inherited_schema": 230
+  },
+  "tickers_with_rows": [
+    "AAPL",
+    "BAC",
+    "COST",
+    "CVX",
+    "JNJ",
+    "JPM",
+    "LLY",
+    "MSFT",
+    "WMT",
+    "XOM"
+  ],
+  "documents_without_rows": [],
+  "strict_historical_pit": false,
+  "main_db_mutated": false,
+  "canonical_entities_created": false,
+  "graph_edges_written": false
+}

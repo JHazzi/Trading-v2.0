@@ -1,0 +1,35 @@
+{
+  "status": "REVIEW",
+  "failures": [],
+  "reviews": [
+    "unresolved_target_entities_expected_before_resolution"
+  ],
+  "candidates": 5995,
+  "candidate_documents": 134,
+  "source_entities": 10,
+  "unique_target_names": 1255,
+  "by_relation_type": {
+    "contract_party_of": 70,
+    "parent_of": 5925
+  },
+  "by_extraction_method": {
+    "agreement_counterparty_v001": 70,
+    "exhibit21_parent_of_v001": 5925
+  },
+  "by_resolution_status": {
+    "unresolved": 5995
+  },
+  "causal_contract": {
+    "strict_historical_pit": false,
+    "all_candidates_pit_zero": true,
+    "evidence_span_required": true,
+    "future_evidence_created": false
+  },
+  "graph_contract": {
+    "candidate_db_has_graph_edges": false,
+    "relations_promoted": false,
+    "market_direction_assigned": false,
+    "market_weight_assigned": false
+  },
+  "next_gate": "Generate deterministic QA sample and manually review precision. Do not promote candidates or expand to semantic supplier/customer extraction until the high-precision V001 sample is reviewed."
+}

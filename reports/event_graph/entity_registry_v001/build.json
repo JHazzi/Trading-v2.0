@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "registry_run_id": "entityreg_14cd67eca3027e5d445befd8f0ffdf9ef66245ebc517325c7960e453015266e7",
+  "source_claims": 5828,
+  "accepted_evidence_rows": 5820,
+  "name_records": 1201,
+  "rejected_claims": 8,
+  "rejection_reasons": {
+    "known_header": 8
+  },
+  "existing_exact_entity_name_records": 0,
+  "strict_historical_pit": false,
+  "contract_claims_ingested": false,
+  "main_db_mutated": false,
+  "graph_edges_written": false,
+  "canonical_entities_created": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "registry_run_id": "ereg2run_2f554270f2383538646bc9fed0a462e53447e624e9a8b38ae92851c786016aaf",
+  "source_rows": 8111,
+  "evidence_buckets_written": 1650,
+  "evidence_rows_written": 8111,
+  "alias_evidence_rows_written": 217,
+  "canonical_entities_created": false,
+  "cross_registrant_merge": false,
+  "cross_jurisdiction_merge": false,
+  "main_db_mutated": false,
+  "graph_edges_written": false
+}

@@ -1,0 +1,25 @@
+{
+  "status": "REVIEW",
+  "failures": [],
+  "reviews": [
+    "missing_jurisdiction_buckets_require_later_resolution",
+    "same_name_multiple_jurisdictions_preserved_as_distinct"
+  ],
+  "buckets": 1650,
+  "evidence_rows": 8111,
+  "alias_evidence_rows": 217,
+  "missing_jurisdiction_buckets": 3,
+  "same_registrant_name_multiple_jurisdiction_groups": 28,
+  "identity_contract": {
+    "canonical_entities_created": false,
+    "alias_auto_merge_rows": 0,
+    "cross_registrant_merge": false,
+    "cross_jurisdiction_merge": false
+  },
+  "graph_contract": {
+    "graph_tables_present": [],
+    "graph_edges_written": false,
+    "relation_promotion": false
+  },
+  "next_gate": "QA conflict buckets and alias evidence. Then design cross-bucket canonical identity resolution with jurisdiction/history/DBA evidence and external identifiers. Do not create graph edges yet."
+}

@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from database.apply_migration_019 import apply as apply_migration
+from database.apply_migration_020 import apply as apply_migration
 from knowledge.entities.seed_asset_entity_proxies_v001 import (
     seed_asset_entity_proxies,
 )
@@ -22,7 +22,7 @@ DEFAULT_CONFIG = (
 
 def load_config(path: Path) -> dict:
     cfg = json.loads(path.read_text(encoding="utf-8"))
-    if cfg["version"] != "event_graph_brain_foundation_v001":
+    if cfg["version"] != "event_graph_brain_foundation_v002":
         raise ValueError("unexpected foundation version")
     if cfg["graph_contract"]["foundation_max_hops"] != 1:
         raise ValueError("foundation graph must remain 1-hop")

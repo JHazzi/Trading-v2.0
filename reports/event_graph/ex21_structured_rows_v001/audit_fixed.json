@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "reviews": [],
+  "documents": 99,
+  "documents_with_data_tables": 99,
+  "rows": 8111,
+  "tickers": 10,
+  "by_schema_family": {
+    "explicit_header": 5254,
+    "implicit_legal_name": 2627,
+    "inherited_schema": 230
+  },
+  "document_schema_summary": {
+    "documents_with_explicit_schema": 66,
+    "documents_with_implicit_schema": 33,
+    "documents_with_inherited_schema": 3,
+    "footnote_tables_skipped": 20,
+    "uniform_format_span_tables": 129,
+    "unsupported_tables": 2
+  },
+  "field_coverage": {
+    "jurisdiction_rows": 8081,
+    "jurisdiction_fraction": 0.9963013191961534,
+    "dba_rows": 217,
+    "ownership_rows": 1517,
+    "rows_with_trailing_footnote_refs": 297
+  },
+  "causal_contract": {
+    "strict_historical_pit": false,
+    "all_rows_pit_zero": true
+  },
+  "identity_contract": {
+    "canonical_entities_created": false,
+    "identity_merges_performed": false
+  },
+  "graph_contract": {
+    "graph_tables_present": [],
+    "graph_edges_written": false,
+    "relation_promotion": false
+  },
+  "next_gate": "Review stratified QA rows. If row/column alignment is precise, build Entity Registry V2 from structured legal-name + jurisdiction + DBA + ownership evidence. Do not create canonical entities yet."
+}

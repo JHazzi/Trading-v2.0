@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "eligible_documents": 5928,
+  "document_class_counts": {
+    "material_contract_exhibit": 5663,
+    "subsidiary_exhibit": 99,
+    "transaction_exhibit": 166
+  },
+  "eligible_source_entities": 10,
+  "eligible_assets": 10,
+  "exact_resolution_aliases": 1506,
+  "ambiguous_exact_aliases": 503,
+  "extractors": {
+    "exhibit21_parent_of_v001": {
+      "enabled": true,
+      "relation_type": "parent_of",
+      "document_classes": [
+        "subsidiary_exhibit"
+      ]
+    },
+    "agreement_counterparty_v001": {
+      "enabled": true,
+      "relation_type": "contract_party_of",
+      "document_classes": [
+        "material_contract_exhibit",
+        "transaction_exhibit"
+      ]
+    }
+  },
+  "deferred_relation_types": [
+    "supplier_of",
+    "customer_of",
+    "depends_on",
+    "partner_of",
+    "competitor_of",
+    "regulated_by",
+    "exposed_to",
+    "operates_in",
+    "produces",
+    "uses",
+    "financed_by"
+  ],
+  "strict_historical_pit": false,
+  "main_db_mutated": false,
+  "graph_edges_written": false,
+  "next_gate": "If PASS, run extraction into separate processed candidate DB. Candidates remain non-model-visible and are not promoted."
+}

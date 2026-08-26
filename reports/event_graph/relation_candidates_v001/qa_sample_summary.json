@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "sample_rows": 150,
+  "sample_file": "/home/trabajo/quant_market_ai/reports/event_graph/relation_candidates_v001/qa_sample.json",
+  "groups": {
+    "extractor:agreement_counterparty_v001": 60,
+    "extractor:exhibit21_parent_of_v001": 60,
+    "resolution:unresolved": 30
+  },
+  "manual_labels_required_before_promotion": true
+}

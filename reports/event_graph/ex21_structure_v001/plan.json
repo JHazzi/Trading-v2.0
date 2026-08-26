@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "selected_ex21_documents": 99,
+  "selected_bytes": 5956519,
+  "missing_storage_count": 0,
+  "missing_storage_examples": [],
+  "strict_historical_pit": false,
+  "main_db_mutated": false,
+  "canonical_entities_created": false,
+  "graph_edges_written": false,
+  "next_gate": "If PASS, run the read-only structure audit over raw EX-21 payloads."
+}

@@ -22,7 +22,7 @@ from knowledge.graph.propagation_candidates_v001 import (
 
 ROOT = Path(__file__).resolve().parents[1]
 MIGRATION = (
-    ROOT / "database/migrations/019_event_graph_brain_foundation.sql"
+    ROOT / "database/migrations/020_event_graph_brain_foundation.sql"
 )
 
 
@@ -35,6 +35,8 @@ def base_db(tmp_path: Path) -> Path:
           version TEXT PRIMARY KEY,
           name TEXT NOT NULL
         );
+        INSERT INTO schema_migrations(version,name)
+        VALUES ('019','event_brain_v001');
         CREATE TABLE assets(
           asset_id INTEGER PRIMARY KEY AUTOINCREMENT,
           ticker TEXT NOT NULL UNIQUE,

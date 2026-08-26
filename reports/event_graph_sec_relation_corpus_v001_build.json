@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "corpus_run_id": "secrelcorpus_e877679aef4e113e9c2cf879dbb6ab6f3e6e7555eb14b81276d5c0af82e2ed59",
+  "documents_selected": 7736,
+  "documents_written": 7736,
+  "chunks_written": 176091,
+  "hash_failures": 0,
+  "parse_failures": 0,
+  "too_large": 0,
+  "too_short": 0,
+  "cue_totals": {
+    "contract_party": 2049,
+    "dependency": 2315,
+    "financing": 5909,
+    "geography": 9269,
+    "partnership": 1312,
+    "subsidiary": 26442,
+    "supplier_customer": 93457
+  },
+  "strict_historical_pit": false,
+  "main_db_mutated": false,
+  "relations_extracted": false,
+  "graph_edges_written": false
+}

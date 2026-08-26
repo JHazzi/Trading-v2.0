@@ -61,14 +61,14 @@ def audit(db: Path) -> dict:
 
         migration = conn.execute(
             """
-            SELECT name FROM schema_migrations WHERE version='019'
+            SELECT name FROM schema_migrations WHERE version='020'
             """
         ).fetchone()
         if migration is None:
-            failures.append("migration_019_not_registered")
+            failures.append("migration_020_not_registered")
         elif str(migration[0]) != "event_graph_brain_foundation":
             failures.append(
-                f"migration_019_name_conflict:{migration[0]}"
+                f"migration_020_name_conflict:{migration[0]}"
             )
 
         eligible_assets = conn.execute(

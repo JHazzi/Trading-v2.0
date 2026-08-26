@@ -332,3 +332,35 @@ Decision:
 
 This remains Architecture Phase C: improve the base Market Brain without news
 before Event Brain integration.
+<!-- MARKET_V0052_FINANCIAL_CONDITIONS_V001 -->
+## Market Brain V005.2 — financial conditions
+
+V005.1 SPY/QQQ/IWM did not pass its preregistered incremental gate over V004.
+It is retained as negative/inconclusive evidence and is not stacked into the
+next primary candidate.
+
+V005.2 tests a more orthogonal Market State block:
+
+```text
+volatility: Cboe VIX (previous session only)
+rates:      SHY / IEF / TLT
+credit:     HYG / LQD
+```
+
+The V004 factorized Market Brain remains the frozen control.
+
+Causal clock:
+- same-day ETF closes are available at the equity-session origin;
+- same-day daily VIX close is NOT used because Cboe VIX RTH continues after
+  the equity close; VIX features use one full session lag;
+- historical reference data remains research backfill, strict PIT=false;
+- Yahoo adjusted_close is not used for ETF state features;
+- ETF returns are reconstructed from Close plus only cash distributions whose
+  effective trading day has occurred, then compounded over 5/20 sessions.
+
+Primary candidate is the complete financial-conditions block. VIX-only,
+rates-only and credit-only candidates are preregistered diagnostics and cannot
+rescue a failed primary after results.
+
+No sector ETFs, macro vintages, Event Brain, graph, distributional heads,
+regime-conditioned training or hyperparameter tuning enter V005.2.

@@ -52,11 +52,17 @@ EXCHANGE_CANONICAL_MAP = {
     "BTS": "BATS",
     "CBOE BZX": "BATS",
     "BZX EQUITIES": "BATS",
+    'ARCX': 'ARCX',
+    'ARCA': 'ARCX',
+    'NYSE ARCA': 'ARCX',
+    'NYSEARCA': 'ARCX',
+    'PCX': 'ARCX',
 }
 EXCHANGE_CALENDAR_MAP = {
     "XNYS": "XNYS",
     "XNAS": "XNAS",
     "BATS": "BATS",
+    'ARCX': 'XNYS',
 }
 
 REQUIRED_TABLES = {

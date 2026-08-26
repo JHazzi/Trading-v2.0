@@ -1,0 +1,88 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+
+def metrics(y, p):
+    y = np.asarray(y, float)
+    p = np.asarray(p, float)
+    e = y - p
+    return {
+        "rows": int(len(y)),
+        "mae_pct": float(np.mean(np.abs(e))),
+        "median_ae_pct": float(np.median(np.abs(e))),
+        "rmse_pct": float(np.sqrt(np.mean(e ** 2))),
+        "bias_pct": float(np.mean(p - y)),
+        "directional_accuracy": float(np.mean(np.sign(y) == np.sign(p))),
+    }
+
+
+def paired(frame, baseline_col, candidate_col, target_col="return_pct"):
+    y = frame[target_col].to_numpy(float)
+    b = frame[baseline_col].to_numpy(float)
+    c = frame[candidate_col].to_numpy(float)
+    be = np.abs(y - b)
+    ce = np.abs(y - c)
+    return {
+        "mae_delta_baseline_minus_candidate_pct": float(np.mean(be - ce)),
+        "candidate_abs_error_win_rate": float(np.mean(ce < be)),
+        "directional_accuracy_delta": float(
+            np.mean(np.sign(y) == np.sign(c)) - np.mean(np.sign(y) == np.sign(b))
+        ),
+    }
+
+
+def moving_block_bootstrap_days(frame, baseline_col, candidate_col, target_col, block_length, reps, seed):
+    x = frame[["origin_trading_day", target_col, baseline_col, candidate_col]].copy()
+    x["delta"] = np.abs(x[target_col] - x[baseline_col]) - np.abs(x[target_col] - x[candidate_col])
+    daily = x.groupby("origin_trading_day", sort=True)["delta"].mean().to_numpy(float)
+    n = len(daily)
+    if n <= block_length:
+        raise ValueError("insufficient origin days")
+    starts = np.arange(n - block_length + 1)
+    rng = np.random.default_rng(seed)
+    draws = np.empty(reps, dtype=float)
+    for k in range(reps):
+        vals = []
+        while len(vals) < n:
+            j = int(rng.choice(starts))
+            vals.extend(daily[j:j + block_length])
+        draws[k] = float(np.mean(vals[:n]))
+    return {
+        "point_delta_pct": float(np.mean(daily)),
+        "ci95": [float(np.quantile(draws, 0.025)), float(np.quantile(draws, 0.975))],
+        "unique_origin_days": int(n),
+        "block_length_origin_days": int(block_length),
+        "bootstrap_reps": int(reps),
+    }
+
+
+def load_boundaries(v004_json_path: Path):
+    x = json.loads(v004_json_path.read_text(encoding="utf-8"))
+    return [
+        {
+            "fold_id": int(f["fold_id"]),
+            "first_test_day": str(f["first_test_day"]),
+            "last_test_day": str(f["last_test_day"]),
+        }
+        for f in x["component_fold_metrics"]
+    ]
+
+
+def masks(frame, boundary):
+    first = boundary["first_test_day"]
+    last = boundary["last_test_day"]
+    train = frame["target_end_day"].astype(str) < first
+    test = (
+        (frame["origin_trading_day"].astype(str) >= first)
+        & (frame["origin_trading_day"].astype(str) <= last)
+    )
+    if not train.any() or not test.any():
+        raise RuntimeError("empty V005.2 fold")
+    if str(frame.loc[train, "target_end_day"].astype(str).max()) >= first:
+        raise AssertionError("V005.2 target leakage")
+    return train, test

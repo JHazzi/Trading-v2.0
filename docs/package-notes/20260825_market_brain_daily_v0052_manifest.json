@@ -1,0 +1,28 @@
+{
+  "files": {
+    "config/market_brain_daily_v0052_financial_conditions.json": "5dad36d3605c0727adc0cb4e3afd855cdf0bb1603e9ff04cf3ffb1d684441b52",
+    "database/reference/global_market_reference_v0052.sql": "8787c8e7074bf924bcf7f78d4b4da1e9f78df5fbd3333d00ac6191be9626515b",
+    "docs/package-notes/20260825_market_brain_daily_v0052_financial_conditions.md": "69eaeeb8246d4d9f32611e0b76fd35a1eb50aa74b7c64ff294418aaa086dec12",
+    "evaluation/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/market/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evaluation/market/daily_v0052_financial_conditions_audit.py": "62cc90e68e695468ba55818cf7c07fb6bfef27ac47fbeb24218dae1da7ddff89",
+    "evaluation/market/daily_v0052_financial_conditions_benchmark.py": "9d5628db9fc59edc3381e91dafe59fe67e4bbf054c9e7c2aa09bf5e289076df1",
+    "features/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "features/market/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "features/market/daily_v0052_financial_conditions.py": "e905b56f6fc2ca303f33e75de6dbae95ea7061b276a1084e226b62e57c5e7aeb",
+    "ingestion/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ingestion/market_reference/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ingestion/market_reference/cboe_vix_daily_v001.py": "b063e71771a678674c514a33c2cb184b9619272132fb9a4fccefa473e5eed974",
+    "ingestion/market_reference/financial_condition_etfs_v001.py": "72b7f4e4938bd6d1345580c30fba6b3fe0604d8e1dbb71ba612f5c359daaf54f",
+    "models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "models/market/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "models/market/daily_v0052_financial_conditions_benchmark.py": "7e5dcf5f020f0209443d4bbb0f286dcea3677a11a411eb8bc6908de50ec261ae",
+    "pipeline/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pipeline/market_brain_daily_v0052_financial_conditions.py": "7fa1513d950a2386b050df946966f4aff5c0dcc3c2ca614b3541153973688e09",
+    "tests/test_market_brain_daily_v0052_financial_conditions.py": "0efc373b021031a264afd469dc1350376cea7c221961ec44b4f695fcd61437c7",
+    "tools/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tools/patch_market_v0051_results_v0052_docs.py": "bade4ec0f3065ec5dcbe7a104a35f75095e91f84289611b015358ac70709f4de",
+    "tools/patch_yahoo_daily_arca_support_v001.py": "499b2e233d0b75a26296ccafd9b92236951e00c792947f30b544861d7a5ce61f",
+    "tools/seed_financial_condition_reference_assets_v001.py": "ee0907546a0a91052b6687034e7c2b27967424c9f2264c82f3f988f6174fb89f"
+  }
+}

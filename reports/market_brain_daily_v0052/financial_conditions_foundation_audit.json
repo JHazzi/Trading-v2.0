@@ -1,0 +1,164 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "reviews": [],
+  "reference_assets": [
+    {
+      "asset_id": 507,
+      "ticker": "HYG",
+      "asset_type": "etf_reference",
+      "exchange": "ARCX",
+      "active": 0,
+      "source": "research_financial_conditions_v0052"
+    },
+    {
+      "asset_id": 505,
+      "ticker": "IEF",
+      "asset_type": "etf_reference",
+      "exchange": "XNAS",
+      "active": 0,
+      "source": "research_financial_conditions_v0052"
+    },
+    {
+      "asset_id": 508,
+      "ticker": "LQD",
+      "asset_type": "etf_reference",
+      "exchange": "ARCX",
+      "active": 0,
+      "source": "research_financial_conditions_v0052"
+    },
+    {
+      "asset_id": 504,
+      "ticker": "SHY",
+      "asset_type": "etf_reference",
+      "exchange": "XNAS",
+      "active": 0,
+      "source": "research_financial_conditions_v0052"
+    },
+    {
+      "asset_id": 506,
+      "ticker": "TLT",
+      "asset_type": "etf_reference",
+      "exchange": "XNAS",
+      "active": 0,
+      "source": "research_financial_conditions_v0052"
+    }
+  ],
+  "price_reference_coverage": [
+    {
+      "ticker": "HYG",
+      "rows": 2675,
+      "first_day": "2016-01-04",
+      "last_day": "2026-08-24",
+      "max_pit": 0
+    },
+    {
+      "ticker": "IEF",
+      "rows": 2675,
+      "first_day": "2016-01-04",
+      "last_day": "2026-08-24",
+      "max_pit": 0
+    },
+    {
+      "ticker": "LQD",
+      "rows": 2675,
+      "first_day": "2016-01-04",
+      "last_day": "2026-08-24",
+      "max_pit": 0
+    },
+    {
+      "ticker": "SHY",
+      "rows": 2675,
+      "first_day": "2016-01-04",
+      "last_day": "2026-08-24",
+      "max_pit": 0
+    },
+    {
+      "ticker": "TLT",
+      "rows": 2675,
+      "first_day": "2016-01-04",
+      "last_day": "2026-08-24",
+      "max_pit": 0
+    }
+  ],
+  "cash_action_coverage": [
+    {
+      "ticker": "HYG",
+      "cash_action_rows": 127
+    },
+    {
+      "ticker": "IEF",
+      "cash_action_rows": 127
+    },
+    {
+      "ticker": "LQD",
+      "cash_action_rows": 127
+    },
+    {
+      "ticker": "SHY",
+      "cash_action_rows": 127
+    },
+    {
+      "ticker": "TLT",
+      "cash_action_rows": 127
+    }
+  ],
+  "vix_provider_rows": 2707,
+  "vix_model_eligible_equity_session_rows": 2675,
+  "vix_non_equity_provider_rows": 32,
+  "vix_non_equity_provider_days": [
+    "2022-05-30",
+    "2022-06-20",
+    "2022-07-04",
+    "2022-09-05",
+    "2022-11-24",
+    "2023-01-16",
+    "2023-02-20",
+    "2023-05-29",
+    "2023-06-19",
+    "2023-07-04",
+    "2023-09-04",
+    "2023-11-23",
+    "2024-01-15",
+    "2024-02-19",
+    "2024-05-27",
+    "2024-06-19",
+    "2024-07-04",
+    "2024-09-02",
+    "2024-11-28",
+    "2025-01-09",
+    "2025-01-20",
+    "2025-02-17",
+    "2025-05-26",
+    "2025-06-19",
+    "2025-07-04",
+    "2025-09-01",
+    "2025-11-27",
+    "2026-01-19",
+    "2026-02-16",
+    "2026-05-25",
+    "2026-06-19",
+    "2026-07-03"
+  ],
+  "state_rows": 2675,
+  "pure_external_features": 19,
+  "complete_feature_rows": 2423,
+  "v004_market_days": 2260,
+  "complete_overlap_days": 2260,
+  "overlap_fraction": 1.0,
+  "causal_guards": {
+    "same_day_vix_used": false,
+    "vix_lag_sessions": 1,
+    "vix_lag_sequence_basis": "previous_XNYS_session",
+    "provider_non_equity_vix_rows_preserved": true,
+    "provider_non_equity_vix_rows_model_eligible": false,
+    "provider_non_equity_vix_rows_leaked_into_state": false,
+    "adjusted_close_used": false,
+    "price_observation_policy": "first_observation_sequence_only",
+    "action_observation_policy": "first_observation_sequence_only",
+    "return_convention": "close_plus_effective_cash_distribution_compounded",
+    "cash_action_availability_basis": "effective_trading_day_reconstruction_not_pit_verified",
+    "strict_historical_pit": false
+  },
+  "next_gate": "If PASS/acceptable REVIEW, preregister/run V005.2 benchmark plan. Do not activate sector ETFs, macro, events or regime models."
+}

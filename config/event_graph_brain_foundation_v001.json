@@ -1,0 +1,150 @@
+{
+  "version": "event_graph_brain_foundation_v001",
+  "architecture_authority": "ARCHITECTURE.md",
+  "event_layer_authority": "ARCHITECTURE_EVENT_LAYER.md",
+  "architecture_phases": [
+    "D",
+    "E"
+  ],
+  "market_prior": {
+    "name": "market_brain_daily_v004_factorized",
+    "role": "Frozen structural market prior/control. Event/graph layers modify or explain asset-specific residual behavior; they do not replace the base market model.",
+    "do_not_tune_in_this_stage": true
+  },
+  "database": "data/database/market_data_v2.db",
+  "migration_version": "019",
+  "migration_name": "event_graph_brain_foundation",
+  "existing_event_contract": {
+    "event_feature_version": "event_state_v002",
+    "event_label_version": "event_reaction_daily_v002",
+    "direct_event_source_table": "normalized_event_state_snapshots",
+    "direct_event_availability_field": "state_time",
+    "point_in_time_fraction_field": "point_in_time_evidence_fraction",
+    "use_closed_event_model_results_as_prior_evidence_only": true
+  },
+  "entity_contract": {
+    "proxy_entity_type": "listed_asset_proxy",
+    "seed_asset_filter": {
+      "asset_type": "equity",
+      "active": 1
+    },
+    "proxy_is_not_claimed_to_be_resolved_issuer": true,
+    "entity_types_future": [
+      "company",
+      "listed_asset_proxy",
+      "person",
+      "product",
+      "industry",
+      "sector",
+      "country",
+      "region",
+      "commodity",
+      "regulator",
+      "institution",
+      "index",
+      "fund",
+      "currency",
+      "macro_series"
+    ]
+  },
+  "graph_contract": {
+    "primary_layer": "structural",
+    "foundation_max_hops": 1,
+    "traversal": "both_directions_record_edge_orientation",
+    "relation_sign_hardcoded": false,
+    "market_impact_hardcoded": false,
+    "relation_weight_hardcoded": false,
+    "source_reliability_hardcoded": false,
+    "event_decay_hardcoded": false,
+    "allowed_structural_relation_types": [
+      "owns",
+      "parent_of",
+      "subsidiary_of",
+      "supplier_of",
+      "customer_of",
+      "competitor_of",
+      "partner_of",
+      "contract_party_of",
+      "regulated_by",
+      "exposed_to",
+      "operates_in",
+      "produces",
+      "uses",
+      "depends_on",
+      "financed_by",
+      "member_of_industry",
+      "member_of_sector"
+    ],
+    "deferred_layers": [
+      "statistical",
+      "learned"
+    ],
+    "deferred_methods": [
+      "multi_hop_greater_than_1",
+      "gnn",
+      "graph_attention",
+      "learned_edge_weights",
+      "learned_edge_signs"
+    ]
+  },
+  "candidate_promotion_contract": {
+    "relation_candidates_are_not_model_visible": true,
+    "candidate_confidence_is_extractor_evidence_not_market_impact": true,
+    "promotion_requires": [
+      "resolved_source_entity",
+      "resolved_target_entity",
+      "known_relation_type",
+      "source_evidence_reference",
+      "evidence_available_at",
+      "validation_or_promotion_version"
+    ],
+    "cooccurrence_does_not_imply_relation": true
+  },
+  "evaluation_ladder": [
+    {
+      "stage": "D1",
+      "name": "direct_event_increment",
+      "candidate": "V004 + direct event state",
+      "control": "V004",
+      "claim": "Do directly linked events add OOS information?"
+    },
+    {
+      "stage": "E0",
+      "name": "graph_coverage_and_negative_controls",
+      "candidate": "event->entity->structural graph->asset candidates",
+      "control": "direct-event links and matched unconnected assets",
+      "claim": "Does the temporal graph identify plausible propagation exposure without leakage?"
+    },
+    {
+      "stage": "E1",
+      "name": "graph_increment",
+      "candidate": "V004 + direct event + graph propagation features",
+      "control": "V004 + direct event",
+      "claim": "Does graph context add OOS information beyond the event itself?"
+    }
+  ],
+  "negative_controls": [
+    "matched_unconnected_assets",
+    "same_sector_but_unconnected_assets",
+    "quiet_days",
+    "pre_event_windows",
+    "future_relation_evidence_must_not_be_visible"
+  ],
+  "abnormal_outcome_contract": {
+    "preferred_future_target": "realized asset outcome minus frozen V004 base prediction at the compatible decision origin",
+    "raw_return_remains_observational_ground_truth": true,
+    "do_not_build_abnormal_target_until_origin_clock_alignment_is_audited": true
+  },
+  "deferred": [
+    "new_news_provider",
+    "llm_relation_extractor",
+    "llm_event_semantics",
+    "direct_yield_curve_experiment",
+    "sector_etf_expansion",
+    "distributional_event_heads",
+    "graph_neural_network",
+    "statistical_graph",
+    "learned_graph",
+    "production_trading"
+  ]
+}

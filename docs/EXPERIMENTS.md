@@ -343,3 +343,35 @@ rescue a failed primary after results.
 
 No sector ETFs, macro vintages, Event Brain, graph, distributional heads,
 regime-conditioned training or hyperparameter tuning enter V005.2.
+<!-- EVENT_GRAPH_BRAIN_FOUNDATION_V001 -->
+## Event–Graph Brain Foundation V001
+
+Market Brain V004 is retained as the frozen structural prior/control. V005.1
+and V005.2 remain evidence about market-context information and are not stacked
+into Event–Graph Brain.
+
+The next architecture work resumes phases D/E:
+
+```text
+evidence -> event -> entity
+relation evidence -> temporal structural graph
+event + G_t -> asset exposure candidates
+```
+
+New canonical contract: `docs/EVENT_GRAPH_CONTRACTS.md`.
+
+Foundation rules:
+
+- candidate extraction is not model-visible until resolution/promotion;
+- structural relation evidence must satisfy `available_at <= t`;
+- graph propagation nominates potentially exposed assets but assigns no market
+  direction or predictive weight;
+- structural graph is first; statistical/learned graph and GNN are deferred;
+- foundation propagation is one hop;
+- evaluation is nested:
+  `V004+direct event vs V004`, then
+  `V004+direct event+graph vs V004+direct event`;
+- graph claims require negative controls, including matched unconnected assets
+  and future-evidence leakage checks.
+
+No Event–Graph predictive model is trained in the foundation package.

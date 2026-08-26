@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "registry_buckets": 1650,
+  "registry_evidence_rows": 8111,
+  "structured_source_rows": 8111,
+  "alias_evidence_rows": 217,
+  "same_name_multi_jurisdiction_groups": 28,
+  "same_name_multi_jurisdiction_buckets": 57,
+  "missing_jurisdiction_buckets": 3,
+  "classification_contract": {
+    "automatic_merge": false,
+    "automatic_split": false,
+    "jurisdiction_alias_mapping": false,
+    "fuzzy_identity_matching": false,
+    "llm_identity_decision": false,
+    "same_accession_cooccurrence_is_evidence_not_verdict": true,
+    "temporal_nonoverlap_is_evidence_not_verdict": true,
+    "dba_match_is_evidence_not_verdict": true
+  },
+  "canonical_entities_created": false,
+  "identity_merges_performed": false,
+  "graph_edges_written": false,
+  "next_gate": "If PASS, build a complete conflict-evidence DB and JSON report. No identity or jurisdiction decision is written automatically."
+}

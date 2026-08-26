@@ -1,0 +1,41 @@
+{
+  "version": "event_graph_identity_conflict_qa_v001",
+  "registry_db": "data/processed/event_graph_entity_registry_v002.db",
+  "structured_rows_db": "data/processed/event_graph_ex21_structured_rows_v001.db",
+  "output_db": "data/processed/event_graph_identity_conflict_qa_v001.db",
+  "report_dir": "reports/event_graph/identity_conflict_qa_v001",
+  "strict_historical_pit": false,
+  "mutates_main_database": false,
+  "creates_canonical_entities": false,
+  "writes_graph_edges": false,
+  "scope": {
+    "same_registrant_same_name_multiple_jurisdictions": true,
+    "missing_jurisdiction_buckets": true,
+    "dba_alias_evidence": true,
+    "ownership_variation": true
+  },
+  "classification_contract": {
+    "automatic_merge": false,
+    "automatic_split": false,
+    "jurisdiction_alias_mapping": false,
+    "fuzzy_identity_matching": false,
+    "llm_identity_decision": false,
+    "same_accession_cooccurrence_is_evidence_not_verdict": true,
+    "temporal_nonoverlap_is_evidence_not_verdict": true,
+    "dba_match_is_evidence_not_verdict": true
+  },
+  "qa": {
+    "include_all_conflict_groups": true,
+    "include_all_missing_jurisdiction_buckets": true,
+    "max_evidence_rows_per_bucket_in_json": 100
+  },
+  "hard_guards": {
+    "no_canonical_entity_creation": true,
+    "no_identity_merge": true,
+    "no_jurisdiction_normalization_writeback": true,
+    "no_relation_promotion": true,
+    "no_graph_edges": true,
+    "no_main_db_write": true
+  },
+  "next_gate": "Manually classify the full conflict universe using temporal evidence. Then design a versioned jurisdiction reference layer and cross-bucket canonical identity resolver. Do not create graph edges yet."
+}

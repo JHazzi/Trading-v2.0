@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "conflict_qa_run_id": "idconfqa_4a9d91ab2e05f145e25676af2e51061f8e7914eee436bbe222de34e934fd7d98",
+  "conflict_groups_written": 28,
+  "conflict_buckets_written": 57,
+  "conflict_evidence_rows_written": 237,
+  "missing_jurisdiction_buckets_written": 3,
+  "report": "/home/trabajo/quant_market_ai/reports/event_graph/identity_conflict_qa_v001/conflict_evidence.json",
+  "canonical_entities_created": false,
+  "identity_merges_performed": false,
+  "graph_edges_written": false
+}

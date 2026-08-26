@@ -1,0 +1,45 @@
+{
+  "version": "event_graph_identity_resolution_foundation_v001",
+  "registry_db": "data/processed/event_graph_entity_registry_v002.db",
+  "structured_rows_db": "data/processed/event_graph_ex21_structured_rows_v001.db",
+  "conflict_report": "reports/event_graph/identity_conflict_qa_v001/conflict_evidence.json",
+  "jurisdiction_reference": "config/jurisdiction_reference_candidates_v001.json",
+  "output_db": "data/processed/event_graph_identity_resolution_foundation_v001.db",
+  "report_dir": "reports/event_graph/identity_resolution_foundation_v001",
+  "strict_historical_pit": false,
+  "mutates_main_database": false,
+  "creates_canonical_entities": false,
+  "writes_graph_edges": false,
+  "classification_contract": {
+    "reference_equivalence_is_identity_verdict": false,
+    "jurisdiction_hierarchy_is_identity_verdict": false,
+    "same_accession_is_identity_verdict": false,
+    "temporal_nonoverlap_is_identity_verdict": false,
+    "dba_cross_match_is_identity_verdict": false,
+    "automatic_merge": false,
+    "automatic_split": false,
+    "automatic_row_exclusion": false,
+    "llm_identity_decision": false,
+    "fuzzy_identity_matching": false
+  },
+  "row_quality_rules": {
+    "section_heading_patterns": [
+      "^\\s*u\\.?s\\.?\\s+subsidiaries\\s*:\\s*$",
+      "^\\s*international\\s+subsidiaries\\s*:\\s*$"
+    ],
+    "test_placeholder_patterns": [
+      "\\btest\\s+purpose\\s+only\\b",
+      "\\bconsumer\\s+test\\s+entity\\b"
+    ],
+    "missing_jurisdiction_is_not_exclusion_by_itself": true,
+    "automatic_exclusion": false
+  },
+  "pair_review_classes": [
+    "reference_equivalent_candidate",
+    "hierarchical_granularity_candidate",
+    "same_accession_distinct_or_source_error",
+    "temporal_rejurisdiction_or_reporting_change_candidate",
+    "unresolved_overlap_distinct_jurisdiction"
+  ],
+  "next_gate": "Build the foundation DB and inspect all 30 conflict pairs plus all row-quality candidates. Confirm upstream row exclusions and jurisdiction-reference candidates before any canonical entity resolution or graph relation promotion."
+}

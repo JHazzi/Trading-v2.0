@@ -1,0 +1,116 @@
+{
+  "version": "jurisdiction_reference_candidates_v001",
+  "semantics": {
+    "candidate_reference_only": true,
+    "authoritative_global_reference": false,
+    "writeback_allowed": false,
+    "identity_merge_allowed": false,
+    "raw_source_value_always_preserved": true,
+    "country_subdivision_is_not_equivalence": true
+  },
+  "equivalence_candidates": [
+    {
+      "concept_id": "juris_concept_venezuela",
+      "aliases": [
+        "venezuela",
+        "venezuela, bolivarian republic of"
+      ],
+      "candidate_kind": "official_name_variant",
+      "context_required": false
+    },
+    {
+      "concept_id": "juris_concept_israel",
+      "aliases": [
+        "israel",
+        "isreal"
+      ],
+      "candidate_kind": "spelling_typo_candidate",
+      "context_required": false
+    },
+    {
+      "concept_id": "juris_concept_korea_republic",
+      "aliases": [
+        "korea",
+        "korea, republic of"
+      ],
+      "candidate_kind": "shorthand_name_variant",
+      "context_required": true
+    },
+    {
+      "concept_id": "juris_concept_taiwan",
+      "aliases": [
+        "taiwan",
+        "taiwan (province of china)"
+      ],
+      "candidate_kind": "source_name_variant",
+      "context_required": true
+    },
+    {
+      "concept_id": "juris_concept_bosnia_herzegovina",
+      "aliases": [
+        "bosnia",
+        "bosnia and herzegovina"
+      ],
+      "candidate_kind": "shorthand_name_variant",
+      "context_required": true
+    }
+  ],
+  "hierarchy_candidates": {
+    "united states": {
+      "kind": "country",
+      "children": [
+        "alabama",
+        "alaska",
+        "arizona",
+        "arkansas",
+        "california",
+        "colorado",
+        "connecticut",
+        "delaware",
+        "florida",
+        "georgia",
+        "hawaii",
+        "idaho",
+        "illinois",
+        "indiana",
+        "iowa",
+        "kansas",
+        "kentucky",
+        "louisiana",
+        "maine",
+        "maryland",
+        "massachusetts",
+        "michigan",
+        "minnesota",
+        "mississippi",
+        "missouri",
+        "montana",
+        "nebraska",
+        "nevada",
+        "new hampshire",
+        "new jersey",
+        "new mexico",
+        "new york",
+        "north carolina",
+        "north dakota",
+        "ohio",
+        "oklahoma",
+        "oregon",
+        "pennsylvania",
+        "rhode island",
+        "south carolina",
+        "south dakota",
+        "tennessee",
+        "texas",
+        "utah",
+        "vermont",
+        "virginia",
+        "washington",
+        "west virginia",
+        "wisconsin",
+        "wyoming",
+        "district of columbia"
+      ]
+    }
+  }
+}

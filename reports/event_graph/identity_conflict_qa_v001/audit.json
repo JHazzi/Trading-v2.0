@@ -1,0 +1,28 @@
+{
+  "status": "REVIEW",
+  "failures": [],
+  "reviews": [
+    "same_accession_conflict_pairs_require_manual_review",
+    "missing_jurisdiction_buckets_require_manual_review"
+  ],
+  "conflict_groups": 28,
+  "conflict_buckets": 57,
+  "conflict_evidence_rows": 237,
+  "conflict_pairs": 30,
+  "shared_accession_pairs": 8,
+  "temporal_overlap_pairs": 12,
+  "temporal_nonoverlap_pairs": 18,
+  "missing_jurisdiction_buckets": 3,
+  "identity_contract": {
+    "automatic_decisions_written": 0,
+    "canonical_entities_created": false,
+    "identity_merges_performed": false,
+    "jurisdiction_normalization_writeback": false
+  },
+  "graph_contract": {
+    "graph_tables_present": [],
+    "graph_edges_written": false,
+    "relation_promotion": false
+  },
+  "next_gate": "Review complete conflict_evidence.json. Then define a versioned jurisdiction reference layer and explicit manual/scientific labels for conflict classes before cross-bucket canonical identity resolution."
+}

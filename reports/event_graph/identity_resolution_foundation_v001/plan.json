@@ -1,0 +1,76 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "registry": {
+    "buckets": 1650,
+    "evidence_rows": 8111,
+    "alias_rows": 217
+  },
+  "conflicts": {
+    "groups": 28,
+    "buckets": 57,
+    "pairs": 30,
+    "evidence_rows": 237,
+    "pair_review_classes": {
+      "hierarchical_granularity_candidate": 1,
+      "reference_equivalent_candidate": 10,
+      "same_accession_distinct_or_source_error": 8,
+      "temporal_rejurisdiction_or_reporting_change_candidate": 11
+    }
+  },
+  "row_quality_candidates": {
+    "buckets": 3,
+    "evidence_rows": 30,
+    "candidates": [
+      {
+        "identity_bucket_id": "idbucket2_4ad64f5ad5e39e6c5f9e3eb8865dac0c689a23bf80a966f9dc5646e37d6d1de0",
+        "registrant_ticker": "JNJ",
+        "display_legal_name": "Consumer Test Entity (TEST PURPOSE ONLY)",
+        "evidence_rows": 1,
+        "reasons": [
+          "test_placeholder_candidate",
+          "missing_jurisdiction"
+        ],
+        "automatic_exclusion": false
+      },
+      {
+        "identity_bucket_id": "idbucket2_ec95854d382c71b8e358ff93f2b813762f531c1086e1005047b0bddac99d8c1e",
+        "registrant_ticker": "JNJ",
+        "display_legal_name": "International Subsidiaries:",
+        "evidence_rows": 16,
+        "reasons": [
+          "section_heading_candidate",
+          "missing_jurisdiction"
+        ],
+        "automatic_exclusion": false
+      },
+      {
+        "identity_bucket_id": "idbucket2_a25cb7b9b64f9900d7a1ec5d9c3f3f729e4b15f0b0f871941001d4b8964a59ed",
+        "registrant_ticker": "JNJ",
+        "display_legal_name": "U.S. Subsidiaries:",
+        "evidence_rows": 13,
+        "reasons": [
+          "section_heading_candidate",
+          "missing_jurisdiction"
+        ],
+        "automatic_exclusion": false
+      }
+    ]
+  },
+  "jurisdiction_reference": {
+    "equivalence_candidate_concepts": 5,
+    "hierarchy_roots": 1,
+    "authoritative_global_reference": false,
+    "writeback_allowed": false
+  },
+  "identity_contract": {
+    "automatic_merge": false,
+    "automatic_split": false,
+    "canonical_entities_created": false,
+    "identity_verdicts_written": false,
+    "row_exclusions_written": false
+  },
+  "main_db_mutated": false,
+  "graph_edges_written": false,
+  "next_gate": "Build the foundation DB and inspect all 30 conflict pairs plus all row-quality candidates. Confirm upstream row exclusions and jurisdiction-reference candidates before any canonical entity resolution or graph relation promotion."
+}

@@ -678,3 +678,13 @@ Contract:
 V009 can confirm only market-only H1 terminal-return distribution improvement.
 It cannot confirm direction, alpha, profitability, paths, survivorship-free
 generalization, event value or graph value.
+
+<!-- EXPECTATION_CAPTURE_FOUNDATION_V001_START -->
+## DATA-EXPECTATION-CAPTURE-V001 — prospective information vintage foundation
+
+**Type:** data foundation, not predictive experiment.
+
+**Purpose:** persist immutable, causally timestamped source observations, scheduled-event revisions, expectation/guidance snapshots and reported economic facts in a database isolated from V009/Market Core.
+
+**Claim boundary:** infrastructure/capture lineage only. No alpha, information-value or model-performance claim is permitted.
+<!-- EXPECTATION_CAPTURE_FOUNDATION_V001_END -->

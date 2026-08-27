@@ -574,3 +574,11 @@ adds reproducible OOS value.
 **Status:** V009 plan passed; additive migrations 021-022 are initialized and
 the single pre-holdout fit is frozen. Daily source/Core refresh is operationally
 gated to the first allowed origin, 2026-08-28; no V009 refit is permitted.
+
+<!-- EXPECTATION_CAPTURE_FOUNDATION_V001_START -->
+## Decision — accumulate future information vintages without contaminating V009
+
+**Decision:** permit a parallel append-only Expectation / Information Capture Foundation in a database separate from Market Core. It may collect live strict-PIT evidence while V009 accumulates, but none of its records are model-visible or allowed to validate, rescue, refit or modify V009. Historical expectation backfills must remain explicitly non-strict-PIT.
+
+**Reason:** beliefs, revisions, guidance, scheduled uncertainty and actual-vs-expectation surprise are scientifically important but are difficult to reconstruct faithfully after the fact. Capturing them prospectively creates future research data without changing the frozen Market Brain experiment.
+<!-- EXPECTATION_CAPTURE_FOUNDATION_V001_END -->

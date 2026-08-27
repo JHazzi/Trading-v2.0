@@ -849,3 +849,8 @@ The original V008 v001 benchmark aborted before any model fit or OOS performance
 
 V008 v0011 preserves the frozen scientific question, features, H1/H3/H5/H10, five 30%-initial purged expanding outer folds, 126-day recent calibration window, 126-day minimum inner validation, HGB profile set, vol63_recent_calibrated primary reference, metrics, bootstrap and gates. The only scientific-control change is `minimum_inner_train_origin_days: 500 -> 378` (1.5 trading years) for nested profile selection. Final fold models remain fit on the full development block. The plan now performs a clock-only conservative split-feasibility audit before benchmarking.
 
+<!-- EXPECTATION_CAPTURE_FOUNDATION_V001_START -->
+## Expectation / Information Capture Foundation V001 — parallel data asset
+
+While Market Distributional V009 remains frozen in prospective holdout, a separate append-only information-capture database may accumulate strict-PIT observations of scheduled events, expectations/guidance and later reported economic facts. This foundation is **not model-visible**, does not modify V009, and makes no predictive claim. Historical backfills remain `strict_pit=0`; only genuinely observed live evidence may be `strict_pit=1` under the capture contract.
+<!-- EXPECTATION_CAPTURE_FOUNDATION_V001_END -->

@@ -547,3 +547,19 @@ Decision branch:
 - if V008 does not, stop increasing endogenous learner capacity and prioritize causally versioned information that a professional investor would actually use but Core V003 lacks: expectations/revisions, option-implied risk, fundamentals/valuation, positioning/flows and richer event surprise, one block at a time;
 - Event Brain, graph, trajectories and trading remain downstream of a credible base distribution.
 <!-- MARKET_DISTRIBUTIONAL_V008_V001_END -->
+
+<!-- EXPECTATION_CAPTURE_FOUNDATION_V001_START -->
+## Parallel track — strict-PIT expectation/information capture
+
+This track may run while V009 accumulates because it is data-only and isolated from V009. Order:
+
+```text
+capture contract + isolated DB           ACTIVE
+provider/source semantic audit           NEXT
+prospective scheduled/expectation capture AFTER provider contract
+feature derivation                        BLOCKED until preregistered experiment
+predictive use                            BLOCKED until incremental Event/Information gate
+```
+
+No provider is promoted by convenience, no historical backfill is relabeled strict PIT, and no captured field enters a predictor without a later preregistered incremental-information experiment.
+<!-- EXPECTATION_CAPTURE_FOUNDATION_V001_END -->

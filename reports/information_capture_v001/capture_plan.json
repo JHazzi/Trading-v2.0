@@ -1,0 +1,11 @@
+{
+  "contract_version": "expectation_information_capture_v001",
+  "database_is_separate_from_market_core": true,
+  "database_path": "/home/trabajo/quant_market_ai/data/database/information_capture_v001.db",
+  "feature_visibility": "blocked_until_separate_preregistered_experiment",
+  "next_action": "init only; capture data remains model-invisible",
+  "schema_exists": true,
+  "schema_path": "/home/trabajo/quant_market_ai/database/information_capture_v001_schema.sql",
+  "status": "READY",
+  "strict_pit_policy": "live_observation_only"
+}

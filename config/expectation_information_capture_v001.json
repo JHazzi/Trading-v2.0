@@ -1,0 +1,43 @@
+{
+  "contract_version": "expectation_information_capture_v001",
+  "database_path": "data/database/information_capture_v001.db",
+  "report_dir": "reports/information_capture_v001",
+  "schema_path": "database/information_capture_v001_schema.sql",
+  "feature_visibility": "blocked_until_separate_preregistered_experiment",
+  "strict_pit_policy": "live_observation_only",
+  "protected_paths": [
+    "data/database/market_data.db",
+    "data/database/market_core_v003.db",
+    "reports/market_brain_distributional_v009"
+  ],
+  "record_kinds": [
+    "source_observation",
+    "scheduled_event_observation",
+    "expectation_observation",
+    "economic_fact_observation"
+  ],
+  "allowed_expectation_types": [
+    "analyst_consensus",
+    "company_guidance",
+    "market_implied",
+    "survey_expectation",
+    "other_observed_expectation"
+  ],
+  "allowed_statistic_keys": [
+    "point",
+    "mean",
+    "median",
+    "low",
+    "high",
+    "count",
+    "dispersion",
+    "lower_bound",
+    "upper_bound"
+  ],
+  "notes": [
+    "This database is evidence-only and append-only.",
+    "No record from this foundation is model-visible to V009.",
+    "Historical backfills must use strict_pit=0.",
+    "For strict_pit=1, available_at cannot precede actual system retrieval."
+  ]
+}

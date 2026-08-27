@@ -27,6 +27,13 @@ def test_config_scientific_freeze():
     assert cfg["residual_scale_feature"] == "asset_vol_63d_pct"
     assert cfg["no_posthoc_feature_family_rescue"] is True
     assert cfg["event_features_added"] is False
+    assert cfg["version"].endswith("v0011")
+    assert cfg["model_version"].endswith("v0011")
+    assert cfg["minimum_inner_train_origin_days"] == 378
+    assert cfg["recent_calibration_origin_days"] == 126
+    assert cfg["minimum_inner_validation_origin_days"] == 126
+    assert cfg["initial_fraction"] == 0.3
+    assert cfg["preperformance_amendment"]["performance_observed_before_change"] is False
 
 
 def test_origin_day_weights_equalize_day_total():

@@ -479,3 +479,11 @@ Rationale: V007 lost to vol63 at all horizons, so another handcrafted volatility
 
 The full endogenous feature family is primary. Same-capacity scale-only and own-state variants are diagnostics only. If the primary fails, no diagnostic feature family is auto-promoted; a later experiment must preregister any narrower model. A broad V008 failure is interpreted as evidence that the information state is insufficient beyond calibrated volatility, not as permission to increase tree depth, add a neural network, or tune more windows.
 <!-- MARKET_DISTRIBUTIONAL_V008_V001_END -->
+
+<!-- MARKET_V008_SPLIT_FEASIBILITY_V0011 -->
+### Market Distributional V008 v0011 — pre-performance split-feasibility amendment
+
+The original V008 v001 benchmark aborted before any model fit or OOS performance metric because the earliest 30% outer fold could not simultaneously satisfy 126 recent calibration origin days, 126 minimum nested validation origin days, and 500 minimum nested training origin days after purging. No V008 performance was observed.
+
+V008 v0011 preserves the frozen scientific question, features, H1/H3/H5/H10, five 30%-initial purged expanding outer folds, 126-day recent calibration window, 126-day minimum inner validation, HGB profile set, vol63_recent_calibrated primary reference, metrics, bootstrap and gates. The only scientific-control change is `minimum_inner_train_origin_days: 500 -> 378` (1.5 trading years) for nested profile selection. Final fold models remain fit on the full development block. The plan now performs a clock-only conservative split-feasibility audit before benchmarking.
+

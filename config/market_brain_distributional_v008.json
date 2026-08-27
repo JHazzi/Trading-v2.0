@@ -1,6 +1,6 @@
 {
-  "version": "market_brain_distributional_v008_conditional_residual_quantiles_v001",
-  "model_version": "market_brain_distributional_v008_hgb_residual_quantiles_v001",
+  "version": "market_brain_distributional_v008_conditional_residual_quantiles_v0011",
+  "model_version": "market_brain_distributional_v008_hgb_residual_quantiles_v0011",
   "source_v006_version": "market_brain_distributional_v006_baseline_v001",
   "source_v0061_version": "market_brain_distributional_v0061_robustness_v001",
   "source_v007_version": "market_brain_distributional_v007_adaptive_tail_v0011",
@@ -42,7 +42,7 @@
   "initial_fraction": 0.3,
   "recent_calibration_origin_days": 126,
   "inner_validation_fraction": 0.2,
-  "minimum_inner_train_origin_days": 500,
+  "minimum_inner_train_origin_days": 378,
   "minimum_inner_validation_origin_days": 126,
   "training_weight_policy": "equal_origin_day_total_weight",
   "selection_score": "inner_origin_day_equal_mean_pinball_loss",
@@ -129,5 +129,10 @@
   "broker_cost_used_for_training": false,
   "no_best_horizon_selection": true,
   "no_posthoc_feature_family_rescue": true,
-  "claim_boundary": "V008 tests whether the current endogenous causal Market State contains incremental distributional information beyond a recent-calibrated vol63 empirical reference. Failure is evidence about information sufficiency, not permission to increase model capacity post hoc."
+  "claim_boundary": "V008 tests whether the current endogenous causal Market State contains incremental distributional information beyond a recent-calibrated vol63 empirical reference. Failure is evidence about information sufficiency, not permission to increase model capacity post hoc.",
+  "preperformance_amendment": {
+    "reason": "Original V008 v001 nested split was infeasible in the earliest 30% outer fold because 126 calibration + 126 inner validation + 500 minimum inner train days exceeded available purged origin-day support before any model fit or performance metric.",
+    "change": "minimum_inner_train_origin_days reduced from 500 to 378 (1.5 trading years) for profile selection only; outer folds, 126-day calibration, 126-day minimum inner validation, features, targets, models, references, metrics and gates unchanged.",
+    "performance_observed_before_change": false
+  }
 }

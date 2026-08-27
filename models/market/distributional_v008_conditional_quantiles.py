@@ -36,9 +36,9 @@ class ResidualAnchor:
 
 def load_config(path: Path = DEFAULT_CONFIG) -> dict[str, Any]:
     cfg = json.loads(path.read_text(encoding="utf-8"))
-    if cfg["version"] != "market_brain_distributional_v008_conditional_residual_quantiles_v001":
+    if cfg["version"] != "market_brain_distributional_v008_conditional_residual_quantiles_v0011":
         raise ValueError("unexpected V008 version")
-    if cfg["model_version"] != "market_brain_distributional_v008_hgb_residual_quantiles_v001":
+    if cfg["model_version"] != "market_brain_distributional_v008_hgb_residual_quantiles_v0011":
         raise ValueError("unexpected V008 model version")
     if cfg["market_feature_version"] != "market_daily_state_v003_core":
         raise ValueError("market feature version changed")

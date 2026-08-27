@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import sqlite3
 from pathlib import Path
 from typing import Any
@@ -19,7 +20,7 @@ from models.market.distributional_v008_conditional_quantiles import (
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_V0061_SUMMARY = ROOT / "reports" / "market_brain_distributional_v0061" / "robustness_v001" / "robustness_summary.json"
 DEFAULT_V007_SUMMARY = ROOT / "reports" / "market_brain_distributional_v007" / "adaptive_tail_v0011" / "benchmark_summary.json"
-DEFAULT_OUTPUT_DIR = ROOT / "reports" / "market_brain_distributional_v008" / "conditional_residual_quantiles_v001"
+DEFAULT_OUTPUT_DIR = ROOT / "reports" / "market_brain_distributional_v008" / "conditional_residual_quantiles_v0011"
 
 
 def _write(path: Path, payload: Any) -> None:
@@ -79,6 +80,50 @@ def _feature_null_audit(core_db: Path, cfg: dict[str, Any], manifest: dict[str, 
     return out
 
 
+
+
+def _temporal_feasibility_audit(core_db: Path, cfg: dict[str, Any]) -> dict[str, Any]:
+    """Schema/clock-only audit. Reads no return outcomes and scores no model."""
+    out: dict[str, Any] = {}
+    with sqlite3.connect(core_db) as conn:
+        for h in cfg["horizons_sessions"]:
+            rows = conn.execute(
+                """
+                SELECT DISTINCT l.origin_trading_day, l.target_trading_day
+                FROM market_daily_v003_labels l
+                JOIN market_daily_v003_states s ON s.state_id=l.state_id
+                WHERE l.horizon_sessions=?
+                  AND l.label_status='usable'
+                  AND l.label_version=?
+                  AND s.feature_version=?
+                ORDER BY l.origin_trading_day
+                """,
+                (int(h), str(cfg["label_version"]), str(cfg["market_feature_version"])),
+            ).fetchall()
+            origin_days = sorted({str(r[0]) for r in rows})
+            n_days = len(origin_days)
+            nominal_initial_outer_train_days = int(math.floor(n_days * float(cfg["initial_fraction"])))
+            # Conservative clock budget: one horizon-sized purge before the calibration
+            # boundary and another before the nested validation boundary.
+            required_days_conservative = (
+                int(cfg["recent_calibration_origin_days"])
+                + int(cfg["minimum_inner_validation_origin_days"])
+                + int(cfg["minimum_inner_train_origin_days"])
+                + 2 * int(h)
+            )
+            out[str(h)] = {
+                "usable_origin_days": n_days,
+                "nominal_initial_outer_train_days": nominal_initial_outer_train_days,
+                "recent_calibration_origin_days": int(cfg["recent_calibration_origin_days"]),
+                "minimum_inner_validation_origin_days": int(cfg["minimum_inner_validation_origin_days"]),
+                "minimum_inner_train_origin_days": int(cfg["minimum_inner_train_origin_days"]),
+                "conservative_purge_budget_origin_days": 2 * int(h),
+                "required_days_conservative": required_days_conservative,
+                "margin_days": nominal_initial_outer_train_days - required_days_conservative,
+                "status": "PASS" if nominal_initial_outer_train_days >= required_days_conservative else "FAIL",
+            }
+    return out
+
 def plan(config_path: Path, core_db: Path, v0061_summary: Path, v007_summary: Path, output_dir: Path) -> dict[str, Any]:
     cfg = load_config(config_path)
     missing = []
@@ -86,6 +131,7 @@ def plan(config_path: Path, core_db: Path, v0061_summary: Path, v007_summary: Pa
         missing.append(f"missing {core_db}")
         manifest = None
         null_audit = None
+        temporal_feasibility = None
     else:
         manifest = resolve_feature_manifest(core_db, cfg)
         try:
@@ -95,6 +141,9 @@ def plan(config_path: Path, core_db: Path, v0061_summary: Path, v007_summary: Pa
         null_audit = _feature_null_audit(core_db, cfg, manifest)
         if any(v["null_fraction"] > 0.20 for v in null_audit.values()):
             missing.append("one or more resolved features exceed 20% missing; review before preregistration")
+        temporal_feasibility = _temporal_feasibility_audit(core_db, cfg)
+        if any(v["status"] != "PASS" for v in temporal_feasibility.values()):
+            missing.append("nested temporal split is infeasible for one or more horizons under the conservative clock audit")
     source_ok, source_problems = _source_valid(v0061_summary, v007_summary)
     missing.extend(source_problems)
     manifest_sha = None
@@ -128,6 +177,8 @@ def plan(config_path: Path, core_db: Path, v0061_summary: Path, v007_summary: Pa
         "resolved_feature_manifest": manifest,
         "resolved_feature_manifest_sha256": manifest_sha,
         "feature_null_audit": null_audit,
+        "temporal_split_feasibility": temporal_feasibility,
+        "preperformance_amendment": cfg.get("preperformance_amendment"),
         "source_v0061": str(v0061_summary),
         "source_v007": str(v007_summary),
         "source_valid": source_ok,

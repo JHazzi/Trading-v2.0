@@ -1,0 +1,923 @@
+{
+  "benchmark_version": "market_brain_distributional_v0081_endogenous_closure_v001",
+  "capacity_placebo": {
+    "candidate_vs_each_placebo": {},
+    "candidate_vs_mean_placebo": null,
+    "enabled": false,
+    "seeds": []
+  },
+  "concentration_diagnostics": {
+    "asset": {
+      "best_group_delta_pct": 0.05035367295102732,
+      "groups": 497,
+      "positive_group_fraction": 0.8853118712273642,
+      "positive_groups": 440,
+      "worst_group_delta_pct": -0.2280398924414944
+    },
+    "fold": {
+      "best_group_delta_pct": 0.0368081968770261,
+      "groups": 5,
+      "positive_group_fraction": 0.8,
+      "positive_groups": 4,
+      "worst_group_delta_pct": -0.018065930226084815
+    },
+    "sector": {
+      "best_group_delta_pct": 0.01209807777748241,
+      "groups": 11,
+      "positive_group_fraction": 0.9090909090909091,
+      "positive_groups": 10,
+      "worst_group_delta_pct": -0.0009438191584658277
+    },
+    "year": {
+      "best_group_delta_pct": 0.06518808770681737,
+      "groups": 7,
+      "positive_group_fraction": 0.7142857142857143,
+      "positive_groups": 5,
+      "worst_group_delta_pct": -0.018968075860773655
+    }
+  },
+  "dataset_contract": "market_daily_v003_all_asset_days_current_cohort_research",
+  "feature_manifest_sha256": "ec47bd88071f3c336f0a776f1bf246e0fc58163a51d35551638686e71b737e0a",
+  "fixed_model_profile": {
+    "early_stopping": false,
+    "l2_regularization": 2.0,
+    "learning_rate": 0.05,
+    "max_iter": 160,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 500,
+    "source": "V008 shallow_regularized selected in all 20 outer-fold/horizon selections"
+  },
+  "fold_contract": [
+    {
+      "first_test_day": "2020-05-05",
+      "fold_id": 0,
+      "last_test_day": "2021-08-04",
+      "latest_train_origin_day": "2020-04-27",
+      "latest_train_target_day": "2020-05-04",
+      "purged_pretest_rows": 2265,
+      "test_rows": 142690,
+      "train_rows": 295781
+    },
+    {
+      "first_test_day": "2021-08-05",
+      "fold_id": 1,
+      "last_test_day": "2022-11-03",
+      "latest_train_origin_day": "2021-07-28",
+      "latest_train_target_day": "2021-08-04",
+      "purged_pretest_rows": 2300,
+      "test_rows": 144053,
+      "train_rows": 438436
+    },
+    {
+      "first_test_day": "2022-11-04",
+      "fold_id": 2,
+      "last_test_day": "2024-02-08",
+      "latest_train_origin_day": "2022-10-27",
+      "latest_train_target_day": "2022-11-03",
+      "purged_pretest_rows": 2294,
+      "test_rows": 145084,
+      "train_rows": 582495
+    },
+    {
+      "first_test_day": "2024-02-09",
+      "fold_id": 3,
+      "last_test_day": "2025-05-14",
+      "latest_train_origin_day": "2024-02-01",
+      "latest_train_target_day": "2024-02-08",
+      "purged_pretest_rows": 2299,
+      "test_rows": 145530,
+      "train_rows": 727574
+    },
+    {
+      "first_test_day": "2025-05-15",
+      "fold_id": 4,
+      "last_test_day": "2026-08-17",
+      "latest_train_origin_day": "2025-05-07",
+      "latest_train_target_day": "2025-05-14",
+      "purged_pretest_rows": 2213,
+      "test_rows": 146216,
+      "train_rows": 873190
+    }
+  ],
+  "fold_results": [
+    {
+      "candidate_diagnostics": {
+        "positive_scale_test_rows": 142690,
+        "post_model_quantile_calibration": "none",
+        "probability_calibration": "none",
+        "raw_quantile_crossing_fraction": 4.204919756114654e-05
+      },
+      "capacity_placebo_diagnostics": {},
+      "first_test_day": "2020-05-05",
+      "fold_id": 0,
+      "last_test_day": "2021-08-04",
+      "metrics": {
+        "hgb_own_state_raw": {
+          "central_50": {
+            "coverage": 0.5071834045833625,
+            "coverage_error": 0.007183404583362529,
+            "mean_width_pct": 5.556287561168244
+          },
+          "central_90": {
+            "coverage": 0.9103160698016679,
+            "coverage_error": 0.010316069801667993,
+            "mean_width_pct": 15.55883750812262
+          },
+          "mean_pinball_loss_pct": 1.101843326307297,
+          "median_mae_pct": 3.4185251460415427,
+          "per_quantile": {
+            "q05": {
+              "calibration_error": -0.019920807344593176,
+              "empirical_cdf_at_prediction": 0.030079192655406827,
+              "pinball_loss_pct": 0.5033800634566354,
+              "quantile": 0.05
+            },
+            "q25": {
+              "calibration_error": -0.02716728572429744,
+              "empirical_cdf_at_prediction": 0.22283271427570256,
+              "pinball_loss_pct": 1.376711745222142,
+              "quantile": 0.25
+            },
+            "q50": {
+              "calibration_error": -0.02045693461349779,
+              "empirical_cdf_at_prediction": 0.4795430653865022,
+              "pinball_loss_pct": 1.7092625730207713,
+              "quantile": 0.5
+            },
+            "q75": {
+              "calibration_error": -0.019983881140934856,
+              "empirical_cdf_at_prediction": 0.7300161188590651,
+              "pinball_loss_pct": 1.3983498684731221,
+              "quantile": 0.75
+            },
+            "q95": {
+              "calibration_error": -0.009604737542925124,
+              "empirical_cdf_at_prediction": 0.9403952624570748,
+              "pinball_loss_pct": 0.5215123813638131,
+              "quantile": 0.95
+            }
+          },
+          "positive_return_base_rate": 0.5805382297287827,
+          "positive_return_brier": 0.24598068513961469,
+          "predicted_positive_probability_mean": 0.5576537726801675,
+          "rows": 142690
+        },
+        "vol63_raw": {
+          "central_50": {
+            "coverage": 0.5733758497442007,
+            "coverage_error": 0.07337584974420075,
+            "mean_width_pct": 6.658752754511419
+          },
+          "central_90": {
+            "coverage": 0.94559534655547,
+            "coverage_error": 0.04559534655547004,
+            "mean_width_pct": 20.29317282909689
+          },
+          "mean_pinball_loss_pct": 1.1386515231497105,
+          "median_mae_pct": 3.385666310576347,
+          "per_quantile": {
+            "q05": {
+              "calibration_error": -0.03732216693531432,
+              "empirical_cdf_at_prediction": 0.012677833064685682,
+              "pinball_loss_pct": 0.6282497516924882,
+              "quantile": 0.05
+            },
+            "q25": {
+              "calibration_error": -0.0684175485317822,
+              "empirical_cdf_at_prediction": 0.1815824514682178,
+              "pinball_loss_pct": 1.419921881419583,
+              "quantile": 0.25
+            },
+            "q50": {
+              "calibration_error": -0.030632840423295282,
+              "empirical_cdf_at_prediction": 0.4693671595767047,
+              "pinball_loss_pct": 1.6928331552881735,
+              "quantile": 0.5
+            },
+            "q75": {
+              "calibration_error": 0.004958301212418581,
+              "empirical_cdf_at_prediction": 0.7549583012124186,
+              "pinball_loss_pct": 1.4048189743242998,
+              "quantile": 0.75
+            },
+            "q95": {
+              "calibration_error": 0.008273179620155613,
+              "empirical_cdf_at_prediction": 0.9582731796201556,
+              "pinball_loss_pct": 0.5474338530240062,
+              "quantile": 0.95
+            }
+          },
+          "positive_return_base_rate": 0.5805382297287827,
+          "positive_return_brier": 0.2452073164954685,
+          "predicted_positive_probability_mean": 0.5454675939867263,
+          "rows": 142690
+        }
+      },
+      "primary_origin_day_equal_delta_pct": 0.03749192002219372,
+      "test_origin_days": 316,
+      "test_rows": 142690,
+      "train_origin_days": 671,
+      "train_rows": 295781
+    },
+    {
+      "candidate_diagnostics": {
+        "positive_scale_test_rows": 144053,
+        "post_model_quantile_calibration": "none",
+        "probability_calibration": "none",
+        "raw_quantile_crossing_fraction": 0.0
+      },
+      "capacity_placebo_diagnostics": {},
+      "first_test_day": "2021-08-05",
+      "fold_id": 1,
+      "last_test_day": "2022-11-03",
+      "metrics": {
+        "hgb_own_state_raw": {
+          "central_50": {
+            "coverage": 0.4367350905569478,
+            "coverage_error": -0.06326490944305219,
+            "mean_width_pct": 5.301683669667388
+          },
+          "central_90": {
+            "coverage": 0.8686872192873456,
+            "coverage_error": -0.03131278071265431,
+            "mean_width_pct": 14.491862808940352
+          },
+          "mean_pinball_loss_pct": 1.2094187895436408,
+          "median_mae_pct": 3.7880613297232,
+          "per_quantile": {
+            "q05": {
+              "calibration_error": 0.02863078172617023,
+              "empirical_cdf_at_prediction": 0.07863078172617023,
+              "pinball_loss_pct": 0.582666963872089,
+              "quantile": 0.05
+            },
+            "q25": {
+              "calibration_error": 0.07270067266908709,
+              "empirical_cdf_at_prediction": 0.3227006726690871,
+              "pinball_loss_pct": 1.5852436339972313,
+              "quantile": 0.25
+            },
+            "q50": {
+              "calibration_error": 0.051685837851346395,
+              "empirical_cdf_at_prediction": 0.5516858378513464,
+              "pinball_loss_pct": 1.8940306648616,
+              "quantile": 0.5
+            },
+            "q75": {
+              "calibration_error": 0.009435763226034899,
+              "empirical_cdf_at_prediction": 0.7594357632260349,
+              "pinball_loss_pct": 1.4825645200681992,
+              "quantile": 0.75
+            },
+            "q95": {
+              "calibration_error": -0.0026819989864841354,
+              "empirical_cdf_at_prediction": 0.9473180010135158,
+              "pinball_loss_pct": 0.5025881649190834,
+              "quantile": 0.95
+            }
+          },
+          "positive_return_base_rate": 0.5066190915843475,
+          "positive_return_brier": 0.2552675761106359,
+          "predicted_positive_probability_mean": 0.5694898992304527,
+          "rows": 144053
+        },
+        "vol63_raw": {
+          "central_50": {
+            "coverage": 0.42644026851228367,
+            "coverage_error": -0.07355973148771633,
+            "mean_width_pct": 5.163842626633397
+          },
+          "central_90": {
+            "coverage": 0.8909637425114367,
+            "coverage_error": -0.009036257488563182,
+            "mean_width_pct": 15.499537711131195
+          },
+          "mean_pinball_loss_pct": 1.1913528593996159,
+          "median_mae_pct": 3.7490931093625433,
+          "per_quantile": {
+            "q05": {
+              "calibration_error": 0.005875268130479748,
+              "empirical_cdf_at_prediction": 0.05587526813047975,
+              "pinball_loss_pct": 0.538869418439432,
+              "quantile": 0.05
+            },
+            "q25": {
+              "calibration_error": 0.06972954398728248,
+              "empirical_cdf_at_prediction": 0.3197295439872825,
+              "pinball_loss_pct": 1.5514269703086134,
+              "quantile": 0.25
+            },
+            "q50": {
+              "calibration_error": 0.04189777373605552,
+              "empirical_cdf_at_prediction": 0.5418977737360555,
+              "pinball_loss_pct": 1.8745465546812716,
+              "quantile": 0.5
+            },
+            "q75": {
+              "calibration_error": -0.003830187500433846,
+              "empirical_cdf_at_prediction": 0.7461698124995662,
+              "pinball_loss_pct": 1.4817708692058826,
+              "quantile": 0.75
+            },
+            "q95": {
+              "calibration_error": -0.003160989358083399,
+              "empirical_cdf_at_prediction": 0.9468390106419166,
+              "pinball_loss_pct": 0.5101504843628799,
+              "quantile": 0.95
+            }
+          },
+          "positive_return_base_rate": 0.5066190915843475,
+          "positive_return_brier": 0.2534933540352137,
+          "predicted_positive_probability_mean": 0.5629753607574035,
+          "rows": 144053
+        }
+      },
+      "primary_origin_day_equal_delta_pct": -0.018297155362130477,
+      "test_origin_days": 316,
+      "test_rows": 144053,
+      "train_origin_days": 987,
+      "train_rows": 438436
+    },
+    {
+      "candidate_diagnostics": {
+        "positive_scale_test_rows": 145084,
+        "post_model_quantile_calibration": "none",
+        "probability_calibration": "none",
+        "raw_quantile_crossing_fraction": 0.0
+      },
+      "capacity_placebo_diagnostics": {},
+      "first_test_day": "2022-11-04",
+      "fold_id": 2,
+      "last_test_day": "2024-02-08",
+      "metrics": {
+        "hgb_own_state_raw": {
+          "central_50": {
+            "coverage": 0.5120550853298779,
+            "coverage_error": 0.012055085329877868,
+            "mean_width_pct": 4.940710780619755
+          },
+          "central_90": {
+            "coverage": 0.9087494141325025,
+            "coverage_error": 0.008749414132502631,
+            "mean_width_pct": 13.290011440321496
+          },
+          "mean_pinball_loss_pct": 0.9826921173857823,
+          "median_mae_pct": 3.042397828500715,
+          "per_quantile": {
+            "q05": {
+              "calibration_error": -0.012042678724049516,
+              "empirical_cdf_at_prediction": 0.03795732127595049,
+              "pinball_loss_pct": 0.4472274311256947,
+              "quantile": 0.05
+            },
+            "q25": {
+              "calibration_error": -0.00454219624493396,
+              "empirical_cdf_at_prediction": 0.24545780375506604,
+              "pinball_loss_pct": 1.2352239388960262,
+              "quantile": 0.25
+            },
+            "q50": {
+              "calibration_error": 0.006927021587494142,
+              "empirical_cdf_at_prediction": 0.5069270215874941,
+              "pinball_loss_pct": 1.5211989142503575,
+              "quantile": 0.5
+            },
+            "q75": {
+              "calibration_error": 0.007512889084943852,
+              "empirical_cdf_at_prediction": 0.7575128890849439,
+              "pinball_loss_pct": 1.2459704270188083,
+              "quantile": 0.75
+            },
+            "q95": {
+              "calibration_error": -0.003293264591546885,
+              "empirical_cdf_at_prediction": 0.9467067354084531,
+              "pinball_loss_pct": 0.46383987563802465,
+              "quantile": 0.95
+            }
+          },
+          "positive_return_base_rate": 0.5428441454605608,
+          "positive_return_brier": 0.24872683923523337,
+          "predicted_positive_probability_mean": 0.5477026359372009,
+          "rows": 145084
+        },
+        "vol63_raw": {
+          "central_50": {
+            "coverage": 0.5134404896473767,
+            "coverage_error": 0.013440489647376652,
+            "mean_width_pct": 5.004860025625202
+          },
+          "central_90": {
+            "coverage": 0.9179096247690993,
+            "coverage_error": 0.017909624769099408,
+            "mean_width_pct": 14.44275670750462
+          },
+          "mean_pinball_loss_pct": 0.9889768507172404,
+          "median_mae_pct": 3.033681609039932,
+          "per_quantile": {
+            "q05": {
+              "calibration_error": -0.01619199911775248,
+              "empirical_cdf_at_prediction": 0.03380800088224752,
+              "pinball_loss_pct": 0.4709164598672595,
+              "quantile": 0.05
+            },
+            "q25": {
+              "calibration_error": -0.0016542141104463615,
+              "empirical_cdf_at_prediction": 0.24834578588955364,
+              "pinball_loss_pct": 1.2383470276570667,
+              "quantile": 0.25
+            },
+            "q50": {
+              "calibration_error": 0.00946348322351187,
+              "empirical_cdf_at_prediction": 0.5094634832235119,
+              "pinball_loss_pct": 1.516840804519966,
+              "quantile": 0.5
+            },
+            "q75": {
+              "calibration_error": 0.011786275536930346,
+              "empirical_cdf_at_prediction": 0.7617862755369303,
+              "pinball_loss_pct": 1.2486020133368927,
+              "quantile": 0.75
+            },
+            "q95": {
+              "calibration_error": 0.0017176256513468102,
+              "empirical_cdf_at_prediction": 0.9517176256513468,
+              "pinball_loss_pct": 0.4701779482050161,
+              "quantile": 0.95
+            }
+          },
+          "positive_return_base_rate": 0.5428441454605608,
+          "positive_return_brier": 0.24898584611684152,
+          "predicted_positive_probability_mean": 0.5535245441684612,
+          "rows": 145084
+        }
+      },
+      "primary_origin_day_equal_delta_pct": 0.0063449700896949365,
+      "test_origin_days": 316,
+      "test_rows": 145084,
+      "train_origin_days": 1303,
+      "train_rows": 582495
+    },
+    {
+      "candidate_diagnostics": {
+        "positive_scale_test_rows": 145530,
+        "post_model_quantile_calibration": "none",
+        "probability_calibration": "none",
+        "raw_quantile_crossing_fraction": 1.374287088572803e-05
+      },
+      "capacity_placebo_diagnostics": {},
+      "first_test_day": "2024-02-09",
+      "fold_id": 3,
+      "last_test_day": "2025-05-14",
+      "metrics": {
+        "hgb_own_state_raw": {
+          "central_50": {
+            "coverage": 0.4817425960283103,
+            "coverage_error": -0.01825740397168968,
+            "mean_width_pct": 4.859194353029965
+          },
+          "central_90": {
+            "coverage": 0.8829038686181543,
+            "coverage_error": -0.017096131381845625,
+            "mean_width_pct": 13.093804913999133
+          },
+          "mean_pinball_loss_pct": 1.0684818801660483,
+          "median_mae_pct": 3.282839104637542,
+          "per_quantile": {
+            "q05": {
+              "calibration_error": 0.006057170342884624,
+              "empirical_cdf_at_prediction": 0.05605717034288463,
+              "pinball_loss_pct": 0.527640953657642,
+              "quantile": 0.05
+            },
+            "q25": {
+              "calibration_error": 0.006998556998557004,
+              "empirical_cdf_at_prediction": 0.256998556998557,
+              "pinball_loss_pct": 1.3693644553471396,
+              "quantile": 0.25
+            },
+            "q50": {
+              "calibration_error": 0.0013949013949013933,
+              "empirical_cdf_at_prediction": 0.5013949013949014,
+              "pinball_loss_pct": 1.641419552318771,
+              "quantile": 0.5
+            },
+            "q75": {
+              "calibration_error": -0.01125884697313273,
+              "empirical_cdf_at_prediction": 0.7387411530268673,
+              "pinball_loss_pct": 1.318177551806877,
+              "quantile": 0.75
+            },
+            "q95": {
+              "calibration_error": -0.01103896103896096,
+              "empirical_cdf_at_prediction": 0.938961038961039,
+              "pinball_loss_pct": 0.48580688769980845,
+              "quantile": 0.95
+            }
+          },
+          "positive_return_base_rate": 0.5436679722394008,
+          "positive_return_brier": 0.24845808743322084,
+          "predicted_positive_probability_mean": 0.5479878812830974,
+          "rows": 145530
+        },
+        "vol63_raw": {
+          "central_50": {
+            "coverage": 0.47766783481069197,
+            "coverage_error": -0.02233216518930803,
+            "mean_width_pct": 4.907109293782552
+          },
+          "central_90": {
+            "coverage": 0.8915412629698344,
+            "coverage_error": -0.00845873703016553,
+            "mean_width_pct": 14.022478367685933
+          },
+          "mean_pinball_loss_pct": 1.0710068762079588,
+          "median_mae_pct": 3.2808452066716978,
+          "per_quantile": {
+            "q05": {
+              "calibration_error": 0.002394695251838108,
+              "empirical_cdf_at_prediction": 0.05239469525183811,
+              "pinball_loss_pct": 0.5311422369272573,
+              "quantile": 0.05
+            },
+            "q25": {
+              "calibration_error": 0.01167800453514739,
+              "empirical_cdf_at_prediction": 0.2616780045351474,
+              "pinball_loss_pct": 1.3679507590926838,
+              "quantile": 0.25
+            },
+            "q50": {
+              "calibration_error": 0.003889232460661085,
+              "empirical_cdf_at_prediction": 0.5038892324606611,
+              "pinball_loss_pct": 1.6404226033358489,
+              "quantile": 0.5
+            },
+            "q75": {
+              "calibration_error": -0.010654160654160694,
+              "empirical_cdf_at_prediction": 0.7393458393458393,
+              "pinball_loss_pct": 1.3248112255229874,
+              "quantile": 0.75
+            },
+            "q95": {
+              "calibration_error": -0.0060640417783274225,
+              "empirical_cdf_at_prediction": 0.9439359582216725,
+              "pinball_loss_pct": 0.4907075561610169,
+              "quantile": 0.95
+            }
+          },
+          "positive_return_base_rate": 0.5436679722394008,
+          "positive_return_brier": 0.24862800839892568,
+          "predicted_positive_probability_mean": 0.5536737843517635,
+          "rows": 145530
+        }
+      },
+      "primary_origin_day_equal_delta_pct": 0.002387250086855405,
+      "test_origin_days": 316,
+      "test_rows": 145530,
+      "train_origin_days": 1619,
+      "train_rows": 727574
+    },
+    {
+      "candidate_diagnostics": {
+        "positive_scale_test_rows": 146216,
+        "post_model_quantile_calibration": "none",
+        "probability_calibration": "none",
+        "raw_quantile_crossing_fraction": 6.839196804727253e-06
+      },
+      "capacity_placebo_diagnostics": {},
+      "first_test_day": "2025-05-15",
+      "fold_id": 4,
+      "last_test_day": "2026-08-17",
+      "metrics": {
+        "hgb_own_state_raw": {
+          "central_50": {
+            "coverage": 0.501354160967336,
+            "coverage_error": 0.0013541609673359822,
+            "mean_width_pct": 5.362870443558957
+          },
+          "central_90": {
+            "coverage": 0.9005922744432894,
+            "coverage_error": 0.0005922744432894644,
+            "mean_width_pct": 14.506595381379608
+          },
+          "mean_pinball_loss_pct": 1.125824514638655,
+          "median_mae_pct": 3.4783222952308583,
+          "per_quantile": {
+            "q05": {
+              "calibration_error": -0.005702522295781588,
+              "empirical_cdf_at_prediction": 0.044297477704218415,
+              "pinball_loss_pct": 0.512022042442498,
+              "quantile": 0.05
+            },
+            "q25": {
+              "calibration_error": 0.003686327077747964,
+              "empirical_cdf_at_prediction": 0.25368632707774796,
+              "pinball_loss_pct": 1.4022843384391506,
+              "quantile": 0.25
+            },
+            "q50": {
+              "calibration_error": 0.01045029271762321,
+              "empirical_cdf_at_prediction": 0.5104502927176232,
+              "pinball_loss_pct": 1.7391611476154292,
+              "quantile": 0.5
+            },
+            "q75": {
+              "calibration_error": 0.005040488045083946,
+              "empirical_cdf_at_prediction": 0.755040488045084,
+              "pinball_loss_pct": 1.4319334373303476,
+              "quantile": 0.75
+            },
+            "q95": {
+              "calibration_error": -0.005110247852492145,
+              "empirical_cdf_at_prediction": 0.9448897521475078,
+              "pinball_loss_pct": 0.5437216073658482,
+              "quantile": 0.95
+            }
+          },
+          "positive_return_base_rate": 0.5359194616184275,
+          "positive_return_brier": 0.24956926016599595,
+          "predicted_positive_probability_mean": 0.5455377867385783,
+          "rows": 146216
+        },
+        "vol63_raw": {
+          "central_50": {
+            "coverage": 0.5128098156152542,
+            "coverage_error": 0.012809815615254183,
+            "mean_width_pct": 5.654108764552975
+          },
+          "central_90": {
+            "coverage": 0.912813919133337,
+            "coverage_error": 0.01281391913333707,
+            "mean_width_pct": 16.09414709884931
+          },
+          "mean_pinball_loss_pct": 1.1347238200294656,
+          "median_mae_pct": 3.4687041448038185,
+          "per_quantile": {
+            "q05": {
+              "calibration_error": -0.013341905126661925,
+              "empirical_cdf_at_prediction": 0.03665809487333808,
+              "pinball_loss_pct": 0.5376354900387044,
+              "quantile": 0.05
+            },
+            "q25": {
+              "calibration_error": -0.003556382338458175,
+              "empirical_cdf_at_prediction": 0.24644361766154183,
+              "pinball_loss_pct": 1.4139775489341377,
+              "quantile": 0.25
+            },
+            "q50": {
+              "calibration_error": 0.009451769984133107,
+              "empirical_cdf_at_prediction": 0.5094517699841331,
+              "pinball_loss_pct": 1.7343520724019093,
+              "quantile": 0.5
+            },
+            "q75": {
+              "calibration_error": 0.009253433276795953,
+              "empirical_cdf_at_prediction": 0.759253433276796,
+              "pinball_loss_pct": 1.4359775360567963,
+              "quantile": 0.75
+            },
+            "q95": {
+              "calibration_error": -0.0005279859933249309,
+              "empirical_cdf_at_prediction": 0.949472014006675,
+              "pinball_loss_pct": 0.5516764527157785,
+              "quantile": 0.95
+            }
+          },
+          "positive_return_base_rate": 0.5359194616184275,
+          "positive_return_brier": 0.24944934474518168,
+          "predicted_positive_probability_mean": 0.5459454561320081,
+          "rows": 146216
+        }
+      },
+      "primary_origin_day_equal_delta_pct": 0.008980891223410541,
+      "test_origin_days": 315,
+      "test_rows": 146216,
+      "train_origin_days": 1935,
+      "train_rows": 873190
+    }
+  ],
+  "frozen_own_features": [
+    "asset_drawdown_20d_pct",
+    "asset_drawdown_252d_pct",
+    "asset_drawdown_63d_pct",
+    "asset_range_1d_pct",
+    "asset_return_10d_pct",
+    "asset_return_1d_pct",
+    "asset_return_20d_pct",
+    "asset_return_3d_pct",
+    "asset_return_5d_pct",
+    "asset_return_63d_pct",
+    "asset_vol_20d_pct",
+    "asset_vol_5d_pct",
+    "asset_vol_63d_pct",
+    "asset_volume_ratio_20d"
+  ],
+  "horizon_gate": {
+    "may_rescue_primary_horizon": false,
+    "reason": "only H1 was prospectively designated as the V008.1 closure hypothesis",
+    "status": "DIAGNOSTIC_ONLY"
+  },
+  "horizon_sessions": 5,
+  "interpretation_contract": {
+    "capacity_control_preserves_aligned_scale_and_destroys_incremental_asset_state_alignment": true,
+    "failure_closes_current_endogenous_price_volume_engineering_branch": true,
+    "fresh_temporal_confirmation_required_for_promotion": true,
+    "pass_is_developmental_on_reused_history": true,
+    "primary_question": "does the frozen own price/volume state improve H1 standardized-return quantiles beyond raw vol63 without recent recalibration?",
+    "secondary_horizons_cannot_rescue_h1": true
+  },
+  "label_version": "market_daily_reaction_v003_core",
+  "market_feature_version": "market_daily_state_v003_core",
+  "model_version": "market_brain_distributional_v0081_hgb_own_state_raw_v001",
+  "oos_assets": 497,
+  "oos_first_day": "2020-05-05",
+  "oos_last_day": "2026-08-17",
+  "oos_origin_days": 1579,
+  "oos_rows": 723573,
+  "per_quantile_primary_comparison": {
+    "q05": {
+      "origin_day_equal_weight_delta_pct": 0.02697419098179848,
+      "positive_delta_means_candidate_lower_loss": true,
+      "quantile": 0.05,
+      "row_weighted_delta_pct": 0.02653502083891171
+    },
+    "q25": {
+      "origin_day_equal_weight_delta_pct": 0.004686003569662087,
+      "positive_delta_means_candidate_lower_loss": true,
+      "quantile": 0.25,
+      "row_weighted_delta_pct": 0.004493495332484539
+    },
+    "q50": {
+      "origin_day_equal_weight_delta_pct": -0.00922594771133243,
+      "positive_delta_means_candidate_lower_loss": true,
+      "quantile": 0.5,
+      "row_weighted_delta_pct": -0.009165073615902184
+    },
+    "q75": {
+      "origin_day_equal_weight_delta_pct": 0.003805410037065719,
+      "positive_delta_means_candidate_lower_loss": true,
+      "quantile": 0.75,
+      "row_weighted_delta_pct": 0.003796798046826003
+    },
+    "q95": {
+      "origin_day_equal_weight_delta_pct": 0.010663154883038423,
+      "positive_delta_means_candidate_lower_loss": true,
+      "quantile": 0.95,
+      "row_weighted_delta_pct": 0.01048129547986518
+    }
+  },
+  "pooled_metrics": {
+    "capacity_placebos": {},
+    "hgb_own_state_raw": {
+      "central_50": {
+        "coverage": 0.48784020409827344,
+        "coverage_error": -0.012159795901726556,
+        "mean_width_pct": 5.202880997125077
+      },
+      "central_90": {
+        "coverage": 0.894235965134133,
+        "coverage_error": -0.005764034865866963,
+        "mean_width_pct": 14.183078468463403
+      },
+      "mean_pinball_loss_pct": 1.0975050997340445,
+      "median_mae_pct": 3.4014704058983503,
+      "per_quantile": {
+        "q05": {
+          "calibration_error": -0.0005772050643127954,
+          "empirical_cdf_at_prediction": 0.04942279493568721,
+          "pinball_loss_pct": 0.5145315993748097,
+          "quantile": 0.05
+        },
+        "q25": {
+          "calibration_error": 0.010357973556227196,
+          "empirical_cdf_at_prediction": 0.2603579735562272,
+          "pinball_loss_pct": 1.3935475012303706,
+          "quantile": 0.25
+        },
+        "q50": {
+          "calibration_error": 0.010036996958150746,
+          "empirical_cdf_at_prediction": 0.5100369969581507,
+          "pinball_loss_pct": 1.7007352029491751,
+          "quantile": 0.5
+        },
+        "q75": {
+          "calibration_error": -0.0018018223454993043,
+          "empirical_cdf_at_prediction": 0.7481981776545007,
+          "pinball_loss_pct": 1.3752237044589668,
+          "quantile": 0.75
+        },
+        "q95": {
+          "calibration_error": -0.006341239930179765,
+          "empirical_cdf_at_prediction": 0.9436587600698202,
+          "pinball_loss_pct": 0.5034874906568917,
+          "quantile": 0.95
+        }
+      },
+      "positive_return_base_rate": 0.5418319920726727,
+      "positive_return_brier": 0.24960363809118233,
+      "predicted_positive_probability_mean": 0.5536224595141265,
+      "rows": 723573
+    },
+    "vol63_raw": {
+      "central_50": {
+        "coverage": 0.5006170766460329,
+        "coverage_error": 0.0006170766460329435,
+        "mean_width_pct": 5.474198659907826
+      },
+      "central_90": {
+        "coverage": 0.911671662707149,
+        "coverage_error": 0.011671662707149144,
+        "mean_width_pct": 16.05603545153892
+      },
+      "mean_pinball_loss_pct": 1.1047334069504802,
+      "median_mae_pct": 3.383140258666546,
+      "per_quantile": {
+        "q05": {
+          "calibration_error": -0.011651415959412527,
+          "empirical_cdf_at_prediction": 0.038348584040587476,
+          "pinball_loss_pct": 0.5410666202137214,
+          "quantile": 0.05
+        },
+        "q25": {
+          "calibration_error": 0.0016884958393970084,
+          "empirical_cdf_at_prediction": 0.251688495839397,
+          "pinball_loss_pct": 1.398040996562855,
+          "quantile": 0.25
+        },
+        "q50": {
+          "calibration_error": 0.006890113367966966,
+          "empirical_cdf_at_prediction": 0.506890113367967,
+          "pinball_loss_pct": 1.691570129333273,
+          "quantile": 0.5
+        },
+        "q75": {
+          "calibration_error": 0.002305572485429952,
+          "empirical_cdf_at_prediction": 0.75230557248543,
+          "pinball_loss_pct": 1.3790205025057929,
+          "quantile": 0.75
+        },
+        "q95": {
+          "calibration_error": 2.0246747736596404e-05,
+          "empirical_cdf_at_prediction": 0.9500202467477366,
+          "pinball_loss_pct": 0.5139687861367567,
+          "quantile": 0.95
+        }
+      },
+      "positive_return_base_rate": 0.5418319920726727,
+      "positive_return_brier": 0.24915978358309868,
+      "predicted_positive_probability_mean": 0.5523156919774709,
+      "rows": 723573
+    }
+  },
+  "post_model_calibration": "none",
+  "primary_candidate": "hgb_own_state_raw",
+  "primary_comparison": {
+    "moving_block_bootstrap": {
+      "10": {
+        "block_length_origin_days": 10,
+        "bootstrap_method": "noncircular_moving_block",
+        "bootstrap_reps": 3000,
+        "bootstrap_seed": 42,
+        "ci95": [
+          -0.00017557223743775252,
+          0.015134541189165282
+        ],
+        "point_delta_pct": 0.0073805623520464565,
+        "positive_delta_means_candidate_lower_loss": true,
+        "unique_origin_days": 1579
+      },
+      "20": {
+        "block_length_origin_days": 20,
+        "bootstrap_method": "noncircular_moving_block",
+        "bootstrap_reps": 3000,
+        "bootstrap_seed": 42,
+        "ci95": [
+          -0.0017124979522174274,
+          0.014836007769821304
+        ],
+        "point_delta_pct": 0.0073805623520464565,
+        "positive_delta_means_candidate_lower_loss": true,
+        "unique_origin_days": 1579
+      },
+      "5": {
+        "block_length_origin_days": 5,
+        "bootstrap_method": "noncircular_moving_block",
+        "bootstrap_reps": 3000,
+        "bootstrap_seed": 42,
+        "ci95": [
+          0.0015082332000589073,
+          0.013802588389948637
+        ],
+        "point_delta_pct": 0.0073805623520464565,
+        "positive_delta_means_candidate_lower_loss": true,
+        "unique_origin_days": 1579
+      }
+    },
+    "origin_day_equal_weight_delta_pct": 0.0073805623520464565,
+    "positive_delta_means_candidate_lower_loss": true,
+    "row_weighted_delta_pct": 0.007228307216437058
+  },
+  "primary_horizon_sessions": 1,
+  "primary_reference": "vol63_raw",
+  "source_v008_version": "market_brain_distributional_v008_conditional_residual_quantiles_v0011"
+}

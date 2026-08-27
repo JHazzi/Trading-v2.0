@@ -10,6 +10,7 @@ __pycache__/
 
 # Modelos y archivos gigantes
 models/market/artifacts/*.pkl
+models/market/artifacts/market_brain_distributional_v009/
 *.pkl
 
 # Bases de datos SQLite

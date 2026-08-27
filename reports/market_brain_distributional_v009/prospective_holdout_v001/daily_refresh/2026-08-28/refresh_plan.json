@@ -1,0 +1,5005 @@
+{
+  "already_present": 0,
+  "assets": [
+    {
+      "asset_id": 1,
+      "exchange": "XNYS",
+      "provider_symbol": "MMM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MMM"
+    },
+    {
+      "asset_id": 2,
+      "exchange": "XNYS",
+      "provider_symbol": "AOS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AOS"
+    },
+    {
+      "asset_id": 3,
+      "exchange": "XNYS",
+      "provider_symbol": "ABT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ABT"
+    },
+    {
+      "asset_id": 4,
+      "exchange": "XNYS",
+      "provider_symbol": "ABBV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ABBV"
+    },
+    {
+      "asset_id": 5,
+      "exchange": "XNYS",
+      "provider_symbol": "ACN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ACN"
+    },
+    {
+      "asset_id": 6,
+      "exchange": "XNAS",
+      "provider_symbol": "ADBE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ADBE"
+    },
+    {
+      "asset_id": 7,
+      "exchange": "XNAS",
+      "provider_symbol": "AMD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AMD"
+    },
+    {
+      "asset_id": 8,
+      "exchange": "XNYS",
+      "provider_symbol": "AES",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AES"
+    },
+    {
+      "asset_id": 9,
+      "exchange": "XNYS",
+      "provider_symbol": "AFL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AFL"
+    },
+    {
+      "asset_id": 10,
+      "exchange": "XNYS",
+      "provider_symbol": "A",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "A"
+    },
+    {
+      "asset_id": 11,
+      "exchange": "XNYS",
+      "provider_symbol": "APD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "APD"
+    },
+    {
+      "asset_id": 12,
+      "exchange": "XNAS",
+      "provider_symbol": "ABNB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ABNB"
+    },
+    {
+      "asset_id": 13,
+      "exchange": "XNAS",
+      "provider_symbol": "AKAM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AKAM"
+    },
+    {
+      "asset_id": 14,
+      "exchange": "XNYS",
+      "provider_symbol": "ALB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ALB"
+    },
+    {
+      "asset_id": 15,
+      "exchange": "XNYS",
+      "provider_symbol": "ARE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ARE"
+    },
+    {
+      "asset_id": 16,
+      "exchange": "XNAS",
+      "provider_symbol": "ALGN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ALGN"
+    },
+    {
+      "asset_id": 17,
+      "exchange": "XNYS",
+      "provider_symbol": "ALLE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ALLE"
+    },
+    {
+      "asset_id": 18,
+      "exchange": "XNAS",
+      "provider_symbol": "LNT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LNT"
+    },
+    {
+      "asset_id": 19,
+      "exchange": "XNYS",
+      "provider_symbol": "ALL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ALL"
+    },
+    {
+      "asset_id": 20,
+      "exchange": "XNAS",
+      "provider_symbol": "GOOGL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GOOGL"
+    },
+    {
+      "asset_id": 21,
+      "exchange": "XNAS",
+      "provider_symbol": "GOOG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GOOG"
+    },
+    {
+      "asset_id": 22,
+      "exchange": "XNYS",
+      "provider_symbol": "MO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MO"
+    },
+    {
+      "asset_id": 23,
+      "exchange": "XNAS",
+      "provider_symbol": "AMZN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AMZN"
+    },
+    {
+      "asset_id": 24,
+      "exchange": "XNYS",
+      "provider_symbol": "AMCR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AMCR"
+    },
+    {
+      "asset_id": 25,
+      "exchange": "XNYS",
+      "provider_symbol": "AEE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AEE"
+    },
+    {
+      "asset_id": 26,
+      "exchange": "XNAS",
+      "provider_symbol": "AEP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AEP"
+    },
+    {
+      "asset_id": 27,
+      "exchange": "XNYS",
+      "provider_symbol": "AXP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AXP"
+    },
+    {
+      "asset_id": 28,
+      "exchange": "XNYS",
+      "provider_symbol": "AIG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AIG"
+    },
+    {
+      "asset_id": 29,
+      "exchange": "XNYS",
+      "provider_symbol": "AMT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AMT"
+    },
+    {
+      "asset_id": 30,
+      "exchange": "XNYS",
+      "provider_symbol": "AWK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AWK"
+    },
+    {
+      "asset_id": 31,
+      "exchange": "XNYS",
+      "provider_symbol": "AMP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AMP"
+    },
+    {
+      "asset_id": 32,
+      "exchange": "XNYS",
+      "provider_symbol": "AME",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AME"
+    },
+    {
+      "asset_id": 33,
+      "exchange": "XNAS",
+      "provider_symbol": "AMGN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AMGN"
+    },
+    {
+      "asset_id": 34,
+      "exchange": "XNYS",
+      "provider_symbol": "APH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "APH"
+    },
+    {
+      "asset_id": 35,
+      "exchange": "XNAS",
+      "provider_symbol": "ADI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ADI"
+    },
+    {
+      "asset_id": 36,
+      "exchange": "XNYS",
+      "provider_symbol": "AON",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AON"
+    },
+    {
+      "asset_id": 37,
+      "exchange": "XNAS",
+      "provider_symbol": "APA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "APA"
+    },
+    {
+      "asset_id": 38,
+      "exchange": "XNYS",
+      "provider_symbol": "APO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "APO"
+    },
+    {
+      "asset_id": 39,
+      "exchange": "XNAS",
+      "provider_symbol": "AAPL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AAPL"
+    },
+    {
+      "asset_id": 40,
+      "exchange": "XNAS",
+      "provider_symbol": "AMAT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AMAT"
+    },
+    {
+      "asset_id": 41,
+      "exchange": "XNAS",
+      "provider_symbol": "APP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "APP"
+    },
+    {
+      "asset_id": 42,
+      "exchange": "XNYS",
+      "provider_symbol": "APTV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "APTV"
+    },
+    {
+      "asset_id": 43,
+      "exchange": "XNAS",
+      "provider_symbol": "ACGL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ACGL"
+    },
+    {
+      "asset_id": 44,
+      "exchange": "XNYS",
+      "provider_symbol": "ADM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ADM"
+    },
+    {
+      "asset_id": 45,
+      "exchange": "XNYS",
+      "provider_symbol": "ARES",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ARES"
+    },
+    {
+      "asset_id": 46,
+      "exchange": "XNYS",
+      "provider_symbol": "ANET",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ANET"
+    },
+    {
+      "asset_id": 47,
+      "exchange": "XNYS",
+      "provider_symbol": "AJG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AJG"
+    },
+    {
+      "asset_id": 48,
+      "exchange": "XNYS",
+      "provider_symbol": "AIZ",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AIZ"
+    },
+    {
+      "asset_id": 49,
+      "exchange": "XNYS",
+      "provider_symbol": "T",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "T"
+    },
+    {
+      "asset_id": 50,
+      "exchange": "XNYS",
+      "provider_symbol": "ATO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ATO"
+    },
+    {
+      "asset_id": 51,
+      "exchange": "XNAS",
+      "provider_symbol": "ADSK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ADSK"
+    },
+    {
+      "asset_id": 52,
+      "exchange": "XNAS",
+      "provider_symbol": "ADP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ADP"
+    },
+    {
+      "asset_id": 53,
+      "exchange": "XNYS",
+      "provider_symbol": "AZO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AZO"
+    },
+    {
+      "asset_id": 54,
+      "exchange": "XNYS",
+      "provider_symbol": "AVY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AVY"
+    },
+    {
+      "asset_id": 55,
+      "exchange": "XNAS",
+      "provider_symbol": "AXON",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AXON"
+    },
+    {
+      "asset_id": 56,
+      "exchange": "XNAS",
+      "provider_symbol": "BKR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BKR"
+    },
+    {
+      "asset_id": 57,
+      "exchange": "XNYS",
+      "provider_symbol": "BALL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BALL"
+    },
+    {
+      "asset_id": 58,
+      "exchange": "XNYS",
+      "provider_symbol": "BAC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BAC"
+    },
+    {
+      "asset_id": 59,
+      "exchange": "XNYS",
+      "provider_symbol": "BAX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BAX"
+    },
+    {
+      "asset_id": 60,
+      "exchange": "XNYS",
+      "provider_symbol": "BDX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BDX"
+    },
+    {
+      "asset_id": 61,
+      "exchange": "XNYS",
+      "provider_symbol": "BRK-B",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BRK-B"
+    },
+    {
+      "asset_id": 62,
+      "exchange": "XNYS",
+      "provider_symbol": "BBY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BBY"
+    },
+    {
+      "asset_id": 63,
+      "exchange": "XNAS",
+      "provider_symbol": "TECH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TECH"
+    },
+    {
+      "asset_id": 64,
+      "exchange": "XNAS",
+      "provider_symbol": "BIIB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BIIB"
+    },
+    {
+      "asset_id": 65,
+      "exchange": "XNYS",
+      "provider_symbol": "BLK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BLK"
+    },
+    {
+      "asset_id": 66,
+      "exchange": "XNYS",
+      "provider_symbol": "BX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BX"
+    },
+    {
+      "asset_id": 67,
+      "exchange": "XNYS",
+      "provider_symbol": "XYZ",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "XYZ"
+    },
+    {
+      "asset_id": 68,
+      "exchange": "XNYS",
+      "provider_symbol": "BNY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BNY"
+    },
+    {
+      "asset_id": 69,
+      "exchange": "XNYS",
+      "provider_symbol": "BA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BA"
+    },
+    {
+      "asset_id": 70,
+      "exchange": "XNAS",
+      "provider_symbol": "BKNG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BKNG"
+    },
+    {
+      "asset_id": 71,
+      "exchange": "XNYS",
+      "provider_symbol": "BSX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BSX"
+    },
+    {
+      "asset_id": 72,
+      "exchange": "XNYS",
+      "provider_symbol": "BMY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BMY"
+    },
+    {
+      "asset_id": 73,
+      "exchange": "XNAS",
+      "provider_symbol": "AVGO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "AVGO"
+    },
+    {
+      "asset_id": 74,
+      "exchange": "XNYS",
+      "provider_symbol": "BR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BR"
+    },
+    {
+      "asset_id": 75,
+      "exchange": "XNYS",
+      "provider_symbol": "BRO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BRO"
+    },
+    {
+      "asset_id": 76,
+      "exchange": "XNYS",
+      "provider_symbol": "BF-B",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BF-B"
+    },
+    {
+      "asset_id": 77,
+      "exchange": "XNYS",
+      "provider_symbol": "BLDR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BLDR"
+    },
+    {
+      "asset_id": 78,
+      "exchange": "XNYS",
+      "provider_symbol": "BG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BG"
+    },
+    {
+      "asset_id": 79,
+      "exchange": "XNYS",
+      "provider_symbol": "BXP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BXP"
+    },
+    {
+      "asset_id": 80,
+      "exchange": "XNAS",
+      "provider_symbol": "CHRW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CHRW"
+    },
+    {
+      "asset_id": 81,
+      "exchange": "XNAS",
+      "provider_symbol": "CDNS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CDNS"
+    },
+    {
+      "asset_id": 82,
+      "exchange": "XNYS",
+      "provider_symbol": "CPT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CPT"
+    },
+    {
+      "asset_id": 83,
+      "exchange": "XNYS",
+      "provider_symbol": "COF",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "COF"
+    },
+    {
+      "asset_id": 84,
+      "exchange": "XNYS",
+      "provider_symbol": "CAH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CAH"
+    },
+    {
+      "asset_id": 85,
+      "exchange": "XNYS",
+      "provider_symbol": "CCL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CCL"
+    },
+    {
+      "asset_id": 86,
+      "exchange": "XNYS",
+      "provider_symbol": "CARR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CARR"
+    },
+    {
+      "asset_id": 87,
+      "exchange": "XNYS",
+      "provider_symbol": "CVNA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CVNA"
+    },
+    {
+      "asset_id": 88,
+      "exchange": "XNAS",
+      "provider_symbol": "CASY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CASY"
+    },
+    {
+      "asset_id": 89,
+      "exchange": "XNYS",
+      "provider_symbol": "CAT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CAT"
+    },
+    {
+      "asset_id": 90,
+      "exchange": "BATS",
+      "provider_symbol": "CBOE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CBOE"
+    },
+    {
+      "asset_id": 91,
+      "exchange": "XNYS",
+      "provider_symbol": "CBRE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CBRE"
+    },
+    {
+      "asset_id": 92,
+      "exchange": "XNAS",
+      "provider_symbol": "CDW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CDW"
+    },
+    {
+      "asset_id": 93,
+      "exchange": "XNYS",
+      "provider_symbol": "COR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "COR"
+    },
+    {
+      "asset_id": 94,
+      "exchange": "XNYS",
+      "provider_symbol": "CNC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CNC"
+    },
+    {
+      "asset_id": 95,
+      "exchange": "XNYS",
+      "provider_symbol": "CNP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CNP"
+    },
+    {
+      "asset_id": 96,
+      "exchange": "XNYS",
+      "provider_symbol": "CF",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CF"
+    },
+    {
+      "asset_id": 97,
+      "exchange": "XNYS",
+      "provider_symbol": "CRL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CRL"
+    },
+    {
+      "asset_id": 98,
+      "exchange": "XNYS",
+      "provider_symbol": "SCHW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SCHW"
+    },
+    {
+      "asset_id": 99,
+      "exchange": "XNAS",
+      "provider_symbol": "CHTR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CHTR"
+    },
+    {
+      "asset_id": 100,
+      "exchange": "XNYS",
+      "provider_symbol": "CVX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CVX"
+    },
+    {
+      "asset_id": 101,
+      "exchange": "XNYS",
+      "provider_symbol": "CMG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CMG"
+    },
+    {
+      "asset_id": 102,
+      "exchange": "XNYS",
+      "provider_symbol": "CB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CB"
+    },
+    {
+      "asset_id": 103,
+      "exchange": "XNYS",
+      "provider_symbol": "CHD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CHD"
+    },
+    {
+      "asset_id": 104,
+      "exchange": "XNYS",
+      "provider_symbol": "CIEN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CIEN"
+    },
+    {
+      "asset_id": 105,
+      "exchange": "XNYS",
+      "provider_symbol": "CI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CI"
+    },
+    {
+      "asset_id": 106,
+      "exchange": "XNAS",
+      "provider_symbol": "CINF",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CINF"
+    },
+    {
+      "asset_id": 107,
+      "exchange": "XNAS",
+      "provider_symbol": "CTAS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CTAS"
+    },
+    {
+      "asset_id": 108,
+      "exchange": "XNAS",
+      "provider_symbol": "CSCO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CSCO"
+    },
+    {
+      "asset_id": 109,
+      "exchange": "XNYS",
+      "provider_symbol": "C",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "C"
+    },
+    {
+      "asset_id": 110,
+      "exchange": "XNYS",
+      "provider_symbol": "CFG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CFG"
+    },
+    {
+      "asset_id": 111,
+      "exchange": "XNYS",
+      "provider_symbol": "CLX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CLX"
+    },
+    {
+      "asset_id": 112,
+      "exchange": "XNAS",
+      "provider_symbol": "CME",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CME"
+    },
+    {
+      "asset_id": 113,
+      "exchange": "XNYS",
+      "provider_symbol": "CMS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CMS"
+    },
+    {
+      "asset_id": 114,
+      "exchange": "XNYS",
+      "provider_symbol": "KO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KO"
+    },
+    {
+      "asset_id": 115,
+      "exchange": "XNAS",
+      "provider_symbol": "CTSH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CTSH"
+    },
+    {
+      "asset_id": 116,
+      "exchange": "XNYS",
+      "provider_symbol": "COHR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "COHR"
+    },
+    {
+      "asset_id": 117,
+      "exchange": "XNAS",
+      "provider_symbol": "COIN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "COIN"
+    },
+    {
+      "asset_id": 118,
+      "exchange": "XNYS",
+      "provider_symbol": "CL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CL"
+    },
+    {
+      "asset_id": 119,
+      "exchange": "XNAS",
+      "provider_symbol": "CMCSA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CMCSA"
+    },
+    {
+      "asset_id": 120,
+      "exchange": "XNYS",
+      "provider_symbol": "FIX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FIX"
+    },
+    {
+      "asset_id": 121,
+      "exchange": "XNYS",
+      "provider_symbol": "COP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "COP"
+    },
+    {
+      "asset_id": 122,
+      "exchange": "XNYS",
+      "provider_symbol": "ED",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ED"
+    },
+    {
+      "asset_id": 123,
+      "exchange": "XNYS",
+      "provider_symbol": "STZ",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "STZ"
+    },
+    {
+      "asset_id": 124,
+      "exchange": "XNAS",
+      "provider_symbol": "CEG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CEG"
+    },
+    {
+      "asset_id": 125,
+      "exchange": "XNAS",
+      "provider_symbol": "COO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "COO"
+    },
+    {
+      "asset_id": 126,
+      "exchange": "XNAS",
+      "provider_symbol": "CPRT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CPRT"
+    },
+    {
+      "asset_id": 127,
+      "exchange": "XNYS",
+      "provider_symbol": "GLW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GLW"
+    },
+    {
+      "asset_id": 128,
+      "exchange": "XNYS",
+      "provider_symbol": "CPAY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CPAY"
+    },
+    {
+      "asset_id": 129,
+      "exchange": "XNYS",
+      "provider_symbol": "CTVA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CTVA"
+    },
+    {
+      "asset_id": 130,
+      "exchange": "XNAS",
+      "provider_symbol": "CSGP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CSGP"
+    },
+    {
+      "asset_id": 131,
+      "exchange": "XNAS",
+      "provider_symbol": "COST",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "COST"
+    },
+    {
+      "asset_id": 132,
+      "exchange": "XNYS",
+      "provider_symbol": "CRH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CRH"
+    },
+    {
+      "asset_id": 133,
+      "exchange": "XNAS",
+      "provider_symbol": "CRWD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CRWD"
+    },
+    {
+      "asset_id": 134,
+      "exchange": "XNYS",
+      "provider_symbol": "CCI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CCI"
+    },
+    {
+      "asset_id": 135,
+      "exchange": "XNAS",
+      "provider_symbol": "CSX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CSX"
+    },
+    {
+      "asset_id": 136,
+      "exchange": "XNYS",
+      "provider_symbol": "CMI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CMI"
+    },
+    {
+      "asset_id": 137,
+      "exchange": "XNYS",
+      "provider_symbol": "CVS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CVS"
+    },
+    {
+      "asset_id": 138,
+      "exchange": "XNYS",
+      "provider_symbol": "DHR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DHR"
+    },
+    {
+      "asset_id": 139,
+      "exchange": "XNYS",
+      "provider_symbol": "DRI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DRI"
+    },
+    {
+      "asset_id": 140,
+      "exchange": "XNAS",
+      "provider_symbol": "DDOG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DDOG"
+    },
+    {
+      "asset_id": 141,
+      "exchange": "XNYS",
+      "provider_symbol": "DVA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DVA"
+    },
+    {
+      "asset_id": 142,
+      "exchange": "XNYS",
+      "provider_symbol": "DECK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DECK"
+    },
+    {
+      "asset_id": 143,
+      "exchange": "XNYS",
+      "provider_symbol": "DE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DE"
+    },
+    {
+      "asset_id": 144,
+      "exchange": "XNYS",
+      "provider_symbol": "DELL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DELL"
+    },
+    {
+      "asset_id": 145,
+      "exchange": "XNYS",
+      "provider_symbol": "DAL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DAL"
+    },
+    {
+      "asset_id": 146,
+      "exchange": "XNYS",
+      "provider_symbol": "DVN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DVN"
+    },
+    {
+      "asset_id": 147,
+      "exchange": "XNAS",
+      "provider_symbol": "DXCM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DXCM"
+    },
+    {
+      "asset_id": 148,
+      "exchange": "XNAS",
+      "provider_symbol": "FANG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FANG"
+    },
+    {
+      "asset_id": 149,
+      "exchange": "XNYS",
+      "provider_symbol": "DLR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DLR"
+    },
+    {
+      "asset_id": 150,
+      "exchange": "XNYS",
+      "provider_symbol": "DG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DG"
+    },
+    {
+      "asset_id": 151,
+      "exchange": "XNAS",
+      "provider_symbol": "DLTR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DLTR"
+    },
+    {
+      "asset_id": 152,
+      "exchange": "XNYS",
+      "provider_symbol": "D",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "D"
+    },
+    {
+      "asset_id": 153,
+      "exchange": "XNAS",
+      "provider_symbol": "DPZ",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DPZ"
+    },
+    {
+      "asset_id": 154,
+      "exchange": "XNAS",
+      "provider_symbol": "DASH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DASH"
+    },
+    {
+      "asset_id": 155,
+      "exchange": "XNYS",
+      "provider_symbol": "DOV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DOV"
+    },
+    {
+      "asset_id": 156,
+      "exchange": "XNYS",
+      "provider_symbol": "DOW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DOW"
+    },
+    {
+      "asset_id": 157,
+      "exchange": "XNYS",
+      "provider_symbol": "DHI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DHI"
+    },
+    {
+      "asset_id": 158,
+      "exchange": "XNYS",
+      "provider_symbol": "DTE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DTE"
+    },
+    {
+      "asset_id": 159,
+      "exchange": "XNYS",
+      "provider_symbol": "DUK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DUK"
+    },
+    {
+      "asset_id": 160,
+      "exchange": "XNYS",
+      "provider_symbol": "DD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DD"
+    },
+    {
+      "asset_id": 161,
+      "exchange": "XNYS",
+      "provider_symbol": "ETN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ETN"
+    },
+    {
+      "asset_id": 162,
+      "exchange": "XNAS",
+      "provider_symbol": "EBAY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EBAY"
+    },
+    {
+      "asset_id": 163,
+      "exchange": "XNAS",
+      "provider_symbol": "ECHO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ECHO"
+    },
+    {
+      "asset_id": 164,
+      "exchange": "XNYS",
+      "provider_symbol": "ECL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ECL"
+    },
+    {
+      "asset_id": 165,
+      "exchange": "XNYS",
+      "provider_symbol": "EIX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EIX"
+    },
+    {
+      "asset_id": 166,
+      "exchange": "XNYS",
+      "provider_symbol": "EW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EW"
+    },
+    {
+      "asset_id": 167,
+      "exchange": "XNYS",
+      "provider_symbol": "ELV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ELV"
+    },
+    {
+      "asset_id": 168,
+      "exchange": "XNYS",
+      "provider_symbol": "EME",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EME"
+    },
+    {
+      "asset_id": 169,
+      "exchange": "XNYS",
+      "provider_symbol": "EMR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EMR"
+    },
+    {
+      "asset_id": 170,
+      "exchange": "XNYS",
+      "provider_symbol": "ETR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ETR"
+    },
+    {
+      "asset_id": 171,
+      "exchange": "XNYS",
+      "provider_symbol": "EOG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EOG"
+    },
+    {
+      "asset_id": 172,
+      "exchange": "XNYS",
+      "provider_symbol": "EQT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EQT"
+    },
+    {
+      "asset_id": 173,
+      "exchange": "XNYS",
+      "provider_symbol": "EFX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EFX"
+    },
+    {
+      "asset_id": 174,
+      "exchange": "XNAS",
+      "provider_symbol": "EQIX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EQIX"
+    },
+    {
+      "asset_id": 175,
+      "exchange": "XNAS",
+      "provider_symbol": "ERIE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ERIE"
+    },
+    {
+      "asset_id": 176,
+      "exchange": "XNYS",
+      "provider_symbol": "ESS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ESS"
+    },
+    {
+      "asset_id": 177,
+      "exchange": "XNYS",
+      "provider_symbol": "EL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EL"
+    },
+    {
+      "asset_id": 178,
+      "exchange": "XNYS",
+      "provider_symbol": "EG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EG"
+    },
+    {
+      "asset_id": 179,
+      "exchange": "XNAS",
+      "provider_symbol": "EVRG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EVRG"
+    },
+    {
+      "asset_id": 180,
+      "exchange": "XNYS",
+      "provider_symbol": "ES",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ES"
+    },
+    {
+      "asset_id": 181,
+      "exchange": "XNAS",
+      "provider_symbol": "EXC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EXC"
+    },
+    {
+      "asset_id": 182,
+      "exchange": "XNAS",
+      "provider_symbol": "EXE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EXE"
+    },
+    {
+      "asset_id": 183,
+      "exchange": "XNAS",
+      "provider_symbol": "EXPE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EXPE"
+    },
+    {
+      "asset_id": 184,
+      "exchange": "XNYS",
+      "provider_symbol": "EXPD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EXPD"
+    },
+    {
+      "asset_id": 185,
+      "exchange": "XNYS",
+      "provider_symbol": "EXR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "EXR"
+    },
+    {
+      "asset_id": 186,
+      "exchange": "XNYS",
+      "provider_symbol": "XOM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "XOM"
+    },
+    {
+      "asset_id": 187,
+      "exchange": "XNAS",
+      "provider_symbol": "FFIV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FFIV"
+    },
+    {
+      "asset_id": 188,
+      "exchange": "XNYS",
+      "provider_symbol": "FDS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FDS"
+    },
+    {
+      "asset_id": 189,
+      "exchange": "XNYS",
+      "provider_symbol": "FICO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FICO"
+    },
+    {
+      "asset_id": 190,
+      "exchange": "XNAS",
+      "provider_symbol": "FAST",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FAST"
+    },
+    {
+      "asset_id": 191,
+      "exchange": "XNYS",
+      "provider_symbol": "FRT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FRT"
+    },
+    {
+      "asset_id": 192,
+      "exchange": "XNYS",
+      "provider_symbol": "FDX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FDX"
+    },
+    {
+      "asset_id": 194,
+      "exchange": "XNYS",
+      "provider_symbol": "FERG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FERG"
+    },
+    {
+      "asset_id": 195,
+      "exchange": "XNYS",
+      "provider_symbol": "FIS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FIS"
+    },
+    {
+      "asset_id": 196,
+      "exchange": "XNYS",
+      "provider_symbol": "FITB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FITB"
+    },
+    {
+      "asset_id": 197,
+      "exchange": "XNAS",
+      "provider_symbol": "FSLR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FSLR"
+    },
+    {
+      "asset_id": 198,
+      "exchange": "XNYS",
+      "provider_symbol": "FE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FE"
+    },
+    {
+      "asset_id": 200,
+      "exchange": "XNAS",
+      "provider_symbol": "FLEX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FLEX"
+    },
+    {
+      "asset_id": 201,
+      "exchange": "XNYS",
+      "provider_symbol": "F",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "F"
+    },
+    {
+      "asset_id": 202,
+      "exchange": "XNAS",
+      "provider_symbol": "FTNT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FTNT"
+    },
+    {
+      "asset_id": 203,
+      "exchange": "XNYS",
+      "provider_symbol": "FTV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FTV"
+    },
+    {
+      "asset_id": 204,
+      "exchange": "XNAS",
+      "provider_symbol": "FOXA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FOXA"
+    },
+    {
+      "asset_id": 205,
+      "exchange": "XNAS",
+      "provider_symbol": "FOX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FOX"
+    },
+    {
+      "asset_id": 206,
+      "exchange": "XNYS",
+      "provider_symbol": "BEN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "BEN"
+    },
+    {
+      "asset_id": 207,
+      "exchange": "XNYS",
+      "provider_symbol": "FCX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "FCX"
+    },
+    {
+      "asset_id": 208,
+      "exchange": "XNYS",
+      "provider_symbol": "GRMN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GRMN"
+    },
+    {
+      "asset_id": 209,
+      "exchange": "XNYS",
+      "provider_symbol": "IT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "IT"
+    },
+    {
+      "asset_id": 210,
+      "exchange": "XNYS",
+      "provider_symbol": "GE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GE"
+    },
+    {
+      "asset_id": 211,
+      "exchange": "XNAS",
+      "provider_symbol": "GEHC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GEHC"
+    },
+    {
+      "asset_id": 212,
+      "exchange": "XNYS",
+      "provider_symbol": "GEV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GEV"
+    },
+    {
+      "asset_id": 213,
+      "exchange": "XNAS",
+      "provider_symbol": "GEN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GEN"
+    },
+    {
+      "asset_id": 214,
+      "exchange": "XNYS",
+      "provider_symbol": "GNRC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GNRC"
+    },
+    {
+      "asset_id": 215,
+      "exchange": "XNYS",
+      "provider_symbol": "GD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GD"
+    },
+    {
+      "asset_id": 216,
+      "exchange": "XNYS",
+      "provider_symbol": "GIS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GIS"
+    },
+    {
+      "asset_id": 217,
+      "exchange": "XNYS",
+      "provider_symbol": "GM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GM"
+    },
+    {
+      "asset_id": 218,
+      "exchange": "XNYS",
+      "provider_symbol": "GPC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GPC"
+    },
+    {
+      "asset_id": 219,
+      "exchange": "XNAS",
+      "provider_symbol": "GILD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GILD"
+    },
+    {
+      "asset_id": 220,
+      "exchange": "XNYS",
+      "provider_symbol": "GPN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GPN"
+    },
+    {
+      "asset_id": 221,
+      "exchange": "XNYS",
+      "provider_symbol": "GL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GL"
+    },
+    {
+      "asset_id": 222,
+      "exchange": "XNYS",
+      "provider_symbol": "GDDY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GDDY"
+    },
+    {
+      "asset_id": 223,
+      "exchange": "XNYS",
+      "provider_symbol": "GS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GS"
+    },
+    {
+      "asset_id": 224,
+      "exchange": "XNYS",
+      "provider_symbol": "HAL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HAL"
+    },
+    {
+      "asset_id": 225,
+      "exchange": "XNYS",
+      "provider_symbol": "HIG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HIG"
+    },
+    {
+      "asset_id": 226,
+      "exchange": "XNAS",
+      "provider_symbol": "HAS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HAS"
+    },
+    {
+      "asset_id": 227,
+      "exchange": "XNYS",
+      "provider_symbol": "HCA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HCA"
+    },
+    {
+      "asset_id": 228,
+      "exchange": "XNYS",
+      "provider_symbol": "DOC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DOC"
+    },
+    {
+      "asset_id": 229,
+      "exchange": "XNAS",
+      "provider_symbol": "HSIC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HSIC"
+    },
+    {
+      "asset_id": 230,
+      "exchange": "XNYS",
+      "provider_symbol": "HSY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HSY"
+    },
+    {
+      "asset_id": 231,
+      "exchange": "XNYS",
+      "provider_symbol": "HPE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HPE"
+    },
+    {
+      "asset_id": 232,
+      "exchange": "XNYS",
+      "provider_symbol": "HLT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HLT"
+    },
+    {
+      "asset_id": 233,
+      "exchange": "XNYS",
+      "provider_symbol": "HD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HD"
+    },
+    {
+      "asset_id": 235,
+      "exchange": "XNAS",
+      "provider_symbol": "HON",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HON"
+    },
+    {
+      "asset_id": 236,
+      "exchange": "XNYS",
+      "provider_symbol": "HRL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HRL"
+    },
+    {
+      "asset_id": 237,
+      "exchange": "XNAS",
+      "provider_symbol": "HST",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HST"
+    },
+    {
+      "asset_id": 238,
+      "exchange": "XNYS",
+      "provider_symbol": "HWM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HWM"
+    },
+    {
+      "asset_id": 239,
+      "exchange": "XNYS",
+      "provider_symbol": "HPQ",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HPQ"
+    },
+    {
+      "asset_id": 241,
+      "exchange": "XNYS",
+      "provider_symbol": "HUM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HUM"
+    },
+    {
+      "asset_id": 242,
+      "exchange": "XNAS",
+      "provider_symbol": "HBAN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HBAN"
+    },
+    {
+      "asset_id": 243,
+      "exchange": "XNYS",
+      "provider_symbol": "HII",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HII"
+    },
+    {
+      "asset_id": 244,
+      "exchange": "XNYS",
+      "provider_symbol": "IBM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "IBM"
+    },
+    {
+      "asset_id": 245,
+      "exchange": "XNYS",
+      "provider_symbol": "IEX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "IEX"
+    },
+    {
+      "asset_id": 246,
+      "exchange": "XNAS",
+      "provider_symbol": "IDXX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "IDXX"
+    },
+    {
+      "asset_id": 247,
+      "exchange": "XNYS",
+      "provider_symbol": "ITW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ITW"
+    },
+    {
+      "asset_id": 248,
+      "exchange": "XNAS",
+      "provider_symbol": "INCY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "INCY"
+    },
+    {
+      "asset_id": 249,
+      "exchange": "XNYS",
+      "provider_symbol": "IR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "IR"
+    },
+    {
+      "asset_id": 250,
+      "exchange": "XNAS",
+      "provider_symbol": "PODD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PODD"
+    },
+    {
+      "asset_id": 251,
+      "exchange": "XNAS",
+      "provider_symbol": "INTC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "INTC"
+    },
+    {
+      "asset_id": 252,
+      "exchange": "XNAS",
+      "provider_symbol": "IBKR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "IBKR"
+    },
+    {
+      "asset_id": 253,
+      "exchange": "XNYS",
+      "provider_symbol": "ICE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ICE"
+    },
+    {
+      "asset_id": 254,
+      "exchange": "XNYS",
+      "provider_symbol": "IFF",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "IFF"
+    },
+    {
+      "asset_id": 255,
+      "exchange": "XNYS",
+      "provider_symbol": "IP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "IP"
+    },
+    {
+      "asset_id": 256,
+      "exchange": "XNAS",
+      "provider_symbol": "INTU",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "INTU"
+    },
+    {
+      "asset_id": 257,
+      "exchange": "XNAS",
+      "provider_symbol": "ISRG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ISRG"
+    },
+    {
+      "asset_id": 258,
+      "exchange": "XNYS",
+      "provider_symbol": "IVZ",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "IVZ"
+    },
+    {
+      "asset_id": 259,
+      "exchange": "XNYS",
+      "provider_symbol": "INVH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "INVH"
+    },
+    {
+      "asset_id": 260,
+      "exchange": "XNYS",
+      "provider_symbol": "IQV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "IQV"
+    },
+    {
+      "asset_id": 261,
+      "exchange": "XNYS",
+      "provider_symbol": "IRM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "IRM"
+    },
+    {
+      "asset_id": 262,
+      "exchange": "XNAS",
+      "provider_symbol": "JBHT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "JBHT"
+    },
+    {
+      "asset_id": 263,
+      "exchange": "XNYS",
+      "provider_symbol": "JBL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "JBL"
+    },
+    {
+      "asset_id": 264,
+      "exchange": "XNAS",
+      "provider_symbol": "JKHY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "JKHY"
+    },
+    {
+      "asset_id": 265,
+      "exchange": "XNYS",
+      "provider_symbol": "J",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "J"
+    },
+    {
+      "asset_id": 266,
+      "exchange": "XNYS",
+      "provider_symbol": "JNJ",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "JNJ"
+    },
+    {
+      "asset_id": 267,
+      "exchange": "XNYS",
+      "provider_symbol": "JCI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "JCI"
+    },
+    {
+      "asset_id": 268,
+      "exchange": "XNYS",
+      "provider_symbol": "JPM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "JPM"
+    },
+    {
+      "asset_id": 269,
+      "exchange": "XNYS",
+      "provider_symbol": "KVUE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KVUE"
+    },
+    {
+      "asset_id": 270,
+      "exchange": "XNAS",
+      "provider_symbol": "KDP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KDP"
+    },
+    {
+      "asset_id": 271,
+      "exchange": "XNYS",
+      "provider_symbol": "KEY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KEY"
+    },
+    {
+      "asset_id": 272,
+      "exchange": "XNYS",
+      "provider_symbol": "KEYS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KEYS"
+    },
+    {
+      "asset_id": 273,
+      "exchange": "XNAS",
+      "provider_symbol": "KMB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KMB"
+    },
+    {
+      "asset_id": 274,
+      "exchange": "XNYS",
+      "provider_symbol": "KIM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KIM"
+    },
+    {
+      "asset_id": 275,
+      "exchange": "XNYS",
+      "provider_symbol": "KMI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KMI"
+    },
+    {
+      "asset_id": 276,
+      "exchange": "XNYS",
+      "provider_symbol": "KKR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KKR"
+    },
+    {
+      "asset_id": 277,
+      "exchange": "XNAS",
+      "provider_symbol": "KLAC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KLAC"
+    },
+    {
+      "asset_id": 278,
+      "exchange": "XNAS",
+      "provider_symbol": "KHC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KHC"
+    },
+    {
+      "asset_id": 279,
+      "exchange": "XNYS",
+      "provider_symbol": "KR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "KR"
+    },
+    {
+      "asset_id": 280,
+      "exchange": "XNYS",
+      "provider_symbol": "LHX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LHX"
+    },
+    {
+      "asset_id": 281,
+      "exchange": "XNYS",
+      "provider_symbol": "LH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LH"
+    },
+    {
+      "asset_id": 282,
+      "exchange": "XNAS",
+      "provider_symbol": "LRCX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LRCX"
+    },
+    {
+      "asset_id": 283,
+      "exchange": "XNYS",
+      "provider_symbol": "LVS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LVS"
+    },
+    {
+      "asset_id": 284,
+      "exchange": "XNYS",
+      "provider_symbol": "LDOS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LDOS"
+    },
+    {
+      "asset_id": 285,
+      "exchange": "XNYS",
+      "provider_symbol": "LEN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LEN"
+    },
+    {
+      "asset_id": 286,
+      "exchange": "XNYS",
+      "provider_symbol": "LII",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LII"
+    },
+    {
+      "asset_id": 287,
+      "exchange": "XNYS",
+      "provider_symbol": "LLY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LLY"
+    },
+    {
+      "asset_id": 288,
+      "exchange": "XNAS",
+      "provider_symbol": "LIN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LIN"
+    },
+    {
+      "asset_id": 289,
+      "exchange": "XNYS",
+      "provider_symbol": "LYV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LYV"
+    },
+    {
+      "asset_id": 290,
+      "exchange": "XNYS",
+      "provider_symbol": "LMT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LMT"
+    },
+    {
+      "asset_id": 291,
+      "exchange": "XNYS",
+      "provider_symbol": "L",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "L"
+    },
+    {
+      "asset_id": 292,
+      "exchange": "XNYS",
+      "provider_symbol": "LOW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LOW"
+    },
+    {
+      "asset_id": 293,
+      "exchange": "XNAS",
+      "provider_symbol": "LULU",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LULU"
+    },
+    {
+      "asset_id": 294,
+      "exchange": "XNAS",
+      "provider_symbol": "LITE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LITE"
+    },
+    {
+      "asset_id": 295,
+      "exchange": "XNYS",
+      "provider_symbol": "LYB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LYB"
+    },
+    {
+      "asset_id": 296,
+      "exchange": "XNYS",
+      "provider_symbol": "MTB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MTB"
+    },
+    {
+      "asset_id": 297,
+      "exchange": "XNYS",
+      "provider_symbol": "MPC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MPC"
+    },
+    {
+      "asset_id": 298,
+      "exchange": "XNAS",
+      "provider_symbol": "MAR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MAR"
+    },
+    {
+      "asset_id": 299,
+      "exchange": "XNYS",
+      "provider_symbol": "MRSH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MRSH"
+    },
+    {
+      "asset_id": 300,
+      "exchange": "XNYS",
+      "provider_symbol": "MLM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MLM"
+    },
+    {
+      "asset_id": 301,
+      "exchange": "XNAS",
+      "provider_symbol": "MRVL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MRVL"
+    },
+    {
+      "asset_id": 302,
+      "exchange": "XNYS",
+      "provider_symbol": "MAS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MAS"
+    },
+    {
+      "asset_id": 303,
+      "exchange": "XNYS",
+      "provider_symbol": "MA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MA"
+    },
+    {
+      "asset_id": 304,
+      "exchange": "XNYS",
+      "provider_symbol": "MKC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MKC"
+    },
+    {
+      "asset_id": 305,
+      "exchange": "XNYS",
+      "provider_symbol": "MCD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MCD"
+    },
+    {
+      "asset_id": 306,
+      "exchange": "XNYS",
+      "provider_symbol": "MCK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MCK"
+    },
+    {
+      "asset_id": 307,
+      "exchange": "XNYS",
+      "provider_symbol": "MDT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MDT"
+    },
+    {
+      "asset_id": 308,
+      "exchange": "XNYS",
+      "provider_symbol": "MRK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MRK"
+    },
+    {
+      "asset_id": 309,
+      "exchange": "XNAS",
+      "provider_symbol": "META",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "META"
+    },
+    {
+      "asset_id": 310,
+      "exchange": "XNYS",
+      "provider_symbol": "MET",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MET"
+    },
+    {
+      "asset_id": 311,
+      "exchange": "XNYS",
+      "provider_symbol": "MTD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MTD"
+    },
+    {
+      "asset_id": 312,
+      "exchange": "XNYS",
+      "provider_symbol": "MGM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MGM"
+    },
+    {
+      "asset_id": 313,
+      "exchange": "XNAS",
+      "provider_symbol": "MCHP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MCHP"
+    },
+    {
+      "asset_id": 314,
+      "exchange": "XNAS",
+      "provider_symbol": "MU",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MU"
+    },
+    {
+      "asset_id": 315,
+      "exchange": "XNAS",
+      "provider_symbol": "MSFT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MSFT"
+    },
+    {
+      "asset_id": 316,
+      "exchange": "XNYS",
+      "provider_symbol": "MAA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MAA"
+    },
+    {
+      "asset_id": 317,
+      "exchange": "XNAS",
+      "provider_symbol": "MRNA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MRNA"
+    },
+    {
+      "asset_id": 318,
+      "exchange": "XNYS",
+      "provider_symbol": "TAP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TAP"
+    },
+    {
+      "asset_id": 319,
+      "exchange": "XNAS",
+      "provider_symbol": "MDLZ",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MDLZ"
+    },
+    {
+      "asset_id": 320,
+      "exchange": "XNAS",
+      "provider_symbol": "MPWR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MPWR"
+    },
+    {
+      "asset_id": 322,
+      "exchange": "XNYS",
+      "provider_symbol": "MCO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MCO"
+    },
+    {
+      "asset_id": 323,
+      "exchange": "XNYS",
+      "provider_symbol": "MS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MS"
+    },
+    {
+      "asset_id": 324,
+      "exchange": "XNYS",
+      "provider_symbol": "MOS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MOS"
+    },
+    {
+      "asset_id": 325,
+      "exchange": "XNYS",
+      "provider_symbol": "MSI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MSI"
+    },
+    {
+      "asset_id": 326,
+      "exchange": "XNYS",
+      "provider_symbol": "MSCI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "MSCI"
+    },
+    {
+      "asset_id": 327,
+      "exchange": "XNAS",
+      "provider_symbol": "NDAQ",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NDAQ"
+    },
+    {
+      "asset_id": 328,
+      "exchange": "XNAS",
+      "provider_symbol": "NTAP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NTAP"
+    },
+    {
+      "asset_id": 329,
+      "exchange": "XNAS",
+      "provider_symbol": "NFLX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NFLX"
+    },
+    {
+      "asset_id": 330,
+      "exchange": "XNYS",
+      "provider_symbol": "NEM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NEM"
+    },
+    {
+      "asset_id": 331,
+      "exchange": "XNAS",
+      "provider_symbol": "NWSA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NWSA"
+    },
+    {
+      "asset_id": 332,
+      "exchange": "XNAS",
+      "provider_symbol": "NWS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NWS"
+    },
+    {
+      "asset_id": 333,
+      "exchange": "XNYS",
+      "provider_symbol": "NEE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NEE"
+    },
+    {
+      "asset_id": 334,
+      "exchange": "XNYS",
+      "provider_symbol": "NKE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NKE"
+    },
+    {
+      "asset_id": 335,
+      "exchange": "XNYS",
+      "provider_symbol": "NI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NI"
+    },
+    {
+      "asset_id": 336,
+      "exchange": "XNAS",
+      "provider_symbol": "NDSN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NDSN"
+    },
+    {
+      "asset_id": 337,
+      "exchange": "XNYS",
+      "provider_symbol": "NSC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NSC"
+    },
+    {
+      "asset_id": 338,
+      "exchange": "XNAS",
+      "provider_symbol": "NTRS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NTRS"
+    },
+    {
+      "asset_id": 339,
+      "exchange": "XNYS",
+      "provider_symbol": "NOC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NOC"
+    },
+    {
+      "asset_id": 340,
+      "exchange": "XNYS",
+      "provider_symbol": "NCLH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NCLH"
+    },
+    {
+      "asset_id": 341,
+      "exchange": "XNYS",
+      "provider_symbol": "NRG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NRG"
+    },
+    {
+      "asset_id": 342,
+      "exchange": "XNYS",
+      "provider_symbol": "NUE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NUE"
+    },
+    {
+      "asset_id": 343,
+      "exchange": "XNAS",
+      "provider_symbol": "NVDA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NVDA"
+    },
+    {
+      "asset_id": 344,
+      "exchange": "XNYS",
+      "provider_symbol": "NVR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NVR"
+    },
+    {
+      "asset_id": 345,
+      "exchange": "XNAS",
+      "provider_symbol": "NXPI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NXPI"
+    },
+    {
+      "asset_id": 346,
+      "exchange": "XNAS",
+      "provider_symbol": "ORLY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ORLY"
+    },
+    {
+      "asset_id": 347,
+      "exchange": "XNYS",
+      "provider_symbol": "OXY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "OXY"
+    },
+    {
+      "asset_id": 348,
+      "exchange": "XNAS",
+      "provider_symbol": "ODFL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ODFL"
+    },
+    {
+      "asset_id": 349,
+      "exchange": "XNYS",
+      "provider_symbol": "OMC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "OMC"
+    },
+    {
+      "asset_id": 350,
+      "exchange": "XNAS",
+      "provider_symbol": "ON",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ON"
+    },
+    {
+      "asset_id": 351,
+      "exchange": "XNYS",
+      "provider_symbol": "OKE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "OKE"
+    },
+    {
+      "asset_id": 352,
+      "exchange": "XNYS",
+      "provider_symbol": "ORCL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ORCL"
+    },
+    {
+      "asset_id": 353,
+      "exchange": "XNYS",
+      "provider_symbol": "OTIS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "OTIS"
+    },
+    {
+      "asset_id": 354,
+      "exchange": "XNAS",
+      "provider_symbol": "PCAR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PCAR"
+    },
+    {
+      "asset_id": 355,
+      "exchange": "XNYS",
+      "provider_symbol": "PKG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PKG"
+    },
+    {
+      "asset_id": 356,
+      "exchange": "XNAS",
+      "provider_symbol": "PLTR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PLTR"
+    },
+    {
+      "asset_id": 357,
+      "exchange": "XNAS",
+      "provider_symbol": "PANW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PANW"
+    },
+    {
+      "asset_id": 358,
+      "exchange": "XNAS",
+      "provider_symbol": "PSKY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PSKY"
+    },
+    {
+      "asset_id": 359,
+      "exchange": "XNYS",
+      "provider_symbol": "PH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PH"
+    },
+    {
+      "asset_id": 360,
+      "exchange": "XNAS",
+      "provider_symbol": "PAYX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PAYX"
+    },
+    {
+      "asset_id": 361,
+      "exchange": "XNAS",
+      "provider_symbol": "PYPL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PYPL"
+    },
+    {
+      "asset_id": 362,
+      "exchange": "XNYS",
+      "provider_symbol": "PNR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PNR"
+    },
+    {
+      "asset_id": 363,
+      "exchange": "XNAS",
+      "provider_symbol": "PEP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PEP"
+    },
+    {
+      "asset_id": 364,
+      "exchange": "XNYS",
+      "provider_symbol": "PFE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PFE"
+    },
+    {
+      "asset_id": 365,
+      "exchange": "XNYS",
+      "provider_symbol": "PCG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PCG"
+    },
+    {
+      "asset_id": 366,
+      "exchange": "XNYS",
+      "provider_symbol": "PM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PM"
+    },
+    {
+      "asset_id": 367,
+      "exchange": "XNYS",
+      "provider_symbol": "PSX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PSX"
+    },
+    {
+      "asset_id": 368,
+      "exchange": "XNYS",
+      "provider_symbol": "PNW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PNW"
+    },
+    {
+      "asset_id": 369,
+      "exchange": "XNYS",
+      "provider_symbol": "PNC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PNC"
+    },
+    {
+      "asset_id": 370,
+      "exchange": "XNYS",
+      "provider_symbol": "PPG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PPG"
+    },
+    {
+      "asset_id": 371,
+      "exchange": "XNYS",
+      "provider_symbol": "PPL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PPL"
+    },
+    {
+      "asset_id": 372,
+      "exchange": "XNAS",
+      "provider_symbol": "PFG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PFG"
+    },
+    {
+      "asset_id": 373,
+      "exchange": "XNYS",
+      "provider_symbol": "PG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PG"
+    },
+    {
+      "asset_id": 374,
+      "exchange": "XNYS",
+      "provider_symbol": "PGR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PGR"
+    },
+    {
+      "asset_id": 375,
+      "exchange": "XNYS",
+      "provider_symbol": "PLD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PLD"
+    },
+    {
+      "asset_id": 376,
+      "exchange": "XNYS",
+      "provider_symbol": "PRU",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PRU"
+    },
+    {
+      "asset_id": 377,
+      "exchange": "XNYS",
+      "provider_symbol": "PEG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PEG"
+    },
+    {
+      "asset_id": 378,
+      "exchange": "XNAS",
+      "provider_symbol": "PTC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PTC"
+    },
+    {
+      "asset_id": 379,
+      "exchange": "XNYS",
+      "provider_symbol": "PSA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PSA"
+    },
+    {
+      "asset_id": 380,
+      "exchange": "XNYS",
+      "provider_symbol": "PHM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PHM"
+    },
+    {
+      "asset_id": 381,
+      "exchange": "XNYS",
+      "provider_symbol": "PWR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "PWR"
+    },
+    {
+      "asset_id": 382,
+      "exchange": "XNAS",
+      "provider_symbol": "QCOM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "QCOM"
+    },
+    {
+      "asset_id": 383,
+      "exchange": "XNYS",
+      "provider_symbol": "DGX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DGX"
+    },
+    {
+      "asset_id": 385,
+      "exchange": "XNYS",
+      "provider_symbol": "RL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "RL"
+    },
+    {
+      "asset_id": 386,
+      "exchange": "XNYS",
+      "provider_symbol": "RJF",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "RJF"
+    },
+    {
+      "asset_id": 387,
+      "exchange": "XNYS",
+      "provider_symbol": "RDDT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "RDDT"
+    },
+    {
+      "asset_id": 388,
+      "exchange": "XNYS",
+      "provider_symbol": "RTX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "RTX"
+    },
+    {
+      "asset_id": 389,
+      "exchange": "XNYS",
+      "provider_symbol": "O",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "O"
+    },
+    {
+      "asset_id": 390,
+      "exchange": "XNAS",
+      "provider_symbol": "REG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "REG"
+    },
+    {
+      "asset_id": 391,
+      "exchange": "XNAS",
+      "provider_symbol": "REGN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "REGN"
+    },
+    {
+      "asset_id": 392,
+      "exchange": "XNYS",
+      "provider_symbol": "RF",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "RF"
+    },
+    {
+      "asset_id": 393,
+      "exchange": "XNYS",
+      "provider_symbol": "RSG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "RSG"
+    },
+    {
+      "asset_id": 394,
+      "exchange": "XNYS",
+      "provider_symbol": "RMD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "RMD"
+    },
+    {
+      "asset_id": 395,
+      "exchange": "XNYS",
+      "provider_symbol": "RVTY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "RVTY"
+    },
+    {
+      "asset_id": 396,
+      "exchange": "XNAS",
+      "provider_symbol": "HOOD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "HOOD"
+    },
+    {
+      "asset_id": 397,
+      "exchange": "XNYS",
+      "provider_symbol": "ROK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ROK"
+    },
+    {
+      "asset_id": 398,
+      "exchange": "XNYS",
+      "provider_symbol": "ROL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ROL"
+    },
+    {
+      "asset_id": 399,
+      "exchange": "XNAS",
+      "provider_symbol": "ROP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ROP"
+    },
+    {
+      "asset_id": 400,
+      "exchange": "XNAS",
+      "provider_symbol": "ROST",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ROST"
+    },
+    {
+      "asset_id": 401,
+      "exchange": "XNYS",
+      "provider_symbol": "RCL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "RCL"
+    },
+    {
+      "asset_id": 402,
+      "exchange": "XNYS",
+      "provider_symbol": "SPGI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SPGI"
+    },
+    {
+      "asset_id": 403,
+      "exchange": "XNYS",
+      "provider_symbol": "CRM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "CRM"
+    },
+    {
+      "asset_id": 404,
+      "exchange": "XNAS",
+      "provider_symbol": "SNDK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SNDK"
+    },
+    {
+      "asset_id": 405,
+      "exchange": "XNAS",
+      "provider_symbol": "SBAC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SBAC"
+    },
+    {
+      "asset_id": 406,
+      "exchange": "XNYS",
+      "provider_symbol": "SLB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SLB"
+    },
+    {
+      "asset_id": 407,
+      "exchange": "XNAS",
+      "provider_symbol": "STX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "STX"
+    },
+    {
+      "asset_id": 408,
+      "exchange": "XNYS",
+      "provider_symbol": "SRE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SRE"
+    },
+    {
+      "asset_id": 409,
+      "exchange": "XNYS",
+      "provider_symbol": "NOW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "NOW"
+    },
+    {
+      "asset_id": 410,
+      "exchange": "XNYS",
+      "provider_symbol": "SHW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SHW"
+    },
+    {
+      "asset_id": 411,
+      "exchange": "XNYS",
+      "provider_symbol": "SPG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SPG"
+    },
+    {
+      "asset_id": 412,
+      "exchange": "XNAS",
+      "provider_symbol": "SWKS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SWKS"
+    },
+    {
+      "asset_id": 413,
+      "exchange": "XNYS",
+      "provider_symbol": "SJM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SJM"
+    },
+    {
+      "asset_id": 414,
+      "exchange": "XNYS",
+      "provider_symbol": "SW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SW"
+    },
+    {
+      "asset_id": 415,
+      "exchange": "XNYS",
+      "provider_symbol": "SNA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SNA"
+    },
+    {
+      "asset_id": 416,
+      "exchange": "XNYS",
+      "provider_symbol": "SOLV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SOLV"
+    },
+    {
+      "asset_id": 417,
+      "exchange": "XNYS",
+      "provider_symbol": "SO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SO"
+    },
+    {
+      "asset_id": 418,
+      "exchange": "XNYS",
+      "provider_symbol": "LUV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "LUV"
+    },
+    {
+      "asset_id": 419,
+      "exchange": "XNYS",
+      "provider_symbol": "SWK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SWK"
+    },
+    {
+      "asset_id": 420,
+      "exchange": "XNAS",
+      "provider_symbol": "SBUX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SBUX"
+    },
+    {
+      "asset_id": 421,
+      "exchange": "XNYS",
+      "provider_symbol": "STT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "STT"
+    },
+    {
+      "asset_id": 422,
+      "exchange": "XNAS",
+      "provider_symbol": "STLD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "STLD"
+    },
+    {
+      "asset_id": 423,
+      "exchange": "XNYS",
+      "provider_symbol": "STE",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "STE"
+    },
+    {
+      "asset_id": 424,
+      "exchange": "XNYS",
+      "provider_symbol": "SYK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SYK"
+    },
+    {
+      "asset_id": 425,
+      "exchange": "XNAS",
+      "provider_symbol": "SMCI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SMCI"
+    },
+    {
+      "asset_id": 426,
+      "exchange": "XNYS",
+      "provider_symbol": "SYF",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SYF"
+    },
+    {
+      "asset_id": 427,
+      "exchange": "XNAS",
+      "provider_symbol": "SNPS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SNPS"
+    },
+    {
+      "asset_id": 428,
+      "exchange": "XNYS",
+      "provider_symbol": "SYY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "SYY"
+    },
+    {
+      "asset_id": 429,
+      "exchange": "XNAS",
+      "provider_symbol": "TMUS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TMUS"
+    },
+    {
+      "asset_id": 430,
+      "exchange": "XNAS",
+      "provider_symbol": "TROW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TROW"
+    },
+    {
+      "asset_id": 431,
+      "exchange": "XNAS",
+      "provider_symbol": "TTWO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TTWO"
+    },
+    {
+      "asset_id": 432,
+      "exchange": "XNYS",
+      "provider_symbol": "TPR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TPR"
+    },
+    {
+      "asset_id": 433,
+      "exchange": "XNYS",
+      "provider_symbol": "TRGP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TRGP"
+    },
+    {
+      "asset_id": 434,
+      "exchange": "XNYS",
+      "provider_symbol": "TGT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TGT"
+    },
+    {
+      "asset_id": 435,
+      "exchange": "XNYS",
+      "provider_symbol": "TEL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TEL"
+    },
+    {
+      "asset_id": 436,
+      "exchange": "XNYS",
+      "provider_symbol": "TDY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TDY"
+    },
+    {
+      "asset_id": 437,
+      "exchange": "XNAS",
+      "provider_symbol": "TER",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TER"
+    },
+    {
+      "asset_id": 438,
+      "exchange": "XNAS",
+      "provider_symbol": "TSLA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TSLA"
+    },
+    {
+      "asset_id": 439,
+      "exchange": "XNAS",
+      "provider_symbol": "TXN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TXN"
+    },
+    {
+      "asset_id": 440,
+      "exchange": "XNYS",
+      "provider_symbol": "TPL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TPL"
+    },
+    {
+      "asset_id": 441,
+      "exchange": "XNYS",
+      "provider_symbol": "TXT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TXT"
+    },
+    {
+      "asset_id": 442,
+      "exchange": "XNYS",
+      "provider_symbol": "TMO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TMO"
+    },
+    {
+      "asset_id": 443,
+      "exchange": "XNYS",
+      "provider_symbol": "TJX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TJX"
+    },
+    {
+      "asset_id": 444,
+      "exchange": "XNYS",
+      "provider_symbol": "TKO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TKO"
+    },
+    {
+      "asset_id": 445,
+      "exchange": "XNAS",
+      "provider_symbol": "TTD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TTD"
+    },
+    {
+      "asset_id": 446,
+      "exchange": "XNAS",
+      "provider_symbol": "TSCO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TSCO"
+    },
+    {
+      "asset_id": 447,
+      "exchange": "XNYS",
+      "provider_symbol": "TT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TT"
+    },
+    {
+      "asset_id": 448,
+      "exchange": "XNYS",
+      "provider_symbol": "TDG",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TDG"
+    },
+    {
+      "asset_id": 449,
+      "exchange": "XNYS",
+      "provider_symbol": "TRV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TRV"
+    },
+    {
+      "asset_id": 450,
+      "exchange": "XNAS",
+      "provider_symbol": "TRMB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TRMB"
+    },
+    {
+      "asset_id": 451,
+      "exchange": "XNYS",
+      "provider_symbol": "TFC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TFC"
+    },
+    {
+      "asset_id": 452,
+      "exchange": "XNYS",
+      "provider_symbol": "TYL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TYL"
+    },
+    {
+      "asset_id": 453,
+      "exchange": "XNYS",
+      "provider_symbol": "TSN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "TSN"
+    },
+    {
+      "asset_id": 454,
+      "exchange": "XNYS",
+      "provider_symbol": "USB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "USB"
+    },
+    {
+      "asset_id": 455,
+      "exchange": "XNYS",
+      "provider_symbol": "UBER",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "UBER"
+    },
+    {
+      "asset_id": 456,
+      "exchange": "XNYS",
+      "provider_symbol": "UDR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "UDR"
+    },
+    {
+      "asset_id": 457,
+      "exchange": "XNAS",
+      "provider_symbol": "ULTA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ULTA"
+    },
+    {
+      "asset_id": 458,
+      "exchange": "XNYS",
+      "provider_symbol": "UNP",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "UNP"
+    },
+    {
+      "asset_id": 459,
+      "exchange": "XNAS",
+      "provider_symbol": "UAL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "UAL"
+    },
+    {
+      "asset_id": 460,
+      "exchange": "XNYS",
+      "provider_symbol": "UPS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "UPS"
+    },
+    {
+      "asset_id": 461,
+      "exchange": "XNYS",
+      "provider_symbol": "URI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "URI"
+    },
+    {
+      "asset_id": 462,
+      "exchange": "XNYS",
+      "provider_symbol": "UNH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "UNH"
+    },
+    {
+      "asset_id": 463,
+      "exchange": "XNYS",
+      "provider_symbol": "UHS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "UHS"
+    },
+    {
+      "asset_id": 464,
+      "exchange": "XNYS",
+      "provider_symbol": "VLO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VLO"
+    },
+    {
+      "asset_id": 465,
+      "exchange": "XNYS",
+      "provider_symbol": "VEEV",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VEEV"
+    },
+    {
+      "asset_id": 466,
+      "exchange": "XNYS",
+      "provider_symbol": "VTR",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VTR"
+    },
+    {
+      "asset_id": 467,
+      "exchange": "XNYS",
+      "provider_symbol": "VLTO",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VLTO"
+    },
+    {
+      "asset_id": 468,
+      "exchange": "XNAS",
+      "provider_symbol": "VRSN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VRSN"
+    },
+    {
+      "asset_id": 469,
+      "exchange": "XNAS",
+      "provider_symbol": "VRSK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VRSK"
+    },
+    {
+      "asset_id": 470,
+      "exchange": "XNYS",
+      "provider_symbol": "VZ",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VZ"
+    },
+    {
+      "asset_id": 471,
+      "exchange": "XNAS",
+      "provider_symbol": "VRTX",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VRTX"
+    },
+    {
+      "asset_id": 472,
+      "exchange": "XNYS",
+      "provider_symbol": "VRT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VRT"
+    },
+    {
+      "asset_id": 473,
+      "exchange": "XNAS",
+      "provider_symbol": "VTRS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VTRS"
+    },
+    {
+      "asset_id": 474,
+      "exchange": "XNYS",
+      "provider_symbol": "VICI",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VICI"
+    },
+    {
+      "asset_id": 475,
+      "exchange": "XNYS",
+      "provider_symbol": "V",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "V"
+    },
+    {
+      "asset_id": 476,
+      "exchange": "XNYS",
+      "provider_symbol": "VST",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VST"
+    },
+    {
+      "asset_id": 477,
+      "exchange": "XNYS",
+      "provider_symbol": "VMRK",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VMRK"
+    },
+    {
+      "asset_id": 478,
+      "exchange": "XNYS",
+      "provider_symbol": "VMC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "VMC"
+    },
+    {
+      "asset_id": 479,
+      "exchange": "XNYS",
+      "provider_symbol": "WRB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WRB"
+    },
+    {
+      "asset_id": 480,
+      "exchange": "XNYS",
+      "provider_symbol": "GWW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "GWW"
+    },
+    {
+      "asset_id": 481,
+      "exchange": "XNYS",
+      "provider_symbol": "WAB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WAB"
+    },
+    {
+      "asset_id": 482,
+      "exchange": "XNYS",
+      "provider_symbol": "WMT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WMT"
+    },
+    {
+      "asset_id": 483,
+      "exchange": "XNYS",
+      "provider_symbol": "DIS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "DIS"
+    },
+    {
+      "asset_id": 484,
+      "exchange": "XNAS",
+      "provider_symbol": "WBD",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WBD"
+    },
+    {
+      "asset_id": 485,
+      "exchange": "XNYS",
+      "provider_symbol": "WM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WM"
+    },
+    {
+      "asset_id": 486,
+      "exchange": "XNYS",
+      "provider_symbol": "WAT",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WAT"
+    },
+    {
+      "asset_id": 487,
+      "exchange": "XNYS",
+      "provider_symbol": "WEC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WEC"
+    },
+    {
+      "asset_id": 488,
+      "exchange": "XNYS",
+      "provider_symbol": "WFC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WFC"
+    },
+    {
+      "asset_id": 489,
+      "exchange": "XNYS",
+      "provider_symbol": "WELL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WELL"
+    },
+    {
+      "asset_id": 490,
+      "exchange": "XNYS",
+      "provider_symbol": "WST",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WST"
+    },
+    {
+      "asset_id": 491,
+      "exchange": "XNAS",
+      "provider_symbol": "WDC",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WDC"
+    },
+    {
+      "asset_id": 492,
+      "exchange": "XNYS",
+      "provider_symbol": "WY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WY"
+    },
+    {
+      "asset_id": 493,
+      "exchange": "XNYS",
+      "provider_symbol": "WSM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WSM"
+    },
+    {
+      "asset_id": 494,
+      "exchange": "XNYS",
+      "provider_symbol": "WMB",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WMB"
+    },
+    {
+      "asset_id": 495,
+      "exchange": "XNAS",
+      "provider_symbol": "WTW",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WTW"
+    },
+    {
+      "asset_id": 496,
+      "exchange": "XNAS",
+      "provider_symbol": "WDAY",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WDAY"
+    },
+    {
+      "asset_id": 497,
+      "exchange": "XNAS",
+      "provider_symbol": "WYNN",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "WYNN"
+    },
+    {
+      "asset_id": 498,
+      "exchange": "XNAS",
+      "provider_symbol": "XEL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "XEL"
+    },
+    {
+      "asset_id": 499,
+      "exchange": "XNYS",
+      "provider_symbol": "XYL",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "XYL"
+    },
+    {
+      "asset_id": 500,
+      "exchange": "XNYS",
+      "provider_symbol": "YUM",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "YUM"
+    },
+    {
+      "asset_id": 501,
+      "exchange": "XNAS",
+      "provider_symbol": "ZBRA",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ZBRA"
+    },
+    {
+      "asset_id": 502,
+      "exchange": "XNYS",
+      "provider_symbol": "ZBH",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ZBH"
+    },
+    {
+      "asset_id": 503,
+      "exchange": "XNYS",
+      "provider_symbol": "ZTS",
+      "requested_end_exclusive": "2026-08-29",
+      "requested_start": "2026-08-25",
+      "source_last_day": "2026-08-24",
+      "status": "PENDING",
+      "ticker": "ZTS"
+    }
+  ],
+  "clock": {
+    "calendars": {
+      "BATS": {
+        "calendar": "BATS",
+        "close_utc": "2026-08-28T20:00:00+00:00"
+      },
+      "XNAS": {
+        "calendar": "XNAS",
+        "close_utc": "2026-08-28T20:00:00+00:00"
+      },
+      "XNYS": {
+        "calendar": "XNYS",
+        "close_utc": "2026-08-28T20:00:00+00:00"
+      }
+    },
+    "checked_at_utc": "2026-08-27T21:42:15.364343+00:00",
+    "earliest_acquire_utc": "2026-08-28T20:20:00+00:00",
+    "latest_close_utc": "2026-08-28T20:00:00+00:00",
+    "status": "WAITING_FOR_CLOSE"
+  },
+  "experiment_version": "market_brain_distributional_v009_prospective_holdout_v001",
+  "failures": [],
+  "fixed_artifact_sha256": "6d3123011cde05a3584506b5897c3c653b5d8372963e04a424d7da7acdfdd8b0",
+  "fixed_fit_id": "fit_e5c5616664c919a2624e6daaad39d1ca",
+  "frozen_universe_assets": 497,
+  "origin_day": "2026-08-28",
+  "pending": 497,
+  "refit_v009_after_refresh": false,
+  "refresh_version": "market_brain_daily_refresh_v009_v001",
+  "status": "WAITING_FOR_CLOSE"
+}

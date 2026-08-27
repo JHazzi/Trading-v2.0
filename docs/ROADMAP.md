@@ -1,33 +1,34 @@
 # Research Roadmap
 
-**Snapshot:** 2026-08-26  
+**Snapshot:** 2026-08-27
 **Rule:** complexity is added only after the previous information contract earns it OOS.
 
-## Active sequence after the 2026-08-26 checkpoint
+## Active sequence after the 2026-08-27 checkpoint
 
 ```text
 Event V0.2.1 robustness                    COMPLETE: conditional/unstable
 Market scalar V003–V005.2                 COMPLETE: no promoted model
 Distributional V006 empirical baseline    COMPLETE: scale information supported
-V006.1 robustness/falsification           NEXT
-learned distributional Market Brain       AFTER V006.1 preregistration
-distributional Event Brain                AFTER credible market distribution
+V006.1 robustness/falsification           COMPLETE: vol63 strongest scale clue
+V007 adaptive asymmetric scale            COMPLETE: rejected vs vol63
+V008 conditional residual quantiles       COMPLETE: 4/4 significant failures
+V008.1 endogenous closure                 COMPLETE: H1 developmental pass
+V009 prospective temporal confirmation    ACTIVE: fit frozen; first origin 2026-08-28
+distributional Event Brain                PARALLEL developmental track on existing SEC
 identity hygiene                          REVIEW in parallel; no graph promotion
 graph propagation                         BLOCKED until direct event increment
 trajectory/risk/decision                  DEFERRED
 ```
 
-V006.1 must keep the completed primary untouched. It should report temporal-fold stability, asset/sector concentration, tail-specific loss, high/low-volatility regimes, calibration drift and predeclared alternative causal scale definitions. Diagnostics may falsify or narrow the claim; they cannot retroactively select a preferred specification.
-
-The next learned model requires:
-
-- a new version and preregistration;
-- nested temporal validation for architecture/hyperparameters;
-- an untouched final temporal comparison or another explicit anti-selection design;
-- the unconditional empirical distribution and V006 volatility-scaled distribution as controls;
-- pinball/calibration as primary, with Brier and median MAE reported even if negative;
-- all four horizons reported;
-- no event, graph or production decision features in the first learned Market Brain increment.
+V009 keeps raw vol63, the exact 14-feature V008.1 own-state family, the fixed
+shallow profile and the no-calibration rule untouched. It uses one pre-holdout
+fit and no refit during confirmation. Predictions must be sealed within 16
+hours of the causal state close; missed eligible origins cannot be backfilled.
+The first 126 resolved origins are descriptive only. The first 252 consecutive
+eligible origins are the sole formal gate, using origin-day-equal pinball,
+5/10/20-day moving blocks, five chronological stability blocks, quantile breadth
+and calibration. Event Brain research may proceed separately but cannot
+validate, rescue or change V009.
 
 ## Phase 0 — Documentation checkpoint
 

@@ -1,9 +1,9 @@
-# Research Status — 2026-08-26
+# Research Status — 2026-08-27
 
 **Status:** canonical empirical checkpoint  
 **Scope:** research, not production trading
 
-## Current checkpoint — 2026-08-26
+## Current checkpoint — 2026-08-27
 
 ### Completed falsification work
 
@@ -27,6 +27,56 @@ Daily scalar Market Brain results are closed:
 | V005.2 financial conditions increment | incremental 10-day-block CIs cross zero at all horizons; absolute skill remains negative |
 
 No scalar daily model is promoted.
+### Distributional V008.1 developmental pass and V009 prospective gate
+
+V007's handcrafted adaptive asymmetric asset-scale model failed against the
+raw vol63 empirical reference at H1/H3/H5/H10. No horizon had a positive point
+estimate and calibration was worse at all horizons.
+
+V008 then tested conditional standardized-return quantiles from the frozen
+Core V003 endogenous state. The full candidate failed significantly against
+the equally recent-calibrated vol63 reference at all four horizons:
+
+| Horizon | Full minus calibrated-vol63 skill delta | Block-10 95% CI |
+|---:|---:|---:|
+| H1 | -0.005920 pp | [-0.009783, -0.001948] |
+| H3 | -0.017368 pp | [-0.025117, -0.010092] |
+| H5 | -0.025534 pp | [-0.039537, -0.012224] |
+| H10 | -0.068362 pp | [-0.096638, -0.038895] |
+
+The full candidate also lost to raw vol63 at all horizons. The 126-origin-day
+recent recalibration itself harmed raw vol63 at H1/H3/H5/H10. The shallow
+regularized profile was selected in all 20 nested fold/horizon selections.
+
+Supported interpretation: the current full endogenous feature/representation/
+model/calibration contract did not add stable distributional information
+beyond raw vol63. This does not prove that every possible endogenous
+representation is uninformative.
+
+V008.1 completed and passed all six frozen H1 developmental checks:
+
+- daily-equal pinball delta versus raw vol63: `+0.004703 pp`;
+- block-10 95% interval: `[+0.002923, +0.006582]`;
+- 4/5 temporal folds, 4/5 quantiles, 466/497 assets, 11/11 sectors and
+  6/7 years positive;
+- candidate calibration not worse;
+- positive interval versus the mean five-seed capacity placebo and a positive
+  point delta versus every placebo seed.
+
+The improvement is concentrated in q05/q25/q75/q95; q50, median MAE and
+positive-return Brier are worse. The supported developmental object is
+conditional distribution shape/tails, not location, direction or alpha.
+H3 corroborates the pattern; H5/H10 remain dependence-aware inconclusive.
+
+V009 is now preregistered as the untouched temporal confirmation. It freezes a
+single pre-holdout fit, the 497-asset snapshot cohort, a 16-hour seal window,
+append-only predictions/outcomes and the first 252 consecutive eligible H1
+origins as the only formal promotion cohort. The 126-origin checkpoint is
+descriptive only. The plan passed and fit
+`fit_e5c5616664c919a2624e6daaad39d1ca` is frozen over 1,078,329 rows through
+target day 2026-08-24. The first allowed origin remains 2026-08-28. Daily
+refresh infrastructure materializes new source/Core states without refitting
+or changing the historical training hash.
 
 ### Distributional Market Brain V006 empirical foundation
 
@@ -102,12 +152,16 @@ The next identity gate is human/scientific review followed by an upstream Struct
 
 ### Ordered next work
 
-1. V006.1 robustness/falsification without changing the completed primary.
-2. A separately preregistered learned distributional Market Brain with nested temporal selection and V006 as control.
-3. Distributional Event Brain on the existing SEC corpus with a capacity-matched market-only control.
-4. Upstream identity hygiene; no graph promotion yet.
-5. Richer semantics/sources only after incremental OOS evidence.
-6. Coherent path, risk, costs, decisions and controlled learning later.
+1. Materialize each eligible session through the audited daily source/Core
+   refresh, preserving the frozen V009 training hash.
+2. Seal each eligible H1 origin before the 16-hour deadline and later attach
+   its outcome through the append-only registry; never refit during confirmation.
+3. Evaluate the fixed first-126 descriptive and first-252 confirmatory cohorts.
+4. Build Distributional Event Brain on the existing SEC corpus in parallel as
+   a separate developmental comparison against the frozen Market Brain.
+5. Complete upstream identity hygiene; graph prediction remains blocked until
+   direct event information adds OOS value.
+6. Coherent paths, graph propagation, risk, costs and decisions remain gated.
 
 ## 1. Executive summary
 
@@ -117,7 +171,10 @@ The data/lineage infrastructure is now substantially stronger than the predictiv
 
 Current high-level conclusion:
 
-> The SEC Event State contains a **weak candidate incremental signal around 10 sessions**, but this is not statistically confirmed and the current daily Market Brain remains too weak. The next work is robustness/falsification and a stronger market base distribution, not more SEC data or a larger model.
+> The supported daily result is conditional distribution scale and a small
+> developmental own-state shape/tail increment, not location or tradable alpha.
+> V008.1 passed its frozen historical falsification; V009 is the untouched
+> prospective gate required before the Market Brain can be promoted.
 
 ## 2. Market data / Market Brain
 

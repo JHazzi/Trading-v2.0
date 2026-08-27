@@ -1,0 +1,129 @@
+{
+  "benchmark_version": "market_brain_distributional_v008_conditional_residual_quantiles_v0011",
+  "decision_rule": {
+    "if_insufficient": "stop increasing endogenous learner capacity; next experiment must add a causally versioned information class such as expectations/options/fundamentals/event surprise, one block at a time",
+    "if_mixed": "diagnose horizon-specific information before new model capacity; no best-horizon promotion",
+    "if_supported": "retain learned endogenous Market Brain and only then test incremental new information blocks"
+  },
+  "full_beats_own_state_point_horizons": 0,
+  "full_beats_scale_only_point_horizons": 0,
+  "headline_matrix": {
+    "1": {
+      "candidate_vs_asset_empirical": -0.00796896772269237,
+      "candidate_vs_calibrated_vol63": -0.005920345787755168,
+      "candidate_vs_global_empirical": -0.0012226585122058937,
+      "candidate_vs_raw_vol20": -0.010420784697950845,
+      "candidate_vs_raw_vol63": -0.012033111821913965,
+      "full_vs_own_state": -0.013137064239111134,
+      "full_vs_scale_only": -0.009590845783352132,
+      "gate": {
+        "calibration_not_worse": false,
+        "candidate_mean_abs_quantile_calibration_error": 0.009850183588917892,
+        "primary_block10_ci95": [
+          -0.009782603829297671,
+          -0.0019483851285263013
+        ],
+        "primary_point_delta_pct": -0.005920345787755168,
+        "reference_mean_abs_quantile_calibration_error": 0.00745992787344473,
+        "status": "FAIL_SIGNIFICANT"
+      },
+      "selected_profiles": [
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized"
+      ],
+      "vol63_recalibration_gain_vs_raw": -0.006112766034158797
+    },
+    "10": {
+      "candidate_vs_asset_empirical": -0.1263742416371697,
+      "candidate_vs_calibrated_vol63": -0.06836216830361717,
+      "candidate_vs_global_empirical": -0.10573330011497324,
+      "candidate_vs_raw_vol20": -0.11839673283079873,
+      "candidate_vs_raw_vol63": -0.1293714815307458,
+      "full_vs_own_state": -0.07309401670629775,
+      "full_vs_scale_only": -0.07366032537075123,
+      "gate": {
+        "calibration_not_worse": false,
+        "candidate_mean_abs_quantile_calibration_error": 0.030009459585886945,
+        "primary_block10_ci95": [
+          -0.09663824723733169,
+          -0.03889478366549212
+        ],
+        "primary_point_delta_pct": -0.06836216830361717,
+        "reference_mean_abs_quantile_calibration_error": 0.01549842513487705,
+        "status": "FAIL_SIGNIFICANT"
+      },
+      "selected_profiles": [
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized"
+      ],
+      "vol63_recalibration_gain_vs_raw": -0.06100931322712863
+    },
+    "3": {
+      "candidate_vs_asset_empirical": -0.027758614302722008,
+      "candidate_vs_calibrated_vol63": -0.017367643267278368,
+      "candidate_vs_global_empirical": -0.015320141712603706,
+      "candidate_vs_raw_vol20": -0.028809851113777537,
+      "candidate_vs_raw_vol63": -0.03323918651351664,
+      "full_vs_own_state": -0.024657786749413303,
+      "full_vs_scale_only": -0.0212217980419595,
+      "gate": {
+        "calibration_not_worse": false,
+        "candidate_mean_abs_quantile_calibration_error": 0.014924889341401428,
+        "primary_block10_ci95": [
+          -0.025116702010202784,
+          -0.01009152761716465
+        ],
+        "primary_point_delta_pct": -0.017367643267278368,
+        "reference_mean_abs_quantile_calibration_error": 0.007999241428750133,
+        "status": "FAIL_SIGNIFICANT"
+      },
+      "selected_profiles": [
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized"
+      ],
+      "vol63_recalibration_gain_vs_raw": -0.015871543246238275
+    },
+    "5": {
+      "candidate_vs_asset_empirical": -0.0478131822659,
+      "candidate_vs_calibrated_vol63": -0.025533791124610287,
+      "candidate_vs_global_empirical": -0.031929742689202296,
+      "candidate_vs_raw_vol20": -0.0453492512981264,
+      "candidate_vs_raw_vol63": -0.05183832561918215,
+      "full_vs_own_state": -0.031646065991354035,
+      "full_vs_scale_only": -0.029488586211714726,
+      "gate": {
+        "calibration_not_worse": false,
+        "candidate_mean_abs_quantile_calibration_error": 0.02192688229107497,
+        "primary_block10_ci95": [
+          -0.03953696152842728,
+          -0.012224122017573896
+        ],
+        "primary_point_delta_pct": -0.025533791124610287,
+        "reference_mean_abs_quantile_calibration_error": 0.00906316294278534,
+        "status": "FAIL_SIGNIFICANT"
+      },
+      "selected_profiles": [
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized",
+        "shallow_regularized"
+      ],
+      "vol63_recalibration_gain_vs_raw": -0.02630453449457186
+    }
+  },
+  "overall_interpretation": "CURRENT_ENDOGENOUS_INFORMATION_INSUFFICIENT_BEYOND_CALIBRATED_VOL63",
+  "positive_point_horizons": 0,
+  "significant_fail_horizons": 4,
+  "status": "COMPLETE",
+  "strong_horizon_gates": 0
+}

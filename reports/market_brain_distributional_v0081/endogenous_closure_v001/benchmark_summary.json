@@ -1,0 +1,225 @@
+{
+  "benchmark_version": "market_brain_distributional_v0081_endogenous_closure_v001",
+  "fresh_untouched_holdout_required_for_any_promotion": true,
+  "horizon_matrix": {
+    "1": {
+      "concentration_diagnostics": {
+        "asset": {
+          "best_group_delta_pct": 0.02653507196525479,
+          "groups": 497,
+          "positive_group_fraction": 0.937625754527163,
+          "positive_groups": 466,
+          "worst_group_delta_pct": -0.0713737309247216
+        },
+        "fold": {
+          "best_group_delta_pct": 0.010042762874418661,
+          "groups": 5,
+          "positive_group_fraction": 0.8,
+          "positive_groups": 4,
+          "worst_group_delta_pct": -0.0008607081827361915
+        },
+        "sector": {
+          "best_group_delta_pct": 0.005710028070536081,
+          "groups": 11,
+          "positive_group_fraction": 1.0,
+          "positive_groups": 11,
+          "worst_group_delta_pct": 0.0009475642627846835
+        },
+        "year": {
+          "best_group_delta_pct": 0.015256641566175844,
+          "groups": 7,
+          "positive_group_fraction": 0.8571428571428571,
+          "positive_groups": 6,
+          "worst_group_delta_pct": -0.0015016626577331062
+        }
+      },
+      "gate": {
+        "bootstrap_block_length_origin_days": 10,
+        "candidate_mean_abs_quantile_calibration_error": 0.0035903578184007788,
+        "checks": {
+          "candidate_beats_every_placebo_point": true,
+          "candidate_beats_mean_placebo_ci": true,
+          "candidate_calibration_not_worse": true,
+          "minimum_improved_quantiles_met": true,
+          "minimum_positive_folds_met": true,
+          "primary_score_ci_positive": true
+        },
+        "fresh_untouched_holdout_required_for_promotion": true,
+        "improved_quantiles": 4,
+        "placebo_mean_block_ci95": [
+          0.0028508359362729237,
+          0.003684554939965121
+        ],
+        "placebo_seed_point_deltas_pct": {
+          "101": 0.003260156471134184,
+          "11": 0.003155193559729759,
+          "29": 0.003202943646425489,
+          "47": 0.0034046701637846914,
+          "71": 0.003356157866301669
+        },
+        "positive_folds": 4,
+        "primary_block_ci95": [
+          0.0029229998233487897,
+          0.0065821255020383634
+        ],
+        "primary_point_delta_pct": 0.004703166176309118,
+        "reference_mean_abs_quantile_calibration_error": 0.003868915549097768,
+        "status": "PASS_DEVELOPMENTAL_REQUIRES_FRESH_HOLDOUT"
+      },
+      "primary_point_delta_pct": 0.004703166176309118
+    },
+    "10": {
+      "concentration_diagnostics": {
+        "asset": {
+          "best_group_delta_pct": 0.0775973522765737,
+          "groups": 497,
+          "positive_group_fraction": 0.8490945674044266,
+          "positive_groups": 422,
+          "worst_group_delta_pct": -0.3527977228615806
+        },
+        "fold": {
+          "best_group_delta_pct": 0.07816919452002381,
+          "groups": 5,
+          "positive_group_fraction": 0.6,
+          "positive_groups": 3,
+          "worst_group_delta_pct": -0.04333444979043969
+        },
+        "sector": {
+          "best_group_delta_pct": 0.020663647400021926,
+          "groups": 11,
+          "positive_group_fraction": 0.9090909090909091,
+          "positive_groups": 10,
+          "worst_group_delta_pct": -0.005194247986540178
+        },
+        "year": {
+          "best_group_delta_pct": 0.13462937500630004,
+          "groups": 7,
+          "positive_group_fraction": 0.7142857142857143,
+          "positive_groups": 5,
+          "worst_group_delta_pct": -0.046937266836365545
+        }
+      },
+      "gate": {
+        "may_rescue_primary_horizon": false,
+        "reason": "only H1 was prospectively designated as the V008.1 closure hypothesis",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "primary_point_delta_pct": 0.011570429118276092
+    },
+    "3": {
+      "concentration_diagnostics": {
+        "asset": {
+          "best_group_delta_pct": 0.03777526873149304,
+          "groups": 497,
+          "positive_group_fraction": 0.8933601609657947,
+          "positive_groups": 444,
+          "worst_group_delta_pct": -0.11050874378706357
+        },
+        "fold": {
+          "best_group_delta_pct": 0.01922978871713001,
+          "groups": 5,
+          "positive_group_fraction": 0.8,
+          "positive_groups": 4,
+          "worst_group_delta_pct": -0.007091448299576477
+        },
+        "sector": {
+          "best_group_delta_pct": 0.008338544593706412,
+          "groups": 11,
+          "positive_group_fraction": 1.0,
+          "positive_groups": 11,
+          "worst_group_delta_pct": 0.0016626457093528507
+        },
+        "year": {
+          "best_group_delta_pct": 0.03401071424885743,
+          "groups": 7,
+          "positive_group_fraction": 0.8571428571428571,
+          "positive_groups": 6,
+          "worst_group_delta_pct": -0.00670568616990243
+        }
+      },
+      "gate": {
+        "may_rescue_primary_horizon": false,
+        "reason": "only H1 was prospectively designated as the V008.1 closure hypothesis",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "primary_point_delta_pct": 0.00577126646297932
+    },
+    "5": {
+      "concentration_diagnostics": {
+        "asset": {
+          "best_group_delta_pct": 0.05035367295102732,
+          "groups": 497,
+          "positive_group_fraction": 0.8853118712273642,
+          "positive_groups": 440,
+          "worst_group_delta_pct": -0.2280398924414944
+        },
+        "fold": {
+          "best_group_delta_pct": 0.0368081968770261,
+          "groups": 5,
+          "positive_group_fraction": 0.8,
+          "positive_groups": 4,
+          "worst_group_delta_pct": -0.018065930226084815
+        },
+        "sector": {
+          "best_group_delta_pct": 0.01209807777748241,
+          "groups": 11,
+          "positive_group_fraction": 0.9090909090909091,
+          "positive_groups": 10,
+          "worst_group_delta_pct": -0.0009438191584658277
+        },
+        "year": {
+          "best_group_delta_pct": 0.06518808770681737,
+          "groups": 7,
+          "positive_group_fraction": 0.7142857142857143,
+          "positive_groups": 5,
+          "worst_group_delta_pct": -0.018968075860773655
+        }
+      },
+      "gate": {
+        "may_rescue_primary_horizon": false,
+        "reason": "only H1 was prospectively designated as the V008.1 closure hypothesis",
+        "status": "DIAGNOSTIC_ONLY"
+      },
+      "primary_point_delta_pct": 0.0073805623520464565
+    }
+  },
+  "next_action": "freeze this specification and evaluate it on a genuinely untouched future temporal block; do not add information sources or promote a model yet",
+  "no_confirmed_alpha": true,
+  "overall_interpretation": "H1_OWN_STATE_DEVELOPMENTAL_SIGNAL_REQUIRES_FRESH_HOLDOUT",
+  "primary_horizon": 1,
+  "primary_horizon_gate": {
+    "bootstrap_block_length_origin_days": 10,
+    "candidate_mean_abs_quantile_calibration_error": 0.0035903578184007788,
+    "checks": {
+      "candidate_beats_every_placebo_point": true,
+      "candidate_beats_mean_placebo_ci": true,
+      "candidate_calibration_not_worse": true,
+      "minimum_improved_quantiles_met": true,
+      "minimum_positive_folds_met": true,
+      "primary_score_ci_positive": true
+    },
+    "fresh_untouched_holdout_required_for_promotion": true,
+    "improved_quantiles": 4,
+    "placebo_mean_block_ci95": [
+      0.0028508359362729237,
+      0.003684554939965121
+    ],
+    "placebo_seed_point_deltas_pct": {
+      "101": 0.003260156471134184,
+      "11": 0.003155193559729759,
+      "29": 0.003202943646425489,
+      "47": 0.0034046701637846914,
+      "71": 0.003356157866301669
+    },
+    "positive_folds": 4,
+    "primary_block_ci95": [
+      0.0029229998233487897,
+      0.0065821255020383634
+    ],
+    "primary_point_delta_pct": 0.004703166176309118,
+    "reference_mean_abs_quantile_calibration_error": 0.003868915549097768,
+    "status": "PASS_DEVELOPMENTAL_REQUIRES_FRESH_HOLDOUT"
+  },
+  "secondary_horizons_are_diagnostic_only": true,
+  "status": "COMPLETE"
+}

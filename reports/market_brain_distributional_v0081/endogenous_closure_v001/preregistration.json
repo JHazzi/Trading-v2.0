@@ -1,0 +1,322 @@
+{
+  "anti_selection_design": {
+    "capacity_placebo": {
+      "enabled_horizons_sessions": [
+        1
+      ],
+      "permutation_policy": "joint_derangement_of_non_scale_own_features",
+      "permutation_unit": "within_origin_day_across_assets",
+      "preserved_aligned_features": [
+        "asset_vol_5d_pct",
+        "asset_vol_20d_pct",
+        "asset_vol_63d_pct"
+      ],
+      "reason": "preserve the empirical scale information already available to vol63 while destroying asset-specific alignment of the proposed incremental own-state block",
+      "seeds": [
+        11,
+        29,
+        47,
+        71,
+        101
+      ]
+    },
+    "fixed_profile_no_selection": {
+      "early_stopping": false,
+      "l2_regularization": 2.0,
+      "learning_rate": 0.05,
+      "max_iter": 160,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 500,
+      "source": "V008 shallow_regularized selected in all 20 outer-fold/horizon selections"
+    },
+    "fresh_untouched_holdout_required_for_promotion": true,
+    "frozen_own_features": [
+      "asset_drawdown_20d_pct",
+      "asset_drawdown_252d_pct",
+      "asset_drawdown_63d_pct",
+      "asset_range_1d_pct",
+      "asset_return_10d_pct",
+      "asset_return_1d_pct",
+      "asset_return_20d_pct",
+      "asset_return_3d_pct",
+      "asset_return_5d_pct",
+      "asset_return_63d_pct",
+      "asset_vol_20d_pct",
+      "asset_vol_5d_pct",
+      "asset_vol_63d_pct",
+      "asset_volume_ratio_20d"
+    ],
+    "historical_sample_reused_after_V008": true,
+    "primary_horizon": 1,
+    "secondary_horizons": [
+      3,
+      5,
+      10
+    ],
+    "secondary_horizons_cannot_rescue_H1": true
+  },
+  "benchmark_version": "market_brain_distributional_v0081_endogenous_closure_v001",
+  "claim_boundary": "V008.1 is a post-V008 developmental closure test. It may reject the current own-state branch or justify a fresh temporal confirmation, but it cannot establish alpha, profitability, strict-PIT validity, a coherent path model or production readiness on the reused historical sample.",
+  "current_cohort_not_survivorship_free": true,
+  "feature_null_audit": {
+    "asset_drawdown_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_drawdown_252d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_drawdown_63d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_range_1d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_10d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_1d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_3d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_5d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_63d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_vol_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_vol_5d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_vol_63d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_volume_ratio_20d": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    }
+  },
+  "frozen_question": "Without recent post-model recalibration or cross-sectional/sector context, does the exact V008 own price/volume state improve H1 standardized-return quantiles beyond raw vol63?",
+  "mathematical_contract": {
+    "candidate": "fixed shallow HGB quantiles of z conditional on the frozen 14-feature own state, fit on complete purged outer train",
+    "nonpositive_scale": "outer-train unconditional empirical return quantiles",
+    "positive_scale_target": "z=(return_pct-outer_train_median)/asset_vol_63d_pct",
+    "post_model_calibration": "none",
+    "reference": "outer-train empirical z quantiles reconstructed with prediction-time asset_vol_63d_pct"
+  },
+  "missing": [],
+  "model_version": "market_brain_distributional_v0081_hgb_own_state_raw_v001",
+  "outer_split_feasibility": {
+    "1": {
+      "conservative_purge_budget_origin_days": 1,
+      "margin_days": 298,
+      "minimum_outer_train_origin_days": 378,
+      "nominal_initial_outer_train_days": 677,
+      "required_days_conservative": 379,
+      "status": "PASS",
+      "usable_origin_days": 2259
+    },
+    "10": {
+      "conservative_purge_budget_origin_days": 10,
+      "margin_days": 287,
+      "minimum_outer_train_origin_days": 378,
+      "nominal_initial_outer_train_days": 675,
+      "required_days_conservative": 388,
+      "status": "PASS",
+      "usable_origin_days": 2250
+    },
+    "3": {
+      "conservative_purge_budget_origin_days": 3,
+      "margin_days": 296,
+      "minimum_outer_train_origin_days": 378,
+      "nominal_initial_outer_train_days": 677,
+      "required_days_conservative": 381,
+      "status": "PASS",
+      "usable_origin_days": 2257
+    },
+    "5": {
+      "conservative_purge_budget_origin_days": 5,
+      "margin_days": 293,
+      "minimum_outer_train_origin_days": 378,
+      "nominal_initial_outer_train_days": 676,
+      "required_days_conservative": 383,
+      "status": "PASS",
+      "usable_origin_days": 2255
+    }
+  },
+  "primary_gate": {
+    "bootstrap_block_length_origin_days": 10,
+    "minimum_improved_quantiles": 3,
+    "minimum_positive_folds": 4,
+    "require_candidate_beats_every_placebo_point": true,
+    "require_candidate_beats_mean_placebo_ci": true,
+    "require_candidate_calibration_not_worse": true
+  },
+  "reason_for_experiment": {
+    "V008_primary_result": "full endogenous calibrated HGB failed significantly at H1/H3/H5/H10",
+    "purpose": "close the current endogenous engineering branch or justify only a fresh temporal confirmation",
+    "remaining_ambiguity": "the V008 H1 own-state diagnostic had a tiny positive derived point versus raw vol63 but no direct preregistered bootstrap and retained the harmful calibration/development split"
+  },
+  "resolved_feature_manifest": {
+    "context_union": [
+      "asset_minus_cross_section_1d_pct",
+      "asset_minus_cross_section_20d_pct",
+      "asset_minus_cross_section_5d_pct",
+      "asset_minus_sector_1d_pct",
+      "asset_minus_sector_20d_pct",
+      "asset_minus_sector_5d_pct",
+      "cross_section_breadth_positive_1d",
+      "cross_section_breadth_positive_5d",
+      "cross_section_dispersion_1d_pct",
+      "cross_section_mean_return_1d_pct",
+      "cross_section_mean_return_20d_pct",
+      "cross_section_mean_return_5d_pct",
+      "cross_section_mean_vol_20d_pct",
+      "sector_breadth_positive_1d",
+      "sector_mean_return_1d_pct",
+      "sector_mean_return_20d_pct",
+      "sector_mean_return_5d_pct",
+      "sector_mean_vol_20d_pct"
+    ],
+    "counts": {
+      "context_union": 18,
+      "cross_section_context": 10,
+      "full_endogenous": 32,
+      "own_state": 14,
+      "scale_only": 3,
+      "sector_context": 8
+    },
+    "cross_section_context": [
+      "asset_minus_cross_section_1d_pct",
+      "asset_minus_cross_section_20d_pct",
+      "asset_minus_cross_section_5d_pct",
+      "cross_section_breadth_positive_1d",
+      "cross_section_breadth_positive_5d",
+      "cross_section_dispersion_1d_pct",
+      "cross_section_mean_return_1d_pct",
+      "cross_section_mean_return_20d_pct",
+      "cross_section_mean_return_5d_pct",
+      "cross_section_mean_vol_20d_pct"
+    ],
+    "feature_version": "market_daily_state_v003_core",
+    "full_endogenous": [
+      "asset_drawdown_20d_pct",
+      "asset_drawdown_252d_pct",
+      "asset_drawdown_63d_pct",
+      "asset_minus_cross_section_1d_pct",
+      "asset_minus_cross_section_20d_pct",
+      "asset_minus_cross_section_5d_pct",
+      "asset_minus_sector_1d_pct",
+      "asset_minus_sector_20d_pct",
+      "asset_minus_sector_5d_pct",
+      "asset_range_1d_pct",
+      "asset_return_10d_pct",
+      "asset_return_1d_pct",
+      "asset_return_20d_pct",
+      "asset_return_3d_pct",
+      "asset_return_5d_pct",
+      "asset_return_63d_pct",
+      "asset_vol_20d_pct",
+      "asset_vol_5d_pct",
+      "asset_vol_63d_pct",
+      "asset_volume_ratio_20d",
+      "cross_section_breadth_positive_1d",
+      "cross_section_breadth_positive_5d",
+      "cross_section_dispersion_1d_pct",
+      "cross_section_mean_return_1d_pct",
+      "cross_section_mean_return_20d_pct",
+      "cross_section_mean_return_5d_pct",
+      "cross_section_mean_vol_20d_pct",
+      "sector_breadth_positive_1d",
+      "sector_mean_return_1d_pct",
+      "sector_mean_return_20d_pct",
+      "sector_mean_return_5d_pct",
+      "sector_mean_vol_20d_pct"
+    ],
+    "missing_required_scale": [],
+    "own_state": [
+      "asset_drawdown_20d_pct",
+      "asset_drawdown_252d_pct",
+      "asset_drawdown_63d_pct",
+      "asset_range_1d_pct",
+      "asset_return_10d_pct",
+      "asset_return_1d_pct",
+      "asset_return_20d_pct",
+      "asset_return_3d_pct",
+      "asset_return_5d_pct",
+      "asset_return_63d_pct",
+      "asset_vol_20d_pct",
+      "asset_vol_5d_pct",
+      "asset_vol_63d_pct",
+      "asset_volume_ratio_20d"
+    ],
+    "resolution_rule": "schema-only frozen semantic prefix resolution; no outcomes inspected",
+    "scale_only": [
+      "asset_vol_5d_pct",
+      "asset_vol_20d_pct",
+      "asset_vol_63d_pct"
+    ],
+    "sector_context": [
+      "asset_minus_sector_1d_pct",
+      "asset_minus_sector_20d_pct",
+      "asset_minus_sector_5d_pct",
+      "sector_breadth_positive_1d",
+      "sector_mean_return_1d_pct",
+      "sector_mean_return_20d_pct",
+      "sector_mean_return_5d_pct",
+      "sector_mean_vol_20d_pct"
+    ]
+  },
+  "resolved_feature_manifest_sha256": "ec47bd88071f3c336f0a776f1bf246e0fc58163a51d35551638686e71b737e0a",
+  "source_v008_audit": {
+    "derived_h1_comparison": {
+      "calibrated_vol63_minus_calibrated_own_state_pinball_pct": 0.007216718451355968,
+      "derivation": "(calibrated_vol63-own_state)+(raw_vol63-calibrated_vol63)",
+      "raw_vol63_minus_calibrated_own_state_pinball_pct": 0.001103952417197171,
+      "raw_vol63_minus_calibrated_vol63_pinball_pct": -0.006112766034158797,
+      "status": "posthoc_motivation_only_not_confirmatory_evidence"
+    },
+    "h1_report_sha256": "c691c0562ac2bffc54133508c5018a4ac2c08d9d881529387785ddb7c23b1778",
+    "manifest_sha256": "ec47bd88071f3c336f0a776f1bf246e0fc58163a51d35551638686e71b737e0a",
+    "summary_sha256": "7179cd76cd173d1b599951e5c8f2beaf680b9a08429644484d49077f2b599f5c"
+  },
+  "source_v008_h1": "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v008/conditional_residual_quantiles_v0011/h1_benchmark.json",
+  "source_v008_manifest": "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v008/conditional_residual_quantiles_v0011/resolved_feature_manifest.json",
+  "source_v008_summary": "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v008/conditional_residual_quantiles_v0011/benchmark_summary.json",
+  "status": "PASS",
+  "strict_historical_pit": false
+}

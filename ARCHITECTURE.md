@@ -195,9 +195,24 @@ Indicators such as RSI/ATR are optional derived features, not privileged truths.
 
 ### 4.3 Current research gap
 
-The current daily market context is intentionally simple and does not consistently outperform trivial zero/median baselines. `docs/RESEARCH_STATUS.md` is authoritative for the latest numbers.
+The current daily market context is intentionally simple. Scalar location
+models do not consistently outperform trivial zero/median baselines. In the
+distributional branch, train-only empirical volatility scaling is supported,
+with `asset_vol_63d_pct` the strongest current scale reference.
 
-The next Market Brain milestone is better causal context, not a larger neural network.
+V008 found no incremental value from the current full endogenous Core V003
+state under calibrated conditional quantile HGBs. V008.1 then passed its
+narrow H1 own-state closure gate against raw vol63 and five capacity-matched
+placebos. Its incremental value is concentrated in distribution shape/tails;
+median location and positive-return probability did not improve.
+
+V009 is the active prospective confirmation. It freezes one pre-holdout fit,
+seals every prediction before the next outcome, keeps predictions/outcomes
+separate and evaluates only the first 252 consecutive eligible H1 origins for
+promotion. The next architectural increment is fresh confirmation or new
+information, not additional tuning of the historical sample.
+
+`docs/RESEARCH_STATUS.md` is authoritative for the latest numbers.
 
 ## 5. Event / Information Brain
 
@@ -399,18 +414,25 @@ A future production loop needs observation snapshot, prediction, realized outcom
 
 Current evidence-driven order:
 
-1. preserve the completed scalar/event robustness checkpoint as evidence;
-2. falsify and decompose the V006 empirical volatility-scaled distributional result;
-3. preregister learned distributional Market Brain models with nested temporal selection and V006 as the required baseline;
-4. test Distributional Event Brain on the existing SEC corpus against a capacity-matched market-only distribution;
-5. repair reviewed entity/row hygiene upstream, but keep predictive graph propagation blocked until direct event information adds OOS value;
-6. learn richer event semantics, expectations and surprise;
-7. add new information sources incrementally;
-8. build coherent trajectory distributions, then risk and decision layers;
-9. introduce structural graph propagation only under its nested incremental comparison;
-10. operate a controlled prediction/outcome/candidate/promotion/rollback loop.
+1. preserve the completed scalar/event and V006-V008.1 checkpoints as evidence;
+2. run V009 as a one-fit, append-only prospective confirmation of the frozen
+   H1 own-state distribution against raw vol63;
+3. test Distributional Event Brain on the existing SEC corpus against the
+   frozen/capacity-matched market-only distribution as a separate developmental
+   track while V009 accumulates;
+4. repair reviewed entity/row hygiene upstream, but keep predictive graph
+   propagation blocked until direct event information adds OOS value;
+5. learn richer event semantics, expectations and surprise;
+6. add new information sources incrementally;
+7. build coherent trajectory distributions, then risk and decision layers;
+8. introduce structural graph propagation only under its nested incremental
+   comparison;
+9. operate the prediction/outcome/candidate/promotion/rollback loop using the
+   append-only prospective registry.
 
-The positive V006 foundation supports conditional interval scale only. It does not permit skipping directly to production alerts, a path chart, a GNN or automated trading.
+The positive V006/V008.1 foundation supports conditional distribution scale
+and shape/tails only. It does not permit skipping directly to production
+alerts, a path chart, a GNN or automated trading.
 
 See `docs/ROADMAP.md` for gates.
 

@@ -487,3 +487,90 @@ The original V008 v001 benchmark aborted before any model fit or OOS performance
 
 V008 v0011 preserves the frozen scientific question, features, H1/H3/H5/H10, five 30%-initial purged expanding outer folds, 126-day recent calibration window, 126-day minimum inner validation, HGB profile set, vol63_recent_calibrated primary reference, metrics, bootstrap and gates. The only scientific-control change is `minimum_inner_train_origin_days: 500 -> 378` (1.5 trading years) for nested profile selection. Final fold models remain fit on the full development block. The plan now performs a clock-only conservative split-feasibility audit before benchmarking.
 
+## D027 — V008 rejects its contract, not all endogenous information
+
+**Decision:** close V008 as four significant primary failures and reject its
+recent-recalibrated full-endogenous candidate without tuning.
+
+Evidence:
+
+- full vs recent-calibrated vol63 block-10 intervals are below zero at
+  H1/H3/H5/H10;
+- full also loses to raw vol63 at every horizon;
+- full loses to the own-state and scale-only HGB controls at every horizon;
+- the shallow profile is selected in all 20 nested selections;
+- the 126-origin-day recent recalibration harms raw vol63 at every horizon.
+
+The valid claim is deliberately narrow: the current feature family,
+standardized-return representation, HGB learner and calibration contract did
+not add stable information beyond raw vol63. This result does not prove that
+all endogenous market information is absent, and it does not by itself identify
+whether information, representation, pooling or objective is the limiting
+factor.
+
+**Status:** V008 complete; no model promoted.
+
+## D028 — One final raw own-state closure gate before external information
+
+**Decision:** preregister V008.1 as a final developmental falsification of the
+only remaining V008 ambiguity.
+
+V008.1 freezes:
+
+- H1 as the primary post-V008 hypothesis;
+- H3/H5/H10 as diagnostics that cannot rescue H1;
+- raw vol63 as the primary reference;
+- the exact 14-feature V008 own-state family;
+- the V008 shallow regularized HGB profile, with no selection;
+- complete purged outer-train fitting;
+- no recent quantile or probability recalibration;
+- equal-origin-day pinball and 5/10/20-day moving-block bootstrap;
+- a five-seed same-capacity H1 placebo preserving aligned volatility features
+  while jointly deranging other own-state features within origin day;
+- calibration, quantile breadth, fold stability and placebo gates in addition
+  to the primary score interval.
+
+Because H1 was selected after observing V008, even a full V008.1 pass on the
+same historical sample is developmental only. Promotion requires a genuinely
+untouched temporal holdout. Failure closes the current endogenous daily
+price/volume engineering branch and triggers a separate decision about one
+causally versioned external information block.
+
+**Status:** completed; H1 passed every frozen developmental gate. The
+supported increment is distribution shape/tails, not location or alpha.
+
+## D029 -- Confirm V008.1 prospectively with one frozen fit and immutable records
+
+**Decision:** preregister V009 as the only promotion path for the V008.1 H1
+own-state result.
+
+V009 freezes:
+
+- one fit using usable H1 targets ending strictly before the prospective start;
+- no refit, feature change, calibration or hyperparameter selection during the
+  confirmatory window;
+- the fixed 497-asset current-cohort snapshot from 2026-08-24;
+- actual seal time no later than 16 hours after the state close;
+- no retrospective prediction backfill and no skipped eligible origin;
+- separate append-only prediction, outcome, score and evaluation records;
+- the first 126 origins as descriptive only;
+- the first 252 consecutive eligible resolved origins as the only formal gate;
+- raw vol63 as reference, equal-origin-day pinball as primary score, 10-day
+  moving-block uncertainty, at least 4/5 positive chronological blocks, at
+  least three improved quantiles and calibration not worse.
+
+Reason: V008.1 reused history already inspected by V008. Its H1 point delta
+(`+0.004703 pp`, block-10 95% interval
+`[+0.002923,+0.006582]`) is broad and placebo-resistant, but it cannot be
+independent confirmation. A static fit over the prospective block matches the
+historical fold test length better than introducing an unvalidated online
+refit schedule.
+
+Distributional Event Brain infrastructure may advance on the existing SEC
+corpus while V009 accumulates, but its results cannot validate, rescue or
+modify V009. Graph prediction remains blocked until direct event information
+adds reproducible OOS value.
+
+**Status:** V009 plan passed; additive migrations 021-022 are initialized and
+the single pre-holdout fit is frozen. Daily source/Core refresh is operationally
+gated to the first allowed origin, 2026-08-28; no V009 refit is permitted.

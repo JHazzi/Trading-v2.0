@@ -551,3 +551,130 @@ The original V008 v001 benchmark aborted before any model fit or OOS performance
 
 V008 v0011 preserves the frozen scientific question, features, H1/H3/H5/H10, five 30%-initial purged expanding outer folds, 126-day recent calibration window, 126-day minimum inner validation, HGB profile set, vol63_recent_calibrated primary reference, metrics, bootstrap and gates. The only scientific-control change is `minimum_inner_train_origin_days: 500 -> 378` (1.5 trading years) for nested profile selection. Final fold models remain fit on the full development block. The plan now performs a clock-only conservative split-feasibility audit before benchmarking.
 
+## E-MARKET-DIST-V008 — completed conditional residual quantiles
+
+**Status:** complete; no promoted model.
+
+Frozen primary:
+
+```text
+hgb_full_endogenous_calibrated
+vs
+vol63_recent_calibrated
+```
+
+Result:
+
+| Horizon | Daily-equal pinball delta | Block-10 95% CI | Gate |
+|---:|---:|---:|---|
+| H1 | -0.005920 | [-0.009783, -0.001948] | FAIL_SIGNIFICANT |
+| H3 | -0.017368 | [-0.025117, -0.010092] | FAIL_SIGNIFICANT |
+| H5 | -0.025534 | [-0.039537, -0.012224] | FAIL_SIGNIFICANT |
+| H10 | -0.068362 | [-0.096638, -0.038895] | FAIL_SIGNIFICANT |
+
+The full candidate also loses to raw vol63 at all horizons. The recent
+calibration of raw vol63 is harmful at every horizon. Same-capacity full
+learners lose to both scale-only and own-state controls. All 20 nested
+selections choose the shallow regularized profile.
+
+Interpretation: reject the V008 contract. Do not generalize the result to every
+possible endogenous representation.
+
+## E-MARKET-DIST-V0081 — endogenous closure preregistration
+
+**Status:** infrastructure complete; performance intentionally not run.
+
+Versions:
+
+```text
+benchmark       market_brain_distributional_v0081_endogenous_closure_v001
+model           market_brain_distributional_v0081_hgb_own_state_raw_v001
+source          market_brain_distributional_v008_conditional_residual_quantiles_v0011
+market features market_daily_state_v003_core
+labels          market_daily_reaction_v003_core
+dataset         market_daily_v003_all_asset_days_current_cohort_research
+bootstrap unit  origin_trading_day
+```
+
+Primary question:
+
+```text
+H1 hgb_own_state_raw vs vol63_raw
+```
+
+Both are fit from the complete purged outer train. The candidate predicts
+q05/q25/q50/q75/q95 of
+`(return_pct-train_median)/asset_vol_63d_pct` using the exact frozen
+14-feature own-state family. No post-model calibration or hyperparameter
+selection is allowed.
+
+The H1 capacity control uses five seeds. It retains aligned
+vol5/vol20/vol63 and jointly deranges all other own-state feature vectors across
+assets within each origin day before fitting the identical HGB profile.
+
+A developmental pass requires:
+
+- positive block-10 lower confidence bound vs raw vol63;
+- candidate calibration error no worse;
+- at least 4/5 positive folds;
+- at least three quantiles with positive daily-equal point deltas;
+- positive block-10 lower confidence bound vs mean placebo loss;
+- positive point delta vs every placebo seed.
+
+H3/H5/H10 are mandatory diagnostic reports and cannot rescue H1. The current
+cohort is not survivorship-free, Core V003 is not strict PIT, and the historical
+sample was already inspected in V008. Fresh temporal confirmation is required
+before any promotion.
+## E-MARKET-DIST-V0081 -- completed endogenous closure
+
+**Status:** complete; developmental H1 pass, no promoted production model.
+
+Primary H1 result:
+
+```text
+raw vol63 minus own-state HGB pinball     +0.004703 pp
+block-10 95% interval                    [+0.002923,+0.006582]
+positive folds                           4/5
+improved quantiles                       4/5
+positive assets/sectors/years            466/497, 11/11, 6/7
+all six frozen gate checks               PASS
+```
+
+The candidate beat the mean five-seed capacity placebo with a positive
+block-10 interval and beat every placebo seed by point estimate. q50, median
+MAE and positive-return Brier worsened; the supported incremental object is
+distribution shape/tails. H3 corroborated; H5/H10 were inconclusive under
+dependence-aware intervals. Historical reuse makes the pass developmental.
+
+## E-MARKET-DIST-V009 -- prospective temporal confirmation
+
+**Status:** preregistration PASS; registry initialized; pre-holdout fit frozen; first origin 2026-08-28.
+
+Versions:
+
+```text
+benchmark        market_brain_distributional_v009_prospective_holdout_v001
+model            market_brain_distributional_v009_hgb_own_state_static_v001
+reference        market_brain_distributional_v009_vol63_raw_static_v001
+registry         prospective_prediction_registry_v001
+evaluation       market_brain_distributional_v009_evaluation_v001
+features         market_daily_state_v003_core
+labels           market_daily_reaction_v003_core
+```
+
+Contract:
+
+- fixed 497-asset universe snapshot on 2026-08-24;
+- one pre-holdout fit, with targets ending before 2026-08-28;
+- no refit/calibration/feature selection during confirmation;
+- prediction seal no later than 16 hours after state close;
+- no retroactive backfill or skipped eligible origins;
+- immutable predictions and separate outcomes/scores;
+- first 126 origins descriptive; first 252 origins formal;
+- raw vol63 reference; equal-origin-day pinball; 5/10/20-day moving blocks;
+- at least 4/5 positive time blocks, three improved quantiles and calibration
+  not worse for confirmation.
+
+V009 can confirm only market-only H1 terminal-return distribution improvement.
+It cannot confirm direction, alpha, profitability, paths, survivorship-free
+generalization, event value or graph value.

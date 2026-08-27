@@ -246,13 +246,19 @@ Do **not** add more SEC documents immediately.
 
 Ordered next work:
 
-1. robustness/falsification of the H10 candidate;
-2. stronger Market Brain;
-3. distributional Market Brain;
-4. distributional Event Brain using the existing event corpus;
-5. richer event semantics/expectations;
-6. additional sources;
-7. learned reliability/novelty;
-8. graph propagation.
+1. keep V008.1 frozen as a developmental H1 shape/tail result;
+2. accumulate the preregistered V009 prospective Market Brain holdout;
+3. test Distributional Event Brain on the existing SEC corpus against the
+   frozen market-only distribution and a capacity-matched no-event control;
+4. richer event expectations/surprise semantics only after that information
+   question is understood;
+5. additional sources;
+6. learned reliability/novelty;
+7. graph propagation only after local event information value.
+
+V009 accumulation and Distributional Event Brain infrastructure may proceed in
+parallel, but Event Brain results cannot validate or rescue V009. No V008.1 or
+V009 infrastructure result authorizes additional SEC scaling or graph
+promotion.
 
 See `docs/ROADMAP.md`.

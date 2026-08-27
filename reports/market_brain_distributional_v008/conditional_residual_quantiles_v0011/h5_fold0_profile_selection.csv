@@ -1,0 +1,3 @@
+profile,inner_origin_day_equal_pinball_loss_pct,raw_quantile_crossing_fraction
+shallow_regularized,0.9453810586213394,0.014106780239725412
+medium_regularized,0.9622444328265509,0.02237317375599763

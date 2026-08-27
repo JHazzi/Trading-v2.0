@@ -86,29 +86,43 @@ Do not rerun or rescale data merely because a package README says so.
 
 Current canonical status is in `docs/RESEARCH_STATUS.md`.
 
-As of 2026-08-25:
+As of 2026-08-27:
 
 - deep SEC corpus construction is complete for the current 10-asset research cohort;
 - 1,939 normalized events and 2,001 Event States exist;
-- scalar H1/H3/H5 show no meaningful incremental event effect;
-- H10 is a weak positive candidate that requires robustness;
-- daily Market Brain is not yet strong enough;
+- Event H10 remains conditional/unstable and does not justify more SEC scale;
+- scalar Daily Market Brain V003-V005.2 has no promoted model;
+- V006 supports volatility-conditioned distribution scale;
+- V007 failed against raw vol63 at all horizons;
+- V008 full endogenous conditional quantiles failed significantly at all horizons;
+- V008.1 passed every frozen H1 developmental gate against raw vol63 and five
+  capacity placebos;
+- the supported V008.1 increment is distribution shape/tails, not median
+  location, direction, profitability or production readiness;
+- V009 prospective confirmation is preregistered on a fixed 497-asset cohort;
+- V009 requires one pre-holdout fit and the first 252 consecutive sealed H1
+  origin sessions, with no refit or retrospective prediction backfill;
 - no additional SEC scaling is currently justified.
 
 ## 7. Current next work
 
 Ordered priority:
 
-1. Event Brain V0.2.1 robustness/falsification.
-2. Market Brain Daily V003.
-3. Distributional Market Brain.
-4. Distributional Event Brain on existing SEC data.
-5. Rich event semantics/expectations.
-6. Additional sources.
-7. Graph.
-8. Risk/decision/continuous learning.
+1. Run the single frozen V009 pre-holdout fit before the first eligible origin.
+2. Seal every eligible daily H1 prediction within the 16-hour causal window.
+3. Link outcomes separately; 126 sessions are descriptive and the first 252
+   sessions are the only promotion gate.
+4. Build Distributional Event Brain on existing SEC data as a separate
+   developmental track against the frozen Market Brain.
+5. Complete upstream identity hygiene; graph prediction remains blocked until
+   direct event information adds OOS value.
+6. Rich event semantics/expectations, then additional sources.
+7. Graph, trajectory, risk, decision and controlled learning only through their
+   explicit incremental gates.
 
-Do not jump to news ingestion, graph neural networks, Transformers or production trading without an explicit decision update.
+Do not refit or tune V009 during its confirmatory window, backfill missed
+predictions, or jump to mass news ingestion, graph neural networks,
+Transformers or production trading without an explicit decision update.
 
 ## 8. Database/migration rules
 

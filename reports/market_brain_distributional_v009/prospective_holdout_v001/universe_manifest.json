@@ -1,0 +1,3986 @@
+{
+  "asset_count": 497,
+  "assets": [
+    {
+      "asset_id": 1,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_1390b64d8db1c233a9ea3dfcc3ea089812ec466552a0d49cc2f9350dbd7e7778",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MMM"
+    },
+    {
+      "asset_id": 2,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_f2bd1c7e64971b36e87d49cbbca2d0f1d4588be48ec3314a36f5422c8f991120",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AOS"
+    },
+    {
+      "asset_id": 3,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_5a4459ddb8748834b23a897fc126527299664e6d43425e1d8d4f73db0cfec8f5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ABT"
+    },
+    {
+      "asset_id": 4,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_d617a3b123ae15758cf5bc564c61f46adde29b202ddae71a64501954f85ac270",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ABBV"
+    },
+    {
+      "asset_id": 5,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_1ffe6be0df761d74b5e1b66bba5a26c0887c8cf04e1e84b0770b90608a753f97",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ACN"
+    },
+    {
+      "asset_id": 6,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_7433ee67f48d6df61bcaacaae32166f28e328f7b83d1fac818036d310824aa6d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ADBE"
+    },
+    {
+      "asset_id": 7,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_11866390d1b93ef7b8b6e25f4eadea41496180b86548423c929856f8c57debb3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AMD"
+    },
+    {
+      "asset_id": 8,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_0001d3eb3a80f01b8b3ca90bf162cc4df5caed1217fa5bc7aa7d31c401365da4",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AES"
+    },
+    {
+      "asset_id": 9,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_ef4ffe63261b24a024f041b862f5740c665b6f32a89658f4d72f6465e6f871c1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AFL"
+    },
+    {
+      "asset_id": 10,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_f284999d1d1e0fe59e2e9335551be755f44c3f94eaf2103810695bd048f9dc62",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "A"
+    },
+    {
+      "asset_id": 11,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_7a2df3d94756a1b72441b9c40376330d307b16adf2abfa004e023be9610d50fa",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "APD"
+    },
+    {
+      "asset_id": 12,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_58a7db40d3e8b7691bd4a25f56453ca008e7719d49e98bd29843d23572e7270f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ABNB"
+    },
+    {
+      "asset_id": 13,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_4b5bc045667b02362c9744a9d6cc29df6127406e56ff0bcdc5aaff2196ea2cc8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AKAM"
+    },
+    {
+      "asset_id": 14,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_01c885295426ba58aa2a477c23e11576040ca4423ba6f73e124cd4857384f730",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ALB"
+    },
+    {
+      "asset_id": 15,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_1d7fedf32c0d0c199ad8d104f2e981471902b1353326898ebedc3eb39b6793a9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ARE"
+    },
+    {
+      "asset_id": 16,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_a4ddabb442abc7cdf0a55689574da912049170860b62fb2e9deb1d850e025a8b",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ALGN"
+    },
+    {
+      "asset_id": 17,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_c6df36e5a859fccbeef9bcad7afdeef6841fd72028964128033fbde7e7c59252",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ALLE"
+    },
+    {
+      "asset_id": 18,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_e20710dd81dea43620b02c13c5e68286548917c6a88fdb96933580e102a9f9be",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LNT"
+    },
+    {
+      "asset_id": 19,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_2248896ce9455edecaf05006f3655af4b5087e74f2fd3fb8abc88e4194b9a862",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ALL"
+    },
+    {
+      "asset_id": 20,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_007dbb9a7baffd1a45e217ec9913da06ddf935e016f1209f693f2e5f4686f87f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GOOGL"
+    },
+    {
+      "asset_id": 21,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_758a8926c72172c7b2c9097682e03b9c35fe0386e977dd86e2c019995f5c24ef",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GOOG"
+    },
+    {
+      "asset_id": 22,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_092f4effbab9419b3976ff90afa3269510f1c36dc86db08b216107af76854337",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MO"
+    },
+    {
+      "asset_id": 23,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_f16bf9c5ee033ffa08904502fe2cc6b0208ea93b84fb3f045baac74f1cb93a01",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AMZN"
+    },
+    {
+      "asset_id": 24,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_85424e5e8ba0aacf92efaad8c8c72dac8f11780a7615e471f2189b831ea16fad",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AMCR"
+    },
+    {
+      "asset_id": 25,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_8ff9252abff2e0620fccd561d231df99dec94fcfdb10dea8de08493b4cc35a5a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AEE"
+    },
+    {
+      "asset_id": 26,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_85bd080a728dd27f1d6f24b64d2acfc696752a8b471b1eb06e676eceba85bc42",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AEP"
+    },
+    {
+      "asset_id": 27,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_d976dde4a8bfc09f1991c5b9cc2bbd699b574bd54190d92bbcc4f1239859ae9f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AXP"
+    },
+    {
+      "asset_id": 28,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_165109c6810c9fa80e5592dc83dfed1956b2746af85c759b108cf27098f5ca2e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AIG"
+    },
+    {
+      "asset_id": 29,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_5a913de0ae8e86afd36abd65d06c1f8c130e5c707931e1a266a14efe4c038cfc",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AMT"
+    },
+    {
+      "asset_id": 30,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_cf68e7e1a81616c04f05e625e6163edbb76ef5c592affecf709204c38902bd47",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AWK"
+    },
+    {
+      "asset_id": 31,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_05155d1d094cbfa38bd8722c93f61e0d61b2ac83548d57b0dd30b3de6a5b889c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AMP"
+    },
+    {
+      "asset_id": 32,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_750516ab33ec2f7afc62f0a8dac161b535eb8eb05b0a53495e61788c03922228",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AME"
+    },
+    {
+      "asset_id": 33,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_d8c268b4a6707f0c9e2ae8f3425a379b8f34c784b93c27aa3efc2ee685bdcb83",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AMGN"
+    },
+    {
+      "asset_id": 34,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_9e1358c2a16a7097fc291af23dc89ac528d4cd370dcc4e169ec36cd0ffd8a105",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "APH"
+    },
+    {
+      "asset_id": 35,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_6bbb66ea22957804ac58ad3c48bbb3b33680caad6fa826a04b8d6977a33dc7db",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ADI"
+    },
+    {
+      "asset_id": 36,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_027ad8f4021ae33cb98615db1ef809d2e9b3336318536ffe81ea44167793c3f4",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AON"
+    },
+    {
+      "asset_id": 37,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_459e5df531cd2ff1e9d57cab343d0f9763066c1c606d85b64b7a1004f9087346",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "APA"
+    },
+    {
+      "asset_id": 38,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_040eee2daba455daf8c15573fcee3d6de7df3eebab6ee493a5b3fc3788870d93",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "APO"
+    },
+    {
+      "asset_id": 39,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_8df6bd8d0d7cc0f32fd82a22dcf0333bfeeb7ddf1a7fc89ad9f2e9bdcd3231d5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AAPL"
+    },
+    {
+      "asset_id": 40,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_65391a265c7b89b93bfbc02fda6aefa40d90369f38ddfb0e76bb9f030e854b61",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AMAT"
+    },
+    {
+      "asset_id": 41,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_096913d1e22d5efdca38d0cbd4adf6e9499d569a31761913d213e085d16d8427",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "APP"
+    },
+    {
+      "asset_id": 42,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_37faacdb02e0f32797bf1a0a116271fb1e722fbbf9e29a75d68ee73fb0c29e23",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "APTV"
+    },
+    {
+      "asset_id": 43,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_3fd0d42d854bd0bae7015190f7f7f79a33883ae7fba76b5d889156176423a779",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ACGL"
+    },
+    {
+      "asset_id": 44,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_e4cd860991b4190d23b88a21dc68a5cb57e1c26313f2e094fbb37c29ae230319",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ADM"
+    },
+    {
+      "asset_id": 45,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_1646cbd5f90d91b735e45836ef5dc097ca790a2c4cf1174e78e2b17b1f8ba375",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ARES"
+    },
+    {
+      "asset_id": 46,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_e7d3232ca3a8c8521b6c69706ea11b98dee58bb6b73ca080f86f303afa80b67b",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ANET"
+    },
+    {
+      "asset_id": 47,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_a6beeac837233ac355a96780f960b78530b548862b7e2625fc6c9305ee4d254a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AJG"
+    },
+    {
+      "asset_id": 48,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_02fb55c862f22c9bb5cf05cfa2851707ad8b9b9b0bda90150575848c1235af53",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AIZ"
+    },
+    {
+      "asset_id": 49,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_aef285ed46821483978a66a60e2883215bf7b2359119b246d9253580683247c3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "T"
+    },
+    {
+      "asset_id": 50,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_c84fced74b9b73afa558c8b0e4bad1eea5987b2111d90953014d16d5306a4de0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ATO"
+    },
+    {
+      "asset_id": 51,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_c695f77f07998b8103de867671bbe41fef835e56f6047f854f3cb2bd1bf6b08c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ADSK"
+    },
+    {
+      "asset_id": 52,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_e89cd40b044eded49c26f3f106c3cb4ae2cc616525f5c7fce29d9a80b3795b9c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ADP"
+    },
+    {
+      "asset_id": 53,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_d0eff24c83eb99c1414bd2b30a821cd41c75e1f08b6f55a56ca9d3fdcff902a4",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AZO"
+    },
+    {
+      "asset_id": 54,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_47349612e15306daa33b9cfae03f88fb87c10fe6d3bb820bcb23c081101718c9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AVY"
+    },
+    {
+      "asset_id": 55,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_c09a8fddd9b7456b47e854a5c4b6840c4c5c2ee76ab1670150eab1b0f68bf782",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AXON"
+    },
+    {
+      "asset_id": 56,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_700df900c44b7516b2d3cf72e1adc98fef17fa05f15ab04702435bebfc005803",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BKR"
+    },
+    {
+      "asset_id": 57,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_8b7fa8510e35919762564cd8088bf1f2a0d353d52724adac8996919f07c667f7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BALL"
+    },
+    {
+      "asset_id": 58,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_651c750fa0dd2f8e7442bd74d4f8c32cffb7c1a4c53e226fb23ddae0232b433a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BAC"
+    },
+    {
+      "asset_id": 59,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_da984abf8b64fed44fc56998ecabff0bf40a6d793f873469c83a5d99ec0f2474",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BAX"
+    },
+    {
+      "asset_id": 60,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_8930f6a005737ce4b44f7eebc6534ae4c00ee86e128c5539a028c7cc108143ab",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BDX"
+    },
+    {
+      "asset_id": 61,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_beb5e90c2a1f40e1c507655122918d28fca289b108e66d13057232b659a46cbc",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BRK-B"
+    },
+    {
+      "asset_id": 62,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_694b7a27eb174e5e03e809ab7cc31d545f1e0139d0bc9497fbbcd07b2ef46857",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BBY"
+    },
+    {
+      "asset_id": 63,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_10b6f89f0e9f8fd389661dbecd8b013fa918e8aa966fde114e7fdc9bf3ea40eb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TECH"
+    },
+    {
+      "asset_id": 64,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_a4003f21fcf2752b2942ac94863bd23b4e68599f7d034ed690e81ba1ceaa13d9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BIIB"
+    },
+    {
+      "asset_id": 65,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_ac8f7eb79f646f96c3296d47f6a34963137cba877b9fed71126e24ac87f7db56",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BLK"
+    },
+    {
+      "asset_id": 66,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_536712ebef9cc5951a268ae729dacc51f7e64c101c296d112e565ea0e7e7c0ab",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BX"
+    },
+    {
+      "asset_id": 67,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_33fb983de933c682754062bb1ac73ea206da590ec5af2cc4fb9538a3c902efb2",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "XYZ"
+    },
+    {
+      "asset_id": 68,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_a0a9ca765812e3f159829c9acd88fe4c87a1ab2c7ac4d02a65c6ab0560e81ce7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BNY"
+    },
+    {
+      "asset_id": 69,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_32d7d4b82058f4237a5c7895e7d2c346775dd45442956435a5ac22c64e846625",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BA"
+    },
+    {
+      "asset_id": 70,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_72f07b2aecf053222167b54207983c3a0dc586f175626fcd5731ac3a141b73b4",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BKNG"
+    },
+    {
+      "asset_id": 71,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_e800d7c5b9aa3ea80659b9bf8c5b674fb554bef48e31ce27b2abf49f3a7fece6",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BSX"
+    },
+    {
+      "asset_id": 72,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_b121188ddb1fa6fafde2c1b7e1244ca90cff06ea0a19b681dfcbfb6f53452ecb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BMY"
+    },
+    {
+      "asset_id": 73,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_f8d3eebec45aaad77d61711fb78d78c75ef910e1d6d1d79d800a02c93ce2f300",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "AVGO"
+    },
+    {
+      "asset_id": 74,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_45d001a2f938de4e54a6a7199ec3db9ce6055879486e04c7172848169cf8dac5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BR"
+    },
+    {
+      "asset_id": 75,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_99b80e7195883badf54b546e6f2e22a75cda947c98c6d7d3a4b58d1e77f0cde7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BRO"
+    },
+    {
+      "asset_id": 76,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_05ef08181f1b43ec9a8a00a48ed3bf11e0d867d7f14280a273061e2b4222dc05",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BF-B"
+    },
+    {
+      "asset_id": 77,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_6fd8790770d10a8d171439c412e8ca4425a485e0339ee17f474a762570b78444",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BLDR"
+    },
+    {
+      "asset_id": 78,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_1c2df0bf482821822cf2dbf44926fb8ab6a31903e232b9c1d2bb820f6550ef4c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BG"
+    },
+    {
+      "asset_id": 79,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_490d7247756f9a33921edfad4016cdc5e43e6ed47d46e2c6d9f08cfb0ce70884",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BXP"
+    },
+    {
+      "asset_id": 80,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_7535528f0fddd61ba00a88c961187d8930e49895ac9638891998e6892c38b601",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CHRW"
+    },
+    {
+      "asset_id": 81,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_ba43d6909175ca398413e68e5500b88d86806a4587ba8b8cb1c47e4078637850",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CDNS"
+    },
+    {
+      "asset_id": 82,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_5a85a815ba40323e8d01f18a23be9e610c814d0b05196523624b4eea5f22bdde",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CPT"
+    },
+    {
+      "asset_id": 83,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_7d3f750ee0c35257c079c1ee86c3c1d0920172c0c8d78996450e74ceda0e8f9c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "COF"
+    },
+    {
+      "asset_id": 84,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_391186e2926aff080f1d84e798aa76c77ce825a693bcf42fa4876d92717329cf",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CAH"
+    },
+    {
+      "asset_id": 85,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_72027aacadfb9116bf3db081e97d45fb9bfd2b509da4f9d011987702fde83f1d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CCL"
+    },
+    {
+      "asset_id": 86,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_5b6623d836c3a539a130a9b019c8d272ac7bc415a5a0ee207e99a56ccab3cf85",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CARR"
+    },
+    {
+      "asset_id": 87,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_fcee5f213663aa1ba6d7173eefd6e7400910d12034b88175c6af6992c4db1914",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CVNA"
+    },
+    {
+      "asset_id": 88,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_07a303ea6f2b7e6905838c240545d52db4bc2fd7b6123054155aff2fdf7b5d7d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CASY"
+    },
+    {
+      "asset_id": 89,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_96832e003fda5fcdea9a63285f1f72391c24e540208c749b23764942c0d06cc4",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CAT"
+    },
+    {
+      "asset_id": 90,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_f94f499ddddd4f65a0e8589cdf43561d360623f2304c541caead1bc61cb85109",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CBOE"
+    },
+    {
+      "asset_id": 91,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_0dafc0ecc6ca48cad45f3b857f477b935f7657ee6748184f36540c83d2f0e846",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CBRE"
+    },
+    {
+      "asset_id": 92,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_84a6067b2acf0d07ecd7a7884b491c32a185ca410d542dd39f9fd5e6eb3538e8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CDW"
+    },
+    {
+      "asset_id": 93,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_6b844bd2d93c59a827304d11d4b2477bbcccc79934bdea98d6c517440b4055dd",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "COR"
+    },
+    {
+      "asset_id": 94,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_af45b695d19c3302b9d5ab32a1c42efd5e6212928c8810699f5d34fabe23af73",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CNC"
+    },
+    {
+      "asset_id": 95,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_036e879e23aa445da89e8702acd2b410ff4b69270d7401f8d0060b7c616822bb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CNP"
+    },
+    {
+      "asset_id": 96,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_9e1e0a3b9473ec9e4bb3a36e7cd49ae4a3df7e59b73325454a6040c3e685bc5a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CF"
+    },
+    {
+      "asset_id": 97,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_0bff2f247ff3f44103d6eca9d3cb3947245ff2661013589a047116d0c01891f7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CRL"
+    },
+    {
+      "asset_id": 98,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_a2c7d4e123a8127383b37607855e07552dc20c4cf89fdf299a93c9aa9565aa5f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SCHW"
+    },
+    {
+      "asset_id": 99,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_def72939fec00dc20160bd14f9301140020e95ccba9b2c1555ff00d0814789c4",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CHTR"
+    },
+    {
+      "asset_id": 100,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_f86f39f7ca36fc1f116c66b5b9faf15c2a809624ea117b08492d2914297cc41f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CVX"
+    },
+    {
+      "asset_id": 101,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_652ec69d04c844f0a4b377a933af40a7996b62faf76e079cbd1ea9caeb8dccaa",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CMG"
+    },
+    {
+      "asset_id": 102,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_ca71479d83a15f0a0dfc623832547ceb930cb29954d613dce46be8ecd2d39699",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CB"
+    },
+    {
+      "asset_id": 103,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_8554a04fdf4a59c28e9b846cf7a29d821f32fab74116f450a762d7c4ee3108e7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CHD"
+    },
+    {
+      "asset_id": 104,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_e98f23aa3e4579a1efde4af343bdc3e0bf7ccd95ef7c19bb76f2cb0eb5068900",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CIEN"
+    },
+    {
+      "asset_id": 105,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_88230e6c0ca2669530cf39a8530360c8d783a163f7c9d5fbf30494c9af98f651",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CI"
+    },
+    {
+      "asset_id": 106,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_5631c073782e45ba0c5341463ef0a29473d8350722b50f57c7ac55b57652c158",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CINF"
+    },
+    {
+      "asset_id": 107,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_8d010d36435102d04ac38b50f5367a6a32fe8ecf759a31da54a6ab6cbe0db8d9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CTAS"
+    },
+    {
+      "asset_id": 108,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_6a3c24c7fc88bdd23a3af7db01fe776d88e5e35e1bb1de3128ccd1da16bd04ab",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CSCO"
+    },
+    {
+      "asset_id": 109,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_28907dbc2cbc0dabbce86ca4a45df2aed4e6c351a6be27285d9f8e4edfa14699",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "C"
+    },
+    {
+      "asset_id": 110,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_d7d0b499d8bff8b2b55c141d384bc9ef21bbee714847fa0a03281cba3073bec8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CFG"
+    },
+    {
+      "asset_id": 111,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_1a28bcb9f13b95301ae0cc931e6824d699d2afc1434a2e69f184d078f25c3588",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CLX"
+    },
+    {
+      "asset_id": 112,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_d234d97f4defa78ba9aeb618d75d85545ce31db3c54ffa82fc20a892c1a0df2f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CME"
+    },
+    {
+      "asset_id": 113,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_e1774a23536d6ccb8e30a236400e956dd350dfe1ef0a54f1f67c023a13cde092",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CMS"
+    },
+    {
+      "asset_id": 114,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_eb84ebea5ec9c1f03c6ae6912f6edec3fea06fd24eb76437c8a4c6fa55a05ef7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KO"
+    },
+    {
+      "asset_id": 115,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_5a3b47781703b2c21cbcdc86f880440e31ec930fcd20d021e348795f6d7949aa",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CTSH"
+    },
+    {
+      "asset_id": 116,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_a3872e99433e168875e5f82d6c05572652e27bbbb15217834fcc0cd04ddd8d9f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "COHR"
+    },
+    {
+      "asset_id": 117,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_b43ef46205205ba24c9cdb80e0fab9e90deda53d389bb8cf394f14b559418d4a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "COIN"
+    },
+    {
+      "asset_id": 118,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_f07b4bb8b945211c12e1b665e77b5de9ca7f7d0a7de33e2882cedf878b54d365",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CL"
+    },
+    {
+      "asset_id": 119,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_289add73391d59825e7b0b046a02a41c503b7d0b63090a3f5d1dd789e0da7419",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CMCSA"
+    },
+    {
+      "asset_id": 120,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_62059a2e68f90581c0d4d3e2b99e1383445ba4fe3fab00def68d8e23c5bb468c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FIX"
+    },
+    {
+      "asset_id": 121,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_2f480e127829cd64533c5a74e34b5effe13f29c6c9d7fc1d76ae2052d5dfdecf",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "COP"
+    },
+    {
+      "asset_id": 122,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_cc7ab451a2647994706fe96e791df1876b09f735e305a582046a1c11f2224a4d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ED"
+    },
+    {
+      "asset_id": 123,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_3ee381a5c1af36daefb715bb54d63e15e537a67b8177c1de6c710e3b4562fde7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "STZ"
+    },
+    {
+      "asset_id": 124,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_1192f5d5354331343ed6d575f695a12c6a3e1087a14fc529d59c1c44180c6bc8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CEG"
+    },
+    {
+      "asset_id": 125,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_a0b7c6a7db3ee0191db3257b3e28d24d050bd74c4978e3797f2d44a1e772c669",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "COO"
+    },
+    {
+      "asset_id": 126,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_855491404f6f364a43be5a8a1c0a42842d412bdfcb092a2cc9651af5344d7ccb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CPRT"
+    },
+    {
+      "asset_id": 127,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_8b2186f29eb1d97cdfde963f3726c04c65442c28227a9675504fb75d1fa04d1f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GLW"
+    },
+    {
+      "asset_id": 128,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_72478e610fcdcae020f6fbf9982607e0700af5fb8a6b08c5789a56aa3a19eb62",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CPAY"
+    },
+    {
+      "asset_id": 129,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_c034267d8c502025915c420881e412411b454fcb0835639fa5c9282bf55130b8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CTVA"
+    },
+    {
+      "asset_id": 130,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_a219abb5fadcab49bea1b5e8f836d203e157bd5847ba2754ba632a2ef5f00e95",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CSGP"
+    },
+    {
+      "asset_id": 131,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_78e6b775c7b23889172b9a5904d3557dc9c3d0d6125d0a57cc59ad588d7f8cdd",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "COST"
+    },
+    {
+      "asset_id": 132,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_59bfa91f62a53370e1ec250e5f1709f89eb1a1e11f109b06cfaaa32d9aa11b3f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CRH"
+    },
+    {
+      "asset_id": 133,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_03b7b57a6fddc890f125397d342e014fef24eb9c5dd7dda862d851d7c911edde",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CRWD"
+    },
+    {
+      "asset_id": 134,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_48c401b9bd3253f51628e9ed8a392c5e94c830bd6bb3a990314feed8268f3ea0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CCI"
+    },
+    {
+      "asset_id": 135,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_f2da40aa501bbb0bc9a8c236ce87a2aabeed2ef71c0494e4a8df6c626db62f3f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CSX"
+    },
+    {
+      "asset_id": 136,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_ccf35ef77b30201479e6a74ac11debb057344b2a3d3bf79a9f6f7db7d66ccdbb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CMI"
+    },
+    {
+      "asset_id": 137,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_fcd19d3f0c482db0ffe6f841a4809e527cc4adfd0ef0d9e90d3517e577acee10",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CVS"
+    },
+    {
+      "asset_id": 138,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_40b8fef04c930ffacb381314129e5661fbb936799221f56ed8331961913be3bf",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DHR"
+    },
+    {
+      "asset_id": 139,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_a3aa87e5de29e6de89ca1e981ea934506d272af5155ca2d3ac986b8b76a20fe0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DRI"
+    },
+    {
+      "asset_id": 140,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_a952123d88c22653bc38e658ac6e07ff8db6142594c4d3b7b16c4e55bafcd663",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DDOG"
+    },
+    {
+      "asset_id": 141,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_9b271a568bb8e67e4b86ac47fb112b084060fe18dd1e375959781516573374cf",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DVA"
+    },
+    {
+      "asset_id": 142,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_bb5ef45270a52604e8530c646fae84701b0d2a16d17187a20947afb83df2582f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DECK"
+    },
+    {
+      "asset_id": 143,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_4a440a0c14bc7cd1306fa2aa40fb33f28a09b10353082cdd0feb1f1f55e24591",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DE"
+    },
+    {
+      "asset_id": 144,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_f8a1c021a7636512aceca1470e9e0898e7e210e060de68ceb7159b5b95e42af6",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DELL"
+    },
+    {
+      "asset_id": 145,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_ec98ae01d253dfe13554112f044bb32a1a6dccf173d6274c31d51c35324cb20a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DAL"
+    },
+    {
+      "asset_id": 146,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_33b348cad8bc0af8a1e22e364ff1a76ad40abf8ffb18660d97dd668de6a2f66d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DVN"
+    },
+    {
+      "asset_id": 147,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_1e7ee5772ef27d5cd8774bb12202613dac0b2ef962e1ea8fc8664b43dfe0400e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DXCM"
+    },
+    {
+      "asset_id": 148,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_25746a9833498bf4e9d96954540297f93d668ea3bc24a29cac9a199817ddd967",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FANG"
+    },
+    {
+      "asset_id": 149,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_12fbf73aac76f8b13f4c9feef95121d6aba5b0da63145cee89cfb19117941088",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DLR"
+    },
+    {
+      "asset_id": 150,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_0bfcdad7de2346d60ffc435ee7351bbe6068c29d1e5cadeceb3aea2a2335b386",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DG"
+    },
+    {
+      "asset_id": 151,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_bde432cd259474ff382aac31d46ab79cdd4fa40bc1c031f6b28d86d44895de76",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DLTR"
+    },
+    {
+      "asset_id": 152,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_5d3635a7ebc9fe11bc7f70492b37201ec59a0ffcff14d9a976559ae02da7ab82",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "D"
+    },
+    {
+      "asset_id": 153,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_ca6da73a07f3677166b3e77a38fe0fef7f62df93011ee54fe8ed90e5abcebc04",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DPZ"
+    },
+    {
+      "asset_id": 154,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_55ded7dd33911c17a08904e1c785821cfb9e4d1438932aab1ad6fd6d715d20a8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DASH"
+    },
+    {
+      "asset_id": 155,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_4d89adc2c7e992828aa0b18d96926acc9fd1f5b09f44196448fa7d9a2eabd506",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DOV"
+    },
+    {
+      "asset_id": 156,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_f1bdf200e157dd0434c7f45d234f7e8470fc04a3a136fad8d609797331e4f37a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DOW"
+    },
+    {
+      "asset_id": 157,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_a2f44513d026899dd57c8db09d0e07da5d37c0ea58d4b066aa6cefa9a69265d9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DHI"
+    },
+    {
+      "asset_id": 158,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_3b269a72bf388181635ff53ce6d13fd46e4e7839ec3cbfe8d1a73ae5472a7b29",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DTE"
+    },
+    {
+      "asset_id": 159,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_44a62923a87b39cb7f3016e7424ea73e631eb7db30e7e09c2da2ea8799229e17",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DUK"
+    },
+    {
+      "asset_id": 160,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_9765765918f4cb7c03fdd74479b84fd64d56a135a1d40d9fc5973bc7cb3e1dc9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DD"
+    },
+    {
+      "asset_id": 161,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_0bb22f76fea9ed2960c3bf7ee1c0773295998352cc76b4a2985a266d1e77e3b0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ETN"
+    },
+    {
+      "asset_id": 162,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_67d051eeb0cdb30c1ee2869658beaf0ff82575cfa75825203a1edd44728ef116",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EBAY"
+    },
+    {
+      "asset_id": 163,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_c3e5463d27027457e184b5a77f7a5ff15889ba33dbafacbb6f52c7cbec74f5cb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ECHO"
+    },
+    {
+      "asset_id": 164,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_2da0094f914002afcf90b49b8a84ed949fbfb6ecf5530d1af38390d448058cdb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ECL"
+    },
+    {
+      "asset_id": 165,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_4ed9cb7ed952ca30b156f9d533c885b7a363ff384c0472eae009e729bbf9cb18",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EIX"
+    },
+    {
+      "asset_id": 166,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_f52352ca08af920227cf730d4fd9990d39df0fc77452bed724ab6fec70611a99",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EW"
+    },
+    {
+      "asset_id": 167,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_8fc7000b47b98d2eaa635d42b03126811a4443415488f7920b209a42b99e921e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ELV"
+    },
+    {
+      "asset_id": 168,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_02897fd599771fbeb61ca17ded0a8a8caa2ebe30f72987be7f36eff3f3fcb4b0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EME"
+    },
+    {
+      "asset_id": 169,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_77f883ac894f4661071392f0e4776e3c087af35d726ada7da558a80e005fb0f5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EMR"
+    },
+    {
+      "asset_id": 170,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_bf053bfb45ce705462b89b3ff8dd4c19388f497ac67bdad9a7025dca397282a6",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ETR"
+    },
+    {
+      "asset_id": 171,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_15174e654c17908d7d3eae6533a7bf55e657486db20d1a4153771db1ff578feb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EOG"
+    },
+    {
+      "asset_id": 172,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_58bfec2dee0d051667b4be00088384bd513116ccfb7b317c23c762605ba5565c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EQT"
+    },
+    {
+      "asset_id": 173,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_0fb85ce251cb88a24a09958799a02ab87e3de584e34b9df9058193c2cd405954",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EFX"
+    },
+    {
+      "asset_id": 174,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_ace566cf1e419e42dd1739322cd44aa64b909fd35db2143085421a7bdfb1ad15",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EQIX"
+    },
+    {
+      "asset_id": 175,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_4576b9695a88903a2223ce22e342329be8b32d31d74dd09b17571fe606da4721",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ERIE"
+    },
+    {
+      "asset_id": 176,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_f86e96246190d6268290b6f902a5dc0cb1cc5cd0f19ba20d2411310f1172b347",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ESS"
+    },
+    {
+      "asset_id": 177,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_84df661580d137676c0c42ea358463d734e20a663ae8d339bd9efbb53b662ce3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EL"
+    },
+    {
+      "asset_id": 178,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_fa3b2428dbd28a6acb3e81c94314bf94d66d5211e63ed710b551bf9ba4f01a13",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EG"
+    },
+    {
+      "asset_id": 179,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_d3c7001a3c9829a0db9fc5a303baa63d2ca1619935f7a026e86b8402670f798d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EVRG"
+    },
+    {
+      "asset_id": 180,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_6eb12be89851d61bf4c67270bf6014d5e528a0de1f89d254baa6a08bda1e82ac",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ES"
+    },
+    {
+      "asset_id": 181,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_3889f68b94f3b03fdf3c9172afcf8c680c73cc99fe8a30bd36a46875c3f1221b",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EXC"
+    },
+    {
+      "asset_id": 182,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_919f24760fd664c730dfcacfa748fd21aa7b718d8514efb7d6c77a3fed15948c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EXE"
+    },
+    {
+      "asset_id": 183,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_e0f1f1c1f5f741b08a9466799a393051c8f14f5a7d056ad460d57f3222a2be05",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EXPE"
+    },
+    {
+      "asset_id": 184,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_0b37a1b4cc69e657cc15b630ae127b186a56f0ccae053f2bc87ed39d6630354c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EXPD"
+    },
+    {
+      "asset_id": 185,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_c3eb35e1cac6510212dd5a48a9e5c641435b21d80c846b383fdaedc458ed4db1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "EXR"
+    },
+    {
+      "asset_id": 186,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_f8c0f62329ff368daeb5edecea48d7b4e80d22f18a88849384246e20fd6afcca",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "XOM"
+    },
+    {
+      "asset_id": 187,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_58ef8b58aaefb344981b42db0ec23a6556eaf94818e18d99c322d6d8d1a698d0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FFIV"
+    },
+    {
+      "asset_id": 188,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_55a79aa7e0b9fd1794940ae0909463a76cd36161ed41a0c4e51854fe25af70c9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FDS"
+    },
+    {
+      "asset_id": 189,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_86b6a0c0d5178c33bf63be41d5fc23744a5e5a1b9bbc014681e2fbefd65f5340",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FICO"
+    },
+    {
+      "asset_id": 190,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_91cfef92f96df3e0231c5462ea2a0b8d73237b99734193901717a4a3de335607",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FAST"
+    },
+    {
+      "asset_id": 191,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_75d581f48d2178e7274d38ad9f0990ba4dde00e8f081761b2423a0050d5af1a9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FRT"
+    },
+    {
+      "asset_id": 192,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_9d35936c19789b81c58331f6f81522e8b99a506941a61fc086d2b0d64a26b040",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FDX"
+    },
+    {
+      "asset_id": 194,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_5d92d4146f200bc514db6a3d846d2a811da5ec364df82837b3ff1d3cb81078bb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FERG"
+    },
+    {
+      "asset_id": 195,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_1eef975e54c4038410ddcea5e68b6b33f7d6da72c707479ac74a570b50cdeb34",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FIS"
+    },
+    {
+      "asset_id": 196,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_65760294b71b81dc380c96a5c1bb9c9e112024d66b4f35a4e82e2d043e4d6640",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FITB"
+    },
+    {
+      "asset_id": 197,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_18689560c382714ea9faa698961d32ac4078de0dd0e85a369bb45a8c49c0b1ba",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FSLR"
+    },
+    {
+      "asset_id": 198,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_a25ef5ef63063a5ecca5c1686a1916998bcf87e0d270c9fd0e6c717bb382ce03",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FE"
+    },
+    {
+      "asset_id": 200,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_a1c25ec1d3d76ff9945cb8e4d7fd4b49a80f6098fba88ce0354ff0079b9daa90",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FLEX"
+    },
+    {
+      "asset_id": 201,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_ca712da1ef86646b73f07eb6daf39be30d47ebf2a0511f479d9b4974df377984",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "F"
+    },
+    {
+      "asset_id": 202,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_1d5f3399a9db906e66e9f71b147368d49a2012ee052a2d79fc11f35a8d0e9870",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FTNT"
+    },
+    {
+      "asset_id": 203,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_4b165c9a772e4d8337584f3ae11fe30997413581e88ebddcf79ee7040de76a1f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FTV"
+    },
+    {
+      "asset_id": 204,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_afcfaf276382be4c2433b834b00f6ba97fb002f0f19426be3fcd82fce9111f56",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FOXA"
+    },
+    {
+      "asset_id": 205,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_7c9f1757044bddd8e720a01eba89723d1ceea60da085aa1fcaa9693768adabb9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FOX"
+    },
+    {
+      "asset_id": 206,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_52c0789e4ca489f5c042da1dd15f83458e52f37aac8c747c39356f7395c0af53",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "BEN"
+    },
+    {
+      "asset_id": 207,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_34caff2af3dbd301e4cf2c883fe379a0358c97ec416b76b36f34c93c3f55b003",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "FCX"
+    },
+    {
+      "asset_id": 208,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_346f3ca19eeadb0e141c5b22f15dd754349e94d56ad922d3c9dd3bdc78da3ccd",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GRMN"
+    },
+    {
+      "asset_id": 209,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_4083211ff9a17646d00cf7a3da64361c8d2e6b0b7b5661d034186e738d9907a9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "IT"
+    },
+    {
+      "asset_id": 210,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_8472339a6661f55633e05d2dedae491f179221a622bbc57cedfdb31190e0dc7f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GE"
+    },
+    {
+      "asset_id": 211,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_b1385db76dd3d78d176fc19a6686925e32e20c087d8e535cf7a54380791ddd52",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GEHC"
+    },
+    {
+      "asset_id": 212,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_10a6415929675a84754ebcad0e06e2457710031e866b0651a63fb41cbe2fc2ff",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GEV"
+    },
+    {
+      "asset_id": 213,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_a633e0d78755c6af1489a2f641c5e9204874e63371187fd748470f09b318ca9f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GEN"
+    },
+    {
+      "asset_id": 214,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_4e58a6cb2db4236b46c8db1fe07c6f89f8c719e5063545a112f53c30ba5d5695",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GNRC"
+    },
+    {
+      "asset_id": 215,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_a9e7454d4b91ff05ca09c1f4f0ea3de614e73ad9a275deaa96799d22c8d8b73a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GD"
+    },
+    {
+      "asset_id": 216,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_8dfc6ccb87b549197a334e8aea08360ad17dbb8972b36836d5e69010184e64b5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GIS"
+    },
+    {
+      "asset_id": 217,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_c6b64a6936bead5a9f8b768c4bb0ea23deb47937fd8487cbf222c8321df056d7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GM"
+    },
+    {
+      "asset_id": 218,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_3eab219351e2928e731662e1d47e841eefe45555bb17bbafecfed458bfe3e2b9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GPC"
+    },
+    {
+      "asset_id": 219,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_6f3f0eeff7d7e9d9f176d63bd1942feed5c971729f1b7dea415661cb5bd47a89",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GILD"
+    },
+    {
+      "asset_id": 220,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_7cb770dd62e87773b481df423edcf7f0dc7054c48a914a8a51392b91e6b8e419",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GPN"
+    },
+    {
+      "asset_id": 221,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_f05acda35a6e2ed9a400558bab9609f1b47dcf5a5cfde5cf8f1307cc906b0047",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GL"
+    },
+    {
+      "asset_id": 222,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_eaeff7f78bcef8df76d0341992dbbfb7b7ab4726c0a53dea40986644ce08f37e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GDDY"
+    },
+    {
+      "asset_id": 223,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_280af598d3002823a5e851e962b2c10faf4c731122b0675cc0b59ca354978e3a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GS"
+    },
+    {
+      "asset_id": 224,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_5b65f881a27a0758bbeb9e4f639e8573623270f8bc6c7199d813a14f8cef2858",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HAL"
+    },
+    {
+      "asset_id": 225,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_b07629252f2956d7b84fb2a26055b2ab97990f98178faa88f42e1783dc515ecc",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HIG"
+    },
+    {
+      "asset_id": 226,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_0ad060f895abdb900dc601117532eb7df6a78cfa7949a98569d3ce89e6cb113d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HAS"
+    },
+    {
+      "asset_id": 227,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_044b89c92661b8519552e8215e5cb3fa981ce966c8eee0b6dd79992a64c2d7c0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HCA"
+    },
+    {
+      "asset_id": 228,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_2ec4402b6f0229ba841cddbd0c29868f7982fccb5d948b5b9c2becd1b8d0e060",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DOC"
+    },
+    {
+      "asset_id": 229,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_741bd80fc2b9e9808cd7ece7263660e8de5b472ba585e5d3bf6e5676954a2198",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HSIC"
+    },
+    {
+      "asset_id": 230,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_b818364f8de9060caee9b63cf9567b530477516e911d5223c1bf15b8e39de95b",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HSY"
+    },
+    {
+      "asset_id": 231,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_7252ecd217021dd4540ab50c9168dd3b43d7ca1f16d23bf84cbb840cdb335a31",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HPE"
+    },
+    {
+      "asset_id": 232,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_f1837307395906688b18aeb0db0c5d75c5af203a4f7b383b9f3b2799dd0a648e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HLT"
+    },
+    {
+      "asset_id": 233,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_bb57d014a7b814ece9317fa798b1bd7971c99c870f3f104e23eea2320e104a8a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HD"
+    },
+    {
+      "asset_id": 235,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_056a5d37e193824b772d56d96ce9e241fd1aabcb94a25b9764dc34288af592bb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HON"
+    },
+    {
+      "asset_id": 236,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_1a77ff27b251073295cb7066ec2270f4a56b7da3c76545c1a8af1f28f9338e2e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HRL"
+    },
+    {
+      "asset_id": 237,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_fab18cfc81bfe8165a3f0e897b2c71f33ce7788e0ec4ce710c34701ae4ce884f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HST"
+    },
+    {
+      "asset_id": 238,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_b127f7dda499685e1881f9c05d0581cc88fc856d8cd2dfebc22d493013d2ac23",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HWM"
+    },
+    {
+      "asset_id": 239,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_94f19dab8d29aeeb4a8f7884378cac242b30032cb2f78c1862e07f5b213235fc",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HPQ"
+    },
+    {
+      "asset_id": 241,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_2220f149431727a1a9e45feb4c1498dc4a3eab1de1576b73321e6ed021aa700c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HUM"
+    },
+    {
+      "asset_id": 242,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_1df4802e7661aabccc4b2ef2f83330c438bbf27a4f76dbd3eab8811859ccced9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HBAN"
+    },
+    {
+      "asset_id": 243,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_b64329b742d154a7ea92e63e22969f242364bf119751566a66c0f0646f5fa6c5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HII"
+    },
+    {
+      "asset_id": 244,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_cd86116fe5292ac611d8355a57ca25399aa50d0d49ade75a6f660bb6ba7e9cb3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "IBM"
+    },
+    {
+      "asset_id": 245,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_5712d66a5afb77d03030ba9c2ee0fbb9ded431cba5123d3a744ab0802a1040df",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "IEX"
+    },
+    {
+      "asset_id": 246,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_6dd4af048fee6a1ea28014682e2e7a2980b3ae52ed15d4d227f0d7478a6bfef3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "IDXX"
+    },
+    {
+      "asset_id": 247,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_5a5f60830ddbf02699383dcb9a54488632bf79413c395b531f2257a0a0dd5a3e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ITW"
+    },
+    {
+      "asset_id": 248,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_d1194ab3d38c307245f5973478923506b3f971d2ded51c48cd02108337c7ecb9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "INCY"
+    },
+    {
+      "asset_id": 249,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_bb42d18ea9bd2794de95a716bc546dfc9216ffe9b0c27ba48bff3c91d1353e39",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "IR"
+    },
+    {
+      "asset_id": 250,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_2a20997a1754ec9889754c7414aa0301cadafecaacc06ba627710841092926b2",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PODD"
+    },
+    {
+      "asset_id": 251,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_660dafa928aca4fb01d9d9e178b1fae8c8dcd66bb6f06cbcf235328692c51019",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "INTC"
+    },
+    {
+      "asset_id": 252,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_8f62eed5ded1e6244ed46d504e9973828530fac69ffaf1a4d02a287b5f288200",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "IBKR"
+    },
+    {
+      "asset_id": 253,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_cf5d9fdac096a083882215e107396086f31460b8ad2ea140760b668649ab701d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ICE"
+    },
+    {
+      "asset_id": 254,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_d42ee710a0597b7f5dee548b1f31582b60e904924fb233ec9b93d1148626fac4",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "IFF"
+    },
+    {
+      "asset_id": 255,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_c088bf0e5b3e0c4e894bc6e583dfb1cfa0c1fa3d1620476b2dc2c36dcadfb327",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "IP"
+    },
+    {
+      "asset_id": 256,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_25dea601328985d1adcc6e0f0226cb7cbce57fead418442aaf813c68f29ba330",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "INTU"
+    },
+    {
+      "asset_id": 257,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_5679716b64221d26aa43fec6fdec2c2601609fc4fb583c69c1605134de76dc53",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ISRG"
+    },
+    {
+      "asset_id": 258,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_f91d01d5391e65de6698a3063c6cc70eb7bb33bcc06cd571575cfdfd09e7d626",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "IVZ"
+    },
+    {
+      "asset_id": 259,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_dce855293c60a8b336a3464dc0e71e16854259b3af2cf7a73a3273fb5ca6143c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "INVH"
+    },
+    {
+      "asset_id": 260,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_983cec0a584f1947fbcfb24712c334b3dea35433cad5c8425bc850279a63e375",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "IQV"
+    },
+    {
+      "asset_id": 261,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_e3f7bc92e6611d8a3527f724449553e3ace66220f8d96888ca4bca32047e7edb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "IRM"
+    },
+    {
+      "asset_id": 262,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_5fd9f5ee24f8381f03fcebee90593640c0e9e07809a7c8af4f9a18925db7e84b",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "JBHT"
+    },
+    {
+      "asset_id": 263,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_25d056ae2403a4fbb7ebaf33961e1ab11c7420e896f89efcf258216f4d33e034",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "JBL"
+    },
+    {
+      "asset_id": 264,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_4dd7d1ae538b5740a6441dbe8d86832b9332f591183117038b212407808116a6",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "JKHY"
+    },
+    {
+      "asset_id": 265,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_3d364a7e5bcf39c608ee1915b250c3848206d8c396ed50aa863b73437ed53dd0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "J"
+    },
+    {
+      "asset_id": 266,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_2041e570963c000b8e70d110f9475fbc1ce673b417deca7626a8720590419768",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "JNJ"
+    },
+    {
+      "asset_id": 267,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_76ef0a5dead4028955ddb9a2b510141ffad0a242a0b92826512ec9cd93b1dda1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "JCI"
+    },
+    {
+      "asset_id": 268,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_713d57b013ed38f0c9c0674964b00ea9c017a3b1ca20a4d57a2bea329c5a10b8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "JPM"
+    },
+    {
+      "asset_id": 269,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_e640b2986d5186509a220566eb35426cc56ca7355194f5c8cf94af5e1a25e5f1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KVUE"
+    },
+    {
+      "asset_id": 270,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_f9ae717418d6fba4c54d0472e7c6275a7d7d15b252dcf1d31d3d92dc152e307f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KDP"
+    },
+    {
+      "asset_id": 271,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_511560f76cfa686637313d222ae9ded515a40f3e6d2646b4a1787c103d1d6eb3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KEY"
+    },
+    {
+      "asset_id": 272,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_e2779fcdf395bf98df3cb0f4264e4b9e9e257a0f000ac018446ebde3448bb26a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KEYS"
+    },
+    {
+      "asset_id": 273,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_453d8ae6bc2f3da14c64b49caf7cc74a116eb916b463a200725488d3a8156c39",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KMB"
+    },
+    {
+      "asset_id": 274,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_f409d3a51c8f1c1579e486f658bb62402f53e9ad952365ad7b416b5d1bdd57d5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KIM"
+    },
+    {
+      "asset_id": 275,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_345bc75745ae353a7309b401e39935981e5c41d26332a4131d4d0c7b659d476e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KMI"
+    },
+    {
+      "asset_id": 276,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_20e0fd86839a4ba8b06834184f2ef99f90ca99afc5da609d43e763268fdf4f1f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KKR"
+    },
+    {
+      "asset_id": 277,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_90bc0e45ae05ab6b1f990b4c9e76a579afd35626263a290634b98a95df2b7ac1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KLAC"
+    },
+    {
+      "asset_id": 278,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_39d6270668ad3c53537eb65127ed288996f3bad756100d2b470e75d6f2a8d2cc",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KHC"
+    },
+    {
+      "asset_id": 279,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_08dac7d0affbdeb765dc9f5e2354e9e0bbe54f3a3b9806d870bb94225f3c470e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "KR"
+    },
+    {
+      "asset_id": 280,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_2e587136809fe39bdce2823d16ef88008d2f19c3b16a5a7036437e8fbaf797df",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LHX"
+    },
+    {
+      "asset_id": 281,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_2f786c89884bd147516024311c81cd071df8127b26924139883b7f8e97845fe8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LH"
+    },
+    {
+      "asset_id": 282,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_91ad1cb7e685ca1f1da472ecd7c9be906718d5f96b4435cf9bd040da3a7909f0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LRCX"
+    },
+    {
+      "asset_id": 283,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_4ef9bb1fcd7c813c296c76de7ae44e60a62f0b006e8b7add557f550fb8c8ac1e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LVS"
+    },
+    {
+      "asset_id": 284,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_7dac0b381d83054f822d69fd1182f2b802629194f6f1391909068ca46663689d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LDOS"
+    },
+    {
+      "asset_id": 285,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_1ae5de96027cc21706bff64e33a38943623efb36e6395b67172f324148f56d31",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LEN"
+    },
+    {
+      "asset_id": 286,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_b255f2073f568f2f758b4fc0b7bffa87cc9896e328f88d1628a704091ab40022",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LII"
+    },
+    {
+      "asset_id": 287,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_39b81cf8244b23a1dd698100f4a27646d3f38e7d2091c19a16ae2e82dc86f597",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LLY"
+    },
+    {
+      "asset_id": 288,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_85a281fb94b692509a7bf3eb6a86bd531c14b613104500e8dbf7587af4db871c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LIN"
+    },
+    {
+      "asset_id": 289,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_07f98e3b673e1f218e5ddc50bdee6540aa8eef92f195fd9adff8bca82026cff1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LYV"
+    },
+    {
+      "asset_id": 290,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_f7c01914b39121276fd730e3127afe6e513fe0e9b2723579abec1bcb8a138951",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LMT"
+    },
+    {
+      "asset_id": 291,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_4cd24905702018740242f4010318f345788a1abb79d89faff5eabb958bf0e3a2",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "L"
+    },
+    {
+      "asset_id": 292,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_20c58374e2cd5bf0afff3f3f09be5c637ae8be06f0dd657f6710b886c9340cff",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LOW"
+    },
+    {
+      "asset_id": 293,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_79452f9a825e83b1bb1cc1e9f8bb265bc7288f41b08f2723c31d0e7c19371fd0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LULU"
+    },
+    {
+      "asset_id": 294,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_1ec0a409d66b700fbc53c0614fbaa3b862746d89dba5cceb0f5ed78fb245f3b7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LITE"
+    },
+    {
+      "asset_id": 295,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_304a3a259d906c41436618ed476865750baf7c47fdaaea94fb3c0189b381dc79",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LYB"
+    },
+    {
+      "asset_id": 296,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_a6582170596967b3a721f63335191c75222fd85d48ccc29e1629d2066c6a4be3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MTB"
+    },
+    {
+      "asset_id": 297,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_893f4573dff24603c5b5cdd212b6d9aed628ebaff58cbc54a08f235ee92607c5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MPC"
+    },
+    {
+      "asset_id": 298,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_02fbf519cdaffa9ed81375ef2a9b2e2453668973589469ed07fecb3248d45e08",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MAR"
+    },
+    {
+      "asset_id": 299,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_47764f5adf416941f0953ae50c340802d58c7f44378d7ea5f7ed6dcb8ed82445",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MRSH"
+    },
+    {
+      "asset_id": 300,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_b6ef01866ed0effbe9a6ac1c0c7109f8cd4742769d88013e0c612ab01fa846a3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MLM"
+    },
+    {
+      "asset_id": 301,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_45a89471083e4be47c1ff7c80ca727473e36c67a7feb80217e7e5911486e375e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MRVL"
+    },
+    {
+      "asset_id": 302,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_0821082b23168b94360e422adcb3f07a4f0d9dbf6139c7493b923cda2c811fa7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MAS"
+    },
+    {
+      "asset_id": 303,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_734a646832ef818e36927885a3b80a6d9fb4637eb4e0fec26695391a5f86a130",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MA"
+    },
+    {
+      "asset_id": 304,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_5e7af028a2efffa8f27add32c238b8ca4ffa09785cfcf1b90c766c7879202473",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MKC"
+    },
+    {
+      "asset_id": 305,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_392e2679319d668ce2c29fa421637dd019c312322d047fa3a219df210c9bd383",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MCD"
+    },
+    {
+      "asset_id": 306,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_023f8a602b186c34ffef3e0e265994ff347137d24b87dc70e62a27ea027acbbb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MCK"
+    },
+    {
+      "asset_id": 307,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_6c8380d7e3115bb63d2ef12cf3ca6e10ac1693f1203dcc0d3c620d1026246cb3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MDT"
+    },
+    {
+      "asset_id": 308,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_aab049552d3f462d13ffce0d459990760af05cac15d691ca400dfb914e660889",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MRK"
+    },
+    {
+      "asset_id": 309,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_95871933257ad2410d647aeef8e923de6ee6a3495d6923875a4a57afd8c87c28",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "META"
+    },
+    {
+      "asset_id": 310,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_92f69341c85f86f7f2a3d58c3cec4ee70c09ba43a986bfe3bfe7974268617e19",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MET"
+    },
+    {
+      "asset_id": 311,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_93ac498eb012bc62fc8edb6fec114b5efaa7b8049ba94dabbb89ee903e5c96a7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MTD"
+    },
+    {
+      "asset_id": 312,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_54da57ccfbc0cf68037d2f60f77450c91e5ab748cdaaa38f8c0bf9edd7eeb190",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MGM"
+    },
+    {
+      "asset_id": 313,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_53e59e0e1abbe78767f56dcc4814174127be1203c609034bf1ac7cafafd956f7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MCHP"
+    },
+    {
+      "asset_id": 314,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_61105b0407a2624c9e152ba9f9270ed4b8700308ae4d2105b8ca62b9e74194f3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MU"
+    },
+    {
+      "asset_id": 315,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_df3107da266b04bd47f130e0e4e60bb2bc34425c52bbe5386a2db2c07e387b67",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MSFT"
+    },
+    {
+      "asset_id": 316,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_4d75e6aac565e7abeee1b0a654eb3fb56eb253db60ac42fecf4970fca338f7da",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MAA"
+    },
+    {
+      "asset_id": 317,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_4131743ecc85e746cea8a9c47f24fbe8907403d4bab6b70741537999425c1e1c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MRNA"
+    },
+    {
+      "asset_id": 318,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_9658781f567edf0a716c89ca5f6f76fb26ed5e358dc63aec524f8f9c78b5f7fb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TAP"
+    },
+    {
+      "asset_id": 319,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_a63a4296f631d38c9b9e38ca2d30b0de06d0905f136ee31f5084570978e19f77",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MDLZ"
+    },
+    {
+      "asset_id": 320,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_5870e6bf53b86dd04eccdca9cd5fc6f5f186787bdaf78105e769f1641d4b10d1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MPWR"
+    },
+    {
+      "asset_id": 322,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_12d576176cf1063ddcf736ecc119deb482d8fc528f1b2167275899dcc76d24e6",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MCO"
+    },
+    {
+      "asset_id": 323,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_87be531cf1f3638885b1a2f3d38a128795111ac5ce06ea97d503da54c2ba7de9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MS"
+    },
+    {
+      "asset_id": 324,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_a5bd352d9d4b624aeb10617a50d41e25b5568201a419b0f6adb74c050bd6cb9e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MOS"
+    },
+    {
+      "asset_id": 325,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_5058279400a6f2b182090cc92a82b30d109d4401fcb2abd6d68cb3deff6ac81f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MSI"
+    },
+    {
+      "asset_id": 326,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_380040b3c3651bbc6ad619ecd631feb89122eb075d7b8a1420be4b215ae6ee4a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "MSCI"
+    },
+    {
+      "asset_id": 327,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_6da035992a772b262b651f81f0bf4e83aa2a7af0736bbadd0c9f8533d49f0871",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NDAQ"
+    },
+    {
+      "asset_id": 328,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_b6526f7ccc31cbd1fb2d06329b7a25056eefafc75e0dc57da094d77c930826df",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NTAP"
+    },
+    {
+      "asset_id": 329,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_e71dc5f5dc592310e86d9a58578eed098db2c4f6740e0682439c4d2fddc528d3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NFLX"
+    },
+    {
+      "asset_id": 330,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_c843ff957b20e60816411bf8e347f6f361b6dd8cb9602032481776a18cee1cc8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NEM"
+    },
+    {
+      "asset_id": 331,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_18c8e53d748e60428437f08bc16d0b637e24d508529d73fef4e6fe9c3f42f190",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NWSA"
+    },
+    {
+      "asset_id": 332,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_ec5c9eec0f3940bd6635187fed3f85ecc7b015120986580ed02c2e1ef6c3bbf5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NWS"
+    },
+    {
+      "asset_id": 333,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_64e003b951c95a1ff2c4d04bcd4e69694419ddae38ea2e442c23aae3bc271fc8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NEE"
+    },
+    {
+      "asset_id": 334,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_575ede97b7d094a85d0ac7ce7435806405f248d5cd279f5c567ade9d433859df",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NKE"
+    },
+    {
+      "asset_id": 335,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_3312dc2bb2a596670b248b453dab0db24d9c0271d9a077d1862fb0719006f80d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NI"
+    },
+    {
+      "asset_id": 336,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_cbcc667da36542ff5d5c32218da957c2009ffa968010edfb7c6164accddc6da9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NDSN"
+    },
+    {
+      "asset_id": 337,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_5f4c80a92dcc6b6338122ff47fb67eda0b259c7f0f40cda158d2b0deeb585da5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NSC"
+    },
+    {
+      "asset_id": 338,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_bab0da7eba55081c611ee1e04d88d9c7b702aef271d5173e9e142898d05dd8b8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NTRS"
+    },
+    {
+      "asset_id": 339,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_3fe3f35a3e6b37c1af0e78ecae538fe8c88f344ef3e880da5199f377263a0221",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NOC"
+    },
+    {
+      "asset_id": 340,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_d27f855abda61d8b34bbce68d49221849daa68374a0228ee44cdb83428961e4c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NCLH"
+    },
+    {
+      "asset_id": 341,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_b31a545b56ba90125fca4ada391c7f32e52ad325f97f000b30484f5a366fefe9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NRG"
+    },
+    {
+      "asset_id": 342,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_87edc944a8e2d3b79d59218ead7a5808937a700b793f21cb78d555ba6e68f1f5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NUE"
+    },
+    {
+      "asset_id": 343,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_7c8dd6a916192cdd0e492c87ae2cc2683f2d2e8e8f424eb693058e37b484d09c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NVDA"
+    },
+    {
+      "asset_id": 344,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_ffc958253e1ce8b8bbc3cdcd5826face30e3f13334633f57a6bbd1cbec5d6620",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NVR"
+    },
+    {
+      "asset_id": 345,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_bdb88360f92d5bd6658ff2904a43ddb2bdc3883cc34d4ce930c3d83ac1ecf7e0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NXPI"
+    },
+    {
+      "asset_id": 346,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_7cdb4c90e2ee2394a9b67272fc9ec466f8f9b27171e813681fb7f5c6a62566ec",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ORLY"
+    },
+    {
+      "asset_id": 347,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_4c92ea981695282625fff376ba6593abe6dce1f9f27f5e81be2f1ef2cf062824",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "OXY"
+    },
+    {
+      "asset_id": 348,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_4eac976b72297fca31b2e54eb3adfdb5ab102d5d0020ffd07c2f49708e733ca7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ODFL"
+    },
+    {
+      "asset_id": 349,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_bf7a1e44aaee4a658e5a9b9068b90d8003d0ac38179ec312ef4cea29fdcf7d03",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "OMC"
+    },
+    {
+      "asset_id": 350,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_669c8ccc9702941a09d90409ca4ec7505e37080a3274d7abd7d1d04fefca366f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ON"
+    },
+    {
+      "asset_id": 351,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_632cb4a8133d7b9f22bf34f26c9b629516743fe0950928f70664f45a22b076b7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "OKE"
+    },
+    {
+      "asset_id": 352,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_8e9a6380899fb1cd539b98ed4e5341e9cda4dbdaae993c3fff883701330aaa53",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ORCL"
+    },
+    {
+      "asset_id": 353,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_6633561014a4fc0115753ff06a7acfc0737a284eeb750222bc663ddc3d34af82",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "OTIS"
+    },
+    {
+      "asset_id": 354,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_787995e0bfece0ab5a035b8bdf32dfe106824aa4f7905842d98026f19ab52980",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PCAR"
+    },
+    {
+      "asset_id": 355,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_cf41bb3d30089a0f803ea79f6cd94fabc6f30c32fcc94d00431ee9908f3b02f3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PKG"
+    },
+    {
+      "asset_id": 356,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_8c3142296c8033639376af5abd031edf71dbcae00231eb7a731284c97ce9dcac",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PLTR"
+    },
+    {
+      "asset_id": 357,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_8ea3282dcc7557653958f5d72b0efe9cb473a2321f1aacf316249384d2e6ca06",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PANW"
+    },
+    {
+      "asset_id": 358,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_1cc0dc980a819063800383e724c8709665470745d9b8b69aa51832fb5b93cc6e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PSKY"
+    },
+    {
+      "asset_id": 359,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_b5c82e2d9abf98196dbaee808aad36d08f5e414aa63d15a2104acb2a76332d65",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PH"
+    },
+    {
+      "asset_id": 360,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_3b7a13c629ec4dacae2f363e980506c326b97f57b4fde2587e07c7f1db2f447c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PAYX"
+    },
+    {
+      "asset_id": 361,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_a3d1eb7ce01213ccd420123e192d7578b287e9b3044ecd1617cf7fcbb7112ab4",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PYPL"
+    },
+    {
+      "asset_id": 362,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_8bd1f2c6bbc82d456caff5d1b057949d71516d40a4c9dae8b49740c97cd6f8c3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PNR"
+    },
+    {
+      "asset_id": 363,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_25df8d28ecf75a9c38666506730d480c2f025427b671e05762d60150aa6fbb6b",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PEP"
+    },
+    {
+      "asset_id": 364,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_f4bcd499960238827e7e2818ae0602ce2e99f88875464d9dac20b9ffc37ff1ed",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PFE"
+    },
+    {
+      "asset_id": 365,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_c3d2ecf8ab811b7206313d6e777ea960887955df9da2560298da9bbdf1281070",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PCG"
+    },
+    {
+      "asset_id": 366,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_32fe4ea3836234c0db160bd64cf94c6e9db904106ea5a81b149554875cc7ae2a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PM"
+    },
+    {
+      "asset_id": 367,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_854c44ef323f65b39fb83d4ee5481209285837c062e73142e64c70b39b07028c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PSX"
+    },
+    {
+      "asset_id": 368,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_40ac8eed4b988f6416ad10bc4d2345838bf9d31fc2d3aab0eab1065103a3dd0f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PNW"
+    },
+    {
+      "asset_id": 369,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_a7803a9a3ab7a6ce80e755d2e8689588fdbc22aed605f57836fefc6125566ad8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PNC"
+    },
+    {
+      "asset_id": 370,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_da00f79907d18dbfcc2ee25c52c3346a80a86faac336352a241fd26a02cb2e17",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PPG"
+    },
+    {
+      "asset_id": 371,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_7f1ae75d27d732a632d9413b8ac7906da19176bb9348b69bcc945fbba2fb4333",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PPL"
+    },
+    {
+      "asset_id": 372,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_5804fa6f4fde1cc5ec954f45228756342b53040209537c2a3a664f8d46d2d95f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PFG"
+    },
+    {
+      "asset_id": 373,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_e09707527969bdac73133350c5847efb17a1c3f45fdeb1440fc83b5875de300a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PG"
+    },
+    {
+      "asset_id": 374,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_e0d3bd5a267468fabe793facd9d9a336a28be4ce82e1966ff572642e504c06cc",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PGR"
+    },
+    {
+      "asset_id": 375,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_77ea5b199df3286ecac42ec738c7f04e3916dc2327b5936694e5bdfc1b6123cf",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PLD"
+    },
+    {
+      "asset_id": 376,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_2565b3c2b7db91d8970a4246c27d7498b92fabd8944bd97e5176963d4ae6b261",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PRU"
+    },
+    {
+      "asset_id": 377,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_6e9d22796ac7ee08dfd4c4b39443606522da8471f175ecb4e8920e815829d383",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PEG"
+    },
+    {
+      "asset_id": 378,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_be50b29a16d37ef13186084cf21c769703c33a32729413a2d2f2b8dc6c927a09",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PTC"
+    },
+    {
+      "asset_id": 379,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_6c9e9ca23641b2495159f7a9a1cb916f1900c257fd7fc105ff9956cd29b0f363",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PSA"
+    },
+    {
+      "asset_id": 380,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_6f1dd857394ffbb05a25adf169e751fb7d74dd9ef395d39fed113f130d137521",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PHM"
+    },
+    {
+      "asset_id": 381,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_4db46e216a628b980c47c7b4822c1b29f5a2637c74dbd0df191e191ce8fa943f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "PWR"
+    },
+    {
+      "asset_id": 382,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_c9175daa24b23f7afe52b2fb6a4527b6ab88c621dd676d97d6cdb878a935fd00",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "QCOM"
+    },
+    {
+      "asset_id": 383,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_f5e89beea873708b9c65106ea38c5ce21ee73a68bf07cb0562d6ccceefb6f44d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DGX"
+    },
+    {
+      "asset_id": 385,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_ecb2da1dd7a7293016e61bce1c41f70d1c57f7b09e4c27429bdbdb57f753788b",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "RL"
+    },
+    {
+      "asset_id": 386,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_48db4f12a70bbbafce3b73a8d76ad06adbaba609f85cf252a1645f1b0a2b4a93",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "RJF"
+    },
+    {
+      "asset_id": 387,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_b17708567e8907b7e1acb7a86f3b331bef019c7bc9d6e21da039c06b23699e50",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "RDDT"
+    },
+    {
+      "asset_id": 388,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_5cec3b20646ba3d4c26f927cc4c73c9711ce06b5e0dc653e14dfb7bec1f2d504",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "RTX"
+    },
+    {
+      "asset_id": 389,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_aff419b43a4bec92819085bd13555bfe7e28335e5a6e6a3120ecdf1a78c9ac27",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "O"
+    },
+    {
+      "asset_id": 390,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_2fe59add2aacf2ce6b65b3e3d3b3f67fcbfbf860aefd79cb9b01c0ff45407664",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "REG"
+    },
+    {
+      "asset_id": 391,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_01487816db388308cf1b019e9f163f2c519b6a64e6c0096300e5eb2ad8390e54",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "REGN"
+    },
+    {
+      "asset_id": 392,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_53efd073ab2724102c180fe85d13c8c448b68257e1de1f43e2d58dc90c70e1c1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "RF"
+    },
+    {
+      "asset_id": 393,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_fa725cd4c506d57f0d93e34534b4a4b94e4914046fe868ffcf0e39f0703086a7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "RSG"
+    },
+    {
+      "asset_id": 394,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_186a2fbcf44caeaf6bf9c360ca25d14ea81d575381fa43db2fed2857b925f72c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "RMD"
+    },
+    {
+      "asset_id": 395,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_fd22ea1a8283fc21b99d0ae97379ee565e54847dc146b0a93d9681dc7e793273",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "RVTY"
+    },
+    {
+      "asset_id": 396,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_d9d9b916a84d80200ccb24914e3d4681c7f456023da7c14abda8556c68c5f687",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "HOOD"
+    },
+    {
+      "asset_id": 397,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_4ae5ec333860bf50a5cc1eac039f8cf23c8930d624d42f14e7a92027581b8a39",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ROK"
+    },
+    {
+      "asset_id": 398,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_90a62beab5b73d550f08aeb198fd49e4981ddba5381cd3c1692a19af02012451",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ROL"
+    },
+    {
+      "asset_id": 399,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_0ee4c1ec2a63faa6c84fdabd4138134d7bdff0adeeb8b356b378aeebc729f6b3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ROP"
+    },
+    {
+      "asset_id": 400,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_4ecb611354cbcc1d327badb7cbfd024f2f4ad547e2f2ea139aeb8c6b336ad96e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ROST"
+    },
+    {
+      "asset_id": 401,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_91c7488463baa03a540593b4f0edd0bc855691568be4ea991da571b99b90b66c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "RCL"
+    },
+    {
+      "asset_id": 402,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_6e13a4401e8b4dc921ad49e74b3b077ab5fe379544b5be47dd9d624a9897b09d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SPGI"
+    },
+    {
+      "asset_id": 403,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_25acccdf6eeeb27684d2cdae2efa477f4fde11e077dbe046d7be03cf9efdd711",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "CRM"
+    },
+    {
+      "asset_id": 404,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_26d1681b1410fc7bf55caf79cf4446227703bb105ed3cb5c751d862b3794713f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SNDK"
+    },
+    {
+      "asset_id": 405,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_d31f223aec7bd961cb3d4a0963de2f012b570d7ab06ebedd82327be953a78b6b",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SBAC"
+    },
+    {
+      "asset_id": 406,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_9e110ae178cf274d859c62a5a970658adc150ae83cbf958f017cb1b398e862f0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SLB"
+    },
+    {
+      "asset_id": 407,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_e239fe2f380866db41fcc7ef18683a1f0cfef524da71bc9f675e0dc03a7894de",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "STX"
+    },
+    {
+      "asset_id": 408,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_b2c63c8a030e40a844d29fd1914a934bdf671800500904293f3b1495eb1cb9a5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SRE"
+    },
+    {
+      "asset_id": 409,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_240552a91a0d49787ce3f910cd66e46aff52553efd8672b142661b027ad8928e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "NOW"
+    },
+    {
+      "asset_id": 410,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_5bed790460fabb347e1520b323673029f88624f519fb2914532bbcabde7f350a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SHW"
+    },
+    {
+      "asset_id": 411,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_90ca6b30c6ea61f3c699ef2e90816b5c5b69d33f0a917bc0e7f030815b62b519",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SPG"
+    },
+    {
+      "asset_id": 412,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_babc13bda94d2c72c082e3004dc2fbbaccd6b193ebb8a022e38d5964a53fb902",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SWKS"
+    },
+    {
+      "asset_id": 413,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_1fa32ad775a8fa7a09c6524414153c46818dd9b0f9a7cb57f33998155dc38db7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SJM"
+    },
+    {
+      "asset_id": 414,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_6888ea953e8ff5e38bcb370d9922090c155798fbd7d0054f86538bd8a3185b02",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SW"
+    },
+    {
+      "asset_id": 415,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_e2f467e7d27e55b90a664b193d70651b949191c49022e5671503699a6748cb0e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SNA"
+    },
+    {
+      "asset_id": 416,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_47f352dc2b276901bf5c8621e9067e0fa2b1360e3e3926d254a427de4e4b0dd1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SOLV"
+    },
+    {
+      "asset_id": 417,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_764977fb525028065c4cee68108ce63f486b46c995acf9d1763f2f440e01737f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SO"
+    },
+    {
+      "asset_id": 418,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_bdf719957b5e9659554c7999e0e7a33894abfd0321f051d345bf4e9451a1399f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "LUV"
+    },
+    {
+      "asset_id": 419,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_be39070c83d2b078584266690877d98ab8493f05ea4469aa4d0f23c3cf2f7097",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SWK"
+    },
+    {
+      "asset_id": 420,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_d23645a4b66fa7e956f2900d6969e749825ebd8e92fb07e1ec13fe7c16e3f6db",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SBUX"
+    },
+    {
+      "asset_id": 421,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_c12b0b6bc82421e2db9f1b6cb5e9c49ea8324f8db727fa227ad6f4f9c9b7728c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "STT"
+    },
+    {
+      "asset_id": 422,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_0d885a8ca207eefc50dbc5fcc7ffc3c817f4fed5eca7e3f08985d3a485fce98b",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "STLD"
+    },
+    {
+      "asset_id": 423,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_ceba877ead02acbf32214f535b7c36e427ed6b3a721033d39bf640a651708dc8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "STE"
+    },
+    {
+      "asset_id": 424,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_df8ba1e652b05f16b7f478cb5999df717c9fbbcbf485dca60d547d648a175237",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SYK"
+    },
+    {
+      "asset_id": 425,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_d2e31fa4b3cfa0b6c120e1e4591c97e3d4b30c2f68a4f15a5ea5eb7f0b465837",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SMCI"
+    },
+    {
+      "asset_id": 426,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_dc9cb5984dc479128b4da67a845a2544ea8994f3d64aeafc982bebe2ad3cf2cc",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SYF"
+    },
+    {
+      "asset_id": 427,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_4eba840d604b44735d769c13d6d05a17ed8b9d4a0aa70f849f41c55ecb36d51b",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SNPS"
+    },
+    {
+      "asset_id": 428,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_3db28f498d2f238b03dd70377c2163647c6fc3f366bfa2cca7bece4d3e709648",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "SYY"
+    },
+    {
+      "asset_id": 429,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_82cd4c37ef0fef78d5e333c1285bdaa532102b7a74edb790b575b615ad881021",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TMUS"
+    },
+    {
+      "asset_id": 430,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_c12c5e83a3c412c025a5469a158385da9070820edb584fd54f9ce1111b94f277",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TROW"
+    },
+    {
+      "asset_id": 431,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_45cdf14e3bcec9364c50c30e2d85a9ed28e47ed5f719915cc81c48a6a44a0cf0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TTWO"
+    },
+    {
+      "asset_id": 432,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_b5a24e2ab6645a27adbfc46f9a611c7540f1224ee111055ccee0c1a8083b3c24",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TPR"
+    },
+    {
+      "asset_id": 433,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_22a34ef0788bbff64ae5bccaf73667ce22b93e96263edad2a0127db14ff83801",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TRGP"
+    },
+    {
+      "asset_id": 434,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_8d6d53c32a363edc8a087019ed832d01804b9e1fe86630ec708c80c3499b6a3d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TGT"
+    },
+    {
+      "asset_id": 435,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_8e02704927d01b0047bf24e52947f98f8f2dce2f1bfafcddc584fba768a5b2d1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TEL"
+    },
+    {
+      "asset_id": 436,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_ff603eff0e63ea32606e2059cc0dbc89de54f094452da13f50a3a2565af94fbb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TDY"
+    },
+    {
+      "asset_id": 437,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_ca408f1f5d688a830078683ef5adb2493835125cd0ca48125264d0f2f463acdf",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TER"
+    },
+    {
+      "asset_id": 438,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_8dc955ee0f7ccab2cc67e9646d08780aafb987e664ade554cb759943bf4353ab",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TSLA"
+    },
+    {
+      "asset_id": 439,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_7c47694d4166c9a5014ae7a03d46f5b3846e7ca34a0c047dc4231764fa221eb1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TXN"
+    },
+    {
+      "asset_id": 440,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_0b89baa35bfe61d0f67a0a31691f8553f6c2aba0140598822455440d6125501c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TPL"
+    },
+    {
+      "asset_id": 441,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_a81a1f140fdc1db279cf45436b851edc365880b2f8692512737de4311a4a5152",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TXT"
+    },
+    {
+      "asset_id": 442,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_30fd2130447b2321171bf0f4c82607e5ac048861d1e37e03627dba4cbad996b5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TMO"
+    },
+    {
+      "asset_id": 443,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_9b989221c17224b8d0dea6f5a5a9f9de66992dc4f6fbe843631c204b2c76759a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TJX"
+    },
+    {
+      "asset_id": 444,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_17cefbcb5fa82b705e61c00c1bf9a9a814a24b980fcfc51230975429a9ecfe0f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TKO"
+    },
+    {
+      "asset_id": 445,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_d1adfa373b85715a0518eb7c47e2d0165f2cce734f49e254e2564342728eacd3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TTD"
+    },
+    {
+      "asset_id": 446,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_994639b27f43dea5714d80e8d75ee46366c1c3650641d95f74993859e065787a",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TSCO"
+    },
+    {
+      "asset_id": 447,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_8e89863a06e446ca39a5dd6060a2efee4ae5b92f183569353600978fd4d61fe8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TT"
+    },
+    {
+      "asset_id": 448,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_1858cc661d87e15fc87df2b2de730e82475d5a0c120cb00f1498be858f35b7fe",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TDG"
+    },
+    {
+      "asset_id": 449,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_76604da4bb64563a979176b6fa1fb1b31a7c9f670f1594659a216dbfa7cbba24",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TRV"
+    },
+    {
+      "asset_id": 450,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_fd64842e1a2af5dbbd6a1e422bb9c5bb054b17d4b1be4347dbb3a62aa803daf7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TRMB"
+    },
+    {
+      "asset_id": 451,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_5c5b0e9725c09c31f9174ea5ec2abb9956ce998a896b801af34ac427c7b677ff",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TFC"
+    },
+    {
+      "asset_id": 452,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_6c7e3f91834e21316a26c883b6cb3a334349414dceb8170c1a7f7808e7a6ce5e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TYL"
+    },
+    {
+      "asset_id": 453,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_374dccff336c46ba828b4854cb7200eea59436100be1395e5b226bd395bb3c3d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "TSN"
+    },
+    {
+      "asset_id": 454,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_d6dbeb353a5080cec672f2cc2f4b2882a295747f9caf0cfdba471557b4d6bb13",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "USB"
+    },
+    {
+      "asset_id": 455,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_f1bc760630d27de0ec7d185ae35010ff300b60f90e7206efd8c831c40e6b6a99",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "UBER"
+    },
+    {
+      "asset_id": 456,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_455df3aea66bff3b81b12413d8b11f45e7c140887566bc360fd1e043e8ca761f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "UDR"
+    },
+    {
+      "asset_id": 457,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_c991200aece4b739566f39982e76f05fa1df55fce0ada5e90995b975674ed9e8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ULTA"
+    },
+    {
+      "asset_id": 458,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_273c5acac24a0434d5231e3dbf9199c755ee9cc065162c580469a662eafaccd9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "UNP"
+    },
+    {
+      "asset_id": 459,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_a789734e972181b24030283e82b8492538c941f8534c465016090d5d21e1ceaa",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "UAL"
+    },
+    {
+      "asset_id": 460,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_6bef71d96dbd8fcb46f9f627878bc934b48608db2ca89e4ab0cca65316919ed9",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "UPS"
+    },
+    {
+      "asset_id": 461,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_ca0a19c9f8f939fc892bb9915d0af3c7b846acf290fe5ade0242caab227f292f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "URI"
+    },
+    {
+      "asset_id": 462,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_405f3d104495b94c0ce09e70b7a603684478acb2eb74c38bcb249e3854dffde1",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "UNH"
+    },
+    {
+      "asset_id": 463,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_50c76bd873019e401cc5d0feb74879d505a5ceaf00f79dcf7bc2b3859613acdb",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "UHS"
+    },
+    {
+      "asset_id": 464,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_7e1f21f4bf498042bff5ae83c017118b80fcb4016c797db6174894ce601aa7d4",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VLO"
+    },
+    {
+      "asset_id": 465,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_49e43f32e3a43513895249270ebbd184459e9abedf4ab0be8591db9760d07192",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VEEV"
+    },
+    {
+      "asset_id": 466,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_a82f32451fe44845e5e4dbf476439e4d95eab8eb3239d4b72f8af8b1c58e48e8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VTR"
+    },
+    {
+      "asset_id": 467,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_c07ccecad634083c731a38731c42cf370bc2c33eb9225c6196fab48ac9394145",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VLTO"
+    },
+    {
+      "asset_id": 468,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_99c0bf277e612d0d295c0bafa6241538b50e827093f186c9a122cff8dd491b65",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VRSN"
+    },
+    {
+      "asset_id": 469,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_0ea49680bfac337da25077abe0fadcbaba730954a893d093c6f97217c46d1a58",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VRSK"
+    },
+    {
+      "asset_id": 470,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_4fbff094a2465488f5058ad4c6e5b3c4f3197cdacda4b8d1d71002435db36dd8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VZ"
+    },
+    {
+      "asset_id": 471,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_0e7d83ab0e6dfc2802e77a0b0b8399e636d6c379fbc94725807a411c3b4dfcfe",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VRTX"
+    },
+    {
+      "asset_id": 472,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_be2c9be44fc7ab9723530f99ae958b26be4aa306ba4ca994c2218ba81984134f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VRT"
+    },
+    {
+      "asset_id": 473,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_a50fc8fa897b45cd12e1d294da2f98ff249bbde41e400a12c54f90c6f7af7a51",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VTRS"
+    },
+    {
+      "asset_id": 474,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_a453363ee7177d69bb34b9fcd45906836ca4ea23b576b883535af5e7becb4872",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VICI"
+    },
+    {
+      "asset_id": 475,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_77c02149a06d9febdace28a2239eceda20f32363700d334b461f224a2e2a5db2",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "V"
+    },
+    {
+      "asset_id": 476,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_97ac1472cee9425bd1252995a2278e681b68f95c378c4afe38cb0562d95640e7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VST"
+    },
+    {
+      "asset_id": 477,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_4b05ebfd821ca91cd466cc4e379b77029de2d9c5d9d55bcb99e03884f81baef7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VMRK"
+    },
+    {
+      "asset_id": 478,
+      "sector": "Materials",
+      "snapshot_state_id": "market_daily_state_v003_core_bbf2b9e1b964220e3bdf4a5815fec6f0f03391fd979060daf1d4e5569623156d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "VMC"
+    },
+    {
+      "asset_id": 479,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_0bb2902c7e2e501dd29e7450f1f50dabd3f6b2ae6299f4e1692cb6dcc9bccc41",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WRB"
+    },
+    {
+      "asset_id": 480,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_9a278b9f2bc51f51614feafb1364a37abdb533445530b5357cccaf029e33046e",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "GWW"
+    },
+    {
+      "asset_id": 481,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_4c71b7d6d9fc1ab4120c35361eafd630d54fcfb1a880d567f8d686c87c0537de",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WAB"
+    },
+    {
+      "asset_id": 482,
+      "sector": "Consumer Staples",
+      "snapshot_state_id": "market_daily_state_v003_core_79ca4bd13ec398630975aa3a5a71f916a5123ef0f224b5763f41b1b57c4fd464",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WMT"
+    },
+    {
+      "asset_id": 483,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_65ffe32f358bf18c7340453987126f483771f56f6fc4e475ca6f28099d322317",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "DIS"
+    },
+    {
+      "asset_id": 484,
+      "sector": "Communication Services",
+      "snapshot_state_id": "market_daily_state_v003_core_cc53c94548bb2c48205a056a43b937f729a25490985df65d1295292f370d3569",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WBD"
+    },
+    {
+      "asset_id": 485,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_9112d80812695b28289fe10f2eb1afaeb4850f0c82514f69e3dc2f7a2046c3c8",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WM"
+    },
+    {
+      "asset_id": 486,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_daca53c70e9f6d8b713f2e58283e1736e3b950ef2fced4e4a8fc7c75a350f898",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WAT"
+    },
+    {
+      "asset_id": 487,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_e444eadc4647ec324dbb337c55edee5277597fd34d4e55746dfe0b35d2d3068d",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WEC"
+    },
+    {
+      "asset_id": 488,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_c8a575a4913979217b3365938c079d418331111a36762ece4e7a7d6f9e33c0bf",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WFC"
+    },
+    {
+      "asset_id": 489,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_b1becb32db6c547e7b441d542442ac9a99a15ae2fae6edd3490c54c69ebe1382",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WELL"
+    },
+    {
+      "asset_id": 490,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_a9f75d01d057c280369d503bf62e7a9f03f5372f9add54f8ec61480e175411d3",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WST"
+    },
+    {
+      "asset_id": 491,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_8a0aee28d5d4d063ad99fc4b4052c2abfc7fbf8f2b5712a674986a92350ca369",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WDC"
+    },
+    {
+      "asset_id": 492,
+      "sector": "Real Estate",
+      "snapshot_state_id": "market_daily_state_v003_core_4732366d58fbc1c983104ce9961a92d7353ad505269752f6dbc07c8b98a0c1d0",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WY"
+    },
+    {
+      "asset_id": 493,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_ad9f7da6edbf4c4ed44eeec6ede190ba67beef1b9a6da0d75c9237db37d34ff7",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WSM"
+    },
+    {
+      "asset_id": 494,
+      "sector": "Energy",
+      "snapshot_state_id": "market_daily_state_v003_core_e744b8ba821bdf9586b2f07ddc4ccfd33d180d0bc7363372099a7eaa7e9d31fc",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WMB"
+    },
+    {
+      "asset_id": 495,
+      "sector": "Financials",
+      "snapshot_state_id": "market_daily_state_v003_core_faab6a9aea271340959dcb336a74f35ea91db575f805f002be1b4d8f4e768fe5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WTW"
+    },
+    {
+      "asset_id": 496,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_960ba0cb37241748e87716958113dda6e26ec4b741afcdbb7d33ae2a1ddbe70f",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WDAY"
+    },
+    {
+      "asset_id": 497,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_12729750ff3e0e22adbcd0472a3194bf0a1b9b0dd6e3423817476dfd8e17e36c",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "WYNN"
+    },
+    {
+      "asset_id": 498,
+      "sector": "Utilities",
+      "snapshot_state_id": "market_daily_state_v003_core_9d39d0b08a38ab08f9b228bbeffcca3a71b070b885b8fa893c06ff62db667a36",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "XEL"
+    },
+    {
+      "asset_id": 499,
+      "sector": "Industrials",
+      "snapshot_state_id": "market_daily_state_v003_core_6c8bf346848cf5b20a656b13562ad964c4e4cbb8db80599a1ac6a170841a4f06",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "XYL"
+    },
+    {
+      "asset_id": 500,
+      "sector": "Consumer Discretionary",
+      "snapshot_state_id": "market_daily_state_v003_core_f597ab0c20f87e57d3f229aa57c292047399d6924cbeccbd7d7040d6557bebd5",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "YUM"
+    },
+    {
+      "asset_id": 501,
+      "sector": "Information Technology",
+      "snapshot_state_id": "market_daily_state_v003_core_a11f68f2bd5228bf35b6be0a3acdfddf15b3b902ca7f2f1b26f7bd6ba45c9a57",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ZBRA"
+    },
+    {
+      "asset_id": 502,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_a522672deb024250a084da554c8cb73092c154750b7c32b2b8ea0d69546c8283",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ZBH"
+    },
+    {
+      "asset_id": 503,
+      "sector": "Health Care",
+      "snapshot_state_id": "market_daily_state_v003_core_e983eff178a924d72f0a3448c4970321d6c77ae1c80c8a8262defd44db38e8ff",
+      "snapshot_state_time": "2026-08-24T20:00:00+00:00",
+      "state_point_in_time_verified": 0,
+      "ticker": "ZTS"
+    }
+  ],
+  "market_feature_version": "market_daily_state_v003_core",
+  "snapshot_day": "2026-08-24",
+  "strict_historical_pit": false,
+  "survivorship_free": false,
+  "universe_contract": "fixed current-company Core V003 cohort on preregistered snapshot day"
+}

@@ -204,3 +204,39 @@ known PIT status
 ```
 
 Do not compare experiments unless their contracts are explicit.
+## 16. Prospective prediction registry contract
+
+A prospective prediction is valid only when it is persisted before its target
+outcome is available. At minimum persist:
+
+```text
+experiment/model/reference versions
+frozen model-fit identity and artifact hash
+origin trading day and causal state time
+actual seal time
+asset/state identity
+exact feature snapshot and hash
+distribution/probability output
+```
+
+Prediction rows are append-only and immutable. Realized outcomes and scores
+are inserted later in separate tables and may not rewrite the original
+prediction.
+
+Evaluation and registry-audit rows are also append-only. Additive migration
+022 enforces this at the database boundary rather than by application
+convention alone.
+
+A historical state with no currently materialized label is not automatically
+prospective. The seal contract must also enforce an actual wall-clock deadline
+relative to the state availability time. Missed eligible origins cannot be
+backfilled and presented as live predictions.
+
+Repeated monitoring must not create repeated promotion opportunities. A
+confirmatory experiment must freeze its cohort-selection rule in advance; V009
+uses the first 252 consecutive eligible sealed H1 origins. Earlier checkpoints
+are descriptive unless explicitly preregistered otherwise.
+
+The prospective registry does not convert an underlying PIT=0 historical
+feature corpus into strict PIT history. Each prediction preserves the actual
+state PIT flag and claims remain bounded by the universe/observation contract.

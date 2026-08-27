@@ -1,0 +1,105 @@
+{
+  "claim_boundary": "V006.1 may falsify or narrow the completed V006 conditional-dispersion claim; it cannot retroactively replace the V006 primary specification.",
+  "headline_matrix": {
+    "1": {
+      "alternative_scales": {
+        "asset_vol_5d_pct": {
+          "alternative_vs_v006_daily_delta_pct": -0.017283350045630988,
+          "vs_global_daily_delta_pct": -0.008085223859886033
+        },
+        "asset_vol_63d_pct": {
+          "alternative_vs_v006_daily_delta_pct": 0.0016123271239631173,
+          "vs_global_daily_delta_pct": 0.010810453309708075
+        }
+      },
+      "high_vol_daily_delta_pct": 0.01053983289453107,
+      "leave_one_asset_out_min_delta_pct": 0.008722341646124164,
+      "leave_one_sector_out_min_delta_pct": 0.007666214919523579,
+      "low_vol_daily_delta_pct": 0.008015254976785258,
+      "max_abs_central50_calibration_error_by_block": 0.05519449488674377,
+      "max_abs_central90_calibration_error_by_block": 0.015667686545953075,
+      "mid_vol_daily_delta_pct": 0.0019452667387079474,
+      "q05_v006_vs_global_daily_delta_pct": 0.007766045815707518,
+      "q95_v006_vs_global_daily_delta_pct": 0.02378988632776796,
+      "top10_asset_abs_contribution_share": 0.20486771700266568,
+      "v006_vs_asset_daily_delta_pct": 0.0024518169752584776,
+      "v006_vs_global_daily_delta_pct": 0.009198126185744955
+    },
+    "10": {
+      "alternative_scales": {
+        "asset_vol_5d_pct": {
+          "alternative_vs_v006_daily_delta_pct": -0.07517073165397725,
+          "vs_global_daily_delta_pct": -0.06250729893815178
+        },
+        "asset_vol_63d_pct": {
+          "alternative_vs_v006_daily_delta_pct": 0.010974748699947103,
+          "vs_global_daily_delta_pct": 0.023638181415772574
+        }
+      },
+      "high_vol_daily_delta_pct": 0.01857881877095451,
+      "leave_one_asset_out_min_delta_pct": 0.010405703922262302,
+      "leave_one_sector_out_min_delta_pct": 0.008747210904111152,
+      "low_vol_daily_delta_pct": 0.019639390416220027,
+      "max_abs_central50_calibration_error_by_block": 0.06463892379333286,
+      "max_abs_central90_calibration_error_by_block": 0.039468946894689494,
+      "mid_vol_daily_delta_pct": 0.0022597260475895145,
+      "q05_v006_vs_global_daily_delta_pct": -0.04788114602850028,
+      "q95_v006_vs_global_daily_delta_pct": 0.0923039265268336,
+      "top10_asset_abs_contribution_share": 0.2218981585373331,
+      "v006_vs_asset_daily_delta_pct": -0.007977508806371,
+      "v006_vs_global_daily_delta_pct": 0.012663432715825472
+    },
+    "3": {
+      "alternative_scales": {
+        "asset_vol_5d_pct": {
+          "alternative_vs_v006_daily_delta_pct": -0.034959858363512036,
+          "vs_global_daily_delta_pct": -0.02147014896233821
+        },
+        "asset_vol_63d_pct": {
+          "alternative_vs_v006_daily_delta_pct": 0.004429335399739112,
+          "vs_global_daily_delta_pct": 0.01791904480091294
+        }
+      },
+      "high_vol_daily_delta_pct": 0.017124281690301637,
+      "leave_one_asset_out_min_delta_pct": 0.012531283933674711,
+      "leave_one_sector_out_min_delta_pct": 0.010995727265793991,
+      "low_vol_daily_delta_pct": 0.01087059741964219,
+      "max_abs_central50_calibration_error_by_block": 0.0853707082434898,
+      "max_abs_central90_calibration_error_by_block": 0.026288521060422565,
+      "mid_vol_daily_delta_pct": 0.0027160148584712425,
+      "q05_v006_vs_global_daily_delta_pct": 0.002397733595243734,
+      "q95_v006_vs_global_daily_delta_pct": 0.04524497237877075,
+      "top10_asset_abs_contribution_share": 0.2239817224483773,
+      "v006_vs_asset_daily_delta_pct": 0.0010512368110555208,
+      "v006_vs_global_daily_delta_pct": 0.013489709401173828
+    },
+    "5": {
+      "alternative_scales": {
+        "asset_vol_5d_pct": {
+          "alternative_vs_v006_daily_delta_pct": -0.04811493636650549,
+          "vs_global_daily_delta_pct": -0.03469542775758141
+        },
+        "asset_vol_63d_pct": {
+          "alternative_vs_v006_daily_delta_pct": 0.00648907432105576,
+          "vs_global_daily_delta_pct": 0.019908582929979855
+        }
+      },
+      "high_vol_daily_delta_pct": 0.017905799373879327,
+      "leave_one_asset_out_min_delta_pct": 0.01217585056395873,
+      "leave_one_sector_out_min_delta_pct": 0.009875411352542732,
+      "low_vol_daily_delta_pct": 0.012542289476661394,
+      "max_abs_central50_calibration_error_by_block": 0.10614829441002249,
+      "max_abs_central90_calibration_error_by_block": 0.03358646876078697,
+      "mid_vol_daily_delta_pct": 0.0030280257357120366,
+      "q05_v006_vs_global_daily_delta_pct": -0.012132493853528761,
+      "q95_v006_vs_global_daily_delta_pct": 0.0561369232841959,
+      "top10_asset_abs_contribution_share": 0.2224831889229022,
+      "v006_vs_asset_daily_delta_pct": -0.0024639309677736087,
+      "v006_vs_global_daily_delta_pct": 0.013419508608924092
+    }
+  },
+  "interpretation_rule": "Do not auto-promote or replace V006 from this summary. Review concentration, tail asymmetry, regime dependence, calibration drift and the direct asset-empirical comparison before preregistering any learned distributional model.",
+  "robustness_version": "market_brain_distributional_v0061_robustness_v001",
+  "source_v006_reproduced_all_horizons": true,
+  "status": "COMPLETE"
+}

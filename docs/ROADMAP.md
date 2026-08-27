@@ -497,3 +497,23 @@ Before learned distributional modeling, run the frozen V006.1 robustness package
 
 V006.1 has no promotion gate for an alternative scale. Its role is to determine the scope and failure modes of the existing V006 claim. Only after interpreting all four horizons should a separately versioned learned distributional Market Brain be preregistered.
 <!-- MARKET_DIST_V0061_ROBUSTNESS_V001_END -->
+
+<!-- MARKET_DIST_V007_ADAPTIVE_TAIL_V001_START -->
+## Learned Distributional Market Brain — V007 active
+
+V006.1 robustness is complete. The next active experiment is V007 adaptive asymmetric asset-scale.
+
+Required design:
+- reuse the Core V003 causal daily panel and V003 outer purged folds;
+- nested temporal selection inside each outer train;
+- q50 fixed to global train median, so no directional-location claim enters this increment;
+- asset-specific empirical tail shape as structural anchor;
+- dynamic state limited to causal vol20 and vol63 normalized by each asset's training medians;
+- separate downside/upside scale parameters;
+- primary comparison against `vol63_scaled_empirical`;
+- secondary comparisons against V006 vol20, `asset_empirical` and global empirical;
+- pinball plus quantile calibration primary diagnostics, Brier/median MAE still reported;
+- all four horizons mandatory.
+
+A strong V007 result can justify a richer learned quantile model later. It cannot by itself count as prospective confirmation because V006.1 informed the mathematical hypothesis.
+<!-- MARKET_DIST_V007_ADAPTIVE_TAIL_V001_END -->

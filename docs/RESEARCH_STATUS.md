@@ -748,3 +748,13 @@ The completed V006 conditional-dispersion result remains unchanged. The next act
 
 No V006.1 diagnostic may be used to retroactively select a replacement primary specification. A learned distributional Market Brain remains blocked until V006.1 is interpreted.
 <!-- MARKET_DIST_V0061_ROBUSTNESS_V001_END -->
+
+<!-- MARKET_DIST_V007_ADAPTIVE_TAIL_V001_START -->
+## Distributional V006.1 closed; V007 adaptive-tail model active
+
+V006.1 reproduced the completed V006 result on all H1/H3/H5/H10 samples and did not find asset/sector concentration capable of removing the positive V006-vs-global result. It also narrowed the claim: V006 is directionally asymmetric, has regime-dependent calibration error, and a 63-session volatility sensitivity is stronger than vol20 at H3/H5/H10. The global point result is therefore real enough to escalate, but the V006 linear symmetric scale formula is not treated as a final model.
+
+Active next experiment: `market_brain_distributional_v007_adaptive_tail_v001`. It is a low-dimensional learned/semi-parametric distributional model with nested temporal selection, asset-specific structural tail anchors, separate downside/upside dynamic scales, and no learned location. `vol63_scaled_empirical` is the new preregistered primary reference; V006, asset empirical and global empirical remain controls.
+
+V007 is developmental evidence because its hypothesis was informed by V006.1 outcomes. It is not independent prospective confirmation, not a path model and not production-ready.
+<!-- MARKET_DIST_V007_ADAPTIVE_TAIL_V001_END -->

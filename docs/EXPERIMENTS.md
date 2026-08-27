@@ -474,3 +474,45 @@ Predeclared diagnostics:
 
 Alternative scales are diagnostics only and cannot retroactively replace the V006 `vol20` primary. No event, graph, macro, external proxy, cost, path or new learned-model feature enters V006.1.
 <!-- MARKET_DIST_V0061_ROBUSTNESS_V001_END -->
+
+<!-- MARKET_DIST_V007_ADAPTIVE_TAIL_V001_START -->
+## E-MARKET-DIST-V0061 — completed robustness interpretation
+
+**Status:** complete; source V006 reproduced exactly on all horizons.
+
+V006.1 supports the broad conditional-dispersion claim but narrows its functional form:
+- leave-one-asset and leave-one-sector deltas remain positive at every horizon, so the V006 vs global gain is not driven by one asset or one sector;
+- `asset_vol_5d_pct` is decisively worse than V006 at all horizons;
+- `asset_vol_63d_pct` is a stronger sensitivity than V006 at H3/H5/H10 and directionally stronger at H1;
+- the benefit is asymmetric across tails: the upper tail improves strongly while q05/q25 deteriorate at longer horizons;
+- low-volatility regimes are under-covered and high-volatility regimes are over-covered, consistent with an overly linear scale response;
+- `asset_empirical` remains a serious structural reference, especially at longer horizons.
+
+These findings do not retroactively replace V006. They define the preregistered hypothesis for V007.
+
+## E-MARKET-DIST-V007 — adaptive asymmetric asset-scale preregistration
+
+**Status:** preregistered; no V007 performance interpreted yet.
+
+V007 keeps q50 at the global training median and learns only distribution shape/scale. For each outer fold it uses a nested temporal validation split to select separate downside and upside parameters. The asset supplies a structural tail anchor; current 20d/63d volatility supplies a normalized dynamic state.
+
+For side `s` in {downside, upside}:
+
+```text
+u_i,t = lambda20 * log(vol20_i,t / median_train_i(vol20))
+      + (1-lambda20) * log(vol63_i,t / median_train_i(vol63))
+
+g_s(i,t) = kappa_s * exp(alpha_s * u_i,t)
+```
+
+For q<0.5 or q>0.5:
+
+```text
+Q_q(i,t) = global_train_median
+         + (asset_train_Q_q - asset_train_Q_50) * g_s(i,t)
+```
+
+q50 is never dynamically learned in V007.
+
+Nested selection minimizes origin-day-equal pinball on q05/q25 and q75/q95 separately. Primary outer reference is the predeclared `vol63_scaled_empirical`; V006 `vol20`, `asset_empirical` and global empirical remain secondary controls. All four horizons must be reported.
+<!-- MARKET_DIST_V007_ADAPTIVE_TAIL_V001_END -->

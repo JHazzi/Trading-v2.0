@@ -1,0 +1,72 @@
+{
+  "version": "market_brain_distributional_v0061_robustness_v001",
+  "source_benchmark_version": "market_brain_distributional_v006_baseline_v001",
+  "source_model_version": "market_brain_distributional_v006_empirical_baselines_v001",
+  "dataset_contract": "market_daily_v003_all_asset_days_current_cohort_research",
+  "market_feature_version": "market_daily_state_v003_core",
+  "label_version": "market_daily_reaction_v003_core",
+  "source_core_db_sha256": "2eccfe061b33bcd3fff6c244be972b379d9c4c3f1230532b5a66c72aaaf3be19",
+  "source_core_db_size_bytes": 3116351488,
+  "source_v006_config": "config/market_brain_distributional_v006.json",
+  "source_v006_report_dir": "reports/market_brain_distributional_v006/empirical_baseline_v001",
+  "target": "return_pct",
+  "horizons_sessions": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "quantiles": [
+    0.05,
+    0.25,
+    0.5,
+    0.75,
+    0.95
+  ],
+  "primary_baseline": "train_empirical",
+  "primary_candidate": "volatility_scaled_empirical",
+  "secondary_reference": "asset_empirical",
+  "primary_scale_feature": "asset_vol_20d_pct",
+  "alternative_scale_features": [
+    "asset_vol_5d_pct",
+    "asset_vol_63d_pct"
+  ],
+  "volatility_regime_train_quantiles": [
+    0.3333333333333333,
+    0.6666666666666666
+  ],
+  "calibration_block_origin_days": 126,
+  "outer_folds": 5,
+  "initial_fraction": 0.3,
+  "bootstrap_reps": 3000,
+  "moving_block_lengths_origin_days": [
+    5,
+    10,
+    20
+  ],
+  "bootstrap_seed": 42,
+  "reproduction_absolute_tolerance": 1e-08,
+  "asset_concentration_top_k": [
+    5,
+    10,
+    25
+  ],
+  "sector_concentration_top_k": [
+    1,
+    3,
+    5
+  ],
+  "strict_historical_pit": false,
+  "current_cohort_not_survivorship_free": true,
+  "corporate_action_policy": "use_only_label_status_usable",
+  "no_new_model_training": true,
+  "no_posthoc_candidate_selection": true,
+  "no_best_horizon_selection": true,
+  "no_event_features": true,
+  "no_graph_features": true,
+  "no_macro_features": true,
+  "no_external_proxy_features": true,
+  "claim_boundary": "V006.1 may falsify or narrow the completed V006 conditional-dispersion claim; it cannot retroactively replace the V006 primary specification.",
+  "diagnostic_bootstrap_reps": 1000,
+  "diagnostic_block_length_origin_days": 10
+}

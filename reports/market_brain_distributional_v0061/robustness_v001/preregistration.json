@@ -1,0 +1,91 @@
+{
+  "claim_boundaries": {
+    "alternative_scales_are_not_candidate_selection": true,
+    "diagnostics_may_narrow_or_falsify_v006": true,
+    "no_directional_alpha_claim": true,
+    "no_new_model_training": true,
+    "not_a_path_model": true,
+    "not_production_ready": true,
+    "not_strict_historical_pit": true
+  },
+  "frozen_question": "Does the completed V006 conditional-dispersion result survive exact reproduction plus predeclared diagnostics for temporal folds, tails, asset/sector concentration, train-defined volatility regimes, calibration drift and alternative causal volatility scales?",
+  "missing": [],
+  "predeclared_diagnostics": {
+    "alternative_causal_scales": [
+      "asset_vol_5d_pct",
+      "asset_vol_63d_pct"
+    ],
+    "asset_concentration": true,
+    "calibration_drift": {
+      "nonoverlapping_blocks_within_each_outer_fold": true,
+      "origin_days_per_block": 126
+    },
+    "exact_source_reproduction": true,
+    "leave_one_asset_out": true,
+    "leave_one_sector_out": true,
+    "secondary_asset_empirical_direct_comparison": true,
+    "sector_concentration": true,
+    "tail_specific_pinball_and_calibration": [
+      0.05,
+      0.25,
+      0.5,
+      0.75,
+      0.95
+    ],
+    "volatility_regimes": {
+      "defined_from_each_fold_training_scale_only": true,
+      "train_quantiles": [
+        0.3333333333333333,
+        0.6666666666666666
+      ]
+    }
+  },
+  "required_source_artifacts": [
+    "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v006/empirical_baseline_v001/h1_benchmark.json",
+    "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v006/empirical_baseline_v001/h1_primary_daily_losses.csv",
+    "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v006/empirical_baseline_v001/h3_benchmark.json",
+    "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v006/empirical_baseline_v001/h3_primary_daily_losses.csv",
+    "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v006/empirical_baseline_v001/h5_benchmark.json",
+    "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v006/empirical_baseline_v001/h5_primary_daily_losses.csv",
+    "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v006/empirical_baseline_v001/h10_benchmark.json",
+    "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v006/empirical_baseline_v001/h10_primary_daily_losses.csv"
+  ],
+  "resampling": {
+    "global_and_asset_reference": {
+      "bootstrap_reps": 3000,
+      "moving_block_lengths_origin_days": [
+        5,
+        10,
+        20
+      ]
+    },
+    "primary_unit": "origin_trading_day",
+    "secondary_diagnostics": {
+      "block_length_origin_days": 10,
+      "bootstrap_reps": 1000
+    },
+    "seed": 42
+  },
+  "robustness_version": "market_brain_distributional_v0061_robustness_v001",
+  "source_benchmark_version": "market_brain_distributional_v006_baseline_v001",
+  "source_model_version": "market_brain_distributional_v006_empirical_baselines_v001",
+  "status": "PASS",
+  "unchanged_primary": {
+    "baseline": "train_empirical",
+    "candidate": "volatility_scaled_empirical",
+    "horizons": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "quantiles": [
+      0.05,
+      0.25,
+      0.5,
+      0.75,
+      0.95
+    ],
+    "scale_feature": "asset_vol_20d_pct"
+  }
+}

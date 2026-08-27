@@ -443,3 +443,9 @@ The 28 conflict groups, 30 pairs and 3 row-quality candidates are inputs to upst
 
 **Status:** canonical product interpretation.
 
+
+<!-- MARKET_DIST_V0061_ROBUSTNESS_V001_START -->
+## Decision — freeze V006.1 as falsification, not optimization
+
+V006.1 preserves the completed V006 primary and asks where its conditional-dispersion claim does or does not hold. The experiment must reproduce frozen V006 daily OOS losses before any subgroup diagnostic is accepted. `asset_vol_5d_pct` and `asset_vol_63d_pct` are predeclared sensitivity scales only; neither can become the new primary from V006.1 results. The learned distributional model will receive its own version, preregistration and temporal selection design.
+<!-- MARKET_DIST_V0061_ROBUSTNESS_V001_END -->

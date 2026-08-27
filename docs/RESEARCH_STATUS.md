@@ -740,3 +740,11 @@ Foundation rules:
   and future-evidence leakage checks.
 
 No Event–Graph predictive model is trained in the foundation package.
+
+<!-- MARKET_DIST_V0061_ROBUSTNESS_V001_START -->
+## V006.1 robustness/falsification — preregistered
+
+The completed V006 conditional-dispersion result remains unchanged. The next active experiment is a diagnostics-only attempt to falsify or narrow that claim by exact source reproduction, tail analysis, asset/sector concentration, train-defined volatility regimes, calibration drift, direct comparison with the `asset_empirical` secondary reference and predeclared `vol5`/`vol63` scale sensitivities.
+
+No V006.1 diagnostic may be used to retroactively select a replacement primary specification. A learned distributional Market Brain remains blocked until V006.1 is interpreted.
+<!-- MARKET_DIST_V0061_ROBUSTNESS_V001_END -->

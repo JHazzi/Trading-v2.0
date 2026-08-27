@@ -489,3 +489,11 @@ Foundation rules:
   and future-evidence leakage checks.
 
 No Event–Graph predictive model is trained in the foundation package.
+
+<!-- MARKET_DIST_V0061_ROBUSTNESS_V001_START -->
+## V006.1 execution contract
+
+Before learned distributional modeling, run the frozen V006.1 robustness package. Required outputs are exact V006 reproduction, tail-specific diagnostics, direct `asset_empirical` comparison, asset/sector concentration and leave-one-out sensitivity, train-defined volatility regimes, calibration drift blocks, and predeclared `vol5`/`vol63` scale sensitivities.
+
+V006.1 has no promotion gate for an alternative scale. Its role is to determine the scope and failure modes of the existing V006 claim. Only after interpreting all four horizons should a separately versioned learned distributional Market Brain be preregistered.
+<!-- MARKET_DIST_V0061_ROBUSTNESS_V001_END -->

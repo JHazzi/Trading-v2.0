@@ -455,3 +455,22 @@ reports/market_brain_distributional_v006/empirical_baseline_v001/h{1,3,5,10}_ben
 reports/market_brain_distributional_v006/empirical_baseline_v001/h{1,3,5,10}_primary_daily_losses.csv
 ```
 
+
+<!-- MARKET_DIST_V0061_ROBUSTNESS_V001_START -->
+## E-MARKET-DIST-V0061 — robustness/falsification preregistration
+
+**Status:** preregistered; results intentionally not yet interpreted.
+
+V006 remains the completed primary. V006.1 does not change its model, target, quantiles, folds, primary unit or claim. It must first reproduce the frozen V006 OOS daily losses and fail if reproduction differs beyond the configured numerical tolerance.
+
+Predeclared diagnostics:
+- fold and quantile-specific pinball/calibration;
+- direct V006 vs `asset_empirical` comparison;
+- asset and sector contribution concentration plus leave-one-group-out sensitivity;
+- low/mid/high volatility regimes defined only from each outer fold's training `asset_vol_20d_pct`;
+- non-overlapping 126-origin-day calibration blocks within each outer fold;
+- alternative causal scale sensitivities using `asset_vol_5d_pct` and `asset_vol_63d_pct`;
+- moving-block bootstrap on origin-day losses at 5/10/20 days where a comparison is inferentially summarized.
+
+Alternative scales are diagnostics only and cannot retroactively replace the V006 `vol20` primary. No event, graph, macro, external proxy, cost, path or new learned-model feature enters V006.1.
+<!-- MARKET_DIST_V0061_ROBUSTNESS_V001_END -->

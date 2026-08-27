@@ -142,3 +142,62 @@ def test_nested_side_selection_returns_grid_member() -> None:
     assert params.alpha in {0.0, 0.5}
     assert params.lambda20 in {0.0, 1.0}
     assert params.kappa in {0.8, 1.0}
+
+
+def test_zero_observed_volatility_uses_bounded_log_state() -> None:
+    cfg = _cfg()
+    train = _frame(250, 3)
+    anchor = fit_anchor(train, cfg["quantiles"])
+    test = train.iloc[-12:].copy()
+    test.loc[test.index[:4], "asset_vol_20d_pct"] = 0.0
+    test.loc[test.index[4:8], "asset_vol_63d_pct"] = 0.0
+    bundle = predict_adaptive_distribution(
+        test,
+        anchor,
+        SideParameters(alpha=0.5, lambda20=0.5, kappa=1.0),
+        SideParameters(alpha=0.5, lambda20=0.5, kappa=1.0),
+        cfg,
+    )
+    matrix = np.column_stack([bundle["quantiles"][q] for q in cfg["quantiles"]])
+    assert np.isfinite(matrix).all()
+    assert np.all(np.diff(matrix, axis=1) >= -1e-12)
+
+
+def test_zero_asset_training_median_falls_back_to_global_positive() -> None:
+    cfg = _cfg()
+    train = _frame(250, 3)
+    train.loc[train["asset_id"] == 1, "asset_vol_20d_pct"] = 0.0
+    train.loc[train["asset_id"] == 1, "asset_vol_63d_pct"] = 0.0
+    anchor = fit_anchor(train, cfg["quantiles"])
+    test = train[train["asset_id"] == 1].tail(5).copy()
+    bundle = predict_adaptive_distribution(
+        test,
+        anchor,
+        SideParameters(alpha=0.5, lambda20=0.5, kappa=1.0),
+        SideParameters(alpha=0.5, lambda20=0.5, kappa=1.0),
+        cfg,
+    )
+    matrix = np.column_stack([bundle["quantiles"][q] for q in cfg["quantiles"]])
+    assert np.isfinite(matrix).all()
+
+
+def test_vol20_control_matches_v006_nonpositive_fallback() -> None:
+    cfg = _cfg()
+    frame = _frame(300, 3)
+    train = frame.iloc[:-90].copy()
+    test = frame.iloc[-90:].copy()
+    train.loc[train.index[::113], "asset_vol_20d_pct"] = 0.0
+    test.loc[test.index[::17], "asset_vol_20d_pct"] = 0.0
+    controls = fit_predict_controls(train, test, cfg)
+    v006_cfg = {"quantiles": cfg["quantiles"]}
+    train_old = train[["asset_id", "return_pct", "asset_vol_20d_pct"]].rename(
+        columns={"asset_vol_20d_pct": "scale_value"}
+    )
+    test_old = test[["asset_id", "asset_vol_20d_pct"]].rename(
+        columns={"asset_vol_20d_pct": "scale_value"}
+    )
+    old = fit_predict_baselines(train_old, test_old, v006_cfg)["volatility_scaled_empirical"]
+    new = controls["vol20_scaled_empirical"]
+    for q in cfg["quantiles"]:
+        np.testing.assert_allclose(new["quantiles"][q], old["quantiles"][q], atol=1e-12)
+    np.testing.assert_allclose(new["probability_positive"], old["probability_positive"], atol=1e-12)

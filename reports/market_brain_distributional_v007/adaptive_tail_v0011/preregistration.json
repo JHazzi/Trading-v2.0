@@ -1,0 +1,115 @@
+{
+  "benchmark_version": "market_brain_distributional_v007_adaptive_tail_v0011",
+  "claim_boundaries": {
+    "informed_by_v0061": true,
+    "no_directional_alpha_claim": true,
+    "no_event_graph_macro_external_context": true,
+    "not_a_path_model": true,
+    "not_independent_prospective_confirmation": true,
+    "not_production_ready": true
+  },
+  "controls": {
+    "primary_reference": "vol63_scaled_empirical",
+    "secondary_references": [
+      "vol20_scaled_empirical",
+      "asset_empirical",
+      "train_empirical"
+    ]
+  },
+  "frozen_question": "Can a nested-selected, asset-anchored, asymmetric and sub/super-linear volatility response improve calibrated terminal-return quantiles beyond the strong vol63 empirical scale reference without learning direction?",
+  "mathematical_contract": {
+    "alpha_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.25
+    ],
+    "asset_tail_anchor": "asset_quantile_distance_from_asset_median",
+    "dynamic_scale_formula": "kappa * exp(alpha * (lambda20*log(vol20/asset_median_vol20) + (1-lambda20)*log(vol63/asset_median_vol63)))",
+    "kappa_grid": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "lambda20_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "lower_and_upper_parameters_selected_separately": true,
+    "q50": "global train median only",
+    "scale_features": [
+      "asset_vol_20d_pct",
+      "asset_vol_63d_pct"
+    ]
+  },
+  "missing": [],
+  "model_version": "market_brain_distributional_v007_adaptive_asymmetric_scale_v0011",
+  "preperformance_implementation_amendment": {
+    "control_policy": "global_empirical_fallback",
+    "features_changed": false,
+    "normalizer_policy": "global_positive_train_median_fallback",
+    "observed_zero_policy": "log_ratio_lower_clip_at_max_abs_log_scale_ratio",
+    "outer_test_seen_before_amendment": false,
+    "parameter_grid_changed": false,
+    "primary_reference_changed": false,
+    "reason": "Core V003 permits exact zero rolling volatility; original V007 loader incorrectly rejected zero before any benchmark metric was produced"
+  },
+  "selection_contract": {
+    "all_horizons_required": [
+      1,
+      3,
+      5,
+      10
+    ],
+    "inner_validation_fraction": 0.2,
+    "nested_temporal_validation": true,
+    "outer_primary_score": "outer_origin_day_equal_weight_mean_pinball_loss",
+    "selection_score": "inner_origin_day_equal_weight_side_pinball_loss"
+  },
+  "status": "PASS",
+  "v0061_source_valid": true,
+  "v0061_summary": "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v0061/robustness_v001/robustness_summary.json",
+  "volatility_support": {
+    "1": {
+      "rows": 1078329,
+      "vol20_negative_rows": 0,
+      "vol20_null_rows": 0,
+      "vol20_zero_rows": 14,
+      "vol63_negative_rows": 0,
+      "vol63_null_rows": 0,
+      "vol63_zero_rows": 0
+    },
+    "10": {
+      "rows": 951231,
+      "vol20_negative_rows": 0,
+      "vol20_null_rows": 0,
+      "vol20_zero_rows": 14,
+      "vol63_negative_rows": 0,
+      "vol63_null_rows": 0,
+      "vol63_zero_rows": 0
+    },
+    "3": {
+      "rows": 1049926,
+      "vol20_negative_rows": 0,
+      "vol20_null_rows": 0,
+      "vol20_zero_rows": 14,
+      "vol63_negative_rows": 0,
+      "vol63_null_rows": 0,
+      "vol63_zero_rows": 0
+    },
+    "5": {
+      "rows": 1021619,
+      "vol20_negative_rows": 0,
+      "vol20_null_rows": 0,
+      "vol20_zero_rows": 14,
+      "vol63_negative_rows": 0,
+      "vol63_null_rows": 0,
+      "vol63_zero_rows": 0
+    }
+  }
+}

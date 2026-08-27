@@ -516,3 +516,13 @@ q50 is never dynamically learned in V007.
 
 Nested selection minimizes origin-day-equal pinball on q05/q25 and q75/q95 separately. Primary outer reference is the predeclared `vol63_scaled_empirical`; V006 `vol20`, `asset_empirical` and global empirical remain secondary controls. All four horizons must be reported.
 <!-- MARKET_DIST_V007_ADAPTIVE_TAIL_V001_END -->
+
+<!-- MARKET_DIST_V007_ZERO_VOL_AMENDMENT_V0011_START -->
+## V007 pre-performance implementation amendment — exact zero volatility
+
+The first V007 H1 benchmark attempt aborted during data loading before any OOS metric was produced. Core V003 permits exact zero rolling volatility, while the initial V007 loader incorrectly required both vol20 and vol63 to be strictly positive.
+
+V007.0.1 corrects only this domain handling. Exact observed zero volatility is mapped to the already-frozen lower log-ratio clip; a nonpositive per-asset TRAIN median normalizer falls back to the positive global TRAIN median. The vol20 control restores the completed V006 `global_empirical_fallback` behavior for nonpositive scale rows, and vol63 uses the same prospective control rule. Negative/null volatility remains a hard error.
+
+No rows are dropped, no epsilon is introduced, and no alpha/lambda/kappa grid, feature, primary reference, quantile, horizon, fold or score is changed. The plan gate now reports zero/negative/null scale support from the real Core V003 DB. This amendment must be committed before rerunning V007.
+<!-- MARKET_DIST_V007_ZERO_VOL_AMENDMENT_V0011_END -->

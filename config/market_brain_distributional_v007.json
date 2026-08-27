@@ -1,6 +1,6 @@
 {
-  "version": "market_brain_distributional_v007_adaptive_tail_v001",
-  "model_version": "market_brain_distributional_v007_adaptive_asymmetric_scale_v001",
+  "version": "market_brain_distributional_v007_adaptive_tail_v0011",
+  "model_version": "market_brain_distributional_v007_adaptive_asymmetric_scale_v0011",
   "source_v006_version": "market_brain_distributional_v006_baseline_v001",
   "source_v0061_version": "market_brain_distributional_v0061_robustness_v001",
   "dataset_contract": "market_daily_v003_all_asset_days_current_cohort_research",
@@ -9,10 +9,27 @@
   "source_core_db_sha256": "2eccfe061b33bcd3fff6c244be972b379d9c4c3f1230532b5a66c72aaaf3be19",
   "source_core_db_size_bytes": 3116351488,
   "target": "return_pct",
-  "horizons_sessions": [1, 3, 5, 10],
-  "quantiles": [0.05, 0.25, 0.5, 0.75, 0.95],
-  "lower_quantiles": [0.05, 0.25],
-  "upper_quantiles": [0.75, 0.95],
+  "horizons_sessions": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "quantiles": [
+    0.05,
+    0.25,
+    0.5,
+    0.75,
+    0.95
+  ],
+  "lower_quantiles": [
+    0.05,
+    0.25
+  ],
+  "upper_quantiles": [
+    0.75,
+    0.95
+  ],
   "outer_folds": 5,
   "initial_fraction": 0.3,
   "inner_validation_fraction": 0.2,
@@ -27,18 +44,42 @@
   ],
   "location_policy": "global_train_median_only",
   "asset_tail_anchor": "asset_quantile_distance_from_asset_median",
-  "scale_features": ["asset_vol_20d_pct", "asset_vol_63d_pct"],
+  "scale_features": [
+    "asset_vol_20d_pct",
+    "asset_vol_63d_pct"
+  ],
   "scale_normalizer": "per_asset_train_median_with_global_fallback",
   "scale_formula": "kappa * exp(alpha * (lambda20*log(vol20/asset_median_vol20) + (1-lambda20)*log(vol63/asset_median_vol63)))",
-  "alpha_grid": [0.0, 0.25, 0.5, 0.75, 1.0, 1.25],
-  "lambda20_grid": [0.0, 0.25, 0.5, 0.75, 1.0],
-  "kappa_grid": [0.8, 1.0, 1.2],
+  "alpha_grid": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25
+  ],
+  "lambda20_grid": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "kappa_grid": [
+    0.8,
+    1.0,
+    1.2
+  ],
   "max_abs_log_scale_ratio": 3.0,
   "selection_score": "inner_origin_day_equal_weight_side_pinball_loss",
   "primary_score": "outer_origin_day_equal_weight_mean_pinball_loss",
   "calibration_score": "mean_absolute_quantile_calibration_error",
   "bootstrap_reps": 3000,
-  "moving_block_lengths_origin_days": [5, 10, 20],
+  "moving_block_lengths_origin_days": [
+    5,
+    10,
+    20
+  ],
   "bootstrap_seed": 42,
   "strict_historical_pit": false,
   "current_cohort_not_survivorship_free": true,
@@ -53,5 +94,9 @@
   "minimum_rows_per_horizon": 600000,
   "minimum_assets": 490,
   "minimum_origin_days": 1500,
-  "claim_boundary": "developmental learned distributional benchmark informed by V006.1; not independent prospective confirmation and not production evidence"
+  "claim_boundary": "developmental learned distributional benchmark informed by V006.1; V0011 is a pre-performance zero-volatility domain correction; not independent prospective confirmation and not production evidence",
+  "zero_observed_volatility_policy": "log_ratio_lower_clip_at_max_abs_log_scale_ratio",
+  "nonpositive_asset_scale_normalizer_policy": "global_positive_train_median_fallback",
+  "control_nonpositive_scale_policy": "global_empirical_fallback",
+  "implementation_amendment": "pre-performance zero-volatility domain correction; no V007 benchmark metric existed before this amendment"
 }

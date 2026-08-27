@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sqlite3
 from pathlib import Path
 from typing import Any
 
@@ -14,7 +15,7 @@ from evaluation.market.distributional_v007 import (
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_DIR = (
-    ROOT / "reports" / "market_brain_distributional_v007" / "adaptive_tail_v001"
+    ROOT / "reports" / "market_brain_distributional_v007" / "adaptive_tail_v0011"
 )
 DEFAULT_V0061_SUMMARY = (
     ROOT
@@ -45,6 +46,41 @@ def _parse_horizons(text: str, allowed: list[int]) -> list[int]:
     return result
 
 
+def _volatility_support(core_db: Path, cfg: dict[str, Any]) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+    with sqlite3.connect(core_db) as conn:
+        for horizon in cfg["horizons_sessions"]:
+            row = conn.execute(
+                """
+                SELECT
+                  COUNT(*) AS rows,
+                  SUM(CASE WHEN s.asset_vol_20d_pct = 0 THEN 1 ELSE 0 END),
+                  SUM(CASE WHEN s.asset_vol_63d_pct = 0 THEN 1 ELSE 0 END),
+                  SUM(CASE WHEN s.asset_vol_20d_pct < 0 THEN 1 ELSE 0 END),
+                  SUM(CASE WHEN s.asset_vol_63d_pct < 0 THEN 1 ELSE 0 END),
+                  SUM(CASE WHEN s.asset_vol_20d_pct IS NULL THEN 1 ELSE 0 END),
+                  SUM(CASE WHEN s.asset_vol_63d_pct IS NULL THEN 1 ELSE 0 END)
+                FROM market_daily_v003_labels l
+                JOIN market_daily_v003_states s ON s.state_id=l.state_id
+                WHERE l.horizon_sessions=?
+                  AND l.label_status='usable'
+                  AND l.label_version=?
+                  AND s.feature_version=?
+                """,
+                (int(horizon), str(cfg["label_version"]), str(cfg["market_feature_version"])),
+            ).fetchone()
+            result[str(horizon)] = {
+                "rows": int(row[0] or 0),
+                "vol20_zero_rows": int(row[1] or 0),
+                "vol63_zero_rows": int(row[2] or 0),
+                "vol20_negative_rows": int(row[3] or 0),
+                "vol63_negative_rows": int(row[4] or 0),
+                "vol20_null_rows": int(row[5] or 0),
+                "vol63_null_rows": int(row[6] or 0),
+            }
+    return result
+
+
 def plan(
     config_path: Path,
     core_db: Path,
@@ -66,6 +102,14 @@ def plan(
         )
         if not source_ok:
             missing.append("valid completed V006.1 source reproduction")
+    volatility_support = None
+    if core_db.exists():
+        volatility_support = _volatility_support(core_db, cfg)
+        for horizon, item in volatility_support.items():
+            if item["vol20_negative_rows"] or item["vol63_negative_rows"]:
+                missing.append(f"negative volatility rows at H{horizon}")
+            if item["vol20_null_rows"] or item["vol63_null_rows"]:
+                missing.append(f"null volatility rows at H{horizon}")
     return {
         "status": "PASS" if not missing and source_ok else "FAIL",
         "benchmark_version": cfg["version"],
@@ -104,6 +148,17 @@ def plan(
             "not_a_path_model": True,
             "not_production_ready": True,
         },
+        "preperformance_implementation_amendment": {
+            "reason": "Core V003 permits exact zero rolling volatility; original V007 loader incorrectly rejected zero before any benchmark metric was produced",
+            "observed_zero_policy": cfg["zero_observed_volatility_policy"],
+            "normalizer_policy": cfg["nonpositive_asset_scale_normalizer_policy"],
+            "control_policy": cfg["control_nonpositive_scale_policy"],
+            "parameter_grid_changed": False,
+            "primary_reference_changed": False,
+            "features_changed": False,
+            "outer_test_seen_before_amendment": False,
+        },
+        "volatility_support": volatility_support,
         "v0061_summary": str(v0061_summary),
         "v0061_source_valid": bool(source_ok),
         "missing": missing,

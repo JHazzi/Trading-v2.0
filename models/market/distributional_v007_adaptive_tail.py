@@ -46,10 +46,10 @@ class AnchorState:
 
 def load_config(path: Path = DEFAULT_CONFIG) -> dict[str, Any]:
     cfg = json.loads(path.read_text(encoding="utf-8"))
-    if cfg["version"] != "market_brain_distributional_v007_adaptive_tail_v001":
+    if cfg["version"] != "market_brain_distributional_v007_adaptive_tail_v0011":
         raise ValueError("unexpected V007 version")
     if cfg["model_version"] != (
-        "market_brain_distributional_v007_adaptive_asymmetric_scale_v001"
+        "market_brain_distributional_v007_adaptive_asymmetric_scale_v0011"
     ):
         raise ValueError("unexpected V007 model version")
     if cfg["market_feature_version"] != "market_daily_state_v003_core":
@@ -85,6 +85,16 @@ def load_config(path: Path = DEFAULT_CONFIG) -> dict[str, Any]:
             raise ValueError(f"deferred information enabled: {key}")
     if cfg.get("no_best_horizon_selection") is not True:
         raise ValueError("all horizons must remain reportable")
+    if cfg.get("zero_observed_volatility_policy") != (
+        "log_ratio_lower_clip_at_max_abs_log_scale_ratio"
+    ):
+        raise ValueError("unexpected zero observed volatility policy")
+    if cfg.get("nonpositive_asset_scale_normalizer_policy") != (
+        "global_positive_train_median_fallback"
+    ):
+        raise ValueError("unexpected asset scale normalizer policy")
+    if cfg.get("control_nonpositive_scale_policy") != "global_empirical_fallback":
+        raise ValueError("unexpected control nonpositive scale policy")
     if not 0.0 < float(cfg["inner_validation_fraction"]) < 0.5:
         raise ValueError("invalid inner validation fraction")
     for key in ("alpha_grid", "lambda20_grid", "kappa_grid"):
@@ -171,8 +181,8 @@ def load_horizon(
     numeric = frame[["return_pct", "asset_vol_20d_pct", "asset_vol_63d_pct"]]
     if not np.isfinite(numeric.to_numpy(float)).all():
         raise RuntimeError("nonfinite V007 benchmark data")
-    if (frame[["asset_vol_20d_pct", "asset_vol_63d_pct"]] <= 0.0).any().any():
-        raise RuntimeError("V007 requires positive causal volatility features")
+    if (frame[["asset_vol_20d_pct", "asset_vol_63d_pct"]] < 0.0).any().any():
+        raise RuntimeError("V007 volatility features cannot be negative")
     if (frame["target_trading_day"] <= frame["origin_trading_day"]).any():
         raise RuntimeError("invalid target clock")
     if (frame["corporate_action_overlap"].astype(int) != 0).any():
@@ -199,14 +209,25 @@ def fit_anchor(train: pd.DataFrame, quantiles: Iterable[float]) -> AnchorState:
     vol_group = train.groupby("asset_id", sort=False)
     asset_vol20 = vol_group["asset_vol_20d_pct"].median()
     asset_vol63 = vol_group["asset_vol_63d_pct"].median()
+
+    def _global_positive_fallback(column: str) -> float:
+        values = train[column].to_numpy(float)
+        ordinary = float(np.median(values))
+        if ordinary > 0.0:
+            return ordinary
+        positive = values[values > 0.0]
+        if positive.size == 0:
+            raise RuntimeError(f"no positive training support for {column}")
+        return float(np.median(positive))
+
     return AnchorState(
         global_quantiles=global_quantiles,
         global_median=global_quantiles[0.5],
         asset_quantiles=asset_quantiles,
         asset_median_vol20=asset_vol20,
         asset_median_vol63=asset_vol63,
-        global_median_vol20=float(np.median(train["asset_vol_20d_pct"].to_numpy(float))),
-        global_median_vol63=float(np.median(train["asset_vol_63d_pct"].to_numpy(float))),
+        global_median_vol20=_global_positive_fallback("asset_vol_20d_pct"),
+        global_median_vol63=_global_positive_fallback("asset_vol_63d_pct"),
     )
 
 
@@ -249,13 +270,32 @@ def _log_scale_state(
     med63 = _map_with_fallback(
         test["asset_id"], anchor.asset_median_vol63, anchor.global_median_vol63
     )
-    r20 = test["asset_vol_20d_pct"].to_numpy(float) / med20
-    r63 = test["asset_vol_63d_pct"].to_numpy(float) / med63
-    if np.any(r20 <= 0.0) or np.any(r63 <= 0.0):
-        raise RuntimeError("invalid scale ratio")
+    # A zero rolling standard deviation is a valid market state (a perfectly
+    # flat window), not missing data.  The mathematical model already clips
+    # log scale ratios to +/- max_abs_log_ratio, so log(0) has the natural
+    # limiting representation -max_abs_log_ratio.  A zero/degenerate TRAIN
+    # median cannot normalize an asset, therefore it falls back to the
+    # positive global TRAIN median.  No test outcome is used here.
+    med20 = np.where(med20 > 0.0, med20, float(anchor.global_median_vol20))
+    med63 = np.where(med63 > 0.0, med63, float(anchor.global_median_vol63))
+    if np.any(med20 <= 0.0) or np.any(med63 <= 0.0):
+        raise RuntimeError("no positive training volatility normalizer")
+    v20 = test["asset_vol_20d_pct"].to_numpy(float)
+    v63 = test["asset_vol_63d_pct"].to_numpy(float)
+    if np.any(v20 < 0.0) or np.any(v63 < 0.0):
+        raise RuntimeError("volatility cannot be negative")
+    r20 = v20 / med20
+    r63 = v63 / med63
     limit = float(max_abs_log_ratio)
-    l20 = np.clip(np.log(r20), -limit, limit)
-    l63 = np.clip(np.log(r63), -limit, limit)
+
+    def _bounded_log_ratio(ratio: np.ndarray) -> np.ndarray:
+        out = np.full(len(ratio), -limit, dtype=float)
+        positive = ratio > 0.0
+        out[positive] = np.clip(np.log(ratio[positive]), -limit, limit)
+        return out
+
+    l20 = _bounded_log_ratio(r20)
+    l63 = _bounded_log_ratio(r63)
     w20 = float(lambda20)
     return w20 * l20 + (1.0 - w20) * l63
 
@@ -371,19 +411,33 @@ def _vol_scaled_bundle(
     y = train["return_pct"].to_numpy(float)
     scale_train = train[scale_column].to_numpy(float)
     scale_test = test[scale_column].to_numpy(float)
-    if np.any(scale_train <= 0.0) or np.any(scale_test <= 0.0):
-        raise RuntimeError("volatility control requires positive scale")
+    if np.any(scale_train < 0.0) or np.any(scale_test < 0.0):
+        raise RuntimeError("volatility control cannot use negative scale")
+    valid_train = scale_train > 0.0
+    if int(np.sum(valid_train)) < len(qs) + 1:
+        raise RuntimeError("insufficient positive volatility-scale support")
     location = float(np.median(y))
-    standardized = (y - location) / scale_train
+    standardized = (y[valid_train] - location) / scale_train[valid_train]
     standardized_sorted = np.sort(standardized)
     zq = np.quantile(standardized, qs, method="linear")
-    pred = {
-        q: location + float(value) * scale_test
-        for q, value in zip(qs, zq)
-    }
-    thresholds = (0.0 - location) / scale_test
+
+    # Match the completed V006 nonpositive-scale contract: zero-scale TEST
+    # rows receive the global empirical distribution rather than being
+    # removed or assigned an invented epsilon.  The same rule is extended
+    # prospectively to the vol63 control.
+    global_bundle = _global_empirical_bundle(train, test, qs)
+    usable_test = scale_test > 0.0
+    pred: dict[float, np.ndarray] = {}
+    for q, value in zip(qs, zq):
+        values = np.asarray(global_bundle["quantiles"][q], dtype=float).copy()
+        values[usable_test] = location + float(value) * scale_test[usable_test]
+        pred[q] = values
+    prob = np.asarray(global_bundle["probability_positive"], dtype=float).copy()
+    thresholds = (0.0 - location) / scale_test[usable_test]
     right = np.searchsorted(standardized_sorted, thresholds, side="right")
-    prob = (len(standardized_sorted) - right) / float(len(standardized_sorted))
+    prob[usable_test] = (
+        len(standardized_sorted) - right
+    ) / float(len(standardized_sorted))
     return {"quantiles": pred, "probability_positive": prob}
 
 

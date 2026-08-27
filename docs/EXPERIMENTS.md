@@ -526,3 +526,20 @@ V007.0.1 corrects only this domain handling. Exact observed zero volatility is m
 
 No rows are dropped, no epsilon is introduced, and no alpha/lambda/kappa grid, feature, primary reference, quantile, horizon, fold or score is changed. The plan gate now reports zero/negative/null scale support from the real Core V003 DB. This amendment must be committed before rerunning V007.
 <!-- MARKET_DIST_V007_ZERO_VOL_AMENDMENT_V0011_END -->
+
+<!-- MARKET_DISTRIBUTIONAL_V008_V001_START -->
+## Market Distributional V008 — Conditional Residual Quantiles
+
+- Version: `market_brain_distributional_v008_conditional_residual_quantiles_v001`
+- Target: H1/H3/H5/H10 terminal `return_pct` distribution.
+- Residualization: `(return - development_train_median) / asset_vol_63d_pct` on positive-scale rows.
+- Learner: `HistGradientBoostingRegressor(loss=quantile)` for q05/q25/q50/q75/q95.
+- Capacity: two frozen regularized profiles; selection only in nested temporal validation.
+- Training weights: equal total weight per origin trading day.
+- Calibration: final 126 origin days of each outer-train period, purged from model development; quantile-specific weighted residual shifts in standardized space.
+- Primary reference: equivalently recent-calibrated vol63 empirical distribution.
+- Primary candidate: full endogenous Core V003 state.
+- Diagnostics: same selected capacity on scale-only and own-state features; no post-hoc rescue.
+- Proper score: equal-origin-day mean pinball; 5/10/20-day moving-block bootstrap; calibration/coverage always reported.
+- Claim boundary: developmental current-cohort historical reconstruction, not strict PIT, not direction/profitability/path/production evidence.
+<!-- MARKET_DISTRIBUTIONAL_V008_V001_END -->

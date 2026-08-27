@@ -768,3 +768,19 @@ V007.0.1 corrects only this domain handling. Exact observed zero volatility is m
 
 No rows are dropped, no epsilon is introduced, and no alpha/lambda/kappa grid, feature, primary reference, quantile, horizon, fold or score is changed. The plan gate now reports zero/negative/null scale support from the real Core V003 DB. This amendment must be committed before rerunning V007.
 <!-- MARKET_DIST_V007_ZERO_VOL_AMENDMENT_V0011_END -->
+
+<!-- MARKET_DISTRIBUTIONAL_V008_V001_START -->
+## Distributional Market Brain V007 close / V008 preregistration — 2026-08-27
+
+V007 Adaptive Asymmetric Asset Scale is closed as a negative developmental result:
+- all H1/H3/H5/H10 horizon gates failed;
+- zero horizons had a positive point estimate versus the `vol63_scaled_empirical` primary reference;
+- the candidate remained better than the unconditional empirical distribution but did not add information beyond the stronger vol63 reference;
+- calibration was worse than vol63 at all four horizons.
+
+Interpretation: conditional dispersion information is real, but hand-parameterizing asset anchors plus vol20/vol63 asymmetric scaling did not add reproducible information beyond the strong long-memory empirical scale baseline.
+
+V008 tests a different question. Terminal return is standardized by causal `asset_vol_63d_pct`, and shallow/medium regularized HGB quantile learners predict the remaining conditional residual distribution from the frozen endogenous Core V003 Market State. The primary reference is a `vol63` empirical distribution given the same 126-origin-day train-only standardized quantile recalibration as the candidate. Scale-only and own-state learners are diagnostics and cannot rescue a failed full-endogenous primary after results.
+
+If V008 fails, the next research action is information enrichment, not additional endogenous model capacity.
+<!-- MARKET_DISTRIBUTIONAL_V008_V001_END -->

@@ -469,3 +469,13 @@ V007.0.1 corrects only this domain handling. Exact observed zero volatility is m
 
 No rows are dropped, no epsilon is introduced, and no alpha/lambda/kappa grid, feature, primary reference, quantile, horizon, fold or score is changed. The plan gate now reports zero/negative/null scale support from the real Core V003 DB. This amendment must be committed before rerunning V007.
 <!-- MARKET_DIST_V007_ZERO_VOL_AMENDMENT_V0011_END -->
+
+<!-- MARKET_DISTRIBUTIONAL_V008_V001_START -->
+## 2026-08-27 — Stop handcrafted scale tuning; test conditional information sufficiency
+
+Decision: reject V007 without post-result tuning and preregister V008 Conditional Residual Quantiles.
+
+Rationale: V007 lost to vol63 at all horizons, so another handcrafted volatility formula would be post-hoc specification search. V008 instead asks whether the existing causal endogenous Market State contains information about future standardized-return shape after a strong vol63 scale and recent train-only recalibration are already accounted for.
+
+The full endogenous feature family is primary. Same-capacity scale-only and own-state variants are diagnostics only. If the primary fails, no diagnostic feature family is auto-promoted; a later experiment must preregister any narrower model. A broad V008 failure is interpreted as evidence that the information state is insufficient beyond calibrated volatility, not as permission to increase tree depth, add a neural network, or tune more windows.
+<!-- MARKET_DISTRIBUTIONAL_V008_V001_END -->

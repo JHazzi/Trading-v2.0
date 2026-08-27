@@ -1,0 +1,302 @@
+{
+  "anti_selection_design": {
+    "feature_family_primary_fixed": "full_endogenous",
+    "nested_profile_selection": true,
+    "outer_purged_expanding_folds": 5,
+    "posthoc_rescue_forbidden": true,
+    "recent_calibration_origin_days": 126,
+    "scale_only_and_own_state_are_diagnostics_only": true
+  },
+  "benchmark_version": "market_brain_distributional_v008_conditional_residual_quantiles_v001",
+  "fair_reference": {
+    "primary": "vol63_recent_calibrated",
+    "raw_v006_controls_retained": true,
+    "reason": "V006.1 exposed calibration drift; the vol63 reference receives the same recent train-only standardized quantile calibration as the candidate so V008 cannot win merely by recalibrating recency"
+  },
+  "feature_null_audit": {
+    "asset_drawdown_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_drawdown_252d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_drawdown_63d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_minus_cross_section_1d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_minus_cross_section_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_minus_cross_section_5d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_minus_sector_1d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_minus_sector_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_minus_sector_5d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_range_1d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_10d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_1d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_3d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_5d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_return_63d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_vol_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_vol_5d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_vol_63d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "asset_volume_ratio_20d": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "cross_section_breadth_positive_1d": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "cross_section_breadth_positive_5d": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "cross_section_dispersion_1d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "cross_section_mean_return_1d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "cross_section_mean_return_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "cross_section_mean_return_5d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "cross_section_mean_vol_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "sector_breadth_positive_1d": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "sector_mean_return_1d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "sector_mean_return_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "sector_mean_return_5d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    },
+    "sector_mean_vol_20d_pct": {
+      "null_fraction": 0.0,
+      "null_rows": 0,
+      "rows": 1092555
+    }
+  },
+  "frozen_question": "After conditioning terminal returns on the strongest empirical vol63 scale and giving both candidate and reference the same recent train-only recalibration, does the current endogenous causal Market State X_t contain reproducible incremental information about the standardized return distribution?",
+  "missing": [],
+  "model_version": "market_brain_distributional_v008_hgb_residual_quantiles_v001",
+  "professional_investor_interpretation": {
+    "failure_meaning": "do not respond with more model capacity; treat as evidence that information state may be insufficient and enrich information causally in a later preregistered experiment",
+    "what_current_X_contains": "price/volume path, realized volatility, drawdown/range and endogenous cross-sectional/sector context resolved from the frozen Core V003 state",
+    "what_current_X_does_not_claim_to_contain": "analyst expectations/revisions, option-implied distribution, positioning/flows, fundamentals/valuation, rich event surprise, causal macro vintages or graph propagation"
+  },
+  "resolved_feature_manifest": {
+    "context_union": [
+      "asset_minus_cross_section_1d_pct",
+      "asset_minus_cross_section_20d_pct",
+      "asset_minus_cross_section_5d_pct",
+      "asset_minus_sector_1d_pct",
+      "asset_minus_sector_20d_pct",
+      "asset_minus_sector_5d_pct",
+      "cross_section_breadth_positive_1d",
+      "cross_section_breadth_positive_5d",
+      "cross_section_dispersion_1d_pct",
+      "cross_section_mean_return_1d_pct",
+      "cross_section_mean_return_20d_pct",
+      "cross_section_mean_return_5d_pct",
+      "cross_section_mean_vol_20d_pct",
+      "sector_breadth_positive_1d",
+      "sector_mean_return_1d_pct",
+      "sector_mean_return_20d_pct",
+      "sector_mean_return_5d_pct",
+      "sector_mean_vol_20d_pct"
+    ],
+    "counts": {
+      "context_union": 18,
+      "cross_section_context": 10,
+      "full_endogenous": 32,
+      "own_state": 14,
+      "scale_only": 3,
+      "sector_context": 8
+    },
+    "cross_section_context": [
+      "asset_minus_cross_section_1d_pct",
+      "asset_minus_cross_section_20d_pct",
+      "asset_minus_cross_section_5d_pct",
+      "cross_section_breadth_positive_1d",
+      "cross_section_breadth_positive_5d",
+      "cross_section_dispersion_1d_pct",
+      "cross_section_mean_return_1d_pct",
+      "cross_section_mean_return_20d_pct",
+      "cross_section_mean_return_5d_pct",
+      "cross_section_mean_vol_20d_pct"
+    ],
+    "feature_version": "market_daily_state_v003_core",
+    "full_endogenous": [
+      "asset_drawdown_20d_pct",
+      "asset_drawdown_252d_pct",
+      "asset_drawdown_63d_pct",
+      "asset_minus_cross_section_1d_pct",
+      "asset_minus_cross_section_20d_pct",
+      "asset_minus_cross_section_5d_pct",
+      "asset_minus_sector_1d_pct",
+      "asset_minus_sector_20d_pct",
+      "asset_minus_sector_5d_pct",
+      "asset_range_1d_pct",
+      "asset_return_10d_pct",
+      "asset_return_1d_pct",
+      "asset_return_20d_pct",
+      "asset_return_3d_pct",
+      "asset_return_5d_pct",
+      "asset_return_63d_pct",
+      "asset_vol_20d_pct",
+      "asset_vol_5d_pct",
+      "asset_vol_63d_pct",
+      "asset_volume_ratio_20d",
+      "cross_section_breadth_positive_1d",
+      "cross_section_breadth_positive_5d",
+      "cross_section_dispersion_1d_pct",
+      "cross_section_mean_return_1d_pct",
+      "cross_section_mean_return_20d_pct",
+      "cross_section_mean_return_5d_pct",
+      "cross_section_mean_vol_20d_pct",
+      "sector_breadth_positive_1d",
+      "sector_mean_return_1d_pct",
+      "sector_mean_return_20d_pct",
+      "sector_mean_return_5d_pct",
+      "sector_mean_vol_20d_pct"
+    ],
+    "missing_required_scale": [],
+    "own_state": [
+      "asset_drawdown_20d_pct",
+      "asset_drawdown_252d_pct",
+      "asset_drawdown_63d_pct",
+      "asset_range_1d_pct",
+      "asset_return_10d_pct",
+      "asset_return_1d_pct",
+      "asset_return_20d_pct",
+      "asset_return_3d_pct",
+      "asset_return_5d_pct",
+      "asset_return_63d_pct",
+      "asset_vol_20d_pct",
+      "asset_vol_5d_pct",
+      "asset_vol_63d_pct",
+      "asset_volume_ratio_20d"
+    ],
+    "resolution_rule": "schema-only frozen semantic prefix resolution; no outcomes inspected",
+    "scale_only": [
+      "asset_vol_5d_pct",
+      "asset_vol_20d_pct",
+      "asset_vol_63d_pct"
+    ],
+    "sector_context": [
+      "asset_minus_sector_1d_pct",
+      "asset_minus_sector_20d_pct",
+      "asset_minus_sector_5d_pct",
+      "sector_breadth_positive_1d",
+      "sector_mean_return_1d_pct",
+      "sector_mean_return_20d_pct",
+      "sector_mean_return_5d_pct",
+      "sector_mean_vol_20d_pct"
+    ]
+  },
+  "resolved_feature_manifest_sha256": "ec47bd88071f3c336f0a776f1bf246e0fc58163a51d35551638686e71b737e0a",
+  "source_v0061": "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v0061/robustness_v001/robustness_summary.json",
+  "source_v007": "/home/trabajo/quant_market_ai/reports/market_brain_distributional_v007/adaptive_tail_v0011/benchmark_summary.json",
+  "source_valid": true,
+  "status": "PASS",
+  "target_decomposition": "z=(return_pct-development_train_median)/asset_vol_63d_pct for positive scale; predict conditional quantiles of z; reconstruct return quantiles; nonpositive scale uses empirical fallback"
+}

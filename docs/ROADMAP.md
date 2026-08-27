@@ -527,3 +527,22 @@ V007.0.1 corrects only this domain handling. Exact observed zero volatility is m
 
 No rows are dropped, no epsilon is introduced, and no alpha/lambda/kappa grid, feature, primary reference, quantile, horizon, fold or score is changed. The plan gate now reports zero/negative/null scale support from the real Core V003 DB. This amendment must be committed before rerunning V007.
 <!-- MARKET_DIST_V007_ZERO_VOL_AMENDMENT_V0011_END -->
+
+<!-- MARKET_DISTRIBUTIONAL_V008_V001_START -->
+## Learned Distributional Market Brain V008 — conditional residual information gate
+
+Sequence after V007:
+```text
+V006 empirical volatility scale                 SUPPORTED
+V006.1 robustness / vol63 sensitivity           COMPLETE
+V007 handcrafted adaptive asymmetric scale      REJECTED
+V008 conditional residual quantile learner      NEXT
+```
+
+V008 freezes `vol63_recent_calibrated` as the primary reference. Candidate and reference receive the same recent train-only calibration opportunity. Hyperparameter profile selection is nested temporally. The Core V003 feature schema is resolved without outcomes during `--stage plan`, persisted as `resolved_feature_manifest.json`, and must be committed before benchmarking.
+
+Decision branch:
+- if V008 beats the calibrated vol63 reference with acceptable calibration across horizons, retain the learned endogenous distributional Market Brain and test new information blocks incrementally;
+- if V008 does not, stop increasing endogenous learner capacity and prioritize causally versioned information that a professional investor would actually use but Core V003 lacks: expectations/revisions, option-implied risk, fundamentals/valuation, positioning/flows and richer event surprise, one block at a time;
+- Event Brain, graph, trajectories and trading remain downstream of a credible base distribution.
+<!-- MARKET_DISTRIBUTIONAL_V008_V001_END -->

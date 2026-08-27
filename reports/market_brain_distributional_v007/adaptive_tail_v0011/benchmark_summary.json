@@ -1,0 +1,339 @@
+{
+  "benchmark_version": "market_brain_distributional_v007_adaptive_tail_v0011",
+  "failed_horizons": 4,
+  "headline_matrix": {
+    "1": {
+      "candidate_vs_asset_daily_delta_pct": 0.001824921454712852,
+      "candidate_vs_global_daily_delta_pct": 0.008571230665199327,
+      "candidate_vs_vol20_daily_delta_pct": -0.0006268955205456252,
+      "candidate_vs_vol63_daily_delta_pct": -0.002239222644508743,
+      "gate": {
+        "calibration_not_worse": false,
+        "candidate_mean_abs_quantile_calibration_error": 0.0075286509977943285,
+        "claim": "horizon-specific developmental evidence only; V007 uses a hypothesis informed by V006.1 and is not an independent prospective confirmation",
+        "primary_block10_ci95": [
+          -0.0044973064795593475,
+          -0.00010972790478939946
+        ],
+        "primary_point_delta_pct": -0.002239222644508743,
+        "reference_mean_abs_quantile_calibration_error": 0.003868915549097768,
+        "status": "FAIL"
+      },
+      "q05_vs_vol63_daily_delta_pct": -0.008059866923786265,
+      "q95_vs_vol63_daily_delta_pct": 0.00013852202632131007,
+      "selected_parameters_by_fold": [
+        {
+          "lower": {
+            "alpha": 0.75,
+            "kappa": 1.2,
+            "lambda20": 1.0
+          },
+          "upper": {
+            "alpha": 1.0,
+            "kappa": 1.0,
+            "lambda20": 1.0
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.5,
+            "kappa": 0.8,
+            "lambda20": 0.25
+          },
+          "upper": {
+            "alpha": 0.5,
+            "kappa": 1.0,
+            "lambda20": 1.0
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.5,
+            "kappa": 1.2,
+            "lambda20": 0.25
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 1.0,
+            "lambda20": 0.5
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.5,
+            "kappa": 0.8,
+            "lambda20": 0.25
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 0.8,
+            "lambda20": 0.25
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.5,
+            "kappa": 0.8,
+            "lambda20": 0.5
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 1.0,
+            "lambda20": 0.25
+          }
+        }
+      ]
+    },
+    "10": {
+      "candidate_vs_asset_daily_delta_pct": -0.005178353714796857,
+      "candidate_vs_global_daily_delta_pct": 0.01546258780739962,
+      "candidate_vs_vol20_daily_delta_pct": 0.0027991550915741474,
+      "candidate_vs_vol63_daily_delta_pct": -0.008175593608372956,
+      "gate": {
+        "calibration_not_worse": false,
+        "candidate_mean_abs_quantile_calibration_error": 0.007172029326201239,
+        "claim": "horizon-specific developmental evidence only; V007 uses a hypothesis informed by V006.1 and is not an independent prospective confirmation",
+        "primary_block10_ci95": [
+          -0.025823840544434748,
+          0.006706551924944069
+        ],
+        "primary_point_delta_pct": -0.008175593608372956,
+        "reference_mean_abs_quantile_calibration_error": 0.005600015444221838,
+        "status": "FAIL"
+      },
+      "q05_vs_vol63_daily_delta_pct": -0.01981657070226398,
+      "q95_vs_vol63_daily_delta_pct": -0.013288505725838468,
+      "selected_parameters_by_fold": [
+        {
+          "lower": {
+            "alpha": 0.5,
+            "kappa": 1.2,
+            "lambda20": 1.0
+          },
+          "upper": {
+            "alpha": 1.0,
+            "kappa": 1.0,
+            "lambda20": 0.25
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.0,
+            "kappa": 0.8,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 1.0,
+            "lambda20": 0.5
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.75,
+            "kappa": 1.2,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 0.8,
+            "lambda20": 0.5
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.25,
+            "kappa": 0.8,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 1.0,
+            "lambda20": 0.5
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.5,
+            "kappa": 1.0,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.5,
+            "kappa": 1.0,
+            "lambda20": 0.5
+          }
+        }
+      ]
+    },
+    "3": {
+      "candidate_vs_asset_daily_delta_pct": 0.0010801499012240718,
+      "candidate_vs_global_daily_delta_pct": 0.013518622491342377,
+      "candidate_vs_vol20_daily_delta_pct": 2.8913090168550295e-05,
+      "candidate_vs_vol63_daily_delta_pct": -0.004400422309570561,
+      "gate": {
+        "calibration_not_worse": false,
+        "candidate_mean_abs_quantile_calibration_error": 0.005182090724583503,
+        "claim": "horizon-specific developmental evidence only; V007 uses a hypothesis informed by V006.1 and is not an independent prospective confirmation",
+        "primary_block10_ci95": [
+          -0.009490092555953544,
+          0.00018972520584634888
+        ],
+        "primary_point_delta_pct": -0.004400422309570561,
+        "reference_mean_abs_quantile_calibration_error": 0.0032273709722758378,
+        "status": "FAIL"
+      },
+      "q05_vs_vol63_daily_delta_pct": -0.016810359589973584,
+      "q95_vs_vol63_daily_delta_pct": 0.00014809926390697695,
+      "selected_parameters_by_fold": [
+        {
+          "lower": {
+            "alpha": 0.75,
+            "kappa": 1.2,
+            "lambda20": 1.0
+          },
+          "upper": {
+            "alpha": 1.0,
+            "kappa": 1.0,
+            "lambda20": 0.75
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.25,
+            "kappa": 0.8,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 1.0,
+            "lambda20": 0.5
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.5,
+            "kappa": 1.2,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 1.0,
+            "lambda20": 0.25
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.5,
+            "kappa": 0.8,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 1.0,
+            "lambda20": 0.5
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.5,
+            "kappa": 1.0,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 1.0,
+            "lambda20": 0.25
+          }
+        }
+      ]
+    },
+    "5": {
+      "candidate_vs_asset_daily_delta_pct": -0.0016294964332623106,
+      "candidate_vs_global_daily_delta_pct": 0.01425394314343539,
+      "candidate_vs_vol20_daily_delta_pct": 0.0008344345345112987,
+      "candidate_vs_vol63_daily_delta_pct": -0.005654639786544463,
+      "gate": {
+        "calibration_not_worse": false,
+        "candidate_mean_abs_quantile_calibration_error": 0.006426303911284685,
+        "claim": "horizon-specific developmental evidence only; V007 uses a hypothesis informed by V006.1 and is not an independent prospective confirmation",
+        "primary_block10_ci95": [
+          -0.013972169757392874,
+          0.0015636468431768661
+        ],
+        "primary_point_delta_pct": -0.005654639786544463,
+        "reference_mean_abs_quantile_calibration_error": 0.00451116887998861,
+        "status": "FAIL"
+      },
+      "q05_vs_vol63_daily_delta_pct": -0.019400094182898873,
+      "q95_vs_vol63_daily_delta_pct": -0.0013030665700491993,
+      "selected_parameters_by_fold": [
+        {
+          "lower": {
+            "alpha": 0.75,
+            "kappa": 1.2,
+            "lambda20": 1.0
+          },
+          "upper": {
+            "alpha": 1.0,
+            "kappa": 1.0,
+            "lambda20": 0.75
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.25,
+            "kappa": 0.8,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 1.0,
+            "lambda20": 0.5
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.5,
+            "kappa": 1.2,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.5,
+            "kappa": 1.0,
+            "lambda20": 0.5
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.25,
+            "kappa": 0.8,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 1.0,
+            "lambda20": 0.5
+          }
+        },
+        {
+          "lower": {
+            "alpha": 0.5,
+            "kappa": 1.0,
+            "lambda20": 0.0
+          },
+          "upper": {
+            "alpha": 0.75,
+            "kappa": 1.0,
+            "lambda20": 0.25
+          }
+        }
+      ]
+    }
+  },
+  "overall_interpretation": "NO_MULTI_HORIZON_PROMOTION",
+  "positive_point_horizons": 0,
+  "promotion_boundary": "This benchmark is developmental because its mathematical hypothesis was informed by V006.1 outcomes. Even a strong result is not independent prospective confirmation.",
+  "status": "COMPLETE",
+  "strong_horizon_gates": 0
+}

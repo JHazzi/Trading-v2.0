@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "foundation_run_id": "idresfoundation_81400068e64a52def8c077176c5a08edcf264937f76423c0ed53fbb8ed1eb7f7",
+  "conflict_groups_written": 28,
+  "conflict_pairs_written": 30,
+  "pair_review_classes": {
+    "hierarchical_granularity_candidate": 1,
+    "reference_equivalent_candidate": 10,
+    "same_accession_distinct_or_source_error": 8,
+    "temporal_rejurisdiction_or_reporting_change_candidate": 11
+  },
+  "row_quality_candidates_written": 3,
+  "qa_report": "/home/trabajo/quant_market_ai/reports/event_graph/identity_resolution_foundation_v001/qa_all_pairs_and_quality_candidates.json",
+  "canonical_entities_created": false,
+  "identity_verdicts_written": false,
+  "row_exclusions_written": false,
+  "main_db_mutated": false,
+  "graph_edges_written": false
+}

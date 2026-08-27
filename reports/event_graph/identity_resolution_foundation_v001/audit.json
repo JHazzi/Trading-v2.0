@@ -1,0 +1,37 @@
+{
+  "status": "REVIEW",
+  "failures": [],
+  "reviews": [
+    "row_quality_candidates_require_confirmation",
+    "same_accession_distinct_or_source_error_requires_review",
+    "temporal_rejurisdiction_candidates_require_review"
+  ],
+  "conflict_groups": 28,
+  "conflict_pairs": 30,
+  "pair_review_classes": {
+    "hierarchical_granularity_candidate": 1,
+    "reference_equivalent_candidate": 10,
+    "same_accession_distinct_or_source_error": 8,
+    "temporal_rejurisdiction_or_reporting_change_candidate": 11
+  },
+  "row_quality_candidates": 3,
+  "identity_contract": {
+    "identity_verdicts_written": 0,
+    "automatic_merge_rows": 0,
+    "automatic_split_rows": 0,
+    "canonical_entities_created": false
+  },
+  "row_quality_contract": {
+    "exclusions_applied": 0
+  },
+  "jurisdiction_contract": {
+    "reference_writeback_rows": 0,
+    "authoritative_global_reference": false
+  },
+  "graph_contract": {
+    "graph_tables_present": [],
+    "graph_edges_written": false,
+    "relation_promotion": false
+  },
+  "next_gate": "Review the complete QA report. Confirm the three non-entity row-quality candidates and jurisdiction reference candidates. Then create an upstream Structured Rows V002 hygiene patch and rebuild Registry V2 before any canonical entity creation."
+}

@@ -396,3 +396,50 @@ Foundation rules:
   and future-evidence leakage checks.
 
 No Event–Graph predictive model is trained in the foundation package.
+
+## D023 — Scalar location failure does not veto distributional scale research
+
+**Decision:** the V003–V005 scalar absolute-return failures remain valid negative evidence, but they do not require the project to postpone every distributional test until a point model beats the median.
+
+**Reason:** conditional location and conditional dispersion are different statistical objects. A causal state variable may improve a proper distributional score and calibration even when it adds no median-return information.
+
+This supersedes only the earlier sequencing clause that required a credible point-estimate Market Brain before distributional heads. It does not weaken the need for trivial baselines, purged walk-forward evaluation or preregistration.
+
+**Status:** active after V006.
+
+## D024 — V006 empirical volatility scaling is the required distributional control
+
+**Decision:** retain the train-only empirical distribution rescaled by causal 20-session asset volatility as the first Distributional Market Brain control.
+
+Evidence:
+
+- positive origin-day-equal pinball delta at H1/H3/H5/H10;
+- 5/10/20-day moving-block intervals exclude zero at all horizons;
+- calibrated pooled central interval coverage;
+- no improvement in median MAE or positive-return Brier.
+
+Consequently, the supported increment is distribution scale. Any learned distributional model must show OOS incremental information beyond V006, not merely beyond an unconditional quantile baseline. V006 is not a production model and is not evidence of directional or tradable alpha.
+
+**Status:** active.
+
+## D025 — Identity conflict candidates cannot mutate canonical entities automatically
+
+**Decision:** Identity Resolution Foundation V001 remains a review artifact.
+
+The 28 conflict groups, 30 pairs and 3 row-quality candidates are inputs to upstream hygiene review. They do not authorize automatic merge, split, exclusion, jurisdiction writeback, canonical-entity creation or graph-edge promotion.
+
+**Status:** active; graph promotion blocked pending review and rebuild.
+
+## D026 — Product confidence and “psychology” have testable semantics
+
+**Decision:**
+
+- “investor psychology” is represented only through observable proxies or learned latent state with OOS evidence;
+- market price/path is the observed outcome target; intrinsic value is latent and would require a separate explicit model;
+- confidence shown to a user means calibrated probability/coverage at the requested horizon;
+- scheduled future events may alter uncertainty without an assumed sign;
+- a future path chart requires a coherent joint trajectory distribution, not independent horizon samples;
+- automated improvement uses candidate evaluation, promotion and rollback rather than blind model mutation.
+
+**Status:** canonical product interpretation.
+

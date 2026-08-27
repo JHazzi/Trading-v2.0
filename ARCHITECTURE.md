@@ -1,7 +1,7 @@
 # Quant Market AI — Architecture v0.2
 
 **Status:** canonical architecture  
-**Last major review:** 2026-08-25
+**Last major review:** 2026-08-26
 
 This file describes the intended system architecture. It is deliberately more stable than implementation notes, package READMEs and experiment reports. Current empirical status belongs in `docs/RESEARCH_STATUS.md`; near-term work belongs in `docs/ROADMAP.md`.
 
@@ -21,6 +21,22 @@ P(R_{t:t+T}\mid X_t,E_t,G_t,T)
 - `T`: requested horizon.
 
 The system must not assume that returns are normal, uncertainty follows a universal square-root-of-time law, a document is itself an event, or economic impact/reliability can be safely hardcoded.
+
+## 1.1 Product interpretation of the original vision
+
+The product vision is an asset-and-horizon query that returns expected outcomes, uncertainty and eventually plausible future paths, plus an alerting layer that can identify unusually favorable risk/reward situations. That vision maps to the research architecture as follows:
+
+- “market understanding” means a learned, falsifiable representation of multi-horizon price, volatility, liquidity, cross-sectional and regime state;
+- “investor psychology” is not an anthropomorphic hidden label. It is represented through observable behavior and learned latent state: positioning proxies, attention, disagreement, expectation, surprise, liquidity, volatility response and regime;
+- a company announcement scheduled for the future may change the forecast distribution and its width, but its direction is not assumed in advance;
+- source factual reliability, novelty, economic relevance, impact, persistence and direction remain separate learned/evaluated quantities;
+- relationships between companies nominate possible exposure paths; they do not assign a bullish/bearish sign or propagation weight by rule;
+- observed market price/path is outcome truth. Intrinsic value is a latent economic concept, not an observed target that can silently replace price. A future fundamentals/value model would require its own explicit target and evaluation contract;
+- the user-facing “confidence” must come from calibrated probabilities and interval coverage at the requested horizon, not model self-confidence or tree dispersion;
+- broker fees, spread, slippage, liquidity and taxes enter only after prediction, in risk/decision evaluation;
+- automatic improvement means persisted predictions, realized outcomes, drift diagnosis and controlled candidate promotion/rollback—not blind self-editing or online fitting.
+
+The first usable interface may expose terminal quantiles and probabilities. A chart that “goes up and down in the future” is only scientifically justified after the project models a coherent joint path distribution; independently sampled horizon points are not a valid trajectory.
 
 ## 2. Non-negotiable principles
 
@@ -383,16 +399,18 @@ A future production loop needs observation snapshot, prediction, realized outcom
 
 Current evidence-driven order:
 
-1. freeze/document current research checkpoint;
-2. robustness of the existing H10 candidate signal;
-3. stronger Market Brain Daily V003;
-4. distributional Market Brain;
-5. distributional Event Brain on the existing SEC corpus;
-6. richer event semantics/expectations;
-7. new information sources;
-8. graph propagation;
-9. trajectory/risk/decision layer;
-10. controlled continuous learning.
+1. preserve the completed scalar/event robustness checkpoint as evidence;
+2. falsify and decompose the V006 empirical volatility-scaled distributional result;
+3. preregister learned distributional Market Brain models with nested temporal selection and V006 as the required baseline;
+4. test Distributional Event Brain on the existing SEC corpus against a capacity-matched market-only distribution;
+5. repair reviewed entity/row hygiene upstream, but keep predictive graph propagation blocked until direct event information adds OOS value;
+6. learn richer event semantics, expectations and surprise;
+7. add new information sources incrementally;
+8. build coherent trajectory distributions, then risk and decision layers;
+9. introduce structural graph propagation only under its nested incremental comparison;
+10. operate a controlled prediction/outcome/candidate/promotion/rollback loop.
+
+The positive V006 foundation supports conditional interval scale only. It does not permit skipping directly to production alerts, a path chart, a GNN or automated trading.
 
 See `docs/ROADMAP.md` for gates.
 

@@ -120,7 +120,7 @@ reports/event_brain_v0031_deep/
 
 **Status:** completed.
 
-## Next experiment — E-EVENT-V0021-ROBUSTNESS
+## E-EVENT-V0021-ROBUSTNESS — preregistration and result
 
 Predeclare before execution:
 
@@ -135,6 +135,16 @@ Predeclare before execution:
 **Objective:** falsify H10, not optimize it.
 
 No changes to event corpus during this experiment.
+
+**Status:** completed; candidate narrowed, not promoted.
+
+- positive RF seeds: 4/5;
+- mean capacity-matched delta: `+0.018895 pp`;
+- median delta: `+0.028377 pp`;
+- seed range: `[-0.022576, +0.048059] pp`;
+- simple linear families: negative;
+- early-OOS sensitivity: approximately null.
+
 <!-- MARKET_V003_BENCHMARK_V001 -->
 ## Market Brain Daily V003 Benchmark V001 — preregistration
 
@@ -375,3 +385,73 @@ Foundation rules:
   and future-evidence leakage checks.
 
 No Event–Graph predictive model is trained in the foundation package.
+
+## E-MARKET-V003–V0052 — scalar daily sequence result
+
+**Status:** completed; no model promoted.
+
+Origin-day-equal MAE deltas use baseline minus candidate, so positive is better. The table reports the preregistered 10-origin-day moving-block point estimate.
+
+| Horizon | V003 vs median | V004 vs median | V005.1 vs V004 | V005.2 vs V004 |
+|---:|---:|---:|---:|---:|
+| H1 | -0.04857 pp | -0.00823 pp | -0.00085 pp | +0.00231 pp |
+| H3 | -0.29275 pp | -0.01708 pp | -0.00518 pp | +0.00573 pp |
+| H5 | -0.74796 pp | -0.03348 pp | +0.00006 pp | +0.00233 pp |
+| H10 | -1.00287 pp | -0.08026 pp | +0.01496 pp | -0.00122 pp |
+
+V003 and V004 are significantly worse than the train median at every horizon under the preregistered blocks. V005.1 and V005.2 incremental confidence intervals cross zero at every horizon, and both remain worse than the train median in absolute MAE. V004 remains useful as structural evidence/control, not as a promoted scalar forecaster.
+
+## E-MARKET-DIST-V006 — empirical distributional foundation
+
+**Hypothesis frozen before benchmark:** rescaling a train-only empirical standardized-return shape by causal 20-session asset volatility improves origin-day-equal pinball loss over the unconditional train empirical distribution.
+
+Versions:
+
+```text
+benchmark       market_brain_distributional_v006_baseline_v001
+model           market_brain_distributional_v006_empirical_baselines_v001
+market features market_daily_state_v003_core
+labels          market_daily_reaction_v003_core
+dataset         market_daily_v003_all_asset_days_current_cohort_research
+seed            42
+bootstrap unit  origin_trading_day
+```
+
+Five purged expanding folds are used. For every fold:
+
+```text
+latest training target day < first test origin day
+```
+
+Primary result:
+
+| Horizon | Daily-equal pinball delta | CI block 5 | CI block 10 | CI block 20 |
+|---:|---:|---:|---:|---:|
+| H1 | +0.009198 | [+0.007104, +0.011483] | [+0.006543, +0.011498] | [+0.006220, +0.011669] |
+| H3 | +0.013490 | [+0.009037, +0.018161] | [+0.008329, +0.018274] | [+0.007649, +0.018225] |
+| H5 | +0.013420 | [+0.007878, +0.019504] | [+0.007085, +0.019961] | [+0.006526, +0.019882] |
+| H10 | +0.012663 | [+0.004013, +0.023010] | [+0.002568, +0.024809] | [+0.000896, +0.022956] |
+
+Temporal fold sign counts:
+
+```text
+H1  5/5 positive
+H3  5/5 positive
+H5  5/5 positive
+H10 4/5 positive; earliest fold -0.003397 pp
+```
+
+**Result:** primary passes at all four horizons. The candidate central interval coverage is close to nominal, but the median and positive-return probability do not improve. No learned model, event feature, graph feature, external proxy, macro feature, cost model or path model was tested.
+
+**Interpretation:** retain V006 as the first supported conditional-dispersion baseline. Do not interpret the result as directional alpha, expected-return skill, a trajectory forecast or production readiness.
+
+Artifacts:
+
+```text
+config/market_brain_distributional_v006.json
+reports/market_brain_distributional_v006/empirical_baseline_v001/benchmark_plan.json
+reports/market_brain_distributional_v006/empirical_baseline_v001/benchmark_summary.json
+reports/market_brain_distributional_v006/empirical_baseline_v001/h{1,3,5,10}_benchmark.json
+reports/market_brain_distributional_v006/empirical_baseline_v001/h{1,3,5,10}_primary_daily_losses.csv
+```
+

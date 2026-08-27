@@ -14,54 +14,45 @@ The observed market price is the training/evaluation ground truth. News, SEC fil
 
 > **Research status:** experimental. This repository is not a production trading system and current results must not be interpreted as validated alpha.
 
-## Current checkpoint — 2026-08-25
+## Current checkpoint — 2026-08-26
 
-The project has completed a deep SEC research corpus and a first scalar Event Brain replication:
+The project has now closed the first robustness and daily-market checkpoint rather than only building infrastructure.
 
-- 10-asset research cohort;
-- common scientific window: `2016-09-23` through `2026-08-24`;
-- 1,704 eligible SEC filings;
-- 10,642 persisted cohort evidence records;
-- 1,939 normalized economic event identities;
-- 2,001 causal Event States;
-- 8,004 reaction labels across 1/3/5/10 sessions;
-- 6,343 usable labels after conservative exclusions.
+The deep SEC corpus remains fixed at 1,939 normalized events and 2,001 causal Event States for the current 10-asset research cohort. Event Brain H10 survived only conditionally: 4/5 Random Forest seeds produced a positive capacity-matched delta (mean `+0.0189 pp`, median `+0.0284 pp`), while simple linear families were negative and the early-OOS sensitivity was approximately null. This is nonlinear, unstable candidate information—not confirmed event alpha.
 
-Model-ready rows:
+The scalar Daily Market Brain sequence is also closed as evidence:
 
-| Horizon | Rows | Unique events |
-|---:|---:|---:|
-| 1 session | 1,700 | 1,650 |
-| 3 sessions | 1,667 | 1,620 |
-| 5 sessions | 1,619 | 1,573 |
-| 10 sessions | 1,353 | 1,314 |
+- V003 lost to the fold train median at H1/H3/H5/H10;
+- V004 factorization materially improved V003 but still lost to the median at every horizon;
+- V005.1 SPY/QQQ/IWM and V005.2 financial conditions did not pass their incremental gates over V004;
+- no scalar daily model is promoted.
 
-The current scalar Event Brain experiment asks whether event features add information beyond a capacity-matched residual control:
+The first Distributional Market Brain foundation, V006, tests a simpler question: whether a train-only empirical return distribution becomes better calibrated when its width is rescaled by the causal 20-session asset volatility known at prediction time.
 
-| Horizon | MAE delta: control − contextual |
-|---:|---:|
-| 1 | +0.0043 pp |
-| 3 | −0.0038 pp |
-| 5 | −0.0136 pp |
-| 10 | **+0.0282 pp** |
+| Horizon | OOS rows | Origin-day pinball delta: baseline − scaled | 95% moving-block CI (10 days) |
+|---:|---:|---:|---:|
+| H1 | 763,935 | +0.00920 pp | [+0.00654, +0.01150] |
+| H3 | 743,503 | +0.01349 pp | [+0.00833, +0.01827] |
+| H5 | 723,573 | +0.01342 pp | [+0.00709, +0.01996] |
+| H10 | 673,391 | +0.01266 pp | [+0.00257, +0.02481] |
 
-At 10 sessions the effect is positive in all four OOS folds, but its paired bootstrap 95% interval still crosses zero. Treat H10 as a **weak candidate signal**, not a confirmed effect.
+All four preregistered horizons improve under 5/10/20-origin-day block bootstraps. Central 50% coverage is approximately 50%; central 90% coverage is 90.5–91.0%. However, median MAE is essentially unchanged and positive-return Brier score is slightly worse. The supported claim is therefore **better conditional dispersion/interval scale**, not better direction, expected return, trajectory prediction or tradable alpha.
 
-The bigger unresolved issue is the daily Market Brain: it does not consistently beat trivial zero/median baselines OOS. Improving the base market distribution is therefore a higher priority than adding more event sources.
+The Event–Graph identity foundation produced 28 conflict groups, 30 review pairs and 3 row-quality candidates. Its audit is intentionally `REVIEW`: no canonical entities, exclusions, graph edges or main-database mutations were created.
+
+> **Current claim:** the project now has a reproducible positive baseline for conditional return uncertainty. It still has no validated directional alpha, event alpha, path generator or production trading policy.
 
 ## What happens next
 
-1. **Event Brain V0.2.1 robustness** — try to falsify H10.
-2. **Market Brain Daily V003** — build a stronger strictly-as-of market context.
-3. **Distributional Market Brain** — quantiles, probabilities and calibration.
-4. **Distributional Event Brain** — test whether events improve median, width, tails, path volatility and MFE/MAE.
-5. Richer event semantics — filing text, numeric facts, guidance, expectations and surprise.
-6. Additional sources — IR, news/wires, macro and analyst expectations.
-7. Structural/statistical/learned graphs.
-8. Trajectory engine, risk, decision layer and paper trading.
-9. Controlled continuous-learning / candidate-promotion loop.
+1. **Distributional Market Brain V006.1 robustness/falsification** — temporal, asset, tail, regime and alternative-scale diagnostics without changing the completed primary claim.
+2. **Learned Distributional Market Brain** — only under a new preregistration with nested temporal model selection and the empirical V006 baseline as a required control.
+3. **Distributional Event Brain** — test whether the existing SEC Event State adds calibrated information beyond a capacity-matched market-only distribution.
+4. **Identity hygiene before graph promotion** — resolve the 30 reviewed pairs and 3 row-quality candidates upstream; graph propagation remains blocked.
+5. Richer event semantics/expectations, then additional sources, only when incremental OOS evidence justifies them.
+6. Coherent path distributions, risk and decision layers after terminal distributions are credible.
+7. Controlled candidate/promotion/rollback learning; never blind online self-mutation.
 
-No additional SEC scaling is planned before robustness and Market Brain work.
+No additional SEC scaling, production alerts or live trading is justified at this checkpoint.
 
 ## Documentation map
 

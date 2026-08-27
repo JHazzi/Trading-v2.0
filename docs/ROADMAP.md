@@ -1,11 +1,37 @@
 # Research Roadmap
 
-**Snapshot:** 2026-08-25  
+**Snapshot:** 2026-08-26  
 **Rule:** complexity is added only after the previous information contract earns it OOS.
+
+## Active sequence after the 2026-08-26 checkpoint
+
+```text
+Event V0.2.1 robustness                    COMPLETE: conditional/unstable
+Market scalar V003–V005.2                 COMPLETE: no promoted model
+Distributional V006 empirical baseline    COMPLETE: scale information supported
+V006.1 robustness/falsification           NEXT
+learned distributional Market Brain       AFTER V006.1 preregistration
+distributional Event Brain                AFTER credible market distribution
+identity hygiene                          REVIEW in parallel; no graph promotion
+graph propagation                         BLOCKED until direct event increment
+trajectory/risk/decision                  DEFERRED
+```
+
+V006.1 must keep the completed primary untouched. It should report temporal-fold stability, asset/sector concentration, tail-specific loss, high/low-volatility regimes, calibration drift and predeclared alternative causal scale definitions. Diagnostics may falsify or narrow the claim; they cannot retroactively select a preferred specification.
+
+The next learned model requires:
+
+- a new version and preregistration;
+- nested temporal validation for architecture/hyperparameters;
+- an untouched final temporal comparison or another explicit anti-selection design;
+- the unconditional empirical distribution and V006 volatility-scaled distribution as controls;
+- pinball/calibration as primary, with Brier and median MAE reported even if negative;
+- all four horizons reported;
+- no event, graph or production decision features in the first learned Market Brain increment.
 
 ## Phase 0 — Documentation checkpoint
 
-**Status:** current cleanup.
+**Status:** completed; canonical documents reconciled through the V006 checkpoint.
 
 Deliverables:
 
@@ -23,6 +49,8 @@ Exit gate:
 - `docs/INDEX.md` identifies current sources of truth.
 
 ## Phase 1 — Event Brain V0.2.1 Robustness
+
+**Status:** completed; conditional/nonlinear candidate, not promoted.
 
 **Goal:** attempt to falsify the H10 candidate signal without changing the event corpus or inventing richer features.
 
@@ -98,6 +126,8 @@ valid public evidence while preserving later confirmations as later evidence.
 
 ## Phase 2 — Market Brain Daily V003
 
+**Status:** scalar sequence V003–V005.2 closed as negative/inconclusive evidence.
+
 **Goal:** build a stronger base market state before richer event conditioning.
 
 Candidate strictly-as-of context:
@@ -129,6 +159,8 @@ Exit gate:
 > The daily Market Brain must show consistent OOS value versus trivial baselines, not only on event days.
 
 ## Phase 3 — Distributional Market Brain
+
+**Status:** active; V006 empirical scale foundation passed its preregistered primary.
 
 **Goal:** estimate calibrated future uncertainty rather than point-return only.
 

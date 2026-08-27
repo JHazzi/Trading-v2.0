@@ -1,7 +1,113 @@
-# Research Status — 2026-08-25
+# Research Status — 2026-08-26
 
 **Status:** canonical empirical checkpoint  
 **Scope:** research, not production trading
+
+## Current checkpoint — 2026-08-26
+
+### Completed falsification work
+
+Event Brain V0.2.1 robustness did not convert the H10 scalar candidate into a general claim:
+
+- Random Forest capacity-matched delta was positive for 4/5 preregistered seeds;
+- mean seed delta: `+0.018895 pp`; median: `+0.028377 pp`;
+- range: `-0.022576` to `+0.048059 pp`;
+- simple linear families were negative;
+- dependence/concentration checks were acceptable, but the early-OOS sensitivity was approximately null.
+
+Interpretation: H10 may contain conditional nonlinear information, but it is seed- and period-sensitive. It is not confirmed event alpha and does not justify more SEC scaling.
+
+Daily scalar Market Brain results are closed:
+
+| Experiment | Primary result |
+|---|---|
+| V003 endogenous pooled HGB | worse than fold train median at H1/H3/H5/H10 |
+| V004 factorized HGB | materially better than V003, still worse than train median at every horizon |
+| V005.1 SPY/QQQ/IWM increment | incremental 10-day-block CIs cross zero at all horizons |
+| V005.2 financial conditions increment | incremental 10-day-block CIs cross zero at all horizons; absolute skill remains negative |
+
+No scalar daily model is promoted.
+
+### Distributional Market Brain V006 empirical foundation
+
+Preregistered versions:
+
+- benchmark: `market_brain_distributional_v006_baseline_v001`;
+- model: `market_brain_distributional_v006_empirical_baselines_v001`;
+- market features: `market_daily_state_v003_core`;
+- labels: `market_daily_reaction_v003_core`;
+- dataset: `market_daily_v003_all_asset_days_current_cohort_research`;
+- Core DB SHA-256: `2eccfe061b33bcd3fff6c244be972b379d9c4c3f1230532b5a66c72aaaf3be19`;
+- five purged expanding folds; 30% initial history;
+- primary unit: equal-weight origin trading day;
+- uncertainty: 3,000 moving-block bootstrap repetitions at 5/10/20 origin days.
+
+Frozen comparison:
+
+```text
+baseline(q)  = Q_train(return_pct, q)
+candidate(q) = median_train
+               + Q_train((return_pct - median_train) / asset_vol_20d_pct, q)
+               * asset_vol_20d_pct_at_prediction
+```
+
+Only the causal `asset_vol_20d_pct` state is model-visible. All distributional shapes and probabilities are fit from training outcomes only. Rows with nonpositive scale use the unconditional training distribution. No event, graph, macro, external proxy or broker-cost feature enters the model.
+
+Primary OOS result:
+
+| Horizon | OOS rows | OOS origin days | Daily-equal pinball delta | 95% CI, block 10 |
+|---:|---:|---:|---:|---:|
+| H1 | 763,935 | 1,582 | +0.009198 pp | [+0.006543, +0.011498] |
+| H3 | 743,503 | 1,580 | +0.013490 pp | [+0.008329, +0.018274] |
+| H5 | 723,573 | 1,579 | +0.013420 pp | [+0.007085, +0.019961] |
+| H10 | 673,391 | 1,575 | +0.012663 pp | [+0.002568, +0.024809] |
+
+Positive means lower candidate pinball loss. Every horizon is positive under all preregistered 5/10/20 block lengths. H1/H3/H5 are positive in all five temporal folds; H10 is positive in 4/5 and slightly negative in the earliest fold.
+
+Pooled candidate coverage:
+
+| Horizon | Central 50% | Central 90% |
+|---:|---:|---:|
+| H1 | 0.5019 | 0.9051 |
+| H3 | 0.4998 | 0.9052 |
+| H5 | 0.4989 | 0.9074 |
+| H10 | 0.5000 | 0.9102 |
+
+Critical negative controls:
+
+- median MAE is effectively unchanged;
+- positive-return Brier score is slightly worse at every horizon;
+- this is a terminal-return distribution, not a coherent path distribution;
+- historical reconstruction is not strict PIT;
+- the current-company cohort is not survivorship-free.
+
+Supported claim:
+
+> Causal 20-session asset volatility contains reproducible OOS information about conditional return-distribution scale relative to an unconditional train empirical distribution.
+
+Unsupported claims: directional prediction, expected-return alpha, event alpha, trajectory prediction, profitability after costs, production readiness.
+
+### Event–Graph identity checkpoint
+
+Identity Resolution Foundation V001 built 28 conflict groups, 30 review pairs and 3 row-quality candidates. Audit status is `REVIEW`, not `PASS` for promotion:
+
+- 10 reference-equivalent candidates;
+- 11 temporal rejurisdiction/reporting-change candidates;
+- 8 same-accession distinct/source-error candidates;
+- 1 hierarchy/granularity candidate;
+- zero automatic merges, splits, verdicts, exclusions, canonical entities or graph edges;
+- no main-database mutation.
+
+The next identity gate is human/scientific review followed by an upstream Structured Rows V002 hygiene patch and Registry V2 rebuild. Predictive graph propagation remains blocked.
+
+### Ordered next work
+
+1. V006.1 robustness/falsification without changing the completed primary.
+2. A separately preregistered learned distributional Market Brain with nested temporal selection and V006 as control.
+3. Distributional Event Brain on the existing SEC corpus with a capacity-matched market-only control.
+4. Upstream identity hygiene; no graph promotion yet.
+5. Richer semantics/sources only after incremental OOS evidence.
+6. Coherent path, risk, costs, decisions and controlled learning later.
 
 ## 1. Executive summary
 

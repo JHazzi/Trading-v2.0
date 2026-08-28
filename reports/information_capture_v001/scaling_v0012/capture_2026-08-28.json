@@ -1,0 +1,116 @@
+{
+  "completed": {
+    "AVGO": {
+      "adapter_version": "alphavantage_expectations_v001",
+      "content_type": "application/json",
+      "endpoint": "EARNINGS_ESTIMATES",
+      "expectation_inserted": 287,
+      "expectation_skipped": 0,
+      "normalized_expectations": 287,
+      "retrieved_at": "2026-08-28T01:32:52.611785+00:00",
+      "source_inserted": 1,
+      "status": "PASS_SOURCE_CAPTURED",
+      "symbol": "AVGO"
+    },
+    "CIEN": {
+      "adapter_version": "alphavantage_expectations_v001",
+      "content_type": "application/json",
+      "endpoint": "EARNINGS_ESTIMATES",
+      "expectation_inserted": 287,
+      "expectation_skipped": 0,
+      "normalized_expectations": 287,
+      "retrieved_at": "2026-08-28T01:33:33.259123+00:00",
+      "source_inserted": 1,
+      "status": "PASS_SOURCE_CAPTURED",
+      "symbol": "CIEN"
+    },
+    "CPRT": {
+      "adapter_version": "alphavantage_expectations_v001",
+      "content_type": "application/json",
+      "endpoint": "EARNINGS_ESTIMATES",
+      "expectation_inserted": 287,
+      "expectation_skipped": 0,
+      "normalized_expectations": 287,
+      "retrieved_at": "2026-08-28T01:33:47.349476+00:00",
+      "source_inserted": 1,
+      "status": "PASS_SOURCE_CAPTURED",
+      "symbol": "CPRT"
+    },
+    "DELL": {
+      "adapter_version": "alphavantage_expectations_v001",
+      "content_type": "application/json",
+      "endpoint": "EARNINGS_ESTIMATES",
+      "expectation_inserted": 245,
+      "expectation_skipped": 0,
+      "normalized_expectations": 245,
+      "retrieved_at": "2026-08-28T01:32:11.696651+00:00",
+      "source_inserted": 1,
+      "status": "PASS_SOURCE_CAPTURED",
+      "symbol": "DELL"
+    },
+    "HPE": {
+      "adapter_version": "alphavantage_expectations_v001",
+      "content_type": "application/json",
+      "endpoint": "EARNINGS_ESTIMATES",
+      "expectation_inserted": 287,
+      "expectation_skipped": 0,
+      "normalized_expectations": 287,
+      "retrieved_at": "2026-08-28T01:33:06.146219+00:00",
+      "source_inserted": 1,
+      "status": "PASS_SOURCE_CAPTURED",
+      "symbol": "HPE"
+    },
+    "LULU": {
+      "adapter_version": "alphavantage_expectations_v001",
+      "content_type": "application/json",
+      "endpoint": "EARNINGS_ESTIMATES",
+      "expectation_inserted": 287,
+      "expectation_skipped": 0,
+      "normalized_expectations": 287,
+      "retrieved_at": "2026-08-28T01:34:00.887359+00:00",
+      "source_inserted": 1,
+      "status": "PASS_SOURCE_CAPTURED",
+      "symbol": "LULU"
+    },
+    "MDT": {
+      "adapter_version": "alphavantage_expectations_v001",
+      "content_type": "application/json",
+      "endpoint": "EARNINGS_ESTIMATES",
+      "expectation_inserted": 287,
+      "expectation_skipped": 0,
+      "normalized_expectations": 287,
+      "retrieved_at": "2026-08-28T01:32:25.493388+00:00",
+      "source_inserted": 1,
+      "status": "PASS_SOURCE_CAPTURED",
+      "symbol": "MDT"
+    },
+    "NTAP": {
+      "adapter_version": "alphavantage_expectations_v001",
+      "content_type": "application/json",
+      "endpoint": "EARNINGS_ESTIMATES",
+      "expectation_inserted": 287,
+      "expectation_skipped": 0,
+      "normalized_expectations": 287,
+      "retrieved_at": "2026-08-28T01:33:19.722181+00:00",
+      "source_inserted": 1,
+      "status": "PASS_SOURCE_CAPTURED",
+      "symbol": "NTAP"
+    },
+    "PANW": {
+      "adapter_version": "alphavantage_expectations_v001",
+      "content_type": "application/json",
+      "endpoint": "EARNINGS_ESTIMATES",
+      "expectation_inserted": 287,
+      "expectation_skipped": 0,
+      "normalized_expectations": 287,
+      "retrieved_at": "2026-08-28T01:32:39.076505+00:00",
+      "source_inserted": 1,
+      "status": "PASS_SOURCE_CAPTURED",
+      "symbol": "PANW"
+    }
+  },
+  "day": "2026-08-28",
+  "failures": {},
+  "started_at": "2026-08-28T01:32:11.696629+00:00",
+  "updated_at": "2026-08-28T01:34:01.409734+00:00"
+}

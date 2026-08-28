@@ -1,0 +1,22 @@
+# V0012 overlay
+
+Install at repo root. Then run:
+
+python -m py_compile \
+  ingestion/expectations/alphavantage_expectations_v001.py \
+  research/information_sources/expectation_quality_v0012.py \
+  pipeline/information_capture_scaling_v0012.py \
+  tools/build_information_capture_universe_v0012.py \
+  tools/audit_information_capture_semantic_identity_v0012.py
+
+python -m pytest \
+  tests/test_expectation_information_capture_v001.py \
+  tests/test_information_source_capture_v001.py \
+  tests/test_information_capture_scaling_v0011.py \
+  tests/test_information_capture_semantic_identity_v0012.py -q
+
+python tools/audit_information_capture_semantic_identity_v0012.py
+python -m pipeline.information_capture_scaling_v0012 --stage quality-audit
+python tools/build_information_capture_universe_v0012.py
+python -m pipeline.information_capture_scaling_v0012 --stage plan-batch \
+  --symbols-file data/information_capture_universe_v001.txt

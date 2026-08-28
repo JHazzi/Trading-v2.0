@@ -1,0 +1,34 @@
+{
+  "contract_version": "information_capture_orchestrator_v0013",
+  "capture_db": "data/database/information_capture_v001.db",
+  "schema_additive": "database/information_capture_v0013_additive.sql",
+  "feature_visibility": "blocked_until_separate_preregistered_experiment",
+  "quota_policy": {
+    "provider": "alpha_vantage",
+    "rolling_window_hours": 24,
+    "internal_request_cap": 20,
+    "note": "Conservative project cap; change only after entitlement is explicitly verified."
+  },
+  "request_policy": {
+    "minimum_seconds_between_requests": 13.0,
+    "request_timeout_seconds": 45
+  },
+  "cadence_policy": {
+    "deep_cohort": [
+      "AAPL",
+      "MSFT",
+      "JPM",
+      "BAC",
+      "XOM",
+      "CVX",
+      "LLY",
+      "JNJ",
+      "WMT",
+      "COST"
+    ],
+    "deep_cohort_days": 1,
+    "earnings_within_7d_days": 1,
+    "earnings_within_30d_days": 2,
+    "broad_universe_days": 60
+  }
+}

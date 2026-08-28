@@ -1,0 +1,24 @@
+{
+  "contract_version": "information_source_capture_v001",
+  "capture_db": "data/database/information_capture_v001.db",
+  "foundation_schema": "database/information_capture_v001_schema.sql",
+  "feature_visibility": "blocked_until_separate_preregistered_experiment",
+  "providers": {
+    "alpha_vantage": {
+      "enabled": true,
+      "api_key_env": "ALPHAVANTAGE_API_KEY",
+      "calendar_horizon": "3month",
+      "calendar_capture": true,
+      "estimates_capture": true,
+      "pilot_tickers": ["AAPL", "MSFT", "JPM", "BAC", "XOM", "CVX", "LLY", "JNJ", "WMT", "COST"],
+      "request_timeout_seconds": 45,
+      "minimum_seconds_between_symbol_requests": 13.0
+    }
+  },
+  "normalization": {
+    "calendar_creates_scheduled_event_rows": false,
+    "calendar_reason": "provider calendar supplies a report date and may supply a daypart, not a guaranteed exact timestamp; V001 refuses to fabricate scheduled_for",
+    "calendar_estimate_statistic_key": "provider_estimate",
+    "strict_pit_available_at_policy": "retrieval_time"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "registry_version": "information_source_provider_registry_v001",
+  "verified_on": "2026-08-27",
+  "providers": [
+    {
+      "provider_id": "sec_edgar",
+      "role": ["factual_actuals", "company_guidance_evidence", "filing_timing"],
+      "economic_latents": ["actual", "guidance", "novelty", "management_information"],
+      "historical_pit_quality": "strong_for_filing_acceptance_and_original_filing_evidence_with_caveats",
+      "prospective_strict_pit": true,
+      "cost_class": "free_public",
+      "automation": "official_api_and_archives",
+      "primary_risk": "filing acceptance timestamp is not identical to first public web availability; parsed XBRL can be revised or corrected",
+      "recommended_use": "truth/evidence backbone, not analyst expectation source",
+      "evidence_urls": [
+        "https://www.sec.gov/search-filings/edgar-application-programming-interfaces",
+        "https://www.sec.gov/about/webmaster-frequently-asked-questions"
+      ]
+    },
+    {
+      "provider_id": "alpha_vantage_earnings",
+      "role": ["scheduled_earnings", "analyst_estimates", "estimate_revisions", "earnings_actual_vs_estimate"],
+      "economic_latents": ["expectation", "revision", "disagreement_proxy", "scheduled_uncertainty", "surprise_input"],
+      "historical_pit_quality": "unknown_for_vendor_historical_estimates_unless_vintage_semantics_are_proven",
+      "prospective_strict_pit": true,
+      "cost_class": "api_key_required_plan_dependent",
+      "automation": "official_api",
+      "primary_risk": "third-party consensus construction and historical-vintage semantics are not guaranteed by endpoint description; dates/estimates remain observations, not truth",
+      "recommended_use": "first prospective expectation capture; do not label historical backfill strict PIT",
+      "evidence_urls": [
+        "https://www.alphavantage.co/documentation/#earnings",
+        "https://www.alphavantage.co/documentation/#earnings-estimates",
+        "https://www.alphavantage.co/documentation/#earnings-calendar"
+      ]
+    },
+    {
+      "provider_id": "fred_alfred",
+      "role": ["macro_actuals", "macro_vintages", "release_calendar"],
+      "economic_latents": ["macro_regime", "macro_information_set", "revision", "policy_environment"],
+      "historical_pit_quality": "strong_for_supported_series_via_realtime_periods_and_vintage_dates",
+      "prospective_strict_pit": true,
+      "cost_class": "free_api_key",
+      "automation": "official_api",
+      "primary_risk": "release dates do not necessarily equal exact data availability time; macro consensus expectations are not supplied by ALFRED",
+      "recommended_use": "future macro block and historical PIT regime reconstruction",
+      "evidence_urls": [
+        "https://fred.stlouisfed.org/docs/api/fred/realtime_period.html",
+        "https://fred.stlouisfed.org/docs/api/fred/series_vintagedates.html",
+        "https://fred.stlouisfed.org/docs/api/fred/series_observations.html"
+      ]
+    },
+    {
+      "provider_id": "massive_options",
+      "role": ["option_chain_snapshot", "implied_volatility", "greeks", "open_interest", "quotes"],
+      "economic_latents": ["market_implied_uncertainty", "tail_pricing", "skew", "positioning_proxy", "scheduled_event_pricing"],
+      "historical_pit_quality": "plan_and_dataset_dependent",
+      "prospective_strict_pit": true,
+      "cost_class": "plan_dependent_paid_for_richer_fields",
+      "automation": "official_api",
+      "primary_risk": "coverage/quotes depend on plan; some contracts omit greeks; raw chain is high-dimensional and must be compressed causally",
+      "recommended_use": "second high-information pilot after expectation capture, ideally small cohort first",
+      "evidence_urls": [
+        "https://massive.com/docs/rest/options/snapshots/option-chain-snapshot",
+        "https://massive.com/docs/rest/options/overview"
+      ]
+    },
+    {
+      "provider_id": "cboe_datashop_options",
+      "role": ["historical_option_quotes", "historical_iv_greeks", "open_interest"],
+      "economic_latents": ["historical_market_implied_uncertainty", "tail_pricing", "skew"],
+      "historical_pit_quality": "strong_market_timestamped_vendor_data_if_licensed_dataset_is_used",
+      "prospective_strict_pit": true,
+      "cost_class": "paid_licensed",
+      "automation": "licensed_files_or_delivery_only",
+      "primary_risk": "large data volume and licensing cost; public delayed quote web pages explicitly prohibit automated extraction",
+      "recommended_use": "gold-standard historical options candidate if budget justifies it; never scrape delayed quote pages",
+      "evidence_urls": [
+        "https://datashop.cboe.com/option-quote-intervals",
+        "https://www.cboe.com/delayed_quotes/API/quote_table/"
+      ]
+    },
+    {
+      "provider_id": "fmp_analyst_estimates",
+      "role": ["analyst_estimates", "price_targets", "earnings_calendar"],
+      "economic_latents": ["expectation", "revision", "analyst_belief"],
+      "historical_pit_quality": "requires_vendor_confirmation_before_research_use",
+      "prospective_strict_pit": true,
+      "cost_class": "plan_dependent",
+      "automation": "official_api_candidate",
+      "primary_risk": "current public documentation confirms dataset family but vintage/revision semantics and licensing need explicit verification",
+      "recommended_use": "comparison vendor, not first canonical source until semantics are verified",
+      "evidence_urls": [
+        "https://site.financialmodelingprep.com/developer/docs"
+      ]
+    }
+  ],
+  "recommended_sequence": [
+    "alpha_vantage_earnings",
+    "sec_edgar",
+    "massive_options",
+    "fred_alfred",
+    "cboe_datashop_options",
+    "fmp_analyst_estimates"
+  ]
+}

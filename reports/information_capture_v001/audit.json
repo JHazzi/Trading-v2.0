@@ -2,15 +2,15 @@
   "contract_version": "expectation_information_capture_v001",
   "counts": {
     "economic_fact_observations": 0,
-    "expectation_observations": 0,
+    "expectation_observations": 5411,
     "scheduled_event_observations": 0,
-    "source_observations": 0
+    "source_observations": 20
   },
-  "expectation_revision_series": 0,
+  "expectation_revision_series": 91,
   "feature_visibility": "BLOCKED",
   "invalid_strict_source_time_rows": 0,
   "non_strict_pit_rows": 0,
   "orphan_child_rows": 0,
   "status": "PASS",
-  "strict_pit_rows": 0
+  "strict_pit_rows": 5431
 }

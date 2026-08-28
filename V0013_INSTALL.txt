@@ -1,0 +1,16 @@
+Install from repo root:
+
+unzip -o quant_market_ai_information_capture_orchestrator_v0013.zip -d .
+
+python -m py_compile   research/information_sources/orchestrator_v0013.py   pipeline/information_capture_orchestrator_v0013.py   tools/audit_information_capture_orchestrator_isolation_v0013.py
+
+python -m pytest tests/test_information_capture_orchestrator_v0013.py -q
+
+python tools/audit_information_capture_orchestrator_isolation_v0013.py
+
+python -m pipeline.information_capture_orchestrator_v0013 --stage init
+python -m pipeline.information_capture_orchestrator_v0013 --stage quota-status
+python -m pipeline.information_capture_orchestrator_v0013 --stage coverage-audit
+
+# plan only; no provider calls:
+python -m pipeline.information_capture_orchestrator_v0013   --stage plan   --symbols-file data/information_capture_universe_v001.txt

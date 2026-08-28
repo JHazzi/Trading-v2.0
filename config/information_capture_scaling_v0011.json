@@ -1,0 +1,26 @@
+{
+  "contract_version": "information_capture_scaling_v0011",
+  "capture_db": "data/database/information_capture_v001.db",
+  "feature_visibility": "blocked_until_separate_preregistered_experiment",
+  "provider": "alpha_vantage",
+  "request_policy": {
+    "default_daily_request_budget": 20,
+    "reserve_requests": 5,
+    "minimum_seconds_between_requests": 13.0,
+    "request_timeout_seconds": 45,
+    "checkpoint_dir": "reports/information_capture_v001/scaling_v0011"
+  },
+  "cadence_policy": {
+    "deep_cohort": ["AAPL", "MSFT", "JPM", "BAC", "XOM", "CVX", "LLY", "JNJ", "WMT", "COST"],
+    "deep_cohort_days": 1,
+    "earnings_within_7d_days": 1,
+    "earnings_within_30d_days": 2,
+    "broad_universe_days": 7
+  },
+  "quality_gates": {
+    "fail_on_orphan_rows": true,
+    "fail_on_invalid_strict_pit": true,
+    "warn_if_identical_normalized_count_across_symbols": true,
+    "warn_if_same_snapshot_series_collisions": true
+  }
+}

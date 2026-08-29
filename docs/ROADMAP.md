@@ -13,7 +13,7 @@ V006.1 robustness/falsification           COMPLETE: vol63 strongest scale clue
 V007 adaptive asymmetric scale            COMPLETE: rejected vs vol63
 V008 conditional residual quantiles       COMPLETE: 4/4 significant failures
 V008.1 endogenous closure                 COMPLETE: H1 developmental pass
-V009 prospective temporal confirmation    ACTIVE: fit frozen; first origin 2026-08-28
+V009 prospective temporal confirmation    ACTIVE: fit frozen; first seal pending >=2026-08-31
 distributional Event Brain                PARALLEL developmental track on existing SEC
 identity hygiene                          REVIEW in parallel; no graph promotion
 graph propagation                         BLOCKED until direct event increment
@@ -196,6 +196,20 @@ Exit gate:
 
 ## Phase 4 — Distributional Event Brain
 
+V001 completed but its HTTP-modified arrival clock was rejected; preserve its
+output and do not train on or rebuild it. Corrected V002 completed its full
+2,001-state materialization, temporal replay and exclusion review. D033 freezes
+cross-accession/AAPL/early-Core exclusions without deleting source evidence or
+retiming events. Follow
+[DISTRIBUTIONAL_EVENT_DATASET_V002.md](DISTRIBUTIONAL_EVENT_DATASET_V002.md).
+
+Current next substage: implement and run a **plan-only** Distributional Event
+Brain preregistration. It must freeze one primary horizon/scenario, historical
+per-fold Market Brain refits, a low-capacity event head, capacity-matched and
+multi-seed placebo controls, the five purged V008.1 temporal windows,
+origin-day weighting, proper distributional scores and moving-block
+uncertainty before reading model performance. V009 remains unchanged.
+
 **Goal:** test whether the existing SEC Event State changes the future distribution.
 
 Use the current event corpus first.
@@ -314,6 +328,13 @@ Do not prioritize yet:
 - live auto-trading;
 - “confidence” derived from RF tree dispersion;
 - arbitrary Gaussian future-path simulation.
+## Historical execution notes
+
+The active sequence at the top governs current work. The chronological notes
+below preserve earlier gates and decisions, including stages already closed.
+They are not instructions to rebuild, refit or rescale. Use
+[CONTEXT_RECOVERY.md](CONTEXT_RECOVERY.md) to verify actual persisted outputs.
+
 <!-- MARKET_V003_BROAD_BACKFILL_V001 -->
 ## Market Daily V003 broad panel gate — 2026-08-25
 

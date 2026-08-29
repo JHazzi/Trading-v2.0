@@ -22,6 +22,14 @@ When a source made information public.
 
 When our ingestion system actually observed/retrieved the information.
 
+### `modified_at`
+
+Its meaning is source-specific. For the SEC filing downloader this is HTTP
+Last-Modified transport metadata, not a proven publication/revision clock.
+Verify provenance and retain it, but do not use it to manufacture event arrival.
+Actual detected byte revisions retain their separate retrieval/version clock;
+unknown provenance must not be silently treated as harmless metadata.
+
 ### `available_at`
 
 The earliest timestamp under the stated data contract at which the feature may legitimately be used by the model.
@@ -132,6 +140,16 @@ Current labels mark `intraday_daily_resolution` rather than inventing false entr
 
 Do not treat those rows as clean daily event reactions without a defined policy.
 
+The separate `distributional_event_close_aligned_v002` dataset defines such a
+policy for **remaining future returns**, not immediate event reaction: the first
+exchange close strictly after the validated information boundary, followed by
+Core close-to-close outcomes. Intraday arrivals may enter that new contract
+without relabeling the old `intraday_daily_resolution` outcomes as usable.
+V001's implementation is rejected because it used HTTP modification metadata
+as availability. V002 validates each clock's provenance and never moves an old
+snapshot to a later date merely to satisfy the information or market-state gate.
+See [DISTRIBUTIONAL_EVENT_DATASET_V002.md](DISTRIBUTIONAL_EVENT_DATASET_V002.md).
+
 ## 10. Cohort readiness
 
 Cross-sectional features require peer context.
@@ -240,3 +258,31 @@ are descriptive unless explicitly preregistered otherwise.
 The prospective registry does not convert an underlying PIT=0 historical
 feature corpus into strict PIT history. Each prediction preserves the actual
 state PIT flag and claims remain bounded by the universe/observation contract.
+
+
+## 17. Daily regular-close fallback and first quality-eligible observation
+
+A partial daily provider row with Open/High/Low/Volume but missing Close is not
+a usable market state. Adj Close remains audit-only; missing Adj Close alone is
+a warning.
+
+Under market_brain_daily_refresh_v009_v002, a missing origin Close may be
+filled only from the same provider observation's regularMarketPrice when:
+
+- regularMarketTime belongs to the requested origin session and is no earlier
+  than exchange close nor more than 300 seconds later;
+- the retrieval occurs after regularMarketTime;
+- the price is finite, positive and within the daily Low/High;
+- exactly one provider row exists for the origin.
+
+postMarketPrice, pre-market prices, the last intraday candle and unmarked
+repair output are forbidden substitutes. Adj Close is not manufactured. Raw
+lineage preserves the original daily Close, the selected source field/value and
+its timestamp.
+
+daily_price_quality_gated_observations_v002 preserves every failed retrieval.
+For the explicitly PIT=0 historical reconstruction only, the first observation
+that actually passes the frozen quality gate is treated as the initial
+session-close assumption; actual observed_at remains unchanged. Later eligible
+revisions retain retrieval-time availability. This rule must not be described
+as strict PIT and cannot authorize a retrospective V009 seal.

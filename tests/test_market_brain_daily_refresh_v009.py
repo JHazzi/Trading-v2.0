@@ -2,15 +2,46 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
+import numpy as np
+import pandas as pd
 import pytest
 
+from ingestion.prices.yahoo_daily_refresh_v009 import (
+    REGULAR_CLOSE_FALLBACK,
+    apply_regular_close_fallback,
+)
 from pipeline import market_brain_daily_refresh_v009 as refresh
+
+
+def origin_frame(close: float = float("nan")) -> pd.DataFrame:
+    index = pd.DatetimeIndex(
+        ["2026-08-28 00:00:00-04:00"], name="Date"
+    )
+    return pd.DataFrame(
+        {
+            "Open": [317.088],
+            "High": [322.37],
+            "Low": [315.45],
+            "Close": [close],
+            "Adj Close": [float("nan")],
+            "Volume": [38_500_185],
+            "Dividends": [0.0],
+            "Stock Splits": [0.0],
+        },
+        index=index,
+    )
 
 
 def test_refresh_config_is_bound_to_frozen_v009() -> None:
     cfg = refresh.load_config()
+    assert cfg["version"] == "market_brain_daily_refresh_v009_v002"
+    assert cfg["source_asof_contract"] == "daily_price_asof_v2"
     assert cfg["not_before_origin_day"] == "2026-08-28"
     assert cfg["provider_settlement_minutes_after_close"] == 20
+    assert (
+        cfg["regular_market_close_fallback_version"]
+        == REGULAR_CLOSE_FALLBACK
+    )
     assert cfg["refit_v009_after_refresh"] is False
     assert cfg["minimum_source_assets_on_origin"] >= 490
     assert cfg["minimum_core_states_on_origin"] >= 490
@@ -33,6 +64,67 @@ def test_origin_clock_enforces_provider_settlement_delay() -> None:
     assert waiting["earliest_acquire_utc"] == "2026-08-28T20:20:00+00:00"
     assert waiting["status"] == "WAITING_FOR_CLOSE"
     assert ready["status"] == "READY"
+
+
+def test_regular_close_fallback_uses_only_same_session_regular_price() -> None:
+    frame, evidence = apply_regular_close_fallback(
+        origin_frame(),
+        {
+            "regularMarketPrice": 319.70,
+            "regularMarketTime": datetime(
+                2026, 8, 28, 20, 0, 1, tzinfo=timezone.utc
+            ),
+            "postMarketPrice": 319.90,
+        },
+        origin_day="2026-08-28",
+        exchange="XNAS",
+        retrieved_at="2026-08-29T04:18:29+00:00",
+        maximum_market_time_delay_seconds=300,
+    )
+    assert frame.iloc[0]["Close"] == pytest.approx(319.70)
+    assert np.isnan(frame.iloc[0]["Adj Close"])
+    assert frame.iloc[0]["Provider Daily Close"] is np.nan or np.isnan(
+        frame.iloc[0]["Provider Daily Close"]
+    )
+    assert frame.iloc[0]["Close Source"] == REGULAR_CLOSE_FALLBACK
+    assert evidence["applied"] is True
+    assert evidence["post_market_price_used"] is False
+    assert evidence["adjusted_close_filled"] is False
+
+
+def test_regular_close_fallback_rejects_post_close_time_too_late() -> None:
+    with pytest.raises(ValueError, match="outside the allowed close boundary"):
+        apply_regular_close_fallback(
+            origin_frame(),
+            {
+                "regularMarketPrice": 319.90,
+                "regularMarketTime": datetime(
+                    2026, 8, 29, 0, 0, 0, tzinfo=timezone.utc
+                ),
+            },
+            origin_day="2026-08-28",
+            exchange="XNAS",
+            retrieved_at="2026-08-29T04:18:29+00:00",
+            maximum_market_time_delay_seconds=300,
+        )
+
+
+def test_complete_daily_close_is_not_overwritten() -> None:
+    frame, evidence = apply_regular_close_fallback(
+        origin_frame(319.70),
+        {
+            "regularMarketPrice": 999.0,
+            "regularMarketTime": datetime(
+                2026, 8, 28, 20, 0, 1, tzinfo=timezone.utc
+            ),
+        },
+        origin_day="2026-08-28",
+        exchange="XNAS",
+        retrieved_at="2026-08-29T04:18:29+00:00",
+        maximum_market_time_delay_seconds=300,
+    )
+    assert frame.iloc[0]["Close"] == pytest.approx(319.70)
+    assert evidence["applied"] is False
 
 
 def test_refresh_rejects_origin_before_preregistered_start(monkeypatch) -> None:
@@ -80,3 +172,68 @@ def test_cli_summary_preserves_report_but_compacts_terminal() -> None:
     assert "observation_clock" not in compact["source_audit"]
     assert "assets" in payload
     assert "observation_clock" in payload["source_audit"]
+
+def test_migration_023_backdates_only_first_quality_eligible(
+    tmp_path,
+) -> None:
+    import sqlite3
+
+    db = tmp_path / "source.db"
+    with sqlite3.connect(db) as conn:
+        conn.executescript(
+            """
+            CREATE TABLE schema_migrations(
+              version TEXT PRIMARY KEY,name TEXT,applied_at TEXT
+            );
+            CREATE TABLE daily_price_asof_configs(
+              asof_contract_version TEXT,mode TEXT,cutoff_column TEXT,
+              required_quality_version TEXT,required_quality_status TEXT,
+              max_failed_checks INTEGER,selection_point_in_time_verified INTEGER,
+              adjusted_close_role TEXT,disclosure TEXT,
+              configuration_json TEXT,
+              PRIMARY KEY(asof_contract_version,mode)
+            );
+            CREATE TABLE daily_price_quality_gated_observations_v001(
+              source_id TEXT,asset_id INTEGER,interval TEXT,trading_day TEXT,
+              observation_sequence INTEGER,observed_at TEXT,
+              price_observation_id TEXT,bar_end_utc TEXT,available_at TEXT,
+              availability_basis TEXT
+            );
+            INSERT INTO daily_price_quality_gated_observations_v001 VALUES
+              ('yahoo',1,'1d','2026-08-28',2,
+               '2026-08-29T04:00:00+00:00','approved_first',
+               '2026-08-28T20:00:00+00:00',
+               '2026-08-29T04:00:00+00:00','retrieval_time_revision'),
+              ('yahoo',1,'1d','2026-08-28',3,
+               '2026-08-29T05:00:00+00:00','approved_revision',
+               '2026-08-28T20:00:00+00:00',
+               '2026-08-29T05:00:00+00:00','retrieval_time_revision');
+            """
+        )
+        migration = (
+            refresh.ROOT
+            / "database/migrations/023_daily_price_first_quality_eligible.sql"
+        ).read_text(encoding="utf-8")
+        conn.executescript(migration)
+        rows = conn.execute(
+            """
+            SELECT price_observation_id,causal_available_at,
+                   causal_availability_basis,quality_eligible_rank
+            FROM daily_price_quality_gated_observations_v002
+            ORDER BY quality_eligible_rank
+            """
+        ).fetchall()
+    assert rows == [
+        (
+            "approved_first",
+            "2026-08-28T20:00:00+00:00",
+            "first_quality_eligible_session_close_assumption",
+            1,
+        ),
+        (
+            "approved_revision",
+            "2026-08-29T05:00:00+00:00",
+            "retrieval_time_revision",
+            2,
+        ),
+    ]

@@ -1,0 +1,19 @@
+{
+  "canonical_sha256": "6af90f13c920e0208045d3641581c0a0f8e906a96c7eda81894ffe7448b711e2",
+  "contract_version": "expectation_information_capture_v001",
+  "counts": {
+    "economic_fact_observations": 0,
+    "expectation_observations": 5411,
+    "scheduled_event_observations": 0,
+    "source_observations": 20
+  },
+  "cutoff_available_at": null,
+  "expectation_revision_series": 91,
+  "feature_visibility": "BLOCKED",
+  "invalid_strict_source_time_rows": 0,
+  "manifest_rows": 5431,
+  "non_strict_pit_rows": 0,
+  "orphan_child_rows": 0,
+  "status": "PASS",
+  "strict_pit_rows": 5431
+}

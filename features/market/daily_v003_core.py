@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SOURCE_DB = ROOT / "data" / "database" / "market_data_v2.db"
 DEFAULT_OUTPUT_DB = ROOT / "data" / "processed" / "market_daily_v003_core.db"
 DEFAULT_CONFIG = ROOT / "config" / "market_brain_daily_v003_core.json"
-QUALITY_VIEW = "daily_price_quality_gated_observations_v001"
+QUALITY_VIEW = "daily_price_quality_gated_observations_v002"
 
 OWN_FEATURES = [
     "asset_return_1d_pct", "asset_return_3d_pct", "asset_return_5d_pct",
@@ -76,7 +76,7 @@ def ensure_source_contract(conn: sqlite3.Connection) -> None:
     row = conn.execute("""
         SELECT selection_point_in_time_verified, cutoff_column
         FROM daily_price_asof_configs
-        WHERE asof_contract_version='daily_price_asof_v1'
+        WHERE asof_contract_version='daily_price_asof_v2'
           AND mode='historical_session_close_assumption'
     """).fetchone()
     if row is None or int(row[0]) != 0 or str(row[1]) != "available_at":
@@ -100,7 +100,7 @@ def load_selected_prices(source_db: Path) -> pd.DataFrame:
                 FROM {QUALITY_VIEW} g
                 JOIN assets a ON a.asset_id=g.asset_id
                 WHERE a.active=1 AND a.asset_type='equity' AND g.interval='1d'
-                  AND julianday(g.available_at) <= julianday(g.bar_end_utc)
+                  AND julianday(g.causal_available_at) <= julianday(g.bar_end_utc)
             )
             SELECT asset_id,ticker,sector,trading_day,state_time,
                    open,high,low,close,volume

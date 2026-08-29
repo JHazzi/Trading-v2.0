@@ -1,0 +1,14 @@
+Install from repository root:
+
+unzip -o quant_market_ai_news_event_lineage_review_v001.zip -d .
+
+python -m py_compile   research/audits/news_event_lineage_review_v001.py   tools/audit_news_event_lineage_v001.py
+
+python -m pytest tests/test_news_event_lineage_review_v001.py -q
+
+python -m research.audits.news_event_lineage_review_v001
+
+Full report:
+reports/news_event_lineage_review_v001/summary.json
+
+Read-only. No API calls.

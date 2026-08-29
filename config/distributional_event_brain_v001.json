@@ -1,0 +1,193 @@
+{
+  "version": "distributional_event_brain_preregistration_v001",
+  "benchmark_version": "distributional_event_brain_v001",
+  "model_version": "distributional_event_quantile_offset_head_v001",
+  "stage_scope": "plan_only_no_training",
+  "dataset": {
+    "contract": "distributional_event_close_aligned_v002",
+    "run_id": "sec_core_2016_20260824_v002",
+    "database": "reports/distributional_event_dataset_v002/sec_core_2016_20260824_v002/dataset.sqlite",
+    "manifest": "reports/distributional_event_dataset_v002/sec_core_2016_20260824_v002/manifest.json",
+    "audit": "reports/distributional_event_dataset_v002/sec_core_2016_20260824_v002/audit.json",
+    "database_sha256": "c3a2d89fa127863d4a2477ffe9a41fe0b0e5cd0f203b07fd05028760b43c7098",
+    "contract_sha256": "4218bc3e5a36c78a069ac074242cae7d7040b93c96f5de3fabc715caeff63f2b",
+    "audit_sha256": "d0d87e62b09530f2abe5c3b81e2c17138fb8f76aeb08e639e067f978418d9082",
+    "event_feature_version": "event_state_v0031_deep",
+    "market_feature_version": "market_daily_state_v003_core",
+    "label_version": "event_distributional_close_aligned_v002",
+    "projection_version": "event_arrival_set_v002",
+    "research_end_day": "2026-08-24",
+    "strict_historical_pit": false,
+    "current_company_cohort_not_survivorship_free": true
+  },
+  "scenario_contract": {
+    "primary_delay_seconds": 0,
+    "diagnostic_delay_seconds": [3600, 86400],
+    "diagnostic_delays_cannot_rescue_primary": true,
+    "scenarios_are_not_independent_observations": true
+  },
+  "target_contract": {
+    "primary_target": "return_pct",
+    "primary_horizon_sessions": 1,
+    "diagnostic_horizons_sessions": [3, 5],
+    "selection_sensitivity_horizons_sessions": [10],
+    "diagnostics_cannot_rescue_primary": true,
+    "not_model_visible": [
+      "return_pct", "mfe_pct", "mae_pct", "realized_path_vol_pct",
+      "target_day", "target_time", "status", "reason", "trace_json"
+    ]
+  },
+  "quantiles": [0.05, 0.25, 0.5, 0.75, 0.95],
+  "market_brain": {
+    "source_version": "market_brain_distributional_v0081_endogenous_closure_v001",
+    "source_model_version": "market_brain_distributional_v0081_hgb_own_state_raw_v001",
+    "source_config": "config/market_brain_distributional_v0081.json",
+    "source_config_sha256": "d59d38f33321e6a386f027a58ba7442d6e9a562b0e19c3874bfccae7ed2b4751",
+    "source_h1_report": "reports/market_brain_distributional_v0081/endogenous_closure_v001/h1_benchmark.json",
+    "source_h1_report_sha256": "2b5116a293b02990c724f22e5be349644c6f7f849d73d370bedfe3b68e09b0da",
+    "source_feature_manifest": "reports/market_brain_distributional_v0081/endogenous_closure_v001/resolved_feature_manifest.json",
+    "source_feature_manifest_sha256": "bd1b9868f8fb33511c953112299476e3319ec15ab4d98c127548a12b40b5005c",
+    "core_database": "data/processed/market_daily_v003_core.db",
+    "core_historical_selection_end_day": "2026-08-24",
+    "core_historical_usable_h1_rows": 1078329,
+    "feature_version": "market_daily_state_v003_core",
+    "label_version": "market_daily_reaction_v003_core",
+    "residual_scale_feature": "asset_vol_63d_pct",
+    "residual_location_policy": "outer_train_global_median",
+    "nonpositive_scale_policy": "market_brain_unconditional_empirical_fallback_no_event_correction",
+    "post_model_quantile_calibration": "none",
+    "quantile_crossing_policy": "rowwise_monotone_rearrangement",
+    "refit_policy": "fresh_historical_fit_inside_each_outer_fold_never_final_v009_fit",
+    "event_head_training_prediction_policy": "three_block_expanding_inner_oof_market_predictions",
+    "minimum_inner_market_train_origin_days": 378,
+    "inner_oof_blocks": 3,
+    "frozen_own_features": [
+      "asset_drawdown_20d_pct", "asset_drawdown_252d_pct", "asset_drawdown_63d_pct",
+      "asset_range_1d_pct", "asset_return_10d_pct", "asset_return_1d_pct",
+      "asset_return_20d_pct", "asset_return_3d_pct", "asset_return_5d_pct",
+      "asset_return_63d_pct", "asset_vol_20d_pct", "asset_vol_5d_pct",
+      "asset_vol_63d_pct", "asset_volume_ratio_20d"
+    ],
+    "fixed_model_profile": {
+      "learning_rate": 0.05,
+      "max_iter": 160,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 500,
+      "l2_regularization": 2.0,
+      "early_stopping": false
+    }
+  },
+  "event_features": {
+    "numeric": [
+      "event_count", "unique_evidence_count", "distinct_event_type_count",
+      "seconds_since_latest_state", "seconds_since_earliest_state",
+      "seconds_since_earliest_known_evidence", "semantic_observed_fact_count",
+      "semantic_official_statement_count", "semantic_reported_fact_count",
+      "semantic_opinion_count", "semantic_forecast_count", "semantic_rumor_count",
+      "semantic_speculation_count", "semantic_correction_count",
+      "semantic_retraction_count", "semantic_mixed_count", "semantic_unknown_count"
+    ],
+    "categorical_multilabel_field": "event_types",
+    "categorical_vocabulary": [
+      "annual_report_disclosure", "asset_acquisition_or_disposition",
+      "charter_or_bylaw_change", "current_report_disclosure",
+      "current_report_item_disclosure", "exit_or_disposal_costs",
+      "financial_results_disclosure", "listing_or_compliance_notice",
+      "management_or_board_change", "material_definitive_agreement",
+      "material_impairment", "obligation_acceleration_trigger",
+      "other_material_disclosure", "quarterly_report_disclosure",
+      "regulation_fd_disclosure", "security_holder_rights_change",
+      "shareholder_vote_result", "termination_material_agreement"
+    ],
+    "numeric_transform": "log1p_nonnegative_then_train_weighted_standardize",
+    "categorical_transform": "frozen_multihot_binary_unknown_to_all_zero_and_audit",
+    "preprocessing_fit_policy": "outer_event_head_training_rows_only",
+    "missing_policy": "fail_closed",
+    "economic_signs_or_importance_hardcoded": false
+  },
+  "event_head": {
+    "mathematical_role": "per_quantile_additive_correction_to_market_standardized_return_quantile",
+    "formula": "q_event_return=q_market_return+asset_vol_63d_pct*c_q(E)",
+    "estimator": "sklearn.linear_model.QuantileRegressor",
+    "fit_intercept": true,
+    "alpha_l1": 0.1,
+    "solver": "highs",
+    "hyperparameter_selection": "none",
+    "sample_weight_policy": "equal_total_weight_per_origin_day",
+    "nonpositive_scale_event_correction": "zero",
+    "probability_or_direction_head": "none",
+    "graph_features": false,
+    "text_embeddings": false,
+    "expectation_or_surprise_features": false
+  },
+  "controls": {
+    "market_only_primary_reference": "per_fold_v0081_own_state_hgb",
+    "raw_vol63_secondary_reference": "per_fold_train_empirical_standardized_returns",
+    "event_presence_reference": "intercept_only_quantile_offset",
+    "capacity_placebo": {
+      "seeds": [11, 29, 47, 71, 101],
+      "estimator_and_dimension_identical_to_candidate": true,
+      "permutation_policy": "joint_cyclic_derangement_of_complete_event_vector_within_asset_then_partition_fallback",
+      "partitions": "outer_event_head_train_and_outer_test_separately",
+      "protected_columns": [
+        "sample_id", "asset_id", "origin_day", "target_day",
+        "market_state_id", "market_features_json", "outcome"
+      ],
+      "outcomes_used_to_permute": false
+    }
+  },
+  "outer_folds": [
+    {"fold_id": 0, "first_test_day": "2020-05-06", "last_test_day": "2021-08-06", "expected_purged_train_rows_h1": 395, "expected_test_rows_h1": 212},
+    {"fold_id": 1, "first_test_day": "2021-08-09", "last_test_day": "2022-11-08", "expected_purged_train_rows_h1": 613, "expected_test_rows_h1": 189},
+    {"fold_id": 2, "first_test_day": "2022-11-09", "last_test_day": "2024-02-13", "expected_purged_train_rows_h1": 803, "expected_test_rows_h1": 180},
+    {"fold_id": 3, "first_test_day": "2024-02-14", "last_test_day": "2025-05-19", "expected_purged_train_rows_h1": 983, "expected_test_rows_h1": 196},
+    {"fold_id": 4, "first_test_day": "2025-05-20", "last_test_day": "2026-08-21", "expected_purged_train_rows_h1": 1179, "expected_test_rows_h1": 172}
+  ],
+  "purge_contract": {
+    "train_outcome_end_strictly_before_test_start": true,
+    "group_kinds": ["event", "filing", "content"],
+    "remove_train_sample_if_any_group_overlaps_test": true,
+    "no_group_overlap_after_purge": true,
+    "test_rows_are_not_removed_to_improve_results": true
+  },
+  "feasibility_gates": {
+    "minimum_purged_outer_train_rows_h1": 300,
+    "minimum_outer_test_rows_h1": 150,
+    "minimum_event_head_oof_rows_h1": 100,
+    "minimum_event_head_oof_origin_days_h1": 75,
+    "minimum_assets_per_test_fold_h1": 8,
+    "minimum_event_types_in_outer_train_h1": 10
+  },
+  "evaluation": {
+    "primary_score": "outer_origin_day_equal_mean_pinball_loss",
+    "score_direction": "market_only_loss_minus_event_candidate_loss_positive_is_better",
+    "calibration_score": "mean_absolute_quantile_calibration_error",
+    "bootstrap_reps": 3000,
+    "moving_block_lengths_origin_days": [5, 10, 20],
+    "primary_block_length_origin_days": 10,
+    "bootstrap_seed": 42,
+    "minimum_positive_folds": 4,
+    "minimum_improved_quantiles": 3,
+    "require_at_least_one_improved_tail_quantile": true,
+    "require_candidate_calibration_not_worse": true,
+    "require_candidate_beats_mean_placebo_block_ci": true,
+    "require_candidate_beats_every_placebo_point": true,
+    "filing_event_content_concentration_diagnostics": true,
+    "asset_event_type_year_fold_diagnostics": true,
+    "h10_corporate_action_selection_sensitivity_required": true
+  },
+  "guards": {
+    "training_authorized_by_this_stage": false,
+    "benchmark_stage_present_in_this_module": false,
+    "v009_artifacts_loaded_or_modified": false,
+    "v009_fit_used_historically": false,
+    "random_split_allowed": false,
+    "posthoc_horizon_rescue_allowed": false,
+    "posthoc_feature_change_allowed": false,
+    "additional_sec_ingestion_allowed": false,
+    "outcome_values_allowed_in_plan_artifacts": false,
+    "fresh_untouched_holdout_required_for_any_promotion": true
+  },
+  "output_dir": "reports/distributional_event_brain_v001/preregistration_v001",
+  "claim_boundary": "A PASS can support only a developmental historical claim that the frozen factual SEC Event State adds incremental H1 terminal-return distribution information beyond a per-fold historical Market Brain and capacity-matched controls in this 10-current-company PIT=0 reconstruction. It cannot establish first-shock attribution, direction, alpha, profitability, strict PIT, market-wide generalization, path prediction, production readiness, or validate/modify V009."
+}

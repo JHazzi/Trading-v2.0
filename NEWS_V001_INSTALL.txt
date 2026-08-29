@@ -1,0 +1,17 @@
+# News Narrative Evidence V001
+
+Install from repository root:
+
+unzip -o quant_market_ai_news_narrative_evidence_v001.zip -d .
+
+python -m py_compile   ingestion/news/alphavantage_news_evidence_v001.py   research/news/news_evidence_foundation_v001.py   pipeline/news_narrative_evidence_v001.py   tools/audit_news_narrative_v009_isolation_v001.py
+
+python -m pytest tests/test_news_narrative_evidence_v001.py -q
+
+python tools/audit_news_narrative_v009_isolation_v001.py
+
+python -m pipeline.news_narrative_evidence_v001 --stage init
+python -m pipeline.news_narrative_evidence_v001 --stage plan
+python -m pipeline.news_narrative_evidence_v001 --stage audit
+
+capture-market reads and updates the V0013 rolling request ledger itself and refuses provider calls when remaining_requests=0. When quota is available, enable provider.enabled=true in config/news_narrative_evidence_v001.json and run capture-market once.

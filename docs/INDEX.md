@@ -6,7 +6,7 @@ This is the documentation source-of-truth map.
 
 | File | Purpose |
 |---|---|
-| `../README.md` | Project overview and current checkpoint |
+| `../README.md` | Project overview and context-recovery entry point |
 | `../ARCHITECTURE.md` | Long-term system architecture |
 | `../ARCHITECTURE_EVENT_LAYER.md` | Event/news architecture and temporal semantics |
 | `../AGENTS.md` | Contributor/AI-agent rules |
@@ -15,6 +15,9 @@ This is the documentation source-of-truth map.
 | `ROADMAP.md` | Ordered next work with gates |
 | `EXPERIMENTS.md` | Experiment registry |
 | `DATA_CONTRACTS.md` | Temporal/PIT/lineage/label contracts |
+| `CONTEXT_RECOVERY.md` | Reproducible local evidence, schemas, Git/local inventory and safe cleanup |
+| `DISTRIBUTIONAL_EVENT_DATASET_V002.md` | Current close-aligned dataset: verified clock provenance, quarantine and user-run audit |
+| `DISTRIBUTIONAL_EVENT_DATASET_V001.md` | Rejected HTTP-modified clock contract; historical evidence only, not training data |
 | `DOCUMENTATION_POLICY.md` | Documentation lifecycle and ZIP rules |
 
 ## Module documentation
@@ -52,6 +55,11 @@ When a scientific result changes:
 5. update architecture only if a long-term contract changes.
 
 Do not create another root `README_<version>.md`.
+## Historical foundation pointer
+
+The note below records an earlier foundation boundary, not the active roadmap.
+Use RESEARCH_STATUS.md and ROADMAP.md for current gates.
+
 <!-- EVENT_GRAPH_BRAIN_FOUNDATION_V001 -->
 ## Event–Graph Brain Foundation V001
 

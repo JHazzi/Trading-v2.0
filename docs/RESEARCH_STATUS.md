@@ -74,9 +74,16 @@ append-only predictions/outcomes and the first 252 consecutive eligible H1
 origins as the only formal promotion cohort. The 126-origin checkpoint is
 descriptive only. The plan passed and fit
 `fit_e5c5616664c919a2624e6daaad39d1ca` is frozen over 1,078,329 rows through
-target day 2026-08-24. The first allowed origin remains 2026-08-28. Daily
-refresh infrastructure materializes new source/Core states without refitting
-or changing the historical training hash.
+target day 2026-08-24. No prediction was sealed for 2026-08-28: Yahoo's daily
+chart row exposed complete Open/High/Low/Volume but null Close/Adj Close even
+after the seal deadline. The quote metadata separately exposed a same-session
+regularMarketPrice. Refresh V002 and additive migration 023 now permit only a
+bounded same-session regularMarketPrice fallback, never post-market, and treat
+the first quality-eligible observation as the initial PIT=0 reconstruction
+while preserving failed retrievals and actual observation clocks. Five real
+assets passed; 492 remain for the user-run source repair. The first sealed V009
+batch is therefore pending and cannot precede 2026-08-31. The frozen fit and
+historical selection through 2026-08-24 are unchanged.
 
 ### Distributional Market Brain V006 empirical foundation
 
@@ -152,6 +159,29 @@ The next identity gate is human/scientific review followed by an upstream Struct
 
 ### Ordered next work
 
+Data-preparation correction (2026-08-28): the full close-aligned Event Dataset
+V001 run completed but its clock contract is rejected. HTTP Last-Modified
+metadata incorrectly shifted 169 eligible states by more than one day (maximum
+375.329 days). Its old integrity PASS repeated the faulty rule; V001 is
+preserved as failure evidence and must not be trained on.
+
+V002 separates verified HTTP metadata from SEC availability, retains real
+revision exclusions and adds independent temporal/coverage/quarantine checks.
+The complete 2,001-state run now passes persisted/replay integrity with zero
+unexplained clock shifts. It admits 1,885 states, quarantines 115 cross-accession
+states plus one same-file multi-reference AAPL state, and produces 4,086
+scenario rows. Exactly 151 otherwise eligible early states lack an exact Market
+Core state (all 40 from 2016 and 111 from 2017); they remain excluded rather
+than retimed. The selected base cohort begins 2017-08-30.
+
+The V002 review is closed as data-ready for preregistration, not training.
+Cross-accession rows stay out of the primary dataset; the single AAPL case is
+a benign duplicate file-version reference but remains excluded to preserve the
+immutable V002 contract. H10 has approximately 24.3% corporate-action exclusion
+under the zero-delay scenario and cannot be selected silently as the primary.
+No model was fit and no predictive result follows. V009 remains independent.
+Details: [DISTRIBUTIONAL_EVENT_DATASET_V002.md](DISTRIBUTIONAL_EVENT_DATASET_V002.md).
+
 1. Materialize each eligible session through the audited daily source/Core
    refresh, preserving the frozen V009 training hash.
 2. Seal each eligible H1 origin before the 16-hour deadline and later attach
@@ -162,6 +192,14 @@ The next identity gate is human/scientific review followed by an upstream Struct
 5. Complete upstream identity hygiene; graph prediction remains blocked until
    direct event information adds OOS value.
 6. Coherent paths, graph propagation, risk, costs and decisions remain gated.
+
+## Historical and version-specific detail
+
+The current checkpoint above supersedes earlier "current"/"next" statements
+retained below as historical context. Do not execute old stage instructions
+from this appendix. For today's persisted counts and versions, use the
+read-only auditor described in [CONTEXT_RECOVERY.md](CONTEXT_RECOVERY.md);
+this dated scientific record is not a live database dashboard.
 
 ## 1. Executive summary
 

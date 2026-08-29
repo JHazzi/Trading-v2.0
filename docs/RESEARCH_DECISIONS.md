@@ -582,3 +582,120 @@ gated to the first allowed origin, 2026-08-28; no V009 refit is permitted.
 
 **Reason:** beliefs, revisions, guidance, scheduled uncertainty and actual-vs-expectation surprise are scientifically important but are difficult to reconstruct faithfully after the fact. Capturing them prospectively creates future research data without changing the frozen Market Brain experiment.
 <!-- EXPECTATION_CAPTURE_FOUNDATION_V001_END -->
+
+## D030 — Separate residual-future event research from first-shock attribution
+
+**Pre-performance data-contract decision (2026-08-28):** build
+`distributional_event_close_aligned_v001` from existing SEC V003.1 and Market
+Core V003 without changing either source or V009. The origin is the first
+exchange close strictly after validated evidence/state availability. Old
+event-reaction labels are not interchangeable with this new target.
+
+Keep public, retrieval, linking, version and prediction clocks distinct; first
+public disclosure remains unknown unless supported by evidence. Later evidence
+cannot retroactively enrich an earlier state. One row per asset-close and
+scenario, with event/filing/content groups, prevents mechanical duplication of
+the same outcome. Zero/one-hour/24-hour additional-delay scenarios are timing
+sensitivities, not fitted latency or economic decay.
+
+This narrows the estimand to remaining future distributions. It does not claim
+immediate reaction, execution at the close, novelty, causation or strict PIT.
+The full corpus audit and a separate frozen experimental protocol are required
+before training. No performance, primary horizon or model is selected here.
+
+**Status:** residual-future estimand retained; V001 materialized but its HTTP
+clock implementation was rejected. D031 and V002 supersede that implementation.
+
+## D031 — HTTP modification metadata cannot manufacture historical arrivals
+
+**Data-contract correction, not performance tuning (2026-08-28):** preserve the
+completed V001 dataset/reports but prohibit training on that contract. The SEC
+ingestor stores HTTP Last-Modified in raw modified_at; this field is not proof
+of a new economic publication or a historically observed byte revision.
+
+V002 verifies the downloader/header/acceptance provenance, keeps modification
+metadata separate, and requires every admitted information clock to belong to
+the historical snapshot. Unknown/later availability is quarantined, not
+silently repaired by moving an old event forward. Observed byte revisions remain
+excluded without a valid separate version clock. Historical reconstruction
+remains PIT=0 and first public disclosure remains unestablished.
+
+No missing exact Market Core state may be rescued by selecting a later close.
+Cross-accession ambiguity remains explicit quarantine with as-of diagnostics;
+there are no automatic merges, deletions or upstream state rewrites.
+The independent audit checks unexplained shifts, arrival concentration,
+state-year coverage, bidirectional alignment and corporate-action selection.
+
+**Status:** V002 infrastructure and small real regression verified; full V002
+audit/review and an independent model preregistration still required.
+Sources, old artifacts and the frozen V009 protocol are unchanged.
+See [DISTRIBUTIONAL_EVENT_DATASET_V002.md](DISTRIBUTIONAL_EVENT_DATASET_V002.md).
+
+## D033 — Accept V002 with frozen exclusions; do not repair coverage by retiming
+
+**Post-materialization data decision (2026-08-29), before model performance:**
+the complete V002 artifact passes current persisted/replay integrity over all
+2,001 source states and has zero unexplained information-boundary shifts.
+
+Primary-dataset disposition:
+
+- retain 1,885 temporally eligible states;
+- exclude 115 cross-accession cluster states rather than selecting a convenient
+  subset of their evidence after seeing outcomes;
+- retain the one AAPL same-file/multi-reference case in lineage but exclude it
+  from immutable V002; it is a technical duplicate reference, not evidence of
+  a second event or byte revision;
+- do not create Market Core states for the 151 early unmatched origins merely
+  to increase event sample size; the model-visible cohort begins only where the
+  exact existing Core contract is available;
+- do not reinterpret three delay scenarios as 4,086 independent observations.
+
+This yields 1,734 selected event-state links in the zero-delay projection,
+1,365 asset-close samples and 1,351 usable H1 outcomes. H10 loses 332/1,365
+rows (24.3%) to corporate actions under that scenario, so long-horizon claims
+require explicit selection sensitivity and cannot rescue a failed primary.
+
+The five historical V008.1 H1 test windows are structurally feasible on V002.
+After outcome and event/filing/content purges, their train/test row counts are:
+`395/212`, `613/189`, `803/180`, `983/196`, `1179/172`.
+This supports a small regularized developmental Event Head, not a high-capacity
+model justified by architecture alone.
+
+**Status:** V002 preparation/exclusion review complete. Training remains blocked
+until a separate Distributional Event Brain protocol freezes the primary
+horizon/scenario, historical Market Brain refits, low-capacity event/control
+heads, placebo seeds, folds, weights, scores and dependent uncertainty.
+V009 is neither a historical control nor affected by this decision.
+
+## D032 — Reject partial Yahoo daily bars; allow only bounded regular-session close metadata
+
+**Pre-first-seal data-contract correction (2026-08-29), not model tuning:**
+the 2026-08-28 Yahoo daily chart response contained Open/High/Low/Volume for
+all requested assets but null Close/Adj Close. No V009 prediction was sealed
+and no model output or H1 outcome was evaluated.
+
+Refresh V002 may fill only a missing daily Close from the same provider's
+regularMarketPrice when all of the following hold: regularMarketTime is
+between the exchange close and five minutes after it, the retrieval occurs
+after that timestamp, the price is positive and lies inside the daily Low/High,
+and exactly one origin row exists. postMarketPrice is forbidden. Adj Close is
+not manufactured and remains audit-only. The original null daily Close,
+fallback field, timestamp and value remain in raw provider-library lineage.
+
+Migration 023 adds, rather than rewrites, a V002 quality view. Failed
+retrievals remain persisted. The first quality-eligible observation receives
+the existing explicitly non-PIT session-close reconstruction semantics;
+actual observed_at remains preserved. Later eligible revisions retain their
+retrieval availability. Historical selected-row counts through 2026-08-24 are
+unchanged (1,240,503 under both V001 and V002), and the frozen V009 training
+hash must still pass before any Core replacement.
+
+The 2026-08-28 prediction deadline is not extended and that origin may not be
+backfilled. V009's frozen cohort begins with its first sealed batch, which is
+now pending no earlier than 2026-08-31. The fit, features, hyperparameters,
+reference and promotion gate remain unchanged.
+
+**Status:** implemented; migration 023 applied; 38 relevant tests pass; five
+real assets completed with quality PASS and zero missing origins. The remaining
+492-asset acquisition and full Core/hash audit are user-run computational
+steps.

@@ -1,0 +1,11 @@
+Install at repository root:
+
+unzip -o quant_market_ai_legacy_news_causal_audit_v001.zip -d .
+
+python -m py_compile   research/news/legacy_corpus_audit_v001.py   tools/audit_legacy_news_corpus_v001.py
+
+python -m pytest tests/test_legacy_news_corpus_audit_v001.py -q
+
+python tools/audit_legacy_news_corpus_v001.py
+
+This makes no web/API calls and does not alter V009 or any model.

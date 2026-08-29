@@ -32,7 +32,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CONFIG = ROOT / "config" / "market_brain_daily_refresh_v009.json"
 DEFAULT_REPORT_ROOT = (
     ROOT / "reports" / "market_brain_distributional_v009"
-    / "prospective_holdout_v001" / "daily_refresh"
+    / "prospective_holdout_v001" / "daily_refresh_v002"
 )
 
 
@@ -61,7 +61,7 @@ def root_path(value: str) -> Path:
 
 def load_config(path: Path = DEFAULT_CONFIG) -> dict[str, Any]:
     cfg = read_json(path)
-    if cfg["version"] != "market_brain_daily_refresh_v009_v001":
+    if cfg["version"] != "market_brain_daily_refresh_v009_v002":
         raise ValueError("unexpected refresh version")
     if cfg["supported_experiment_version"] != (
         "market_brain_distributional_v009_prospective_holdout_v001"
@@ -71,6 +71,12 @@ def load_config(path: Path = DEFAULT_CONFIG) -> dict[str, Any]:
         raise ValueError("refresh feature version changed")
     if cfg["label_version"] != "market_daily_reaction_v003_core":
         raise ValueError("refresh label version changed")
+    if cfg["source_asof_contract"] != "daily_price_asof_v2":
+        raise ValueError("refresh source as-of contract changed")
+    if cfg["regular_market_close_fallback_version"] != (
+        "regular_market_price_fallback_v001"
+    ):
+        raise ValueError("refresh close fallback changed")
     if int(cfg["maximum_incremental_request_calendar_days"]) > 31:
         raise ValueError("refresh may not become a historical backfill")
     if min(
@@ -123,7 +129,7 @@ def source_rows(source_db: Path, asset_ids: list[int]):
             f"""
             WITH coverage AS (
               SELECT asset_id,MAX(trading_day) last_day
-              FROM daily_price_quality_gated_observations_v001
+              FROM daily_price_quality_gated_observations_v002
               WHERE asset_id IN ({marks}) GROUP BY asset_id
             ), raw AS (
               SELECT asset_id,provider_symbol,exchange,retrieved_at,
@@ -273,7 +279,7 @@ def audit_source(
         rows = conn.execute(
             f"""
             SELECT asset_id,MIN(observed_at),MAX(observed_at)
-            FROM daily_price_quality_gated_observations_v001
+            FROM daily_price_quality_gated_observations_v002
             WHERE trading_day=? AND asset_id IN ({marks})
             GROUP BY asset_id ORDER BY asset_id
             """,
@@ -366,6 +372,9 @@ def acquire(
                 max_days=int(
                     cfg["maximum_incremental_request_calendar_days"]
                 ),
+                maximum_market_time_delay_seconds=int(
+                    cfg["maximum_regular_market_time_delay_seconds"]
+                ),
             )
             quality = quality_status(
                 source_db, result["quality_run_id"]
@@ -374,7 +383,7 @@ def acquire(
                 present = bool(conn.execute(
                     """
                     SELECT 1
-                    FROM daily_price_quality_gated_observations_v001
+                    FROM daily_price_quality_gated_observations_v002
                     WHERE asset_id=? AND trading_day=? LIMIT 1
                     """,
                     (row["asset_id"], origin_day),
@@ -399,12 +408,13 @@ def acquire(
                 "quality_run_id": result["quality_run_id"],
                 "origin_present": present,
                 "quality": quality,
+                "close_fallback": result.get("close_fallback"),
             }
             if status == "COMPLETED":
                 completed += 1
             else:
                 missing += 1
-        except BaseException as error:
+        except Exception as error:
             checkpoint["rows"][ticker] = {
                 "status": "FAILED",
                 "asset_id": row["asset_id"],

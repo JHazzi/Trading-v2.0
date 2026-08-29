@@ -1,12 +1,14 @@
 {
-  "version": "market_brain_daily_refresh_v009_v001",
+  "version": "market_brain_daily_refresh_v009_v002",
   "supported_experiment_version": "market_brain_distributional_v009_prospective_holdout_v001",
   "market_feature_version": "market_daily_state_v003_core",
   "label_version": "market_daily_reaction_v003_core",
-  "source_asof_contract": "daily_price_asof_v1",
+  "source_asof_contract": "daily_price_asof_v2",
   "source_asof_mode": "historical_session_close_assumption",
   "not_before_origin_day": "2026-08-28",
   "provider_settlement_minutes_after_close": 20,
+  "regular_market_close_fallback_version": "regular_market_price_fallback_v001",
+  "maximum_regular_market_time_delay_seconds": 300,
   "maximum_incremental_request_calendar_days": 14,
   "minimum_source_assets_on_origin": 490,
   "minimum_core_states_on_origin": 490,
@@ -21,5 +23,5 @@
   "current_cohort_not_survivorship_free": true,
   "strict_historical_pit": false,
   "refit_v009_after_refresh": false,
-  "claim_boundary": "This operational refresh may materialize new causal state rows for already-frozen V009 predictions. It may not refit V009, alter its first-252 cohort, backfill a missed prediction, or convert Core V003 history into strict PIT data."
+  "claim_boundary": "This operational refresh may materialize new causal state rows for already-frozen V009 predictions. It may not refit V009, alter its first-252 cohort, backfill a missed prediction, use post-market prices as Close, or convert Core V003 history into strict PIT data."
 }

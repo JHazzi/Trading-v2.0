@@ -1,0 +1,537 @@
+{
+  "contract_version": "project_context_v001",
+  "purpose": "Read-only evidence reconciliation; never a new scientific status registry.",
+  "databases": {
+    "reports/distributional_event_dataset_v002/sec_core_2016_20260824_v002/dataset.sqlite": {
+      "role": "Corrected V002 close-aligned Event/Market research dataset; verified HTTP metadata separate from availability; PIT=0; full audit review required, no training or V009 claim",
+      "profile_tables": [
+        "samples",
+        "outcomes",
+        "state_audit",
+        "alignment_audit"
+      ],
+      "probes": [
+        {
+          "id": "event_dataset_v002_stage",
+          "sql": "SELECT json_extract(value_json,'$.contract.dataset_contract') AS dataset_contract,json_extract(value_json,'$.contract.clock_policy') AS clock_policy,json_extract(value_json,'$.partial_run') AS partial_run,json_extract(value_json,'$.source_files_stable') AS stable_inputs,json_extract(value_json,'$.training_status') AS training_status FROM metadata WHERE key='manifest'"
+        },
+        {
+          "id": "event_dataset_v002_scenarios",
+          "sql": "SELECT delay_seconds,COUNT(*) AS asset_close_samples,COUNT(DISTINCT asset_id) AS assets,COUNT(DISTINCT origin_day) AS origin_days FROM samples GROUP BY delay_seconds"
+        },
+        {
+          "id": "event_dataset_v002_clock_shifts",
+          "sql": "SELECT COUNT(*) AS eligible_states,COALESCE(SUM(json_extract(payload_json,'$.boundary_shift_seconds')<>0),0) AS unexplained_shifts,MAX(json_extract(payload_json,'$.clock_diagnostic.counterfactual_v001_shift_seconds')) AS maximum_rejected_v001_shift_seconds FROM state_audit WHERE status='eligible'"
+        },
+        {
+          "id": "event_dataset_v002_quarantine",
+          "sql": "SELECT status,reason,COUNT(*) AS states FROM state_audit GROUP BY 1,2"
+        },
+        {
+          "id": "event_dataset_v002_outcomes",
+          "sql": "SELECT s.delay_seconds,o.horizon_sessions,o.status,o.reason,COUNT(*) AS labels FROM outcomes o JOIN samples s USING(sample_id) GROUP BY 1,2,3,4"
+        }
+      ]
+    },
+    "reports/distributional_event_dataset_v001/sec_core_2016_20260824_v001/dataset.sqlite": {
+      "role": "REJECTED V001 temporal contract: HTTP Last-Modified manufactured arrivals; preserve failure evidence, do not train or rebuild; old integrity PASS is not scientific validity",
+      "profile_tables": ["samples", "outcomes", "state_audit", "alignment_audit"],
+      "probes": [
+        {
+          "id": "event_dataset_stage",
+          "sql": "SELECT json_extract(value_json,'$.partial_run') AS partial_run,json_extract(value_json,'$.source_files_stable') AS stable_inputs,json_extract(value_json,'$.training_status') AS training_status FROM metadata WHERE key='manifest'"
+        },
+        {
+          "id": "event_dataset_scenarios",
+          "sql": "SELECT delay_seconds,COUNT(*) AS asset_close_samples,COUNT(DISTINCT asset_id) AS assets,COUNT(DISTINCT origin_day) AS origin_days FROM samples GROUP BY delay_seconds"
+        },
+        {
+          "id": "event_dataset_outcomes",
+          "sql": "SELECT s.delay_seconds,o.horizon_sessions,o.status,o.reason,COUNT(*) AS labels FROM outcomes o JOIN samples s USING(sample_id) GROUP BY 1,2,3,4"
+        }
+      ]
+    },
+    "data/database/market_data_v2.db": {
+      "role": "Primary source/legacy + SEC historical reconstruction (mixed versions; not all model-visible)",
+      "profile_tables": [
+        "assets",
+        "raw_source_documents",
+        "news_documents",
+        "price_bars",
+        "price_bar_observations",
+        "sec_filings",
+        "normalized_event_state_snapshots",
+        "normalized_event_reaction_labels",
+        "normalized_event_observations",
+        "macro_observations"
+      ],
+      "probes": [
+        {
+          "id": "deep_states",
+          "sql": "SELECT COUNT(*) AS states, COUNT(DISTINCT event_id) AS events, COUNT(DISTINCT asset_id) AS assets, COUNT(*)-COUNT(DISTINCT event_state_id) AS duplicate_ids FROM normalized_event_state_snapshots WHERE feature_version=?",
+          "parameters": [
+            "event_state_v0031_deep"
+          ]
+        },
+        {
+          "id": "deep_pit",
+          "sql": "SELECT COUNT(*) AS joined_states, COALESCE(SUM(o.availability_is_point_in_time),0) AS strict_pit_states FROM normalized_event_state_snapshots s JOIN normalized_event_observations o ON o.event_observation_id=s.event_observation_id WHERE s.feature_version=?",
+          "parameters": [
+            "event_state_v0031_deep"
+          ]
+        },
+        {
+          "id": "deep_labels",
+          "sql": "SELECT COUNT(*) AS labels, COALESCE(SUM(label_status='usable'),0) AS usable, COALESCE(SUM(label_status='corporate_action_overlap'),0) AS corporate_action_overlap FROM normalized_event_reaction_labels WHERE label_version=?",
+          "parameters": [
+            "event_reaction_daily_v0031_deep"
+          ]
+        },
+        {
+          "id": "deep_label_orphans",
+          "sql": "SELECT COUNT(*) AS n FROM normalized_event_reaction_labels l LEFT JOIN normalized_event_state_snapshots s ON s.event_state_id=l.event_state_id WHERE l.label_version=? AND s.event_state_id IS NULL",
+          "parameters": [
+            "event_reaction_daily_v0031_deep"
+          ]
+        }
+      ]
+    },
+    "data/processed/market_daily_v003_core.db": {
+      "role": "Market Core V003 (historical PIT=0; daily refresh may append beyond frozen 2026-08-24 snapshot)",
+      "profile_tables": [
+        "market_daily_v003_states",
+        "market_daily_v003_labels"
+      ],
+      "probes": [
+        {
+          "id": "core_frozen_states",
+          "sql": "SELECT COUNT(*) AS states, COUNT(DISTINCT asset_id) AS assets, COUNT(*)-COUNT(DISTINCT state_id) AS duplicate_ids, COALESCE(SUM(state_point_in_time_verified),0) AS strict_pit_states, MIN(trading_day) AS first_day, MAX(trading_day) AS last_day FROM market_daily_v003_states WHERE feature_version=? AND trading_day<=?",
+          "parameters": [
+            "market_daily_state_v003_core",
+            "2026-08-24"
+          ]
+        },
+        {
+          "id": "core_frozen_h1",
+          "sql": "SELECT COUNT(*) AS usable FROM market_daily_v003_labels WHERE label_version=? AND horizon_sessions=1 AND label_status='usable' AND origin_trading_day<=? AND target_trading_day<=?",
+          "parameters": [
+            "market_daily_reaction_v003_core",
+            "2026-08-24",
+            "2026-08-24"
+          ]
+        }
+      ]
+    },
+    "data/processed/market_brain_v009_prospective.db": {
+      "role": "V009 append-only prospective registry; no fitting, sealing or scoring by this tool",
+      "profile_tables": [
+        "prospective_model_fits",
+        "prospective_prediction_batches",
+        "prospective_prediction_outcomes"
+      ],
+      "probes": [
+        {
+          "id": "fit_count",
+          "sql": "SELECT COUNT(*) AS n FROM prospective_model_fits WHERE experiment_version=?",
+          "parameters": [
+            "market_brain_distributional_v009_prospective_holdout_v001"
+          ]
+        },
+        {
+          "id": "frozen_fits",
+          "sql": "SELECT fit_id, model_version, fitted_at_utc, training_rows, training_assets, training_last_target_day, training_data_sha256, artifact_path, artifact_sha256 FROM prospective_model_fits WHERE experiment_version=?",
+          "parameters": [
+            "market_brain_distributional_v009_prospective_holdout_v001"
+          ]
+        },
+        {
+          "id": "sealed_origins",
+          "sql": "SELECT COUNT(*) AS batches, COUNT(DISTINCT origin_trading_day) AS origins, MIN(origin_trading_day) AS first_origin, MAX(origin_trading_day) AS last_origin FROM prospective_prediction_batches WHERE experiment_version=?",
+          "parameters": [
+            "market_brain_distributional_v009_prospective_holdout_v001"
+          ]
+        },
+        {
+          "id": "invalid_seal_clocks",
+          "sql": "SELECT COUNT(*) AS n FROM prospective_prediction_batches WHERE experiment_version=? AND (seal_delay_seconds<0 OR seal_delay_seconds>57600 OR julianday(sealed_at_utc) IS NULL OR julianday(state_time) IS NULL OR (julianday(sealed_at_utc)-julianday(state_time))*86400<0 OR (julianday(sealed_at_utc)-julianday(state_time))*86400>57600.1)",
+          "parameters": [
+            "market_brain_distributional_v009_prospective_holdout_v001"
+          ]
+        },
+        {
+          "id": "registered_contract",
+          "sql": "SELECT config_sha256, registered_at_utc FROM prospective_experiments WHERE experiment_version=?",
+          "parameters": [
+            "market_brain_distributional_v009_prospective_holdout_v001"
+          ]
+        }
+      ]
+    },
+    "data/database/information_capture_v001.db": {
+      "role": "Separate append-only expectations/news capture; existence/PIT flags do not authorize predictive use",
+      "profile_tables": [
+        "source_observations",
+        "scheduled_event_observations",
+        "scheduled_event_window_observations",
+        "expectation_observations",
+        "economic_fact_observations",
+        "news_document_observations",
+        "news_asset_annotations"
+      ],
+      "probes": [
+        {
+          "id": "live_source_clock_violations",
+          "sql": "SELECT COUNT(*) AS n FROM source_observations WHERE strict_pit=1 AND (julianday(available_at) IS NULL OR julianday(retrieved_at) IS NULL OR julianday(available_at)<julianday(retrieved_at))"
+        }
+      ]
+    },
+    "data/database/global_market_reference_v0052.db": {
+      "role": "Reference identity/jurisdiction data; not a promoted graph",
+      "profile_tables": []
+    },
+    "data/processed/event_graph_entity_identity_candidates_v001.db": {
+      "role": "Identity candidates; review only",
+      "profile_tables": []
+    },
+    "data/processed/event_graph_entity_registry_v001.db": {
+      "role": "Historical registry foundation; preserve lineage",
+      "profile_tables": []
+    },
+    "data/processed/event_graph_entity_registry_v002.db": {
+      "role": "Entity registry V2; hygiene not final canonical promotion",
+      "profile_tables": []
+    },
+    "data/processed/event_graph_ex21_structured_rows_v001.db": {
+      "role": "Structured SEC Exhibit 21 rows; source extraction",
+      "profile_tables": []
+    },
+    "data/processed/event_graph_identity_conflict_qa_v001.db": {
+      "role": "Identity conflict QA evidence",
+      "profile_tables": []
+    },
+    "data/processed/event_graph_identity_resolution_foundation_v001.db": {
+      "role": "Identity review foundation; no automatic merges",
+      "profile_tables": []
+    },
+    "data/processed/event_graph_relation_candidates_v001.db": {
+      "role": "Relation candidates; not learned propagation",
+      "profile_tables": []
+    },
+    "data/processed/event_graph_relation_evidence_v002.db": {
+      "role": "Versioned structural relation evidence",
+      "profile_tables": []
+    },
+    "data/processed/event_graph_sec_relation_corpus_v001.db": {
+      "role": "SEC relation source corpus; not predictive graph",
+      "profile_tables": []
+    },
+    "data/processed/market_daily_v004_math.db": {
+      "role": "V004 mathematical decomposition; negative scalar experiment retained",
+      "profile_tables": []
+    },
+    "data/processed/market_daily_v0052_financial_conditions.db": {
+      "role": "V005.2 financial conditions features; increment not promoted",
+      "profile_tables": []
+    },
+    "data/processed/market_daily_v005_external_state.db": {
+      "role": "V005.1 SPY/QQQ/IWM features; increment not promoted",
+      "profile_tables": []
+    },
+    "data/processed/market_reference_daily_v001.db": {
+      "role": "Yahoo/Cboe market reference observations; historical reconstruction",
+      "profile_tables": []
+    }
+  },
+  "claims": [
+    {
+      "id": "SEC_deep_events",
+      "database": "data/database/market_data_v2.db",
+      "probe": "deep_states",
+      "field": "events",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "([\\d,]+) unique normalized events",
+      "scope": "Distinct event_id in states of frozen event_state_v0031_deep, not all identity versions"
+    },
+    {
+      "id": "SEC_deep_states",
+      "database": "data/database/market_data_v2.db",
+      "probe": "deep_states",
+      "field": "states",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "([\\d,]+) Event States",
+      "scope": "Frozen event_state_v0031_deep"
+    },
+    {
+      "id": "SEC_deep_usable_labels",
+      "database": "data/database/market_data_v2.db",
+      "probe": "deep_labels",
+      "field": "usable",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "usable: ([\\d,]+);",
+      "scope": "Frozen event_reaction_daily_v0031_deep; all four horizons"
+    },
+    {
+      "id": "Core_frozen_states",
+      "database": "data/processed/market_daily_v003_core.db",
+      "probe": "core_frozen_states",
+      "field": "states",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "^([\\d,]+) states$",
+      "scope": "Core V003 through 2026-08-24; live total may legitimately grow"
+    },
+    {
+      "id": "Core_frozen_assets",
+      "database": "data/processed/market_daily_v003_core.db",
+      "probe": "core_frozen_states",
+      "field": "assets",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "^([\\d,]+) assets$",
+      "scope": "Core V003 through 2026-08-24"
+    },
+    {
+      "id": "V009_frozen_training_rows",
+      "database": "data/processed/market_brain_v009_prospective.db",
+      "probe": "frozen_fits",
+      "field": "training_rows",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "frozen over\\s+([\\d,]+) rows",
+      "scope": "Persisted single fit, NOT a new model fit or reproduction"
+    },
+    {
+      "id": "SEC_deep_total_labels",
+      "database": "data/database/market_data_v2.db",
+      "probe": "deep_labels",
+      "field": "labels",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "= ([\\d,]+) labels\\.",
+      "scope": "Frozen reaction label version, total all horizons"
+    },
+    {
+      "id": "SEC_PIT_join_coverage",
+      "database": "data/database/market_data_v2.db",
+      "probe": "deep_pit",
+      "field": "joined_states",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "([\\d,]+) Event States",
+      "scope": "Every frozen deep state has an observation; a zero PIT violation count alone is insufficient"
+    },
+    {
+      "id": "Core_frozen_usable_H1",
+      "database": "data/processed/market_daily_v003_core.db",
+      "probe": "core_frozen_h1",
+      "field": "usable",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "^([\\d,]+) usable H1 labels$",
+      "scope": "Usable H1 targets resolved by 2026-08-24, not labels resolved by later refreshes"
+    }
+  ],
+  "invariants": [
+    {
+      "id": "SEC_state_duplicate_ids",
+      "database": "data/database/market_data_v2.db",
+      "probe": "deep_states",
+      "field": "duplicate_ids",
+      "expected": 0
+    },
+    {
+      "id": "SEC_historical_strict_PIT",
+      "database": "data/database/market_data_v2.db",
+      "probe": "deep_pit",
+      "field": "strict_pit_states",
+      "expected": 0
+    },
+    {
+      "id": "SEC_label_orphans",
+      "database": "data/database/market_data_v2.db",
+      "probe": "deep_label_orphans",
+      "field": "n",
+      "expected": 0
+    },
+    {
+      "id": "Core_duplicate_ids",
+      "database": "data/processed/market_daily_v003_core.db",
+      "probe": "core_frozen_states",
+      "field": "duplicate_ids",
+      "expected": 0
+    },
+    {
+      "id": "Core_historical_strict_PIT",
+      "database": "data/processed/market_daily_v003_core.db",
+      "probe": "core_frozen_states",
+      "field": "strict_pit_states",
+      "expected": 0
+    },
+    {
+      "id": "V009_single_frozen_fit",
+      "database": "data/processed/market_brain_v009_prospective.db",
+      "probe": "fit_count",
+      "field": "n",
+      "expected": 1
+    },
+    {
+      "id": "V009_seal_clock_violations",
+      "database": "data/processed/market_brain_v009_prospective.db",
+      "probe": "invalid_seal_clocks",
+      "field": "n",
+      "expected": 0
+    },
+    {
+      "id": "Capture_live_source_clock_violations",
+      "database": "data/database/information_capture_v001.db",
+      "probe": "live_source_clock_violations",
+      "field": "n",
+      "expected": 0
+    }
+  ],
+  "experiments": [
+    {
+      "id": "Distributional_Event_Data_Preparation_V002",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "DATA-EVENT-DISTRIBUTIONAL-V002 — provenance-aware clock correction",
+      "reports": [
+        "reports/distributional_event_dataset_v002/sec_core_2016_20260824_v002/audit.json"
+      ]
+    },
+    {
+      "id": "Distributional_Event_Data_Preparation",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "DATA-EVENT-DISTRIBUTIONAL-V001 — close-aligned preparation, not a model",
+      "reports": [
+        "reports/distributional_event_dataset_v001/sec_core_2016_20260824_v001/audit.json"
+      ]
+    },
+    {
+      "id": "Intraday_V001_V002",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "E-MARKET-V001/V002 — Intraday Market Brain",
+      "reports": [
+        "data/processed/paired_v001_v002_60m.json"
+      ]
+    },
+    {
+      "id": "Deep_SEC",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "E-DATA-V0031 — Deep SEC Event Corpus",
+      "reports": [
+        "reports/event_brain_v0031_deep/event_brain_v002_h10_report.json"
+      ]
+    },
+    {
+      "id": "Event_H10_robustness",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "E-EVENT-V0021-ROBUSTNESS — preregistration and result",
+      "reports": [
+        "reports/event_brain_v0021_robustness/h10_robustness_summary.json"
+      ]
+    },
+    {
+      "id": "Scalar_V003_V0052",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "E-MARKET-V003–V0052 — scalar daily sequence result",
+      "reports": [
+        "reports/market_brain_daily_v003/benchmark_v0011/benchmark_summary.json",
+        "reports/market_brain_daily_v004/factorized_benchmark_v0012/factorized_benchmark_summary.json",
+        "reports/market_brain_daily_v005/market_tradables_benchmark_v001/market_tradables_benchmark_summary.json",
+        "reports/market_brain_daily_v0052/financial_conditions_benchmark_v001/financial_conditions_benchmark_summary.json"
+      ]
+    },
+    {
+      "id": "V006_scale",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "E-MARKET-DIST-V006 — empirical distributional foundation",
+      "reports": [
+        "reports/market_brain_distributional_v006/empirical_baseline_v001/benchmark_summary.json"
+      ]
+    },
+    {
+      "id": "V0061_robustness",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "E-MARKET-DIST-V0061 — completed robustness interpretation",
+      "reports": [
+        "reports/market_brain_distributional_v0061/robustness_v001/robustness_summary.json"
+      ]
+    },
+    {
+      "id": "V007_rejected",
+      "document": "docs/RESEARCH_STATUS.md",
+      "heading": "Distributional Market Brain V007 close / V008 preregistration — 2026-08-27",
+      "reports": [
+        "reports/market_brain_distributional_v007/adaptive_tail_v0011/benchmark_summary.json"
+      ]
+    },
+    {
+      "id": "V008_rejected",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "E-MARKET-DIST-V008 — completed conditional residual quantiles",
+      "reports": [
+        "reports/market_brain_distributional_v008/conditional_residual_quantiles_v0011/benchmark_summary.json"
+      ]
+    },
+    {
+      "id": "V0081_developmental",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "E-MARKET-DIST-V0081 -- completed endogenous closure",
+      "reports": [
+        "reports/market_brain_distributional_v0081/endogenous_closure_v001/benchmark_summary.json"
+      ]
+    },
+    {
+      "id": "V009_prospective",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "E-MARKET-DIST-V009 -- prospective temporal confirmation",
+      "reports": [
+        "reports/market_brain_distributional_v009/prospective_holdout_v001/preregistration.json"
+      ]
+    },
+    {
+      "id": "Identity_review",
+      "document": "docs/RESEARCH_STATUS.md",
+      "heading": "Event–Graph identity checkpoint",
+      "reports": [
+        "reports/event_graph/identity_resolution_foundation_v001/audit.json"
+      ]
+    },
+    {
+      "id": "Capture_foundation",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "DATA-EXPECTATION-CAPTURE-V001 — prospective information vintage foundation",
+      "reports": [
+        "reports/information_capture_v001/audit.json",
+        "reports/information_archaeology_v001/summary.json",
+        "reports/news_event_lineage_review_v001/summary.json"
+      ]
+    }
+  ],
+  "report_checks": [
+    {
+      "id": "V0081_documented_delta",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "daily-equal pinball delta versus raw vol63: `\\+([\\d.]+) pp`",
+      "report": "reports/market_brain_distributional_v0081/endogenous_closure_v001/benchmark_summary.json",
+      "pointer": "/primary_horizon_gate/primary_point_delta_pct",
+      "tolerance": 5e-7
+    },
+    {
+      "id": "V0081_documented_positive_assets",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "([\\d]+)/497 assets",
+      "report": "reports/market_brain_distributional_v0081/endogenous_closure_v001/benchmark_summary.json",
+      "pointer": "/horizon_matrix/1/concentration_diagnostics/asset/positive_groups"
+    },
+    {
+      "id": "Event_documented_positive_RF_seeds",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "positive for ([\\d]+)/5 preregistered seeds",
+      "report": "reports/event_brain_v0021_robustness/h10_robustness_summary.json",
+      "pointer": "/rf_seeds/positive_seed_count"
+    },
+    {
+      "id": "Event_documented_mean_RF_delta",
+      "document": "docs/RESEARCH_STATUS.md",
+      "pattern": "mean seed delta: `\\+([\\d.]+) pp`",
+      "report": "reports/event_brain_v0021_robustness/h10_robustness_summary.json",
+      "pointer": "/rf_seeds/mean_delta_pct",
+      "tolerance": 5e-7
+    }
+  ]
+}

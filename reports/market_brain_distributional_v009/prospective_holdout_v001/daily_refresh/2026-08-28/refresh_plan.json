@@ -4987,10 +4987,10 @@
         "close_utc": "2026-08-28T20:00:00+00:00"
       }
     },
-    "checked_at_utc": "2026-08-27T21:42:15.364343+00:00",
+    "checked_at_utc": "2026-08-29T04:04:18.459622+00:00",
     "earliest_acquire_utc": "2026-08-28T20:20:00+00:00",
     "latest_close_utc": "2026-08-28T20:00:00+00:00",
-    "status": "WAITING_FOR_CLOSE"
+    "status": "READY"
   },
   "experiment_version": "market_brain_distributional_v009_prospective_holdout_v001",
   "failures": [],
@@ -5001,5 +5001,5 @@
   "pending": 497,
   "refit_v009_after_refresh": false,
   "refresh_version": "market_brain_daily_refresh_v009_v001",
-  "status": "WAITING_FOR_CLOSE"
+  "status": "READY"
 }

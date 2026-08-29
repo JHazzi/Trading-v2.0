@@ -4,6 +4,12 @@ This file summarizes major scientific experiments. Detailed machine-readable out
 
 Do not overwrite historical report directories when introducing a new experiment version.
 
+Preregistrations are retained as written; later completed interpretations for
+the same experiment supersede their pre-result status, not their frozen design.
+Current scientific status is in RESEARCH_STATUS.md. For report existence,
+hashes and persisted-data checks, see [CONTEXT_RECOVERY.md](CONTEXT_RECOVERY.md).
+The context auditor does not reproduce experiments or make promotion decisions.
+
 ## E-MARKET-V001/V002 — Intraday Market Brain
 
 **Purpose:** improve market-only intraday prediction without news.
@@ -648,7 +654,7 @@ dependence-aware intervals. Historical reuse makes the pass developmental.
 
 ## E-MARKET-DIST-V009 -- prospective temporal confirmation
 
-**Status:** preregistration PASS; registry initialized; pre-holdout fit frozen; first origin 2026-08-28.
+**Status:** preregistration PASS; registry initialized; pre-holdout fit frozen; 2026-08-28 source bar rejected and not sealed; refresh V002 real 5-asset check PASS; first sealed batch pending no earlier than 2026-08-31.
 
 Versions:
 
@@ -688,3 +694,67 @@ generalization, event value or graph value.
 
 **Claim boundary:** infrastructure/capture lineage only. No alpha, information-value or model-performance claim is permitted.
 <!-- EXPECTATION_CAPTURE_FOUNDATION_V001_END -->
+
+## DATA-EVENT-DISTRIBUTIONAL-V001 — close-aligned preparation, not a model
+
+**Status:** full data run completed; temporal contract REJECTED, artifacts
+preserved, not trainable. No training or predictive result. Of 2,001 states,
+1,886 were admitted and 115 quarantined; 169 admitted states were incorrectly
+shifted more than one day by HTTP modification metadata. The 4,104 rows across
+three scenarios are not independent samples and the old integrity PASS does not
+certify this rejected clock rule. See D031 and V002 for the correction.
+
+- dataset: `distributional_event_close_aligned_v001`;
+- source events: `event_state_v0031_deep`;
+- market state: `market_daily_state_v003_core`;
+- source labels: `market_daily_reaction_v003_core`;
+- output labels: `event_distributional_close_aligned_v001`;
+- projection: `event_arrival_set_v001`;
+- frozen data end: 2026-08-24, excluding V009 prospective data;
+- origin: first close strictly after information availability;
+- delays 0/3600/86400 seconds: separate sensitivity cohorts, not independent rows;
+- strict PIT: false; first public disclosure not established;
+- model/folds/seeds/bootstrap: none selected or executed in this data stage.
+
+The output separates features, labels, evidence lineage and exclusions. An
+integrity PASS is not an information-value gate. Before model fitting, freeze
+chronological purged folds, event/filing/content separation, capacity controls,
+proper scores and dependence-aware uncertainty. Never apply the final V009
+fit retrospectively to this historical sample.
+
+Contract and execution: [DISTRIBUTIONAL_EVENT_DATASET_V001.md](DISTRIBUTIONAL_EVENT_DATASET_V001.md).
+
+## DATA-EVENT-DISTRIBUTIONAL-V002 — provenance-aware clock correction
+
+**Status:** complete materialization and exclusion review; integrity PASS,
+scientific REVIEW, data preparation only. Ready for a separate preregistration,
+not authorized for ad-hoc training and not a model result.
+
+- dataset: `distributional_event_close_aligned_v002`;
+- source snapshots: `event_state_v0031_deep`, unchanged;
+- source market/labels: `market_daily_state_v003_core` /
+  `market_daily_reaction_v003_core`, unchanged;
+- derived labels: `event_distributional_close_aligned_v002`;
+- derived projection: `event_arrival_set_v002`;
+- clock policy: `sec_acceptance_proxy_http_metadata_separate_v002`;
+- research end: 2026-08-24; strict PIT=false; no first-public disclosure claim;
+- model, folds, seeds, bootstrap: not selected or run.
+
+Full run:
+
+- source/examined states: 2,001 / 2,001;
+- eligible states: 1,885; unexplained clock shifts: zero;
+- quarantined: 115 cross-accession plus one AAPL same-file multi-reference;
+- zero-delay selected state links / samples: 1,734 / 1,365;
+- all-scenario rows: 4,086, not independent;
+- usable zero-delay H1/H3/H5/H10: 1,351 / 1,315 / 1,249 / 1,032;
+- exact-Core exclusions: 151 early states; no later-date substitution;
+- H10 zero-delay corporate-action exclusions: 332 (24.3%);
+- dataset SHA-256:
+  `c3a2d89fa127863d4a2477ffe9a41fe0b0e5cd0f203b07fd05028760b43c7098`.
+
+D033 freezes the exclusions and closes the data-review gate. Next: separate
+plan-only preregistration with temporal/group purges, proper scores,
+capacity-matched controls and dependent uncertainty. The old V001 output and
+source DBs remain preserved. No V009 fit/prediction changes.
+Details: [DISTRIBUTIONAL_EVENT_DATASET_V002.md](DISTRIBUTIONAL_EVENT_DATASET_V002.md).

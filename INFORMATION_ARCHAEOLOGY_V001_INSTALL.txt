@@ -1,0 +1,14 @@
+Install from repository root:
+
+unzip -o quant_market_ai_information_archaeology_v001.zip -d .
+
+python -m py_compile   research/audits/information_archaeology_v001.py   tools/audit_information_archaeology_v001.py
+
+python -m pytest tests/test_information_archaeology_v001.py -q
+
+python -m research.audits.information_archaeology_v001
+
+Complete report:
+reports/information_archaeology_v001/summary.json
+
+No network calls and no database writes are performed.

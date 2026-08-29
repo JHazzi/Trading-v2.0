@@ -30,3 +30,31 @@ data/raw/
 # Archivos de entorno y configuración local
 .env
 *.local.json
+
+# Contexto generado: metadatos locales, no otra fuente de verdad versionada
+reports/project_context/
+reports/distributional_event_dataset_v001/
+reports/distributional_event_dataset_v002/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Otras bases, sidecars activos y artefactos de modelos
+*.sqlite
+*.sqlite3
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+*.sqlite3-wal
+*.sqlite3-shm
+*.sqlite3-journal
+*.joblib
+*:Zone.Identifier
+
+# Estos SQL son dependencias del codigo, no dumps de datos.
+!database/*_schema.sql
+!database/*_additive.sql
+!database/reference/*.sql

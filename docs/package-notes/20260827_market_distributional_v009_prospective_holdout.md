@@ -123,34 +123,45 @@ status                 FROZEN_PRE_HOLDOUT_FIT
 Do not rerun or replace this fit. Daily refreshes must preserve its registered
 training-data and artifact hashes.
 
-## Daily operating sequence
+## Daily operating sequence after refresh V002 correction
 
-For the first origin, wait until 2026-08-28 20:20 UTC (17:20 Argentina), then
-run:
+The 2026-08-28 daily chart response was partial and its prediction deadline
+expired without a seal. Do not build or seal that origin. Complete only the
+source repair; the real five-asset check is already checkpointed:
 
-```bash
-./.venv/bin/python -m pipeline.market_brain_daily_refresh_v009 \
-  --stage plan --origin-day 2026-08-28
-
+~~~bash
 ./.venv/bin/python -m pipeline.market_brain_daily_refresh_v009 \
   --stage acquire --origin-day 2026-08-28
+~~~
+
+Expected result: 497 source assets and PASS_SOURCE_READY. If individual
+network/provider calls fail, rerun this stage with --retry-failed.
+
+For the first possible sealed batch, after the 2026-08-31 close and provider
+settlement clock:
+
+~~~bash
+./.venv/bin/python -m pipeline.market_brain_daily_refresh_v009 \
+  --stage plan --origin-day 2026-08-31
 
 ./.venv/bin/python -m pipeline.market_brain_daily_refresh_v009 \
-  --stage build-core --origin-day 2026-08-28
+  --stage acquire --origin-day 2026-08-31
 
 ./.venv/bin/python -m pipeline.market_brain_daily_refresh_v009 \
-  --stage readiness --origin-day 2026-08-28
+  --stage build-core --origin-day 2026-08-31
+
+./.venv/bin/python -m pipeline.market_brain_daily_refresh_v009 \
+  --stage readiness --origin-day 2026-08-31
 
 ./.venv/bin/python -m pipeline.market_brain_distributional_v009 \
-  --stage seal --origin-day 2026-08-28
-```
+  --stage seal --origin-day 2026-08-31
+~~~
 
-The acquisition is checkpointed. If the provider omits or fails some assets,
-rerun only that stage with `--retry-failed`. The Core rebuild occurs through a
-temporary audited database and replaces the derived Core only after coverage,
-causality and frozen-training-hash checks pass. No V009 refit occurs. Seal no
-later than 2026-08-29 12:00 UTC (09:00 Argentina).
-
+Refresh V002 never uses post-market price and never manufactures Adj Close.
+Migration 023 preserves failed retrievals and exposes the first
+quality-eligible observation under the documented PIT=0 reconstruction. The
+Core replacement still requires its full audit and exact frozen V009 training
+hash. No V009 refit occurs.
 After a later Core rebuild makes the corresponding H1 labels available:
 
 ```bash
@@ -190,8 +201,10 @@ pipeline/market_brain_daily_refresh_v009.py
 tests/test_market_brain_daily_refresh_v009.py
 database/migrations/021_prospective_prediction_registry.sql
 database/migrations/022_prospective_evaluation_immutability.sql
+database/migrations/023_daily_price_first_quality_eligible.sql
 database/apply_migration_021.py
 database/apply_migration_022.py
+database/apply_migration_023.py
 storage/__init__.py
 storage/prospective_registry.py
 models/market/distributional_v009_prospective.py

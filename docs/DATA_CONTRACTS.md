@@ -385,3 +385,29 @@ Null action currency may be reported only as reconciled provider-native quote
 units, never as verified ISO currency. V002 data PASS does not authorize model
 training. Anchors/holdouts retain their V001 roles, dense taus remain dependent
 terminal marginals and V009 remains isolated.
+
+## 20. Temporal V002 economic-review and arbitrary-tau contract
+
+Provider reconciliation and economic entitlement are separate gates. Every
+cash step whose distribution is at least 5% of previous close requires a
+decision bound to the exact V002/review hashes, evidence and rationale. A
+decision never rewrites V002. An incomplete entitlement creates a versioned
+downstream selection mask whose affected windows must be reported.
+
+For V002 one-session log factors `ell_s=log(g_s)`, define the immutable prefix
+`L_k=sum(ell_s,s<=k)`. Any integer tau in 1..252 is reconstructed as:
+
+```text
+100 * expm1(L_(origin_index+tau) - L_origin_index)
+```
+
+This is the same target contract as materialized checkpoints, not label
+interpolation. Nonmaterialized taus used by a future experiment must be sampled
+by a frozen deterministic rule. The first model preregistration deliberately
+uses anchors only; sampled-tau augmentation after opening horizon holdouts is
+forbidden as a rescue.
+
+Cross-tau primary evaluation uses the origin clock on which the maximum
+development tau is resolved. More recent origins remain available only in
+explicit per-tau maximal-support diagnostics. Training rows are purged
+individually unless their target day is strictly before the next test origin.

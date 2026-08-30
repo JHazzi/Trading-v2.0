@@ -778,5 +778,38 @@ not verified ISO currency. Historical action reconstruction remains PIT=0 and
 outcome-only. The default remains the same sparse 17-tau artifact; dense
 marginals do not become independent samples or a coherent path.
 
-**Status:** V002 materializer/config/tests/docs implemented; full real plan,
-materialization and audit pending. No model trained.
+**Status:** full V002 materialization and mechanical review complete. Exact
+parity, action reconciliation, resolved coverage and arbitrary-tau identities
+pass. Training remains blocked on the separate special-action review and model
+runner audit. No model trained.
+
+## D036 — Separate economic entitlement review from provider reconciliation
+
+**Pre-model review/preregistration decision (2026-08-30):** a matching provider
+Adjusted Close factor establishes event-day, unit and split-normalization
+consistency; it does not prove that `post-event share + cash` completely
+represents a merger, spin-off or share-exchange entitlement.
+
+Therefore every V002 cash step at or above 5% of previous close is reviewed
+under a SHA-bound external decision artifact; 10% is critical. Allowed outcomes
+are validated cash/share entitlement or a versioned downstream quarantine.
+V002 is immutable in either case.
+
+The first horizon-conditioned model protocol is plan-only and freezes:
+
+- 12 development/training anchors;
+- sealed H7/H17/H42/H90/H180 generalization checkpoints;
+- a shared low-capacity `Q(total_return | X,tau)` candidate;
+- horizon+vol63 and same-capacity placebo controls;
+- rowwise target-end purging;
+- common H252-resolved support for cross-tau primary comparison;
+- whole-origin-day 21/63/126/252-session block uncertainty;
+- no sampled-tau rescue after holdout performance.
+
+The daily log-factor grid may answer any integer tau 1..252 on demand. Dense
+materialization remains unnecessary, and terminal marginals remain distinct
+from a coherent path distribution.
+
+**Status:** mechanical review and fold feasibility PASS; 16 special cash steps
+are visible, 11 can enter outcomes and await evidence-bound decisions. Runner
+implementation/training remain blocked.

@@ -798,8 +798,8 @@ or modified. See [TEMPORAL_DATASET_V001.md](TEMPORAL_DATASET_V001.md).
 
 **Type:** deterministic outcome reconstruction and data audit; no model.
 
-**Status:** config/materializer/tests/docs complete; full real plan,
-materialization and review pending.
+**Status:** full sparse artifact and mechanical review complete; economic
+special-action decisions pending; no model.
 
 Read-only inputs:
 
@@ -834,7 +834,29 @@ atomic/idempotent publication and V009 isolation. Four synthetic tests pass,
 including special-distribution mathematics, recovered dividend/split windows,
 provider-control failure blocking and V001 tamper blocking.
 
-No fold, seed, model or bootstrap is selected. A successful full build remains
-`BLOCKED_PENDING_V002_FULL_ACTION_REVIEW` until coverage/reconciliation reports
-are reviewed and a separate `Q(total_return|X,tau)` protocol is preregistered.
+Real result: 18,573,435 outcomes; zero V001/no-action mismatches; 15,299
+provider-reconciled actions plus four grid-start actions; zero quarantined
+resolved outcomes. The downstream review passes distribution/support/arbitrary
+tau gates and flags 16 cash steps >=5% (five >=10%). Eleven can enter
+model-visible outcomes and require decisions; five are pre-origin lineage only.
+The V002 internal block remains immutable.
 See [TEMPORAL_DATASET_V002.md](TEMPORAL_DATASET_V002.md).
+
+## E-MARKET-TEMPORAL-DIST-V001 — plan-only horizon-conditioned preregistration
+
+**Status:** implementation/fold feasibility PASS; blocked pending economic
+special-action decisions; no runner, fit, prediction or performance read.
+
+The developmental target is `Q_q(total_return | own market state,tau)`. Twelve
+anchors are development data and H7/H17/H42/H90/H180 are sealed interpolation
+holdouts. The candidate uses the frozen V008.1 shallow profile with explicit
+tau coordinates; the primary control sees tau plus vol63 and five same-capacity
+placebos preserve volatility while deranging other own state within origin day.
+
+Primary folds use 2,008 H252-resolved days through 2025-08-21. Five expanding
+test blocks contain 281-282 origin days and 134,810-138,777 common-support
+states. Training is purged rowwise by target end. The recent 252-day censored
+tail is secondary per-tau support only. Primary uncertainty resamples whole
+origin-day panels in 252-session blocks. Passing remains developmental and
+cannot establish path, direction, alpha, profitability, PIT, production or a
+V009 claim.

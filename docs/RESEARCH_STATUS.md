@@ -109,14 +109,25 @@ factors remain lineage and are not multiplied again. Provider Adjusted Close
 is forbidden as target and used only to reconcile action timing/units under its
 separate `Close_t/(Close_(t-1)-cash_t)` convention.
 
-Real source-schema/math inspection before implementation found 15,856 latest
-present dividends and 142 splits. Across the selected grid, all 15,164 cash
-steps reconcile to the provider control within `9.9e-7`; 138 split-only steps
-reconcile within `6.4e-7`. V002 freezes a `2e-6` hard tolerance, full V001
-parity, exact no-action H1/H3/H5/H10 identity, atomic/idempotent publication and
-action quarantine. Four synthetic V002 gates pass. The full V002 artifact has
-not yet been built; training remains blocked pending its real action/coverage
-reports and a separate model preregistration. V009 is unchanged.
+The full V002 sparse artifact is now complete: 18,573,435 outcomes over the
+same 1,092,555 states and 17 taus. Full V001 parity and 4,101,105 no-action
+H1/H3/H5/H10 identities have zero mismatches. Of 15,303 selected actions,
+15,299 reconcile to the provider convention and four occur at grid start;
+there are zero pending/failing action steps. All resolved outcomes are usable
+at every tau and in every audited sector/year group. H252 recovers 777,057
+action-overlap windows, 80.32% of its 967,432 resolved origins. The artifact
+remains internally blocked and V009 is unchanged.
+
+A separate economic-review/preregistration package is implemented. Its real
+mechanical review passes target-distribution, support and arbitrary-tau prefix
+gates. It flags 16 cash steps at or above 5% of previous close, five at or above
+10%. Eleven can enter model-visible outcomes and require evidence-bound
+entitlement review; five are pre-origin lineage only. No event is auto-approved. The
+plan-only horizon-conditioned protocol uses 2,008 H252-resolved origin days
+through 2025-08-21 for its common-support primary clock and leaves the following
+252 days as per-tau recency diagnostics. Five purged folds are feasible; no
+model is trained and the only current blocker is the 11-event special-action
+decision file.
 
 ### Distributional Market Brain V006 empirical foundation
 

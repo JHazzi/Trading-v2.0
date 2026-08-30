@@ -432,6 +432,32 @@
   ],
   "experiments": [
     {
+      "id": "Market_Temporal_V002",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "DATA-MARKET-TEMPORAL-V002 — explicit total shareholder return foundation",
+      "reports": [
+        "reports/market_temporal_v002/audit.json",
+        "reports/market_temporal_v002/v001_parity_report.json",
+        "reports/market_temporal_v002/no_action_identity_report.json",
+        "reports/market_temporal_v002/action_reconciliation_report.json",
+        "reports/market_temporal_v002/coverage_report.json"
+      ]
+    },
+    {
+      "id": "Market_Temporal_V002_Review",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "E-MARKET-TEMPORAL-DIST-V001 — plan-only horizon-conditioned preregistration",
+      "reports": [
+        "reports/market_temporal_v002_review/audit.json",
+        "reports/market_temporal_v002_review/economic_action_review.json",
+        "reports/market_temporal_v002_review/target_distribution_report.json",
+        "reports/market_temporal_v002_review/support_report.json",
+        "reports/market_temporal_v002_review/on_demand_tau_report.json",
+        "reports/temporal_distributional_v001/preregistration_plan.json",
+        "reports/temporal_distributional_v001/fold_plan.json"
+      ]
+    },
+    {
       "id": "Distributional_Event_Data_Preparation_V002",
       "document": "docs/EXPERIMENTS.md",
       "heading": "DATA-EVENT-DISTRIBUTIONAL-V002 — provenance-aware clock correction",

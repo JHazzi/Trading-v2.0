@@ -1,5 +1,9 @@
 # Next Execution V002 — Total Return Materialization
 
+Historical execution note: this V002 run is complete and its mechanical gates
+passed. Do not rebuild it. Continue with
+[NEXT_EXECUTION_TEMPORAL_REVIEW_V001.md](NEXT_EXECUTION_TEMPORAL_REVIEW_V001.md).
+
 These commands build data and audits only. They do not train a model, mutate
 the source/Core/V001 databases or touch V009.
 

@@ -1,7 +1,8 @@
 # Market Temporal Dataset V002
 
-Status: total-return materializer and synthetic gates implemented; full real
-materialization and report review pending. This is deterministic data
+Status: full sparse materialization and mechanical review complete. Exact
+parity, action reconciliation and resolved coverage pass; the downstream
+special-entitlement review remains open. This is deterministic data
 preparation, not a model result, path model or training authorization.
 
 ## Why V002 exists
@@ -203,14 +204,18 @@ Even a successful V002 build persists:
 BLOCKED_PENDING_V002_FULL_ACTION_REVIEW
 ```
 
-After the user returns the full reports, the next decision is whether the
-action/coverage evidence is clean enough to preregister `Q(total_return|X,tau)`.
-No model, fold, seed, bootstrap or promotion rule is selected in V002.
+The full reports now pass their mechanical gates. A separate immutable review
+flags 16 cash steps above the 5% materiality threshold. Eleven can enter
+model-visible outcomes and require evidence-bound entitlement decisions; five
+remain lineage-only. The plan-only
+`Q(total_return|X,tau)` protocol is frozen separately and remains blocked until
+those decisions close. No model has been fit.
 
 V009 is never opened, imported, refit, validated or modified.
 
 ## Exact execution
 
-See [NEXT_EXECUTION_V002.md](NEXT_EXECUTION_V002.md). Do not run `dense_all`,
-do not train from the output and do not use `--force-rebuild` to respond to a
-failed gate without first reviewing its evidence.
+V002 execution is complete. Continue with
+[NEXT_EXECUTION_TEMPORAL_REVIEW_V001.md](NEXT_EXECUTION_TEMPORAL_REVIEW_V001.md).
+Do not run `dense_all`, train from the output or use `--force-rebuild` to
+respond to a failed downstream gate.

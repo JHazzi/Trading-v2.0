@@ -1,0 +1,53 @@
+{
+  "version": "market_temporal_v002_economic_review_v001",
+  "status": "audit_and_manual_special_action_gate_no_training",
+  "expected_v002_contract": {
+    "dataset_contract": "market_temporal_horizon_conditioned_total_return_v002",
+    "label_version": "market_temporal_total_shareholder_return_v002",
+    "training_gate_prefix": "BLOCKED_"
+  },
+  "special_cash_review": {
+    "moderate_cash_to_previous_close": 0.05,
+    "critical_cash_to_previous_close": 0.10,
+    "meaning": "Review economic share/cash entitlement, not provider adjusted-close equality; a decision is required only when the step can enter a materialized model-visible outcome."
+  },
+  "mathematical_gates": {
+    "return_absolute_tolerance": 1e-09,
+    "prefix_log_absolute_tolerance": 1e-10,
+    "total_return_must_exceed_minus_100_pct": true,
+    "nonnegative_cash_uplift_required": true,
+    "zero_cash_exact_raw_identity_required": true
+  },
+  "distribution_audit": {
+    "quantiles": [0.001, 0.01, 0.05, 0.25, 0.5, 0.75, 0.95, 0.99, 0.999],
+    "quantile_sample_origin_modulus": 20,
+    "extreme_sample_taus": [21, 63, 126, 252],
+    "extreme_rows_per_tail": 10,
+    "sample_quantiles_are_diagnostics_not_hard_plausibility_thresholds": true
+  },
+  "on_demand_tau_audit": {
+    "origin_sample_modulus": 211,
+    "maximum_sampled_origins": 10000,
+    "sampling_bands_sessions": [[1, 10], [11, 42], [43, 126], [127, 252]],
+    "seed": 20260830,
+    "sealed_holdout_sessions": [7, 17, 42, 90, 180],
+    "require_nonmaterialized_tau_samples": true
+  },
+  "manual_decision_contract": {
+    "allowed_dispositions": [
+      "validated_cash_and_share_entitlement",
+      "quarantine_incomplete_entitlement"
+    ],
+    "minimum_rationale_characters": 20,
+    "authoritative_or_auditable_evidence_required": true,
+    "decisions_never_rewrite_v002": true,
+    "quarantine_is_a_versioned_downstream_selection_mask": true
+  },
+  "guards": {
+    "training_authorized": false,
+    "model_training_performed": false,
+    "v002_mutation_allowed": false,
+    "source_core_v001_mutation_allowed": false,
+    "v009_loaded_or_modified": false
+  }
+}

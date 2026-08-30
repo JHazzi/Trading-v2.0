@@ -15,7 +15,8 @@ V008 conditional residual quantiles       COMPLETE: 4/4 significant failures
 V008.1 endogenous closure                 COMPLETE: H1 developmental pass
 V009 prospective temporal confirmation    ACTIVE: fit frozen; first seal pending >=2026-08-31
 Temporal Dataset V001                     COMPLETE: parity PASS; raw-close long-horizon selection rejected
-Temporal Dataset V002                     IMPLEMENTED: total-return build/review pending; no training
+Temporal Dataset V002                     COMPLETE mechanical build; economic special-action review active
+Temporal distributional V001              PLAN-ONLY preregistration implemented; blocked on action decisions
 distributional Event Brain                PARALLEL developmental track on existing SEC
 identity hygiene                          REVIEW in parallel; no graph promotion
 graph propagation                         BLOCKED until direct event increment
@@ -300,7 +301,7 @@ exactly and found action overlap of 76.20%/79.09%/80.32% at H63/H126/H252.
 Excluding those windows materially changes asset and sector selection, so V001
 long-horizon raw-close outcomes are not the primary training target.
 
-Current stage is Temporal V002 total shareholder return:
+Temporal V002 total shareholder return is mechanically complete:
 
 1. preserve every V001 raw target/status as control;
 2. reconstruct `(Close_t + cash_t) / Close_(t-1)` from versioned action lineage;
@@ -317,8 +318,13 @@ supported from the shared grid, but do not create independent labels and may
 not be selected after outcome inspection. A horizon-conditioned collection of
 terminal marginals is still not a joint path model.
 
-Current status: V002 implementation and synthetic gates complete; full local
-plan/materialization/audit pending.
+Current status: full local V002 build/audit PASS with zero quarantined resolved
+outcomes. The downstream review independently passes distribution, support and
+nonmaterialized-tau prefix reconstruction. Eleven of 16 material cash steps can
+enter model-visible outcomes and require evidence-bound entitlement decisions
+before the plan-only temporal model
+preregistration can close. Its common-support five-fold clock is feasible and
+contains no fit/predict path.
 
 Build model-derived future path scenarios.
 

@@ -938,20 +938,20 @@ While Market Distributional V009 remains frozen in prospective holdout, a separa
 <!-- EXPECTATION_CAPTURE_FOUNDATION_V001_END -->
 
 <!-- TEMPORAL_DISTRIBUTIONAL_RUNNER_V001_START -->
-## Temporal total-return distribution — runner ready, development not yet run
+## Temporal total-return distribution V001 — CLOSED NEGATIVE
 
 Market Temporal V002 remains immutable at 18,573,435 sparse outcomes. All 11
-model-visible material cash events now have primary-source, SHA-bound decisions;
+model-visible material cash events have primary-source, SHA-bound decisions;
 economic review is `PASS`. The 80-outcome extreme-tail lineage audit and the
-external selection-mask audit pass; the resulting mask contains zero exclusions.
+external selection mask audit are also `PASS` (mask is strictly empty). 
+Runner plan preflight was `PASS`.
 
-The shared `Q_q(total_return | own state,tau)` runner is implemented, tested and
-real-preflighted. It supports every integer tau 1..252, fits on three balanced
-deterministic anchors per origin, evaluates all 12 development anchors, and
-keeps H7/H17/H42/H90/H180 sealed. The real preflight selected 3,277,665
-origin-anchor rows before rowwise purge with max/min anchor ratio 1.00413.
+However, the frozen development gate evaluated to `FAIL_CLOSE_TEMPORAL_DISTRIBUTIONAL_BRANCH` 
+because the candidate lost to the parsimonious `vol63 + tau` reference across all 5 folds 
+and specifically underperformed in central quantiles and long horizons (H126, H252).
+An explicit post-mortem audit was implemented and the branch was formally closed without opening the five sealed holdouts (H7, H17, H42, H90, H180).
 
-Current next action: execute five resumable development folds, aggregate the
-predeclared gate, and stop if it does not pass. Only an exact development PASS
-may create the SHA freeze and open holdouts once. V009 remains isolated.
+Current next action: do not open holdouts, do not refit to "rescue" V001. 
+The V001 protocol is permanently closed. Any future modeling on V002 (e.g., V002 protocol) 
+must be separate, pre-registered, and explicitly address the scientific findings of this failure. V009 remains isolated.
 <!-- TEMPORAL_DISTRIBUTIONAL_RUNNER_V001_END -->

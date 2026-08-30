@@ -849,3 +849,9 @@ tau augmentation. V009 is neither read nor modified.
 
 **Status:** infrastructure/tests/real preflight PASS; development fitting is the
 next action and no sealed holdout outcome has been read.
+
+## 2026-08-30: V001 Temporal Distributional explicitly closed as negative
+
+**Decision:** The V001 temporal distributional experiment is permanently closed with a negative result and all holdouts remain sealed.
+
+**Rationale:** The five fold shards lost across the board against the parsimonious `vol63 + tau` reference. In particular, central mass (q50) and long horizons (H126, H252) suffered. There is no contingency to rescue this run by opening holdouts, selecting new anchors, or tweaking capacities. The scientific finding is that the single shared representation failed to beat the strong volatility prior. A formal negative gate `FAIL_CLOSE_TEMPORAL_DISTRIBUTIONAL_BRANCH` was implemented in the pipeline to securely seal the branch without further actions. A separate V002 protocol will be defined in the future based on post-mortem audits.

@@ -816,6 +816,47 @@ def aggregate_holdout(config_path: Path, output: Path) -> dict[str, Any]:
     return result
 
 
+def close_branch(config_path: Path, output: Path) -> dict[str, Any]:
+    summary_path = output / "development_summary.json"
+    if not summary_path.exists():
+        raise RuntimeError("development_summary_missing")
+    summary = load_json(summary_path)
+    if summary.get("status") != "FAIL_CLOSE_TEMPORAL_DISTRIBUTIONAL_BRANCH":
+        raise RuntimeError("branch_closure_requires_explicit_fail_state")
+    if (output / "development_freeze.json").exists():
+        raise RuntimeError("development_freeze_exists_cannot_close_negatively")
+    if (output / "holdout_opening.json").exists():
+        raise RuntimeError("holdout_opening_exists_cannot_close_negatively")
+    paths = [
+        config_path, Path(__file__), ROOT / "models" / "market" / "temporal_distributional_v001.py",
+        ROOT / "evaluation" / "market" / "temporal_distributional_v001.py", output / "plan.json", summary_path,
+        DEFAULT_PREREG, DEFAULT_FOLDS, DEFAULT_REVIEW, DEFAULT_TAIL, DEFAULT_MASK_AUDIT, DEFAULT_MASK_DB,
+    ]
+    for fold in range(1, 6):
+        report_path = output / "development" / f"fold_{fold:02d}.json"
+        if report_path.exists():
+            report = load_json(report_path)
+            paths.append(report_path)
+            paths.extend(ROOT / value["path"] for value in report.get("artifacts", {}).values())
+    missing = [str(x) for x in paths if not x.exists()]
+    if missing:
+        raise RuntimeError("closure_artifacts_missing:" + ",".join(missing))
+    manifest = {str(path.relative_to(ROOT)): digest(path) for path in sorted(set(paths))}
+    result = {
+        "version": "market_temporal_distributional_development_closure_v001",
+        "status": "CLOSED_NEGATIVE",
+        "closed_at": utc_now(),
+        "development_gate_status": summary["status"],
+        "manifest": manifest,
+        "manifest_sha256": hashlib.sha256(json.dumps(manifest, sort_keys=True, separators=(",", ":")).encode()).hexdigest(),
+        "holdout_values_read_before_closure": False,
+        "holdouts_sealed": True,
+        "next_gate": "DO_NOT_OPEN_HOLDOUTS_END_OF_V001",
+    }
+    atomic_json(output / "development_closure.json", result)
+    return result
+
+
 def status_report(output: Path) -> dict[str, Any]:
     def status(path: Path) -> str:
         return str(load_json(path).get("status")) if path.exists() else "MISSING"
@@ -831,6 +872,7 @@ def status_report(output: Path) -> dict[str, Any]:
         "version": "market_temporal_distributional_runner_status_v001", "plan": status(output / "plan.json"),
         "development_folds": folds_dev, "development_summary": status(output / "development_summary.json"),
         "development_freeze": status(output / "development_freeze.json"),
+        "development_closure": status(output / "development_closure.json"),
         "holdout_marker": marker.get("status") if marker else "SEALED_UNOPENED",
         "holdout_folds": folds_holdout, "holdout_summary": status(output / "holdout_summary.json") if marker else "SEALED",
     }
@@ -854,7 +896,7 @@ def console_payload(stage: str, result: Mapping[str, Any]) -> Mapping[str, Any]:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--stage", required=True, choices=(
-        "plan", "develop-fold", "develop-aggregate", "freeze", "holdout-fold", "holdout-aggregate", "status",
+        "plan", "develop-fold", "develop-aggregate", "freeze", "close-branch", "holdout-fold", "holdout-aggregate", "status",
     ))
     parser.add_argument("--fold", type=int, choices=range(1, 6))
     parser.add_argument("--v002-db", type=Path, default=DEFAULT_V002)
@@ -878,6 +920,8 @@ def main() -> None:
         result = aggregate_development(args.config, args.output_dir)
     elif args.stage == "freeze":
         result = freeze_development(args.config, args.output_dir)
+    elif args.stage == "close-branch":
+        result = close_branch(args.config, args.output_dir)
     elif args.stage == "holdout-fold":
         result = run_holdout_fold(args.fold, args.v002_db, args.core_db, args.selection_mask, args.config, args.fold_plan, args.output_dir)
     elif args.stage == "holdout-aggregate":

@@ -1,0 +1,138 @@
+{
+  "version": "market_temporal_distributional_preregistration_v002",
+  "status": "frozen_plan_only_no_training_runner",
+  "scientific_question": "Does learning a regularized residual correction on top of a cross-fitted vol63+tau baseline improve long-horizon and central quantiles without the degradation observed in V001?",
+  "dataset": {
+    "database": "data/processed/market_temporal_v002.db",
+    "dataset_contract": "market_temporal_horizon_conditioned_total_return_v002",
+    "label_version": "market_temporal_total_shareholder_return_v002",
+    "market_feature_version": "market_daily_state_v003_core",
+    "target": "total_return_pct",
+    "cash_reinvestment_policy": "effective-session-close reinvestment",
+    "strict_historical_pit": false,
+    "current_cohort_not_survivorship_free": true,
+    "economic_review_required": "market_temporal_v002_full_economic_review_v001 PASS; PASS_WITH_VERSIONED_QUARANTINE additionally requires an audited selection-mask runner"
+  },
+  "horizon_contract": {
+    "tau_domain": {
+      "minimum_sessions": 1,
+      "maximum_sessions": 252,
+      "integer_only": true,
+      "unit": "eligible_asset_sessions"
+    },
+    "development_training_anchors": [1, 2, 3, 5, 8, 10, 13, 21, 34, 63, 126, 252],
+    "sealed_generalization_holdouts": [7, 17, 42, 90, 180],
+    "materialized_checkpoints": [1, 2, 3, 5, 7, 8, 10, 13, 17, 21, 34, 42, 63, 90, 126, 180, 252],
+    "primary_v002_training_policy": "materialized_development_anchors_only",
+    "holdouts_never_enter_fit_calibration_model_selection_or_contingency_choice": true,
+    "holdout_open_rule": "open once only after development gate passes and runner/config/prediction hashes are frozen",
+    "arbitrary_tau_query_formula": "100 * expm1(prefix_log_total_return[target_index] - prefix_log_total_return[origin_index])",
+    "nonmaterialized_sampled_tau_policy": "implemented_and_audited_for_future_versions_but_not_used_in_v002_primary",
+    "failure_contingency": "close V002; any sampled-tau augmentation requires a separately frozen V002 experiment without rescuing V002",
+    "dense_1_252_materialization_required": false,
+    "marginals_are_not_a_coherent_path": true
+  },
+  "model_contract": {
+    "quantiles": [0.05, 0.25, 0.5, 0.75, 0.95],
+    "primary_candidate": "hgb_residual_on_vol63_base_with_horizon_shrinkage",
+    "primary_reference": "hgb_vol63_plus_tau",
+    "simple_reference": "train_only_tau_distribution",
+    "capacity_control": "same_profile_within_origin_day_joint_derangement_of_non_scale_own_features",
+    "capacity_placebo_seeds": [11, 29, 47, 71, 101],
+    "tau_features": [
+      "tau_sessions",
+      "tau_fraction_252",
+      "log1p_tau_over_log253"
+    ],
+    "tau_feature_semantics": "deterministic coordinates only; no sqrt-time or linear-return law is imposed",
+    "frozen_own_features": [
+      "asset_drawdown_20d_pct",
+      "asset_drawdown_252d_pct",
+      "asset_drawdown_63d_pct",
+      "asset_range_1d_pct",
+      "asset_return_10d_pct",
+      "asset_return_1d_pct",
+      "asset_return_20d_pct",
+      "asset_return_3d_pct",
+      "asset_return_5d_pct",
+      "asset_return_63d_pct",
+      "asset_vol_20d_pct",
+      "asset_vol_5d_pct",
+      "asset_vol_63d_pct",
+      "asset_volume_ratio_20d"
+    ],
+    "scale_feature": "asset_vol_63d_pct",
+    "base_reference_cross_fitting_internal_folds": 5,
+    "fixed_profile_residual": {
+      "learning_rate": 0.02,
+      "max_iter": 100,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 1000,
+      "l2_regularization": 5.0,
+      "early_stopping": false,
+      "random_seed": 42
+    },
+    "residual_regularization": {
+      "type": "exponential_horizon_shrinkage",
+      "half_life_sessions": 63
+    },
+    "quantile_crossing_policy": "rowwise_monotone_rearrangement",
+    "post_model_quantile_calibration": "none_in_v002",
+    "probability_calibration": "none_in_v002",
+    "event_graph_macro_external_features_allowed": false,
+    "corporate_action_or_future_outcome_fields_as_features_allowed": false,
+    "hyperparameter_selection": "none"
+  },
+  "outer_evaluation": {
+    "folds": 5,
+    "initial_fraction": 0.30,
+    "minimum_common_support_origin_days": 1900,
+    "minimum_train_rows_per_anchor": 100000,
+    "minimum_test_rows_per_anchor": 50000,
+    "split_policy": "purged_expanding_folds_on_h252_resolved_common_clock",
+    "purge_rule": "training_target_day_strictly_before_first_test_origin_day",
+    "training_weight_policy": "each_origin_day_equal_total_weight_then_each_state_equal_then_each_available_tau_equal",
+    "primary_score": "common_support_equal_tau_equal_origin_day_mean_pinball_loss",
+    "secondary_score": "per_tau_maximal_resolved_support_origin_day_equal_pinball",
+    "common_support_required_for_cross_tau_claim": true,
+    "right_censored_recent_origins": "excluded from primary cross-tau folds and retained only for per-tau maximal-support recency diagnostics",
+    "random_split_allowed": false
+  },
+  "development_gate_before_holdout_open": {
+    "candidate_minus_reference_orientation": "positive_means_lower_candidate_loss",
+    "primary_252_day_block_interval_lower_bound_must_exceed_zero": true,
+    "minimum_positive_development_anchors": 8,
+    "minimum_positive_outer_folds": 4,
+    "minimum_improved_quantiles": 3,
+    "candidate_calibration_not_worse": true,
+    "candidate_beats_mean_capacity_placebo_interval": true,
+    "candidate_beats_every_placebo_seed_point": true,
+    "no_single_horizon_rescue": true
+  },
+  "sealed_holdout_gate": {
+    "opened_once_after_development_freeze": true,
+    "primary_252_day_block_interval_lower_bound_must_exceed_zero": true,
+    "minimum_positive_holdout_taus": 4,
+    "minimum_improved_quantiles": 3,
+    "candidate_calibration_not_worse": true,
+    "failure_cannot_be_rescued_by_anchor_or_subgroup": true
+  },
+  "dependence_and_uncertainty": {
+    "resampling_unit": "whole_origin_day_panels",
+    "moving_block_lengths_origin_days": [21, 63, 126, 252],
+    "primary_block_length_origin_days": 252,
+    "bootstrap_repetitions": 3000,
+    "bootstrap_seed": 42,
+    "overlapping_tau_asset_and_calendar_labels_are_not_independent": true,
+    "h252_effective_sample_warning_required": true
+  },
+  "claim_boundary": "Historical developmental evidence about horizon-conditioned reinvested terminal-return quantiles only. No coherent path, direction, alpha, profitability, production, strict-PIT or V009 claim follows.",
+  "guards": {
+    "training_runner_implemented": false,
+    "model_training_performed": false,
+    "holdout_performance_read_during_plan": false,
+    "v002_mutation_allowed": false,
+    "core_mutation_allowed": false,
+    "v009_loaded_or_modified": false
+  }
+}

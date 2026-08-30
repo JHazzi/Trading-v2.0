@@ -16,7 +16,8 @@ V008.1 endogenous closure                 COMPLETE: H1 developmental pass
 V009 prospective temporal confirmation    ACTIVE: fit frozen; first seal pending >=2026-08-31
 Temporal Dataset V001                     COMPLETE: parity PASS; raw-close long-horizon selection rejected
 Temporal Dataset V002                     COMPLETE mechanical build; economic special-action review active
-Temporal distributional V001              PLAN-ONLY preregistration implemented; blocked on action decisions
+Temporal distributional V001              COMPLETE: closed negative vs vol63
+Temporal distributional V002              PLAN-ONLY preregistration (residual shrinkage)
 distributional Event Brain                PARALLEL developmental track on existing SEC
 identity hygiene                          REVIEW in parallel; no graph promotion
 graph propagation                         BLOCKED until direct event increment

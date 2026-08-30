@@ -844,9 +844,13 @@ See [TEMPORAL_DATASET_V002.md](TEMPORAL_DATASET_V002.md).
 
 ## E-MARKET-TEMPORAL-DIST-V001 — frozen horizon-conditioned runner
 
-**Status:** economic review, tail-lineage audit, external zero-row selection
-mask and runner preflight PASS. Runner implemented; development folds not yet
-fit and sealed holdout performance unread.
+**Status:** CLOSED NEGATIVE. The development folds were executed and aggregated, resulting in a firm failure against the parsimonious `vol63 + tau` baseline. The single representation was unable to capture central mass (q50) and degraded significantly at long horizons (H126, H252). The holdouts remain strictly sealed and the branch has been closed to prevent any data dredging or parameter tweaking. No model promotion.
+
+## E-MARKET-TEMPORAL-DIST-V002 — residual shrinkage model preregistration
+
+**Status:** PLAN-ONLY. Preregistration document and config generated; development blocked until training runner implementation and authorization.
+**Hypothesis:** Predicting a regularized residual (`Delta_q(X,tau)`) over a cross-fitted base reference (`Q_q(R | vol63, tau)`) will provide incremental information at short/medium horizons without deteriorating long horizons (H126, H252) due to explicit horizon shrinkage towards zero.
+**Holdouts:** H7, H17, H42, H90, H180 remain strictly sealed.
 
 The developmental target is `Q_q(total_return | own market state,tau)`. Twelve
 anchors are development data and H7/H17/H42/H90/H180 are sealed interpolation

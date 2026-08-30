@@ -10,8 +10,18 @@ from tools.temporal_source_audit_v001 import build_report, validate_temporal_con
 
 VALID_CONFIG = {
     "version": "market_temporal_dataset_v001",
-    "status": "source_audit_then_materialize_no_training",
+    "status": "materializer_ready_full_run_pending_no_training",
     "horizon_contract": {
+        "tau_domain": {
+            "minimum_sessions": 1,
+            "maximum_sessions": 252,
+            "unit": "eligible_exchange_sessions",
+            "integer_only": True,
+        },
+        "default_materialization_strategy": "configured_sparse",
+        "supported_materialization_strategies": [
+            "configured_sparse", "configured_plus", "dense_all"
+        ],
         "existing_evaluation_sessions": [1, 3, 5, 10],
         "training_anchor_sessions": [1, 2, 3, 5, 8, 10, 13, 21, 34, 63, 126, 252],
         "temporal_generalization_holdout_sessions": [7, 17, 42, 90, 180],
@@ -141,6 +151,8 @@ class TemporalSourceAuditV001Tests(unittest.TestCase):
         result = validate_temporal_config(copy.deepcopy(VALID_CONFIG))
         self.assertTrue(result["valid"])
         self.assertEqual(result["errors"], [])
+        self.assertEqual(result["tau_domain"]["maximum_sessions"], 252)
+        self.assertEqual(result["default_materialization_strategy"], "configured_sparse")
 
     def test_config_rejects_holdout_leakage(self):
         payload = copy.deepcopy(VALID_CONFIG)

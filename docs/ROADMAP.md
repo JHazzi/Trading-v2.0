@@ -14,6 +14,7 @@ V007 adaptive asymmetric scale            COMPLETE: rejected vs vol63
 V008 conditional residual quantiles       COMPLETE: 4/4 significant failures
 V008.1 endogenous closure                 COMPLETE: H1 developmental pass
 V009 prospective temporal confirmation    ACTIVE: fit frozen; first seal pending >=2026-08-31
+Temporal Dataset V001                     IMPLEMENTED: plan READY; full materialization/review pending
 distributional Event Brain                PARALLEL developmental track on existing SEC
 identity hygiene                          REVIEW in parallel; no graph promotion
 graph propagation                         BLOCKED until direct event increment
@@ -290,6 +291,26 @@ Relationships are temporal/versioned and evidence-backed.
 No co-occurrence shortcut.
 
 ## Phase 8 — Trajectory / Risk / Decision
+
+### Horizon-conditioned terminal outcome foundation
+
+Before a trajectory model, materialize/audit `R(state,tau)` under the existing
+raw-close Core contract. The V001 materializer must:
+
+1. reproduce H1/H3/H5/H10 exactly;
+2. report H21/H63/H126/H252 corporate-action selection by horizon, asset,
+   sector and origin year;
+3. keep source/Core read-only and V009 isolated;
+4. keep training blocked until parity and selection review close;
+5. represent tau as an integer 1..252 input domain.
+
+Use the 17 anchor/holdout checkpoints by default. Additional or dense taus are
+supported from the shared grid, but do not create independent labels and may
+not be selected after outcome inspection. A horizon-conditioned collection of
+terminal marginals is still not a joint path model.
+
+Current status: implementation and real read-only plan complete; full local
+materialization and report review pending.
 
 Build model-derived future path scenarios.
 

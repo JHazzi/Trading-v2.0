@@ -16,6 +16,7 @@ This is the documentation source-of-truth map.
 | `EXPERIMENTS.md` | Experiment registry |
 | `DATA_CONTRACTS.md` | Temporal/PIT/lineage/label contracts |
 | `CONTEXT_RECOVERY.md` | Reproducible local evidence, schemas, Git/local inventory and safe cleanup |
+| `TEMPORAL_DATASET_V001.md` | Horizon-conditioned raw-close outcomes, parity and selection gates |
 | `DISTRIBUTIONAL_EVENT_DATASET_V002.md` | Current close-aligned dataset: verified clock provenance, quarantine and user-run audit |
 | `DISTRIBUTIONAL_EVENT_DATASET_V001.md` | Rejected HTTP-modified clock contract; historical evidence only, not training data |
 | `DOCUMENTATION_POLICY.md` | Documentation lifecycle and ZIP rules |

@@ -286,3 +286,46 @@ that actually passes the frozen quality gate is treated as the initial
 session-close assumption; actual observed_at remains unchanged. Later eligible
 revisions retain retrieval-time availability. This rule must not be described
 as strict PIT and cannot authorize a retrospective V009 seal.
+## 18. Horizon-conditioned terminal outcome contract
+
+Market Temporal V001 defines `tau_sessions` as an explicit positive integer in
+the closed domain 1..252 eligible asset sessions. It does not encode time as a
+fixed final list of model heads.
+
+The raw-close outcome is:
+
+```text
+100 * (raw_close at asset session origin_index + tau /
+       raw_close at exact Core origin_index - 1)
+```
+
+The source price selection, origin clock and action interval reproduce Market
+Core V003. Corporate actions are latest-present observations per
+asset/effective-day/type and overlap is open at origin, closed at target.
+Provider Adjusted Close is forbidden as a silent replacement.
+
+The output physically separates:
+
+- shared future price/action lineage;
+- exact prediction-state origins;
+- future outcomes keyed by `(origin,tau)`;
+- parity/selection evidence;
+- a persisted training gate.
+
+H1/H3/H5/H10 must match the immutable Core target day, return, overlap and
+status row-for-row before a candidate artifact is published. Parity failure
+blocks training and does not rewrite the Core.
+
+Training anchors and temporal-generalization holdouts are metadata roles, not
+different economic targets. Holdout taus may be materialized but cannot enter
+model selection. Additional tau values must be declared through the configured
+strategy; choosing them after observing outcomes is prohibited.
+
+The default sparse artifact and a dense H1..H252 artifact share the same target
+semantics. Dense materialization increases storage and computation but not the
+effective number of independent paths. Evaluation must account for dependence
+across taus, overlapping targets, origin days and assets.
+
+This data contract creates terminal marginals only. It does not authorize a
+coherent path claim, a universal interpolation formula, model training or V009
+reuse.

@@ -758,3 +758,38 @@ plan-only preregistration with temporal/group purges, proper scores,
 capacity-matched controls and dependent uncertainty. The old V001 output and
 source DBs remain preserved. No V009 fit/prediction changes.
 Details: [DISTRIBUTIONAL_EVENT_DATASET_V002.md](DISTRIBUTIONAL_EVENT_DATASET_V002.md).
+
+## DATA-MARKET-TEMPORAL-V001 — horizon-conditioned outcome foundation
+
+**Type:** deterministic data preparation and selection audit; no model.
+
+**Status:** materializer/test implementation complete and real plan `READY`;
+full local materialization pending.
+
+Frozen sources:
+
+```text
+data/database/market_data_v2.db                    read-only
+data/processed/market_daily_v003_core.db           read-only
+market_daily_state_v003_core                       state version
+market_daily_reaction_v003_core                    parity label version
+raw_close_t_to_raw_close_t_plus_h                   target semantics
+```
+
+Output contract:
+
+```text
+market_temporal_horizon_conditioned_outcomes_v001
+market_temporal_terminal_return_v001
+tau_sessions integer 1..252
+```
+
+The read-only plan observes 1,092,555 states and 497 assets. The 17-tau default
+estimates 18,573,435 outcomes; dense H1..H252 estimates 275,323,860. Exact
+H1/H3/H5/H10 parity is a hard publication gate. H21/H63/H126/H252 action
+overlap is reported by horizon/asset/sector/year and cannot be silently treated
+as harmless selection.
+
+Training is blocked even after integrity PASS until a separate model protocol
+and long-horizon selection decision exist. V009 is not opened, reused or
+modified. See [TEMPORAL_DATASET_V001.md](TEMPORAL_DATASET_V001.md).

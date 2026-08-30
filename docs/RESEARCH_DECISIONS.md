@@ -699,3 +699,39 @@ reference and promotion gate remain unchanged.
 real assets completed with quality PASS and zero missing origins. The remaining
 492-asset acquisition and full Core/hash audit are user-run computational
 steps.
+
+## D034 — Represent horizon as tau; default to sparse falsifiable materialization
+
+**Pre-model data decision (2026-08-30):** Market Temporal V001 exposes the
+integer exchange-session domain `tau=1..252`. The final representation is not a
+fixed list of horizon heads and no output interpolation rule is authorized.
+
+The materializer supports:
+
+- the frozen 17-tau anchor/holdout set as the default;
+- that set plus declared on-demand taus;
+- a fully dense H1..H252 artifact.
+
+The default remains sparse because 1,092,555 Core origins imply 18,573,435
+rows at 17 taus but 275,323,860 rows at 252 taus. Nearby and overlapping labels
+are strongly dependent, so dense expansion increases storage/compute by about
+14.8x without multiplying independent evidence.
+
+Falsifiability is preserved by keeping training anchors separate from
+temporal-generalization holdouts H7/H17/H42/H90/H180. Holdouts may be
+materialized, but cannot drive model selection. Extra taus must be declared;
+post-outcome horizon selection is forbidden.
+
+Before any training:
+
+1. H1/H3/H5/H10 must reproduce Core target day, raw-close return,
+   corporate-action overlap and status exactly;
+2. H21/H63/H126/H252 selection must be reported by horizon, asset, sector and
+   origin year;
+3. raw-close long-horizon training remains blocked pending review;
+4. a material overlap result requires a separately versioned causal
+   total-return target, not provider Adjusted Close;
+5. source/Core remain read-only and V009 remains isolated.
+
+**Status:** implementation and real read-only plan complete; full materialized
+selection evidence pending. No model was fit and no path claim follows.

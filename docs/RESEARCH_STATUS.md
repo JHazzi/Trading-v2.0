@@ -85,6 +85,26 @@ assets passed; 492 remain for the user-run source repair. The first sealed V009
 batch is therefore pending and cannot precede 2026-08-31. The frozen fit and
 historical selection through 2026-08-24 are unchanged.
 
+### Temporal Dataset V001 implementation checkpoint — 2026-08-30
+
+The source/schema audit is `READY_FOR_SOURCE_SCHEMA_REVIEW` and the new
+materializer's real read-only plan is `READY`. It observes the frozen Core
+contract through 2026-08-24: 1,092,555 states, 497 assets and 4,370,220
+H1/H3/H5/H10 parity-reference rows.
+
+The default configured-sparse artifact has 17 preregistered checkpoint taus and
+an expected 18,573,435 outcome rows. The same code supports explicit additional
+integer taus or all H1..H252; the dense plan would contain 275,323,860 rows and
+is not the default. Anchors and untouched temporal-generalization holdouts keep
+their distinct roles.
+
+Synthetic gates pass for exact Core parity, read-only inputs, atomic/idempotent
+publication, corporate-action selection reporting and failure publication
+blocking. The full local dataset has not yet been built, so no observed
+long-horizon selection rate or training claim exists. Training remains blocked
+pending full parity/integrity and scientific review of H21/H63/H126/H252 action
+overlap. V009 is unchanged and was not loaded.
+
 ### Distributional Market Brain V006 empirical foundation
 
 Preregistered versions:

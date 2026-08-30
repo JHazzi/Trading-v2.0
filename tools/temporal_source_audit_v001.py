@@ -361,6 +361,26 @@ def validate_temporal_config(payload: dict[str, Any]) -> dict[str, Any]:
     hc = payload.get("horizon_contract") or {}
     guards = payload.get("guards") or {}
 
+    expected_domain = {
+        "minimum_sessions": 1,
+        "maximum_sessions": 252,
+        "unit": "eligible_exchange_sessions",
+        "integer_only": True,
+    }
+    if hc.get("tau_domain") != expected_domain:
+        errors.append("tau_domain must be the integer exchange-session domain 1..252")
+    expected_strategies = [
+        "configured_sparse",
+        "configured_plus",
+        "dense_all",
+    ]
+    if hc.get("supported_materialization_strategies") != expected_strategies:
+        errors.append(
+            "supported materialization strategies must be configured_sparse/configured_plus/dense_all"
+        )
+    if hc.get("default_materialization_strategy") != "configured_sparse":
+        errors.append("configured_sparse must remain the default V001 strategy")
+
     existing = [int(x) for x in hc.get("existing_evaluation_sessions", [])]
     train = [int(x) for x in hc.get("training_anchor_sessions", [])]
     holdout = [int(x) for x in hc.get("temporal_generalization_holdout_sessions", [])]
@@ -414,6 +434,8 @@ def validate_temporal_config(payload: dict[str, Any]) -> dict[str, Any]:
         "training_anchor_sessions": train,
         "temporal_generalization_holdout_sessions": holdout,
         "materialized_sessions": materialized,
+        "tau_domain": hc.get("tau_domain"),
+        "default_materialization_strategy": hc.get("default_materialization_strategy"),
     }
 
 

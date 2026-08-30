@@ -1,4 +1,4 @@
-# Next Execution V001 — Temporal Dataset Source Gate
+# Next Execution V001 — Temporal Dataset Materialization Gate
 
 This work remains isolated from V009. No command in this stage trains a model,
 rewrites the Market V003 Core or mutates `market_data_v2.db`.
@@ -18,27 +18,32 @@ Local evidence established:
 
 ## Immediate next command
 
-After pulling the commit that contains `Temporal Dataset V001`:
+After pulling the commit that contains the materializer:
 
 ```bash
-python -m py_compile tools/temporal_source_audit_v001.py
-python -m unittest tests.test_temporal_source_audit_v001 -v
-python tools/temporal_source_audit_v001.py
+python -m py_compile \
+  tools/temporal_source_audit_v001.py \
+  tools/temporal_dataset_v001.py
+
+python -m unittest \
+  tests.test_temporal_source_audit_v001 \
+  tests.test_temporal_dataset_v001 -v
+
+python tools/temporal_dataset_v001.py --stage plan
+python tools/temporal_dataset_v001.py --stage build
+python tools/temporal_dataset_v001.py --stage audit
 ```
 
-The normal source audit is intentionally read-only and avoids an exhaustive
-scan of the approximately 29 GB market database.
-
-Do **not** use `--deep-price-bars` yet. That option performs a full grouped scan
-of `price_bars` and is reserved for a later targeted intraday coverage check.
-
-Output:
+Return:
 
 ```text
-reports/temporal_source_audit_v001.json
+reports/market_temporal_v001/plan.json
+reports/market_temporal_v001/parity_report.json
+reports/market_temporal_v001/selection_report.json
+reports/market_temporal_v001/audit.json
 ```
 
-Return that report before materializing new labels.
+Do not return or commit the generated database.
 
 ## Temporal Dataset V001 contract
 
@@ -125,13 +130,18 @@ materialization.
 The old ~7-session Intraday V002 result remains a research clue, not promotion
 evidence.
 
-## After the source audit passes
+## Full materialization
 
-Implement an idempotent materializer writing only to:
+The idempotent materializer writes only to:
 
 ```text
 data/processed/market_temporal_v001.db
 ```
+
+The default is the 17-tau configured sparse artifact. The same contract can add
+explicit taus anywhere in 1..252 with `configured_plus`, or build all 252 with
+`dense_all`. Dense is supported but intentionally not the default: the real
+plan estimates 275,323,860 dense outcomes versus 18,573,435 sparse outcomes.
 
 Required gates:
 

@@ -1,0 +1,30 @@
+{
+  "version": "temporal_forecast_foundation_v001",
+  "status": "foundation_no_training",
+  "time_basis": "exchange_trading_time",
+  "evaluation_anchors": {
+    "intraday_minutes": [5, 15, 30, 60],
+    "daily_sessions": [1, 3, 5, 10, 21, 63, 126, 252]
+  },
+  "training_horizon_sampling": {
+    "mode": "mixed_dense_short_log_spaced_long",
+    "daily_fixed_sessions": [1, 2, 3, 5, 8, 13, 21, 34, 63, 126, 252],
+    "random_daily_sessions_per_origin": 4,
+    "maximum_daily_sessions": 252,
+    "intraday_fixed_minutes": [5, 15, 30, 60],
+    "allow_interpolation_as_prediction": false
+  },
+  "heads": [
+    {"head_id": "intraday_vfuture", "kind": "INTRADAY", "status": "DATA_READINESS_REQUIRED"},
+    {"head_id": "daily_horizon_conditioned_vfuture", "kind": "DAILY", "status": "DATASET_REQUIRED"},
+    {"head_id": "long_horizon_vfuture", "kind": "LONG_HORIZON", "status": "DATASET_REQUIRED"}
+  ],
+  "guards": {
+    "v009_must_remain_untouched": true,
+    "no_gaussian_random_walk_paths": true,
+    "no_quantile_interpolation_claimed_as_path": true,
+    "no_252_independent_models": true,
+    "reforecast_does_not_imply_retraining": true,
+    "old_forecasts_are_immutable": true
+  }
+}

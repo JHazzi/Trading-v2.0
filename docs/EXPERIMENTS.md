@@ -763,8 +763,8 @@ Details: [DISTRIBUTIONAL_EVENT_DATASET_V002.md](DISTRIBUTIONAL_EVENT_DATASET_V00
 
 **Type:** deterministic data preparation and selection audit; no model.
 
-**Status:** materializer/test implementation complete and real plan `READY`;
-full local materialization pending.
+**Status:** full configured-sparse materialization complete; integrity and exact
+Core parity PASS; raw-close long-horizon selection rejected as primary target.
 
 Frozen sources:
 
@@ -784,12 +784,57 @@ market_temporal_terminal_return_v001
 tau_sessions integer 1..252
 ```
 
-The read-only plan observes 1,092,555 states and 497 assets. The 17-tau default
-estimates 18,573,435 outcomes; dense H1..H252 estimates 275,323,860. Exact
-H1/H3/H5/H10 parity is a hard publication gate. H21/H63/H126/H252 action
-overlap is reported by horizon/asset/sector/year and cannot be silently treated
-as harmless selection.
+The full artifact contains 1,092,555 states, 497 assets and 18,573,435 outcomes
+at 17 taus. Dense H1..H252 would contain 275,323,860 outcomes. All 4,370,220
+H1/H3/H5/H10 reference rows match exactly with no missing rows. Resolved action
+overlap is 26.25%/76.20%/79.09%/80.32% at H21/H63/H126/H252; the H252 median
+asset overlap is 100% and sector selection is severe.
 
-Training is blocked even after integrity PASS until a separate model protocol
-and long-horizon selection decision exist. V009 is not opened, reused or
-modified. See [TEMPORAL_DATASET_V001.md](TEMPORAL_DATASET_V001.md).
+Training remains blocked. V001 is retained as exact raw-close/no-action evidence
+and control for V002; it is not patched or deleted. V009 is not opened, reused
+or modified. See [TEMPORAL_DATASET_V001.md](TEMPORAL_DATASET_V001.md).
+
+## DATA-MARKET-TEMPORAL-V002 — explicit total shareholder return foundation
+
+**Type:** deterministic outcome reconstruction and data audit; no model.
+
+**Status:** config/materializer/tests/docs complete; full real plan,
+materialization and review pending.
+
+Read-only inputs:
+
+```text
+data/database/market_data_v2.db
+data/processed/market_daily_v003_core.db
+data/processed/market_temporal_v001.db
+```
+
+Output contract:
+
+```text
+market_temporal_horizon_conditioned_total_return_v002
+market_temporal_total_shareholder_return_v002
+tau_sessions integer 1..252
+```
+
+Economic one-session factor:
+
+```text
+(provider_close_t + cash_distribution_t) / provider_close_t_minus_1
+```
+
+Provider Close/distributions are already split-normalized; split factors remain
+lineage and are not multiplied. Adjusted Close is audit-only. Its separate
+`Close_t/(Close_(t-1)-cash_t)` control must match the observed adjusted factor
+within `2e-6` to validate provider action timing/units.
+
+Hard gates are full V001 parity across every materialized tau, exact no-action
+H1/H3/H5/H10 identity, action-step reconciliation, read-only stable inputs,
+atomic/idempotent publication and V009 isolation. Four synthetic tests pass,
+including special-distribution mathematics, recovered dividend/split windows,
+provider-control failure blocking and V001 tamper blocking.
+
+No fold, seed, model or bootstrap is selected. A successful full build remains
+`BLOCKED_PENDING_V002_FULL_ACTION_REVIEW` until coverage/reconciliation reports
+are reviewed and a separate `Q(total_return|X,tau)` protocol is preregistered.
+See [TEMPORAL_DATASET_V002.md](TEMPORAL_DATASET_V002.md).

@@ -1,5 +1,10 @@
 # Next Execution V001 — Temporal Dataset Materialization Gate
 
+Historical execution note: this V001 run is complete. Exact parity passed and
+the long-horizon selection review triggered V002. Do not rebuild V001 unless a
+reviewed input/contract change requires it; continue with
+`docs/NEXT_EXECUTION_V002.md`.
+
 This work remains isolated from V009. No command in this stage trains a model,
 rewrites the Market V003 Core or mutates `market_data_v2.db`.
 

@@ -329,3 +329,59 @@ across taus, overlapping targets, origin days and assets.
 This data contract creates terminal marginals only. It does not authorize a
 coherent path claim, a universal interpolation formula, model training or V009
 reuse.
+
+## 19. Horizon-conditioned total shareholder return V002
+
+Market Temporal V002 is additive to V001. It must retain V001 target day,
+raw-close return, action overlap and raw-close status as control fields rather
+than overwriting or reinterpreting them.
+
+For consecutive selected provider sessions, supported cash distributions on
+the effective trading day enter economic wealth as:
+
+```text
+gross_total_return_factor_s
+    = (provider_close_s + cash_distribution_s)
+      / provider_close_(s-1)
+```
+
+The `(origin,target]` product of those factors defines terminal total return.
+Cash is reinvested at the effective-session close for subsequent compounding.
+The outcome is a historical reconstruction and remains strict PIT=false;
+corporate-action retrieval/availability/version lineage is preserved and may
+not become an origin feature.
+
+Current provider Close and action values are already represented on a
+split-normalized share basis. A stock-split factor is persisted as outcome
+lineage but is not multiplied into the return factor. Any future provider whose
+Close has different semantics requires a new explicit contract/version.
+
+Provider Adjusted Close is forbidden as a target or silent fallback. It is used
+only to verify the provider convention:
+
+```text
+no cash:    provider_control = Close_s / Close_(s-1)
+with cash:  provider_control = Close_s / (Close_(s-1) - cash_s)
+
+provider_control ~= AdjClose_s / AdjClose_(s-1)
+```
+
+This control validates effective-day alignment, provider-native units and split
+normalization. It does not replace the economic wealth formula; the two differ
+materially for large cash distributions.
+
+Publication requires:
+
+- full row-for-row parity with every materialized V001 tau;
+- exact H1/H3/H5/H10 identity of total return and raw return on V001 no-action
+  windows;
+- no missing/invalid/unreconciled selected action step;
+- exact selected-session assignment for every in-grid action;
+- stable read-only source/Core/V001 inputs;
+- explicit `insufficient_future` and action quarantine statuses;
+- a persisted training block.
+
+Null action currency may be reported only as reconciled provider-native quote
+units, never as verified ISO currency. V002 data PASS does not authorize model
+training. Anchors/holdouts retain their V001 roles, dense taus remain dependent
+terminal marginals and V009 remains isolated.

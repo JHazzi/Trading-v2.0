@@ -2,6 +2,53 @@
   "contract_version": "project_context_v001",
   "purpose": "Read-only evidence reconciliation; never a new scientific status registry.",
   "databases": {
+    "data/processed/market_temporal_v002.db": {
+      "role": "Market Temporal V002 total-shareholder-return outcomes; explicit corporate-action lineage; data review only, no training or path claim",
+      "profile_tables": [
+        "temporal_origins",
+        "temporal_corporate_actions",
+        "temporal_return_steps",
+        "temporal_outcomes",
+        "coverage_by_horizon"
+      ],
+      "probes": [
+        {
+          "id": "market_temporal_v002_manifest",
+          "sql": "SELECT json_extract(value_json,'$.dataset_contract') AS dataset_contract,json_extract(value_json,'$.label_version') AS label_version,json_extract(value_json,'$.v001_parity_status') AS v001_parity_status,json_extract(value_json,'$.no_action_identity_status') AS no_action_identity_status,json_extract(value_json,'$.action_reconciliation_status') AS action_reconciliation_status,json_extract(value_json,'$.training_gate_status') AS training_gate_status FROM metadata WHERE key='manifest'"
+        },
+        {
+          "id": "market_temporal_v002_scale",
+          "sql": "SELECT COUNT(*) AS outcomes,COUNT(DISTINCT origin_id) AS origins,COUNT(DISTINCT tau_sessions) AS taus,COALESCE(SUM(total_return_label_status='usable'),0) AS usable,COALESCE(SUM(total_return_label_status='action_data_quarantine'),0) AS quarantined FROM temporal_outcomes"
+        },
+        {
+          "id": "market_temporal_v002_gate",
+          "sql": "SELECT status,authorized FROM training_gate WHERE gate_name='temporal_v002_training'"
+        }
+      ]
+    },
+    "data/processed/market_temporal_v001.db": {
+      "role": "Market Temporal V001 exact raw-close/Core parity control; full long-horizon selection evidence; training blocked",
+      "profile_tables": [
+        "temporal_origins",
+        "temporal_corporate_actions",
+        "temporal_outcomes",
+        "selection_by_horizon"
+      ],
+      "probes": [
+        {
+          "id": "market_temporal_v001_manifest",
+          "sql": "SELECT json_extract(value_json,'$.dataset_contract') AS dataset_contract,json_extract(value_json,'$.label_version') AS label_version,json_extract(value_json,'$.parity_status') AS parity_status,json_extract(value_json,'$.training_gate_status') AS training_gate_status FROM metadata WHERE key='manifest'"
+        },
+        {
+          "id": "market_temporal_v001_scale",
+          "sql": "SELECT COUNT(*) AS outcomes,COUNT(DISTINCT origin_id) AS origins,COUNT(DISTINCT tau_sessions) AS taus FROM temporal_outcomes"
+        },
+        {
+          "id": "market_temporal_v001_selection",
+          "sql": "SELECT tau_sessions,resolved_origins,usable_origins,corporate_action_overlap_origins,overlap_fraction_resolved FROM selection_by_horizon ORDER BY tau_sessions"
+        }
+      ]
+    },
     "reports/distributional_event_dataset_v002/sec_core_2016_20260824_v002/dataset.sqlite": {
       "role": "Corrected V002 close-aligned Event/Market research dataset; verified HTTP metadata separate from availability; PIT=0; full audit review required, no training or V009 claim",
       "profile_tables": [

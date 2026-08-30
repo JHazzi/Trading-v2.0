@@ -1,8 +1,9 @@
 # Market Temporal Dataset V001
 
-Status: materializer implemented; real read-only plan passed; full local
-materialization and scientific selection review remain pending. This is a data
-foundation, not a model result.
+Status: full configured-sparse materialization complete; integrity/Core parity
+PASS; long-horizon raw-close selection rejected as the primary target. V001 is
+preserved as control/evidence for V002. This is a data foundation, not a model
+result.
 
 ## Purpose
 
@@ -157,6 +158,11 @@ Raw-close long-horizon training remains blocked after a successful build until
 this selection is reviewed. Material overlap should trigger a separately
 versioned causal total-return contract; provider Adjusted Close is not a silent
 substitute.
+
+The full review found overlap among resolved origins of 26.25%/76.20%/79.09%/
+80.32% at H21/H63/H126/H252. H252 median asset overlap is 100%, with severe
+sector selection. That gate triggered the separate Market Temporal V002 total
+shareholder return contract. V001 remains blocked and is not rewritten.
 
 ## Exact execution
 

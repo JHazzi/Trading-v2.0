@@ -85,25 +85,38 @@ assets passed; 492 remain for the user-run source repair. The first sealed V009
 batch is therefore pending and cannot precede 2026-08-31. The frozen fit and
 historical selection through 2026-08-24 are unchanged.
 
-### Temporal Dataset V001 implementation checkpoint — 2026-08-30
+### Temporal Dataset V001/V002 checkpoint — 2026-08-30
 
-The source/schema audit is `READY_FOR_SOURCE_SCHEMA_REVIEW` and the new
-materializer's real read-only plan is `READY`. It observes the frozen Core
-contract through 2026-08-24: 1,092,555 states, 497 assets and 4,370,220
-H1/H3/H5/H10 parity-reference rows.
+Temporal V001 completed its full configured-sparse materialization over the
+frozen Core through 2026-08-24: 1,092,555 states, 497 assets, 17 taus and
+18,573,435 outcome rows. All 4,370,220 H1/H3/H5/H10 rows match Core target day,
+raw-close return, action overlap and status exactly; there are zero missing or
+mismatched rows at absolute return tolerance `1e-9`. Source/Core were read-only,
+V009 was not loaded and no model was trained.
 
-The default configured-sparse artifact has 17 preregistered checkpoint taus and
-an expected 18,573,435 outcome rows. The same code supports explicit additional
-integer taus or all H1..H252; the dense plan would contain 275,323,860 rows and
-is not the default. Anchors and untouched temporal-generalization holdouts keep
-their distinct roles.
+The long-horizon selection gate is material and rejects raw-close exclusion as
+the primary annual target. Corporate-action overlap among resolved origins is
+26.25% at H21, 76.20% at H63, 79.09% at H126 and 80.32% at H252. At H252 the
+median asset has 100% overlap; Materials/Energy exceed 99%, while Information
+Technology/Communication Services are near 55%. A raw-close no-action model
+would therefore learn a severely altered company/sector population.
 
-Synthetic gates pass for exact Core parity, read-only inputs, atomic/idempotent
-publication, corporate-action selection reporting and failure publication
-blocking. The full local dataset has not yet been built, so no observed
-long-horizon selection rate or training claim exists. Training remains blocked
-pending full parity/integrity and scientific review of H21/H63/H126/H252 action
-overlap. V009 is unchanged and was not loaded.
+Temporal V002 is the additive response. It preserves V001 as a control and
+defines cash-inclusive total shareholder return as the product of
+`(Close_t + cash_distribution_t) / Close_(t-1)` over `(origin,target]`.
+Provider Close and cash values are already split-normalized, so recorded split
+factors remain lineage and are not multiplied again. Provider Adjusted Close
+is forbidden as target and used only to reconcile action timing/units under its
+separate `Close_t/(Close_(t-1)-cash_t)` convention.
+
+Real source-schema/math inspection before implementation found 15,856 latest
+present dividends and 142 splits. Across the selected grid, all 15,164 cash
+steps reconcile to the provider control within `9.9e-7`; 138 split-only steps
+reconcile within `6.4e-7`. V002 freezes a `2e-6` hard tolerance, full V001
+parity, exact no-action H1/H3/H5/H10 identity, atomic/idempotent publication and
+action quarantine. Four synthetic V002 gates pass. The full V002 artifact has
+not yet been built; training remains blocked pending its real action/coverage
+reports and a separate model preregistration. V009 is unchanged.
 
 ### Distributional Market Brain V006 empirical foundation
 

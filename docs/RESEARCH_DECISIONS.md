@@ -733,5 +733,50 @@ Before any training:
    total-return target, not provider Adjusted Close;
 5. source/Core remain read-only and V009 remains isolated.
 
-**Status:** implementation and real read-only plan complete; full materialized
-selection evidence pending. No model was fit and no path claim follows.
+**Status:** full V001 materialization complete. Exact Core parity passed, but
+the observed H63/H126/H252 selection is severe; raw-close long-horizon training
+is rejected as the primary target. No model was fit and no path claim follows.
+
+## D035 — Reconstruct economic total return; do not adopt Adjusted Close as target
+
+**Pre-model data decision (2026-08-30):** create Market Temporal V002 as an
+additive label version. Preserve V001 raw-close outcomes/statuses as an exact
+control and reconstruct total shareholder return from explicit corporate-action
+lineage.
+
+For selected provider sessions, define:
+
+```text
+g_s = (Close_s + cash_distribution_s) / Close_(s-1)
+TR(t,tau) = 100 * (product(g_s over s in (t,t+tau]) - 1)
+```
+
+Cash distributions include supported dividend/capital-gain observations and
+are reinvested at the effective-session close. Provider Close and distribution
+amounts are already on a split-normalized share basis; recorded split factors
+are persisted as lineage but are not multiplied into `g_s`. Doing so would
+double-adjust known AAPL/GOOGL and all other split-normalized histories.
+
+Provider Adjusted Close is an audit-only convention. Its cash-event factor,
+`Close_s/(Close_(s-1)-cash_s)`, is mathematically different from shareholder
+wealth for large distributions. V002 requires that this control reconcile to
+the observed adjusted-close factor within `2e-6`, thereby validating effective
+day/provider unit/share basis without using Adjusted Close in the target.
+
+Hard publication gates:
+
+1. every V001 materialized target day/raw return/action overlap/status matches;
+2. total return equals V001 raw return for every V001-usable H1/H3/H5/H10 row;
+3. every selected action/no-action daily step passes provider reconciliation;
+4. source/Core/V001 remain read-only and stable;
+5. V009 remains isolated;
+6. training remains blocked after data PASS until full real coverage review and
+   a separately frozen horizon-conditioned model protocol.
+
+Null action currency is reported as reconciled provider-native quote units,
+not verified ISO currency. Historical action reconstruction remains PIT=0 and
+outcome-only. The default remains the same sparse 17-tau artifact; dense
+marginals do not become independent samples or a coherent path.
+
+**Status:** V002 materializer/config/tests/docs implemented; full real plan,
+materialization and audit pending. No model trained.

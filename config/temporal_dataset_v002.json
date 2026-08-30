@@ -1,0 +1,100 @@
+{
+  "version": "market_temporal_dataset_v002",
+  "status": "materializer_ready_full_run_pending_no_training",
+  "purpose": "Build horizon-conditioned economic total-shareholder-return outcomes from explicit price and corporate-action lineage while preserving V001 raw-close evidence.",
+  "source_contract": {
+    "canonical_market_db": "data/database/market_data_v2.db",
+    "market_core_db": "data/processed/market_daily_v003_core.db",
+    "temporal_v001_db": "data/processed/market_temporal_v001.db",
+    "source_asof_contract": "daily_price_asof_v1",
+    "source_asof_mode": "historical_session_close_assumption",
+    "state_clock": "exchange_session_close",
+    "strict_historical_pit": false,
+    "market_feature_version": "market_daily_state_v003_core",
+    "core_label_version": "market_daily_reaction_v003_core",
+    "temporal_v001_dataset_contract": "market_temporal_horizon_conditioned_outcomes_v001",
+    "temporal_v001_label_version": "market_temporal_terminal_return_v001"
+  },
+  "horizon_contract": {
+    "tau_domain": {
+      "minimum_sessions": 1,
+      "maximum_sessions": 252,
+      "unit": "eligible_exchange_sessions",
+      "integer_only": true
+    },
+    "default_materialization_strategy": "configured_sparse",
+    "supported_materialization_strategies": ["configured_sparse", "configured_plus", "dense_all"],
+    "training_anchor_sessions": [1, 2, 3, 5, 8, 10, 13, 21, 34, 63, 126, 252],
+    "temporal_generalization_holdout_sessions": [7, 17, 42, 90, 180],
+    "materialized_sessions": [1, 2, 3, 5, 7, 8, 10, 13, 17, 21, 34, 42, 63, 90, 126, 180, 252],
+    "coverage_audit_sessions": [21, 63, 126, 252],
+    "holdouts_are_never_model_selection_inputs": true,
+    "arbitrary_tau_requires_declared_materialization_or_sampling": true
+  },
+  "economic_return_contract": {
+    "primary_outcome": "total_return_pct",
+    "cash_distribution_types": ["dividend", "capital_gain"],
+    "split_action_type": "stock_split",
+    "one_session_gross_factor": "(provider_close_t + cash_distribution_t) / provider_close_t_minus_1",
+    "multi_session_gross_factor": "product of one-session gross factors over (origin,target]",
+    "terminal_return_formula": "100 * (multi_session_gross_factor - 1)",
+    "cash_reinvestment_policy": "cash distribution reinvested at effective-session close",
+    "split_policy": "do_not_multiply_split_factor_provider_close_and_cash_values_are_already_on_provider_normalized_share_basis",
+    "action_interval": "open_origin_closed_target",
+    "latest_action_policy": "latest_observation_per_asset_effective_day_action_type_then_require_present",
+    "insufficient_future_policy": "explicit_status_no_synthetic_target",
+    "historical_reconstruction_strict_pit": false,
+    "provider_adjusted_close_target_allowed": false,
+    "provider_adjusted_close_role": "audit_only_unit_timing_and_split_normalization_control"
+  },
+  "provider_reconciliation_gate": {
+    "control_factor_no_cash": "provider_close_t / provider_close_t_minus_1",
+    "control_factor_with_cash": "provider_close_t / (provider_close_t_minus_1 - cash_distribution_t)",
+    "compare_to": "observed_adjusted_close_t / observed_adjusted_close_t_minus_1",
+    "absolute_factor_tolerance": 0.000002,
+    "require_all_resolved_action_steps_to_pass": true,
+    "require_all_no_action_steps_to_pass": true,
+    "currency_null_semantics": "provider_native_quote_unit_reconciled_not_explicit_iso_currency",
+    "adjusted_close_never_enters_total_return_formula": true
+  },
+  "parity_gates": {
+    "v001_all_materialized_taus": {
+      "compare_fields": ["target_trading_day", "raw_close_return_pct", "corporate_action_overlap", "raw_close_label_status"],
+      "return_absolute_tolerance": 1e-09,
+      "require_zero_missing_rows": true
+    },
+    "no_action_identity": {
+      "required_horizons_sessions": [1, 3, 5, 10],
+      "rule": "total_return_pct equals V001 raw_close_return_pct when V001 label_status is usable",
+      "return_absolute_tolerance": 1e-09,
+      "require_zero_mismatches": true
+    }
+  },
+  "materialization_contract": {
+    "output_db": "data/processed/market_temporal_v002.db",
+    "dataset_contract": "market_temporal_horizon_conditioned_total_return_v002",
+    "label_version": "market_temporal_total_shareholder_return_v002",
+    "source_core_and_v001_are_read_only": true,
+    "idempotent_rebuild": true,
+    "atomic_publication": true,
+    "physical_layout": "shared_price_action_step_grid_plus_normalized_origins_and_outcomes"
+  },
+  "future_model_boundary": {
+    "target_form": "Q_q(total_return | X, tau)",
+    "tau_is_explicit_model_input": true,
+    "quantiles": [0.05, 0.25, 0.5, 0.75, 0.95],
+    "dense_marginals_are_not_a_coherent_path": true,
+    "joint_path_model_is_separate_future_gate": true
+  },
+  "guards": {
+    "training_authorized": false,
+    "model_training_performed": false,
+    "v009_artifacts_loaded_or_modified": false,
+    "source_market_db_mutation_allowed": false,
+    "market_v003_core_mutation_allowed": false,
+    "market_temporal_v001_mutation_allowed": false,
+    "event_features_allowed": false,
+    "graph_features_allowed": false,
+    "random_split_allowed": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "version": "market_temporal_v002_tail_lineage_audit_v001",
+  "source_distribution_report": "reports/market_temporal_v002_review/target_distribution_report.json",
+  "audited_taus": [21, 63, 126, 252],
+  "return_absolute_tolerance_pct": 1e-9,
+  "log_factor_absolute_tolerance": 1e-10,
+  "large_daily_move_diagnostic_pct": 20.0,
+  "hard_rules": {
+    "exact_target_day": true,
+    "exact_path_length": true,
+    "positive_finite_prices_and_factors": true,
+    "raw_endpoint_identity": true,
+    "economic_product_identity": true,
+    "persisted_action_count_identity": true,
+    "no_plausibility_clipping": true
+  }
+}

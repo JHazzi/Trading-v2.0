@@ -1,0 +1,126 @@
+{
+  "version": "market_temporal_v002_special_action_decisions_v001",
+  "dataset_sha256": "86db8fbc0557d2fe12a1d409012828bbbcf0610d9033c992964dd8c671eb10d3",
+  "review_config_sha256": "7c9e7c094ec3e8e3e522efdc387644e456aac3548360437e050b807948b3c212",
+  "decisions": [
+    {
+      "review_id": "6003dadd00bb9fed5f4e",
+      "ticker": "KDP",
+      "trading_day": "2018-07-10",
+      "disposition": "validated_cash_and_share_entitlement",
+      "evidence": [
+        "https://www.sec.gov/Archives/edgar/data/1418135/000110465918044357/a18-16509_38k.htm",
+        "https://www.sec.gov/Archives/edgar/data/1418135/000110465918004786/a18-3939_1defa14a.htm",
+        "https://www.sec.gov/Archives/edgar/data/1418135/000141813519000007/kdp-10kx12312018.htm"
+      ],
+      "rationale": "SEC terms establish USD 103.75 per legacy DPS share, continuation of one public-company share as KDP, due-bill timing through July 9, and reinvestment in KDP when trading resumed July 10. The V002 cash-plus-continuing-share wealth factor therefore represents the shareholder entitlement."
+    },
+    {
+      "review_id": "74172f466a6e7688381d",
+      "ticker": "GEN",
+      "trading_day": "2020-02-03",
+      "disposition": "validated_cash_and_share_entitlement",
+      "evidence": [
+        "https://www.sec.gov/Archives/edgar/data/849399/000110465920002689/tm201508d1_ex99-01.htm",
+        "https://www.sec.gov/Archives/edgar/data/849399/000084939920000002/nlok132010-q.htm"
+      ],
+      "rationale": "NortonLifeLock declared a one-time USD 12 cash dividend on every outstanding common share, payable January 31 with an explicit February 3 ex-dividend date. Common shares continued after the distribution, so cash plus the continuing share is the complete common-stock entitlement."
+    },
+    {
+      "review_id": "d634f58696a6ce076fd5",
+      "ticker": "BEN",
+      "trading_day": "2018-03-28",
+      "disposition": "validated_cash_and_share_entitlement",
+      "evidence": [
+        "https://news.franklinresources.com/news-center/press-releases/press-release-details/2018/Franklin-Resources-Inc-Announces-Special-Dividend-of-300-Per-Share/default.aspx",
+        "https://news.franklinresources.com/investor-relations/stock-information/"
+      ],
+      "rationale": "Franklin Resources officially records a USD 3.00 special cash dividend and USD 0.23 regular dividend with the same March 29 record date. Their USD 3.23 total matches the provider-native distribution while the BEN common share continues unchanged."
+    },
+    {
+      "review_id": "d8c5004fd67762245e08",
+      "ticker": "TDG",
+      "trading_day": "2017-08-31",
+      "disposition": "validated_cash_and_share_entitlement",
+      "evidence": [
+        "https://www.sec.gov/Archives/edgar/data/1260221/000126022117000060/tdg2017-09x3010xk.htm"
+      ],
+      "rationale": "TransDigm's filed 2017 annual report identifies the USD 22 special cash dividend on each outstanding common share, with September 5 record and September 12 payment dates. No common-share exchange accompanied the distribution."
+    },
+    {
+      "review_id": "27577b0490a705823364",
+      "ticker": "TDG",
+      "trading_day": "2025-09-02",
+      "disposition": "validated_cash_and_share_entitlement",
+      "evidence": [
+        "https://www.sec.gov/Archives/edgar/data/1260221/000119312525183753/d49796d8k.htm",
+        "https://transdigmgroupinc.gcs-web.com/node/21361/pdf"
+      ],
+      "rationale": "TransDigm's Form 8-K and official release declare a one-time USD 90 cash dividend on each outstanding common share, record date September 2 and payment September 12, 2025. The common share continues unchanged."
+    },
+    {
+      "review_id": "081b056423eb6263806c",
+      "ticker": "PGR",
+      "trading_day": "2026-01-02",
+      "disposition": "validated_cash_and_share_entitlement",
+      "evidence": [
+        "https://investors.progressive.com/financials/financial-news-releases/news-details/2025/Progressive-Announces-Dividend-Information-And-2026-Annual-Meeting-Record-Date/default.aspx"
+      ],
+      "rationale": "Progressive officially declares a USD 13.50 annual common dividend plus a USD 0.10 quarterly dividend, both for holders of record January 2, 2026. The USD 13.60 aggregate matches V002 and does not alter the common share."
+    },
+    {
+      "review_id": "39724143a82f27c9c51d",
+      "ticker": "F",
+      "trading_day": "2023-02-10",
+      "disposition": "validated_cash_and_share_entitlement",
+      "evidence": [
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799623000029/f-20230331.htm",
+        "https://www.sec.gov/Archives/edgar/data/37996/000003799624000009/f-20231231.htm"
+      ],
+      "rationale": "Ford filings identify a USD 0.65 supplemental dividend and USD 0.15 regular dividend per Common and Class B share in first-quarter 2023. Their USD 0.80 aggregate matches V002 and the shares continue after payment."
+    },
+    {
+      "review_id": "5074e97d3820e9bb72ac",
+      "ticker": "TDG",
+      "trading_day": "2019-08-15",
+      "disposition": "validated_cash_and_share_entitlement",
+      "evidence": [
+        "https://transdigmgroupinc.gcs-web.com/node/16346/pdf",
+        "https://www.sec.gov/Archives/edgar/data/1260221/000126022119000043/tdg2019-09x3010xk.htm"
+      ],
+      "rationale": "TransDigm's official release and annual filing identify a USD 30 special cash dividend on each outstanding common share, record date August 16 and payment August 23, 2019. No share exchange accompanied it."
+    },
+    {
+      "review_id": "b1c3550f68ace7075f35",
+      "ticker": "LYB",
+      "trading_day": "2022-06-03",
+      "disposition": "validated_cash_and_share_entitlement",
+      "evidence": [
+        "https://www.sec.gov/Archives/edgar/data/1489393/000148939322000031/lyb-20220526.htm",
+        "https://www.sec.gov/Archives/edgar/data/1489393/000148939323000006/lyb-20221231.htm"
+      ],
+      "rationale": "LyondellBasell filings record a USD 5.20 special dividend and USD 1.19 quarterly dividend for the same June 6 record date. Their USD 6.39 aggregate matches V002 and ordinary shares continue unchanged."
+    },
+    {
+      "review_id": "09085483149b648c09e6",
+      "ticker": "TDG",
+      "trading_day": "2019-12-27",
+      "disposition": "validated_cash_and_share_entitlement",
+      "evidence": [
+        "https://transdigmgroupinc.gcs-web.com/static-files/8e9d8a58-28a2-4b9c-85e6-0064254fd4f7"
+      ],
+      "rationale": "TransDigm's official filed release declares a USD 32.50 special cash dividend on every outstanding common share, record date December 30, 2019 and payment January 7, 2020. The common share remains outstanding."
+    },
+    {
+      "review_id": "4d69d0d8bb21703d0ae8",
+      "ticker": "TDG",
+      "trading_day": "2024-10-04",
+      "disposition": "validated_cash_and_share_entitlement",
+      "evidence": [
+        "https://transdigmgroupinc.gcs-web.com/news-releases/news-release-details/transdigm-group-declares-special-cash-dividend-7500-share-and",
+        "https://www.sec.gov/Archives/edgar/data/1260221/000119312524222468/d887611d8k.htm"
+      ],
+      "rationale": "TransDigm's official release and Form 8-K declare a USD 75 special cash dividend on each outstanding common share, record date October 4 and payment October 18, 2024. No share conversion accompanies the distribution."
+    }
+  ]
+}

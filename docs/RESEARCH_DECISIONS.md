@@ -813,3 +813,39 @@ from a coherent path distribution.
 **Status:** mechanical review and fold feasibility PASS; 16 special cash steps
 are visible, 11 can enter outcomes and await evidence-bound decisions. Runner
 implementation/training remain blocked.
+
+## D037 — Freeze a shared tau model, balanced fit panel and one-time holdout gate
+
+**Pre-performance implementation decision (2026-08-30):** the 11 relevant
+special cash events are validated with primary evidence; the economic review,
+tail audit, empty external mask and real runner preflight pass. V002 remains
+unchanged, including its historical internal block record.
+
+The candidate fits `log1p(total_return_pct/100)` and maps predicted quantiles
+back with `100*expm1(.)`. This transform is strictly increasing, hence quantile
+equivariant. Evaluation remains in percentage total return. Outcomes are never
+clipped and predicted quantiles receive rowwise monotone rearrangement only.
+
+To control highly redundant overlapping labels, SHA-256 of `state_id` chooses
+cyclic anchor offsets `[0,4,8]`: exactly three of 12 development anchors per
+origin for fitting. The choice is independent of features and outcomes. OOS
+evaluation retains every anchor. A single shallow HGB function receives the
+14 frozen own-state features plus tau, tau/252 and log1p(tau)/log(253). It may
+answer every integer tau 1..252; sparse anchors are compute/checkpoint choices,
+not the final horizon representation.
+
+The primary control sees vol63 plus the same tau coordinates. Five equal-capacity
+placebos preserve vol5/20/63 and tau while jointly deranging all other own-state
+features at the unique-origin level within day; one donor is shared across that
+origin's selected taus. Score aggregation is equal asset within (day,tau),
+equal tau within day. Moving blocks resample complete daily cross-tau panels.
+
+Development is five idempotent fold shards. It must beat the primary reference,
+placebo controls, fold/horizon/quantile breadth and calibration gates. Only a
+PASS freezes all code/config/evidence/mask/model/prediction/report hashes. The
+five unseen taus then open once under a durable pre-read marker, without refit
+or contingency. Failure closes this experiment rather than authorizing sampled
+tau augmentation. V009 is neither read nor modified.
+
+**Status:** infrastructure/tests/real preflight PASS; development fitting is the
+next action and no sealed holdout outcome has been read.

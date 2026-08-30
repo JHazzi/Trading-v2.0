@@ -2,6 +2,23 @@
   "contract_version": "project_context_v001",
   "purpose": "Read-only evidence reconciliation; never a new scientific status registry.",
   "databases": {
+    "reports/market_temporal_v002_selection_mask_v001/selection_mask.sqlite": {
+      "role": "External immutable-outcome selection mask for reviewed V002 action quarantines; zero rows is a valid audited result; never rewrites V002",
+      "profile_tables": [
+        "metadata",
+        "excluded_outcomes"
+      ],
+      "probes": [
+        {
+          "id": "market_temporal_v002_selection_mask_scale",
+          "sql": "SELECT COUNT(*) AS exclusion_lineages,COUNT(DISTINCT origin_id||':'||tau_sessions) AS excluded_pairs,COUNT(DISTINCT review_id) AS quarantined_reviews FROM excluded_outcomes"
+        },
+        {
+          "id": "market_temporal_v002_selection_mask_contract",
+          "sql": "SELECT key,value_json FROM metadata WHERE key IN ('version','v002_sha256','review_sha256','excluded_rows','excluded_unique_pairs') ORDER BY key"
+        }
+      ]
+    },
     "data/processed/market_temporal_v002.db": {
       "role": "Market Temporal V002 total-shareholder-return outcomes; explicit corporate-action lineage; data review only, no training or path claim",
       "profile_tables": [
@@ -446,15 +463,18 @@
     {
       "id": "Market_Temporal_V002_Review",
       "document": "docs/EXPERIMENTS.md",
-      "heading": "E-MARKET-TEMPORAL-DIST-V001 — plan-only horizon-conditioned preregistration",
+      "heading": "E-MARKET-TEMPORAL-DIST-V001 — frozen horizon-conditioned runner",
       "reports": [
         "reports/market_temporal_v002_review/audit.json",
         "reports/market_temporal_v002_review/economic_action_review.json",
         "reports/market_temporal_v002_review/target_distribution_report.json",
         "reports/market_temporal_v002_review/support_report.json",
         "reports/market_temporal_v002_review/on_demand_tau_report.json",
+        "reports/market_temporal_v002_tail_audit_v001/audit.json",
+        "reports/market_temporal_v002_selection_mask_v001/audit.json",
         "reports/temporal_distributional_v001/preregistration_plan.json",
-        "reports/temporal_distributional_v001/fold_plan.json"
+        "reports/temporal_distributional_v001/fold_plan.json",
+        "reports/temporal_distributional_runner_v001/plan.json"
       ]
     },
     {

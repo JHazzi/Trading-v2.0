@@ -110,3 +110,35 @@ The supported claim, even after a pass, is only historical developmental
 evidence about horizon-conditioned terminal total-return quantiles. It is not
 a coherent path, directional alpha, profitability, strict PIT, production or
 V009 result.
+
+## Closed review and implemented runner checkpoint
+
+The 11 model-visible special cash events are now evidence-bound and validated.
+The real economic review is `PASS`; no action requires quarantine. The external
+mask builder nevertheless exists and audited an empty mask against the exact
+V002 hash. An independent tail-lineage audit also passed all 80 unique extrema,
+including exact endpoints, path lengths, product/log-prefix identities and
+action counts. No target clipping is allowed.
+
+The runner uses the strictly increasing transform
+
+```text
+y_fit = log1p(total_return_pct / 100)
+y_score = 100 * expm1(y_fit_prediction)
+```
+
+so conditional quantiles are invariant to the change of scale while numerical
+learning is stable under the observed heavy upside. Predictions are scored in
+percentage total return. Rowwise monotone rearrangement resolves quantile
+crossing; it never clips outcomes.
+
+Fit compute is reduced without redefining the target: SHA-256 of `state_id`
+selects cyclic offsets `[0,4,8]` over the 12 ordered anchors, exactly three per
+origin. All 12 anchors remain in OOS evaluation. The real preflight selected
+3,277,665 origin-anchor rows before rowwise target-end purge; the largest to
+smallest anchor count ratio is 1.00413.
+
+The runner is sharded by fold and idempotent. A development PASS freezes code,
+config, evidence, mask, models, predictions and reports by SHA-256 before any
+H7/H17/H42/H90/H180 value is read. Frozen models then open those holdouts once,
+without refit. See `NEXT_EXECUTION_TEMPORAL_REVIEW_V001.md` for exact commands.

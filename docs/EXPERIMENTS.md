@@ -842,10 +842,11 @@ model-visible outcomes and require decisions; five are pre-origin lineage only.
 The V002 internal block remains immutable.
 See [TEMPORAL_DATASET_V002.md](TEMPORAL_DATASET_V002.md).
 
-## E-MARKET-TEMPORAL-DIST-V001 — plan-only horizon-conditioned preregistration
+## E-MARKET-TEMPORAL-DIST-V001 — frozen horizon-conditioned runner
 
-**Status:** implementation/fold feasibility PASS; blocked pending economic
-special-action decisions; no runner, fit, prediction or performance read.
+**Status:** economic review, tail-lineage audit, external zero-row selection
+mask and runner preflight PASS. Runner implemented; development folds not yet
+fit and sealed holdout performance unread.
 
 The developmental target is `Q_q(total_return | own market state,tau)`. Twelve
 anchors are development data and H7/H17/H42/H90/H180 are sealed interpolation
@@ -860,3 +861,10 @@ tail is secondary per-tau support only. Primary uncertainty resamples whole
 origin-day panels in 252-session blocks. Passing remains developmental and
 cannot establish path, direction, alpha, profitability, PIT, production or a
 V009 claim.
+
+The fit target is `log1p(total_return_pct/100)` with exact inverse scoring and
+no clipping. SHA-256 of state id selects three balanced anchors per origin for
+fit; OOS development retains all 12. A candidate must also beat five
+same-capacity within-day derangement placebos. An exact development PASS freezes
+all code/config/evidence/mask/model/prediction/report hashes before the five
+unseen taus can open once without refit or contingency.

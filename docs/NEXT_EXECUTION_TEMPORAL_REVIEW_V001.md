@@ -105,3 +105,79 @@ runner is implemented and independently audited.
 
 Never run `dense_all`, alter `market_temporal_v002.db`, edit the decision
 fingerprints, or touch V009 to clear a blocker.
+
+## Current checkpoint and complete execution sequence (2026-08-30)
+
+The earlier blocked instructions above are retained as provenance. They have
+now been completed. Eleven model-visible special cash events were reconciled
+to primary filings/releases and accepted as `validated_cash_and_share_entitlement`.
+The economic review, 80-outcome extreme-tail lineage audit, external selection
+mask and runner preflight all pass. The audited mask is empty; this is a real
+versioned zero-row result, not an absent exclusion mechanism.
+
+Run from the repository root with the project virtual environment active:
+
+```bash
+python -m py_compile \
+  tools/temporal_v002_tail_audit_v001.py \
+  tools/temporal_v002_selection_mask_v001.py \
+  models/market/temporal_distributional_v001.py \
+  evaluation/market/temporal_distributional_v001.py \
+  pipeline/market_temporal_distributional_v001.py
+
+python -m unittest \
+  tests.test_temporal_v002_review \
+  tests.test_temporal_v002_tail_audit_v001 \
+  tests.test_market_temporal_distributional_v001 \
+  tests.test_temporal_v002_selection_mask_v001 -v
+
+python tools/temporal_v002_review.py \
+  --stage audit \
+  --decisions config/evidence/temporal_v002_special_action_decisions_v001.json
+
+python tools/temporal_v002_tail_audit_v001.py --stage audit
+python tools/temporal_v002_selection_mask_v001.py --stage all
+python tools/temporal_distributional_preregistration_v001.py --stage plan
+python pipeline/market_temporal_distributional_v001.py --stage plan
+```
+
+All five development folds are resumable and idempotent. Run them sequentially
+to avoid multiplying peak RAM:
+
+```bash
+for fold in 1 2 3 4 5; do
+  python pipeline/market_temporal_distributional_v001.py \
+    --stage develop-fold --fold "$fold" || exit 1
+done
+
+python pipeline/market_temporal_distributional_v001.py --stage develop-aggregate
+python pipeline/market_temporal_distributional_v001.py --stage status
+```
+
+Stop unless `development_summary.json` says
+`PASS_DEVELOPMENTAL_REQUIRES_FRESH_HOLDOUT`. A fail or inconclusive result is a
+scientific terminal result for this version; do not change anchors, features,
+model capacity or placebo seeds and rerun.
+
+Only after that exact PASS, freeze every model/prediction/config/code hash:
+
+```bash
+python pipeline/market_temporal_distributional_v001.py --stage freeze
+```
+
+The next command writes a durable opening marker before reading any sealed
+target. It is the one-time prospective boundary:
+
+```bash
+for fold in 1 2 3 4 5; do
+  python pipeline/market_temporal_distributional_v001.py \
+    --stage holdout-fold --fold "$fold" || exit 1
+done
+
+python pipeline/market_temporal_distributional_v001.py --stage holdout-aggregate
+python pipeline/market_temporal_distributional_v001.py --stage status
+```
+
+Return `development_summary.json` after development. If it passes, also return
+`development_freeze.json`, `holdout_opening.json` and `holdout_summary.json`.
+The source databases, V001, V002 and V009 must remain unchanged.

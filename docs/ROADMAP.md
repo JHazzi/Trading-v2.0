@@ -624,3 +624,22 @@ No provider is promoted by convenience, no historical backfill is relabeled stri
 ## Parallel Product Track
 
 V009 remains frozen as a prospective scientific claim. Product work proceeds independently through Investment Workbench V0, Decision Journal, paper decision mode, risk/cost integration and later a gated Decision Engine. Product consumers may read published model artifacts but must not alter V009's frozen contract.
+
+<!-- temporal-distributional-runner-v001 -->
+## Active temporal escalation
+
+```text
+V002 economic entitlement review                 PASS
+extreme-tail lineage audit (80 outcomes)         PASS
+versioned selection mask (0 exclusions)          PASS
+shared tau-runner preflight                       PASS
+five development folds                           NEXT
+development aggregate gate                       BLOCKED on folds
+artifact SHA freeze                              BLOCKED on development PASS
+one-time H7/H17/H42/H90/H180 evaluation          SEALED
+temporal section close                           BLOCKED on terminal gate result
+```
+
+No dense H1..H252 table or 252-head model is planned. If the holdout eventually
+passes, the artifact supports terminal conditional quantile queries for integer
+tau up to one year; it still does not support paths, alpha or production.

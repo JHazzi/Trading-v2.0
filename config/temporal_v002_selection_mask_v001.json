@@ -1,0 +1,11 @@
+{
+  "version": "market_temporal_v002_selection_mask_v001",
+  "dataset_contract": "market_temporal_horizon_conditioned_total_return_v002",
+  "expected_v002_sha256": "86db8fbc0557d2fe12a1d409012828bbbcf0610d9033c992964dd8c671eb10d3",
+  "review_version": "market_temporal_v002_review_audit_v001",
+  "mask_policy": "exclude_only_outcomes_whose_open_closed_return_path_contains_a_quarantined_reviewed_action_step",
+  "path_interval": "origin_session_index < action_session_index <= origin_session_index + tau_sessions",
+  "validated_actions_are_never_excluded": true,
+  "source_database_mutation_allowed": false,
+  "output_is_versioned_and_replaceable": true
+}

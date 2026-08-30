@@ -204,12 +204,14 @@ Even a successful V002 build persists:
 BLOCKED_PENDING_V002_FULL_ACTION_REVIEW
 ```
 
-The full reports now pass their mechanical gates. A separate immutable review
-flags 16 cash steps above the 5% materiality threshold. Eleven can enter
-model-visible outcomes and require evidence-bound entitlement decisions; five
-remain lineage-only. The plan-only
-`Q(total_return|X,tau)` protocol is frozen separately and remains blocked until
-those decisions close. No model has been fit.
+The full reports pass their mechanical gates. A separate immutable review
+flagged 16 cash steps above the 5% materiality threshold. Eleven can enter
+model-visible outcomes and are now evidence-bound as validated cash/share
+entitlements; five remain lineage-only. The external versioned selection mask
+audits to zero excluded outcomes. The internal V002 gate is deliberately not
+rewritten: authorization is represented by downstream review, mask and runner
+hashes. The shared `Q(total_return|X,tau)` runner is implemented and its real
+preflight passes. No model had been fit at this documentation checkpoint.
 
 V009 is never opened, imported, refit, validated or modified.
 
@@ -217,5 +219,6 @@ V009 is never opened, imported, refit, validated or modified.
 
 V002 execution is complete. Continue with
 [NEXT_EXECUTION_TEMPORAL_REVIEW_V001.md](NEXT_EXECUTION_TEMPORAL_REVIEW_V001.md).
-Do not run `dense_all`, train from the output or use `--force-rebuild` to
-respond to a failed downstream gate.
+Do not run `dense_all` or use `--force-rebuild` to respond to a failed
+downstream gate. Training is permitted only through the frozen runner sequence
+in that execution document.

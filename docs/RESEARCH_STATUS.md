@@ -936,3 +936,22 @@ V008 v0011 preserves the frozen scientific question, features, H1/H3/H5/H10, fiv
 
 While Market Distributional V009 remains frozen in prospective holdout, a separate append-only information-capture database may accumulate strict-PIT observations of scheduled events, expectations/guidance and later reported economic facts. This foundation is **not model-visible**, does not modify V009, and makes no predictive claim. Historical backfills remain `strict_pit=0`; only genuinely observed live evidence may be `strict_pit=1` under the capture contract.
 <!-- EXPECTATION_CAPTURE_FOUNDATION_V001_END -->
+
+<!-- TEMPORAL_DISTRIBUTIONAL_RUNNER_V001_START -->
+## Temporal total-return distribution — runner ready, development not yet run
+
+Market Temporal V002 remains immutable at 18,573,435 sparse outcomes. All 11
+model-visible material cash events now have primary-source, SHA-bound decisions;
+economic review is `PASS`. The 80-outcome extreme-tail lineage audit and the
+external selection-mask audit pass; the resulting mask contains zero exclusions.
+
+The shared `Q_q(total_return | own state,tau)` runner is implemented, tested and
+real-preflighted. It supports every integer tau 1..252, fits on three balanced
+deterministic anchors per origin, evaluates all 12 development anchors, and
+keeps H7/H17/H42/H90/H180 sealed. The real preflight selected 3,277,665
+origin-anchor rows before rowwise purge with max/min anchor ratio 1.00413.
+
+Current next action: execute five resumable development folds, aggregate the
+predeclared gate, and stop if it does not pass. Only an exact development PASS
+may create the SHA freeze and open holdouts once. V009 remains isolated.
+<!-- TEMPORAL_DISTRIBUTIONAL_RUNNER_V001_END -->

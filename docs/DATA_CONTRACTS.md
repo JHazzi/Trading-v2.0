@@ -411,3 +411,27 @@ Cross-tau primary evaluation uses the origin clock on which the maximum
 development tau is resolved. More recent origins remain available only in
 explicit per-tau maximal-support diagnostics. Training rows are purged
 individually unless their target day is strictly before the next test origin.
+
+## 21. Temporal distributional runner and sealed-holdout artifact contract
+
+The runner is external to immutable V002. It reads Core, V002 and the versioned
+selection mask in immutable/query-only mode and writes only below:
+
+```text
+reports/temporal_distributional_runner_v001/
+```
+
+Development outputs contain five fold reports, compressed row predictions and
+candidate/reference model bundles. A passing aggregate creates
+`development_freeze.json`, binding code, configuration, evidence, mask, models,
+predictions and reports by SHA-256. `holdout_opening.json` is durably created
+before any sealed target query and permits only idempotent completion under the
+same freeze. There is no refit after freeze.
+
+The shared model input domain is integer `tau_sessions` in 1..252. Sparse
+development anchors and sealed checkpoints control compute and falsifiability;
+they do not redefine the output domain. The score weights assets within
+`(origin_day,tau)`, then taus within day, then origin days. Complete daily
+cross-tau vectors are the moving-block resampling unit. Targets are transformed
+by log total wealth for fit, exactly inverted for percentage-return scoring and
+never clipped.

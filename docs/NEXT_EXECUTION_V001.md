@@ -1,71 +1,153 @@
-# Next Execution V001 — From Foundation to Real Forecasts
+# Next Execution V001 — Temporal Dataset Source Gate
 
-This branch does not modify V009.
+This work remains isolated from V009. No command in this stage trains a model,
+rewrites the Market V003 Core or mutates `market_data_v2.db`.
 
-## Immediate local sequence
+## Completed readiness checkpoint
 
-1. Audit temporal data readiness:
+Local evidence established:
 
-```bash
-python tools/temporal_readiness_v001.py
-```
+- canonical market source: `data/database/market_data_v2.db`;
+- Market V003 Core: `data/processed/market_daily_v003_core.db`;
+- 1,092,555 Core states across 497 assets and 2,260 trading sessions;
+- current terminal labels exist only at H1/H3/H5/H10;
+- Core target: raw close at origin to raw close `H` exchange sessions later;
+- Core clock: exchange-session close;
+- historical source mode remains PIT=0 reconstruction;
+- source database contains daily/intraday price, session and corporate-action infrastructure.
 
-This writes `reports/temporal_readiness_v001.json` and does not mutate research data.
+## Immediate next command
 
-2. Generate a real-data Workbench state using the actual price DB and Core V003 state:
-
-```bash
-python -m product.workbench_v0.publisher_v001 \
-  --ticker AAPL \
-  --price-db /path/to/market_data.db \
-  --output reports/workbench/latest/AAPL.json
-```
-
-This publishes real observed history/current state and **does not invent forecasts**.
-
-3. If a validated forecast artifact exists, pass it explicitly:
+After pulling the commit that contains `Temporal Dataset V001`:
 
 ```bash
-python -m product.workbench_v0.publisher_v001 \
-  --ticker AAPL \
-  --price-db /path/to/market_data.db \
-  --forecast-artifact /path/to/validated_forecast.json \
-  --output reports/workbench/latest/AAPL.json
+python -m py_compile tools/temporal_source_audit_v001.py
+python -m unittest tests.test_temporal_source_audit_v001 -v
+python tools/temporal_source_audit_v001.py
 ```
 
-4. Return `reports/temporal_readiness_v001.json` before implementing new long-horizon labels. The source table/clock must be selected from actual local evidence rather than guessed.
+The normal source audit is intentionally read-only and avoids an exhaustive
+scan of the approximately 29 GB market database.
 
-## Next modeling sequence after readiness
+Do **not** use `--deep-price-bars` yet. That option performs a full grouped scan
+of `price_bars` and is reserved for a later targeted intraday coverage check.
 
-### A. Temporal Dataset V001
+Output:
 
-Materialize terminal-return targets to at least H21/H63/H126/H252 while keeping H1/H3/H5/H10 as existing evaluation anchors. Do not create 252 independent models and do not infer missing horizons by interpolation.
+```text
+reports/temporal_source_audit_v001.json
+```
 
-### B. Horizon-conditioned daily model
+Return that report before materializing new labels.
 
-Train a shared model of the form:
+## Temporal Dataset V001 contract
 
-`Q_q(R | X, tau)`
+The data contract is frozen before reading any new model result.
 
-using preregistered horizon sampling. Hold out several horizon distances from model selection to test interpolation/generalization in `tau` rather than visual interpolation of predictions.
+### Time
 
-### C. Intraday readiness and expansion
+Discrete horizons remain evaluation/materialization coordinates, not the final
+model representation.
 
-Audit actual intraday coverage before new modeling. Existing 60-minute evidence justifies continued investigation but not production promotion. Prefer 15m/30m/60m/to-close anchors; keep 5m diagnostic until data support improves.
+Training anchors:
 
-### D. Distributional Event Brain
+```text
+H1 H2 H3 H5 H8 H10 H13 H21 H34 H63 H126 H252
+```
 
-Use the existing `config/distributional_event_brain_v001.json` preregistration. It remains a separate developmental experiment and may not validate, modify or rescue V009.
+Temporal-generalization holdouts:
 
-### E. Coherent Path Brain
+```text
+H7 H17 H42 H90 H180
+```
 
-Only after temporal marginals are calibrated across scales. A dense collection of marginal quantiles is not yet a coherent path. The first joint model should be a modest multi-target increment/state-space candidate before considering large sequence models.
+Those holdouts may be materialized as outcomes but may not be used for model
+selection. Their role is to test whether a future `Q(R | X, tau)` model really
+learns time rather than merely reproduces its training knots.
 
-## Scientific boundary
+### Phase 1 — raw-close parity
 
-- H-values are evaluation anchors, not the final time representation.
-- Arbitrary horizon queries must come from a learned horizon-conditioned model.
-- No Gaussian random-walk path simulation.
-- No interpolation between H1 and H10 presented as prediction.
-- Reforecasting from a new state is allowed; rewriting old forecasts is not.
-- Reforecasting does not imply online retraining.
+Before creating any new research claim, reproduce the existing H1/H3/H5/H10
+labels from the canonical source and compare them against the immutable
+Market V003 Core.
+
+Parity covers:
+
+- target trading day;
+- terminal return;
+- corporate-action overlap;
+- label status.
+
+A parity failure blocks training. The old Core is evidence; it is never patched
+to make the new materializer agree.
+
+### Phase 2 — long-horizon selection audit
+
+Only after parity, materialize/audit H21/H63/H126/H252 under the same raw-close
+reference semantics.
+
+The key question is not yet predictive performance. It is selection:
+
+> Does excluding every raw-close window containing a corporate action destroy
+> or distort the usable long-horizon cohort?
+
+At H126/H252 this is a serious risk because recurring dividends can make
+corporate-action overlap common.
+
+Therefore raw-close long-horizon training is explicitly **not authorized**
+before the overlap audit.
+
+### Possible Phase 3 — total-return target
+
+If the corporate-action gate shows material selection bias, define a separate
+versioned total-return label contract.
+
+That contract must reconstruct split/distribution effects from explicitly
+versioned corporate-action evidence. Provider `Adjusted Close` must not be
+silently substituted for a causal target.
+
+This would be a new outcome version, not a modification of the existing
+Market V003 labels.
+
+## Intraday track
+
+The source DB already contains:
+
+- `price_bars`;
+- `market_sessions`;
+- `market_state_v002_snapshots`;
+- intrasession/overnight outcome infrastructure.
+
+The first source audit inspects schema and cheap recent samples. A deeper
+interval-coverage scan comes later and remains separate from long-horizon daily
+materialization.
+
+The old ~7-session Intraday V002 result remains a research clue, not promotion
+evidence.
+
+## After the source audit passes
+
+Implement an idempotent materializer writing only to:
+
+```text
+data/processed/market_temporal_v001.db
+```
+
+Required gates:
+
+1. exact H1/H3/H5/H10 parity;
+2. explicit insufficient-future status;
+3. corporate-action overlap diagnostics by horizon/asset/sector/year;
+4. no source/Core mutation;
+5. no V009 artifact access;
+6. no model training in the dataset stage.
+
+Only after those data gates close do we preregister the horizon-conditioned
+distributional candidate:
+
+```text
+Q_q(R | X, tau)
+```
+
+A dense set of such marginals is still not a coherent future path. Joint path
+modeling remains a later independent gate.

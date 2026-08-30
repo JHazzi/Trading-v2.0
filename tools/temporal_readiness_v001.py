@@ -9,7 +9,11 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CORE = ROOT / "data" / "processed" / "market_daily_v003_core.db"
-CANDIDATE_MARKET_DBS = [ROOT / "data" / "market_data.db", ROOT / "data" / "database" / "market_data.db"]
+CANDIDATE_MARKET_DBS = [
+    ROOT / "data" / "database" / "market_data_v2.db",
+    ROOT / "data" / "market_data.db",
+    ROOT / "data" / "database" / "market_data.db",
+]
 
 
 def table_names(conn: sqlite3.Connection) -> list[str]:

@@ -92,3 +92,9 @@ Foundation rules:
   and future-evidence leakage checks.
 
 No Event–Graph predictive model is trained in the foundation package.
+
+<!-- investment-workbench-v0 -->
+## Product track
+
+- `PRODUCT_TRANSITION.md` — transition contract from research system to investment assistant.
+- `INVESTMENT_WORKBENCH_V0.md` — first evidence-aware product surface and `InvestmentState` boundary.

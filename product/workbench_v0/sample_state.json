@@ -1,0 +1,736 @@
+{
+  "contract_version": "investment_state_v0",
+  "generated_at": "2026-08-29T22:00:00Z",
+  "asset": {
+    "ticker": "AAPL",
+    "name": "Apple Inc."
+  },
+  "observation": {
+    "price": null,
+    "currency": "$",
+    "observed_at": null,
+    "note": "Sample deliberately avoids inventing a live AAPL price."
+  },
+  "market_state": {
+    "summary": "Distributional market signal exists at developmental level; directional alpha is not established.",
+    "regime": "UNPUBLISHED_IN_SAMPLE"
+  },
+  "history": {
+    "mode": "NORMALIZED_INDEX",
+    "source_kind": "ILLUSTRATIVE",
+    "points": [
+      {
+        "date": "2026-07-06",
+        "label": "06 Jul",
+        "value": 92.0
+      },
+      {
+        "date": "2026-07-07",
+        "label": "07 Jul",
+        "value": 92.8
+      },
+      {
+        "date": "2026-07-08",
+        "label": "08 Jul",
+        "value": 91.9
+      },
+      {
+        "date": "2026-07-09",
+        "label": "09 Jul",
+        "value": 93.5
+      },
+      {
+        "date": "2026-07-10",
+        "label": "10 Jul",
+        "value": 94.8
+      },
+      {
+        "date": "2026-07-13",
+        "label": "13 Jul",
+        "value": 95.7
+      },
+      {
+        "date": "2026-07-14",
+        "label": "14 Jul",
+        "value": 94.9
+      },
+      {
+        "date": "2026-07-15",
+        "label": "15 Jul",
+        "value": 96.3
+      },
+      {
+        "date": "2026-07-16",
+        "label": "16 Jul",
+        "value": 97.9
+      },
+      {
+        "date": "2026-07-17",
+        "label": "17 Jul",
+        "value": 97.1
+      },
+      {
+        "date": "2026-07-20",
+        "label": "20 Jul",
+        "value": 98.6
+      },
+      {
+        "date": "2026-07-21",
+        "label": "21 Jul",
+        "value": 99.4
+      },
+      {
+        "date": "2026-07-22",
+        "label": "22 Jul",
+        "value": 98.8
+      },
+      {
+        "date": "2026-07-23",
+        "label": "23 Jul",
+        "value": 100.2
+      },
+      {
+        "date": "2026-07-24",
+        "label": "24 Jul",
+        "value": 101.4
+      },
+      {
+        "date": "2026-07-27",
+        "label": "27 Jul",
+        "value": 100.1
+      },
+      {
+        "date": "2026-07-28",
+        "label": "28 Jul",
+        "value": 98.9
+      },
+      {
+        "date": "2026-07-29",
+        "label": "29 Jul",
+        "value": 99.8
+      },
+      {
+        "date": "2026-07-30",
+        "label": "30 Jul",
+        "value": 101.0
+      },
+      {
+        "date": "2026-07-31",
+        "label": "31 Jul",
+        "value": 100.4
+      },
+      {
+        "date": "2026-08-03",
+        "label": "03 Aug",
+        "value": 101.8
+      },
+      {
+        "date": "2026-08-04",
+        "label": "04 Aug",
+        "value": 102.5
+      },
+      {
+        "date": "2026-08-05",
+        "label": "05 Aug",
+        "value": 101.7
+      },
+      {
+        "date": "2026-08-06",
+        "label": "06 Aug",
+        "value": 103.0
+      },
+      {
+        "date": "2026-08-07",
+        "label": "07 Aug",
+        "value": 102.2
+      },
+      {
+        "date": "2026-08-10",
+        "label": "10 Aug",
+        "value": 101.6
+      },
+      {
+        "date": "2026-08-11",
+        "label": "11 Aug",
+        "value": 102.7
+      },
+      {
+        "date": "2026-08-12",
+        "label": "12 Aug",
+        "value": 103.4
+      },
+      {
+        "date": "2026-08-13",
+        "label": "13 Aug",
+        "value": 102.8
+      },
+      {
+        "date": "2026-08-14",
+        "label": "14 Aug",
+        "value": 104.1
+      },
+      {
+        "date": "2026-08-17",
+        "label": "17 Aug",
+        "value": 103.6
+      },
+      {
+        "date": "2026-08-18",
+        "label": "18 Aug",
+        "value": 102.9
+      },
+      {
+        "date": "2026-08-19",
+        "label": "19 Aug",
+        "value": 103.8
+      },
+      {
+        "date": "2026-08-20",
+        "label": "20 Aug",
+        "value": 104.6
+      },
+      {
+        "date": "2026-08-21",
+        "label": "21 Aug",
+        "value": 103.9
+      },
+      {
+        "date": "2026-08-24",
+        "label": "24 Aug",
+        "value": 104.3
+      },
+      {
+        "date": "2026-08-25",
+        "label": "25 Aug",
+        "value": 103.2
+      },
+      {
+        "date": "2026-08-26",
+        "label": "26 Aug",
+        "value": 102.4
+      },
+      {
+        "date": "2026-08-27",
+        "label": "27 Aug",
+        "value": 101.7
+      },
+      {
+        "date": "2026-08-28",
+        "label": "28 Aug",
+        "value": 100.9
+      },
+      {
+        "date": "2026-08-31",
+        "label": "31 Aug",
+        "value": 100.0
+      }
+    ],
+    "note": "Synthetic history normalized so the current point equals 100. Not market data."
+  },
+  "forecasts": [
+    {
+      "horizon": "H1",
+      "horizon_sessions": 1,
+      "model_version": "workbench_sample_not_live_forecast",
+      "evidence_level": "DEVELOPMENTAL",
+      "quantiles": {
+        "q05": -1.5,
+        "q25": -0.55,
+        "q50": 0.08,
+        "q75": 0.68,
+        "q95": 1.72
+      },
+      "trajectory": {
+        "source_kind": "ILLUSTRATIVE",
+        "value_semantics": "cumulative_return_pct_from_origin",
+        "points": [
+          {
+            "offset_sessions": 1,
+            "date": "2026-08-31",
+            "label": "31 Aug",
+            "quantiles": {
+              "q05": -1.5,
+              "q25": -0.55,
+              "q50": 0.08,
+              "q75": 0.68,
+              "q95": 1.72
+            }
+          }
+        ],
+        "note": "Synthetic scenario path for Workbench UX validation only."
+      },
+      "confidence": {
+        "score_semantics": "illustrative_forecast_support_score_0_100",
+        "points": [
+          {
+            "offset_sessions": 1,
+            "date": "2026-08-31",
+            "label": "31 Aug",
+            "score": 61
+          }
+        ],
+        "note": "Illustrative non-monotonic confidence curve. A live publisher must provide a calibrated score."
+      },
+      "note": "Illustrative quantiles and trajectory for UI validation only. Not an AAPL forecast."
+    },
+    {
+      "horizon": "H5",
+      "horizon_sessions": 5,
+      "model_version": "workbench_sample_not_live_forecast",
+      "evidence_level": "DEVELOPMENTAL",
+      "quantiles": {
+        "q05": -3.2,
+        "q25": -1.3,
+        "q50": 0.35,
+        "q75": 2.05,
+        "q95": 4.4
+      },
+      "trajectory": {
+        "source_kind": "ILLUSTRATIVE",
+        "value_semantics": "cumulative_return_pct_from_origin",
+        "points": [
+          {
+            "offset_sessions": 1,
+            "date": "2026-08-31",
+            "label": "31 Aug",
+            "quantiles": {
+              "q05": -0.46,
+              "q25": 0.09,
+              "q50": 0.474,
+              "q75": 0.936,
+              "q95": 1.61
+            }
+          },
+          {
+            "offset_sessions": 2,
+            "date": "2026-09-01",
+            "label": "01 Sep",
+            "quantiles": {
+              "q05": -1.404,
+              "q25": -0.493,
+              "q50": 0.236,
+              "q75": 1.123,
+              "q95": 2.256
+            }
+          },
+          {
+            "offset_sessions": 3,
+            "date": "2026-09-02",
+            "label": "02 Sep",
+            "quantiles": {
+              "q05": -2.362,
+              "q25": -1.13,
+              "q50": -0.021,
+              "q75": 1.178,
+              "q95": 2.785
+            }
+          },
+          {
+            "offset_sessions": 4,
+            "date": "2026-09-03",
+            "label": "03 Sep",
+            "quantiles": {
+              "q05": -2.831,
+              "q25": -1.261,
+              "q50": 0.196,
+              "q75": 1.604,
+              "q95": 3.694
+            }
+          },
+          {
+            "offset_sessions": 5,
+            "date": "2026-09-04",
+            "label": "04 Sep",
+            "quantiles": {
+              "q05": -3.2,
+              "q25": -1.3,
+              "q50": 0.35,
+              "q75": 2.05,
+              "q95": 4.4
+            }
+          }
+        ],
+        "note": "Synthetic scenario path for Workbench UX validation only."
+      },
+      "confidence": {
+        "score_semantics": "illustrative_forecast_support_score_0_100",
+        "points": [
+          {
+            "offset_sessions": 1,
+            "date": "2026-08-31",
+            "label": "31 Aug",
+            "score": 63
+          },
+          {
+            "offset_sessions": 2,
+            "date": "2026-09-01",
+            "label": "01 Sep",
+            "score": 66
+          },
+          {
+            "offset_sessions": 3,
+            "date": "2026-09-02",
+            "label": "02 Sep",
+            "score": 57
+          },
+          {
+            "offset_sessions": 4,
+            "date": "2026-09-03",
+            "label": "03 Sep",
+            "score": 62
+          },
+          {
+            "offset_sessions": 5,
+            "date": "2026-09-04",
+            "label": "04 Sep",
+            "score": 59
+          }
+        ],
+        "note": "Illustrative non-monotonic confidence curve. A live publisher must provide a calibrated score."
+      },
+      "note": "Illustrative quantiles and trajectory for UI validation only. Not an AAPL forecast."
+    },
+    {
+      "horizon": "H10",
+      "horizon_sessions": 10,
+      "model_version": "workbench_sample_not_live_forecast",
+      "evidence_level": "DEVELOPMENTAL",
+      "quantiles": {
+        "q05": -4.8,
+        "q25": -2.0,
+        "q50": 0.8,
+        "q75": 3.4,
+        "q95": 6.8
+      },
+      "trajectory": {
+        "source_kind": "ILLUSTRATIVE",
+        "value_semantics": "cumulative_return_pct_from_origin",
+        "points": [
+          {
+            "offset_sessions": 1,
+            "date": "2026-08-31",
+            "label": "31 Aug",
+            "quantiles": {
+              "q05": -0.357,
+              "q25": 0.122,
+              "q50": 0.494,
+              "q75": 0.904,
+              "q95": 1.481
+            }
+          },
+          {
+            "offset_sessions": 2,
+            "date": "2026-09-01",
+            "label": "01 Sep",
+            "quantiles": {
+              "q05": -1.238,
+              "q25": -0.447,
+              "q50": 0.261,
+              "q75": 1.058,
+              "q95": 2.029
+            }
+          },
+          {
+            "offset_sessions": 3,
+            "date": "2026-09-02",
+            "label": "02 Sep",
+            "quantiles": {
+              "q05": -2.158,
+              "q25": -1.093,
+              "q50": -0.011,
+              "q75": 1.063,
+              "q95": 2.451
+            }
+          },
+          {
+            "offset_sessions": 4,
+            "date": "2026-09-03",
+            "label": "03 Sep",
+            "quantiles": {
+              "q05": -2.559,
+              "q25": -1.196,
+              "q50": 0.225,
+              "q75": 1.478,
+              "q95": 3.295
+            }
+          },
+          {
+            "offset_sessions": 5,
+            "date": "2026-09-04",
+            "label": "04 Sep",
+            "quantiles": {
+              "q05": -2.838,
+              "q25": -1.144,
+              "q50": 0.521,
+              "q75": 1.965,
+              "q95": 4.116
+            }
+          },
+          {
+            "offset_sessions": 6,
+            "date": "2026-09-07",
+            "label": "07 Sep",
+            "quantiles": {
+              "q05": -3.45,
+              "q25": -1.449,
+              "q50": 0.387,
+              "q75": 2.108,
+              "q95": 4.449
+            }
+          },
+          {
+            "offset_sessions": 7,
+            "date": "2026-09-08",
+            "label": "08 Sep",
+            "quantiles": {
+              "q05": -3.984,
+              "q25": -1.772,
+              "q50": 0.254,
+              "q75": 2.278,
+              "q95": 4.768
+            }
+          },
+          {
+            "offset_sessions": 8,
+            "date": "2026-09-09",
+            "label": "09 Sep",
+            "quantiles": {
+              "q05": -4.028,
+              "q25": -1.698,
+              "q50": 0.598,
+              "q75": 2.841,
+              "q95": 5.582
+            }
+          },
+          {
+            "offset_sessions": 9,
+            "date": "2026-09-10",
+            "label": "10 Sep",
+            "quantiles": {
+              "q05": -4.064,
+              "q25": -1.613,
+              "q50": 0.998,
+              "q75": 3.375,
+              "q95": 6.487
+            }
+          },
+          {
+            "offset_sessions": 10,
+            "date": "2026-09-11",
+            "label": "11 Sep",
+            "quantiles": {
+              "q05": -4.8,
+              "q25": -2.0,
+              "q50": 0.8,
+              "q75": 3.4,
+              "q95": 6.8
+            }
+          }
+        ],
+        "note": "Synthetic scenario path for Workbench UX validation only."
+      },
+      "confidence": {
+        "score_semantics": "illustrative_forecast_support_score_0_100",
+        "points": [
+          {
+            "offset_sessions": 1,
+            "date": "2026-08-31",
+            "label": "31 Aug",
+            "score": 64
+          },
+          {
+            "offset_sessions": 2,
+            "date": "2026-09-01",
+            "label": "01 Sep",
+            "score": 67
+          },
+          {
+            "offset_sessions": 3,
+            "date": "2026-09-02",
+            "label": "02 Sep",
+            "score": 60
+          },
+          {
+            "offset_sessions": 4,
+            "date": "2026-09-03",
+            "label": "03 Sep",
+            "score": 55
+          },
+          {
+            "offset_sessions": 5,
+            "date": "2026-09-04",
+            "label": "04 Sep",
+            "score": 62
+          },
+          {
+            "offset_sessions": 6,
+            "date": "2026-09-07",
+            "label": "07 Sep",
+            "score": 69
+          },
+          {
+            "offset_sessions": 7,
+            "date": "2026-09-08",
+            "label": "08 Sep",
+            "score": 58
+          },
+          {
+            "offset_sessions": 8,
+            "date": "2026-09-09",
+            "label": "09 Sep",
+            "score": 53
+          },
+          {
+            "offset_sessions": 9,
+            "date": "2026-09-10",
+            "label": "10 Sep",
+            "score": 61
+          },
+          {
+            "offset_sessions": 10,
+            "date": "2026-09-11",
+            "label": "11 Sep",
+            "score": 57
+          }
+        ],
+        "note": "Illustrative non-monotonic confidence curve. A live publisher must provide a calibrated score."
+      },
+      "note": "Illustrative quantiles and trajectory for UI validation only. Not an AAPL forecast."
+    }
+  ],
+  "events": [
+    {
+      "event_id": "sample-sec-event",
+      "event_type": "SEC_FILING",
+      "title": "Sample SEC filing observed",
+      "available_at": "2026-08-28T20:00:00Z",
+      "source": "sample",
+      "evidence_level": "RESEARCH_ONLY"
+    },
+    {
+      "event_id": "sample-upcoming-earnings",
+      "event_type": "SCHEDULED_EARNINGS",
+      "title": "Earnings programados (demo)",
+      "available_at": "2026-08-29T18:00:00Z",
+      "scheduled_for": "2026-09-03T20:00:00Z",
+      "source": "sample calendar",
+      "evidence_level": "RESEARCH_ONLY"
+    },
+    {
+      "event_id": "sample-macro",
+      "event_type": "SCHEDULED_MACRO",
+      "title": "Evento macro programado (demo)",
+      "available_at": "2026-08-29T18:00:00Z",
+      "scheduled_for": "2026-09-09T14:00:00Z",
+      "source": "sample calendar",
+      "evidence_level": "RESEARCH_ONLY"
+    }
+  ],
+  "decision": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "evidence_level": "DEVELOPMENTAL",
+    "reason": "Directional edge is not established. V009 prospective confirmation is pending."
+  },
+  "capabilities": {
+    "distribution_shape": true,
+    "tail_risk_context": true,
+    "directional_alpha": false,
+    "event_adjustment": false,
+    "graph_propagation": false,
+    "trade_execution": false
+  },
+  "provenance": {
+    "publisher_version": "workbench_sample_v0_1",
+    "source_description": "UI/contract sample; no live market data",
+    "sample_mode": true,
+    "notes": "All price paths, confidence scores and events marked demo are illustrative. The sample only validates the product contract and visualization."
+  },
+  "temporal_contract": {
+    "version": "multi_resolution_time_v001",
+    "time_basis": "EXCHANGE_TRADING_TIME",
+    "exchange_calendar": "XNYS",
+    "heads": [
+      {
+        "head_id": "intraday",
+        "kind": "INTRADAY",
+        "status": "RESEARCH_LIMITED"
+      },
+      {
+        "head_id": "daily",
+        "kind": "DAILY",
+        "status": "DEVELOPMENTAL"
+      },
+      {
+        "head_id": "long_horizon",
+        "kind": "LONG_HORIZON",
+        "status": "PLANNED"
+      }
+    ],
+    "evaluation_anchors": [
+      {
+        "name": "60m",
+        "coordinate": {
+          "kind": "TRADING_MINUTES",
+          "offset_trading_minutes": 60,
+          "session_phase": "REGULAR"
+        }
+      },
+      {
+        "name": "H1",
+        "coordinate": {
+          "kind": "SESSION_CLOSE",
+          "offset_sessions": 1,
+          "session_phase": "SESSION_CLOSE"
+        }
+      },
+      {
+        "name": "H5",
+        "coordinate": {
+          "kind": "SESSION_CLOSE",
+          "offset_sessions": 5,
+          "session_phase": "SESSION_CLOSE"
+        }
+      },
+      {
+        "name": "H10",
+        "coordinate": {
+          "kind": "SESSION_CLOSE",
+          "offset_sessions": 10,
+          "session_phase": "SESSION_CLOSE"
+        }
+      },
+      {
+        "name": "H21",
+        "coordinate": {
+          "kind": "SESSION_CLOSE",
+          "offset_sessions": 21,
+          "session_phase": "SESSION_CLOSE"
+        }
+      },
+      {
+        "name": "H63",
+        "coordinate": {
+          "kind": "SESSION_CLOSE",
+          "offset_sessions": 63,
+          "session_phase": "SESSION_CLOSE"
+        }
+      },
+      {
+        "name": "H126",
+        "coordinate": {
+          "kind": "SESSION_CLOSE",
+          "offset_sessions": 126,
+          "session_phase": "SESSION_CLOSE"
+        }
+      },
+      {
+        "name": "H252",
+        "coordinate": {
+          "kind": "SESSION_CLOSE",
+          "offset_sessions": 252,
+          "session_phase": "SESSION_CLOSE"
+        }
+      }
+    ]
+  }
+}

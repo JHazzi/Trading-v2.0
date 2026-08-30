@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Investment Workbench V0</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <div class="eyebrow">QUANT MARKET AI</div>
+        <h1>Investment Workbench <span>V0</span></h1>
+      </div>
+      <nav class="tabs" aria-label="Secciones del Workbench">
+        <button class="tab-btn active" type="button" data-tab="overview">Resumen</button>
+        <button class="tab-btn" type="button" data-tab="forecast">Forecast</button>
+        <button class="tab-btn" type="button" data-tab="events">Eventos</button>
+        <button class="tab-btn" type="button" data-tab="risk">Riesgo</button>
+        <button class="tab-btn" type="button" data-tab="journal">Journal</button>
+      </nav>
+      <div id="asof" class="asof">Cargando…</div>
+    </header>
+
+    <section id="error" class="error hidden"></section>
+    <section id="sample-warning" class="sample-warning hidden"></section>
+
+    <section class="hero panel">
+      <div class="asset-block">
+        <div class="ticker-line"><strong id="ticker">—</strong><span id="name">—</span></div>
+        <div class="price" id="price">—</div>
+        <div class="muted" id="market-summary">—</div>
+      </div>
+      <div id="decision" class="decision-card"></div>
+    </section>
+
+    <section class="tab-panel active" data-panel="overview">
+      <div class="overview-grid">
+        <article class="panel overview-main">
+          <div class="section-head">
+            <div>
+              <h2>Estado de inversión</h2>
+              <p class="section-sub">Qué sabe hoy el sistema y qué todavía no puede afirmar.</p>
+            </div>
+            <span>evidence-aware</span>
+          </div>
+          <div id="overview-status" class="overview-status"></div>
+        </article>
+        <article class="panel">
+          <div class="section-head"><h2>Horizontes</h2><span>guía rápida</span></div>
+          <div class="guide-list">
+            <div><b>H1</b><span>1 sesión de mercado</span></div>
+            <div><b>H5</b><span>5 sesiones de mercado</span></div>
+            <div><b>H10</b><span>10 sesiones de mercado</span></div>
+          </div>
+          <p class="help-copy">“H” significa <b>horizonte</b>. No son horas. Si hoy es el origen, H5 describe la distribución acumulada al cierre de la quinta sesión elegible.</p>
+        </article>
+      </div>
+
+      <article class="panel overview-chart-panel">
+        <div class="section-head chart-head">
+          <div>
+            <h2>Precio y escenarios</h2>
+            <p class="section-sub">Histórico a la izquierda; posibles trayectorias futuras a la derecha.</p>
+          </div>
+          <div id="overview-horizon-switch" class="horizon-switch" aria-label="Horizonte"></div>
+        </div>
+        <div id="overview-price-chart" class="chart-wrap"></div>
+      </article>
+    </section>
+
+    <section class="tab-panel" data-panel="forecast">
+      <div class="forecast-layout">
+        <div class="forecast-main-column">
+          <article class="panel">
+            <div class="section-head chart-head">
+              <div>
+                <h2>Precio & forecast</h2>
+                <p class="section-sub">Central, alcista y bajista no son tres predicciones independientes: son cortes distintos de la misma distribución condicional.</p>
+              </div>
+              <div id="forecast-horizon-switch" class="horizon-switch" aria-label="Horizonte"></div>
+            </div>
+            <div id="price-chart" class="chart-wrap large"></div>
+            <div class="chart-legend">
+              <span class="legend history">Histórico</span>
+              <span class="legend central">q50 · central</span>
+              <span class="legend bull">q75 · alcista moderado</span>
+              <span class="legend bear">q25 · bajista moderado</span>
+              <span class="legend band">q05–q95 · rango extremo</span>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <h2>Confianza del forecast</h2>
+                <p class="section-sub">No es “probabilidad de subir”. Es un score publicado por el evaluador/modelo sobre cuán respaldado está el forecast en cada tramo.</p>
+              </div>
+              <span id="confidence-horizon-label">—</span>
+            </div>
+            <div id="confidence-chart" class="chart-wrap confidence"></div>
+            <div class="confidence-explainer">
+              <b>Importante:</b> la confianza no se fuerza a bajar con el tiempo. Puede subir o caer por régimen, datos nuevos, eventos programados, distancia al evento, calidad de expectativas y calibración histórica. La UI sólo dibuja una serie si fue publicada upstream.
+            </div>
+          </article>
+        </div>
+
+        <aside class="forecast-side-column">
+          <article class="panel sticky-card">
+            <div class="section-head"><h2>Cómo leer el forecast</h2><span>ayuda</span></div>
+            <div class="quantile-guide">
+              <div><b>q05</b><span>Percentil 5: sólo ~5% de los resultados estimados quedan por debajo.</span></div>
+              <div><b>q25</b><span>Percentil 25: escenario bajista moderado.</span></div>
+              <div><b>q50</b><span>Percentil 50: mediana, nuestro escenario central.</span></div>
+              <div><b>q75</b><span>Percentil 75: escenario alcista moderado.</span></div>
+              <div><b>q95</b><span>Percentil 95: sólo ~5% de los resultados estimados quedan por encima.</span></div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="section-head"><h2>Distribución al horizonte</h2><span id="dist-horizon-label">—</span></div>
+            <div id="distribution-summary"></div>
+          </article>
+
+          <article class="panel">
+            <div class="section-head"><h2>Qué sabe el sistema</h2><span>capabilities</span></div>
+            <div id="capabilities" class="capabilities"></div>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <section class="tab-panel" data-panel="events">
+      <div class="grid two">
+        <article class="panel">
+          <div class="section-head"><h2>Timeline de eventos</h2><span>causal / scheduled</span></div>
+          <div id="events"></div>
+        </article>
+        <article class="panel">
+          <div class="section-head"><h2>Qué significan los eventos</h2><span>metodología</span></div>
+          <div class="prose-card">
+            <p>Un evento futuro conocido —earnings, FOMC, publicación macro, guidance programada— puede cambiar tanto el retorno esperado como la dispersión y la confianza.</p>
+            <p>Eso <b>no implica</b> que el sistema sepa de antemano si será bueno o malo. La capa de expectativas y surprise debe comparar lo publicado contra lo que el mercado esperaba.</p>
+            <p>Por eso el Workbench distingue <b>evento conocido</b>, <b>resultado observado</b> y, más adelante, <b>ajuste Event Brain</b>.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tab-panel" data-panel="risk">
+      <div class="grid two">
+        <article class="panel">
+          <div class="section-head"><h2>Evidence & provenance</h2><span>do not hide uncertainty</span></div>
+          <div id="provenance"></div>
+        </article>
+        <article class="panel">
+          <div class="section-head"><h2>Interpretación de riesgo</h2><span>distribution first</span></div>
+          <div id="risk-summary" class="risk-summary"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tab-panel" data-panel="journal">
+      <section class="panel journal">
+        <div class="section-head"><h2>Decision journal</h2><span>snapshot exacto</span></div>
+        <p class="help-copy">Guardá qué pensabas y por qué. La entrada queda ligada al hash exacto del estado del modelo que estabas viendo.</p>
+        <div class="journal-row">
+          <select id="stance" aria-label="Postura"><option>WATCH</option><option>INTERESTED</option><option>AVOID</option><option>NO_ACTION</option></select>
+          <input id="note" placeholder="¿Por qué estás considerando este activo?" />
+          <button id="save-journal">Guardar decisión</button>
+        </div>
+        <div id="journal-status" class="muted"></div>
+      </section>
+    </section>
+
+    <footer>V0 ayuda a analizar; no ejecuta operaciones. Una trayectoria ilustrativa o developmental no equivale a alpha validado.</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

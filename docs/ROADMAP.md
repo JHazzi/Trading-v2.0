@@ -584,3 +584,8 @@ predictive use                            BLOCKED until incremental Event/Inform
 
 No provider is promoted by convenience, no historical backfill is relabeled strict PIT, and no captured field enters a predictor without a later preregistered incremental-information experiment.
 <!-- EXPECTATION_CAPTURE_FOUNDATION_V001_END -->
+
+<!-- product-track-v0 -->
+## Parallel Product Track
+
+V009 remains frozen as a prospective scientific claim. Product work proceeds independently through Investment Workbench V0, Decision Journal, paper decision mode, risk/cost integration and later a gated Decision Engine. Product consumers may read published model artifacts but must not alter V009's frozen contract.

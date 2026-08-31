@@ -283,13 +283,16 @@ def canonical_provider_payload(
     provider_library_version: str,
     exchange: str,
     calendar_name: str,
+    lineage_kind: str = "provider_library_output",
+    provider_library_name: str = "yfinance",
+    derivation: dict[str, object] | None = None,
 ) -> tuple[bytes, list[dict[str, object]]]:
     column_schema, rows = canonical_frame_rows(frame, symbol)
     payload = {
-        "lineage_kind": "provider_library_output",
+        "lineage_kind": lineage_kind,
         "is_exact_http_response": False,
         "provider_library": {
-            "name": "yfinance",
+            "name": provider_library_name,
             "version": provider_library_version,
         },
         "request": {
@@ -317,6 +320,8 @@ def canonical_provider_payload(
             "rows": rows,
         },
     }
+    if derivation is not None:
+        payload["derivation"] = derivation
     return canonical_json(payload).encode("utf-8"), rows
 
 
@@ -1323,6 +1328,9 @@ def persist_provider_frame(
     frame: Any,
     source_run_id: str | None = None,
     session_resolver: Any | None = None,
+    lineage_kind: str = "provider_library_output",
+    provider_library_name: str = "yfinance",
+    derivation: dict[str, object] | None = None,
 ) -> PersistResult:
     ensure_contract(conn)
     retrieved = parse_utc(retrieved_at)
@@ -1348,6 +1356,9 @@ def persist_provider_frame(
         provider_library_version=provider_library_version,
         exchange=normalized_exchange,
         calendar_name=calendar_name,
+        lineage_kind=lineage_kind,
+        provider_library_name=provider_library_name,
+        derivation=derivation,
     )
     if not raw_rows:
         raise ValueError(
@@ -1366,8 +1377,7 @@ def persist_provider_frame(
         raw_sha256,
         BATCH_VERSION,
     )
-    request_json = canonical_json(
-        {
+    request_payload: dict[str, object] = {
             "symbol": symbol.upper(),
             "start": requested_start,
             "end": requested_end,
@@ -1384,7 +1394,9 @@ def persist_provider_frame(
             "exchange": normalized_exchange,
             "calendar_name": calendar_name,
         }
-    )
+    if derivation is not None:
+        request_payload["derivation"] = derivation
+    request_json = canonical_json(request_payload)
     batch_inserted = (
         conn.execute(
             """
@@ -1413,7 +1425,7 @@ def persist_provider_frame(
                 parser_version
             )
             VALUES (?, ?, ?, ?, ?, ?, ?, '1d', ?, ?, ?,
-                    'provider_library_output', 0, 'yfinance', ?, ?, ?, ?,
+                    ?, 0, ?, ?, ?, ?, ?,
                     ?, ?, ?, ?)
             """,
             (
@@ -1427,6 +1439,8 @@ def persist_provider_frame(
                 requested_start,
                 requested_end,
                 retrieved.isoformat(),
+                lineage_kind,
+                provider_library_name,
                 provider_library_version,
                 request_json,
                 raw_sha256,

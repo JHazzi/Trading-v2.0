@@ -28,6 +28,13 @@ from models.market.distributional_v009_prospective import (
     save_artifact,
     sha256_json,
 )
+from pipeline.market_brain_daily_refresh_v009 import (
+    DEFAULT_CONFIG as DEFAULT_DAILY_REFRESH_CONFIG,
+    DEFAULT_REPORT_ROOT as DEFAULT_DAILY_REFRESH_REPORT_ROOT,
+    load_config as load_daily_refresh_config,
+    root_path as daily_root_path,
+    validate_ohlc_repair_gate,
+)
 from storage.prospective_registry import (
     append_evaluation,
     canonical_json as registry_json,
@@ -373,6 +380,9 @@ def seal_stage(
     registry_db: Path,
     output_dir: Path,
     origin_day: str | None,
+    daily_refresh_config: Path = DEFAULT_DAILY_REFRESH_CONFIG,
+    source_db: Path | None = None,
+    daily_refresh_report_root: Path = DEFAULT_DAILY_REFRESH_REPORT_ROOT,
 ) -> dict[str, Any]:
     cfg = load_config(config_path)
     prereg, universe = _frozen(output_dir)
@@ -387,6 +397,22 @@ def seal_stage(
     existing = _existing_batch(registry_db, str(cfg["version"]), str(origin_day))
     if existing is not None:
         return {"status": "ALREADY_SEALED", **existing}
+    refresh_cfg = load_daily_refresh_config(daily_refresh_config)
+    effective_source_db = source_db or daily_root_path(
+        refresh_cfg["source_database"]
+    )
+    repair_gate = validate_ohlc_repair_gate(
+        daily_refresh_config,
+        effective_source_db,
+        registry_db,
+        daily_refresh_report_root,
+        str(origin_day),
+    )
+    if repair_gate["status"] not in {"PASS", "NOT_REQUIRED"}:
+        raise RuntimeError(
+            "V009 seal blocked by OHLC operational amendment gate: "
+            + json.dumps(repair_gate, sort_keys=True)
+        )
     with connect_registry(registry_db) as conn:
         fit_raw = conn.execute(
             "SELECT * FROM prospective_model_fits WHERE experiment_version=?",
@@ -491,6 +517,7 @@ def seal_stage(
                 "prediction_diagnostics": diagnostics,
                 "feature_manifest_sha256": prereg["feature_manifest_sha256"],
                 "actual_seal_clock": True,
+                "ohlc_operational_amendment_gate": repair_gate,
             }
         ),
     }
@@ -503,6 +530,7 @@ def seal_stage(
         "distribution_rows": int(len(predictions)),
         "seal_delay_seconds": float(delay),
         "prediction_diagnostics": diagnostics,
+        "ohlc_repair_gate": repair_gate,
     }
 
 
@@ -612,6 +640,17 @@ def main() -> None:
     parser.add_argument("--v0081-h1", type=Path, default=DEFAULT_V0081_H1)
     parser.add_argument("--v0081-manifest", type=Path, default=DEFAULT_V0081_MANIFEST)
     parser.add_argument("--v0081-config", type=Path, default=DEFAULT_V0081_CONFIG)
+    parser.add_argument(
+        "--daily-refresh-config",
+        type=Path,
+        default=DEFAULT_DAILY_REFRESH_CONFIG,
+    )
+    parser.add_argument("--source-db", type=Path)
+    parser.add_argument(
+        "--daily-refresh-report-root",
+        type=Path,
+        default=DEFAULT_DAILY_REFRESH_REPORT_ROOT,
+    )
     args = parser.parse_args()
 
     if args.stage == "plan":
@@ -641,6 +680,9 @@ def main() -> None:
             args.registry_db,
             args.output_dir,
             args.origin_day,
+            args.daily_refresh_config,
+            args.source_db,
+            args.daily_refresh_report_root,
         )
     elif args.stage == "settle":
         payload = settle_available_outcomes(

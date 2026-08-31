@@ -10,6 +10,7 @@ from ingestion.prices.yahoo_daily_refresh_v009 import (
     REGULAR_CLOSE_FALLBACK,
     apply_regular_close_fallback,
 )
+from ingestion.prices.yahoo_daily_v1 import canonical_provider_payload
 from pipeline import market_brain_daily_refresh_v009 as refresh
 
 
@@ -45,6 +46,96 @@ def test_refresh_config_is_bound_to_frozen_v009() -> None:
     assert cfg["refit_v009_after_refresh"] is False
     assert cfg["minimum_source_assets_on_origin"] >= 490
     assert cfg["minimum_core_states_on_origin"] >= 490
+    assert cfg["ohlc_envelope_repair_version"] == "ohlc_envelope_repair_v001"
+    assert cfg["ohlc_envelope_repair_minimum_invalid_observations"] >= 2
+    assert cfg["ohlc_envelope_repair_maximum_relative_expansion_pct"] == 2.0
+    assert cfg["ohlc_envelope_repair_preserved_fields"] == [
+        "open", "close", "volume", "adjusted_close"
+    ]
+
+
+def test_ohlc_envelope_repair_is_minimal_and_preserves_open_close() -> None:
+    repaired = refresh.ohlc_envelope_repair(
+        1032.599976,
+        1029.925293,
+        1022.620117,
+        1025.900024,
+        2.0,
+    )
+    assert repaired["open"] == pytest.approx(1032.599976)
+    assert repaired["close"] == pytest.approx(1025.900024)
+    assert repaired["repaired_high"] == pytest.approx(1032.599976)
+    assert repaired["repaired_low"] == pytest.approx(1022.620117)
+    assert repaired["upper_expansion"] == pytest.approx(
+        1032.599976 - 1029.925293
+    )
+    assert repaired["lower_expansion"] == 0.0
+
+
+def test_ohlc_envelope_repair_rejects_large_or_unneeded_change() -> None:
+    with pytest.raises(ValueError, match="expansion cap"):
+        refresh.ohlc_envelope_repair(120.0, 100.0, 90.0, 95.0, 2.0)
+    with pytest.raises(ValueError, match="already a valid envelope"):
+        refresh.ohlc_envelope_repair(95.0, 100.0, 90.0, 96.0, 2.0)
+
+
+def test_derived_provider_payload_exposes_repair_lineage() -> None:
+    frame = origin_frame(319.70)
+    payload, _ = canonical_provider_payload(
+        frame,
+        symbol="AAPL",
+        requested_start="2026-08-28",
+        requested_end="2026-08-29",
+        provider_library_version="ohlc_envelope_repair_v001",
+        exchange="XNAS",
+        calendar_name="XNAS",
+        lineage_kind="derived_operational_repair",
+        provider_library_name="quant_market_ai",
+        derivation={"source_price_observation_id": "source"},
+    )
+    import json
+
+    decoded = json.loads(payload)
+    assert decoded["lineage_kind"] == "derived_operational_repair"
+    assert decoded["provider_library"]["name"] == "quant_market_ai"
+    assert decoded["derivation"] == {
+        "source_price_observation_id": "source"
+    }
+
+
+def test_repair_daily_index_is_timezone_aware() -> None:
+    index = pd.DatetimeIndex(
+        [pd.Timestamp("2026-08-31", tz="America/New_York")],
+        name="Date",
+    )
+    frame = pd.DataFrame(
+        {
+            "Open": [10.1], "High": [10.1], "Low": [9.9],
+            "Close": [10.0], "Adj Close": [10.0], "Volume": [100],
+        },
+        index=index,
+    )
+    _, rows = canonical_provider_payload(
+        frame,
+        symbol="TEST",
+        requested_start="2026-08-31",
+        requested_end="2026-09-01",
+        provider_library_version="ohlc_envelope_repair_v001",
+        exchange="XNYS",
+        calendar_name="XNYS",
+    )
+    assert rows[0]["trading_day"] == "2026-08-31"
+
+
+def test_repair_gate_is_required_from_effective_day(tmp_path) -> None:
+    gate = refresh.validate_ohlc_repair_gate(
+        refresh.DEFAULT_CONFIG,
+        tmp_path / "source.db",
+        tmp_path / "registry.db",
+        tmp_path / "reports",
+        "2026-08-31",
+    )
+    assert gate["status"] == "MISSING_REQUIRED_OPERATIONAL_AMENDMENT"
 
 
 def test_origin_clock_enforces_provider_settlement_delay() -> None:

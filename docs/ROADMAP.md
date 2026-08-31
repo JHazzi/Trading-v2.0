@@ -17,7 +17,7 @@ V009 prospective temporal confirmation    ACTIVE: fit frozen; first seal pending
 Temporal Dataset V001                     COMPLETE: parity PASS; raw-close long-horizon selection rejected
 Temporal Dataset V002                     COMPLETE mechanical build; economic special-action review active
 Temporal distributional V001              COMPLETE: closed negative vs vol63
-Temporal distributional V002              PLAN-ONLY preregistration (residual shrinkage)
+Temporal distributional V002              PREFLIGHT PASS; five development folds next
 distributional Event Brain                PARALLEL developmental track on existing SEC
 identity hygiene                          REVIEW in parallel; no graph promotion
 graph propagation                         BLOCKED until direct event increment
@@ -633,14 +633,15 @@ V009 remains frozen as a prospective scientific claim. Product work proceeds ind
 V002 economic entitlement review                 PASS
 extreme-tail lineage audit (80 outcomes)         PASS
 versioned selection mask (0 exclusions)          PASS
-shared tau-runner preflight                       PASS
-five development folds                           NEXT
+causal residual V002 runner preflight             PASS
+five V002 development folds                       NEXT
 development aggregate gate                       BLOCKED on folds
 artifact SHA freeze                              BLOCKED on development PASS
 one-time H7/H17/H42/H90/H180 evaluation          SEALED
 temporal section close                           BLOCKED on terminal gate result
 ```
 
-No dense H1..H252 table or 252-head model is planned. If the holdout eventually
-passes, the artifact supports terminal conditional quantile queries for integer
-tau up to one year; it still does not support paths, alpha or production.
+No dense H1..H252 table or 252-head model is planned. V002 can technically query
+integer tau up to one year, but its tree-based horizon response is stepwise and
+does not establish smooth interpolation. Even a holdout pass would not support
+paths, alpha or production.

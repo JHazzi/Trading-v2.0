@@ -943,15 +943,31 @@ While Market Distributional V009 remains frozen in prospective holdout, a separa
 Market Temporal V002 remains immutable at 18,573,435 sparse outcomes. All 11
 model-visible material cash events have primary-source, SHA-bound decisions;
 economic review is `PASS`. The 80-outcome extreme-tail lineage audit and the
-external selection mask audit are also `PASS` (mask is strictly empty). 
+external selection mask audit are also `PASS` (mask is strictly empty).
 Runner plan preflight was `PASS`.
 
-However, the frozen development gate evaluated to `FAIL_CLOSE_TEMPORAL_DISTRIBUTIONAL_BRANCH` 
-because the candidate lost to the parsimonious `vol63 + tau` reference across all 5 folds 
+However, the frozen development gate evaluated to `FAIL_CLOSE_TEMPORAL_DISTRIBUTIONAL_BRANCH`
+because the candidate lost to the parsimonious `vol63 + tau` reference across all 5 folds
 and specifically underperformed in central quantiles and long horizons (H126, H252).
 An explicit post-mortem audit was implemented and the branch was formally closed without opening the five sealed holdouts (H7, H17, H42, H90, H180).
 
-Current next action: do not open holdouts, do not refit to "rescue" V001. 
-The V001 protocol is permanently closed. Any future modeling on V002 (e.g., V002 protocol) 
+Current next action: do not open holdouts, do not refit to "rescue" V001.
+The V001 protocol is permanently closed. Any future modeling on V002 (e.g., V002 protocol)
 must be separate, pre-registered, and explicitly address the scientific findings of this failure. V009 remains isolated.
 <!-- TEMPORAL_DISTRIBUTIONAL_RUNNER_V001_END -->
+
+<!-- TEMPORAL_DISTRIBUTIONAL_RUNNER_V002_START -->
+## Temporal total-return distribution V002 — development ready
+
+V002 is a separate, outcome-informed residual experiment. Its canonical
+protocol now fixes the log-wealth residual equation, past-only purged internal
+cross-fitting, equal day/origin/tau fitting weights, exact exponential
+shrinkage and reconciled development/holdout gates. The runner implementation
+and seven V002 tests are present; all 18 combined V001/V002 tests pass.
+
+Real preregistration and runner preflights pass on 18,573,435 outcomes and
+1,092,555 origins with read-only stable V002/Core inputs. Development fitting
+is authorized. No V002 development model has been fitted, no holdout performance
+has been read and V009 remains isolated. Next action: execute five idempotent
+development fold shards, aggregate once and obey the resulting terminal gate.
+<!-- TEMPORAL_DISTRIBUTIONAL_RUNNER_V002_END -->

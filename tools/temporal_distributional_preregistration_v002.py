@@ -86,14 +86,51 @@ def load_contract(path: Path) -> dict[str, Any]:
         "unit": "eligible_asset_sessions",
     }:
         raise ValueError("invalid_preregistered_tau_domain")
+    target = payload.get("target_representation") or {}
+    expected_target = {
+        "fit_domain": "log_total_wealth",
+        "outcome_clipping": "none",
+        "residual_formula": "residual_q = z_actual - base_oof_z_quantile_q",
+        "candidate_formula": "candidate_z_quantile_q = base_full_z_quantile_q + alpha(tau) * residual_z_quantile_q",
+        "shrinkage_applied_before_rearrangement": True,
+        "quantile_crossing_policy": "rowwise_monotone_rearrangement_in_log_wealth_before_backtransform",
+    }
+    for key, value in expected_target.items():
+        if target.get(key) != value:
+            raise ValueError(f"invalid_target_or_residual_contract:{key}")
+    model = payload.get("model_contract") or {}
+    if model.get("model_version") != "market_temporal_distributional_residual_v002":
+        raise ValueError("invalid_v002_model_version")
+    if model.get("scale_feature") != "asset_vol_63d_pct" or model.get("hyperparameter_selection") != "none":
+        raise ValueError("invalid_base_or_selection_contract")
+    if len(model.get("own_features", [])) != 14 or len(model.get("placebo_seeds", [])) != 5:
+        raise ValueError("invalid_feature_or_placebo_contract")
+    shrink = payload.get("residual_regularization") or {}
+    if shrink.get("formula") != "alpha(tau) = 2 ** (-(tau - 1) / 63)":
+        raise ValueError("invalid_residual_shrinkage_formula")
+    if float(shrink.get("half_life_sessions", 0)) != 63.0 or shrink.get("selection_or_tuning_allowed") is not False:
+        raise ValueError("invalid_residual_shrinkage_parameters")
+    crossfit = payload.get("internal_cross_fitting") or {}
+    if crossfit.get("split_policy") != "causal_purged_expanding_origin_day_blocks":
+        raise ValueError("invalid_internal_crossfit_policy")
+    if crossfit.get("train_rule") != "training_target_day_strictly_before_first_internal_validation_origin_day":
+        raise ValueError("invalid_internal_crossfit_purge")
+    if crossfit.get("future_rows_allowed_in_internal_training") is not False:
+        raise ValueError("future_rows_allowed_in_internal_crossfit")
     folds = payload.get("outer_evaluation") or {}
     if int(folds.get("folds", 0)) < 2 or not 0 < float(folds.get("initial_fraction", 0)) < 1:
         raise ValueError("invalid_outer_fold_contract")
     if folds.get("purge_rule") != "training_target_day_strictly_before_first_test_origin_day":
         raise ValueError("invalid_outer_purge_rule")
+    development = payload.get("development_gate_before_holdout_open") or {}
+    holdout = payload.get("sealed_holdout_gate") or {}
+    if development.get("no_harm_horizons") != [126, 252] or float(development.get("no_harm_margin_pct", -1)) != 0.0:
+        raise ValueError("invalid_development_no_harm_contract")
+    if holdout.get("no_harm_holdout_horizons") != [180] or int(holdout.get("minimum_positive_holdout_taus", 0)) != 4:
+        raise ValueError("invalid_holdout_gate_contract")
     guards = payload.get("guards") or {}
     for key in (
-        "training_runner_implemented",
+        "training_runner_implemented_at_preregistration",
         "model_training_performed",
         "holdout_performance_read_during_plan",
         "v002_mutation_allowed",
@@ -299,7 +336,7 @@ def build_plan(
                 "PRAGMA table_info(market_daily_v003_states)"
             )
         }
-        required_features = set(cfg["model_contract"]["frozen_own_features"])
+        required_features = set(cfg["model_contract"]["own_features"])
         missing_features = sorted(required_features - core_columns)
         if missing_features:
             blockers.append("CORE_FEATURES_MISSING:" + ",".join(missing_features))
@@ -318,7 +355,8 @@ def build_plan(
     stable = before == (file_state(v002_db), file_state(core_db))
     if not stable:
         blockers.append("V002_OR_CORE_CHANGED_DURING_PLAN")
-    status = "READY_FOR_RUNNER_IMPLEMENTATION_NO_TRAINING" if not blockers else "BLOCKED"
+    runner_path = ROOT / "pipeline" / "market_temporal_distributional_v002.py"
+    status = "READY_FOR_RUNNER_PREFLIGHT_NO_TRAINING" if not blockers else "BLOCKED"
     plan = {
         "version": "market_temporal_distributional_preregistration_plan_v002",
         "status": status,
@@ -331,7 +369,7 @@ def build_plan(
         "scale": scale,
         "resolved_feature_manifest": {
             "market_feature_version": cfg["dataset"]["market_feature_version"],
-            "features": cfg["model_contract"]["frozen_own_features"],
+            "features": cfg["model_contract"]["own_features"],
             "tau_features": cfg["model_contract"]["tau_features"],
             "outcome_or_action_features_included": False,
         },
@@ -339,12 +377,13 @@ def build_plan(
         "v002_and_core_opened_read_only": True,
         "v002_and_core_stable_during_plan": stable,
         "holdout_values_or_performance_read": False,
-        "training_runner_implemented": False,
+        "runner_implementation_observed": runner_path.exists(),
+        "runner_implementation_audited_by_this_stage": False,
         "training_authorized": False,
         "model_training_performed": False,
         "v009_loaded_or_modified": False,
         "next_gate": (
-            "IMPLEMENT_FROZEN_RUNNER_AND_REAUDIT_BEFORE_ANY_FIT"
+            "RUN_HASH_BOUND_RUNNER_PREFLIGHT_BEFORE_ANY_FIT"
             if status.startswith("READY") else "CLOSE_ALL_BLOCKERS_WITHOUT_READING_PERFORMANCE"
         ),
     }

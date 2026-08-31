@@ -478,6 +478,21 @@
       ]
     },
     {
+      "id": "Market_Temporal_Distributional_V002",
+      "document": "docs/EXPERIMENTS.md",
+      "heading": "E-MARKET-TEMPORAL-DIST-V002 — residual shrinkage model preregistration",
+      "reports": [
+        "reports/temporal_distributional_v002/preregistration_plan.json",
+        "reports/temporal_distributional_v002/fold_plan.json",
+        "reports/temporal_distributional_v002/audit.json",
+        "reports/temporal_distributional_runner_v002/plan.json",
+        "reports/temporal_distributional_runner_v002/development_summary.json",
+        "reports/temporal_distributional_runner_v002/development_closure.json",
+        "reports/temporal_distributional_runner_v002/development_freeze.json",
+        "reports/temporal_distributional_runner_v002/holdout_summary.json"
+      ]
+    },
+    {
       "id": "Distributional_Event_Data_Preparation_V002",
       "document": "docs/EXPERIMENTS.md",
       "heading": "DATA-EVENT-DISTRIBUTIONAL-V002 — provenance-aware clock correction",

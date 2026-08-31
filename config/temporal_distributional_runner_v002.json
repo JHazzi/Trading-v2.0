@@ -1,115 +1,12 @@
 {
   "version": "market_temporal_distributional_runner_v002",
-  "status": "preperformance_numeric_and_compute_contract",
-  "source_preregistration_version": "market_temporal_distributional_preregistration_v002",
-  "dataset_contract": "market_temporal_horizon_conditioned_total_return_v002",
-  "label_version": "market_temporal_total_shareholder_return_v002",
-  "market_feature_version": "market_daily_state_v003_core",
+  "status": "preperformance_execution_contract",
+  "canonical_preregistration": {
+    "path": "config/temporal_distributional_preregistration_v002.json",
+    "version": "market_temporal_distributional_preregistration_v002",
+    "sha256": "fbc0d474f1e9de4ff3a412f9eff7042dbef4636ff165f4724b6c86ad3a754b5c"
+  },
   "expected_v002_sha256": "86db8fbc0557d2fe12a1d409012828bbbcf0610d9033c992964dd8c671eb10d3",
-  "quantiles": [0.05, 0.25, 0.5, 0.75, 0.95],
-  "development_anchors": [1, 2, 3, 5, 8, 10, 13, 21, 34, 63, 126, 252],
-  "sealed_holdouts": [7, 17, 42, 90, 180],
-  "target_representation": {
-    "source": "total_return_pct",
-    "fit": "log1p_total_wealth_return",
-    "fit_formula": "log1p(total_return_pct / 100)",
-    "prediction_formula": "100 * expm1(predicted_log_total_wealth_return_quantile)",
-    "score_domain": "total_return_pct",
-    "outcome_clipping": "none",
-    "reason": "strictly increasing quantile-equivariant transform with a finite lower domain and stable heavy-upside numerical scale"
-  },
-  "training_panel": {
-    "policy": "three_deterministic_balanced_anchors_per_origin",
-    "anchors_per_origin": 3,
-    "selection": "sha256(state_id) cyclic triad over the ordered 12 development anchors",
-    "hash_algorithm": "sha256",
-    "cyclic_offsets": [0, 4, 8],
-    "evaluation_uses_all_anchors": true,
-    "maximum_anchor_count_ratio": 1.02,
-    "reason": "reduce redundant overlapping-label replication without selecting outcomes or horizons"
-  },
-  "models": {
-    "candidate": "hgb_residual_on_vol63_base_with_horizon_shrinkage",
-    "primary_reference": "hgb_vol63_plus_tau",
-    "simple_reference": "train_only_tau_quantiles",
-    "simple_reference_unseen_tau_rule": "linear_interpolation_in_log1p_tau_between_development_anchor_quantiles_with_endpoint_carry",
-    "tau_features": ["tau_sessions", "tau_fraction_252", "log1p_tau_over_log253"],
-    "own_features": [
-      "asset_drawdown_20d_pct",
-      "asset_drawdown_252d_pct",
-      "asset_drawdown_63d_pct",
-      "asset_range_1d_pct",
-      "asset_return_10d_pct",
-      "asset_return_1d_pct",
-      "asset_return_20d_pct",
-      "asset_return_3d_pct",
-      "asset_return_5d_pct",
-      "asset_return_63d_pct",
-      "asset_vol_20d_pct",
-      "asset_vol_5d_pct",
-      "asset_vol_63d_pct",
-      "asset_volume_ratio_20d"
-    ],
-    "preserved_placebo_features": [
-      "asset_vol_5d_pct",
-      "asset_vol_20d_pct",
-      "asset_vol_63d_pct"
-    ],
-    "placebo_seeds": [11, 29, 47, 71, 101],
-    "profile_base": {
-      "learning_rate": 0.05,
-      "max_iter": 160,
-      "max_leaf_nodes": 15,
-      "min_samples_leaf": 500,
-      "l2_regularization": 2.0,
-      "early_stopping": false,
-      "random_seed": 42
-    },
-    "profile_residual": {
-      "learning_rate": 0.02,
-      "max_iter": 100,
-      "max_leaf_nodes": 7,
-      "min_samples_leaf": 1000,
-      "l2_regularization": 5.0,
-      "early_stopping": false,
-      "random_seed": 42
-    },
-    "residual_regularization": {
-      "type": "exponential_horizon_shrinkage",
-      "half_life_sessions": 63
-    }
-  },
-  "evaluation": {
-    "folds": 5,
-    "cross_fit_internal_folds": 5,
-    "primary_score": "common_support_equal_tau_equal_origin_day_mean_pinball_loss_pct",
-    "calibration_weighting": "equal_tau_equal_origin_day_empirical_cdf",
-    "purge": "training target day strictly before first test origin day",
-    "moving_block_lengths_origin_days": [21, 63, 126, 252],
-    "primary_block_length_origin_days": 252,
-    "bootstrap_repetitions": 3000,
-    "bootstrap_seed": 42,
-    "quantile_crossing": "rowwise_monotone_rearrangement"
-  },
-  "development_gate": {
-    "primary_interval_lower_bound_must_exceed_zero": true,
-    "no_harm_long_horizons": true,
-    "minimum_positive_anchors": 8,
-    "minimum_positive_folds": 4,
-    "minimum_improved_quantiles": 3,
-    "candidate_calibration_not_worse": true,
-    "candidate_beats_mean_placebo_interval": true,
-    "candidate_beats_every_placebo_seed_point": true
-  },
-  "holdout_gate": {
-    "primary_interval_lower_bound_must_exceed_zero": true,
-    "no_harm_long_horizons": true,
-    "minimum_positive_holdout_horizons": 3,
-    "minimum_positive_folds": 4,
-    "minimum_improved_quantiles": 3,
-    "candidate_calibration_not_worse": true,
-    "no_refit_after_development_freeze": true
-  },
   "execution": {
     "fold_sharding": true,
     "development_requires_all_five_fold_shards": true,
@@ -122,11 +19,11 @@
   "guards": {
     "economic_review_must_pass": true,
     "tail_lineage_audit_must_pass": true,
+    "selection_mask_audit_must_pass": true,
     "source_databases_read_only": true,
     "holdout_performance_forbidden_during_development": true,
     "holdout_open_once_after_hash_freeze": true,
-    "v009_loaded_or_modified": false,
-    "strict_historical_pit": false,
-    "current_cohort_not_survivorship_free": true
+    "negative_closure_blocks_holdout_open": true,
+    "v009_loaded_or_modified": false
   }
 }

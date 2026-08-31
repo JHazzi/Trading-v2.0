@@ -848,9 +848,28 @@ See [TEMPORAL_DATASET_V002.md](TEMPORAL_DATASET_V002.md).
 
 ## E-MARKET-TEMPORAL-DIST-V002 — residual shrinkage model preregistration
 
-**Status:** PLAN-ONLY. Preregistration document and config generated; development blocked until training runner implementation and authorization.
-**Hypothesis:** Predicting a regularized residual (`Delta_q(X,tau)`) over a cross-fitted base reference (`Q_q(R | vol63, tau)`) will provide incremental information at short/medium horizons without deteriorating long horizons (H126, H252) due to explicit horizon shrinkage towards zero.
-**Holdouts:** H7, H17, H42, H90, H180 remain strictly sealed.
+**Status:** frozen protocol, implementation and real preflight `PASS`; no V002
+development fold has run yet. Development fitting is authorized. H7/H17/H42/
+H90/H180 remain strictly sealed.
+
+The candidate learns q-specific residuals in log-total-wealth space over a
+`vol63 + tau` base. Base residual targets use five past-only, purged expanding
+internal folds; ordinary/random K-fold is forbidden. The final correction is
+multiplied by the non-tunable `2 ** (-(tau-1)/63)` before log-space monotone
+rearrangement and percent back-transformation.
+
+The sole scientific contract is
+`config/temporal_distributional_preregistration_v002.json`; the minimal runner
+contract is bound to it by SHA-256. Development cannot pass unless the primary
+252-day block interval, breadth, calibration and placebo gates pass and neither
+H126 nor H252 has a negative point delta versus the base. Four of five sealed
+taus and H180 no-harm are required if the one-time holdout is later opened.
+
+Real preflight: 1,092,555 origins, 3,277,665 selected training-anchor rows
+before rowwise purge, maximum/minimum anchor ratio `1.00413`, stable read-only
+V002/Core inputs, no holdout performance read and no V009 access. This tests a
+new outcome-informed hypothesis after V001; it does not rescue V001 or imply
+smooth unseen-tau interpolation, coherent paths, alpha or production value.
 
 The developmental target is `Q_q(total_return | own market state,tau)`. Twelve
 anchors are development data and H7/H17/H42/H90/H180 are sealed interpolation

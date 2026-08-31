@@ -855,3 +855,20 @@ next action and no sealed holdout outcome has been read.
 **Decision:** The V001 temporal distributional experiment is permanently closed with a negative result and all holdouts remain sealed.
 
 **Rationale:** The five fold shards lost across the board against the parsimonious `vol63 + tau` reference. In particular, central mass (q50) and long horizons (H126, H252) suffered. There is no contingency to rescue this run by opening holdouts, selecting new anchors, or tweaking capacities. The scientific finding is that the single shared representation failed to beat the strong volatility prior. A formal negative gate `FAIL_CLOSE_TEMPORAL_DISTRIBUTIONAL_BRANCH` was implemented in the pipeline to securely seal the branch without further actions. A separate V002 protocol will be defined in the future based on post-mortem audits.
+
+## 2026-08-30: Freeze Temporal Distributional V002 as a causal residual test
+
+**Decision:** Test one fixed residual correction over the unchanged `vol63 +
+tau` base. Residuals, base and candidate are defined in log-total-wealth space.
+Internal OOF base predictions must be past-only expanding blocks with target-end
+purging; random K-fold is forbidden. The residual correction uses the disclosed,
+outcome-informed but non-tunable shrinkage `2 ** (-(tau-1)/63)`.
+
+**Stopping rule:** development additionally requires nonnegative point deltas at
+both H126 and H252. A pass hash-freezes all evidence before the original five
+sealed interpolation holdouts may open once; a fail cannot be rescued by a
+subgroup, refit, different half-life or changed margin. V001 remains closed and
+V009 remains isolated.
+
+**Status:** scientific contract, code, tests and real runner preflight `PASS`;
+five V002 development folds are next. No V002 performance result exists yet.

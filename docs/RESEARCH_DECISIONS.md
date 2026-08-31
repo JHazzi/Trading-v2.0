@@ -870,5 +870,32 @@ sealed interpolation holdouts may open once; a fail cannot be rescued by a
 subgroup, refit, different half-life or changed margin. V001 remains closed and
 V009 remains isolated.
 
-**Status:** scientific contract, code, tests and real runner preflight `PASS`;
-five V002 development folds are next. No V002 performance result exists yet.
+**Status:** completed negative; all five folds ran, the branch closed and the
+holdouts stayed sealed. See D038.
+
+## D038 — Close Temporal V002 and audit information before adding capacity
+
+**Post-development decision (2026-08-31):** close Temporal Distributional V002
+as a negative result and keep H7/H17/H42/H90/H180 sealed. The candidate's
+primary delta versus `vol63 + tau` is `-0.008501 pp`; its 252-session
+moving-block interval is `[-0.023782, -0.003623]`, with negative point deltas at
+H126 and H252. Better calibration and positive results versus every deranged
+placebo show that the residual uses aligned own-state information, but that
+information does not improve the target over making no residual correction.
+
+The next action is `information_integration_readiness_v001`, a read-only audit
+of information presence, causal clock, coverage, join key and model eligibility.
+It must distinguish historical reconstruction from strict-PIT capture, and
+evidence/metadata from model-ready state. It does not build a dataset or train.
+
+If the gate passes, a later additive materializer keeps asset-state, day-level
+context, sparse events and prospective observations at their native units.
+Context increments are then tested separately against `vol63 + tau` with
+capacity controls. The sealed temporal taus may be opened at most once for one
+preregistered contextual candidate, never to select the information block.
+Legacy news without `available_at`, unresolved graph evidence and newly captured
+expectations are not historical model features. V009 remains isolated.
+
+**Status:** V002 closed negative; the real information-readiness audit passed.
+Review of the shared context materializer is next; no feature or model was
+promoted by the readiness result.

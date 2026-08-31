@@ -848,9 +848,9 @@ See [TEMPORAL_DATASET_V002.md](TEMPORAL_DATASET_V002.md).
 
 ## E-MARKET-TEMPORAL-DIST-V002 — residual shrinkage model preregistration
 
-**Status:** frozen protocol, implementation and real preflight `PASS`; no V002
-development fold has run yet. Development fitting is authorized. H7/H17/H42/
-H90/H180 remain strictly sealed.
+**Status:** CLOSED NEGATIVE after five valid development folds. The aggregate
+gate is `FAIL_CLOSE_TEMPORAL_DISTRIBUTIONAL_V002_BRANCH`; H7/H17/H42/H90/H180
+were never read and remain strictly sealed.
 
 The candidate learns q-specific residuals in log-total-wealth space over a
 `vol63 + tau` base. Base residual targets use five past-only, purged expanding
@@ -891,3 +891,42 @@ fit; OOS development retains all 12. A candidate must also beat five
 same-capacity within-day derangement placebos. An exact development PASS freezes
 all code/config/evidence/mask/model/prediction/report hashes before the five
 unseen taus can open once without refit or contingency.
+
+Observed terminal result: reference-minus-candidate pinball delta
+`-0.008501 pp`; 252-session moving-block 95% interval
+`[-0.023782, -0.003623]`; 2/5 positive folds, 3/12 positive anchors and 2/5
+positive quantiles. H126/H252 are `-0.033994/-0.012952 pp`. Candidate
+calibration improves from `0.006868` to `0.003893` and the candidate beats all
+five derangement placebos, but these secondary successes cannot rescue the
+failed primary. `development_closure.json` is `CLOSED_NEGATIVE`; no model is
+promoted.
+
+## DATA-INFORMATION-INTEGRATION-V001 — causal information inventory
+
+**Type:** read-only schema, coverage, availability and integration audit; no
+dataset and no model.
+
+**Status:** real local read-only execution passed on 2026-08-31; no model or
+feature promoted.
+
+The configured sources are Market Core V003, market/source V2, SPY/QQQ/IWM
+external state, VIX/rates/credit conditions, corrected Event Dataset V002,
+strict-PIT information capture and entity/relation evidence. The V009 registry
+is forbidden and not opened.
+
+Outputs separate inventory, Core coverage, causal/model eligibility, acquisition
+gaps and a plan-only shared-state design. Hard gates require read-only/stable
+inputs, unique Core identities, exact day-context coverage, valid strict-PIT
+capture clocks and no future/outcome feature names. A PASS authorizes only
+review of a later context materializer; training remains false.
+
+Observed inventory: 1,092,555 Core states for 497 assets over 2,260 sessions;
+1,250,027 daily OHLCV asset-days for 508 assets; 1,111,944 one-minute legacy
+bars spanning only seven trading days; 62,671 legacy news documents with no raw
+text or document-level causal availability clock; a corrected SEC event track
+for ten assets; prospective expectations for 19 Core assets; and graph evidence
+for ten registrants with zero canonical identity buckets and zero edge-ready
+claims. External-market and financial-condition features have exact, non-null
+Core-domain coverage.
+
+See [INFORMATION_INTEGRATION_V001.md](INFORMATION_INTEGRATION_V001.md).

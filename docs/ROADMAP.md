@@ -1,6 +1,6 @@
 # Research Roadmap
 
-**Snapshot:** 2026-08-27
+**Snapshot:** 2026-08-31
 **Rule:** complexity is added only after the previous information contract earns it OOS.
 
 ## Active sequence after the 2026-08-27 checkpoint
@@ -15,9 +15,11 @@ V008 conditional residual quantiles       COMPLETE: 4/4 significant failures
 V008.1 endogenous closure                 COMPLETE: H1 developmental pass
 V009 prospective temporal confirmation    ACTIVE: fit frozen; first seal pending >=2026-08-31
 Temporal Dataset V001                     COMPLETE: parity PASS; raw-close long-horizon selection rejected
-Temporal Dataset V002                     COMPLETE mechanical build; economic special-action review active
+Temporal Dataset V002                     COMPLETE: economic/action review PASS
 Temporal distributional V001              COMPLETE: closed negative vs vol63
-Temporal distributional V002              PREFLIGHT PASS; five development folds next
+Temporal distributional V002              COMPLETE: closed negative; holdouts sealed
+Information Integration Readiness V001    COMPLETE: real read-only PASS
+Context information materializer          NEXT: design/audit; no training
 distributional Event Brain                PARALLEL developmental track on existing SEC
 identity hygiene                          REVIEW in parallel; no graph promotion
 graph propagation                         BLOCKED until direct event increment
@@ -33,6 +35,13 @@ eligible origins are the sole formal gate, using origin-day-equal pinball,
 5/10/20-day moving blocks, five chronological stability blocks, quantile breadth
 and calibration. Event Brain research may proceed separately but cannot
 validate, rescue or change V009.
+
+V001/V002 temporal modeling established that the current own-state information
+does not beat `vol63 + tau` across a one-year horizon, even though the V002
+residual is better than deranged-feature placebos and improves calibration.
+Both branches are closed with interpolation holdouts sealed. The next parallel
+development block inventories and gates new information before any additional
+model is proposed.
 
 ## Phase 0 — Documentation checkpoint
 
@@ -319,13 +328,13 @@ supported from the shared grid, but do not create independent labels and may
 not be selected after outcome inspection. A horizon-conditioned collection of
 terminal marginals is still not a joint path model.
 
-Current status: full local V002 build/audit PASS with zero quarantined resolved
-outcomes. The downstream review independently passes distribution, support and
-nonmaterialized-tau prefix reconstruction. Eleven of 16 material cash steps can
-enter model-visible outcomes and require evidence-bound entitlement decisions
-before the plan-only temporal model
-preregistration can close. Its common-support five-fold clock is feasible and
-contains no fit/predict path.
+Current status: full local V002 build/audit and evidence-bound economic review
+PASS with an empty downstream exclusion mask. Temporal Distributional V001 and
+V002 both completed development and closed negative without opening the five
+interpolation holdouts. The next step is not another rescue model: run
+Information Integration Readiness V001, then review a shared context
+materializer that preserves native asset/day/event units. The readiness audit
+has now passed; materializer design/audit is the next step, not model fitting.
 
 Build model-derived future path scenarios.
 
@@ -627,21 +636,22 @@ No provider is promoted by convenience, no historical backfill is relabeled stri
 V009 remains frozen as a prospective scientific claim. Product work proceeds independently through Investment Workbench V0, Decision Journal, paper decision mode, risk/cost integration and later a gated Decision Engine. Product consumers may read published model artifacts but must not alter V009's frozen contract.
 
 <!-- temporal-distributional-runner-v001 -->
-## Active temporal escalation
+## Closed temporal modeling and active information escalation
 
 ```text
 V002 economic entitlement review                 PASS
 extreme-tail lineage audit (80 outcomes)         PASS
 versioned selection mask (0 exclusions)          PASS
-causal residual V002 runner preflight             PASS
-five V002 development folds                       NEXT
-development aggregate gate                       BLOCKED on folds
-artifact SHA freeze                              BLOCKED on development PASS
-one-time H7/H17/H42/H90/H180 evaluation          SEALED
-temporal section close                           BLOCKED on terminal gate result
+Temporal Distributional V001                     CLOSED NEGATIVE
+Temporal Distributional V002                     CLOSED NEGATIVE
+H7/H17/H42/H90/H180 evaluation                   SEALED / NEVER OPENED
+Information Integration Readiness V001           REAL READ-ONLY PASS
+shared context materializer                      NEXT: design/audit
+incremental Context V003 preregistration         BLOCKED on materializer audit
 ```
 
 No dense H1..H252 table or 252-head model is planned. V002 can technically query
-integer tau up to one year, but its tree-based horizon response is stepwise and
-does not establish smooth interpolation. Even a holdout pass would not support
-paths, alpha or production.
+integer tau up to one year, but neither tested temporal model earned the right
+to open interpolation holdouts. New context must demonstrate incremental
+information one block at a time before trajectories, alpha or production can
+be discussed.

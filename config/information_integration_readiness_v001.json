@@ -1,0 +1,202 @@
+{
+  "version": "information_integration_readiness_v001",
+  "status": "read_only_inventory_and_plan_no_training",
+  "reference_state": {
+    "database": "data/processed/market_daily_v003_core.db",
+    "table": "market_daily_v003_states",
+    "state_id_column": "state_id",
+    "asset_id_column": "asset_id",
+    "ticker_column": "ticker",
+    "day_column": "trading_day",
+    "time_column": "state_time",
+    "feature_version": "market_daily_state_v003_core",
+    "frozen_max_day": "2026-08-24",
+    "clock": "exchange_session_close",
+    "strict_historical_pit": false
+  },
+  "sources": {
+    "market_source": {
+      "database": "data/database/market_data_v2.db",
+      "role": "raw_and_normalized_market_event_source"
+    },
+    "external_market": {
+      "database": "data/processed/market_daily_v005_external_state.db",
+      "table": "market_external_state_v005",
+      "join_key": "trading_day",
+      "role": "dense_day_context"
+    },
+    "financial_conditions": {
+      "database": "data/processed/market_daily_v0052_financial_conditions.db",
+      "table": "market_financial_conditions_v0052",
+      "join_key": "trading_day",
+      "role": "dense_day_context"
+    },
+    "historical_event_dataset": {
+      "database": "reports/distributional_event_dataset_v002/sec_core_2016_20260824_v002/dataset.sqlite",
+      "role": "sparse_historical_event_reconstruction"
+    },
+    "prospective_information": {
+      "database": "data/database/information_capture_v001.db",
+      "role": "append_only_strict_pit_accumulation"
+    },
+    "graph_entity_evidence": {
+      "database": "data/processed/event_graph_entity_registry_v002.db",
+      "role": "identity_evidence_not_canonical_graph"
+    },
+    "graph_relation_evidence": {
+      "database": "data/processed/event_graph_relation_evidence_v002.db",
+      "role": "relation_evidence_not_model_graph"
+    }
+  },
+  "feature_blocks": {
+    "own_state": {
+      "source": "reference_state",
+      "eligibility": "historical_research_context",
+      "features": [
+        "asset_return_1d_pct",
+        "asset_return_3d_pct",
+        "asset_return_5d_pct",
+        "asset_return_10d_pct",
+        "asset_return_20d_pct",
+        "asset_return_63d_pct",
+        "asset_vol_5d_pct",
+        "asset_vol_20d_pct",
+        "asset_vol_63d_pct",
+        "asset_range_1d_pct",
+        "asset_volume_ratio_20d",
+        "asset_drawdown_20d_pct",
+        "asset_drawdown_63d_pct",
+        "asset_drawdown_252d_pct"
+      ]
+    },
+    "cross_section_state": {
+      "source": "reference_state",
+      "eligibility": "historical_research_context_increment_only",
+      "features": [
+        "cross_section_peer_count",
+        "cross_section_mean_return_1d_pct",
+        "cross_section_mean_return_5d_pct",
+        "cross_section_mean_return_20d_pct",
+        "cross_section_breadth_positive_1d",
+        "cross_section_breadth_positive_5d",
+        "cross_section_dispersion_1d_pct",
+        "cross_section_mean_vol_20d_pct",
+        "asset_minus_cross_section_1d_pct",
+        "asset_minus_cross_section_5d_pct",
+        "asset_minus_cross_section_20d_pct"
+      ]
+    },
+    "sector_state": {
+      "source": "reference_state",
+      "eligibility": "historical_research_context_increment_only",
+      "features": [
+        "sector_peer_count",
+        "sector_context_missing",
+        "sector_mean_return_1d_pct",
+        "sector_mean_return_5d_pct",
+        "sector_mean_return_20d_pct",
+        "sector_breadth_positive_1d",
+        "sector_mean_vol_20d_pct",
+        "asset_minus_sector_1d_pct",
+        "asset_minus_sector_5d_pct",
+        "asset_minus_sector_20d_pct"
+      ]
+    },
+    "broad_market_state": {
+      "source": "external_market",
+      "eligibility": "historical_research_context_increment_only",
+      "features": [
+        "spy_return_1d_pct",
+        "spy_return_5d_pct",
+        "spy_return_20d_pct",
+        "spy_return_63d_pct",
+        "spy_vol_20d_pct",
+        "spy_vol_63d_pct",
+        "spy_drawdown_63d_pct",
+        "spy_drawdown_252d_pct",
+        "spy_range_1d_pct",
+        "spy_volume_ratio_20d",
+        "qqq_return_1d_pct",
+        "qqq_return_5d_pct",
+        "qqq_return_20d_pct",
+        "iwm_return_1d_pct",
+        "iwm_return_5d_pct",
+        "iwm_return_20d_pct",
+        "qqq_minus_spy_1d_pct",
+        "qqq_minus_spy_5d_pct",
+        "qqq_minus_spy_20d_pct",
+        "iwm_minus_spy_1d_pct",
+        "iwm_minus_spy_5d_pct",
+        "iwm_minus_spy_20d_pct"
+      ]
+    },
+    "financial_conditions_state": {
+      "source": "financial_conditions",
+      "eligibility": "historical_research_context_increment_only",
+      "features": [
+        "vix_lag1_close",
+        "vix_lag1_delta_1d_points",
+        "vix_lag1_delta_5d_points",
+        "vix_lag1_zscore_63d",
+        "vix_lag1_zscore_252d",
+        "vix_lag1_log_change_vol_20d",
+        "tlt_return_1d_pct",
+        "tlt_return_5d_pct",
+        "tlt_return_20d_pct",
+        "ief_minus_shy_5d_pct",
+        "tlt_minus_ief_5d_pct",
+        "tlt_minus_shy_20d_pct",
+        "tlt_vol_20d_pct",
+        "hyg_return_1d_pct",
+        "hyg_return_5d_pct",
+        "hyg_minus_lqd_1d_pct",
+        "hyg_minus_lqd_5d_pct",
+        "hyg_minus_lqd_20d_pct",
+        "hyg_vol_20d_pct"
+      ]
+    }
+  },
+  "guards": {
+    "training_authorized": false,
+    "materialization_authorized_by_this_audit": false,
+    "source_database_mutation_allowed": false,
+    "outcome_columns_feature_eligible": false,
+    "v009_access_allowed": false,
+    "forbidden_source_path_tokens": [
+      "market_brain_v009",
+      "distributional_v009",
+      "prospective_prediction"
+    ],
+    "forbidden_feature_name_tokens": [
+      "target",
+      "label",
+      "outcome",
+      "future"
+    ],
+    "forbidden_feature_exact_names": [
+      "return_pct",
+      "total_return_pct",
+      "raw_return_pct",
+      "mfe_pct",
+      "mae_pct",
+      "realized_path_vol_pct"
+    ]
+  },
+  "planned_increment_ladder": [
+    {
+      "id": "context_v003_a",
+      "reference": "vol63_plus_tau",
+      "increment": ["cross_section_state", "sector_state"]
+    },
+    {
+      "id": "context_v003_b",
+      "reference": "winning_predeclared_prior_rung_or_vol63_plus_tau",
+      "increment": ["broad_market_state"]
+    },
+    {
+      "id": "context_v003_c",
+      "reference": "winning_predeclared_prior_rung_or_vol63_plus_tau",
+      "increment": ["financial_conditions_state"]
+    }
+  ]
+}

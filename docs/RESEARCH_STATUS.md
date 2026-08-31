@@ -1,9 +1,33 @@
-# Research Status — 2026-08-27
+# Research Status — 2026-08-31
 
 **Status:** canonical empirical checkpoint  
 **Scope:** research, not production trading
 
-## Current checkpoint — 2026-08-27
+## Current checkpoint — 2026-08-31
+
+### Temporal V002 closure and information-integration checkpoint
+
+Temporal Distributional V002 completed all five development folds and is
+closed negative. The causal residual candidate lost to the unchanged
+`vol63 + tau` reference by `-0.008501 pp`; the 252-session moving-block 95%
+interval is `[-0.023782, -0.003623]`. Only 2/5 folds, 3/12 anchors and 2/5
+quantiles improved; H126/H252 deltas are `-0.033994/-0.012952 pp`. Calibration
+improved and the candidate beat every deranged-feature placebo, which shows
+that own-state alignment was real, but any residual correction was still worse
+than applying no correction to the simple reference. The five H7/H17/H42/H90/
+H180 holdouts remain sealed and unread. V001 and V002 are both preserved as
+negative evidence; neither branch may be rescued by refit or holdout opening.
+
+The next active temporal question is information sufficiency, not more
+capacity on the same 14 own-state features. Information Integration Readiness
+V001 completed its real local read-only audit with
+`PASS_READ_ONLY_INFORMATION_INVENTORY_CONTEXT_PLAN_READY`. All source,
+identity, feature, exact Core-coverage, strict-PIT clock and V009-isolation
+gates passed. It found 1,092,555 Core states/497 assets, complete Core-domain
+SPY/QQQ/IWM and financial-condition blocks, but only one week of legacy
+intraday data, non-causal historical news backfill, prospective expectations
+for 19 Core assets and non-canonical graph evidence for ten. The PASS authorizes
+only review of a shared context materializer; training remains blocked.
 
 ### Completed falsification work
 
@@ -957,17 +981,15 @@ must be separate, pre-registered, and explicitly address the scientific findings
 <!-- TEMPORAL_DISTRIBUTIONAL_RUNNER_V001_END -->
 
 <!-- TEMPORAL_DISTRIBUTIONAL_RUNNER_V002_START -->
-## Temporal total-return distribution V002 — development ready
+## Temporal total-return distribution V002 — CLOSED NEGATIVE
 
-V002 is a separate, outcome-informed residual experiment. Its canonical
-protocol now fixes the log-wealth residual equation, past-only purged internal
-cross-fitting, equal day/origin/tau fitting weights, exact exponential
-shrinkage and reconciled development/holdout gates. The runner implementation
-and seven V002 tests are present; all 18 combined V001/V002 tests pass.
-
-Real preregistration and runner preflights pass on 18,573,435 outcomes and
-1,092,555 origins with read-only stable V002/Core inputs. Development fitting
-is authorized. No V002 development model has been fitted, no holdout performance
-has been read and V009 remains isolated. Next action: execute five idempotent
-development fold shards, aggregate once and obey the resulting terminal gate.
+V002 tested one causal log-wealth residual correction over the unchanged
+`vol63 + tau` reference. All five folds completed with valid artifacts, but the
+aggregate gate is `FAIL_CLOSE_TEMPORAL_DISTRIBUTIONAL_V002_BRANCH`: primary
+delta `-0.008501 pp`, 252-session block interval
+`[-0.023782, -0.003623]`, and negative H126/H252 deltas. The candidate improved
+calibration and beat its five derangement placebos, but did not beat the
+reference. `development_closure.json` records `CLOSED_NEGATIVE`; holdouts were
+not read and remain sealed. No refit, alternate shrinkage or subgroup rescue is
+authorized. V009 remains isolated.
 <!-- TEMPORAL_DISTRIBUTIONAL_RUNNER_V002_END -->

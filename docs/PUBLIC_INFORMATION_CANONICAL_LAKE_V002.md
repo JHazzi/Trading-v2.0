@@ -166,6 +166,15 @@ validity, strict-PIT news and any market-impact detector remain separate gates.
 Do not run a Core/Market/V009 refresh concurrently. Run stages separately so a
 long operation has a clear checkpoint:
 
+The bars stage deliberately keeps DuckDB at 6 GB and processes bounded groups
+of source tickers. This follows the physical clustering of the source Parquet,
+while every batch is still written into New York calendar-year partitions.
+Each completed group is sealed below a build-specific work directory and is
+reused after an interruption. This bounds aggregation memory and avoids a full
+file scan per year without changing session definitions or bar mathematics.
+The stage emits one `BAR_TICKER_BATCH_COMPLETE` line per group; disk capacity
+and DuckDB working memory are independent gates.
+
 ```bash
 cd ~/quant_market_ai
 

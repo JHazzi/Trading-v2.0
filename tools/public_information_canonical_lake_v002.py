@@ -175,6 +175,15 @@ def validate_config(root: Path, config: Mapping[str, Any]) -> dict[str, Any]:
         errors.append("storage cap exceeds 100 GiB")
     if storage.get("preallocate_space") is not False:
         errors.append("preallocation is forbidden")
+    duckdb_config = config.get("duckdb", {})
+    if duckdb_config.get("preserve_insertion_order") is not False:
+        errors.append("DuckDB insertion-order preservation must remain disabled")
+    if duckdb_config.get("bar_materialization_batch") != "SOURCE_TICKER_GROUP":
+        errors.append("bar materialization must be batched by source ticker group")
+    if int(duckdb_config.get("bar_tickers_per_batch", 0)) <= 0:
+        errors.append("bar tickers per batch must be positive")
+    if duckdb_config.get("resume_completed_bar_batches") is not True:
+        errors.append("completed bar batches must be resumable")
     bars = config.get("bars", {})
     if bars.get("cross_source_policy") != "PRESERVE_BOTH_NO_MEDIAN_NO_OVERWRITE":
         errors.append("bar median/overwrite is forbidden")
@@ -474,7 +483,8 @@ def _connect(root: Path, config: Mapping[str, Any], plan: Mapping[str, Any], spi
     connection.execute(f"SET threads={int(config['duckdb']['threads'])}")
     connection.execute(f"SET memory_limit={_sql_string(config['duckdb']['memory_limit'])}")
     connection.execute(f"SET temp_directory={_sql_string(spill)}")
-    connection.execute("SET preserve_insertion_order=false")
+    preserve = str(bool(config["duckdb"]["preserve_insertion_order"])).lower()
+    connection.execute(f"SET preserve_insertion_order={preserve}")
     for alias, key in (("market", "market_db"), ("core", "core_db"),
                        ("graph_identity", "graph_identity_db")):
         path = resolve_path(root, config["paths"][key])
@@ -550,6 +560,140 @@ def _copy_dataset(connection: Any, query: str, destination: Path,
     return state, row_count, False
 
 
+def _copy_dataset_by_ticker_group(
+    connection: Any,
+    batches: list[tuple[str, str]],
+    destination: Path,
+    config: Mapping[str, Any],
+    build_id: str,
+    artifact_name: str,
+) -> tuple[dict[str, Any], int, bool]:
+    """Materialize bounded, resumable ticker batches with year partitions.
+
+    The source Parquet is physically clustered by ticker. Each completed ticker
+    group is sealed independently and still exported as Hive-style local-year
+    partitions. A retry reuses completed groups, while the public artifact is
+    published atomically only after every group has completed.
+    """
+    success_path = destination / "_SUCCESS.json"
+    if success_path.exists():
+        marker = read_json(success_path)
+        if marker.get("build_id") != build_id or marker.get("artifact_name") != artifact_name:
+            raise CanonicalLakeError(f"artifact marker mismatch: {destination}")
+        state = _tree_state(destination, hash_files=True)
+        expected = marker["tree_state"]
+        if (state["tree_sha256"], state["file_count"], state["size_bytes"]) != (
+            expected["tree_sha256"], expected["file_count"], expected["size_bytes"]
+        ):
+            raise CanonicalLakeError(f"artifact changed after publication: {destination}")
+        return state, int(marker["row_count"]), True
+    if destination.exists():
+        raise CanonicalLakeError(f"unsealed artifact directory requires review: {destination}")
+
+    labels = [label for label, _ in batches]
+    work = destination.parent / f".{artifact_name}.{build_id}.incomplete"
+    work_marker = work / "_BATCH_STATE.json"
+    if work.exists():
+        if not work_marker.exists():
+            raise CanonicalLakeError(f"unsealed batch work directory requires review: {work}")
+        prior = read_json(work_marker)
+        if (
+            prior.get("build_id") != build_id
+            or prior.get("artifact_name") != artifact_name
+            or prior.get("batch_labels") != labels
+        ):
+            raise CanonicalLakeError(f"batch work marker mismatch: {work}")
+    else:
+        work.mkdir(parents=True, exist_ok=False)
+        _atomic_json(work_marker, {
+            "version": VERSION,
+            "build_id": build_id,
+            "artifact_name": artifact_name,
+            "batch_labels": labels,
+            "created_at_utc": utc_now(),
+            "training_authorized": False,
+        })
+
+    compression = config["duckdb"]["compression"]
+    row_group = int(config["duckdb"]["row_group_size"])
+    total_rows = 0
+    batches_root = work / "_batches"
+    batches_root.mkdir(parents=True, exist_ok=True)
+    for index, (label, query) in enumerate(batches, start=1):
+        batch = batches_root / label
+        batch_marker = batch / "_SUCCESS.json"
+        reused = False
+        if batch_marker.exists():
+            marker = read_json(batch_marker)
+            state = _tree_state(batch, hash_files=True)
+            expected = marker["tree_state"]
+            if (
+                marker.get("build_id") != build_id
+                or marker.get("artifact_name") != artifact_name
+                or marker.get("batch_label") != label
+                or (state["tree_sha256"], state["file_count"], state["size_bytes"])
+                != (expected["tree_sha256"], expected["file_count"], expected["size_bytes"])
+            ):
+                raise CanonicalLakeError(f"bar batch marker mismatch: {batch}")
+            count = int(marker["row_count"])
+            reused = True
+        else:
+            if batch.exists():
+                raise CanonicalLakeError(f"unsealed bar batch requires review: {batch}")
+            with tempfile.TemporaryDirectory(prefix=f"_{label}_", dir=work) as td:
+                temporary = Path(td) / label
+                connection.execute(
+                    f"COPY ({query}) TO {_sql_string(temporary)} "
+                    f"(FORMAT PARQUET, COMPRESSION {compression}, ROW_GROUP_SIZE {row_group}, "
+                    "PARTITION_BY (trading_year))"
+                )
+                scan = _artifact_scan(temporary)
+                count = int(_one(connection.execute(
+                    f"SELECT COUNT(*) AS n FROM {scan}"
+                ))["n"])
+                state = _tree_state(temporary, hash_files=True)
+                if not state["file_count"] or count <= 0:
+                    raise CanonicalLakeError(f"bar batch {label} is empty")
+                _atomic_json(temporary / "_SUCCESS.json", {
+                    "version": VERSION,
+                    "build_id": build_id,
+                    "artifact_name": artifact_name,
+                    "batch_label": label,
+                    "row_count": count,
+                    "tree_state": state,
+                    "created_at_utc": utc_now(),
+                    "training_authorized": False,
+                })
+                os.replace(temporary, batch)
+        total_rows += count
+        print(json.dumps({
+            "status": "BAR_TICKER_BATCH_COMPLETE",
+            "artifact_name": artifact_name,
+            "batch_label": label,
+            "rows": count,
+            "batch": index,
+            "batches": len(batches),
+            "reused": reused,
+        }), flush=True)
+
+    state = _tree_state(work, hash_files=True)
+    if not state["file_count"] or total_rows <= 0:
+        raise CanonicalLakeError(f"artifact {artifact_name} is empty")
+    _atomic_json(work / "_SUCCESS.json", {
+        "version": VERSION,
+        "build_id": build_id,
+        "artifact_name": artifact_name,
+        "row_count": total_rows,
+        "tree_state": state,
+        "batch_strategy": "SOURCE_TICKER_GROUP_WITH_LOCAL_YEAR_PARTITIONS",
+        "batch_labels": labels,
+        "created_at_utc": utc_now(),
+        "training_authorized": False,
+    })
+    os.replace(work, destination)
+    return state, total_rows, False
+
+
 def _write_stage_marker(path: Path, plan: Mapping[str, Any], stage: str,
                         artifacts: Mapping[str, Any], input_unchanged: bool) -> dict[str, Any]:
     marker = {
@@ -566,19 +710,30 @@ def _write_stage_marker(path: Path, plan: Mapping[str, Any], stage: str,
     return marker
 
 
-def _bar_sessions_query(config: Mapping[str, Any]) -> str:
+def _bar_sessions_query(
+    config: Mapping[str, Any],
+    raw_tickers: list[str] | None = None,
+) -> str:
     zone = config["bars"]["exchange_timezone"]
     pre_start, pre_end = config["bars"]["session_windows_local"]["premarket"]
     rth_start, rth_end = config["bars"]["session_windows_local"]["rth"]
     aft_start, aft_end = config["bars"]["session_windows_local"]["afterhours"]
     expected = int(config["bars"]["expected_full_rth_minutes"])
     source_id = config["bars"]["source_id"]
+    source_filter = ""
+    if raw_tickers is not None:
+        if not raw_tickers:
+            raise CanonicalLakeError("bar ticker batch cannot be empty")
+        source_filter = "WHERE b.ticker IN (" + ",".join(
+            _sql_string(ticker) for ticker in raw_tickers
+        ) + ")"
     return f"""
     WITH localized AS (
       SELECT upper(trim(b.ticker)) AS ticker,b.timestamp,b.open,b.high,b.low,b.close,
              b.volume,b.trade_count,b.vol_weighted_avg_price,
              timezone({_sql_string(zone)},b.timestamp) AS local_ts
       FROM raw_bars b
+      {source_filter}
     ), classified AS (
       SELECT *,CAST(local_ts AS DATE) AS trading_day,CAST(local_ts AS TIME) AS local_time,
         CASE
@@ -651,6 +806,33 @@ def _bar_sessions_query(config: Mapping[str, Any]) -> str:
       'SEGMENT_END_PROXY_NEVER_A_FIRST_SEEN_CLAIM' AS availability_status
     FROM aggregated a LEFT JOIN core_assets c USING(ticker)
     """
+
+
+def _bar_session_ticker_queries(
+    connection: Any, config: Mapping[str, Any]
+) -> list[tuple[str, str]]:
+    rows = connection.execute(
+        """
+        SELECT ticker,upper(trim(ticker)) AS canonical_ticker
+        FROM (SELECT DISTINCT ticker FROM raw_bars WHERE ticker IS NOT NULL)
+        WHERE trim(ticker)<>'' ORDER BY canonical_ticker,ticker
+        """
+    ).fetchall()
+    if not rows:
+        raise CanonicalLakeError("raw bars are empty")
+    by_canonical: dict[str, list[str]] = {}
+    for raw_ticker, canonical_ticker in rows:
+        by_canonical.setdefault(str(canonical_ticker), []).append(str(raw_ticker))
+    canonical = sorted(by_canonical)
+    size = int(config["duckdb"]["bar_tickers_per_batch"])
+    batches: list[tuple[str, str]] = []
+    for index, offset in enumerate(range(0, len(canonical), size), start=1):
+        names = canonical[offset:offset + size]
+        raw = [ticker for name in names for ticker in by_canonical[name]]
+        digest = sha256_bytes(canonical_json_bytes(names))[:10]
+        label = f"batch_{index:03d}_{digest}"
+        batches.append((label, _bar_sessions_query(config, raw)))
+    return batches
 
 
 def _reconciliation_query(config: Mapping[str, Any], bars_path: Path) -> str:
@@ -731,9 +913,9 @@ def materialize_bars(root: Path, config: Mapping[str, Any], plan: Mapping[str, A
             connection = _connect(root, config, plan, Path(spill))
             try:
                 name = "bar_sessions"
-                state, count, reused = _copy_dataset(
-                    connection, _bar_sessions_query(config), lake / name,
-                    ["trading_year"], config, plan["build_id"], name,
+                state, count, reused = _copy_dataset_by_ticker_group(
+                    connection, _bar_session_ticker_queries(connection, config),
+                    lake / name, config, plan["build_id"], name,
                 )
                 artifacts[name] = {"tree_state": state, "row_count": count, "reused": reused}
                 _record_artifact(root, config, plan, "bars", name, state, count)

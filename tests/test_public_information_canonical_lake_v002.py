@@ -56,6 +56,7 @@ def _raw_parquets(root: Path) -> tuple[Path, Path]:
                 ("AAPL", "Apple", "2024-01-02 21:00:00+00", 102, 102, 102, 102, 1, 1, 102),
                 ("AAPL", "Apple", "2024-01-03 14:30:00+00", 105, 106, 104, 105, 12, 2, 105),
                 ("AAPL", "Apple", "2024-01-03 14:31:00+00", 105, 107, 104, 106, 18, 2, 105.5),
+                ("AAPL", "Apple", "2025-01-02 14:30:00+00", 110, 111, 109, 110, 9, 2, 110),
                 ("OUT", "Outside", "2024-01-02 14:30:00+00", 10, 11, 9, 10, 5, 1, 10),
             ],
         )
@@ -237,6 +238,11 @@ class PublicInformationCanonicalLakeV002Tests(unittest.TestCase):
             self.assertFalse(result["training_authorized"])
             self.assertTrue(bars["input_state_unchanged"])
             self.assertTrue(news["input_state_unchanged"])
+            bar_lake = Path(plan["lake_path"]) / "bar_sessions"
+            self.assertTrue(any(bar_lake.glob("**/trading_year=2024")))
+            self.assertTrue(any(bar_lake.glob("**/trading_year=2025")))
+            reused_bars = materialize_bars(root, config, plan)
+            self.assertTrue(reused_bars["idempotent_reuse"])
             reused = materialize_news(root, config, plan)
             self.assertTrue(reused["idempotent_reuse"])
             for key, old_mtime in sources.items():

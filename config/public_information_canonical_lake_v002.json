@@ -33,7 +33,11 @@
     "threads": 2,
     "memory_limit": "6GB",
     "compression": "ZSTD",
-    "row_group_size": 100000
+    "row_group_size": 100000,
+    "preserve_insertion_order": false,
+    "bar_materialization_batch": "SOURCE_TICKER_GROUP",
+    "bar_tickers_per_batch": 25,
+    "resume_completed_bar_batches": true
   },
   "bars": {
     "source_id": "alpaca_hf_bars_1m_feed_unknown",

@@ -22,6 +22,8 @@ FORBIDDEN = [
     "public_information_catalog_v001.db",
     "public_information_v001",
     "financial_news_multisource",
+    "public_information_semantics_audit_v001",
+    "public_information_semantics_v001",
 ]
 
 

@@ -1005,3 +1005,23 @@ reference. `development_closure.json` records `CLOSED_NEGATIVE`; holdouts were
 not read and remain sealed. No refit, alternate shrinkage or subgroup rescue is
 authorized. V009 remains isolated.
 <!-- TEMPORAL_DISTRIBUTIONAL_RUNNER_V002_END -->
+
+<!-- PUBLIC_INFORMATION_SEMANTICS_AUDIT_V001_START -->
+## Public information semantics — full-corpus audit complete
+
+`public_information_semantics_audit_v001` completed on the frozen 531.9M-row
+minute-bar snapshot and 28.7M-row news snapshot. Status is
+`PASS_READ_ONLY_SEMANTICS_REVIEW_READY`; every source input remained unchanged
+and V009 interaction is `NONE`.
+
+The data has useful breadth (bars for 476/497 Core current symbols, exact-symbol
+news for 448, both for 433), but it is not model-ready. FNSPID rows expand
+document-to-ticker links and contain many underlying domains. Historical news
+lacks a strict-PIT first-seen clock, ticker validity is unproven, and raw OHLC
+levels have large adjustment-regime discrepancies even though return agreement
+with Yahoo is much tighter. Training and feature visibility remain blocked.
+
+Current next action: Public Information Canonical Lake V002 — versioned daily
+session bars, source/adjustment reconciliation, document/story/ticker-link
+identity and causal-time policy — followed by a separate read-only audit.
+<!-- PUBLIC_INFORMATION_SEMANTICS_AUDIT_V001_END -->

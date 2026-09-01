@@ -930,3 +930,29 @@ near-duplicate clustering must preserve source dissemination multiplicity.
 complete. The remote bars manifest/dry-run pass; bulk downloads, gated news
 manifest and real corpus audits are user-run. Training and context
 materialization remain blocked; V009 is isolated.
+
+## D040 — Preserve source asymmetry; canonicalize documents and sessions before modeling
+
+**Post-audit decision (2026-09-01):** Public Information Semantics Audit V001
+passed read-only on the full frozen bars/news snapshots. Source asymmetry is a
+measured property, not a rejection rule and not a reliability weight. FNSPID is
+a collection/acquisition lineage containing many document domains and mixed
+publisher/byline values; expanded ticker-document rows are not independent
+stories.
+
+The project will build Public Information Canonical Lake V002 before any
+context model. Bars retain Alpaca-derived and Yahoo values separately; extreme
+raw-level differences are reconciled against adjustment/corporate-action
+lineage and never averaged. News first receives document, story-candidate and
+ticker-link identities while preserving dissemination multiplicity. Historical
+timestamps remain strict PIT=false; prospective first-seen capture is separate.
+Current-symbol joins and graph buckets cannot become canonical identity without
+validity evidence.
+
+After the V002 lake audit, information blocks are tested incrementally against
+`vol63 + tau`, beginning with intraday/session state and then news/event state.
+The sealed temporal holdouts are not used to select these transformations, and
+V009 remains isolated.
+
+**Status:** semantics audit PASS; Canonical Lake V002 is next. No feature,
+model, source or graph relation was promoted.

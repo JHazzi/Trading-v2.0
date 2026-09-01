@@ -1,0 +1,96 @@
+{
+  "version": "public_information_semantics_audit_v001",
+  "purpose": "Read-only semantic, temporal, identity and cross-source audit of the frozen public bars/news intake before any point-in-time materializer or model.",
+  "training_authorized": false,
+  "materialization_authorized": false,
+  "feature_visibility": "BLOCKED_UNTIL_SEPARATE_POINT_IN_TIME_MATERIALIZER_AND_PREREGISTERED_INCREMENT_TEST",
+  "paths": {
+    "intake_config": "config/public_information_intake_v001.json",
+    "intake_catalog_db": "data/database/public_information_catalog_v001.db",
+    "market_db": "data/database/market_data_v2.db",
+    "core_db": "data/processed/market_daily_v003_core.db",
+    "graph_identity_db": "data/processed/event_graph_entity_registry_v002.db",
+    "report_dir": "reports/public_information_semantics_audit_v001"
+  },
+  "snapshots": {
+    "bars": {
+      "dataset_key": "alpaca_hf_bars_1m",
+      "profile_name": "full",
+      "data_kind": "bars_1m"
+    },
+    "news": {
+      "dataset_key": "financial_news_multisource",
+      "profile_name": "priority",
+      "data_kind": "news_documents"
+    }
+  },
+  "bar_contract": {
+    "timestamp_timezone": "UTC",
+    "exchange_timezone": "America/New_York",
+    "timestamp_semantics": "bar_start_assumption_pending_provenance_confirmation",
+    "interval_minutes": 1,
+    "session_windows_local": {
+      "premarket": ["04:00:00", "09:30:00"],
+      "rth": ["09:30:00", "16:00:00"],
+      "afterhours": ["16:00:00", "20:00:00"]
+    },
+    "expected_full_rth_minutes": 390,
+    "primary_source_candidate": "alpaca_feed_unknown",
+    "comparison_source": "yahoo_finance",
+    "cross_source_policy": "PRESERVE_BOTH_NO_MEDIAN_NO_OVERWRITE",
+    "volume_policy": "REPORT_ONLY_NEVER_BLEND",
+    "price_difference_thresholds_pct": [0.01, 0.05, 0.10, 0.50, 1.00],
+    "opening_gap_threshold_pct": 3.0
+  },
+  "identity_contract": {
+    "primary_mapping": "exact_uppercase_ticker_to_core_current_symbol",
+    "historical_validity_required_for_canonical_mapping": true,
+    "missing_valid_from_valid_to_status": "CURRENT_SYMBOL_PROXY_NOT_HISTORICALLY_CANONICAL",
+    "punctuation_normalization_role": "DIAGNOSTIC_CANDIDATE_ONLY_NO_AUTO_LINK",
+    "graph_identity_role": "EVIDENCE_ONLY_NO_CANONICAL_EXPANSION"
+  },
+  "news_contract": {
+    "collection_source_field": "dataset",
+    "publisher_field": "publisher",
+    "source_family_field": "normalized_url_domain",
+    "fnspid_collection_path": "hf:Zihan1004/FNSPID",
+    "fnspid_declared_collection_route": "NASDAQ_TWO_STAGE_COLLECTION_WITH_DOCUMENT_LEVEL_PUBLISHER_AND_URL_PRESERVED",
+    "source_asymmetry_policy": "MEASURE_AND_PRESERVE_NOT_A_BLOCKER_NOT_AN_INDEPENDENCE_CLAIM",
+    "historical_strict_pit": false,
+    "minute_midnight_status": "SUSPECT_PLACEHOLDER_OR_COARSE_TIME",
+    "day_available_at_policy": "NEXT_SESSION_PROXY_ONLY_IN_FUTURE_MATERIALIZER",
+    "deduplication_policy": "PRESERVE_DOCUMENTS_CLUSTER_EVIDENCE_DO_NOT_COUNT_DUPLICATES_AS_INDEPENDENT_EVENTS",
+    "publisher_reliability_policy": "NOT_HARDCODED_NOT_SCORED_BY_THIS_AUDIT",
+    "top_n_source_rows": 100,
+    "syndication_prefix_chars": 160
+  },
+  "guards": {
+    "source_databases_read_only": true,
+    "raw_parquet_read_only": true,
+    "v009_access_allowed": false,
+    "forbidden_path_tokens": [
+      "market_brain_v009",
+      "distributional_v009",
+      "prospective_prediction"
+    ],
+    "forbidden_outputs": [
+      "data/database/market_data_v2.db",
+      "data/processed/market_daily_v003_core.db",
+      "data/processed/market_brain_v009_prospective.db",
+      "reports/market_brain_distributional_v009"
+    ]
+  },
+  "outputs": [
+    "plan.json",
+    "bars_coverage_report.json",
+    "bars_session_report.json",
+    "bars_daily_reconciliation_report.json",
+    "opening_semantics_report.json",
+    "asset_identity_report.json",
+    "news_source_report.json",
+    "news_time_semantics_report.json",
+    "news_dedup_report.json",
+    "core_information_coverage_report.json",
+    "audit.json"
+  ]
+}

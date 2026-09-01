@@ -658,3 +658,26 @@ integer tau up to one year, but neither tested temporal model earned the right
 to open interpolation holdouts. New context must demonstrate incremental
 information one block at a time before trajectories, alpha or production can
 be discussed.
+
+<!-- public-information-semantics-v001 -->
+## Active information escalation after the full semantics audit
+
+```text
+Public Information Intake V001                 COMPLETE / FROZEN SNAPSHOTS
+Public Information Semantics Audit V001        REAL READ-ONLY PASS
+Public Information Canonical Lake V002         NEXT
+  daily/session bar index                      pending
+  source/adjustment/action reconciliation      pending
+  document/story/ticker-link identity          pending
+  historical time + prospective first_seen     pending
+Canonical Lake V002 audit                      BLOCKED on materializer
+incremental intraday information test          BLOCKED on audit
+incremental news/event information test        BLOCKED on prior block
+sealed temporal holdouts                       UNTOUCHED
+V009                                           ISOLATED
+```
+
+The lake is additive and source preserving. It does not insert public raw data
+into `market_data_v2.db`, rewrite Core, average Alpaca/Yahoo, infer canonical
+identity from graph evidence or relabel historical news strict PIT. Only one
+preregistered information block at a time may challenge `vol63 + tau`.

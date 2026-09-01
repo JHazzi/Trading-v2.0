@@ -470,3 +470,25 @@ or discards dissemination multiplicity.
 coherence. It cannot mark historical rows strict PIT, authorize a canonical
 bar, create `available_at`, make news redistributable, expose a feature, train
 a model or alter V009.
+
+## 23. Public information semantic-audit contract
+
+The semantics audit is a read-only census over frozen intake snapshots. For
+news, collection dataset, acquisition route, URL domain and publisher/byline
+are distinct fields. No one field is a reliability score. Expanded
+document-to-ticker rows are not independent stories; document/story clustering
+must preserve all ticker and dissemination links.
+
+Historical publication timestamps without retrieval replay remain strict
+PIT=false. Minute-labelled midnight values are suspect/coarse; day-only values
+may receive a next-session proxy only in a separately versioned materializer.
+
+For bars, each source retains its own OHLCV and adjustment convention. Yahoo
+is a control, not an averaging component. Cross-source level discrepancies,
+return discrepancies and corporate-action overlap are reported separately.
+An official auction price is not inferred from a first-minute bar.
+
+Exact current-symbol joins are proxies until identifier validity intervals are
+proved. Entity-graph evidence may nominate candidates but cannot canonically
+expand links. Audit PASS authorizes only V002 canonical-lake design; training,
+feature materialization and V009 access remain false.

@@ -960,3 +960,27 @@ remain explicit next gates. Median price synthesis, source overwrite, volume
 blending, feature materialization and training are forbidden.
 
 See [PUBLIC_INFORMATION_INTAKE_V001.md](PUBLIC_INFORMATION_INTAKE_V001.md).
+
+## DATA-PUBLIC-INFORMATION-SEMANTICS-AUDIT-V001 — source meaning census
+
+**Type:** read-only bar/news semantics, time, identity, deduplication and Core
+coverage audit; no materializer and no model.
+
+**Status:** real full-corpus execution `PASS_READ_ONLY_SEMANTICS_REVIEW_READY`;
+inputs unchanged, training/materialization false and V009 interaction `NONE`.
+
+The audit covered 531,912,667 one-minute rows and 28,741,192 news-link rows.
+It separated FNSPID collection lineage from 20 document domains and 1,142
+publisher/byline values inside that collection; measured 15,859,669 excess URL
+rows; classified historical clocks; and retained graph evidence as noncanonical.
+Bars cover 476/497 Core current symbols. Cross-source return agreement is tight
+relative to huge split-like raw-level differences, so source-specific values
+are retained and adjustment reconciliation is required.
+
+PASS authorizes only design of Public Information Canonical Lake V002. The
+next scientific model remains blocked until document/story identity, historical
+ticker validity, session/adjustment semantics and causal availability are
+materialized and audited.
+
+See
+[PUBLIC_INFORMATION_SEMANTICS_AUDIT_V001.md](PUBLIC_INFORMATION_SEMANTICS_AUDIT_V001.md).

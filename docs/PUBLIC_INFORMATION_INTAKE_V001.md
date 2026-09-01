@@ -1,6 +1,6 @@
 # Public Information Intake V001
 
-**Status:** implemented and locally tested; bars manifest validated remotely; bulk downloads and gated news manifest are user-run
+**Status:** full bars and priority news downloaded; structural intake and read-only semantics audit PASS; canonicalization/model visibility blocked
 **Scientific scope:** acquisition and structural audit only; no feature materialization or training
 
 ## Purpose
@@ -229,3 +229,12 @@ The next version is not a model. It is a source-semantics audit:
 5. parse news `extra_fields`, classify timestamp precision and source rights;
 6. exact/URL/near-duplicate clustering while retaining dissemination count;
 7. only then design a separate point-in-time information-state materializer.
+
+## Post-download semantic checkpoint
+
+The frozen full bars and priority-news snapshots were downloaded and passed
+metadata/schema review. Public Information Semantics Audit V001 subsequently
+completed read-only with input state unchanged. See
+`PUBLIC_INFORMATION_SEMANTICS_AUDIT_V001.md` for real coverage, source/time,
+deduplication, identity and session findings. Raw acquisition is complete for
+this scope; canonicalization and model visibility remain blocked.

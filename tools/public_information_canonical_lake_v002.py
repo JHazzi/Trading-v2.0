@@ -560,20 +560,22 @@ def _copy_dataset(connection: Any, query: str, destination: Path,
     return state, row_count, False
 
 
-def _copy_dataset_by_ticker_group(
+def _copy_dataset_by_query_batches(
     connection: Any,
     batches: list[tuple[str, str]],
     destination: Path,
+    partition_columns: list[str],
     config: Mapping[str, Any],
     build_id: str,
     artifact_name: str,
+    progress_status: str,
+    batch_strategy: str,
 ) -> tuple[dict[str, Any], int, bool]:
-    """Materialize bounded, resumable ticker batches with year partitions.
+    """Materialize bounded, resumable query batches with partitions.
 
-    The source Parquet is physically clustered by ticker. Each completed ticker
-    group is sealed independently and still exported as Hive-style local-year
-    partitions. A retry reuses completed groups, while the public artifact is
-    published atomically only after every group has completed.
+    Each batch is sealed independently below a build-specific work directory.
+    A retry reuses completed batches, while the public artifact is published
+    atomically only after every batch has completed.
     """
     success_path = destination / "_SUCCESS.json"
     if success_path.exists():
@@ -616,6 +618,10 @@ def _copy_dataset_by_ticker_group(
 
     compression = config["duckdb"]["compression"]
     row_group = int(config["duckdb"]["row_group_size"])
+    partition = (
+        ", PARTITION_BY (" + ",".join(partition_columns) + ")"
+        if partition_columns else ""
+    )
     total_rows = 0
     batches_root = work / "_batches"
     batches_root.mkdir(parents=True, exist_ok=True)
@@ -644,16 +650,18 @@ def _copy_dataset_by_ticker_group(
                 temporary = Path(td) / label
                 connection.execute(
                     f"COPY ({query}) TO {_sql_string(temporary)} "
-                    f"(FORMAT PARQUET, COMPRESSION {compression}, ROW_GROUP_SIZE {row_group}, "
-                    "PARTITION_BY (trading_year))"
+                    f"(FORMAT PARQUET, COMPRESSION {compression}, "
+                    f"ROW_GROUP_SIZE {row_group}{partition})"
                 )
-                scan = _artifact_scan(temporary)
-                count = int(_one(connection.execute(
-                    f"SELECT COUNT(*) AS n FROM {scan}"
-                ))["n"])
                 state = _tree_state(temporary, hash_files=True)
-                if not state["file_count"] or count <= 0:
-                    raise CanonicalLakeError(f"bar batch {label} is empty")
+                count = 0
+                if state["file_count"]:
+                    scan = _artifact_scan(temporary)
+                    count = int(_one(connection.execute(
+                        f"SELECT COUNT(*) AS n FROM {scan}"
+                    ))["n"])
+                else:
+                    temporary.mkdir(parents=True, exist_ok=True)
                 _atomic_json(temporary / "_SUCCESS.json", {
                     "version": VERSION,
                     "build_id": build_id,
@@ -667,7 +675,7 @@ def _copy_dataset_by_ticker_group(
                 os.replace(temporary, batch)
         total_rows += count
         print(json.dumps({
-            "status": "BAR_TICKER_BATCH_COMPLETE",
+            "status": progress_status,
             "artifact_name": artifact_name,
             "batch_label": label,
             "rows": count,
@@ -685,7 +693,7 @@ def _copy_dataset_by_ticker_group(
         "artifact_name": artifact_name,
         "row_count": total_rows,
         "tree_state": state,
-        "batch_strategy": "SOURCE_TICKER_GROUP_WITH_LOCAL_YEAR_PARTITIONS",
+        "batch_strategy": batch_strategy,
         "batch_labels": labels,
         "created_at_utc": utc_now(),
         "training_authorized": False,
@@ -913,9 +921,11 @@ def materialize_bars(root: Path, config: Mapping[str, Any], plan: Mapping[str, A
             connection = _connect(root, config, plan, Path(spill))
             try:
                 name = "bar_sessions"
-                state, count, reused = _copy_dataset_by_ticker_group(
+                state, count, reused = _copy_dataset_by_query_batches(
                     connection, _bar_session_ticker_queries(connection, config),
-                    lake / name, config, plan["build_id"], name,
+                    lake / name, ["trading_year"], config, plan["build_id"], name,
+                    "BAR_TICKER_BATCH_COMPLETE",
+                    "SOURCE_TICKER_GROUP_WITH_LOCAL_YEAR_PARTITIONS",
                 )
                 artifacts[name] = {"tree_state": state, "row_count": count, "reused": reused}
                 _record_artifact(root, config, plan, "bars", name, state, count)
@@ -956,7 +966,7 @@ def _create_news_parsed(connection: Any, config: Mapping[str, Any]) -> None:
     )
     connection.execute(
         """
-        CREATE TEMP TABLE news_parsed AS
+        CREATE TEMP VIEW news_parsed AS
         WITH typed AS (
           SELECT date AS raw_date,text,filename,TRY_CAST(extra_fields AS JSON) AS j,
                  TRY_CAST(date AS TIMESTAMP) AS source_clock_ts
@@ -1004,7 +1014,8 @@ def _create_news_parsed(connection: Any, config: Mapping[str, Any]) -> None:
             CAST(source_clock_ts AS DATE) AS source_calendar_day
           FROM identified
         )
-        SELECT v.*,sha256(story_candidate_id||chr(31)||
+        SELECT v.*,substr(document_version_id,1,1) AS identity_bucket,
+          sha256(story_candidate_id||chr(31)||
                    COALESCE(CAST(source_calendar_day AS VARCHAR),'UNKNOWN_DAY'))
                    AS episode_candidate_id,
           sha256(document_version_id||chr(31)||COALESCE(collection_source,'')||chr(31)||
@@ -1035,8 +1046,8 @@ def _create_news_parsed(connection: Any, config: Mapping[str, Any]) -> None:
     )
 
 
-def _news_queries() -> dict[str, tuple[str, list[str]]]:
-    documents = """
+def _news_queries(source: str = "news_parsed") -> dict[str, tuple[str, list[str]]]:
+    documents = f"""
       SELECT MIN(publication_year) AS publication_year,
         document_id,document_version_id,story_candidate_id,
         canonical_url,document_domain,exact_text_hash,normalized_text_hash,
@@ -1047,11 +1058,11 @@ def _news_queries() -> dict[str, tuple[str, list[str]]]:
         MIN(published_at_proxy_utc) AS first_publication_proxy_utc,
         MAX(published_at_proxy_utc) AS last_publication_proxy_utc,
         'LOCAL_RESEARCH_ONLY_NO_REDISTRIBUTION' AS rights_status
-      FROM news_parsed
+      FROM {source}
       GROUP BY document_id,document_version_id,story_candidate_id,
                canonical_url,document_domain,exact_text_hash,normalized_text_hash
     """
-    evidence = """
+    evidence = f"""
       SELECT publication_year,evidence_id,document_id,document_version_id,
         story_candidate_id,episode_candidate_id,collection_source,dataset_source,
         publisher_raw,source_raw,canonical_url,document_domain,raw_date,
@@ -1060,14 +1071,14 @@ def _news_queries() -> dict[str, tuple[str, list[str]]]:
         historical_strict_pit,intraday_feature_allowed,reconstruction_allowed,
         posthoc_explanation_allowed,market_impact_t0_status,filename,
         COUNT(*) AS expanded_rows
-      FROM news_parsed
+      FROM {source}
       GROUP BY ALL
     """
-    links = """
+    links = f"""
       WITH expanded AS (
         SELECT publication_year,document_version_id,
                upper(trim(symbol)) AS source_ticker
-        FROM news_parsed,UNNEST(TRY_CAST(stocks_json AS VARCHAR[])) s(symbol)
+        FROM {source},UNNEST(TRY_CAST(stocks_json AS VARCHAR[])) s(symbol)
         WHERE symbol IS NOT NULL AND trim(symbol)<>''
       )
       SELECT MIN(e.publication_year) AS publication_year,e.document_version_id,
@@ -1085,6 +1096,167 @@ def _news_queries() -> dict[str, tuple[str, list[str]]]:
     }
 
 
+def _news_source_batches(
+    root: Path, plan: Mapping[str, Any]
+) -> list[tuple[str, str]]:
+    """Bound parsing by source bytes, splitting unusually large files by ID hash."""
+    target_bytes = 512 * 1024 ** 2
+    groups: list[list[Mapping[str, Any]]] = []
+    current: list[Mapping[str, Any]] = []
+    current_bytes = 0
+    for item in plan["snapshots_full"]["news"]["files"]:
+        size = int(item["size_bytes"])
+        if size > target_bytes:
+            if current:
+                groups.append(current)
+                current, current_bytes = [], 0
+            groups.append([item])
+            continue
+        if current and current_bytes + size > target_bytes:
+            groups.append(current)
+            current, current_bytes = [], 0
+        current.append(item)
+        current_bytes += size
+    if current:
+        groups.append(current)
+
+    batches: list[tuple[str, str]] = []
+    hex_digits = "0123456789abcdef"
+    for group_index, group in enumerate(groups, start=1):
+        filenames: set[str] = set()
+        for item in group:
+            path = Path(str(item["local_path"]))
+            filenames.add(str(path))
+            try:
+                filenames.add(path.relative_to(root).as_posix())
+            except ValueError:
+                pass
+        filename_filter = "filename IN (" + ",".join(
+            _sql_string(value) for value in sorted(filenames)
+        ) + ")"
+        total_bytes = sum(int(item["size_bytes"]) for item in group)
+        bucket_sets = [hex_digits]
+        if total_bytes > target_bytes:
+            bucket_sets = [hex_digits[index:index + 4] for index in range(0, 16, 4)]
+        for shard_index, buckets in enumerate(bucket_sets, start=1):
+            paths = [str(item["local_path"]) for item in group]
+            digest = sha256_bytes(canonical_json_bytes({
+                "paths": paths, "identity_buckets": buckets,
+            }))[:10]
+            label = f"source_{group_index:03d}_{shard_index:02d}_{digest}"
+            bucket_filter = ",".join(_sql_string(value) for value in buckets)
+            batches.append((
+                label,
+                f"SELECT * FROM news_parsed WHERE {filename_filter} "
+                f"AND identity_bucket IN ({bucket_filter})",
+            ))
+    return batches
+
+
+def _partition_bucket_sources(
+    artifact: Path, partition_column: str
+) -> dict[str, str]:
+    buckets = sorted({
+        path.name.split("=", 1)[1]
+        for path in artifact.glob(f"_batches/*/{partition_column}=*")
+        if path.is_dir() and "=" in path.name
+    })
+    result: dict[str, str] = {}
+    for bucket in buckets:
+        pattern = (
+            artifact / "_batches" / "*" / f"{partition_column}={bucket}"
+            / "**" / "*.parquet"
+        ).as_posix()
+        result[bucket] = (
+            f"read_parquet({_sql_string(pattern)},union_by_name=true,"
+            "hive_partitioning=true)"
+        )
+    return result
+
+
+def _batch_scan(artifact: Path, label: str) -> str | None:
+    batch = artifact / "_batches" / label
+    if not any(batch.rglob("*.parquet")):
+        return None
+    return _artifact_scan(batch)
+
+
+def _story_input_query(docs: str, links: str | None) -> str:
+    link_source = links or """(
+      SELECT CAST(NULL AS VARCHAR) AS document_version_id,
+             CAST(NULL AS BIGINT) AS asset_id WHERE false
+    )"""
+    return f"""
+      WITH link_counts AS (
+        SELECT document_version_id,COUNT(*) AS asset_links,
+               COUNT(DISTINCT asset_id) FILTER(WHERE asset_id IS NOT NULL)
+                 AS exact_core_assets
+        FROM {link_source} GROUP BY document_version_id
+      )
+      SELECT substr(d.story_candidate_id,1,1) AS story_bucket,
+        d.publication_year,d.story_candidate_id,d.document_version_id,
+        d.document_id,d.document_domain,d.expanded_rows,
+        COALESCE(l.asset_links,0) AS asset_links,
+        COALESCE(l.exact_core_assets,0) AS exact_core_assets,
+        d.first_publication_proxy_utc,d.last_publication_proxy_utc
+      FROM {docs} d LEFT JOIN link_counts l USING(document_version_id)
+    """
+
+
+def _story_candidate_query(source: str) -> str:
+    return f"""
+      SELECT MIN(publication_year) AS publication_year,story_candidate_id,
+        COUNT(*) AS document_versions,COUNT(DISTINCT document_id) AS documents,
+        COUNT(DISTINCT document_domain) FILTER(WHERE document_domain<>'') AS domains,
+        SUM(expanded_rows) AS expanded_rows,SUM(asset_links) AS asset_links,
+        SUM(exact_core_assets) AS exact_core_asset_links,
+        MIN(first_publication_proxy_utc) AS first_publication_proxy_utc,
+        MAX(last_publication_proxy_utc) AS last_publication_proxy_utc,
+        'EXACT_NORMALIZED_TEXT_CANDIDATE_NOT_SEMANTIC_EVENT_IDENTITY'
+          AS story_status
+      FROM {source} GROUP BY story_candidate_id
+    """
+
+
+def _episode_input_query(evidence: str) -> str:
+    return f"""
+      SELECT substr(episode_candidate_id,1,1) AS episode_bucket,
+        episode_candidate_id,story_candidate_id,source_calendar_day,
+        document_version_id,document_domain,collection_source,
+        published_at_proxy_utc,conservative_available_session,expanded_rows
+      FROM {evidence}
+    """
+
+
+def _episode_candidate_query(source: str) -> str:
+    return f"""
+      SELECT COALESCE(EXTRACT(year FROM source_calendar_day)::INTEGER,0)
+               AS publication_year,
+        episode_candidate_id,story_candidate_id,source_calendar_day,
+        COUNT(DISTINCT document_version_id) AS document_versions,
+        COUNT(DISTINCT document_domain) FILTER(WHERE document_domain<>'') AS domains,
+        COUNT(DISTINCT collection_source) AS collections,
+        MIN(published_at_proxy_utc) AS public_time_lower_proxy_utc,
+        MAX(published_at_proxy_utc) AS public_time_upper_proxy_utc,
+        MIN(conservative_available_session) AS first_conservative_session,
+        SUM(expanded_rows) AS expanded_rows,
+        'EXACT_NORMALIZED_STORY_PLUS_DAY_CANDIDATE_NOT_CANONICAL_EVENT'
+          AS episode_status,
+        'NOT_INFERRED_OUTCOME_SIDE_ONLY' AS market_impact_t0_status,
+        false AS model_visible
+      FROM {source}
+      GROUP BY episode_candidate_id,story_candidate_id,source_calendar_day
+    """
+
+
+def _remove_news_internal(path: Path, lake: Path) -> None:
+    if not path.exists():
+        return
+    if path.parent != lake or not path.name.startswith(".news_"):
+        raise CanonicalLakeError(f"refusing to remove unexpected internal path: {path}")
+    shutil.rmtree(path)
+
+
 def materialize_news(root: Path, config: Mapping[str, Any], plan: Mapping[str, Any]) -> dict[str, Any]:
     gate = storage_gate(root, config, "news")
     if not gate["pass"]:
@@ -1100,71 +1272,140 @@ def materialize_news(root: Path, config: Mapping[str, Any], plan: Mapping[str, A
     artifacts: dict[str, Any] = {}
     lake = Path(plan["lake_path"])
     lake.mkdir(parents=True, exist_ok=True)
+    parsed_shards = lake / ".news_parsed_identity_shards"
+    story_inputs = lake / ".news_story_inputs"
+    episode_inputs = lake / ".news_episode_inputs"
     try:
         with tempfile.TemporaryDirectory(prefix="_duckdb_news_", dir=lake) as spill:
             connection = _connect(root, config, plan, Path(spill))
             try:
-                _create_news_parsed(connection, config)
-                for name, (query, partitions) in _news_queries().items():
-                    state, count, reused = _copy_dataset(
-                        connection, query, lake / name, partitions, config,
-                        plan["build_id"], name,
-                    )
-                    artifacts[name] = {"tree_state": state, "row_count": count, "reused": reused}
-                    _record_artifact(root, config, plan, "news", name, state, count)
-                docs = _artifact_scan(lake / "news_document_versions")
-                links = _artifact_scan(lake / "news_asset_links")
-                evidence = _artifact_scan(lake / "news_collection_evidence")
-                story_query = f"""
-                  WITH link_counts AS (
-                    SELECT document_version_id,COUNT(*) AS asset_links,
-                           COUNT(DISTINCT asset_id) FILTER(WHERE asset_id IS NOT NULL)
-                             AS exact_core_assets
-                    FROM {links} GROUP BY document_version_id
-                  )
-                  SELECT MIN(d.publication_year) AS publication_year,d.story_candidate_id,
-                    COUNT(*) AS document_versions,COUNT(DISTINCT d.document_id) AS documents,
-                    COUNT(DISTINCT d.document_domain) FILTER(WHERE d.document_domain<>'')
-                      AS domains,SUM(d.expanded_rows) AS expanded_rows,
-                    SUM(COALESCE(l.asset_links,0)) AS asset_links,
-                    SUM(COALESCE(l.exact_core_assets,0)) AS exact_core_asset_links,
-                    MIN(d.first_publication_proxy_utc) AS first_publication_proxy_utc,
-                    MAX(d.last_publication_proxy_utc) AS last_publication_proxy_utc,
-                    'EXACT_NORMALIZED_TEXT_CANDIDATE_NOT_SEMANTIC_EVENT_IDENTITY'
-                      AS story_status
-                  FROM {docs} d LEFT JOIN link_counts l USING(document_version_id)
-                  GROUP BY d.story_candidate_id
-                """
-                name = "news_story_candidates"
-                state, count, reused = _copy_dataset(
-                    connection, story_query, lake / name, ["publication_year"],
-                    config, plan["build_id"], name,
+                primary_names = list(_news_queries().keys())
+                primary_complete = all(
+                    (lake / name / "_SUCCESS.json").exists() for name in primary_names
                 )
+                if not primary_complete:
+                    _create_news_parsed(connection, config)
+                    _copy_dataset_by_query_batches(
+                        connection, _news_source_batches(root, plan), parsed_shards,
+                        ["identity_bucket"], config, plan["build_id"],
+                        "news_parsed_identity_shards_internal",
+                        "NEWS_SOURCE_BATCH_COMPLETE",
+                        "SOURCE_FILE_BYTES_WITH_LARGE_FILE_IDENTITY_SUBSHARDS",
+                    )
+                    identity_sources = _partition_bucket_sources(
+                        parsed_shards, "identity_bucket"
+                    )
+                    if not identity_sources:
+                        raise CanonicalLakeError("news identity shards are empty")
+                    for name in primary_names:
+                        batches = [
+                            (
+                                f"identity_{bucket}",
+                                _news_queries(source)[name][0],
+                            )
+                            for bucket, source in identity_sources.items()
+                        ]
+                        partitions = _news_queries()[name][1]
+                        state, count, reused = _copy_dataset_by_query_batches(
+                            connection, batches, lake / name, partitions, config,
+                            plan["build_id"], name,
+                            "NEWS_IDENTITY_BATCH_COMPLETE",
+                            "DOCUMENT_VERSION_IDENTITY_HASH_BUCKET",
+                        )
+                        artifacts[name] = {
+                            "tree_state": state, "row_count": count, "reused": reused
+                        }
+                        _record_artifact(root, config, plan, "news", name, state, count)
+                    _remove_news_internal(parsed_shards, lake)
+                else:
+                    for name in primary_names:
+                        marker = read_json(lake / name / "_SUCCESS.json")
+                        state = _tree_state(lake / name, hash_files=True)
+                        artifacts[name] = {
+                            "tree_state": state,
+                            "row_count": int(marker["row_count"]),
+                            "reused": True,
+                        }
+
+                name = "news_story_candidates"
+                if not (lake / name / "_SUCCESS.json").exists():
+                    identity_labels = sorted(
+                        path.name for path in (lake / "news_document_versions" / "_batches").iterdir()
+                        if path.is_dir()
+                    )
+                    story_input_batches = []
+                    for label in identity_labels:
+                        docs_batch = _batch_scan(lake / "news_document_versions", label)
+                        if docs_batch is None:
+                            continue
+                        links_batch = _batch_scan(lake / "news_asset_links", label)
+                        story_input_batches.append((
+                            label, _story_input_query(docs_batch, links_batch)
+                        ))
+                    _copy_dataset_by_query_batches(
+                        connection, story_input_batches, story_inputs,
+                        ["story_bucket"], config, plan["build_id"],
+                        "news_story_inputs_internal", "NEWS_STORY_INPUT_BATCH_COMPLETE",
+                        "DOCUMENT_IDENTITY_TO_STORY_HASH_REPARTITION",
+                    )
+                    story_sources = _partition_bucket_sources(story_inputs, "story_bucket")
+                    story_batches = [
+                        (f"story_{bucket}", _story_candidate_query(source))
+                        for bucket, source in story_sources.items()
+                    ]
+                    state, count, reused = _copy_dataset_by_query_batches(
+                        connection, story_batches, lake / name, ["publication_year"],
+                        config, plan["build_id"], name,
+                        "NEWS_STORY_BATCH_COMPLETE", "STORY_IDENTITY_HASH_BUCKET",
+                    )
+                    _remove_news_internal(story_inputs, lake)
+                else:
+                    marker = read_json(lake / name / "_SUCCESS.json")
+                    state, count, reused = (
+                        _tree_state(lake / name, hash_files=True),
+                        int(marker["row_count"]), True,
+                    )
                 artifacts[name] = {"tree_state": state, "row_count": count, "reused": reused}
                 _record_artifact(root, config, plan, "news", name, state, count)
-                episode_query = f"""
-                  SELECT COALESCE(EXTRACT(year FROM source_calendar_day)::INTEGER,0)
-                           AS publication_year,
-                    episode_candidate_id,story_candidate_id,source_calendar_day,
-                    COUNT(DISTINCT document_version_id) AS document_versions,
-                    COUNT(DISTINCT document_domain) FILTER(WHERE document_domain<>'') AS domains,
-                    COUNT(DISTINCT collection_source) AS collections,
-                    MIN(published_at_proxy_utc) AS public_time_lower_proxy_utc,
-                    MAX(published_at_proxy_utc) AS public_time_upper_proxy_utc,
-                    MIN(conservative_available_session) AS first_conservative_session,
-                    SUM(expanded_rows) AS expanded_rows,
-                    'EXACT_NORMALIZED_STORY_PLUS_DAY_CANDIDATE_NOT_CANONICAL_EVENT'
-                      AS episode_status,
-                    'NOT_INFERRED_OUTCOME_SIDE_ONLY' AS market_impact_t0_status,
-                    false AS model_visible
-                  FROM {evidence}
-                  GROUP BY episode_candidate_id,story_candidate_id,source_calendar_day
-                """
                 name = "information_episode_candidates"
-                state, count, reused = _copy_dataset(
-                    connection, episode_query, lake / name, ["publication_year"],
-                    config, plan["build_id"], name,
-                )
+                if not (lake / name / "_SUCCESS.json").exists():
+                    identity_labels = sorted(
+                        path.name for path in (lake / "news_collection_evidence" / "_batches").iterdir()
+                        if path.is_dir()
+                    )
+                    episode_input_batches = []
+                    for label in identity_labels:
+                        evidence_batch = _batch_scan(lake / "news_collection_evidence", label)
+                        if evidence_batch is not None:
+                            episode_input_batches.append((
+                                label, _episode_input_query(evidence_batch)
+                            ))
+                    _copy_dataset_by_query_batches(
+                        connection, episode_input_batches, episode_inputs,
+                        ["episode_bucket"], config, plan["build_id"],
+                        "news_episode_inputs_internal",
+                        "NEWS_EPISODE_INPUT_BATCH_COMPLETE",
+                        "DOCUMENT_IDENTITY_TO_EPISODE_HASH_REPARTITION",
+                    )
+                    episode_sources = _partition_bucket_sources(
+                        episode_inputs, "episode_bucket"
+                    )
+                    episode_batches = [
+                        (f"episode_{bucket}", _episode_candidate_query(source))
+                        for bucket, source in episode_sources.items()
+                    ]
+                    state, count, reused = _copy_dataset_by_query_batches(
+                        connection, episode_batches, lake / name, ["publication_year"],
+                        config, plan["build_id"], name,
+                        "NEWS_EPISODE_BATCH_COMPLETE", "EPISODE_IDENTITY_HASH_BUCKET",
+                    )
+                    _remove_news_internal(episode_inputs, lake)
+                else:
+                    marker = read_json(lake / name / "_SUCCESS.json")
+                    state, count, reused = (
+                        _tree_state(lake / name, hash_files=True),
+                        int(marker["row_count"]), True,
+                    )
                 artifacts[name] = {"tree_state": state, "row_count": count, "reused": reused}
                 _record_artifact(root, config, plan, "news", name, state, count)
             finally:

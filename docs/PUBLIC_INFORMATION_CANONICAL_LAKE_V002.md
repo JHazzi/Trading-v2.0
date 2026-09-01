@@ -175,6 +175,18 @@ file scan per year without changing session definitions or bar mathematics.
 The stage emits one `BAR_TICKER_BATCH_COMPLETE` line per group; disk capacity
 and DuckDB working memory are independent gates.
 
+The news stage uses a two-level exact reduction rather than one global hash
+aggregation. It first parses source-file batches into `document_version_id`
+identity shards; files above 512 MiB are additionally split into four identity
+subshards. Documents, collection evidence and asset links are then reduced in
+16 identity buckets. Story and episode inputs are repartitioned by their own
+stable identifiers before their final reductions, so batching does not weaken
+global deduplication. Completed source and identity batches are sealed and
+reused after interruption. Temporary internal shards are removed only after
+their downstream public artifacts are sealed. Progress is reported through
+`NEWS_SOURCE_BATCH_COMPLETE`, `NEWS_IDENTITY_BATCH_COMPLETE`,
+`NEWS_STORY_BATCH_COMPLETE` and `NEWS_EPISODE_BATCH_COMPLETE` records.
+
 ```bash
 cd ~/quant_market_ai
 

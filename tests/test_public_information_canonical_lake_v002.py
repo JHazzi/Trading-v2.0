@@ -245,6 +245,11 @@ class PublicInformationCanonicalLakeV002Tests(unittest.TestCase):
             self.assertTrue(reused_bars["idempotent_reuse"])
             reused = materialize_news(root, config, plan)
             self.assertTrue(reused["idempotent_reuse"])
+            for artifact in config["artifacts"]["news"]:
+                self.assertTrue((Path(plan["lake_path"]) / artifact / "_SUCCESS.json").exists())
+            self.assertFalse((Path(plan["lake_path"]) / ".news_parsed_identity_shards").exists())
+            self.assertFalse((Path(plan["lake_path"]) / ".news_story_inputs").exists())
+            self.assertFalse((Path(plan["lake_path"]) / ".news_episode_inputs").exists())
             for key, old_mtime in sources.items():
                 self.assertEqual(Path(config["paths"][key]).stat().st_mtime_ns, old_mtime)
             lake = Path(plan["lake_path"])

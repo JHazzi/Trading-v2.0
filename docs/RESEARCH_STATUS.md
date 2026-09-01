@@ -1025,3 +1025,19 @@ Current next action: Public Information Canonical Lake V002 — versioned daily
 session bars, source/adjustment reconciliation, document/story/ticker-link
 identity and causal-time policy — followed by a separate read-only audit.
 <!-- PUBLIC_INFORMATION_SEMANTICS_AUDIT_V001_END -->
+
+<!-- PUBLIC_INFORMATION_CANONICAL_LAKE_V002_START -->
+## Public Information Canonical Lake V002 — ready for real execution
+
+V002 infrastructure now defines immutable builds, year-partitioned
+source-specific session bars and explicit news document/version/evidence/link/
+story/episode-candidate units. Multiple public/economic/decision clocks are
+preserved; publication is not market-impact `t0`, and historical evidence
+remains strict PIT=false.
+
+Synthetic end-to-end materialization, audit and idempotent reuse pass. The real
+plan/storage/isolation gate passes for build
+`build_b7f296888722f8cc677b8340`. Full bars and news materialization plus final
+audit are the next user-run operations. No feature/model is visible and V009 is
+isolated.
+<!-- PUBLIC_INFORMATION_CANONICAL_LAKE_V002_END -->

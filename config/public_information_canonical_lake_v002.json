@@ -1,0 +1,103 @@
+{
+  "version": "public_information_canonical_lake_v002",
+  "purpose": "Immutable source-preserving session-bar and document/story/link canonical lake; data foundation only, never a predictive promotion.",
+  "training_authorized": false,
+  "feature_visibility": "BLOCKED_UNTIL_V002_AUDIT_AND_SEPARATE_PREREGISTERED_INCREMENT_TEST",
+  "paths": {
+    "intake_catalog_db": "data/database/public_information_catalog_v001.db",
+    "v002_catalog_db": "data/database/public_information_v002_catalog.db",
+    "v002_catalog_schema": "database/public_information_v002_catalog_schema.sql",
+    "market_db": "data/database/market_data_v2.db",
+    "core_db": "data/processed/market_daily_v003_core.db",
+    "graph_identity_db": "data/processed/event_graph_entity_registry_v002.db",
+    "lake_root": "data/lake/public_information_v002",
+    "report_root": "reports/public_information_canonical_lake_v002"
+  },
+  "snapshots": {
+    "bars": {"dataset_key": "alpaca_hf_bars_1m", "profile_name": "full"},
+    "news": {"dataset_key": "financial_news_multisource", "profile_name": "priority"}
+  },
+  "storage": {
+    "hard_cap_bytes": 107374182400,
+    "absolute_max_allowed_bytes": 107374182400,
+    "minimum_free_after_operation_bytes": 10737418240,
+    "preallocate_space": false,
+    "stage_estimate_bytes": {"bars": 5368709120, "news": 32212254720},
+    "managed_roots": [
+      "data/raw/public_information_v001",
+      "data/lake/public_information_v001",
+      "data/lake/public_information_v002"
+    ]
+  },
+  "duckdb": {
+    "threads": 2,
+    "memory_limit": "6GB",
+    "compression": "ZSTD",
+    "row_group_size": 100000
+  },
+  "bars": {
+    "source_id": "alpaca_hf_bars_1m_feed_unknown",
+    "comparison_source_id": "yahoo_finance",
+    "timestamp_semantics": "BAR_START_UTC_ASSUMPTION_PENDING_UPSTREAM_PROVENANCE",
+    "exchange_timezone": "America/New_York",
+    "interval_minutes": 1,
+    "session_windows_local": {
+      "premarket": ["04:00:00", "09:30:00"],
+      "rth": ["09:30:00", "16:00:00"],
+      "afterhours": ["16:00:00", "20:00:00"]
+    },
+    "expected_full_rth_minutes": 390,
+    "level_match_tolerance_pct": 0.5,
+    "return_match_tolerance_pct_points": 1.0,
+    "cross_source_policy": "PRESERVE_BOTH_NO_MEDIAN_NO_OVERWRITE",
+    "volume_policy": "NEVER_BLEND_ACROSS_FEEDS",
+    "historical_strict_pit": false,
+    "availability_policy": "SEGMENT_END_PROXY_NEVER_A_FIRST_SEEN_CLAIM"
+  },
+  "news": {
+    "url_identity_policy": "LOWER_TRIM_REMOVE_FRAGMENT_ONLY",
+    "document_version_policy": "CANONICAL_URL_PLUS_EXACT_TEXT_HASH_OR_TEXT_ONLY_WHEN_URL_MISSING",
+    "story_candidate_policy": "EXACT_NORMALIZED_TEXT_HASH_ONLY_NOT_SEMANTIC_EVENT_IDENTITY",
+    "episode_candidate_policy": "EXACT_NORMALIZED_STORY_PLUS_SOURCE_CALENDAR_DAY_NOT_CANONICAL_EVENT",
+    "source_asymmetry_policy": "PRESERVE_AND_MEASURE_NOT_A_RELIABILITY_WEIGHT",
+    "duplicate_policy": "PRESERVE_RAW_LINEAGE_COLLAPSE_DOCUMENT_UNIT_KEEP_ASSET_AND_COLLECTION_LINKS",
+    "historical_strict_pit": false,
+    "midnight_policy": "SUSPECT_COARSE_UNLESS_CONCORDANT_EVIDENCE_RESOLVES_TIME",
+    "day_policy": "NEXT_CORE_SESSION_CONSERVATIVE_PROXY",
+    "known_timezone_hints": ["UTC", "America/New_York"],
+    "predictive_use_policy": "BLOCKED_BY_DEFAULT_RECONSTRUCTION_AND_POSTHOC_EXPLANATION_SEPARATE",
+    "market_impact_t0_policy": "OUTCOME_SIDE_CANDIDATE_ONLY_NEVER_A_FEATURE",
+    "near_duplicate_policy": "DEFERRED_CANDIDATES_ONLY_NO_RAW_DELETION"
+  },
+  "identity": {
+    "exact_current_symbol_status": "EXACT_CURRENT_SYMBOL_PROXY_NOT_HISTORICALLY_CANONICAL",
+    "validity_required_for_canonical": true,
+    "graph_role": "EVIDENCE_ONLY_NO_AUTO_PROMOTION"
+  },
+  "guards": {
+    "source_databases_read_only": true,
+    "raw_parquet_read_only": true,
+    "v009_access_allowed": false,
+    "forbidden_path_tokens": [
+      "market_brain_v009",
+      "distributional_v009",
+      "prospective_prediction"
+    ],
+    "protected_write_paths": [
+      "data/database/market_data_v2.db",
+      "data/processed/market_daily_v003_core.db",
+      "data/processed/market_brain_v009_prospective.db",
+      "reports/market_brain_distributional_v009"
+    ]
+  },
+  "artifacts": {
+    "bars": ["bar_sessions", "bar_source_reconciliation"],
+    "news": [
+      "news_document_versions",
+      "news_collection_evidence",
+      "news_asset_links",
+      "news_story_candidates",
+      "information_episode_candidates"
+    ]
+  }
+}

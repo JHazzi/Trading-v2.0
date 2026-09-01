@@ -984,3 +984,21 @@ materialized and audited.
 
 See
 [PUBLIC_INFORMATION_SEMANTICS_AUDIT_V001.md](PUBLIC_INFORMATION_SEMANTICS_AUDIT_V001.md).
+
+## DATA-PUBLIC-INFORMATION-CANONICAL-LAKE-V002 — canonical data units
+
+**Type:** immutable source-preserving materializer and audit; no predictive
+experiment.
+
+**Status:** infrastructure and synthetic end-to-end tests PASS. Real plan gate
+PASS for `build_b7f296888722f8cc677b8340`; full bars/news stages and final real
+audit are user-run. Training remains false and V009 interaction is `NONE`.
+
+The bars stage creates session summaries and source reconciliation without
+median/overwrite. The news stage creates document versions, collection
+evidence, asset links, exact-normalized story candidates and day-bounded episode
+candidates. Historical clocks are explicit and strict PIT=false. Publication
+is not equated to impact `t0`; an impact candidate is outcome-side only.
+
+PASS cannot promote a feature, source, event identity or model. See
+[PUBLIC_INFORMATION_CANONICAL_LAKE_V002.md](PUBLIC_INFORMATION_CANONICAL_LAKE_V002.md).

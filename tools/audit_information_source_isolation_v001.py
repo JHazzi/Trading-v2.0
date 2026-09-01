@@ -24,6 +24,9 @@ FORBIDDEN = [
     "financial_news_multisource",
     "public_information_semantics_audit_v001",
     "public_information_semantics_v001",
+    "public_information_canonical_lake_v002",
+    "public_information_v002_catalog.db",
+    "public_information_v002",
 ]
 
 

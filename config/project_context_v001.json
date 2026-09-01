@@ -27,6 +27,33 @@
         }
       ]
     },
+    "data/database/public_information_v002_catalog.db": {
+      "role": "Immutable-build catalog for Public Information Canonical Lake V002 session bars and document/version/evidence/link candidates; training blocked and V009 isolated",
+      "profile_tables": [
+        "schema_migrations",
+        "canonical_builds",
+        "stage_runs",
+        "build_artifacts"
+      ],
+      "probes": [
+        {
+          "id": "public_information_v002_builds",
+          "sql": "SELECT build_id,status,bars_snapshot_id,news_snapshot_id,training_authorized,created_at_utc,updated_at_utc FROM canonical_builds ORDER BY created_at_utc"
+        },
+        {
+          "id": "public_information_v002_stages",
+          "sql": "SELECT build_id,stage,status,COUNT(*) AS runs,MAX(finished_at_utc) AS latest_finish FROM stage_runs GROUP BY build_id,stage,status ORDER BY build_id,stage,status"
+        },
+        {
+          "id": "public_information_v002_artifacts",
+          "sql": "SELECT build_id,stage,artifact_name,file_count,size_bytes,row_count,status FROM build_artifacts ORDER BY build_id,stage,artifact_name"
+        },
+        {
+          "id": "public_information_v002_training_gate",
+          "sql": "SELECT COUNT(*) AS builds,COALESCE(SUM(training_authorized<>0),0) AS training_authorization_violations FROM canonical_builds"
+        }
+      ]
+    },
     "reports/market_temporal_v002_selection_mask_v001/selection_mask.sqlite": {
       "role": "External immutable-outcome selection mask for reviewed V002 action quarantines; zero rows is a valid audited result; never rewrites V002",
       "profile_tables": [

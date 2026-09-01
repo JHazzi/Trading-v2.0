@@ -681,3 +681,24 @@ The lake is additive and source preserving. It does not insert public raw data
 into `market_data_v2.db`, rewrite Core, average Alpaca/Yahoo, infer canonical
 identity from graph evidence or relabel historical news strict PIT. Only one
 preregistered information block at a time may challenge `vol63 + tau`.
+
+<!-- public-information-canonical-lake-v002 -->
+## Canonical Lake V002 execution gate
+
+```text
+V002 contract/catalog/tests                       PASS
+real plan/storage/isolation                       PASS
+bars session materialization                      USER-RUN NEXT
+news document/version/evidence/link materialization USER-RUN NEXT
+V002 final audit                                  BLOCKED on both stages
+semantic near-duplicate/event resolution          DEFERRED
+market-impact t0 detector                         DEFERRED / OUTCOME-SIDE
+incremental information model                     BLOCKED on audit/preregister
+sealed temporal holdouts                          UNTOUCHED
+V009                                               ISOLATED
+```
+
+Publication time, public availability, market-impact onset and decision time
+are not collapsed. Post-hoc evidence may describe an earlier episode but is not
+made visible to an earlier predictor. The final real audit must be interpreted
+before any feature materializer or model protocol is designed.

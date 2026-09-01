@@ -19,6 +19,7 @@ This is the documentation source-of-truth map.
 | `INFORMATION_INTEGRATION_V001.md` | Read-only inventory of prices, news, events, expectations and graph evidence plus causal integration plan |
 | `PUBLIC_INFORMATION_INTAKE_V001.md` | Isolated, resumable public bars/news acquisition, 100 GiB cap, rights/causal gates and exact execution |
 | `PUBLIC_INFORMATION_SEMANTICS_AUDIT_V001.md` | Real source/time/identity/dedup/session semantics census and ordered canonical-lake continuation |
+| `PUBLIC_INFORMATION_CANONICAL_LAKE_V002.md` | Immutable session-bar and document/version/evidence/link materializer with multi-clock and t0 boundaries |
 | `TEMPORAL_DATASET_V002.md` | Explicit total shareholder return, corporate-action math and hard reconciliation gates |
 | `TEMPORAL_V002_REVIEW_AND_MODEL_V001.md` | Economic entitlement review, arbitrary-tau identity and frozen horizon-conditioned preregistration |
 | `TEMPORAL_DATASET_V001.md` | Horizon-conditioned raw-close outcomes, parity and selection gates |

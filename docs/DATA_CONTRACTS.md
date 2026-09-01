@@ -492,3 +492,32 @@ Exact current-symbol joins are proxies until identifier validity intervals are
 proved. Entity-graph evidence may nominate candidates but cannot canonically
 expand links. Audit PASS authorizes only V002 canonical-lake design; training,
 feature materialization and V009 access remain false.
+
+## 24. Public Information Canonical Lake V002 contract
+
+V002 writes immutable, input-fingerprint-addressed Parquet artifacts plus a
+small build catalog. V001 raw Parquet, Market V2, Core, graph evidence and V009
+remain read-only. Each artifact is year-partitioned and tree-hashed; a rerun
+reuses an exact sealed artifact and never overwrites an unsealed/mismatched one.
+
+News units are separate: document, exact-text document version, collection
+evidence, source-ticker link, exact-normalized story candidate and
+story-plus-source-day episode candidate. Story/episode candidates are not
+canonical semantic events. Same URL with different text remains versioned;
+same document linked to multiple assets remains one document with many links.
+
+The clock lattice separates event occurrence, scheduling, public evidence,
+publication proxy, system first-seen, market-impact candidate and decision
+availability. Historical news stays strict PIT=false. Midnight/day evidence is
+coarse and may receive only a conservative next-session proxy. A later document
+may support retrospective reconstruction of an earlier episode but may not be
+an earlier predictive feature. Any price-derived impact `t0` is outcome-side.
+
+Bar sessions preserve premarket/RTH/after-hours values and source identity.
+Alpaca-derived and Yahoo observations are reconciled but never averaged or
+overwritten; volumes are never blended. Historical bar first-seen is lineage,
+while segment end is the availability proxy for completed OHLCV.
+
+V002 audit PASS authorizes review only. Feature visibility and training remain
+blocked until a separately preregistered, capacity-controlled incremental
+information experiment; sealed temporal holdouts and V009 remain untouched.

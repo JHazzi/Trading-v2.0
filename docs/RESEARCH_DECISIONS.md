@@ -956,3 +956,28 @@ V009 remains isolated.
 
 **Status:** semantics audit PASS; Canonical Lake V002 is next. No feature,
 model, source or graph relation was promoted.
+
+## D041 — Materialize multi-clock evidence episodes without equating publication and impact
+
+**Pre-materialization decision (2026-09-01):** Public Information Canonical
+Lake V002 treats documents as evidence for latent economic episodes. Event
+occurrence, scheduled time, first public evidence, publication proxy,
+first-seen, market-impact candidate and decision availability are separate
+clocks. Impact may appear before an observed article because of anticipation,
+an earlier missing source, leakage or unrelated market structure; V002 records
+the ordering but does not infer the cause.
+
+A later article may be used for reconstruction/post-hoc explanation of an
+earlier episode, never as an earlier predictive feature. Price-derived impact
+`t0` is outcome-side and cannot enter `X_t`. Midnight/day documents are retained
+as coarse evidence with conservative availability, not discarded or assigned
+invented times.
+
+Expanded news rows become document versions, collection evidence and asset
+links. Exact-normalized story/day episode ids are deterministic candidates, not
+semantic truth. Bar first-seen is lineage; completed interval/session boundaries
+control availability. Alpaca-derived/Yahoo values remain separate.
+
+**Status:** infrastructure, catalog, plan gate and synthetic full build PASS;
+real materialization/audit are next. Training, semantic episode promotion,
+market-impact modeling, sealed temporal holdouts and V009 remain blocked.

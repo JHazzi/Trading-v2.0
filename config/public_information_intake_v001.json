@@ -1,0 +1,135 @@
+{
+  "contract_version": "public_information_intake_v001",
+  "purpose": "Versioned local-research acquisition and structural audit of public intraday bars and news; never a predictive feature or V009 input.",
+  "training_authorized": false,
+  "feature_visibility": "BLOCKED_UNTIL_SEPARATE_POINT_IN_TIME_MATERIALIZER_AND_PREREGISTERED_INCREMENT_TEST",
+  "paths": {
+    "catalog_db": "data/database/public_information_catalog_v001.db",
+    "catalog_schema": "database/public_information_catalog_v001_schema.sql",
+    "raw_root": "data/raw/public_information_v001",
+    "lake_root": "data/lake/public_information_v001",
+    "report_root": "reports/public_information_intake_v001"
+  },
+  "storage": {
+    "hard_cap_bytes": 107374182400,
+    "absolute_max_allowed_bytes": 107374182400,
+    "minimum_free_after_operation_bytes": 10737418240,
+    "download_chunk_bytes": 8388608,
+    "progress_every_bytes": 268435456,
+    "preallocate_space": false,
+    "managed_roots": [
+      "data/raw/public_information_v001",
+      "data/lake/public_information_v001"
+    ]
+  },
+  "isolation": {
+    "source_databases_read_only_and_not_opened": [
+      "data/database/market_data_v2.db",
+      "data/processed/market_daily_v003_core.db"
+    ],
+    "protected_write_paths": [
+      "data/database/market_data_v2.db",
+      "data/processed/market_daily_v003_core.db",
+      "data/processed/market_brain_v009_prospective.db",
+      "reports/market_brain_distributional_v009"
+    ],
+    "forbidden_write_path_tokens": [
+      "market_data_v2.db",
+      "market_daily_v003_core.db",
+      "market_brain_v009_prospective.db",
+      "market_brain_distributional_v009"
+    ]
+  },
+  "economic_policies": {
+    "intraday_primary_candidate": "alpaca_feed_unknown_until_audit",
+    "cross_source_price_policy": "PRESERVE_EACH_SOURCE_NO_MEDIAN_NO_OVERWRITE",
+    "volume_policy": "NEVER_BLEND_ACROSS_IEX_SIP_YAHOO",
+    "canonical_bar_status": "BLOCKED_UNTIL_FEED_SESSION_ADJUSTMENT_AND_OPENING_SEMANTICS_AUDIT",
+    "news_duplicate_policy": "PRESERVE_PROVENANCE_THEN_CLUSTER_EXACT_AND_NEAR_DUPLICATES",
+    "news_causal_policy": "DAY_ONLY_OR_DERIVED_TIMESTAMPS_ARE_NOT_INTRADAY_CAUSAL_EVIDENCE"
+  },
+  "initial_download_profiles": [
+    ["alpaca_hf_bars_1m", "full"],
+    ["financial_news_multisource", "priority"]
+  ],
+  "datasets": {
+    "alpaca_hf_bars_1m": {
+      "data_kind": "bars_1m",
+      "repo_type": "dataset",
+      "repo_id": "CryptoSpartan/stocks_bars_1m",
+      "revision": "b21d46e47ea2f39801d174ca850af76999cc5113",
+      "token_env": "HF_TOKEN",
+      "token_optional": true,
+      "declared_license": "mit",
+      "rights_status": "LOCAL_RESEARCH_ALLOWED_BY_DATASET_CARD_UPSTREAM_VENDOR_REDISTRIBUTION_NOT_VERIFIED",
+      "causal_status": "HISTORICAL_RECONSTRUCTION_STRICT_PIT_FALSE",
+      "expected_columns": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "volume",
+        "trade_count",
+        "vol_weighted_avg_price",
+        "timestamp",
+        "ticker",
+        "name"
+      ],
+      "profiles": {
+        "full": {
+          "include": ["stocks_bars_1m.parquet"],
+          "exclude": [],
+          "estimated_bytes": 9614503076
+        }
+      }
+    },
+    "financial_news_multisource": {
+      "data_kind": "news_documents",
+      "repo_type": "dataset",
+      "repo_id": "Brianferrell787/financial-news-multisource",
+      "revision": "main",
+      "token_env": "HF_TOKEN",
+      "token_optional": false,
+      "declared_license": "other",
+      "rights_status": "LOCAL_RESEARCH_ONLY_UPSTREAM_PUBLISHER_RIGHTS_UNRESOLVED_NO_REDISTRIBUTION",
+      "causal_status": "MIXED_TIME_PRECISION_NOT_CAUSAL_UNTIL_ROW_LEVEL_AUDIT",
+      "expected_columns": ["date", "text", "extra_fields"],
+      "profiles": {
+        "priority": {
+          "include": [
+            "data/fnspid_news/*.parquet",
+            "data/yahoo_finance_felixdrinkall/*.parquet",
+            "data/cnbc_headlines/*.parquet",
+            "data/finsen_us_2007_2023/*.parquet",
+            "data/reddit_finance_sp500/*.parquet"
+          ],
+          "exclude": [],
+          "estimated_bytes": 12884901888
+        },
+        "full": {
+          "include": ["data/*/*.parquet"],
+          "exclude": [],
+          "estimated_bytes": 22978075034
+        }
+      }
+    }
+  },
+  "samples": {
+    "bars": {
+      "dataset_key": "alpaca_hf_bars_1m",
+      "profile": "full",
+      "tickers": ["AAPL", "SPY", "GS", "PCG", "WAT"],
+      "windows_utc": [
+        ["2016-01-04T00:00:00+00:00", "2016-01-09T00:00:00+00:00"],
+        ["2020-03-16T00:00:00+00:00", "2020-03-21T00:00:00+00:00"],
+        ["2026-08-17T00:00:00+00:00", "2026-08-22T00:00:00+00:00"]
+      ]
+    },
+    "news": {
+      "dataset_key": "financial_news_multisource",
+      "profile": "priority",
+      "rows": 50000,
+      "seed": 1701
+    }
+  }
+}

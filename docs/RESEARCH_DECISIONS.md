@@ -899,3 +899,34 @@ expectations are not historical model features. V009 remains isolated.
 **Status:** V002 closed negative; the real information-readiness audit passed.
 Review of the shared context materializer is next; no feature or model was
 promoted by the readiness result.
+
+## D039 — Acquire missing public information in an isolated source-preserving lake
+
+**Pre-download data decision (2026-08-31):** Information Integration Readiness
+found only seven intraday sessions and a non-causal, mostly SEC legacy news
+inventory. Public Information Intake V001 may therefore acquire historical
+one-minute bars and selected non-SEC news while V009 accumulates, but only as
+raw research evidence.
+
+The intake uses an isolated SQLite catalog plus immutable Parquet objects. It
+does not insert raw payloads into `market_data_v2.db`, rebuild Core or expose a
+feature. Managed raw/lake storage has a hard 100 GiB ceiling and is never
+preallocated. Dataset ref, resolved commit, file size/hash, declared license,
+rights status and actual download/audit run are persisted.
+
+Alpaca is the provisional primary intraday candidate, not assumed truth. Its
+unknown feed, session, adjustment, ticker-history and opening-price semantics
+must be audited. Yahoo remains independent evidence and the current V009 daily
+source. Cross-source OHLC medians/overwrites are forbidden; volumes from IEX,
+SIP and Yahoo are never blended. A later consensus may exist only as a derived
+experimental feature after three-or-more-source semantics are defensible.
+
+News priority subsets precede the full corpus. Full text remains local and
+non-redistributable under project policy until upstream rights are resolved.
+Day-only/derived timestamps are not intraday causal evidence. Exact and
+near-duplicate clustering must preserve source dissemination multiplicity.
+
+**Status:** infrastructure, synthetic tests and real DuckDB integration tests
+complete. The remote bars manifest/dry-run pass; bulk downloads, gated news
+manifest and real corpus audits are user-run. Training and context
+materialization remain blocked; V009 is isolated.

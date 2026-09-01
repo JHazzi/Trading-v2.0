@@ -19,7 +19,10 @@ Temporal Dataset V002                     COMPLETE: economic/action review PASS
 Temporal distributional V001              COMPLETE: closed negative vs vol63
 Temporal distributional V002              COMPLETE: closed negative; holdouts sealed
 Information Integration Readiness V001    COMPLETE: real read-only PASS
-Context information materializer          NEXT: design/audit; no training
+Public Information Intake V001            IMPLEMENTED: local tests PASS; remote intake user-run
+Alpaca bars + priority news intake         NEXT: bars frozen; download/audit, then gated news
+source semantics/reconciliation            AFTER corpus audit; no overwrite or median
+Context information materializer          BLOCKED on source semantics; no training
 distributional Event Brain                PARALLEL developmental track on existing SEC
 identity hygiene                          REVIEW in parallel; no graph promotion
 graph propagation                         BLOCKED until direct event increment
@@ -369,7 +372,7 @@ Do not prioritize yet:
 - large neural sequence models;
 - reinforcement-learning trading policy;
 - graph neural networks;
-- massive news ingestion;
+- unscoped/model-visible mass news ingestion without source rights/time/dedup gates;
 - live auto-trading;
 - “confidence” derived from RF tree dispersion;
 - arbitrary Gaussian future-path simulation.

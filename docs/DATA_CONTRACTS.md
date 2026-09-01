@@ -435,3 +435,38 @@ they do not redefine the output domain. The score weights assets within
 cross-tau vectors are the moving-block resampling unit. Targets are transformed
 by log total wealth for fit, exactly inverted for percentage-return scoring and
 never clipped.
+
+## 22. Public bars/news raw-intake contract
+
+Public Information Intake V001 is a source acquisition layer, not a feature or
+model dataset. It may write only its isolated catalog, raw/lake roots and
+reports. `market_data_v2.db`, Market Core and the V009 registry/report tree are
+protected write paths and are not opened by the intake.
+
+Every remote selection is bound to repository id, requested ref, resolved
+commit, exact file path/size and available source hash. Original Parquet bytes
+are immutable after completion. Interrupted downloads retain `.part` lineage
+and resume only when HTTP Range is honored. Identical repo files at one commit
+are shared across selection profiles. Tokens are neither logged nor persisted.
+
+Managed raw/lake usage may not exceed 100 GiB. This is an operation gate, not
+a disk reservation; preallocation is forbidden.
+
+A source-specific bar observation remains distinct by source, feed, interval,
+timestamp, session, adjustment convention and source revision. Alpaca is the
+provisional primary candidate only after feed/clock/price audit. Yahoo rows are
+not overwritten. Price medians are not raw truth, and IEX/SIP/Yahoo volume is
+not comparable enough to blend. A daily gap from previous close is distinct
+from an after-open move; official opening auction, first eligible trade, first
+minute open and early VWAP require separate semantics.
+
+A news document preserves publisher/dataset, URL, content, original time,
+time precision, retrieval and rights lineage. Day-only or derived timestamps
+remain non-causal for intraday backtests. Deduplication creates evidence/story
+links; it never converts repeated syndication into independent economic events
+or discards dissemination multiplicity.
+
+`integrity`, `metadata`, `full` or sample PASS means only raw structural
+coherence. It cannot mark historical rows strict PIT, authorize a canonical
+bar, create `available_at`, make news redistributable, expose a feature, train
+a model or alter V009.

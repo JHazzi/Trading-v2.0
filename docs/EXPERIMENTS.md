@@ -930,3 +930,33 @@ claims. External-market and financial-condition features have exact, non-null
 Core-domain coverage.
 
 See [INFORMATION_INTEGRATION_V001.md](INFORMATION_INTEGRATION_V001.md).
+
+## DATA-PUBLIC-INFORMATION-INTAKE-V001 — public bars/news source acquisition
+
+**Type:** isolated data acquisition/catalog/audit foundation; no model.
+
+**Status:** implementation, synthetic tests and real DuckDB integration tests
+PASS. The remote bars manifest is frozen and its download dry-run passed;
+bulk downloads and the gated news manifest are user-run. No source or feature is promoted.
+
+Configured initial scope:
+
+```text
+CryptoSpartan/stocks_bars_1m
+  fixed revision b21d46e47ea2f39801d174ca850af76999cc5113
+  full one-minute Parquet
+
+Brianferrell787/financial-news-multisource
+  main resolved/pinned at manifest time
+  priority finance subsets before optional full corpus
+```
+
+The catalog records source revision, selected files, sizes/hashes, rights and
+causal status, download runs and structural audits. Downloads are resumable,
+content-shared across profiles and bounded by a non-preallocated 100 GiB cap.
+Raw payloads never enter `market_data_v2.db`; V009/Core are protected.
+Alpaca feed/opening/adjustment semantics and news rights/time precision/dedup
+remain explicit next gates. Median price synthesis, source overwrite, volume
+blending, feature materialization and training are forbidden.
+
+See [PUBLIC_INFORMATION_INTAKE_V001.md](PUBLIC_INFORMATION_INTAKE_V001.md).

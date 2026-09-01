@@ -25,8 +25,13 @@ data/database/*.db
 
 # Datos RAW descargados. Sólo se versiona el contrato/código.
 data/raw/
+data/lake/
 *.gz
 *.csv
+*.parquet
+*.parquet.part
+*.download.lock
+
 # Archivos de entorno y configuración local
 .env
 *.local.json

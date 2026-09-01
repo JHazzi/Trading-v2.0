@@ -29,6 +29,18 @@ intraday data, non-causal historical news backfill, prospective expectations
 for 19 Core assets and non-canonical graph evidence for ten. The PASS authorizes
 only review of a shared context materializer; training remains blocked.
 
+Public Information Intake V001 is now implemented as the isolated acquisition
+response to the observed intraday/news gaps. It can freeze Hugging Face source
+commits, stream/resume Parquet downloads, enforce a non-preallocated 100 GiB
+managed-storage ceiling, catalog rights/checksum lineage and produce structural
+audits/samples. Identical files at one source commit are shared across profiles.
+Alpaca is only the provisional intraday primary; feed/session/adjustment/opening
+semantics remain blocked. Cross-source medians, overwrites and volume blending
+are forbidden. The exact 9,614,503,076-byte bars manifest is frozen and its
+download dry-run passed; bulk downloads, gated news manifest and corpus audits
+remain user-run. No raw dataset is yet audited, no feature/materializer/model is
+authorized and V009 is untouched.
+
 ### Completed falsification work
 
 Event Brain V0.2.1 robustness did not convert the H10 scalar candidate into a general claim:

@@ -2,6 +2,31 @@
   "contract_version": "project_context_v001",
   "purpose": "Read-only evidence reconciliation; never a new scientific status registry.",
   "databases": {
+    "data/database/public_information_catalog_v001.db": {
+      "role": "Isolated catalog for public bars/news raw snapshots, rights status, download lineage and structural audits; no raw payloads, features, training or V009 access",
+      "profile_tables": [
+        "schema_migrations",
+        "dataset_registry",
+        "dataset_snapshots",
+        "snapshot_files",
+        "intake_runs",
+        "audit_records"
+      ],
+      "probes": [
+        {
+          "id": "public_information_snapshots",
+          "sql": "SELECT dataset_key,profile_name,COUNT(*) AS snapshots,SUM(selected_file_count) AS selected_files,SUM(selected_bytes) AS selected_bytes FROM dataset_snapshots GROUP BY dataset_key,profile_name ORDER BY dataset_key,profile_name"
+        },
+        {
+          "id": "public_information_file_status",
+          "sql": "SELECT s.dataset_key,s.profile_name,f.status,COUNT(*) AS files,SUM(f.size_bytes) AS bytes FROM snapshot_files f JOIN dataset_snapshots s USING(snapshot_id) GROUP BY s.dataset_key,s.profile_name,f.status ORDER BY s.dataset_key,s.profile_name,f.status"
+        },
+        {
+          "id": "public_information_visibility_gate",
+          "sql": "SELECT COUNT(*) AS datasets,COALESCE(SUM(model_visibility<>'BLOCKED_UNTIL_SEPARATE_POINT_IN_TIME_MATERIALIZER_AND_PREREGISTERED_INCREMENT_TEST'),0) AS visibility_violations FROM dataset_registry"
+        }
+      ]
+    },
     "reports/market_temporal_v002_selection_mask_v001/selection_mask.sqlite": {
       "role": "External immutable-outcome selection mask for reviewed V002 action quarantines; zero rows is a valid audited result; never rewrites V002",
       "profile_tables": [

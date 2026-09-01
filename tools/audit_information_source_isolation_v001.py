@@ -18,6 +18,10 @@ FORBIDDEN = [
     "alphavantage_expectations_v001",
     "provider_registry_v001",
     "information_capture_v001.db",
+    "public_information_intake_v001",
+    "public_information_catalog_v001.db",
+    "public_information_v001",
+    "financial_news_multisource",
 ]
 
 
